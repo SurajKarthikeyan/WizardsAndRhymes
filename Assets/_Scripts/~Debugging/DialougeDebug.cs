@@ -19,15 +19,15 @@ public class DialougeDebug : MonoBehaviour
 
     private void Update()
     {
-        if (SayDialog.ActiveSayDialog != null)
-        {
-            curString = SayDialog.ActiveSayDialog.StoryText;
-            Debug.Log(curString);
-            if (curString.Contains(textBeforeGlyph) && once)
-            {
-                Debug.Log("glyph here bro");
-                once = false;
-            }
-        }
+        //if (SayDialog.ActiveSayDialog != null)
+        //{
+        //    curString = SayDialog.ActiveSayDialog.StoryText;
+        //    Debug.Log(curString);
+        //    if (curString.Contains(textBeforeGlyph) && once)
+        //    {
+        //        Debug.Log("glyph here bro");
+        //        once = false;
+        //    }
+        //}
     }
 }
