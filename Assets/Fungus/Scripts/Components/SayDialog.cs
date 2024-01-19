@@ -28,6 +28,9 @@ namespace Fungus
         [Tooltip("TextAdapter will search for appropriate output on this GameObject if nameText is null")]
         [SerializeField] protected GameObject nameTextGO;
         protected TextAdapter nameTextAdapter = new TextAdapter();
+
+        [Tooltip("This is used to get a reference to the writer used in an enumerator")]
+        public Writer enumeratorWriter;
         public virtual string NameText
         {
             get
@@ -478,12 +481,11 @@ namespace Fungus
         /// <param name="onComplete">Callback to execute when writing and player input have finished.</param>
         public virtual IEnumerator DoSay(string text, bool clearPrevious, bool waitForInput, bool fadeWhenDone, bool stopVoiceover, bool waitForVO, AudioClip voiceOverClip, Action onComplete)
         {
-            var writer = GetWriter();
-
-            if (writer.IsWriting || writer.IsWaitingForInput)
+            enumeratorWriter = GetWriter();
+            if (enumeratorWriter.IsWriting || enumeratorWriter.IsWaitingForInput)
             {
-                writer.Stop();
-                while (writer.IsWriting || writer.IsWaitingForInput)
+                enumeratorWriter.Stop();
+                while (enumeratorWriter.IsWriting || enumeratorWriter.IsWaitingForInput)
                 {
                     yield return null;
                 }
@@ -517,9 +519,9 @@ namespace Fungus
                 soundEffectClip = speakingCharacter.SoundEffect;
             }
 
-            writer.AttachedWriterAudio = writerAudio;
+            enumeratorWriter.AttachedWriterAudio = writerAudio;
 
-            yield return StartCoroutine(writer.Write(text, clearPrevious, waitForInput, stopVoiceover, waitForVO, soundEffectClip, onComplete));
+            yield return StartCoroutine(enumeratorWriter.Write(text, clearPrevious, waitForInput, stopVoiceover, waitForVO, soundEffectClip, onComplete));
         }
 
         /// <summary>

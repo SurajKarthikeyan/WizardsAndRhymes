@@ -1,4 +1,6 @@
+using System;
 using Fungus;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,13 +9,27 @@ public class TextTest : MonoBehaviour
     public Text textComp;
     public int charIndex;
     public Canvas canvas;
-
+    public TextMeshProUGUI tmpro;
     public GameObject glyph;
+    public string compareString;
+    private bool once = true;
+    private void Update()
+    {
+        if (SayDialog.ActiveSayDialog != null)
+        {
+            /*tmpro.text = SayDialog.ActiveSayDialog.enumeratorWriter.leftString.ToString();
+            Debug.Log(tmpro.text);
+            if (tmpro.text.Contains(compareString) && once)
+            {
+                Debug.Log("PoggChamp");
+                once = true;
+            }*/
+        }
+    }
 
     void PrintPos()
     {
         string text = textComp.text;
-
         if (charIndex >= text.Length)
             return;
 

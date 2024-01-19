@@ -111,7 +111,7 @@ namespace Fungus
 
         protected StringBuilder openString = new StringBuilder(256);
         protected StringBuilder closeString = new StringBuilder(256);
-        protected StringBuilder leftString = new StringBuilder(1024);
+        public StringBuilder leftString = new StringBuilder(1024);  //Yes this is bad, yes this is changing source code. No I don't like it. I don't care
         protected StringBuilder rightString = new StringBuilder(1024);
         protected StringBuilder outputString = new StringBuilder(1024);
         protected StringBuilder readAheadString = new StringBuilder(1024);
@@ -613,7 +613,7 @@ namespace Fungus
                     {
                         break;
                     }
-
+                    
                     // Pause mid sentence if Paused is set
                     while (Paused)
                     {
@@ -656,6 +656,7 @@ namespace Fungus
             }
         }
 
+
         protected virtual void PartitionString(bool wholeWords, string inputString, int i)
         {
             leftString.Length = 0;
@@ -687,6 +688,7 @@ namespace Fungus
             {
                 leftString.Remove(i, inputString.Length - i);
                 rightString.Remove(0, i);
+
             }
         }
 
@@ -721,6 +723,14 @@ namespace Fungus
                 outputString.Append(rightString);
                 outputString.Append(readAheadString);
                 outputString.Append(hiddenColorClose);
+            }
+
+            for (int i = 0; i < outputString.Length; i++)
+            {
+                if (outputString[i] == '@')
+                {
+                    outputString[i] = ' ';
+                }
             }
         }
 
