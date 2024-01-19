@@ -1,6 +1,7 @@
 using System;
 using Fungus;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,9 +17,15 @@ public class TextTest : MonoBehaviour
 
 
 
-    public void WEAREOUT()
+    public void WEAREOUT(string outString, int index, Text outText)
     {
-        Debug.Log("WEAREOUTLADS");
+        if (outString != null && index != null)
+        {
+            charIndex = index;
+            textComp = outText;
+            textComp.text = outString;
+            PrintPos();
+        }
     }
     private void Update()
     {

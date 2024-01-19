@@ -12,7 +12,7 @@ namespace Fungus
     /// </summary>
     public class TextAdapter : IWriterTextDestination
     {
-        protected Text textUI;
+        public Text textUI;
         protected InputField inputField;
         protected TextMesh textMesh;
 #if UNITY_2018_1_OR_NEWER

@@ -82,9 +82,9 @@ namespace Fungus
         protected bool exitFlag;
 
 
-        public delegate void GetOutOfSourceCode();
+        public delegate void GetOutOfSourceCode(string outString, int index, Text outText);
 
-        public event GetOutOfSourceCode OnOutOfSourceCode = delegate {  };
+        public event GetOutOfSourceCode OnOutOfSourceCode = delegate { };
         //holds number of Word tokens in the currently running Write
         public int WordTokensFound { get; protected set; }
 
@@ -710,7 +710,10 @@ namespace Fungus
                 if (leftString[leftString.Length - 1] == '@')
                 {
                     leftString[leftString.Length - 1] = ' ';
-                    OnOutOfSourceCode?.Invoke();
+                    StringBuilder tempString = new StringBuilder();
+                    tempString.Append(outputString);
+                    tempString.Append(leftString);
+                    OnOutOfSourceCode?.Invoke(tempString.ToString(), leftString.Length-1, textAdapter.textUI);
                 }
                 for (int i = 0; i < leftString.Length-1; i++)
                 {
