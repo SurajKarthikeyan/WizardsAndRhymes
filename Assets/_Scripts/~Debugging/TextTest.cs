@@ -9,11 +9,12 @@ public class TextTest : MonoBehaviour
 {
     public Text textComp;
     public int charIndex;
-    public Canvas canvas;
+    public Transform canvas;
     public TextMeshProUGUI tmpro;
     public GameObject glyph;
     public string compareString;
     private bool once = true;
+    public int offset;
 
 
 
@@ -21,13 +22,13 @@ public class TextTest : MonoBehaviour
     {
         if (outString != null && index != null)
         {
-            charIndex = index - 3;
+            charIndex = index;
             textComp = outText;
             textComp.text = outString;
-            Debug.Log(charIndex);
+            /*Debug.Log(charIndex);
             Debug.Log(textComp.text.Length);
-            Debug.Log("______");
-            PrintPos();
+            Debug.Log("______");*/
+            MaybePleaseHelpOurSanity();
         }
     }
     private void Update()
@@ -68,22 +69,25 @@ public class TextTest : MonoBehaviour
             textGen.verts[indexOfTextQuad + 1].position +
             textGen.verts[indexOfTextQuad + 2].position +
             textGen.verts[indexOfTextQuad + 3].position) / 4f; 
-            print(avgPos);
+            /*print(avgPos);*/
             PrintWorldPos(avgPos);
+            
+            
         }
         else
         {
-            Debug.LogError("Out of text bound");
+            Debug.LogWarning("Out of text bound");
         }
     }
 
     void PrintWorldPos(Vector3 testPoint)
     {
         Vector3 worldPos = textComp.transform.TransformPoint(testPoint);
-        print(worldPos);
-        new GameObject("point").transform.position = worldPos + new Vector3(10, 0, 0);
-        Debug.DrawRay(worldPos, Vector3.up, Color.red, 50f);
-        Instantiate(glyph, canvas.transform);
+        Debug.Log(worldPos + " WorldPosition");
+        //new GameObject("point").transform.position = worldPos + new Vector3(10, 0, 0);
+        //Debug.DrawRay(worldPos, Vector3.up, Color.red, 50f);
+        
+        Instantiate(glyph, canvas);
         glyph.transform.position = worldPos;
     }
 
@@ -91,7 +95,46 @@ public class TextTest : MonoBehaviour
     {
         if (GUI.Button(new Rect(10, 10, 100, 80), "Test"))
         {
-            PrintPos();
+            MaybePleaseHelpOurSanity();
         }
+    }
+
+    public void MaybePleaseHelpOurSanity()
+    {
+        RectTransform textBoxRect = textComp.GetComponent<RectTransform>();
+        int charIndex = -10; // Replace with the index of the desired character
+        TextGenerator textGenerator = textComp.cachedTextGenerator;
+        UICharInfo[] charInfo = textGenerator.GetCharactersArray(); 
+        Vector3 charPosition = charInfo[charIndex].cursorPos;
+        Vector3 worldPosition = textBoxRect.TransformPoint(charPosition);
+        Instantiate(glyph, canvas);
+        glyph.transform.position = worldPosition;
+        Debug.Log(worldPosition);
+        /*if (textComp != null && charIndex >= 0 && charIndex < textComp.text.Length)
+        {
+            RectTransform rectTransform = textComp.rectTransform;
+            TextGenerator textGenerator = textComp.cachedTextGenerator;
+
+            // Ensure the text generator is up-to-date
+            textGenerator.Invalidate();
+
+            // Get the position of the character in local space
+            UICharInfo[] charactersInfo = textGenerator.GetCharactersArray();
+            Vector2 localPos = charactersInfo[charIndex].cursorPos;
+            //Debug.Log(localPos + " Local Pos");
+
+            // Convert local position to world position
+            Vector3 worldPos;
+            RectTransformUtility.ScreenPointToWorldPointInRectangle(rectTransform, localPos, Camera.main, out worldPos);
+            Instantiate(glyph, canvas);
+            glyph.transform.position = localPos;
+            //Debug.Log("World Position of character " + charIndex + ": " + worldPos);
+            
+        }
+        
+        else
+        {
+            Debug.LogError("Ensure the Text component and valid character index are set.");
+        }*/
     }
 }

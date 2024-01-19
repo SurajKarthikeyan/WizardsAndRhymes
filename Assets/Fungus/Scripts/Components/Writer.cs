@@ -709,7 +709,7 @@ namespace Fungus
             {
                 if (leftString[leftString.Length - 1] == '@')
                 {
-                    leftString[leftString.Length - 1] = ' ';
+                    /*leftString[leftString.Length - 1] = ' ';*/
                     StringBuilder tempString = new StringBuilder();
                     tempString.Append(outputString);
                     tempString.Append(leftString);
@@ -719,7 +719,7 @@ namespace Fungus
                 {
                     if (leftString[i] == '@')
                     {
-                        leftString[i] = ' ';
+                        /*leftString[i] = ' ';*/
                     }
                 }
             }
