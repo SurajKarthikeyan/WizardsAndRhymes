@@ -42,15 +42,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        playerInput.Movement.Dash.started += DoDash;
-        move = playerInput.Movement.Movement;
-        playerInput.Movement.Enable();
+        playerInput.Player.Dash.started += DoDash;
+        move = playerInput.Player.Movement;
+        playerInput.Player.Enable();
     }
 
     private void OnDisable()
     {
-        playerInput.Movement.Dash.started -= DoDash;
-        playerInput.Movement.Disable();
+        playerInput.Player.Dash.started -= DoDash;
+        playerInput.Player.Disable();
     }
 
     private void FixedUpdate()

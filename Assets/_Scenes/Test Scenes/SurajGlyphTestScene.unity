@@ -919,8 +919,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1561764695}
   m_HandleRect: {fileID: 1561764694}
   m_Direction: 2
-  m_Value: 1.0000004
-  m_Size: 0.6006351
+  m_Value: 1
+  m_Size: 0.6263855
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1190,6 +1190,37 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
+--- !u!1 &1227338362
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1227338363}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1227338363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227338362}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 621, y: 636, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1428048542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1224,8 +1255,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -477, y: 145}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -420.14404, y: 115.633545}
+  m_SizeDelta: {x: 313.7119, y: 108.733}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1428048544
 MonoBehaviour:
@@ -1247,7 +1278,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'zane    @    suraj   @    dingy @       dingus      @
+
+
+    @'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1562,6 +1596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1513437437}
   - component: {fileID: 1513437436}
+  - component: {fileID: 1513437438}
   m_Layer: 0
   m_Name: TestTextThingy
   m_TagString: Untagged
@@ -1576,7 +1611,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513437435}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 365d0043a6409f44da745932fb2dd56f, type: 3}
   m_Name: 
@@ -1603,6 +1638,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1513437438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513437435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43d1899c3aeac974e85382b3aac60cac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textMeshPro: {fileID: 1428048544}
+  specialChar: 64
+  glyph: {fileID: 7582730572331735171, guid: 5d1aec59b99ec4f4992500c682fe001a, type: 3}
+  canvas: {fileID: 1894740970}
 --- !u!1 &1561764693
 GameObject:
   m_ObjectHideFlags: 0
@@ -2477,3 +2528,4 @@ SceneRoots:
   - {fileID: 1825306311}
   - {fileID: 1513437437}
   - {fileID: 1894740970}
+  - {fileID: 1227338363}
