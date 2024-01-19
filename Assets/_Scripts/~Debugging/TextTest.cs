@@ -21,9 +21,12 @@ public class TextTest : MonoBehaviour
     {
         if (outString != null && index != null)
         {
-            charIndex = index;
+            charIndex = index - 3;
             textComp = outText;
             textComp.text = outString;
+            Debug.Log(charIndex);
+            Debug.Log(textComp.text.Length);
+            Debug.Log("______");
             PrintPos();
         }
     }
@@ -78,7 +81,7 @@ public class TextTest : MonoBehaviour
     {
         Vector3 worldPos = textComp.transform.TransformPoint(testPoint);
         print(worldPos);
-        new GameObject("point").transform.position = worldPos;
+        new GameObject("point").transform.position = worldPos + new Vector3(10, 0, 0);
         Debug.DrawRay(worldPos, Vector3.up, Color.red, 50f);
         Instantiate(glyph, canvas.transform);
         glyph.transform.position = worldPos;
