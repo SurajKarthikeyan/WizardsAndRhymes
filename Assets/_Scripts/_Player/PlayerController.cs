@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private Camera playerCamera;
 
+    private bool canDash;
+
+    public float dashCooldown = 0.5f;
+
     public enum MoveStatus
     {
         Moving,
@@ -33,6 +37,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         playerInput = new PlayerInput();
+        canDash = true;
     }
 
     private void OnEnable()
@@ -101,15 +106,22 @@ public class PlayerController : MonoBehaviour
 
     private void DoDash(InputAction.CallbackContext obj)
     {
-        print("Starting dash");
-        moveStatus = MoveStatus.Dashing;
-        rb.AddForce(forceDirection, ForceMode.Impulse);
-        StartCoroutine(Dash());
+        if (canDash)
+        {
+            print("Starting dash");
+            moveStatus = MoveStatus.Dashing;
+            rb.AddForce(forceDirection, ForceMode.Impulse);
+            StartCoroutine(Dash());
+        }
     }
     IEnumerator Dash()
     {
         yield return new WaitForSeconds(0.5f);
         moveStatus = MoveStatus.Moving;
         print("Ending dash");
+        yield return new WaitForSeconds(0.5f);
+        canDash = false;
+        yield return new WaitForSeconds(dashCooldown);
+        canDash = true;
     }
 }
