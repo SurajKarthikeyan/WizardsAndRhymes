@@ -81,6 +81,10 @@ namespace Fungus
         protected bool inputFlag;
         protected bool exitFlag;
 
+
+        public delegate void GetOutOfSourceCode();
+
+        public event GetOutOfSourceCode OnOutOfSourceCode = delegate {  };
         //holds number of Word tokens in the currently running Write
         public int WordTokensFound { get; protected set; }
 
@@ -162,6 +166,7 @@ namespace Fungus
             {
                 textAdapter.ForceRichText();
             }
+            
         }
         
         protected virtual void UpdateOpenMarkup()
@@ -700,6 +705,21 @@ namespace Fungus
             // string tempText = startText + openText + leftText + closeText;
             outputString.Append(startText);
             outputString.Append(openString);
+            if (leftString.Length > 0)
+            {
+                if (leftString[leftString.Length - 1] == '@')
+                {
+                    leftString[leftString.Length - 1] = ' ';
+                    OnOutOfSourceCode?.Invoke();
+                }
+                for (int i = 0; i < leftString.Length-1; i++)
+                {
+                    if (leftString[i] == '@')
+                    {
+                        leftString[i] = ' ';
+                    }
+                }
+            }
             outputString.Append(leftString);
             outputString.Append(closeString);
 
@@ -724,14 +744,7 @@ namespace Fungus
                 outputString.Append(readAheadString);
                 outputString.Append(hiddenColorClose);
             }
-
-            for (int i = 0; i < outputString.Length; i++)
-            {
-                if (outputString[i] == '@')
-                {
-                    outputString[i] = ' ';
-                }
-            }
+            
         }
 
         protected virtual IEnumerator DoWait(List<string> paramList)

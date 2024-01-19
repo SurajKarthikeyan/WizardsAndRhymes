@@ -13,10 +13,22 @@ public class TextTest : MonoBehaviour
     public GameObject glyph;
     public string compareString;
     private bool once = true;
+
+
+
+    public void WEAREOUT()
+    {
+        Debug.Log("WEAREOUTLADS");
+    }
     private void Update()
     {
         if (SayDialog.ActiveSayDialog != null)
         {
+            if (once)
+            {
+                once = false;
+                SayDialog.ActiveSayDialog.enumeratorWriter.OnOutOfSourceCode += WEAREOUT;
+            }
             /*tmpro.text = SayDialog.ActiveSayDialog.enumeratorWriter.leftString.ToString();
             Debug.Log(tmpro.text);
             if (tmpro.text.Contains(compareString) && once)
