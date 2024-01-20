@@ -83,15 +83,20 @@ public class PlayerController : MonoBehaviour
 
     public float abilityValue = 100f;
 
-    public bool executedAction;
+    public float abilityRechargeThreshold = 2f;
 
-    public bool fillingGuage = false;
+    public float abilityRechargeTimer;
+
+    public float dashCooldownThreshold = 2f;
+
+    public float dashCooldownTimer;
+    
     #endregion
 
     #endregion
 
     #region Properties
-    public bool CanDash => abilityValue >= 10 && canDash;
+    public bool CanDash => abilityValue >= 10 && dashCooldownTimer >= dashCooldownThreshold;
     #endregion
 
     #region Enum and Enum Instances
@@ -122,7 +127,6 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         playerInput = new PlayerInput();
-        canDash = true;
         abilitySlider = abilitySliderGO.GetComponent<Slider>();
         abilitySlider.value = abilityValue;
     }
@@ -160,9 +164,13 @@ public class PlayerController : MonoBehaviour
     {
         abilitySliderGO.transform.position = transform.position + uiOffsetVec;
 
-        if (!executedAction && !fillingGuage)
+        abilityRechargeTimer += Time.deltaTime;
+
+        dashCooldownTimer += Time.deltaTime;
+
+        if (abilityRechargeTimer >= abilityRechargeThreshold)
         {
-            StartCoroutine(FillAbilityGauge());
+            FillAbilityGauge();
         }
 
         abilityValue = Mathf.Clamp(abilityValue, 0, 100);
@@ -171,14 +179,11 @@ public class PlayerController : MonoBehaviour
         if (abilitySlider.value <= 0)
         {
             sliderFill.SetActive(false);
-            canDash = false;
         }
         else if (abilitySlider.value > 0 && !sliderFill.activeInHierarchy)
         {
             sliderFill.SetActive(true);
-            canDash = true;
         }
-
 
         forceDirection += move.ReadValue<Vector2>().x * GetCameraRight(playerCamera) * movementForce;
         forceDirection += move.ReadValue<Vector2>().y * GetCameraForward(playerCamera) * movementForce;
@@ -250,9 +255,8 @@ public class PlayerController : MonoBehaviour
     private void DoRanged(InputAction.CallbackContext obj)
     {
         Debug.Log("Ranged attack");
-        executedAction = true;
+        abilityRechargeTimer = 0;
         StartCoroutine(Projectile());
-        executedAction = false;
     }
     /// <summary>
     /// Function that is called upon pressing any of the Melee Attack inputs
@@ -261,6 +265,7 @@ public class PlayerController : MonoBehaviour
     private void DoMelee(InputAction.CallbackContext obj)
     {
         Debug.Log("Melee attack");
+        abilityRechargeTimer = 0;
     }
 
     /// <summary>
@@ -269,20 +274,17 @@ public class PlayerController : MonoBehaviour
     /// <param name="obj">Input callback context for the dash</param>
     private void DoDash(InputAction.CallbackContext obj)
     {
-        executedAction = true;
+        abilityRechargeTimer = 0;
         if (CanDash)
         {
             print("Starting dash");
             abilityValue -= 10;
-            moveStatus = MoveStatus.Dashing;
+            
             rb.AddForce(forceDirection, ForceMode.Impulse);
-            StartCoroutine(Dash());
-            executedAction = false;
-        }
-        else
-        {
-            StopCoroutine(FillAbilityGauge());
-            fillingGuage = false;
+            if (moveStatus == MoveStatus.Moving)
+            {
+                StartCoroutine(Dash());
+            }
         }
     }
     /// <summary>
@@ -291,13 +293,11 @@ public class PlayerController : MonoBehaviour
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Dash()
     {
+        moveStatus = MoveStatus.Dashing;
+        dashCooldownTimer = 0;
         yield return new WaitForSeconds(0.5f);
         moveStatus = MoveStatus.Moving;
         print("Ending dash");
-        yield return new WaitForSeconds(0.5f);
-        canDash = false;
-        yield return new WaitForSeconds(dashCooldown);
-        canDash = true;
     }
 
     /// <summary>
@@ -306,25 +306,17 @@ public class PlayerController : MonoBehaviour
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Projectile()
     {
-        executedAction = true;
         abilityValue -= 2;
-        StopCoroutine(FillAbilityGauge());
-        fillingGuage = false;
+        abilityRechargeTimer = 0;
         yield return new WaitForSeconds(0.3f);
     }
     /// <summary>
-    /// Coroutine called routinely to refill ability guage when not dashing or attacking
+    /// Functioncalled routinely to refill ability guage when not dashing or attacking
     /// </summary>
-    /// <returns>Cooldown waiting</returns>
-    IEnumerator FillAbilityGauge()
+    void FillAbilityGauge()
     {
-        if (abilityValue <= 100)
-        {
-            fillingGuage = true;
-            yield return new WaitForSeconds(2f);
-            abilityValue += 3;
-            fillingGuage = false;
-        }
+        abilityValue += 3;
+        abilityRechargeTimer = 0;
     }
     #endregion
 
