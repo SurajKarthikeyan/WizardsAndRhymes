@@ -2,6 +2,12 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+/// <summary>
+/// Class that is responsible for controlling the player character and managing its abilities
+/// 
+/// Author: Zane O'Dell
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
 
