@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 /// <summary>
 /// Class that is responsible for controlling the player character and managing its abilities
@@ -30,6 +31,13 @@ public class PlayerController : MonoBehaviour
 
     public float dashCooldown = 0.5f;
 
+    public GameObject abilitySliderGO;
+
+    private Slider abilitySlider;
+
+    private Vector3 uiOffsetVec = new Vector3(-0.1f, -0.45f, -1.25f);
+
+    public GameObject sliderFill;
     public enum MoveStatus
     {
         Moving,
@@ -44,6 +52,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         playerInput = new PlayerInput();
         canDash = true;
+        abilitySlider = abilitySliderGO.GetComponent<Slider>();
     }
 
     private void OnEnable()
@@ -61,6 +70,28 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        abilitySliderGO.transform.position = transform.position + uiOffsetVec;
+
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+        //    abilitySlider.value -= 2;
+        //}
+
+        //if (Input.GetKeyDown(KeyCode.L))
+        //{
+        //    abilitySlider.value += 2;
+        //}
+
+        if (abilitySlider.value <= 0)
+        {
+            sliderFill.SetActive(false);
+        }
+        else if (abilitySlider.value > 0 && !sliderFill.activeInHierarchy)
+        {
+            sliderFill.SetActive(true);
+        }
+
+
         forceDirection += move.ReadValue<Vector2>().x * GetCameraRight(playerCamera) * movementForce;
         forceDirection += move.ReadValue<Vector2>().y * GetCameraForward(playerCamera) * movementForce;
 
