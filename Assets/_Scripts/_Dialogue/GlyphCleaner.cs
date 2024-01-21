@@ -9,6 +9,7 @@ using PixelCrushers.DialogueSystem;
 using UnityEngine.UIElements;
 using UnityEngine.UI;
 using Button = UnityEngine.UI.Button;
+using Image = UnityEngine.UI.Image;
 
 public class GlyphCleaner : MonoBehaviour
 {
@@ -27,7 +28,12 @@ public class GlyphCleaner : MonoBehaviour
     [SerializeField] private int xOffSet;
     [SerializeField] private int yOffSet;
 
-    
+    [Header("Glyph Click Menu")] 
+    [Tooltip("Opacity Panel when glyph in rap is clicked")]
+    [SerializeField] private GameObject subtitleOpacityPanel;
+    [Tooltip("Target Opacity Value, between 0 and 1")] [Range(0f, 1f)]
+    [SerializeField] private float opacityPanelValue;
+
     [NonSerialized] private RectTransform subtitleRectTransform;
     [NonSerialized] private TMP_TextInfo subtitleTextInfo;
     [NonSerialized] private List<GameObject> subtitleGlyphList;
@@ -75,7 +81,10 @@ public class GlyphCleaner : MonoBehaviour
 
     public void OnGlyphClick()
     {
-        Debug.Log("GlyphClicked");
+        Color opacityColor = subtitleOpacityPanel.GetComponent<Image>().color;
+        opacityColor.a = opacityPanelValue;
+        subtitleOpacityPanel.GetComponent<Image>().color = opacityColor;
+        subtitleOpacityPanel.SetActive(true);
     }
     
     public void OnContinue()
