@@ -337,7 +337,7 @@ namespace PixelCrushers.DialogueSystem
                     textComponent.ForceMeshUpdate(); // Must force every time in case something is animating TMPro (e.g., scale).
                     //---Uncomment the line below to debug: 
                     //Debug.Log(textComponent.text.Substring(0, charactersTyped).Replace("<", "[").Replace(">", "]") + " (typed=" + charactersTyped + ")");
-                    
+                    bool invoke = false;
                     currentVisibleText = textComponent.text.Substring(0, charactersTyped);
                     char[] convertCharArray = currentVisibleText.ToCharArray();
                     
@@ -346,10 +346,15 @@ namespace PixelCrushers.DialogueSystem
                         if (convertCharArray[i] == '@')
                         {
                             convertCharArray[i] = ' ';
+                            invoke = true;
                         }
                     }
 
                     currentVisibleText = new string(convertCharArray);
+                    if (invoke)
+                    {
+                        OnLeaveSourceCode?.Invoke(currentVisibleText);
+                    }
                     //Debug.Log("___________");
                     //Debug.Log(currentVisibleText);
                     if (textComponent.text.Length - currentVisibleText.Length > 0)
@@ -358,12 +363,11 @@ namespace PixelCrushers.DialogueSystem
                         //Debug.Log(textComponent.text.Substring(charactersTyped+1, textComponent.text.Length-currentVisibleText.Length-1));
                         textComponent.text = currentVisibleText + textComponent.text.Substring(charactersTyped,
                             textComponent.text.Length - currentVisibleText.Length);
-                        OnLeaveSourceCode?.Invoke(currentVisibleText);
+                        
                     }
                     else
                     {
                         textComponent.text = currentVisibleText;
-                        OnLeaveSourceCode?.Invoke(currentVisibleText);
                     }
                     //Debug.Log("___________");
                     /*textComponent.text = currentVisibleText +
