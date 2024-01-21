@@ -7,6 +7,8 @@ using TMPro;
 using PixelCrushers;
 using PixelCrushers.DialogueSystem;
 using UnityEngine.UIElements;
+using UnityEngine.UI;
+using Button = UnityEngine.UI.Button;
 
 public class DialougeDebug : MonoBehaviour
 {
@@ -45,8 +47,8 @@ public class DialougeDebug : MonoBehaviour
         worldPosition.y += yOffSet;
         GameObject instantiatedGlyph = Instantiate(glyph, canvas);
         instantiatedGlyph.GetComponent<RectTransform>().position = worldPosition;
-
-        Debug.Log(worldPosition);
+        Button curButton = instantiatedGlyph.GetComponent<Button>();
+        curButton.onClick.AddListener(OnGlyphClick);
         instantiatedGOList.Add(instantiatedGlyph);
     }
 
@@ -57,6 +59,11 @@ public class DialougeDebug : MonoBehaviour
             Destroy(instantiatedGOList[i]);
         }
         instantiatedGOList.Clear();
+    }
+
+    public void OnGlyphClick()
+    {
+        Debug.Log("GlyphClicked");
     }
 
 
