@@ -21,6 +21,10 @@ public class DialougeDebug : MonoBehaviour
     public TextMeshProTypewriterEffect typewriterEffect;
 
     public List<GameObject> instantiatedGOList;
+
+    public int xOffSet;
+
+    public int yOffSet;
     
     private void Start()
     {
@@ -37,9 +41,12 @@ public class DialougeDebug : MonoBehaviour
         int vertexIndex = textInfo.characterInfo[charIndex].vertexIndex;
         Vector3 localPosition = textInfo.meshInfo[0].vertices[vertexIndex];
         Vector3 worldPosition = textRectTransform.TransformPoint(localPosition);
-        Debug.Log(worldPosition);
+        worldPosition.x += xOffSet;
+        worldPosition.y += yOffSet;
         GameObject instantiatedGlyph = Instantiate(glyph, canvas);
         instantiatedGlyph.GetComponent<RectTransform>().position = worldPosition;
+
+        Debug.Log(worldPosition);
         instantiatedGOList.Add(instantiatedGlyph);
     }
 
