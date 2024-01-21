@@ -53,14 +53,11 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private Vector3 forceDirection = Vector3.zero;
 
-
-    private bool canDash;
-
     /// <summary>
     /// Cooldown of the dash in seconds
     /// </summary>
-    [SerializeField]
-    private float dashCooldown = 1.5f;
+    //[SerializeField]
+    //private float dashCooldown = 1.5f;
     #endregion
 
     #region Camera
@@ -90,7 +87,13 @@ public class PlayerController : MonoBehaviour
     public float dashCooldownThreshold = 2f;
 
     public float dashCooldownTimer;
-    
+
+
+    public GameObject rangedPrefab;
+
+    public Transform rangedSpawnPoint;
+
+    public float rangedPrefabSpeed = 5f;
     #endregion
 
     #endregion
@@ -106,6 +109,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private enum MoveStatus
     {
+        Idle,
         Moving,
         Dashing
     }
@@ -114,6 +118,14 @@ public class PlayerController : MonoBehaviour
     /// MoveStatus instance
     /// </summary>
     private MoveStatus moveStatus;
+
+
+    private enum AttackStatus
+    {
+        None, 
+        Ranged,
+        Melee
+    }
 
     #endregion
 
@@ -307,6 +319,8 @@ public class PlayerController : MonoBehaviour
     IEnumerator Projectile()
     {
         abilityValue -= 2;
+        GameObject projectile = Instantiate(rangedPrefab, rangedSpawnPoint.position, rangedSpawnPoint.rotation);
+        projectile.GetComponent<Rigidbody>().velocity = rangedSpawnPoint.forward * rangedPrefabSpeed;
         abilityRechargeTimer = 0;
         yield return new WaitForSeconds(0.3f);
     }
