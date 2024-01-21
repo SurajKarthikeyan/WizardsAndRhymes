@@ -31,10 +31,16 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     /// <summary>
-    /// Magnitude of force applied to player Rigidbody for movement
+    /// Magnitude of appliedForce applied to player Rigidbody for movement
     /// </summary>
     [SerializeField]
     private float movementForce = 1f;
+
+    /// <summary>
+    /// Magnitude of appliedForce applied to player Rigidbody for movement
+    /// </summary>
+    [SerializeField]
+    private float dashForce = 3f;
 
     /// <summary>
     /// Maximum speed that the player is allowed to move while dashing
@@ -49,7 +55,7 @@ public class PlayerController : MonoBehaviour
     private float maxMoveSpeed = 5f;
 
     /// <summary>
-    /// Direction to apply the force of movement when moving
+    /// Direction to apply the appliedForce of movement when moving
     /// </summary>
     private Vector3 forceDirection = Vector3.zero;
 
@@ -100,6 +106,8 @@ public class PlayerController : MonoBehaviour
 
     #region Properties
     public bool CanDash => abilityValue >= 10 && dashCooldownTimer >= dashCooldownThreshold;
+
+    public bool IsMoving => move.ReadValue<Vector2>().sqrMagnitude > 0.1f;
     #endregion
 
     #region Enum and Enum Instances
@@ -174,6 +182,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
+        //Debug.Log(rb.velocity.magnitude);
         abilitySliderGO.transform.position = transform.position + uiOffsetVec;
 
         abilityRechargeTimer += Time.deltaTime;
@@ -197,24 +206,43 @@ public class PlayerController : MonoBehaviour
             sliderFill.SetActive(true);
         }
 
-        forceDirection += move.ReadValue<Vector2>().x * GetCameraRight(playerCamera) * movementForce;
-        forceDirection += move.ReadValue<Vector2>().y * GetCameraForward(playerCamera) * movementForce;
-
-        rb.AddForce(forceDirection, ForceMode.Impulse);
-        forceDirection = Vector3.zero;
-
-        Vector3 horizontalVelocity = rb.velocity;
-        horizontalVelocity.y = 0;
-        if (horizontalVelocity.sqrMagnitude > maxMoveSpeed * maxMoveSpeed && moveStatus == MoveStatus.Moving)
+        if (IsMoving)
         {
-            rb.velocity = horizontalVelocity.normalized * maxMoveSpeed + Vector3.up * rb.velocity.y;
+            float appliedForce;
+            if (moveStatus == MoveStatus.Dashing)
+            {
+                appliedForce = dashForce;
+            }
+            else
+            {
+                appliedForce = movementForce;
+                moveStatus = MoveStatus.Moving;
+            }
+
+            forceDirection += move.ReadValue<Vector2>().x * appliedForce * GetCameraRight(playerCamera);
+            forceDirection += move.ReadValue<Vector2>().y * appliedForce * GetCameraForward(playerCamera);
+
+            rb.AddForce(forceDirection, ForceMode.Impulse);
+            forceDirection = Vector3.zero;
+
+
+            Vector3 horizontalVelocity = rb.velocity;
+            horizontalVelocity.y = 0;
+            if (horizontalVelocity.sqrMagnitude > maxDashSpeed * maxDashSpeed && moveStatus == MoveStatus.Dashing)
+            {
+                rb.velocity = horizontalVelocity.normalized * maxDashSpeed + Vector3.up * rb.velocity.y;
+            }
+            else if (horizontalVelocity.sqrMagnitude > maxMoveSpeed * maxMoveSpeed && moveStatus == MoveStatus.Moving)
+            {
+                rb.velocity = horizontalVelocity.normalized * maxMoveSpeed + Vector3.up * rb.velocity.y;
+            }
         }
-        else if (horizontalVelocity.sqrMagnitude > maxDashSpeed * maxDashSpeed && moveStatus == MoveStatus.Dashing)
+        else
         {
-            rb.velocity = horizontalVelocity.normalized * maxDashSpeed + Vector3.up * rb.velocity.y;
+            moveStatus = MoveStatus.Idle;
         }
 
-        LookAt();
+        LookAndMoveStatus();
     }
     #endregion
 
@@ -222,7 +250,7 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// Function that makes the player look in the direction that it's moving
     /// </summary>
-    private void LookAt()
+    private void LookAndMoveStatus()
     {
         Vector3 direction = rb.velocity;
         direction.y = 0f;
@@ -232,7 +260,7 @@ public class PlayerController : MonoBehaviour
             rb.rotation = Quaternion.LookRotation(direction, Vector3.up);
         }
         else
-        {
+        { 
             rb.angularVelocity = Vector3.zero;
         }
     }
@@ -290,13 +318,9 @@ public class PlayerController : MonoBehaviour
         if (CanDash)
         {
             print("Starting dash");
-            abilityValue -= 10;
+
+            StartCoroutine(Dash());
             
-            rb.AddForce(forceDirection, ForceMode.Impulse);
-            if (moveStatus == MoveStatus.Moving)
-            {
-                StartCoroutine(Dash());
-            }
         }
     }
     /// <summary>
@@ -304,8 +328,9 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Dash()
-    {
+    { 
         moveStatus = MoveStatus.Dashing;
+        abilityValue -= 10;
         dashCooldownTimer = 0;
         yield return new WaitForSeconds(0.5f);
         moveStatus = MoveStatus.Moving;
