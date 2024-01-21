@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1350252456554478462}
   - component: {fileID: 5663999296510929467}
   - component: {fileID: 3484816845241225592}
+  - component: {fileID: 476039966557420393}
   m_Layer: 5
   m_Name: testOptionGlyphYellow
   m_TagString: Untagged
@@ -28,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 4540714075082225741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 3, y: 3, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -119,4 +120,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5663999296510929467}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 476039966557420393}
+        m_TargetAssemblyTypeName: GlyphSelector, Assembly-CSharp
+        m_MethodName: OnSelect
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &476039966557420393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4540714075082225741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4de8533e65e42004aaf7371b37446faa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentUIObject: {fileID: 0}
