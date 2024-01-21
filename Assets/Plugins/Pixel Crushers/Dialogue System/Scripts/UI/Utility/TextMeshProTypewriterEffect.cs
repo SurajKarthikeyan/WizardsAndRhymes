@@ -338,7 +338,14 @@ namespace PixelCrushers.DialogueSystem
                     //---Uncomment the line below to debug: 
                     //Debug.Log(textComponent.text.Substring(0, charactersTyped).Replace("<", "[").Replace(">", "]") + " (typed=" + charactersTyped + ")");
                     bool invoke = false;
-                    currentVisibleText = textComponent.text.Substring(0, charactersTyped);
+                    if (charactersTyped < textComponent.text.Length)
+                    {
+                        currentVisibleText = textComponent.text.Substring(0, charactersTyped);
+                    }
+                    else
+                    {
+                        currentVisibleText = textComponent.text;
+                    }
                     char[] convertCharArray = currentVisibleText.ToCharArray();
                     
                     for (int i = 0; i < convertCharArray.Length; i++)   // cleaning visible text

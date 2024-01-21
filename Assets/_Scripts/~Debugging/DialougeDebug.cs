@@ -29,8 +29,15 @@ public class DialougeDebug : MonoBehaviour
 
     public void RealTimeCharacterReplacement(string currentString)
     {
-        Debug.Log(currentString);
-
+        RectTransform textRectTransform = textMeshPro.GetComponent<RectTransform>();
+        TMP_TextInfo textInfo = textMeshPro.textInfo;
+        int charIndex = currentString.Length - 1;
+        int vertexIndex = textInfo.characterInfo[charIndex].vertexIndex;
+        Vector3 localPosition = textInfo.meshInfo[0].vertices[vertexIndex];
+        Vector3 worldPosition = textRectTransform.TransformPoint(localPosition);
+        Debug.Log(worldPosition);
+        GameObject instantiatedGlyph = Instantiate(glyph, canvas);
+        instantiatedGlyph.GetComponent<RectTransform>().position = worldPosition;
     }
 
     void DisplayTMPPos() 
