@@ -5,6 +5,7 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.Events;
@@ -24,7 +25,7 @@ namespace PixelCrushers.DialogueSystem
     [DisallowMultipleComponent]
     public class TextMeshProTypewriterEffect : AbstractTypewriterEffect
     {
-
+        
         [System.Serializable]
         public class AutoScrollSettings
         {
@@ -35,6 +36,13 @@ namespace PixelCrushers.DialogueSystem
             public UIScrollbarEnabler scrollbarEnabler = null;
         }
 
+
+        
+        public string currentVisibleText;
+
+        public delegate void SourceCodeEventHandler(string runTimeText);
+        public event SourceCodeEventHandler OnLeaveSourceCode = delegate {};
+        
         /// <summary>
         /// Optional auto-scroll settings.
         /// </summary>
@@ -147,6 +155,7 @@ namespace PixelCrushers.DialogueSystem
 
         public override void Start()
         {
+            
             if (!IsPlaying && playOnEnable)
             {
                 StopTypewriterCoroutine();
@@ -328,6 +337,42 @@ namespace PixelCrushers.DialogueSystem
                     textComponent.ForceMeshUpdate(); // Must force every time in case something is animating TMPro (e.g., scale).
                     //---Uncomment the line below to debug: 
                     //Debug.Log(textComponent.text.Substring(0, charactersTyped).Replace("<", "[").Replace(">", "]") + " (typed=" + charactersTyped + ")");
+                    
+                    currentVisibleText = textComponent.text.Substring(0, charactersTyped);
+                    char[] convertCharArray = currentVisibleText.ToCharArray();
+                    
+                    for (int i = 0; i < convertCharArray.Length; i++)   // cleaning visible text
+                    {
+                        if (convertCharArray[i] == '@')
+                        {
+                            convertCharArray[i] = ' ';
+                        }
+                    }
+
+                    currentVisibleText = new string(convertCharArray);
+                    //Debug.Log("___________");
+                    //Debug.Log(currentVisibleText);
+                    if (textComponent.text.Length - currentVisibleText.Length > 0)
+                    {
+                        //Debug.Log(currentVisibleText + textComponent.text.Substring(charactersTyped, textComponent.text.Length-currentVisibleText.Length));
+                        //Debug.Log(textComponent.text.Substring(charactersTyped+1, textComponent.text.Length-currentVisibleText.Length-1));
+                        textComponent.text = currentVisibleText + textComponent.text.Substring(charactersTyped,
+                            textComponent.text.Length - currentVisibleText.Length);
+                        OnLeaveSourceCode?.Invoke(currentVisibleText);
+                    }
+                    else
+                    {
+                        textComponent.text = currentVisibleText;
+                        OnLeaveSourceCode?.Invoke(currentVisibleText);
+                    }
+                    //Debug.Log("___________");
+                    /*textComponent.text = currentVisibleText +
+                                         textComponent.text.Substring(charactersTyped + 1, textComponent.text.Length - 1);*/
+                    //textComponent.text = new string(convertCharArray);
+                    /*if (invoke)
+                    {
+                        OnLeaveSourceCode?.Invoke(currentVisibleText, prefabIndex);
+                    }*/
                     lastTime = DialogueTime.time;
                     var delayTime = DialogueTime.time + delay;
                     int delaySafeguard = 0;

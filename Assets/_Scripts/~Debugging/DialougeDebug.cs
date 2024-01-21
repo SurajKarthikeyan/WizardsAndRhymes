@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using PixelCrushers;
+using PixelCrushers.DialogueSystem;
+using UnityEngine.UIElements;
 
 public class DialougeDebug : MonoBehaviour
 {
@@ -14,12 +17,20 @@ public class DialougeDebug : MonoBehaviour
 
     public Transform canvas;
 
-    private void Update()
+    public TextMeshProTypewriterEffect typewriterEffect;
+    
+    private void Start()
     {
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            DisplayTMPPos();
-        }
+        typewriterEffect.OnLeaveSourceCode += RealTimeCharacterReplacement;
+    }
+
+
+
+
+    public void RealTimeCharacterReplacement(string currentString)
+    {
+        Debug.Log(currentString);
+
     }
 
     void DisplayTMPPos() 
@@ -43,19 +54,5 @@ public class DialougeDebug : MonoBehaviour
             GameObject instantiatedGlyph = Instantiate(glyph, canvas);
             instantiatedGlyph.GetComponent<RectTransform>().position = worldPosition;
         }
-        
-
-        //// Assuming you have the world position
-        //worldPosition = /* Your world position here */;
-
-        //// Convert world position to RectTransform position
-        //Vector2 rectTransformPosition;
-
-        //RectTransformUtility.ScreenPointToLocalPointInRectangle(
-        //    rectTransform,
-        //    worldPosition,
-        //    Camera.main, // Use the appropriate camera (e.g., Camera.main)
-        //    out rectTransformPosition
-        //);
     }
 }
