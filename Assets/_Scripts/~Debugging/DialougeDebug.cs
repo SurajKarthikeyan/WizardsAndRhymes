@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using MonKey.Extensions;
 using UnityEngine;
 using TMPro;
 using PixelCrushers;
@@ -18,15 +19,16 @@ public class DialougeDebug : MonoBehaviour
     public Transform canvas;
 
     public TextMeshProTypewriterEffect typewriterEffect;
+
+    public List<GameObject> instantiatedGOList;
     
     private void Start()
     {
         typewriterEffect.OnLeaveSourceCode += RealTimeCharacterReplacement;
+        instantiatedGOList = new List<GameObject>();
     }
 
-
-
-
+    
     public void RealTimeCharacterReplacement(string currentString)
     {
         RectTransform textRectTransform = textMeshPro.GetComponent<RectTransform>();
@@ -38,28 +40,17 @@ public class DialougeDebug : MonoBehaviour
         Debug.Log(worldPosition);
         GameObject instantiatedGlyph = Instantiate(glyph, canvas);
         instantiatedGlyph.GetComponent<RectTransform>().position = worldPosition;
+        instantiatedGOList.Add(instantiatedGlyph);
     }
 
-    void DisplayTMPPos() 
+    public void OnContinue()
     {
-        RectTransform textRectTransform = textMeshPro.GetComponent<RectTransform>();
-        TMP_TextInfo textInfo = textMeshPro.textInfo;
-        List<int> charIndices = new List<int>();
-        for (int i = 0; i < textMeshPro.text.Length; i++)
+        for (int i = 0; i < instantiatedGOList.Count; i++)
         {
-            if (textMeshPro.text[i] == specialChar)
-            {
-                charIndices.Add(i);
-            }
+            Destroy(instantiatedGOList[i]);
         }
-        foreach (int charIndex in charIndices)
-        {
-            int vertexIndex = textInfo.characterInfo[charIndex].vertexIndex;
-            Vector3 localPosition = textInfo.meshInfo[0].vertices[vertexIndex];
-            Vector3 worldPosition = textRectTransform.TransformPoint(localPosition);
-            Debug.Log(worldPosition);
-            GameObject instantiatedGlyph = Instantiate(glyph, canvas);
-            instantiatedGlyph.GetComponent<RectTransform>().position = worldPosition;
-        }
+        instantiatedGOList.Clear();
     }
+
+
 }
