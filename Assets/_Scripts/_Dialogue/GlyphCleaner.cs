@@ -22,9 +22,11 @@ public class GlyphCleaner : MonoBehaviour
     [SerializeField] private Transform dialogueCanvasTransform;
     [SerializeField] private TextMeshProTypewriterEffect subtitleTypewriterEffect;
 
-    
+
     [Header("Glyph GameObject")] 
-    [SerializeField] private GameObject glyphGO;
+    [SerializeField] private GameObject glyphGameObject1;
+    [SerializeField] private GameObject glyphGameObject2;
+    [SerializeField] private GameObject glyphGameObject3;
     [SerializeField] private int xOffSet;
     [SerializeField] private int yOffSet;
 
@@ -37,6 +39,7 @@ public class GlyphCleaner : MonoBehaviour
     [NonSerialized] private RectTransform subtitleRectTransform;
     [NonSerialized] private TMP_TextInfo subtitleTextInfo;
     [NonSerialized] private List<GameObject> subtitleGlyphList;
+    [NonSerialized] private GameObject currentGlyphGO;
     #endregion
 
     #region UnityMethods
@@ -57,10 +60,10 @@ public class GlyphCleaner : MonoBehaviour
     /// Accessed through PixelCrusher source code
     /// </summary>
     /// <param name="realTimeString"></param>
-    public void RealTimeCharacterReplacement(string realTimeString)
+    public void RealTimeCharacterReplacement(string realTimeString, char symbolIndicator)
     {
         TMP_TextInfo subtitleTextInfo = subtitleTMPro.textInfo; // Get the information from TMPro (only TMPro, not available on regular text)
-        
+        SetGlyphGameObject(symbolIndicator);
         int charIndex = realTimeString.Length - 1;
         int vertexIndex = subtitleTextInfo.characterInfo[charIndex].vertexIndex;    // Get the vertex of the char at charIndex
         
@@ -70,13 +73,29 @@ public class GlyphCleaner : MonoBehaviour
         worldPosition.x += xOffSet;
         worldPosition.y += yOffSet; // Apply centering offsets 
         
-        GameObject instantiatedGlyph = Instantiate(glyphGO, dialogueCanvasTransform);   // Instantiate and place glyph at location
+        GameObject instantiatedGlyph = Instantiate(currentGlyphGO, dialogueCanvasTransform);   // Instantiate and place glyph at location
         instantiatedGlyph.GetComponent<RectTransform>().position = worldPosition;
 
         Button glyphButton = instantiatedGlyph.GetComponent<Button>();  //Glyph has button so it can be clicked
         glyphButton.onClick.AddListener(OnGlyphClick);  // Add listener to glyph 
         subtitleGlyphList.Add(instantiatedGlyph);
         
+    }
+
+    public void SetGlyphGameObject(char indicator)
+    {
+        switch (indicator)
+        {
+            case '@':
+                currentGlyphGO = glyphGameObject1;
+                break;
+            case '#':
+                currentGlyphGO = glyphGameObject2;
+                break;
+            case '$':
+                currentGlyphGO = glyphGameObject3;
+                break;
+        }
     }
 
     public void OnGlyphClick()

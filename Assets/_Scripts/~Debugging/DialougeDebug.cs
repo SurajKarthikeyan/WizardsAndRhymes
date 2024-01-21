@@ -30,7 +30,7 @@ public class DialougeDebug : MonoBehaviour
     
     private void Start()
     {
-        typewriterEffect.OnLeaveSourceCode += RealTimeCharacterReplacement;
+        //typewriterEffect.OnLeaveSourceCode += RealTimeCharacterReplacement;
         instantiatedGOList = new List<GameObject>();
     }
 

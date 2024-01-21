@@ -40,7 +40,7 @@ namespace PixelCrushers.DialogueSystem
         
         public string currentVisibleText;
 
-        public delegate void SourceCodeEventHandler(string runTimeText);
+        public delegate void SourceCodeEventHandler(string runTimeText, char symbolDenomination);
         public event SourceCodeEventHandler OnLeaveSourceCode = delegate {};
         
         /// <summary>
@@ -338,6 +338,7 @@ namespace PixelCrushers.DialogueSystem
                     //---Uncomment the line below to debug: 
                     //Debug.Log(textComponent.text.Substring(0, charactersTyped).Replace("<", "[").Replace(">", "]") + " (typed=" + charactersTyped + ")");
                     bool invoke = false;
+                    char indicator = ' ';
                     if (charactersTyped < textComponent.text.Length)
                     {
                         currentVisibleText = textComponent.text.Substring(0, charactersTyped);
@@ -350,8 +351,9 @@ namespace PixelCrushers.DialogueSystem
                     
                     for (int i = 0; i < convertCharArray.Length; i++)   // cleaning visible text
                     {
-                        if (convertCharArray[i] == '@')
+                        if (convertCharArray[i] == '@' || convertCharArray[i] == '#' || convertCharArray[i] == '$')
                         {
+                            indicator = convertCharArray[i];
                             convertCharArray[i] = ' ';
                             invoke = true;
                         }
@@ -360,7 +362,7 @@ namespace PixelCrushers.DialogueSystem
                     currentVisibleText = new string(convertCharArray);
                     if (invoke)
                     {
-                        OnLeaveSourceCode?.Invoke(currentVisibleText);
+                        OnLeaveSourceCode?.Invoke(currentVisibleText, indicator);
                     }
                     //Debug.Log("___________");
                     //Debug.Log(currentVisibleText);
