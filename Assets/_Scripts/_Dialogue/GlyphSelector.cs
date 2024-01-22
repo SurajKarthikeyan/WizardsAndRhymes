@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class GlyphSelector : MonoBehaviour
 {
+
+    
     #region Variables
     [SerializeField] private GameObject parentUIObject;
     #endregion
