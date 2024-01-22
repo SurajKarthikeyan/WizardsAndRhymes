@@ -1,18 +1,19 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using MonKey.Extensions;
 using UnityEngine;
 
 public class GlyphSelectorParent : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public List<GlyphSelector> glyphSelectors;
 
-    // Update is called once per frame
-    void Update()
+    /*private void Start()
     {
-        
-    }
+        Transform[] childArray = GetComponentsInChildren<Transform>();
+        for (int i = 0; i < childArray.Length; i++)
+        {
+            glyphSelectors.Add(childArray[i].gameObject.GetComponent<GlyphSelector>());
+        }
+    }*/
 }

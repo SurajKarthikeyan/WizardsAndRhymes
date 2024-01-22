@@ -31,12 +31,15 @@ public class GlyphCleaner : MonoBehaviour
     [SerializeField] private GameObject glyphGameObject3;
     [SerializeField] private int xOffSet;
     [SerializeField] private int yOffSet;
-
+    
     [Header("Glyph Click Menu")] 
     [Tooltip("Opacity Panel when glyph in rap is clicked")]
     [SerializeField] private GameObject subtitleOpacityPanel;
     [Tooltip("Target Opacity Value, between 0 and 1")] [Range(0f, 1f)]
     [SerializeField] private float opacityPanelValue;
+    [Tooltip("The subpanel that holds all the currently available Glyphs")]
+    [SerializeField] private GlyphSelectorParent glyphSubPanel;
+    
 
     [NonSerialized] private RectTransform subtitleRectTransform;
     [NonSerialized] private TMP_TextInfo subtitleTextInfo;
@@ -74,7 +77,6 @@ public class GlyphCleaner : MonoBehaviour
     public void RealTimeCharacterReplacement(string realTimeString, char symbolIndicator)
     {
         TMP_TextInfo subtitleTextInfo = subtitleTMPro.textInfo; // Get the information from TMPro (only TMPro, not available on regular text)
-        SetGlyphGameObject(symbolIndicator);
         int charIndex = realTimeString.Length - 1;
         int vertexIndex = subtitleTextInfo.characterInfo[charIndex].vertexIndex;    // Get the vertex of the char at charIndex
         
@@ -84,8 +86,10 @@ public class GlyphCleaner : MonoBehaviour
         worldPosition.x += xOffSet;
         worldPosition.y += yOffSet; // Apply centering offsets 
         
+        SetGlyphGameObject(symbolIndicator);
         GameObject instantiatedGlyph = Instantiate(currentGlyphGO, dialogueCanvasTransform);   // Instantiate and place glyph at location
         instantiatedGlyph.GetComponent<RectTransform>().position = worldPosition;
+        
         instantiatedGlyph.GetComponent<GlyphText>().glyphType = tempType;
         /*Button glyphButton = instantiatedGlyph.GetComponent<Button>();  //Glyph has button so it can be clicked
         glyphButton.onClick.AddListener(instantiatedGlyph.GetComponent<GlyphText>().OnGlyphClick);  // Add listener to glyph */
@@ -125,17 +129,17 @@ public class GlyphCleaner : MonoBehaviour
         opacityColor.a = opacityPanelValue;
         subtitleOpacityPanel.GetComponent<Image>().color = opacityColor;
         subtitleOpacityPanel.SetActive(true);
-        /*for (int i = 0; i < subtitleGlyphList.Count; i++)
+        for (int i = 0; i < glyphSubPanel.glyphSelectors.Count; i++)
         {
-            if (subtitleGlyphList[i].GetComponent<GlyphText>().glyphType == glyphObject.GetComponent<GlyphText>().glyphType)
+            if (glyphSubPanel.glyphSelectors[i].glyphType == glyphObject.GetComponent<GlyphText>().glyphType)
             {
-                subtitleGlyphList[i].SetActive(false);
+                glyphSubPanel.glyphSelectors[i].gameObject.SetActive(false);
             }
             else
             {
-                subtitleGlyphList[i].SetActive(true);
+                glyphSubPanel.glyphSelectors[i].gameObject.SetActive(true);
             }
-        }*/
+        }
     }
    
     /// <summary>

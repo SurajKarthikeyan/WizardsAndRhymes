@@ -22,7 +22,7 @@ public class GlyphText : MonoBehaviour
 
     #region PrivateMethods
 
-    private void OnGlyphClick()
+    public void OnGlyphClick()
     {
         GlyphCleaner.glyphCleaner.OnGlyphPanelOpen(this.gameObject);
     }
