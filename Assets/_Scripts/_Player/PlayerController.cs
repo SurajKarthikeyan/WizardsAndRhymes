@@ -113,6 +113,9 @@ public class PlayerController : MonoBehaviour
     public bool CanDash => abilityValue >= 10 && dashCooldownTimer >= dashCooldownThreshold;
 
     public bool IsMoving => move.ReadValue<Vector2>().sqrMagnitude > 0.1f;
+
+    bool IsMouseOverGameWindow { get { return !(0 > Input.mousePosition.x || 0 > Input.mousePosition.y || 
+                Screen.width < Input.mousePosition.x || Screen.height < Input.mousePosition.y); } }
     #endregion
 
     #region Enum and Enum Instances
@@ -283,17 +286,20 @@ public class PlayerController : MonoBehaviour
         Vector3 direction = new(aim.x, 0, aim.y);
         if (aim.magnitude > 0.2f)
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             Vector3 rotation = Vector3.Slerp(rb.rotation.eulerAngles, direction, 0.5f);
             rotation.y = 0;
             rb.rotation = Quaternion.LookRotation(rotation, Vector3.up);
         }
-        else if (Input.mousePresent)
+        else if (IsMouseOverGameWindow)
         {
-            Vector2 mouseRotationVector = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Vector3 mouseRotationVector = Camera.main.ScreenToWorldPoint(Input.mousePosition) - rb.position;
+            Debug.Log(mouseRotationVector);
             direction = new(mouseRotationVector.x, 0, mouseRotationVector.y);
-            Vector3 rotation = Vector3.Slerp(rb.rotation.eulerAngles, direction, 0.5f);
-            rotation.y = 0;
-            rb.rotation = Quaternion.LookRotation(rotation, Vector3.up);
+            rb.rotation = Quaternion.LookRotation(direction, Vector3.up);
         }
         
     }
