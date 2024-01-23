@@ -22,6 +22,9 @@ public class PlayerController : MonoBehaviour
     /// Move input action from the PlayerInput action map
     /// </summary>
     private InputAction move;
+
+
+    private InputAction look;
     #endregion
 
     #region Movement Variables
@@ -59,6 +62,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private Vector3 forceDirection = Vector3.zero;
 
+
+    private Vector3 lookDirectionVector = Vector3.zero;
     /// <summary>
     /// Cooldown of the dash in seconds
     /// </summary>
@@ -160,6 +165,7 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.RangedAttack.started += DoRanged;
         playerInput.Player.MeleeAttack.started += DoMelee;
         move = playerInput.Player.Movement;
+        look = playerInput.Player.Look;
         playerInput.Player.Enable();
     }
 
@@ -206,6 +212,11 @@ public class PlayerController : MonoBehaviour
             sliderFill.SetActive(true);
         }
 
+        //lookDirectionVector = look.ReadValue<Vector2>().x * GetCameraRight(playerCamera);
+        //lookDirectionVector = look.ReadValue<Vector2>().y * GetCameraForward(playerCamera);
+
+        Debug.Log(lookDirectionVector);
+
         if (IsMoving)
         {
             float appliedForce;
@@ -224,7 +235,6 @@ public class PlayerController : MonoBehaviour
 
             rb.AddForce(forceDirection, ForceMode.Impulse);
             forceDirection = Vector3.zero;
-
 
             Vector3 horizontalVelocity = rb.velocity;
             horizontalVelocity.y = 0;
@@ -252,17 +262,40 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void LookAndMoveStatus()
     {
-        Vector3 direction = rb.velocity;
-        direction.y = 0f;
+        //Vector3 direction = lookDirectionVector;
+        ////lookDirectionVector = Vector3.zero;
+        //direction.y = 0f;
 
-        if (move.ReadValue<Vector2>().sqrMagnitude > 0.1f && direction.sqrMagnitude > 0.1f)
+        ////Debug.Log(direction);
+
+        //rb.rotation = Quaternion.LookRotation(direction, Vector3.up);
+
+        //if (move.ReadValue<Vector2>().sqrMagnitude > 0.1f && direction.sqrMagnitude > 0.1f)
+        //{
+        //    rb.rotation = Quaternion.LookRotation(direction, Vector3.up);
+        //}
+        //else
+        //{ 
+        //    rb.angularVelocity = Vector3.zero;
+        //}
+
+        Vector2 aim = playerInput.Player.Look.ReadValue<Vector2>();
+        Vector3 direction = new(aim.x, 0, aim.y);
+        if (aim.magnitude > 0.2f)
         {
-            rb.rotation = Quaternion.LookRotation(direction, Vector3.up);
+            Vector3 rotation = Vector3.Slerp(rb.rotation.eulerAngles, direction, 0.5f);
+            rotation.y = 0;
+            rb.rotation = Quaternion.LookRotation(rotation, Vector3.up);
         }
-        else
-        { 
-            rb.angularVelocity = Vector3.zero;
+        else if (Input.mousePresent)
+        {
+            Vector2 mouseRotationVector = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            direction = new(mouseRotationVector.x, 0, mouseRotationVector.y);
+            Vector3 rotation = Vector3.Slerp(rb.rotation.eulerAngles, direction, 0.5f);
+            rotation.y = 0;
+            rb.rotation = Quaternion.LookRotation(rotation, Vector3.up);
         }
+        
     }
     /// <summary>
     /// Gets the forward direction of the camera regarding the x and z directions
