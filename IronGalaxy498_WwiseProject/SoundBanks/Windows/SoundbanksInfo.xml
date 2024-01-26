@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
+	<RootPaths>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>../../GeneratedSoundBanks/Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{B6CBD692-12EC-CDBA-0932-48F63C40C91F}">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+		</SoundBank>
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{19ADBD12-1FE5-931E-624B-BFF9361B2755}">
+			<ShortName>Main</ShortName>
+			<Path>Main.bnk</Path>
+			<Media>
+				<File Id="83311950" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Initial498ConceptMusB2.wav</ShortName>
+					<CachePath>SFX/Initial498ConceptMusB2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="437516516" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Space SHMUP music.wav</ShortName>
+					<CachePath>SFX/Space SHMUP music_818F3B66.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="1097980931" Name="TestEvent" DurationType="OneShot" DurationMin="16" DurationMax="16">
+					<MediaRefs>
+						<MediaRef Id="437516516"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1324413170" Name="TestMusic" DurationType="OneShot" DurationMin="21.75" DurationMax="21.75">
+					<MediaRefs>
+						<MediaRef Id="83311950"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
+	</SoundBanks>
+	<FileHash>{5D3B9F09-F432-C019-01D1-C031B120FF01}</FileHash>
+</SoundBanksInfo>

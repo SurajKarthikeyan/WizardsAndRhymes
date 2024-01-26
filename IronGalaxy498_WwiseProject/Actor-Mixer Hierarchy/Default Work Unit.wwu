@@ -25,6 +25,28 @@
 						<ActiveSource Name="Space SHMUP music" ID="{C375BD05-44DE-42C1-8A0B-398CDCCAF87F}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
+				<Sound Name="TestMusic" ID="{D7EB265F-E204-4950-BA5F-EB0E05F8583E}" ShortID="458831675">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="Initial498ConceptMusB2" ID="{B3636182-146C-4498-AFBF-293F5D6855AE}">
+							<Language>SFX</Language>
+							<AudioFile>Initial498ConceptMusB2.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="83311950"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="Initial498ConceptMusB2" ID="{B3636182-146C-4498-AFBF-293F5D6855AE}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
