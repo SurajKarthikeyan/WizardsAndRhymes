@@ -10,7 +10,7 @@ public class MusicTime : MonoBehaviour
     public AudioSource source;
 
     // Start is called before the first frame update
-    void Start()
+    /*void Start()
     {
         source.Play();
         CalculateNextBeat();
@@ -30,5 +30,10 @@ public class MusicTime : MonoBehaviour
     {
         nextBeatTime = Time.time + (1 / (bpm / 60));
         //Debug.Log(1 / (bpm / 60));
+    }*/
+
+    public void Sync()
+    {
+        Debug.Log("Hello");
     }
 }
