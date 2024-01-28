@@ -9,33 +9,24 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{193727F1-0C26-892E-8ED3-C51AD0D40505}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{38F720BB-E607-D649-BB6D-D8EBACBD7C6D}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
-				<Custom>
-					<Plugin Id="645960530" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
-				</Custom>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
 					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
 				</AudioDevices>
 			</Plugins>
 			<Busses>
-				<Bus Id="1966988073" Name="testBus">
-					<PluginRefs>
-						<Custom>
-							<PluginRef Id="645960530"/>
-						</Custom>
-					</PluginRefs>
-				</Bus>
+				<Bus Id="1966988073" Name="testBus"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 			<GameParameters>
 				<GameParameter Id="1117531621" Name="Amp"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{DE1A5B83-F9F6-B690-91D4-DBEFB346B6A2}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{75AEDC94-BE62-CAF5-59ED-3A40C5739458}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -52,6 +43,11 @@
 					<CachePath>SFX/Initial498ConceptMusB2_FBC78EF0.wem</CachePath>
 				</File>
 			</Media>
+			<Plugins>
+				<Custom>
+					<Plugin Id="556824867" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
+				</Custom>
+			</Plugins>
 			<Events>
 				<Event Id="1097980931" Name="TestEvent" DurationType="OneShot" DurationMin="16" DurationMax="16">
 					<MediaRefs>
@@ -62,6 +58,11 @@
 					<MediaRefs>
 						<MediaRef Id="476678353"/>
 					</MediaRefs>
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="556824867"/>
+						</Custom>
+					</PluginRefs>
 				</Event>
 				<Event Id="1324413170" Name="TestMusic" DurationType="OneShot" DurationMin="21.75" DurationMax="21.75">
 					<MediaRefs>
@@ -71,5 +72,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D4193D95-8006-BC74-9696-4FDE4FF97B30}</FileHash>
+	<FileHash>{70CE9156-B222-4136-5CE1-A7F1286F087E}</FileHash>
 </SoundBanksInfo>
