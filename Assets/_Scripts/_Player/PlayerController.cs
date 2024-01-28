@@ -94,22 +94,7 @@ public class PlayerController : MonoBehaviour
     #endregion
 
 
-    #region Ability Slider
-    [Header("Temporary Place for Ability Slider stuff")]
-    //All of this stuff will be moved to another script/class eventually as to not clog up the script meant for player input and control
-    public GameObject abilitySliderGO;
-
-    private Slider abilitySlider;
-
-    private Vector3 uiOffsetVec = new Vector3(-0.1f, -0.45f, -1.25f);
-
-    public GameObject sliderFill;
-
-    public float abilityValue = 100f;
-
-    public float abilityRechargeThreshold = 2f;
-
-    public float abilityRechargeTimer;
+    public AbilityManager m_AbilityManager;
 
     #region Ranged Attack
     /// <summary>
@@ -131,15 +116,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float rangedPrefabSpeed = 5f;
     #endregion 
-    #endregion
-
+    
     #endregion
 
     #region Properties
     /// <summary>
     /// Returns true if the player is able to dash
     /// </summary>
-    public bool CanDash => abilityValue >= 10 && m_DashCooldownTimer >= m_DashCooldownThreshold;
+    public bool CanDash => m_AbilityManager.m_CurrentAbilityValue >= 10 && m_DashCooldownTimer >= m_DashCooldownThreshold;
 
     /// <summary>
     /// Returns true if the player is currently moving
@@ -194,8 +178,6 @@ public class PlayerController : MonoBehaviour
     {
         m_RigidBody = GetComponent<Rigidbody>();
         m_PlayerInput = new PlayerInput();
-        abilitySlider = abilitySliderGO.GetComponent<Slider>();
-        abilitySlider.value = abilityValue;
     }
 
     /// <summary>
@@ -230,28 +212,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void FixedUpdate()
     {
-        abilitySliderGO.transform.position = transform.position + uiOffsetVec;
-
-        abilityRechargeTimer += Time.deltaTime;
-
         m_DashCooldownTimer += Time.deltaTime;
-
-        if (abilityRechargeTimer >= abilityRechargeThreshold)
-        {
-            FillAbilityGauge();
-        }
-
-        abilityValue = Mathf.Clamp(abilityValue, 0, 100);
-        abilitySlider.value = abilityValue;
-
-        if (abilitySlider.value <= 0)
-        {
-            sliderFill.SetActive(false);
-        }
-        else if (abilitySlider.value > 0 && !sliderFill.activeInHierarchy)
-        {
-            sliderFill.SetActive(true);
-        }
 
         if (IsMoving)
         {
@@ -347,7 +308,7 @@ public class PlayerController : MonoBehaviour
     private void DoRanged(InputAction.CallbackContext obj)
     {
         attackStatus = AttackStatus.Ranged;
-        abilityRechargeTimer = 0;
+        m_AbilityManager.ResetAbilityRecharge();
         StartCoroutine(Projectile());
     }
     /// <summary>
@@ -357,7 +318,7 @@ public class PlayerController : MonoBehaviour
     private void DoMelee(InputAction.CallbackContext obj)
     {
         attackStatus = AttackStatus.Melee;
-        abilityRechargeTimer = 0;
+        m_AbilityManager.ResetAbilityRecharge();
     }
 
     /// <summary>
@@ -366,7 +327,7 @@ public class PlayerController : MonoBehaviour
     /// <param name="obj">Input callback context for the dash</param>
     private void DoDash(InputAction.CallbackContext obj)
     {
-        abilityRechargeTimer = 0;
+        m_AbilityManager.ResetAbilityRecharge();
         if (CanDash)
         {
             StartCoroutine(Dash());
@@ -379,7 +340,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator Dash()
     { 
         moveStatus = MoveStatus.Dashing;
-        abilityValue -= 10;
+        m_AbilityManager.ReduceAbilityGuage(10);
         m_DashCooldownTimer = 0;
         yield return new WaitForSeconds(m_DashTime);
         moveStatus = MoveStatus.Moving;
@@ -391,24 +352,14 @@ public class PlayerController : MonoBehaviour
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Projectile()
     {
-        abilityValue -= 2;
+        m_AbilityManager.ReduceAbilityGuage(2);
         GameObject projectile = Instantiate(rangedPrefab, rangedSpawnPoint.position, rangedSpawnPoint.rotation);
         projectile.GetComponent<Rigidbody>().velocity = rangedSpawnPoint.forward * rangedPrefabSpeed;
-        abilityRechargeTimer = 0;
+        m_AbilityManager.ResetAbilityRecharge();
         yield return new WaitForSeconds(0.3f);
         attackStatus = AttackStatus.None;
     }
-    /// <summary>
-    /// Functioncalled routinely to refill ability guage when not dashing or attacking
-    /// </summary>
-    void FillAbilityGauge()
-    {
-        abilityValue += 3;
-        abilityRechargeTimer = 0;
-    }
+    
     #endregion
-
-
-
     #endregion
 }

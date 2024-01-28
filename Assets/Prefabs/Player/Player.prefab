@@ -11,9 +11,15 @@ GameObject:
   - component: {fileID: 4711825495692764976}
   - component: {fileID: 6158063862811745361}
   - component: {fileID: 616522239357741427}
-  - component: {fileID: 3041692611352027283}
   - component: {fileID: 430242402682713746}
   - component: {fileID: 1405765644802271100}
+  - component: {fileID: 3041692611352027283}
+  - component: {fileID: 4681948003197784821}
+  - component: {fileID: 5530131915041016451}
+  - component: {fileID: 6216464719562670839}
+  - component: {fileID: 5981059314923844403}
+  - component: {fileID: 8802253318812338376}
+  - component: {fileID: 498230214866448504}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -88,32 +94,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3041692611352027283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979217756860975084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bbdf663f99f6064f9dd6cf279db73b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementForce: 1
-  maxDashSpeed: 20
-  maxMoveSpeed: 5
-  playerCamera: {fileID: 0}
-  abilitySliderGO: {fileID: 0}
-  sliderFill: {fileID: 0}
-  abilityValue: 100
-  abilityRechargeThreshold: 2
-  abilityRechargeTimer: 0
-  dashCooldownThreshold: 2
-  dashCooldownTimer: 0
-  rangedPrefab: {fileID: 4155231900741922661, guid: 2aeae3acb6641b647a8581427672364d, type: 3}
-  rangedSpawnPoint: {fileID: 5028973609557505707}
-  rangedPrefabSpeed: 5
 --- !u!54 &430242402682713746
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -164,6 +144,165 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &3041692611352027283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979217756860975084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bbdf663f99f6064f9dd6cf279db73b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MovementForce: 1
+  m_MaxMoveSpeed: 5
+  m_DashForce: 3
+  m_MaxDashSpeed: 10
+  m_DashTime: 0.5
+  m_DashCooldownThreshold: 2
+  m_PlayerCamera: {fileID: 0}
+  m_AbilityManager: {fileID: 0}
+  rangedPrefab: {fileID: 4155231900741922661, guid: 2aeae3acb6641b647a8581427672364d, type: 3}
+  rangedSpawnPoint: {fileID: 5028973609557505707}
+  rangedPrefabSpeed: 25
+--- !u!114 &4681948003197784821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979217756860975084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e86a9cb7a645d2040b54dfe5514f428e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_AbilitySliderGameObject: {fileID: 0}
+  m_SliderFillArea: {fileID: 0}
+  m_AbilityValue: 100
+  abilityRechargeThreshold: 0.5
+  abilityRechargeTimer: 0
+--- !u!114 &5530131915041016451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979217756860975084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc503afba7f84274dabe9a6a2d897f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 7f56bbcbcf29c854f8f31a225c3961f0, type: 2}
+  decodeBank: 0
+  overrideLoadSetting: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
+--- !u!114 &6216464719562670839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979217756860975084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68e08ae77aee234687dae2109f86d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &5981059314923844403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979217756860975084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9063ac418c09c6e47b925d30adb1d0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4120dfc5271a1bd4092628b1610ae41a, type: 2}
+  useCallbacks: 1
+  Callbacks:
+  - Flags:
+      value: 4096
+    FunctionName: Wwise32Beat
+    GameObject: {fileID: 1979217756860975084}
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
+  MultiPositionType: 1
+  multiPositionTypeLabel: 0
+  attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
+  LargeModePositions: []
+  multiPositionArray: []
+--- !u!114 &8802253318812338376
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979217756860975084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18509214dce19804b84b4ac7e8fa6dda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  test:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2b3266dcc1c904047a9586f6a3a747ee, type: 2}
+  electricPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  multipler: 2
+--- !u!114 &498230214866448504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979217756860975084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def79722d7df75644958aa45c09e826a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2802089234719024440
 GameObject:
   m_ObjectHideFlags: 0
