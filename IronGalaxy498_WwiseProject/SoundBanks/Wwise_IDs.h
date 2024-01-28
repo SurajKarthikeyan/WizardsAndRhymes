@@ -18,6 +18,11 @@ namespace AK
         static const AkUniqueID TESTMUSIC = 1324413170U;
     } // namespace EVENTS
 
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID AMP = 1117531621U;
+    } // namespace GAME_PARAMETERS
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
@@ -27,6 +32,7 @@ namespace AK
     namespace BUSSES
     {
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
+        static const AkUniqueID TESTBUS = 1966988073U;
     } // namespace BUSSES
 
     namespace AUDIO_DEVICES
