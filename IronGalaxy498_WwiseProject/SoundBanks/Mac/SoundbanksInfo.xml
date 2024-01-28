@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{D326F752-7CA2-0A14-FDB1-63ECE89D0199}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{A6FCB005-DE85-EE80-F951-BF63A1E28597}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -21,8 +21,15 @@
 			<Busses>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<StateGroups>
+				<StateGroup Id="837658052" Name="TestMusicLoop">
+					<States>
+						<State Id="748895195" Name="None"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{C10EEE33-B152-F9C0-D059-58E5303A54E5}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{0CF6AA2B-7F9C-5132-C803-3969F99C2C53}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -45,7 +52,7 @@
 						<MediaRef Id="437516516"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="372047860" Name="TestInteractiveMusic" DurationType="OneShot" DurationMin="21.75" DurationMax="21.75">
+				<Event Id="372047860" Name="TestInteractiveMusic" DurationType="OneShot" DurationMin="0" DurationMax="0">
 					<MediaRefs>
 						<MediaRef Id="476678353"/>
 					</MediaRefs>
@@ -58,5 +65,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{05FDA41F-3BCB-363F-C03F-E691CA0CDBE4}</FileHash>
+	<FileHash>{CD79E417-A0E0-D557-BB2B-620395B71686}</FileHash>
 </SoundBanksInfo>
