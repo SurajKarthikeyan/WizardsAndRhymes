@@ -77,6 +77,9 @@
         },
         {
             "m_Id": "e49d117b2d0e49f8b7570f4585b95fec"
+        },
+        {
+            "m_Id": "f8de33a578e1448ba27ba098930cf391"
         }
     ],
     "m_GroupDatas": [
@@ -165,7 +168,7 @@
             },
             "m_InputSlot": {
                 "m_Node": {
-                    "m_Id": "f09b1b86c4f74f988bad1740203fbf98"
+                    "m_Id": "f8de33a578e1448ba27ba098930cf391"
                 },
                 "m_SlotId": 0
             }
@@ -252,6 +255,20 @@
                     "m_Id": "9dccc5cb08ce450aa0ea982cd46fd325"
                 },
                 "m_SlotId": 1
+            }
+        },
+        {
+            "m_OutputSlot": {
+                "m_Node": {
+                    "m_Id": "f8de33a578e1448ba27ba098930cf391"
+                },
+                "m_SlotId": 2
+            },
+            "m_InputSlot": {
+                "m_Node": {
+                    "m_Id": "f09b1b86c4f74f988bad1740203fbf98"
+                },
+                "m_SlotId": 0
             }
         },
         {
@@ -1095,6 +1112,21 @@
 {
     "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "5decd41799f84a23aac0e32d556af052",
+    "m_Id": 1,
+    "m_DisplayName": "Scale",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Scale",
+    "m_StageCapability": 3,
+    "m_Value": 59.0,
+    "m_DefaultValue": 10.0,
+    "m_Labels": []
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "62ecc28b09eb416ca2d98d6dda7510f0",
     "m_Id": 1,
     "m_DisplayName": "Sine Time",
@@ -1827,6 +1859,28 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.UVMaterialSlot",
+    "m_ObjectId": "c5cef63ae67c49859e5e08611496f7d7",
+    "m_Id": 0,
+    "m_DisplayName": "UV",
+    "m_SlotType": 0,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "UV",
+    "m_StageCapability": 3,
+    "m_Value": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_DefaultValue": {
+        "x": 0.0,
+        "y": 0.0
+    },
+    "m_Labels": [],
+    "m_Channel": 0
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
     "m_ObjectId": "d99a1a8ea47748d58be16c21745a54c8",
     "m_Group": {
@@ -1859,6 +1913,21 @@
     "m_Property": {
         "m_Id": "c40a3c1373bc43b18a9ed16a43e37a20"
     }
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
+    "m_ObjectId": "e35bc0d3e9184f66ac6a91fdc2fa7e6f",
+    "m_Id": 2,
+    "m_DisplayName": "Out",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_Value": 0.0,
+    "m_DefaultValue": 0.0,
+    "m_Labels": []
 }
 
 {
@@ -2054,9 +2123,9 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -473.5999450683594,
+            "x": -81.5999984741211,
             "y": 547.2000122070313,
-            "width": 207.99996948242188,
+            "width": 207.99998474121095,
             "height": 301.5999755859375
         }
     },
@@ -2145,6 +2214,48 @@
         "m_SerializableColors": []
     },
     "m_SerializedDescriptor": "SurfaceDescription.BaseColor"
+}
+
+{
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.GradientNoiseNode",
+    "m_ObjectId": "f8de33a578e1448ba27ba098930cf391",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Gradient Noise",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": -520.7999877929688,
+            "y": 723.2001342773438,
+            "width": 208.0,
+            "height": 335.20001220703127
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "c5cef63ae67c49859e5e08611496f7d7"
+        },
+        {
+            "m_Id": "5decd41799f84a23aac0e32d556af052"
+        },
+        {
+            "m_Id": "e35bc0d3e9184f66ac6a91fdc2fa7e6f"
+        }
+    ],
+    "synonyms": [
+        "perlin noise"
+    ],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_DismissedVersion": 0,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_HashType": 0
 }
 
 {
