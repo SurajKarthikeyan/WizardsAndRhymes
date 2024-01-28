@@ -18,20 +18,6 @@ namespace AK
         static const AkUniqueID TESTMUSIC = 1324413170U;
     } // namespace EVENTS
 
-    namespace STATES
-    {
-        namespace TESTMUSICLOOP
-        {
-            static const AkUniqueID GROUP = 837658052U;
-
-            namespace STATE
-            {
-                static const AkUniqueID NONE = 748895195U;
-            } // namespace STATE
-        } // namespace TESTMUSICLOOP
-
-    } // namespace STATES
-
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
