@@ -19,9 +19,12 @@
 					</ReferenceList>
 					<ChildrenList>
 						<MusicTrack Name="Initial498ConceptMusB2" ID="{0C714187-727F-4953-B0A8-7B3D5C29CD21}" ShortID="727474260">
+							<PropertyList>
+								<Property Name="OverrideOutput" Type="bool" Value="True"/>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="OutputBus">
-									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+									<ObjectRef Name="testBus" ID="{4EAC6AF4-0261-4DCF-85FE-DD1B4F62A8BB}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
 								</Reference>
 								<Reference Name="TransitionRoot">
 									<Custom>

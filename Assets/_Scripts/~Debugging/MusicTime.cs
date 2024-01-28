@@ -5,10 +5,34 @@ using UnityEngine;
 
 public class MusicTime : MonoBehaviour
 {
-    [SerializeField] GameObject cube;
 
-    public void Sync()
+    public AK.Wwise.RTPC test;
+    public List<GameObject> electricPoints;
+    public int multipler;
+
+    public void Update()
     {
-        cube.SetActive(!cube.activeSelf);
+        float x = test.GetGlobalValue();
+        float normalized = (x + 48) / 48;
+        
+        Vector3 newtrans = electricPoints[0].transform.localPosition;
+        newtrans.y = normalized * multipler;
+        electricPoints[0].transform.localPosition = newtrans;
+
+        newtrans = electricPoints[2].transform.localPosition;
+        newtrans.y = normalized * multipler;
+        electricPoints[2].transform.localPosition = newtrans;
+        
+        
+        newtrans = electricPoints[1].transform.localPosition;
+        newtrans.y = -normalized * multipler;
+        electricPoints[1].transform.localPosition = newtrans;
+        
+        newtrans = electricPoints[3].transform.localPosition;
+        newtrans.y = -normalized * multipler;
+        electricPoints[3].transform.localPosition = newtrans;
     }
+
+
+
 }

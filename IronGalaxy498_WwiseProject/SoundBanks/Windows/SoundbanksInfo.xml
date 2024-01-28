@@ -9,20 +9,33 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{B6CBD692-12EC-CDBA-0932-48F63C40C91F}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{193727F1-0C26-892E-8ED3-C51AD0D40505}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
+				<Custom>
+					<Plugin Id="645960530" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
+				</Custom>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
 					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
 				</AudioDevices>
 			</Plugins>
 			<Busses>
+				<Bus Id="1966988073" Name="testBus">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="645960530"/>
+						</Custom>
+					</PluginRefs>
+				</Bus>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<GameParameters>
+				<GameParameter Id="1117531621" Name="Amp"/>
+			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{7679F0E1-374E-BAA3-D770-481CBF483654}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{DE1A5B83-F9F6-B690-91D4-DBEFB346B6A2}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -58,5 +71,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{BF491210-3F53-EC97-7F8C-0FA8235D982E}</FileHash>
+	<FileHash>{D4193D95-8006-BC74-9696-4FDE4FF97B30}</FileHash>
 </SoundBanksInfo>
