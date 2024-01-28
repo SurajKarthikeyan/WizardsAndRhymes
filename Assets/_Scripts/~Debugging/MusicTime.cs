@@ -5,9 +5,10 @@ using UnityEngine;
 
 public class MusicTime : MonoBehaviour
 {
+    [SerializeField] GameObject cube;
 
     public void Sync()
     {
-        Debug.Log("Hello");
+        cube.SetActive(!cube.activeSelf);
     }
 }
