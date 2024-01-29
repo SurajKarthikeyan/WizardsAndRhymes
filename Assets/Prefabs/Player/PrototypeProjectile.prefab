@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7203663998569602800}
   - component: {fileID: 3278435095754555951}
   - component: {fileID: 6368204535655287066}
+  - component: {fileID: 5838661746317385981}
   m_Layer: 0
   m_Name: PrototypeProjectile
   m_TagString: Untagged
@@ -47,6 +48,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   existenceTimeThreshold: 3
+  damage: 5
 --- !u!54 &6368204535655287066
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -74,6 +76,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &5838661746317385981
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4155231900741922661}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.093559265
+  m_Height: 0.48348504
+  m_Direction: 1
+  m_Center: {x: -0.0031089783, y: -0.0053054392, z: 0}
 --- !u!1001 &6433957984702774764
 PrefabInstance:
   m_ObjectHideFlags: 0
