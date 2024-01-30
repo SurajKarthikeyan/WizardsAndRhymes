@@ -31,6 +31,11 @@ public class WwiseAdapter : MonoBehaviour
         {BeatIntervals.B1, on1Beat }
     };
 
+    [HideInInspector] public float amplitude;
+
+    [Tooltip("The RTPC to pull amplitude data from")]
+    [SerializeField] AK.Wwise.RTPC amplitudeRTPC;
+
     private void Awake()
     {
         //Initialize singleton
@@ -65,6 +70,12 @@ public class WwiseAdapter : MonoBehaviour
         beatCounter++;
         if (beatCounter == 32)
             beatCounter = 0;
+    }
+
+    private void Update()
+    {
+        amplitude = amplitudeRTPC.GetGlobalValue();
+        amplitude = (amplitude + 48) / 48;
     }
 
 #if UNITY_EDITOR
