@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/// <summary>
+/// Basic class for enemies, 
+/// </summary>
+
 public class Enemy : MonoBehaviour
 {
 
