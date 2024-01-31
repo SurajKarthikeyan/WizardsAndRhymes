@@ -2,10 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Base class for a projectile
+/// </summary>
 public class Projectile : MonoBehaviour
 {
-
-    public float existenceTimeThreshold = 5f;
+    /// <summary>
+    /// Time in seconds that this projectile exists before being destroyed
+    /// </summary>
+    [SerializeField]
+    private float existenceTimeThreshold = 5f;
 
     public int damage;
 
@@ -18,7 +24,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.GetComponent<BaseEnemy>() != null)
         {
-            other.gameObject.GetComponent<BaseEnemy>().hp -= damage;
+            other.gameObject.GetComponent<BaseEnemy>().HP -= damage;
         }
         Destroy(gameObject);
     }
