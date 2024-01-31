@@ -4,33 +4,26 @@ using UnityEngine;
 using UnityEngine.AI;
 
 /// <summary>
-/// Basic class for enemies, 
+/// Enemy type that follows the player
 /// </summary>
-
-public class Enemy : MonoBehaviour
+public class FollowPlayerEnemy : BaseEnemy
 {
-
     NavMeshAgent navMeshAgent;
 
     public Transform player;
 
-    public int hp;
     // Start is called before the first frame update
-
-
     void Start()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void FixedUpdate()
     {
-        navMeshAgent.destination = player.position;
-
-        if (hp <= 0)
+        base.FixedUpdate();
+        if (hp > 0)
         {
-            Destroy(gameObject);
+            navMeshAgent.destination = player.position;
         }
     }
 }

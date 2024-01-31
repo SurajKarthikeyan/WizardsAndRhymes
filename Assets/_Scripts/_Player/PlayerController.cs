@@ -261,6 +261,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector2 aim = m_LookAction.ReadValue<Vector2>();
         Vector3 direction = new(aim.x, 0, aim.y);
+        //If statement checks if the player is using a controller
         if (aim.magnitude > 0.2f)
         {
             Cursor.visible = false;
@@ -268,12 +269,18 @@ public class PlayerController : MonoBehaviour
             rotation.y = 0;
             m_RigidBody.rotation = Quaternion.LookRotation(rotation, Vector3.up);
         }
+        //This is if the player is using the mouse to look around
         else if (MouseOverGameWindow)
         {
             Cursor.visible = true;
             Vector3 mouseRotationVector = Camera.main.ScreenToWorldPoint(Input.mousePosition) - m_RigidBody.position;
             direction = new(mouseRotationVector.x, 0, mouseRotationVector.y);
             m_RigidBody.rotation = Quaternion.LookRotation(direction, Vector3.up);
+        }
+        //This is if neither are currently being used
+        else
+        {
+            m_RigidBody.angularVelocity = Vector3.zero;
         }
         
     }

@@ -16,9 +16,9 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<Enemy>() != null)
+        if (other.gameObject.GetComponent<BaseEnemy>() != null)
         {
-            other.gameObject.GetComponent<Enemy>().hp -= damage;
+            other.gameObject.GetComponent<BaseEnemy>().hp -= damage;
         }
         Destroy(gameObject);
     }
