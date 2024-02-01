@@ -27,8 +27,9 @@ public class FollowPlayerEnemy : BaseEnemy
     /// <summary>
     /// Unity method called before the first frame update
     /// </summary>
-    void Start()
+    protected override void Start()
     {
+        base.Start();
         navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
@@ -38,7 +39,7 @@ public class FollowPlayerEnemy : BaseEnemy
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        if (m_CurrentHP > 0)
+        if (m_Activated)
         {
             navMeshAgent.destination = player.position;
         }

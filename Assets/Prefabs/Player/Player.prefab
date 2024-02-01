@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 498230214866448504}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -181,9 +181,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_AbilitySliderGameObject: {fileID: 0}
   m_SliderFillArea: {fileID: 0}
-  m_AbilityValue: 100
+  m_MaximumAbilityValue: 100
+  m_MinimumAbilityValue: 0
+  m_CurrentAbilityValue: 0
   abilityRechargeThreshold: 0.5
-  abilityRechargeTimer: 0
 --- !u!114 &5530131915041016451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -303,6 +304,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def79722d7df75644958aa45c09e826a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  amplitude: 0
+  amplitudeRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
 --- !u!1 &2802089234719024440
 GameObject:
   m_ObjectHideFlags: 0

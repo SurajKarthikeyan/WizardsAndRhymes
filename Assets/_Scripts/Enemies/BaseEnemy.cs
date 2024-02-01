@@ -30,6 +30,11 @@ public class BaseEnemy : MonoBehaviour
     /// </summary>
     [SerializeField]
     private float m_AttackDamage = 5f;
+
+
+    public bool m_Activated = false;
+
+    public Material m_ActivatedMaterial;
     #endregion
     #endregion
 
@@ -42,6 +47,11 @@ public class BaseEnemy : MonoBehaviour
         set { m_CurrentHP = value; }
     }
 
+    protected virtual void Start()
+    {
+        m_CurrentHP = m_MaximumHP;
+    }
+
     /// <summary>
     /// Unity method called every frame interval
     /// </summary>
@@ -49,6 +59,7 @@ public class BaseEnemy : MonoBehaviour
     {
         if (m_CurrentHP <= 0)
         {
+            m_Activated = false;
             EnemyDeath();
         }
     }
@@ -82,5 +93,11 @@ public class BaseEnemy : MonoBehaviour
     protected virtual void EnemyDeathHelper()
     {
         Debug.Log("Base BaseEnemy Death Helper");
+    }
+
+    public void ActivateEnemies()
+    {
+        GetComponent<MeshRenderer>().material = m_ActivatedMaterial;
+        m_Activated = true;
     }
 }
