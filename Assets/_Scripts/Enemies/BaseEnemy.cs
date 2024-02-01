@@ -94,10 +94,4 @@ public class BaseEnemy : MonoBehaviour
     {
         Debug.Log("Base BaseEnemy Death Helper");
     }
-
-    public void ActivateEnemies()
-    {
-        GetComponent<MeshRenderer>().material = m_ActivatedMaterial;
-        m_Activated = true;
-    }
 }
