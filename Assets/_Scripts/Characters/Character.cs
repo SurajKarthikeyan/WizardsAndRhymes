@@ -30,6 +30,10 @@ public class Character : MonoBehaviour
 
     #region Damage Variables
     [SerializeField] private GameObject fireEffect;
+    [SerializeField] private bool onFire;
+    [SerializeField] private int tickCount;
+    [SerializeField] private float timeBetweenTicks;
+    [SerializeField] private float fireDamage;
     #endregion
     
 
@@ -45,6 +49,7 @@ public class Character : MonoBehaviour
     protected virtual void Start()
     {
         m_CurrentHP = m_MaximumHP;
+        onFire = false;
     }
 
     /// <summary>
@@ -67,10 +72,42 @@ public class Character : MonoBehaviour
     /// <param name="value">Float value representing the amount of damage this character takes</param>
     public void TakeDamage(float value, DamageType dType)
     {
+        //We should check what the damage type is when assigning effect
         fireEffect.SetActive(true);
+        FireDamage(tickCount);
         m_CurrentHP -= value;
     }
 
+    /// <summary>
+    /// Overloaded damage function with no consideration of the type of damage(used for tick damage)
+    /// </summary>
+    /// <param name="value"></param>
+    public void TakeDamage(float value)
+    {
+        m_CurrentHP -= value;
+    }
+
+    public void FireDamage(int tickCount)
+    {
+        if (!onFire)
+        {
+            onFire = true;
+            StartCoroutine(FireDamageCoroutine(tickCount, timeBetweenTicks, fireDamage));
+        }
+    }
+
+    IEnumerator FireDamageCoroutine(int tickCount, float timeBetweenTicks, float fireDamage)
+    {
+        for (int i = 0; i < tickCount; i++)
+        {
+            this.TakeDamage(fireDamage);
+            yield return new WaitForSeconds(timeBetweenTicks);
+        }
+
+        fireEffect.SetActive(false);
+        onFire = false;
+    }
+    
     /// <summary>
     /// Function that handles character death in conjunction with a helper function, 
     /// different for enemies and players

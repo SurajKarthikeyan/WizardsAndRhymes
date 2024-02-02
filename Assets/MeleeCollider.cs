@@ -18,7 +18,7 @@ public class MeleeCollider : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent<BaseEnemy>(out var enemy))
         {
-            enemy.gameObject.GetComponent<Character>().TakeDamage(player.meleeDamage);
+            enemy.gameObject.GetComponent<Character>().TakeDamage(player.meleeDamage, Character.DamageType.Fire);
         }
     }
 }
