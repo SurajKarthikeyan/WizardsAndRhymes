@@ -349,8 +349,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatInterval: 5
-  target: {fileID: 29630353}
-  targetMethod: PlayFeedbacks
+  targets:
+    _serializedList: []
 --- !u!1 &85499137
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,8 +535,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatInterval: 0
-  target: {fileID: 182819452}
-  targetMethod: PlayFeedbacks
+  targets:
+    _serializedList: []
 --- !u!114 &182819452
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1190,8 +1190,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatInterval: 0
-  target: {fileID: 392145431}
-  targetMethod: OneTime
+  targets:
+    _serializedList: []
 --- !u!1 &407355497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,7 +1287,7 @@ GameObject:
   - component: {fileID: 416692473}
   - component: {fileID: 416692477}
   - component: {fileID: 416692476}
-  - component: {fileID: 416692475}
+  - component: {fileID: 416692478}
   m_Layer: 0
   m_Name: Decal
   m_TagString: Untagged
@@ -1334,25 +1334,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &416692475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 416692472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6d3fcaf71c36f5469498fe52839c37d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  applyGlobal: 0
-  render: {fileID: 0}
-  decal: {fileID: 416692473}
-  materialIndex: 0
-  globalMaterial: {fileID: 0}
-  floatProperty: _EmissionStrength
-  value: 1
 --- !u!114 &416692476
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1365,7 +1346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4520ff861e339d42bae57b95686b14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetObject: {fileID: 416692475}
+  TargetObject: {fileID: 416692478}
   ControlMode: 2
   AddToInitialValue: 1
   UseUnscaledTime: 1
@@ -1513,8 +1494,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatInterval: 3
-  target: {fileID: 416692476}
-  targetMethod: OneTime
+  targets:
+    _serializedList:
+    - Key: {fileID: 416692476}
+      Value: OneTime
+--- !u!114 &416692478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 416692472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6d3fcaf71c36f5469498fe52839c37d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  applyGlobal: 0
+  targetType: 2
+  render: {fileID: 0}
+  materialIndex: 0
+  decal: {fileID: 416692473}
+  globalMaterial: {fileID: 0}
+  floatProperty: _EmissionStrength
+  value: 1
 --- !u!1 &496406964
 GameObject:
   m_ObjectHideFlags: 0
@@ -1906,8 +1909,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatInterval: 2
-  target: {fileID: 509733486}
-  targetMethod: PlayFeedbacks
+  targets:
+    _serializedList: []
 --- !u!1 &647678245
 GameObject:
   m_ObjectHideFlags: 0
@@ -2659,8 +2662,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatInterval: 3
-  target: {fileID: 1310456543}
-  targetMethod: PlayFeedbacks
+  targets:
+    _serializedList: []
 --- !u!1 &1354815838
 GameObject:
   m_ObjectHideFlags: 0
@@ -3089,8 +3092,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatInterval: 4
-  target: {fileID: 1735145878}
-  targetMethod: PlayFeedbacks
+  targets:
+    _serializedList: []
 --- !u!1 &1774544421
 GameObject:
   m_ObjectHideFlags: 0
@@ -3772,8 +3775,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatInterval: 1
-  target: {fileID: 1971584547}
-  targetMethod: PlayFeedbacks
+  targets:
+    _serializedList: []
 --- !u!1 &2007032783
 GameObject:
   m_ObjectHideFlags: 0

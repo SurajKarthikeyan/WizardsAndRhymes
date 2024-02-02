@@ -6,6 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 public class MaterialPropertyController : MonoBehaviour
 {
+    enum TargetType { None, Renderer, Decal}
 
     [Header("Base Material Property Controller Settings")]
     [Tooltip("Whether to apply this to all instances of the material")]
@@ -13,13 +14,20 @@ public class MaterialPropertyController : MonoBehaviour
 
     //Condition tag relies on Feel. Can be safely removed if needed
     [MMCondition("applyGlobal", true, true)]
+    [Tooltip("The type of component to control the material of")]
+    [SerializeField] TargetType targetType = TargetType.None;
+
+    [MMEnumCondition("targetType", (int)TargetType.Renderer, Hidden =true)]
     [Tooltip("The renderer whose material to control")]
     [SerializeField] Renderer render;
-    [Tooltip("The decal whose material to control")]
-    [SerializeField] DecalProjector decal;
-    [MMCondition("applyGlobal", true, true)]
+    [MMEnumCondition("targetType", (int)TargetType.Renderer, Hidden = true)]
     [Tooltip("The index of the material to control")]
     [SerializeField] int materialIndex = 0;
+
+    [MMEnumCondition("targetType", (int)TargetType.Decal, Hidden = true)]
+    [Tooltip("The decal whose material to control")]
+    [SerializeField] DecalProjector decal;
+    
 
     [MMCondition("applyGlobal", true, false)]
     [Tooltip("The material to control all instances of")]
@@ -38,12 +46,12 @@ public class MaterialPropertyController : MonoBehaviour
         }
         else
         {
-            if (render != null)
+            if (targetType == TargetType.Renderer)
                 material = render.materials[materialIndex];
-            else if (decal != null)
+            else if (targetType == TargetType.Decal)
                 material = decal.material;
             else
-                Debug.LogError("No valid target to edit material");
+                Debug.LogError("No valid target to edit material set");
         }
     }
 
