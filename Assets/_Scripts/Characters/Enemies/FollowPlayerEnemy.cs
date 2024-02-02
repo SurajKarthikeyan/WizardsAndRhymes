@@ -55,7 +55,7 @@ public class FollowPlayerEnemy : BaseEnemy
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                collision.gameObject.GetComponent<Character>().TakeDamage(m_AttackDamage);
+                collision.gameObject.GetComponent<Character>().TakeDamage(m_AttackDamage, Character.DamageType.Fire);
             }
         }
     }

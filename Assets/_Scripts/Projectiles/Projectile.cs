@@ -13,6 +13,7 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private float existenceTimeThreshold = 5f;
 
+    [SerializeField] private Character.DamageType dType;
     public int damage;
 
     private void Awake()
@@ -24,7 +25,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.TryGetComponent<Character>(out var character))
         {
-            character.HP -= damage;
+            character.TakeDamage(damage, dType);
         }
         Destroy(gameObject);
     }

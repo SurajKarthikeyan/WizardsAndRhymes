@@ -4,6 +4,16 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    #region Enums
+
+    public enum DamageType
+    {
+        Fire,
+        Lightning,
+        Ice
+    }
+
+    #endregion
     #region Health Variables
     /// <summary>
     /// Current HP of this enemy
@@ -17,6 +27,11 @@ public class Character : MonoBehaviour
     [SerializeField]
     private float m_MaximumHP;
     #endregion
+
+    #region Damage Variables
+    [SerializeField] private GameObject fireEffect;
+    #endregion
+    
 
     /// <summary>
     /// C# property that allows us to access HP
@@ -50,8 +65,9 @@ public class Character : MonoBehaviour
     /// Has this character take damage by the value passed in
     /// </summary>
     /// <param name="value">Float value representing the amount of damage this character takes</param>
-    public void TakeDamage(float value)
+    public void TakeDamage(float value, DamageType dType)
     {
+        fireEffect.SetActive(true);
         m_CurrentHP -= value;
     }
 
