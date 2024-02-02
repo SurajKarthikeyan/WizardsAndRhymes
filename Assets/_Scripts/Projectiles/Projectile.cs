@@ -24,7 +24,7 @@ public class Projectile : MonoBehaviour
     {
         if (other.gameObject.GetComponent<BaseEnemy>() != null)
         {
-            other.gameObject.GetComponent<BaseEnemy>().HP -= damage;
+            other.gameObject.GetComponent<Character>().HP -= damage;
         }
         Destroy(gameObject);
     }

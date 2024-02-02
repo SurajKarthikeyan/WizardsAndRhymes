@@ -44,6 +44,21 @@ public class FollowPlayerEnemy : BaseEnemy
             navMeshAgent.destination = player.position;
         }
     }
+
+    /// <summary>
+    /// Unity method called whenever this object collides with another
+    /// </summary>
+    /// <param name="collision">Collision object that this enemy collides with</param>
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (m_Activated)
+        {
+            if (collision.gameObject.CompareTag("Player"))
+            {
+                collision.gameObject.GetComponent<Character>().TakeDamage(m_AttackDamage);
+            }
+        }
+    }
     #endregion
 
     #region Custom Methods
@@ -51,7 +66,7 @@ public class FollowPlayerEnemy : BaseEnemy
     /// Helper method called upon each enemy death, allows for easy implementation
     /// of different enemy death behaviors
     /// </summary>
-    protected override void EnemyDeathHelper()
+    protected override void EnemyDeath()
     {
         Debug.Log("FollowPlayer Death Helper");
     }

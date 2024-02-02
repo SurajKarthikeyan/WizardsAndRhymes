@@ -43,10 +43,10 @@ public class EnemyManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Updates the dialogue from the dictionary
+    /// THIS IS TEMPORARILY HERE UNTIL I FIND SOMEWHERE TO PUT IT - Zane
     /// </summary>
     /// <param name="plantName">Name of the plant prefab</param>
-    public void UpdatePlantDialogue(string plantName)
+    private void UpdatePlantDialogue(string plantName)
     {
         //If the dictionary contains the name of the plant, we copy the text from the dictionary into the dialogue
         if (plantTextPairs.ContainsKey(plantName))
