@@ -10,7 +10,8 @@ public class Character : MonoBehaviour
     {
         Fire,
         Lightning,
-        Ice
+        Ice,
+        None
     }
 
     #endregion
@@ -73,19 +74,14 @@ public class Character : MonoBehaviour
     public void TakeDamage(float value, DamageType dType)
     {
         //We should check what the damage type is when assigning effect
-        fireEffect.SetActive(true);
-        FireDamage(tickCount);
+        if (dType != DamageType.None)
+        {
+            fireEffect.SetActive(true);
+            FireDamage(tickCount);
+        }
         m_CurrentHP -= value;
     }
-
-    /// <summary>
-    /// Overloaded damage function with no consideration of the type of damage(used for tick damage)
-    /// </summary>
-    /// <param name="value"></param>
-    public void TakeDamage(float value)
-    {
-        m_CurrentHP -= value;
-    }
+    
 
     public void FireDamage(int tickCount)
     {
@@ -100,7 +96,7 @@ public class Character : MonoBehaviour
     {
         for (int i = 0; i < tickCount; i++)
         {
-            this.TakeDamage(fireDamage);
+            this.TakeDamage(fireDamage, DamageType.None);
             yield return new WaitForSeconds(timeBetweenTicks);
         }
 
