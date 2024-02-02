@@ -23,7 +23,10 @@ public class TriggerOnBeat : MonoBehaviour
     {
         foreach (KeyValuePair<MonoBehaviour, string> pair in targets)
         {
-            pair.Key.Invoke(pair.Value, 0); //Immediately invoke the named method on the target script
+            if (pair.Key != null)
+            {
+                pair.Key.Invoke(pair.Value, 0); //Immediately invoke the named method on the target script
+            }
         }
     }
 }
