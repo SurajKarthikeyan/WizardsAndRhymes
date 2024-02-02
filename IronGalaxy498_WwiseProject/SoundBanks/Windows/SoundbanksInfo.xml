@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{38F720BB-E607-D649-BB6D-D8EBACBD7C6D}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{A09B814F-B75D-2C86-462C-7A0E73A95D12}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -26,7 +26,7 @@
 				<GameParameter Id="1117531621" Name="Amp"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{75AEDC94-BE62-CAF5-59ED-3A40C5739458}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{C1C7FDAA-593E-373D-327F-DCB36F60BB24}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -43,26 +43,16 @@
 					<CachePath>SFX/Initial498ConceptMusB2_FBC78EF0.wem</CachePath>
 				</File>
 			</Media>
-			<Plugins>
-				<Custom>
-					<Plugin Id="556824867" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
-				</Custom>
-			</Plugins>
 			<Events>
 				<Event Id="1097980931" Name="TestEvent" DurationType="OneShot" DurationMin="16" DurationMax="16">
 					<MediaRefs>
 						<MediaRef Id="437516516"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="372047860" Name="TestInteractiveMusic" DurationType="OneShot" DurationMin="21.75" DurationMax="21.75">
+				<Event Id="372047860" Name="TestInteractiveMusic" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="476678353"/>
 					</MediaRefs>
-					<PluginRefs>
-						<Custom>
-							<PluginRef Id="556824867"/>
-						</Custom>
-					</PluginRefs>
 				</Event>
 				<Event Id="1324413170" Name="TestMusic" DurationType="OneShot" DurationMin="21.75" DurationMax="21.75">
 					<MediaRefs>
@@ -72,5 +62,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{70CE9156-B222-4136-5CE1-A7F1286F087E}</FileHash>
+	<FileHash>{C45AEBF9-0844-15E7-353C-1C93C525C609}</FileHash>
 </SoundBanksInfo>

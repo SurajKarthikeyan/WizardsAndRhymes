@@ -3,12 +3,7 @@
 	<InteractiveMusic>
 		<WorkUnit Name="Default Work Unit" ID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}" PersistMode="Standalone">
 			<ChildrenList>
-				<MusicSegment Name="TestMusicSegment" ID="{8DF6EEE6-3C29-431C-9A4F-D69AF52DA47A}" ShortID="133470744">
-					<PropertyList>
-						<Property Name="EndPosition" Type="Real64" Value="21750"/>
-						<Property Name="GridFrequencyPreset" Type="int16" Value="67"/>
-						<Property Name="Tempo" Type="Real64" Value="140"/>
-					</PropertyList>
+				<MusicPlaylistContainer Name="testPlayListContainer" ID="{2BB89549-C3C0-4436-A0B7-FBC119FBEA55}" ShortID="106274627">
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
@@ -16,102 +11,153 @@
 						<Reference Name="OutputBus">
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
 						</Reference>
-					</ReferenceList>
-					<ChildrenList>
-						<MusicTrack Name="Initial498ConceptMusB2" ID="{0C714187-727F-4953-B0A8-7B3D5C29CD21}" ShortID="727474260">
-							<PropertyList>
-								<Property Name="OverrideOutput" Type="bool" Value="True"/>
-							</PropertyList>
-							<ReferenceList>
-								<Reference Name="OutputBus">
-									<ObjectRef Name="testBus" ID="{4EAC6AF4-0261-4DCF-85FE-DD1B4F62A8BB}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-								</Reference>
-								<Reference Name="TransitionRoot">
-									<Custom>
-										<MusicTransition Name="Root" ID="{60151EC3-5FA5-40C1-8F26-972CD19AF9FC}">
+						<Reference Name="PlaylistRoot">
+							<Custom>
+								<MusicPlaylistItem Name="" ID="{E4D21138-F9EC-4BB8-971B-A31042117AF4}" ShortID="881591922">
+									<ChildrenList>
+										<MusicPlaylistItem Name="" ID="{9762BED5-DD7A-405C-9564-F44EA54F24A4}" ShortID="356119319">
 											<PropertyList>
-												<Property Name="IsFolder" Type="bool" Value="True"/>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+												<Property Name="PlaylistItemType" Type="int16" Value="1"/>
 											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Segment">
+													<ObjectRef Name="TestMusicSegment" ID="{8DF6EEE6-3C29-431C-9A4F-D69AF52DA47A}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
+												</Reference>
+											</ReferenceList>
+										</MusicPlaylistItem>
+									</ChildrenList>
+								</MusicPlaylistItem>
+							</Custom>
+						</Reference>
+						<Reference Name="TransitionRoot">
+							<Custom>
+								<MusicTransition Name="Root" ID="{8BC59FB9-667C-4F25-8584-B0DF8B488267}">
+									<PropertyList>
+										<Property Name="IsFolder" Type="bool" Value="True"/>
+									</PropertyList>
+									<ChildrenList>
+										<MusicTransition Name="Transition" ID="{71EDFFA9-1799-4232-A907-C0DB1AA045A7}">
 											<TransitionInfo/>
 										</MusicTransition>
-									</Custom>
+									</ChildrenList>
+									<TransitionInfo/>
+								</MusicTransition>
+							</Custom>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<MusicSegment Name="TestMusicSegment" ID="{8DF6EEE6-3C29-431C-9A4F-D69AF52DA47A}" ShortID="133470744">
+							<PropertyList>
+								<Property Name="EndPosition" Type="Real64" Value="21750"/>
+								<Property Name="GridFrequencyPreset" Type="int16" Value="67"/>
+								<Property Name="Tempo" Type="Real64" Value="140"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Initial498ConceptMusB2" ID="{20B78063-F304-43FD-B35B-510A33AF33F1}">
-									<Language>SFX</Language>
-									<AudioFile>Initial498ConceptMusB2.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="476678353"/>
-									</MediaIDList>
-								</AudioFileSource>
+								<MusicTrack Name="Initial498ConceptMusB2" ID="{0C714187-727F-4953-B0A8-7B3D5C29CD21}" ShortID="727474260">
+									<PropertyList>
+										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="testBus" ID="{4EAC6AF4-0261-4DCF-85FE-DD1B4F62A8BB}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+										<Reference Name="TransitionRoot">
+											<Custom>
+												<MusicTransition Name="Root" ID="{60151EC3-5FA5-40C1-8F26-972CD19AF9FC}">
+													<PropertyList>
+														<Property Name="IsFolder" Type="bool" Value="True"/>
+													</PropertyList>
+													<TransitionInfo/>
+												</MusicTransition>
+											</Custom>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Initial498ConceptMusB2" ID="{20B78063-F304-43FD-B35B-510A33AF33F1}">
+											<Language>SFX</Language>
+											<AudioFile>Initial498ConceptMusB2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="476678353"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ObjectLists>
+										<ObjectList Name="Sequences">
+											<Reference>
+												<Local>
+													<MusicTrackSequence Name="" ID="{93067DD9-12EE-4272-BC11-080E4486A827}">
+														<ObjectLists>
+															<ObjectList Name="Clips">
+																<Reference>
+																	<Local>
+																		<MusicClip Name="Initial498ConceptMusB2" ID="{FEFB1F52-0611-45BF-9385-2DD66138A4E3}">
+																			<PropertyList>
+																				<Property Name="EndTrimOffset" Type="Real64" Value="21750"/>
+																				<Property Name="FadeInMode" Type="int16" Value="0"/>
+																				<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																			</PropertyList>
+																			<AudioSourceRef Name="Initial498ConceptMusB2" ID="{20B78063-F304-43FD-B35B-510A33AF33F1}"/>
+																		</MusicClip>
+																	</Local>
+																</Reference>
+															</ObjectList>
+														</ObjectLists>
+													</MusicTrackSequence>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</MusicTrack>
 							</ChildrenList>
 							<ObjectLists>
-								<ObjectList Name="Sequences">
+								<ObjectList Name="Cues">
 									<Reference>
 										<Local>
-											<MusicTrackSequence Name="" ID="{93067DD9-12EE-4272-BC11-080E4486A827}">
-												<ObjectLists>
-													<ObjectList Name="Clips">
-														<Reference>
-															<Local>
-																<MusicClip Name="Initial498ConceptMusB2" ID="{FEFB1F52-0611-45BF-9385-2DD66138A4E3}">
-																	<PropertyList>
-																		<Property Name="EndTrimOffset" Type="Real64" Value="21750"/>
-																		<Property Name="FadeInMode" Type="int16" Value="0"/>
-																		<Property Name="FadeOutMode" Type="int16" Value="0"/>
-																	</PropertyList>
-																	<AudioSourceRef Name="Initial498ConceptMusB2" ID="{20B78063-F304-43FD-B35B-510A33AF33F1}"/>
-																</MusicClip>
-															</Local>
-														</Reference>
-													</ObjectList>
-												</ObjectLists>
-											</MusicTrackSequence>
+											<MusicCue Name="Entry Cue" ID="{2B7E6B1C-7024-4324-A62D-A8CEAC05050E}"/>
+										</Local>
+									</Reference>
+									<Reference>
+										<Local>
+											<MusicCue Name="Exit Cue" ID="{6F48D323-016F-4D79-9D8D-EF55EB4020F4}">
+												<PropertyList>
+													<Property Name="CueType" Type="int16" Value="1"/>
+													<Property Name="TimeMs" Type="Real64" Value="16015.690376569"/>
+												</PropertyList>
+											</MusicCue>
+										</Local>
+									</Reference>
+								</ObjectList>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{89B7475C-3F02-4E41-B090-62150BA609AB}" ShortID="223127897">
+												<ReferenceList>
+													<Reference Name="Effect">
+														<Custom>
+															<Effect Name="Meter (Custom)" ID="{33B631E5-4782-493D-AC6B-0D874B7017F9}" ShortID="556824867" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">																<PluginData>
+	<GameParameter Name="Amp" ID="{38938C3B-9CCE-42A0-A810-5F38131177E5}"/>
+</PluginData>
+															</Effect>
+														</Custom>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
 										</Local>
 									</Reference>
 								</ObjectList>
 							</ObjectLists>
-						</MusicTrack>
+						</MusicSegment>
 					</ChildrenList>
-					<ObjectLists>
-						<ObjectList Name="Cues">
-							<Reference>
-								<Local>
-									<MusicCue Name="Entry Cue" ID="{2B7E6B1C-7024-4324-A62D-A8CEAC05050E}"/>
-								</Local>
-							</Reference>
-							<Reference>
-								<Local>
-									<MusicCue Name="Exit Cue" ID="{6F48D323-016F-4D79-9D8D-EF55EB4020F4}">
-										<PropertyList>
-											<Property Name="CueType" Type="int16" Value="1"/>
-											<Property Name="TimeMs" Type="Real64" Value="16015.690376569"/>
-										</PropertyList>
-									</MusicCue>
-								</Local>
-							</Reference>
-						</ObjectList>
-						<ObjectList Name="Effects">
-							<Reference>
-								<Local>
-									<EffectSlot Name="" ID="{89B7475C-3F02-4E41-B090-62150BA609AB}" ShortID="223127897">
-										<ReferenceList>
-											<Reference Name="Effect">
-												<Custom>
-													<Effect Name="Meter (Custom)" ID="{33B631E5-4782-493D-AC6B-0D874B7017F9}" ShortID="556824867" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">														<PluginData>
-	<GameParameter Name="Amp" ID="{38938C3B-9CCE-42A0-A810-5F38131177E5}"/>
-</PluginData>
-													</Effect>
-												</Custom>
-											</Reference>
-										</ReferenceList>
-									</EffectSlot>
-								</Local>
-							</Reference>
-						</ObjectList>
-					</ObjectLists>
-				</MusicSegment>
+				</MusicPlaylistContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</InteractiveMusic>
