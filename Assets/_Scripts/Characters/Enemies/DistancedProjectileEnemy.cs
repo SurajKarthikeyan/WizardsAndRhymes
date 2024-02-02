@@ -19,6 +19,12 @@ public class DistancedProjectileEnemy : BaseEnemy
     public float maxDistance = 10f;
 
     public float minDistance = 1f;
+
+    public GameObject enemyProjectile;
+
+    public Transform projectileSpawnPoint;
+
+    public bool shooting = false;
     #endregion
     #endregion
 
@@ -56,6 +62,14 @@ public class DistancedProjectileEnemy : BaseEnemy
             else if (currDistance < maxDistance && currDistance > minDistance)
             {
                 navMeshAgent.velocity = Vector3.zero;
+                Vector3 lookDir = player.transform.position - transform.position;
+                navMeshAgent.transform.rotation = Quaternion.LookRotation(lookDir, Vector3.up);
+
+                if (!shooting)
+                {
+                    ShootProjectile();
+                }
+                
             }
         }
     }
@@ -77,6 +91,27 @@ public class DistancedProjectileEnemy : BaseEnemy
     #endregion
 
     #region Custom Methods
+
+
+    public void ShootProjectile()
+    {
+        shooting = true;
+        StartCoroutine(Projectile());
+    }
+    /// <summary>
+    /// Coroutine called when the projectile function is called, handles cooldowns
+    /// </summary>
+    /// <returns>Various wait for seconds in between cooldowns</returns>
+    IEnumerator Projectile()
+    {
+        //m_AbilityManager.ReduceAbilityGuage(2);
+        GameObject projectile = Instantiate(enemyProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+        projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * 5;
+        //m_AbilityManager.ResetAbilityRecharge();
+        yield return new WaitForSeconds(1f);
+        //attackStatus = AttackStatus.None;
+        shooting = false;
+    }
     /// <summary>
     /// Helper method called upon each enemy death, allows for easy implementation
     /// of different enemy death behaviors

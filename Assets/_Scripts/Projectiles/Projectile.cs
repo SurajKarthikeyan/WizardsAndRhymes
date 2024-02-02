@@ -22,9 +22,9 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.GetComponent<BaseEnemy>() != null)
+        if (other.TryGetComponent<Character>(out var character))
         {
-            other.gameObject.GetComponent<Character>().HP -= damage;
+            character.HP -= damage;
         }
         Destroy(gameObject);
     }
