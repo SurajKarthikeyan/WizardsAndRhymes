@@ -166,6 +166,12 @@ public class PlayerController : MonoBehaviour
 
     private AttackStatus attackStatus;
 
+    private Vector3 attackDirection;
+
+    public float meleeDamage = 10f;
+
+    public GameObject meleeBox;
+
     #endregion
 
     #region Methods
@@ -267,6 +273,7 @@ public class PlayerController : MonoBehaviour
             Cursor.visible = false;
             Vector3 rotation = Vector3.Slerp(m_RigidBody.rotation.eulerAngles, direction, 0.5f);
             rotation.y = 0;
+            attackDirection = rotation;
             m_RigidBody.rotation = Quaternion.LookRotation(rotation, Vector3.up);
         }
         //This is if the player is using the mouse to look around
@@ -275,6 +282,7 @@ public class PlayerController : MonoBehaviour
             Cursor.visible = true;
             Vector3 mouseRotationVector = Camera.main.ScreenToWorldPoint(Input.mousePosition) - m_RigidBody.position;
             direction = new(mouseRotationVector.x, 0, mouseRotationVector.y);
+            attackDirection = direction;
             m_RigidBody.rotation = Quaternion.LookRotation(direction, Vector3.up);
         }
         //This is if neither are currently being used
@@ -326,6 +334,7 @@ public class PlayerController : MonoBehaviour
     {
         attackStatus = AttackStatus.Melee;
         m_AbilityManager.ResetAbilityRecharge();
+        StartCoroutine(Melee());
     }
 
     /// <summary>
@@ -347,7 +356,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator Dash()
     { 
         moveStatus = MoveStatus.Dashing;
-        m_AbilityManager.ReduceAbilityGuage(10);
+        m_AbilityManager.ReduceAbilityGuage(m_AbilityManager.dashAbilityCost);
         m_DashCooldownTimer = 0;
         yield return new WaitForSeconds(m_DashTime);
         moveStatus = MoveStatus.Moving;
@@ -359,11 +368,22 @@ public class PlayerController : MonoBehaviour
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Projectile()
     {
-        m_AbilityManager.ReduceAbilityGuage(2);
+        m_AbilityManager.ReduceAbilityGuage(m_AbilityManager.rangedAbilityCost);
         GameObject projectile = Instantiate(rangedPrefab, rangedSpawnPoint.position, rangedSpawnPoint.rotation);
         projectile.GetComponent<Rigidbody>().velocity = rangedSpawnPoint.forward * rangedPrefabSpeed;
         m_AbilityManager.ResetAbilityRecharge();
         yield return new WaitForSeconds(0.3f);
+        attackStatus = AttackStatus.None;
+    }
+
+    IEnumerator Melee()
+    {
+        meleeBox.SetActive(true);
+        m_AbilityManager.ReduceAbilityGuage(m_AbilityManager.meleeAbilityCost);
+        m_RigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
+        m_AbilityManager.ResetAbilityRecharge();
+        yield return new WaitForSeconds(0.5f);
+        meleeBox.SetActive(false);
         attackStatus = AttackStatus.None;
     }
     

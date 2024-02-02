@@ -61,6 +61,12 @@ public class AbilityManager : MonoBehaviour
     [SerializeField]
     private float abilityRechargeThreshold = 0.5f;
 
+    public float rangedAbilityCost = 2f;
+
+    public float meleeAbilityCost = 5f;
+
+    public float dashAbilityCost = 10f;
+
     /// <summary>
     /// Float that acts as a timer in between each charge of the ability meter.
     /// </summary>
