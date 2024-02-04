@@ -6,31 +6,19 @@ using UnityEngine;
 public class MusicTime : MonoBehaviour
 {
 
-    public AK.Wwise.RTPC test;
+    public AK.Wwise.RTPC low;
+    public AK.Wwise.RTPC mid;
+    public AK.Wwise.RTPC high;
     public List<GameObject> electricPoints;
     public int multipler;
 
     public void Update()
     {
-        float x = test.GetGlobalValue();
-        float normalized = (x + 48) / 48;
+        float lowVal = low.GetGlobalValue();
+        float midVal = mid.GetGlobalValue();
+        float highVal = high.GetGlobalValue();
         
-        Vector3 newtrans = electricPoints[0].transform.localPosition;
-        newtrans.y = normalized * multipler;
-        electricPoints[0].transform.localPosition = newtrans;
-
-        newtrans = electricPoints[2].transform.localPosition;
-        newtrans.y = normalized * multipler;
-        electricPoints[2].transform.localPosition = newtrans;
-        
-        
-        newtrans = electricPoints[1].transform.localPosition;
-        newtrans.y = -normalized * multipler;
-        electricPoints[1].transform.localPosition = newtrans;
-        
-        newtrans = electricPoints[3].transform.localPosition;
-        newtrans.y = -normalized * multipler;
-        electricPoints[3].transform.localPosition = newtrans;
+        Debug.Log(lowVal + " | " + midVal + " | " + highVal);
     }
 
 

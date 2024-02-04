@@ -21,6 +21,9 @@ namespace AK
     namespace GAME_PARAMETERS
     {
         static const AkUniqueID AMP = 1117531621U;
+        static const AkUniqueID HIGH = 3550808449U;
+        static const AkUniqueID LOW = 545371365U;
+        static const AkUniqueID MID = 1182670505U;
     } // namespace GAME_PARAMETERS
 
     namespace BANKS
@@ -34,6 +37,13 @@ namespace AK
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID TESTBUS = 1966988073U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID AUXHIGH = 221139265U;
+        static const AkUniqueID AUXLOW = 411780261U;
+        static const AkUniqueID AUXMID = 1049182825U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {

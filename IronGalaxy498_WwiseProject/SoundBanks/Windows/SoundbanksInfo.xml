@@ -9,10 +9,22 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{A09B814F-B75D-2C86-462C-7A0E73A95D12}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{CD3B916A-DE5E-BC75-92D0-2F2D79582DF9}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
+				<Custom>
+					<Plugin Id="134123109" Name="Gain (Custom)" LibName="Wwise Gain" LibId="9109507"/>
+					<Plugin Id="322348316" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
+					<Plugin Id="498184372" Name="Gain (Custom)" LibName="Wwise Gain" LibId="9109507"/>
+					<Plugin Id="562758421" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
+					<Plugin Id="610181853" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
+					<Plugin Id="777683974" Name="Gain (Custom)" LibName="Wwise Gain" LibId="9109507"/>
+				</Custom>
+				<ShareSets>
+					<Plugin Id="1008402193" Name="Low_Pass_20KHz" LibName="Wwise Parametric EQ" LibId="6881283"/>
+					<Plugin Id="3604890626" Name="High_Pass_60Hz" LibName="Wwise Parametric EQ" LibId="6881283"/>
+				</ShareSets>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
 					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
@@ -22,11 +34,50 @@
 				<Bus Id="1966988073" Name="testBus"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
+			<AuxBusses>
+				<AuxBus Id="221139265" Name="auxHigh">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="322348316"/>
+							<PluginRef Id="498184372"/>
+						</Custom>
+						<ShareSets>
+							<PluginRef Id="3604890626"/>
+						</ShareSets>
+					</PluginRefs>
+				</AuxBus>
+				<AuxBus Id="411780261" Name="auxLow">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="562758421"/>
+							<PluginRef Id="777683974"/>
+						</Custom>
+						<ShareSets>
+							<PluginRef Id="1008402193"/>
+						</ShareSets>
+					</PluginRefs>
+				</AuxBus>
+				<AuxBus Id="1049182825" Name="auxMid">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="134123109"/>
+							<PluginRef Id="610181853"/>
+						</Custom>
+						<ShareSets>
+							<PluginRef Id="1008402193"/>
+							<PluginRef Id="3604890626"/>
+						</ShareSets>
+					</PluginRefs>
+				</AuxBus>
+			</AuxBusses>
 			<GameParameters>
+				<GameParameter Id="545371365" Name="Low"/>
 				<GameParameter Id="1117531621" Name="Amp"/>
+				<GameParameter Id="1182670505" Name="Mid"/>
+				<GameParameter Id="3550808449" Name="High"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{C1C7FDAA-593E-373D-327F-DCB36F60BB24}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{87EC648A-B7F5-6E3E-33AC-4E37F4EAE563}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -53,6 +104,11 @@
 					<MediaRefs>
 						<MediaRef Id="476678353"/>
 					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="221139265" Name="auxHigh"/>
+						<AuxBusRef Id="411780261" Name="auxLow"/>
+						<AuxBusRef Id="1049182825" Name="auxMid"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="1324413170" Name="TestMusic" DurationType="OneShot" DurationMin="21.75" DurationMax="21.75">
 					<MediaRefs>
@@ -62,5 +118,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C45AEBF9-0844-15E7-353C-1C93C525C609}</FileHash>
+	<FileHash>{FFD9802E-8986-BF99-0518-4E6061B3986E}</FileHash>
 </SoundBanksInfo>
