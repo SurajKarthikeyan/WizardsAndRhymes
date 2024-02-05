@@ -3,9 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using MoreMountains.Tools;
 
+/// <summary>
+/// Sets a value on a FloatController to the amplitude of the music
+/// </summary>
 public class SetAsAmplitude : MonoBehaviour
 {
+    #region Variables
+    [Tooltip("Possible fields to set on a FloatController")]
     enum FloatControllerFields { Driven, OneTimeAmplitude}
+
 
     [Tooltip("The FloatController to set a value on based on audio amplitude")]
     [SerializeField] FloatController floatController;
@@ -17,7 +23,9 @@ public class SetAsAmplitude : MonoBehaviour
     [SerializeField] bool onlyUpdateOnBeat;
     [MMCondition("onlyUpdateOnBeat", true)][Tooltip("The beat interval to update the amplitude on")]
     [SerializeField] WwiseAdapter.BeatIntervals beatInterval;
+    #endregion
 
+    #region Unity Methods
     private void Awake()
     {
         //Register listener
@@ -30,7 +38,9 @@ public class SetAsAmplitude : MonoBehaviour
         if (!onlyUpdateOnBeat)
             UpdateAmplitude();
     }
+    #endregion
 
+    #region Custom Methods
     void BeatTriggered()
     {
         UpdateAmplitude();
@@ -51,4 +61,5 @@ public class SetAsAmplitude : MonoBehaviour
                 break;
         }
     }
+    #endregion
 }

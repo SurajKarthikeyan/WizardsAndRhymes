@@ -4,9 +4,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
+/// <summary>
+/// Base class for controlling properties on materials
+/// </summary>
 public class MaterialPropertyController : MonoBehaviour
 {
+    #region Variables
+    [Tooltip("Possible component types to control the materials of")]
     enum TargetType { None, Renderer, Decal}
+
 
     [Header("Base Material Property Controller Settings")]
     [Tooltip("Whether to apply this to all instances of the material")]
@@ -33,9 +39,14 @@ public class MaterialPropertyController : MonoBehaviour
     [Tooltip("The material to control all instances of")]
     [SerializeField] Material globalMaterial;
 
-    protected Material material; //The controlled material
-    protected Material materialBackup; //A backup of the material used to restore values when the game ends
 
+    [Tooltip("The controlled material")]
+    protected Material material;
+    [Tooltip("A backup of the material used to restore values when the game ends")]
+    protected Material materialBackup;
+    #endregion
+
+    #region Unity Methods
     protected void Awake()
     {
         //Get the material to control
@@ -61,4 +72,5 @@ public class MaterialPropertyController : MonoBehaviour
         if (applyGlobal)
             material.CopyMatchingPropertiesFromMaterial(materialBackup);
     }
+    #endregion
 }

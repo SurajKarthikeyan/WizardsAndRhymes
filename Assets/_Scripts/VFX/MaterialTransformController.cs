@@ -3,8 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Sets Vector3 properties on a material to the position of a Transform
+/// </summary>
 public class MaterialTransformController : MaterialPropertyController
 {
+    #region Variables
     [Header("Transform Material Property Settings")]
     [Tooltip("The transform to pull data from")]
     [SerializeField] Transform source;
@@ -14,7 +18,9 @@ public class MaterialTransformController : MaterialPropertyController
     [SerializeField] string localSpaceProperty;
     [Tooltip("The Vector3 property on the material to set as the clip space position of the transform")]
     [SerializeField] string clipSpaceProperty;
+    #endregion
 
+    #region Unity Methods
     private void Update()
     {
         //Set the material properties
@@ -27,4 +33,5 @@ public class MaterialTransformController : MaterialPropertyController
         if (clipSpaceProperty != null)
             material.SetVector(clipSpaceProperty, Camera.main.WorldToViewportPoint(source.position));
     }
+    #endregion
 }

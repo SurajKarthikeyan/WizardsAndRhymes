@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEditor;
 
 //Based on this forum post: https://discussions.unity.com/t/create-texture-from-current-camera-view/86847/3
+/// <summary>
+/// Editor tool for rendering text to a Texture asset
+/// </summary>
 public class EditorRenderTextToTexture : MonoBehaviour
 {
     [Tooltip("The camera to render from")]

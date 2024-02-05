@@ -2,31 +2,36 @@ using AYellowpaper.SerializedCollections;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
+/// <summary>
+/// Invokes methods on other MonoBehaviours to the beat of the music
+/// </summary>
 public class TriggerOnBeat : MonoBehaviour
 {
+    #region Variables
     [Tooltip("The beat interval to trigger on (ex: B4 = every quarter note)")]
     [SerializeField] WwiseAdapter.BeatIntervals beatInterval;
 
-    [Tooltip("The methods to invoke")]
-    [SerializedDictionary("Target", "Target Method")]
-    [SerializeField] SerializedDictionary<MonoBehaviour, string> targets = new SerializedDictionary<MonoBehaviour, string>();
+    [Tooltip("The events to invoke")]
+    [SerializeField] UnityEvent eventsToTrigger;
+    #endregion
 
+    #region Unity Methods
     private void Awake()
     {
         //Register listener
         WwiseAdapter.beatEvents[beatInterval] += BeatTriggered;
     }
+    #endregion
 
-    //Called when a beat of the selected interval is triggered
+    #region Custom Methods
+    /// <summary>
+    /// Invoked when a beat occurs
+    /// </summary>
     void BeatTriggered()
     {
-        foreach (KeyValuePair<MonoBehaviour, string> pair in targets)
-        {
-            if (pair.Key != null)
-            {
-                pair.Key.Invoke(pair.Value, 0); //Immediately invoke the named method on the target script
-            }
-        }
+        eventsToTrigger?.Invoke(); //Invoke the event(s) set in the inspector
     }
+    #endregion
 }

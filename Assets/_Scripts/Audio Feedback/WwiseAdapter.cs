@@ -1,15 +1,22 @@
+using MoreMountains.Tools;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UIElements;
+using static UnityEngine.UIElements.UxmlAttributeDescription;
 
+/// <summary>
+/// Adapts the music for other scripts to use
+/// </summary>
 public class WwiseAdapter : MonoBehaviour
 {
+    #region Variables
+    [Tooltip("The potential intervals to trigger beats on")]
     public enum BeatIntervals { B32, B16, B8, B4, B2, B1 };
 
-    [HideInInspector] public static WwiseAdapter S; //Singleton instance (Suraj signed off on this, take it up with him)
-    int beatCounter = 0; //Used to keep track of which interval events to call on each beat
+    [Tooltip("Singleton instance")]
+    [HideInInspector] public static WwiseAdapter S; //Suraj signed off on this, take it up with him
 
     //Events and delegates
     [HideInInspector] public static event BeatDelegate on32Beat;
@@ -31,11 +38,20 @@ public class WwiseAdapter : MonoBehaviour
         {BeatIntervals.B1, on1Beat }
     };
 
-    [HideInInspector] public float amplitude;
 
     [Tooltip("The RTPC to pull amplitude data from")]
     [SerializeField] AK.Wwise.RTPC amplitudeRTPC;
 
+
+    [Tooltip("The current amplitude, read by other scripts")]
+    [HideInInspector] public float amplitude { get; private set; }
+
+
+    [Tooltip("Used to keep track of which interval events to call on each beat")]
+    int beatCounter = 0;
+    #endregion
+
+    #region Unity Methods
     private void Awake()
     {
         //Initialize singleton
@@ -48,14 +64,24 @@ public class WwiseAdapter : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        amplitude = amplitudeRTPC.GetGlobalValue();
+        amplitude = (amplitude + 48) / 48;
+    }
+
     private void OnDestroy()
     {
         //Free singleton
         if (S == this)
             S = null;
     }
+    #endregion
 
-    //Called by Wwise callback on each 32nd beat
+    #region Custom Methods
+    /// <summary>
+    /// Should be invoked by the music AkAmbient component every 32nd beat. Triggers the appropriate beat event(s)
+    /// </summary>
     public void Wwise32Beat()
     {
         //Trigger the appropriate functions
@@ -72,13 +98,10 @@ public class WwiseAdapter : MonoBehaviour
             beatCounter = 0;
     }
 
-    private void Update()
-    {
-        amplitude = amplitudeRTPC.GetGlobalValue();
-        amplitude = (amplitude + 48) / 48;
-    }
-
 #if UNITY_EDITOR
+    /// <summary>
+    /// Editor tool. Copies the Wwise32Beat() function's name to the clipboard
+    /// </summary>
     [ContextMenu("Copy Function Name")]
     public void GetFunctionName()
     {
@@ -86,4 +109,5 @@ public class WwiseAdapter : MonoBehaviour
         GUIUtility.systemCopyBuffer = nameof(Wwise32Beat);
     }
 #endif
+    #endregion
 }
