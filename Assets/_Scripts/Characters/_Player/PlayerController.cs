@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
     [Header("Melee Attack Variables")]
     [Tooltip("Damage inflicted by the player's melee attack")]
     [SerializeField]
-    private float meleeDamage = 10f;
+    public float meleeDamage = 10f;
 
     [Tooltip("Damage inflicted by the player's melee attack")]
     [SerializeField]
