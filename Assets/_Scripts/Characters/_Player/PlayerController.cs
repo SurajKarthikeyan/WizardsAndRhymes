@@ -10,138 +10,9 @@ using UnityEngine.UI;
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
-    #region Class Variables
+    #region Variables
 
-    #region Input
-    /// <summary>
-    /// C# Class generated from the input action map
-    /// </summary>
-    private PlayerInput m_PlayerInput;
-
-    /// <summary>
-    /// Move input action from the PlayerInput action map
-    /// </summary>
-    private InputAction m_MoveAction;
-
-    /// <summary>
-    /// Input action used specifically for controllers to m_LookAction around the player
-    /// </summary>
-    private InputAction m_LookAction;
-    #endregion
-
-    #region Movement Variables
-    /// <summary>
-    /// Rigidbody of the player
-    /// </summary>
-    private Rigidbody m_RigidBody;
-
-    [Header("Movement Variables")]
-    /// <summary>
-    /// Magnitude of appliedForce applied to player Rigidbody for movement
-    /// </summary>
-    [SerializeField]
-    private float m_MovementForce = 1f;
-
-    /// <summary>
-    /// Maximum speed that the player is allowed to m_MoveAction generally
-    /// </summary>
-    [SerializeField]
-    private float m_MaxMoveSpeed = 5f;
-
-    /// <summary>
-    /// Direction to apply the appliedForce of movement when moving
-    /// </summary>
-    private Vector3 m_ForceDirection = Vector3.zero;
-
-    [Header("Dashing Variables")]
-    /// <summary>
-    /// Magnitude of appliedForce applied to player Rigidbody for dashing
-    /// </summary>
-    [SerializeField]
-    private float m_DashForce = 3f;
-
-    /// <summary>
-    /// Maximum speed that the player is allowed to m_MoveAction while dashing
-    /// </summary>
-    [SerializeField]
-    private float m_MaxDashSpeed = 10f;
-
-    /// <summary>
-    /// Cooldown of the dash in seconds
-    /// </summary>
-    [SerializeField]
-    private float m_DashTime = .5f;
-
-    /// <summary>
-    /// Number in seconds of the cooldown in between dashes
-    /// </summary>
-    [SerializeField]
-    private float m_DashCooldownThreshold = 2f;
-
-    /// <summary>
-    /// Timer that tracks how long it has been since last dash
-    /// </summary>
-    private float m_DashCooldownTimer;
-    #endregion
-
-    #region Camera
-    [Header("Camera")]
-    /// <summary>
-    /// Reference to the camera focusing on the player
-    /// </summary>
-    [SerializeField]
-    private Camera m_PlayerCamera;
-    #endregion
-
-
-    public AbilityManager m_AbilityManager;
-
-    #region Ranged Attack
-    /// <summary>
-    /// Prefab used as the player's ranged attack
-    /// </summary>
-    [Header("Ranged Attack Variables")]
-    [SerializeField]
-    private GameObject rangedPrefab;
-
-    /// <summary>
-    /// Transform to spawn the projectiles
-    /// </summary>
-    [SerializeField]
-    private Transform rangedSpawnPoint;
-
-    /// <summary>
-    /// Speed the prefab is shot at
-    /// </summary>
-    [SerializeField]
-    float rangedPrefabSpeed = 5f;
-    #endregion 
-    
-    #endregion
-
-    #region Properties
-    /// <summary>
-    /// Returns true if the player is able to dash
-    /// </summary>
-    public bool CanDash => m_AbilityManager.m_CurrentAbilityValue >= 10 && m_DashCooldownTimer >= m_DashCooldownThreshold;
-
-    /// <summary>
-    /// Returns true if the player is currently moving
-    /// </summary>
-    public bool IsMoving => m_MoveAction.ReadValue<Vector2>().sqrMagnitude > 0.1f;
-
-    /// <summary>
-    /// Returns true if the mouse is over the game window
-    /// </summary>
-    bool MouseOverGameWindow { get { return !(0 > Input.mousePosition.x || 0 > Input.mousePosition.y || 
-                Screen.width < Input.mousePosition.x || Screen.height < Input.mousePosition.y); } }
-    #endregion
-
-    #region Enum and Enum Instances
-
-    /// <summary>
-    /// Enum that represents the movement state of the player
-    /// </summary>
+    [Tooltip("Enum that represents the movement state of the player")]
     private enum MoveStatus
     {
         Idle,
@@ -149,32 +20,119 @@ public class PlayerController : MonoBehaviour
         Dashing
     }
 
-    /// <summary>
-    /// MoveStatus instance
-    /// </summary>
+    [Tooltip("MoveStatus instance")]
     private MoveStatus moveStatus;
 
-    /// <summary>
-    /// Enum that represents the current state of the player attacking
-    /// </summary>
+    [Tooltip("Enum that represents the current state of the player attacking")]
     private enum AttackStatus
     {
-        None, 
+        None,
         Ranged,
         Melee
     }
 
+    [Tooltip("AttackStatus instance")]
     private AttackStatus attackStatus;
 
+    [Header("Movement Variables")]
+
+    [Tooltip("Magnitude of appliedForce applied to player Rigidbody for movement")]
+    [SerializeField]
+    private float m_MovementForce = 1f;
+
+    [Tooltip("Maximum speed that the player is allowed to move generally")]
+    [SerializeField]
+    private float m_MaxMoveSpeed = 5f;
+
+    [Tooltip("Direction to apply the force of movement when moving")]
+    private Vector3 m_ForceDirection = Vector3.zero;
+
+
+    [Header("Dashing Variables")]
+
+    [Tooltip("Magnitude of appliedForce applied to player Rigidbody for dashing")]
+    [SerializeField]
+    private float m_DashForce = 3f;
+
+    [Tooltip("Maximum speed that the player is allowed to move while dashing")]
+    [SerializeField]
+    private float m_MaxDashSpeed = 10f;
+
+    [Tooltip("Cooldown of the dash in seconds")]
+    [SerializeField]
+    private float m_DashTime = .5f;
+
+    [Tooltip("Number in seconds of the cooldown in between dashes")]
+    [SerializeField]
+    private float m_DashCooldownThreshold = 2f;
+
+    
+    [Header("Camera")]
+    [Tooltip("Reference to the camera focusing on the player")]
+    [SerializeField]
+    private Camera m_PlayerCamera;
+
+    [Header("Ranged Attack Variables")]
+
+    [Tooltip("Prefab used as the player's ranged attack")]
+    [SerializeField]
+    private GameObject rangedPrefab;
+
+    [Tooltip("Transform to spawn the projectiles")]
+    [SerializeField]
+    private Transform rangedSpawnPoint;
+
+    [Tooltip("Speed the prefab is shot at")]
+    [SerializeField]
+    private float rangedPrefabSpeed = 5f;
+
+    [Header("Melee Attack Variables")]
+    [Tooltip("Damage inflicted by the player's melee attack")]
+    [SerializeField]
+    private float meleeDamage = 10f;
+
+    [Tooltip("Damage inflicted by the player's melee attack")]
+    [SerializeField]
+    private GameObject meleeBox;
+
+    [Tooltip("Timer that tracks how long it has been since last dash")]
+    private float m_DashCooldownTimer;
+
+    [Header("Script References")]
+    [SerializeField]
+    private AbilityManager m_AbilityManager;
+
+    [Tooltip("C# Class generated from the input action map")]
+    private PlayerInput m_PlayerInput;
+
+    [Tooltip("Move input action from the PlayerInput action map")]
+    private InputAction m_MoveAction;
+
+    [Tooltip("Input action used specifically for controllers to look around the player")]
+    private InputAction m_LookAction;
+
+    [Tooltip("Rigidbody of the player")]
+    private Rigidbody m_RigidBody;
+
+    [Tooltip("Direction in which the will attack if they choose to attack")]
     private Vector3 attackDirection;
 
-    public float meleeDamage = 10f;
+    [Tooltip("Returns true if the player is able to dash")]
+    private bool CanDash => m_AbilityManager.currentAbilityValue >= 10 && m_DashCooldownTimer >= m_DashCooldownThreshold;
 
-    public GameObject meleeBox;
+    [Tooltip("Returns true if the player is currently moving")]
+    private bool IsMoving => m_MoveAction.ReadValue<Vector2>().sqrMagnitude > 0.1f;
 
+    [Tooltip("Returns true if the mouse is over the game window, used for looking")]
+    private bool MouseOverGameWindow
+    {
+        get
+        {
+            return !(0 > Input.mousePosition.x || 0 > Input.mousePosition.y ||
+                Screen.width < Input.mousePosition.x || Screen.height < Input.mousePosition.y);
+        }
+    }
     #endregion
-
-    #region Methods
 
     #region Unity Methods
     /// <summary>
@@ -222,6 +180,7 @@ public class PlayerController : MonoBehaviour
 
         if (IsMoving)
         {
+            //Adds different force to the rigidbody depending on if we are dashing or not
             float appliedForce;
             if (moveStatus == MoveStatus.Dashing)
             {
@@ -232,15 +191,18 @@ public class PlayerController : MonoBehaviour
                 appliedForce = m_MovementForce;
                 moveStatus = MoveStatus.Moving;
             }
-
+            //Reading the input given by the player and moving away from the camera
             m_ForceDirection += m_MoveAction.ReadValue<Vector2>().x * appliedForce * GetCameraRight(m_PlayerCamera);
             m_ForceDirection += m_MoveAction.ReadValue<Vector2>().y * appliedForce * GetCameraForward(m_PlayerCamera);
 
+            //Adds the force and then we assume that the player is not inputting a direction
             m_RigidBody.AddForce(m_ForceDirection, ForceMode.Impulse);
             m_ForceDirection = Vector3.zero;
 
             Vector3 horizontalVelocity = m_RigidBody.velocity;
             horizontalVelocity.y = 0;
+
+            //These checks are to clamp the velocity at the maximum move and dashing speed respectively
             if (horizontalVelocity.sqrMagnitude > m_MaxDashSpeed * m_MaxDashSpeed && moveStatus == MoveStatus.Dashing)
             {
                 m_RigidBody.velocity = horizontalVelocity.normalized * m_MaxDashSpeed + Vector3.up * m_RigidBody.velocity.y;
@@ -250,24 +212,31 @@ public class PlayerController : MonoBehaviour
                 m_RigidBody.velocity = horizontalVelocity.normalized * m_MaxMoveSpeed + Vector3.up * m_RigidBody.velocity.y;
             }
         }
+
+        //If we are not moving, we are assumed idle
         else
         {
             moveStatus = MoveStatus.Idle;
         }
 
+        //Function that has the player look in the direction the player is inputting
         Look();
     }
     #endregion
 
     #region Custom Methods
     /// <summary>
-    /// Function that makes the player m_LookAction in the direction that it's moving
+    /// Function that makes the player look in the direction that the player inputs
     /// </summary>
     private void Look()
     {
+        //Gets the position of the player's look input
         Vector2 aim = m_LookAction.ReadValue<Vector2>();
         Vector3 direction = new(aim.x, 0, aim.y);
-        //If statement checks if the player is using a controller
+        /**
+         * First check is to see if the player is using a controller.
+         * If the player is using a mouse, we have to calculate the look direction differently
+         */
         if (aim.magnitude > 0.2f)
         {
             Cursor.visible = false;
@@ -369,6 +338,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator Projectile()
     {
         m_AbilityManager.ReduceAbilityGuage(m_AbilityManager.rangedAbilityCost);
+        //Instantiate projectile and give it the proper velocity
         GameObject projectile = Instantiate(rangedPrefab, rangedSpawnPoint.position, rangedSpawnPoint.rotation);
         projectile.GetComponent<Rigidbody>().velocity = rangedSpawnPoint.forward * rangedPrefabSpeed;
         m_AbilityManager.ResetAbilityRecharge();
@@ -376,8 +346,13 @@ public class PlayerController : MonoBehaviour
         attackStatus = AttackStatus.None;
     }
 
+    /// <summary>
+    /// Coroutine called when the melee function is called, handles cooldowns
+    /// </summary>
+    /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Melee()
     {
+        //Sets the collider to be active and pushes player forward as if they're lunging
         meleeBox.SetActive(true);
         m_AbilityManager.ReduceAbilityGuage(m_AbilityManager.meleeAbilityCost);
         m_RigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
@@ -387,6 +362,5 @@ public class PlayerController : MonoBehaviour
         attackStatus = AttackStatus.None;
     }
     
-    #endregion
     #endregion
 }

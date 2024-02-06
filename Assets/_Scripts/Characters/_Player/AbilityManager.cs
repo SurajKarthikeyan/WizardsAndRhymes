@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 
@@ -8,72 +6,54 @@ using UnityEngine;
 /// </summary>
 public class AbilityManager : MonoBehaviour
 {
-    #region Class Variables
-    /// <summary>
-    /// GameObject that contains the ability slider, used for positioning
-    /// </summary>
+    #region Variables
     [Header("Ability Slider Relevant References")]
     [Tooltip("GameObject that contains the ability slider")]
     [SerializeField]
-    private GameObject m_AbilitySliderGameObject;
+    private GameObject abilitySliderGameObject;
 
-    /// <summary>
-    /// Slider that is obtained from that GameObject, used for value changes and display
-    /// </summary>
-    private Slider m_AbilitySlider;
-
-    /// <summary>
-    /// Vector offset that is used for displaying the ability slider at the proper place
-    /// </summary>
-    private Vector3 m_AbilitySliderUIOffset = new (-0.1f, -0.45f, -1.25f);
-
-    /// <summary>
-    /// GameObject that contains the ability slider fill area
-    /// </summary>
     [Tooltip("GameObject that contains the ability slider fill area")]
     [SerializeField]
-    private GameObject m_SliderFillArea;
+    private GameObject sliderFillArea;
 
-    /// <summary>
-    /// Maximum value of the ability bar
-    /// </summary>
-    [Tooltip("Maximum value of the ability bar")]
-    [SerializeField]
-    private float m_MaximumAbilityValue = 100f;
-
-    /// <summary>
-    /// Minimum value of the ability bar
-    /// </summary>
-    [Tooltip("Minimum value of the ability bar")]
-    [SerializeField]
-    private float m_MinimumAbilityValue = 0f;
-
-    /// <summary>
-    /// Current value of the ability bar
-    /// </summary>
-    [Tooltip("Current value of the ability bar")]
-    public float m_CurrentAbilityValue = 0f;
-
-    /// <summary>
-    /// Interval in seconds of one charge of ability meter (Every x seconds, the ability meter will charge a bit)
-    /// </summary>
+    [Header("Ability Slider values")]
     [Tooltip("Interval in seconds of one charge of ability meter (Every x seconds, the ability meter will charge a bit)")]
     [SerializeField]
     private float abilityRechargeThreshold = 0.5f;
 
+    [Tooltip("Amount that the ability gauge fills every time it is charged")]
+    [SerializeField]
+    private float abilityGaugeFillValue = 3f;
+
+    [Tooltip("Minimum value of the ability bar")]
+    [SerializeField]
+    private float minimumAbilityValue = 0f;
+
+    [Tooltip("Maximum value of the ability bar")]
+    [SerializeField]
+    private float maximumAbilityValue = 100f;
+
+    [Tooltip("Current value of the ability bar")]
+    public float currentAbilityValue = 0f;
+
+    [Tooltip("Amount of ability gauge used when ranged attacking")]
     public float rangedAbilityCost = 2f;
 
+    [Tooltip("Amount of ability gauge used when ranged attacking")]
     public float meleeAbilityCost = 5f;
 
+    [Tooltip("Amount of ability gauge used when dashing")]
     public float dashAbilityCost = 10f;
 
-    /// <summary>
-    /// Float that acts as a timer in between each charge of the ability meter.
-    /// </summary>
+    [Tooltip("Float that acts as a timer in between each charge of the ability meter.")]
     private float abilityRechargeTimer;
-    #endregion
 
-    #region Methods
+    [Tooltip("Slider that is obtained from its GameObject, used for value changes and display")]
+    private Slider abilitySlider;
+
+    [Tooltip("Vector offset that is used for displaying the ability slider at the proper place")]
+    private Vector3 abilitySliderUIOffset = new(-0.1f, -0.45f, -1.25f);
+    #endregion
 
     #region Unity Methods
     /// <summary>
@@ -81,9 +61,9 @@ public class AbilityManager : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        m_AbilitySlider = m_AbilitySliderGameObject.GetComponent<Slider>();
-        m_CurrentAbilityValue = m_MaximumAbilityValue;
-        m_AbilitySlider.value = m_CurrentAbilityValue;
+        abilitySlider = abilitySliderGameObject.GetComponent<Slider>();
+        currentAbilityValue = maximumAbilityValue;
+        abilitySlider.value = currentAbilityValue;
     }
 
     /// <summary>
@@ -92,29 +72,30 @@ public class AbilityManager : MonoBehaviour
     private void FixedUpdate()
     {
         //Keeps ability slider with the player below them
-        m_AbilitySliderGameObject.transform.position = transform.position + m_AbilitySliderUIOffset;
+        abilitySliderGameObject.transform.position = transform.position + abilitySliderUIOffset;
 
         abilityRechargeTimer += Time.deltaTime;
 
+        //Charges gauge
         if (abilityRechargeTimer >= abilityRechargeThreshold)
         {
             FillAbilityGauge();
         }
 
         
-        m_CurrentAbilityValue = Mathf.Clamp(m_CurrentAbilityValue,
-            m_MinimumAbilityValue, m_MaximumAbilityValue);
+        currentAbilityValue = Mathf.Clamp(currentAbilityValue,
+            minimumAbilityValue, maximumAbilityValue);
 
-        m_AbilitySlider.value = m_CurrentAbilityValue;
+        abilitySlider.value = currentAbilityValue;
 
         //These checks essentially make the bar go away entirely if it's empty, it doesn't do that on its own
-        if (m_AbilitySlider.value <= 0)
+        if (abilitySlider.value <= 0)
         {
-            m_SliderFillArea.SetActive(false);
+            sliderFillArea.SetActive(false);
         }
-        else if (m_AbilitySlider.value > 0 && !m_SliderFillArea.activeInHierarchy)
+        else if (abilitySlider.value > 0 && !sliderFillArea.activeInHierarchy)
         {
-            m_SliderFillArea.SetActive(true);
+            sliderFillArea.SetActive(true);
         }
     }
     #endregion
@@ -125,7 +106,7 @@ public class AbilityManager : MonoBehaviour
     /// </summary>
     public void FillAbilityGauge()
     {
-        m_CurrentAbilityValue += 3;
+        currentAbilityValue += abilityGaugeFillValue;
         abilityRechargeTimer = 0;
     }
 
@@ -135,7 +116,7 @@ public class AbilityManager : MonoBehaviour
     /// <param name="value"></param>
     public void ReduceAbilityGuage(float value)
     {
-        m_CurrentAbilityValue -= value;
+        currentAbilityValue -= value;
     }
 
     /// <summary>
@@ -145,6 +126,5 @@ public class AbilityManager : MonoBehaviour
     {
         abilityRechargeTimer = 0;
     }
-    #endregion
     #endregion
 }
