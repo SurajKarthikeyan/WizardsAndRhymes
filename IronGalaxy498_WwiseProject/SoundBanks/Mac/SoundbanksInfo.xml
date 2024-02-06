@@ -77,13 +77,17 @@
 				<GameParameter Id="3550808449" Name="High"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{87EC648A-B7F5-6E3E-33AC-4E37F4EAE563}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{548F632A-54C2-6468-3435-B6AD1E97623E}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
 				<File Id="83311950" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Initial498ConceptMusB2.wav</ShortName>
 					<CachePath>SFX/Initial498ConceptMusB2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="345662734" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>498FreqTest.wav</ShortName>
+					<CachePath>SFX/498FreqTest_818F3B66.wem</CachePath>
 				</File>
 				<File Id="437516516" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Space SHMUP music.wav</ShortName>
@@ -95,6 +99,11 @@
 				</File>
 			</Media>
 			<Events>
+				<Event Id="1061604899" Name="FreqTest" DurationType="OneShot" DurationMin="11.586208" DurationMax="11.586208">
+					<MediaRefs>
+						<MediaRef Id="345662734"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1097980931" Name="TestEvent" DurationType="OneShot" DurationMin="16" DurationMax="16">
 					<MediaRefs>
 						<MediaRef Id="437516516"/>
@@ -104,11 +113,6 @@
 					<MediaRefs>
 						<MediaRef Id="476678353"/>
 					</MediaRefs>
-					<AuxBusRefs>
-						<AuxBusRef Id="221139265" Name="auxHigh"/>
-						<AuxBusRef Id="411780261" Name="auxLow"/>
-						<AuxBusRef Id="1049182825" Name="auxMid"/>
-					</AuxBusRefs>
 				</Event>
 				<Event Id="1324413170" Name="TestMusic" DurationType="OneShot" DurationMin="21.75" DurationMax="21.75">
 					<MediaRefs>
@@ -118,5 +122,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{5CFB3CF6-A351-EA3A-2E6C-996BA5982301}</FileHash>
+	<FileHash>{645484AD-041D-4868-D8C5-C13021391EF7}</FileHash>
 </SoundBanksInfo>
