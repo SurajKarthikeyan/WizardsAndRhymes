@@ -11,8 +11,6 @@ public class SetAsAmplitude : MonoBehaviour
     #region Variables
     [Tooltip("Possible fields to set on a FloatController")]
     enum FloatControllerFields { Driven, OneTimeAmplitude}
-
-
     [Tooltip("The FloatController to set a value on based on audio amplitude")]
     [SerializeField] FloatController floatController;
     [Tooltip("The field on the float controller to control")]

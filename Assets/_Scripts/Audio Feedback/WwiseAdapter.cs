@@ -14,7 +14,6 @@ public class WwiseAdapter : MonoBehaviour
     #region Variables
     [Tooltip("The potential intervals to trigger beats on")]
     public enum BeatIntervals { B32, B16, B8, B4, B2, B1 };
-
     [Tooltip("Singleton instance")]
     [HideInInspector] public static WwiseAdapter S; //Suraj signed off on this, take it up with him
 
@@ -39,14 +38,24 @@ public class WwiseAdapter : MonoBehaviour
     };
 
 
-    [Tooltip("The RTPC to pull amplitude data from")]
+    [Header("RTPC Values")]
+    [Tooltip("Amplitude of ALL frequencies")]
     [SerializeField] AK.Wwise.RTPC amplitudeRTPC;
+    [Tooltip("Amplitude of low frequencies")]
+    [SerializeField] private AK.Wwise.RTPC lowAmplitudeRTPC;
+    [Tooltip("Amplitude of mid frequencies")]
+    [SerializeField] private AK.Wwise.RTPC midAmplitudeRTPC;
+    [Tooltip("Amplitude of high frequencies")]
+    [SerializeField] private AK.Wwise.RTPC highAmplitudeRTPC;
 
-
-    [Tooltip("The current amplitude, read by other scripts")]
+    [Tooltip("All frequency amplitude")]
     [HideInInspector] public float amplitude { get; private set; }
-
-
+    [Tooltip("Low frequency amplitude")]
+    [HideInInspector] public float lowAmplitude { get; private set; }
+    [Tooltip("Middle frequency amplitude")]
+    [HideInInspector] public float midAmplitude { get; private set; }
+    [Tooltip("High frequency amplitude")]
+    [HideInInspector] public float highAmplitude { get; private set; }
     [Tooltip("Used to keep track of which interval events to call on each beat")]
     int beatCounter = 0;
     #endregion
@@ -66,9 +75,10 @@ public class WwiseAdapter : MonoBehaviour
 
     private void Update()
     {
-        amplitude = amplitudeRTPC.GetGlobalValue();
-        amplitude = (amplitude + 48) / 48;
-        Debug.Log(amplitude);
+        amplitude = Normalize48(amplitudeRTPC.GetGlobalValue());
+        lowAmplitude = Normalize48(lowAmplitudeRTPC.GetGlobalValue());
+        midAmplitude = Normalize48(midAmplitudeRTPC.GetGlobalValue());
+        highAmplitude = Normalize48(highAmplitudeRTPC.GetGlobalValue());
     }
 
     private void OnDestroy()
@@ -97,6 +107,18 @@ public class WwiseAdapter : MonoBehaviour
         beatCounter++;
         if (beatCounter == 32)
             beatCounter = 0;
+    }
+
+    
+    /// <summary>
+    /// Function to normalize WWise amplitudes from -48 -> 0db to 0- > 1f
+    /// Allows for easier multiplication and scaling
+    /// </summary>
+    /// <param name="inputAmplitude"></param>
+    /// <returns></returns>
+    public float Normalize48(float inputAmplitude)
+    {
+        return (inputAmplitude + 48) / 48;
     }
 
 #if UNITY_EDITOR
