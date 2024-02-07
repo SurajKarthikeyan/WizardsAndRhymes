@@ -276,8 +276,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8448e7664ab96184eae618bd16e84bc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CurrentHP: 0
-  m_MaximumHP: 20
+  currentHP: 0
+  maximumHP: 0
   fireEffect: {fileID: 0}
   onFire: 0
   tickCount: 0
@@ -302,12 +302,12 @@ MonoBehaviour:
   m_DashTime: 0.5
   m_DashCooldownThreshold: 2
   m_PlayerCamera: {fileID: 0}
-  m_AbilityManager: {fileID: 0}
   rangedPrefab: {fileID: 4155231900741922661, guid: 2aeae3acb6641b647a8581427672364d, type: 3}
   rangedSpawnPoint: {fileID: 5028973609557505707}
   rangedPrefabSpeed: 25
   meleeDamage: 10
   meleeBox: {fileID: 937923528513720809}
+  m_AbilityManager: {fileID: 0}
 --- !u!114 &4681948003197784821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -320,12 +320,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86a9cb7a645d2040b54dfe5514f428e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AbilitySliderGameObject: {fileID: 0}
-  m_SliderFillArea: {fileID: 0}
-  m_MaximumAbilityValue: 100
-  m_MinimumAbilityValue: 0
-  m_CurrentAbilityValue: 0
+  abilitySliderGameObject: {fileID: 0}
+  sliderFillArea: {fileID: 0}
   abilityRechargeThreshold: 0.5
+  abilityGaugeFillValue: 3
+  minimumAbilityValue: 0
+  maximumAbilityValue: 100
+  currentAbilityValue: 0
   rangedAbilityCost: 2
   meleeAbilityCost: 5
   dashAbilityCost: 10
@@ -421,15 +422,23 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979217756860975084}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 18509214dce19804b84b4ac7e8fa6dda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test:
+  low:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 2b3266dcc1c904047a9586f6a3a747ee, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: d0e2743320dee87458a8f0d73a7cbaec, type: 2}
+  mid:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6f2381183a0f9ec45b72c829cdbe6db4, type: 2}
+  high:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f16031c73d7a66e41bde5e883a07048a, type: 2}
   electricPoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -448,11 +457,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: def79722d7df75644958aa45c09e826a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  amplitude: 0
   amplitudeRTPC:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 2b3266dcc1c904047a9586f6a3a747ee, type: 2}
+  lowAmplitudeRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d0e2743320dee87458a8f0d73a7cbaec, type: 2}
+  midAmplitudeRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 6f2381183a0f9ec45b72c829cdbe6db4, type: 2}
+  highAmplitudeRTPC:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: f16031c73d7a66e41bde5e883a07048a, type: 2}
 --- !u!1 &2802089234719024440
 GameObject:
   m_ObjectHideFlags: 0

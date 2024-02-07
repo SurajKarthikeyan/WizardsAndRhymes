@@ -75,10 +75,15 @@ public class WwiseAdapter : MonoBehaviour
 
     private void Update()
     {
+        // These lines read in RTPC values from WWise. 
+        // RTPCs are values that are(in this context) measuring the amplitude values
+        // There are a few that listen to a variety of frequency bands and one that listens to all bands
         amplitude = Normalize48(amplitudeRTPC.GetGlobalValue());
         lowAmplitude = Normalize48(lowAmplitudeRTPC.GetGlobalValue());
         midAmplitude = Normalize48(midAmplitudeRTPC.GetGlobalValue());
         highAmplitude = Normalize48(highAmplitudeRTPC.GetGlobalValue());
+        
+        //Debug.Log(amplitude + " | " + lowAmplitude + " | " + midAmplitude + " | " + highAmplitude);
     }
 
     private void OnDestroy()

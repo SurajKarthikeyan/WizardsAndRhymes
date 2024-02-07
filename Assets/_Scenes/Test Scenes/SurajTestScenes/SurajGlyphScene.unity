@@ -237,6 +237,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: testDecal
       objectReference: {fileID: 0}
+    - target: {fileID: 3255155221024478653, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
+      propertyPath: beatInterval
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3462209767062740809, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
       propertyPath: m_LocalPosition.x
       value: -36.46
@@ -276,6 +280,14 @@ PrefabInstance:
     - target: {fileID: 3462209767062740809, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033335490777922295, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
+      propertyPath: beatInterval
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 9018107554709155825, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
+      propertyPath: beatInterval
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1283,6 +1295,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: testDecal (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 454929511043733613, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3462209767062740809, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
       propertyPath: m_LocalPosition.x
       value: -26.78
@@ -1325,7 +1341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9018107554709155825, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
       propertyPath: beatInterval
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1664,6 +1680,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: testDecal (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 3255155221024478653, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
+      propertyPath: beatInterval
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255155221024478653, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
+      propertyPath: frequencyResponse
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3462209767062740809, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
       propertyPath: m_LocalPosition.x
       value: -31.67
@@ -1703,6 +1727,14 @@ PrefabInstance:
     - target: {fileID: 3462209767062740809, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033335490777922295, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
+      propertyPath: beatInterval
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7033335490777922295, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
+      propertyPath: frequencyResponse
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9018107554709155825, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
       propertyPath: beatInterval
@@ -2814,6 +2846,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: testDecal (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 454929511043733613, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3462209767062740809, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.01
@@ -2856,7 +2892,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9018107554709155825, guid: 1e1eaffd11ff83d40843cf180f2f2941, type: 3}
       propertyPath: beatInterval
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3194,22 +3230,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 498230214866448504, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
-      propertyPath: amplitudeRTPC.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 2b3266dcc1c904047a9586f6a3a747ee, type: 2}
-    - target: {fileID: 498230214866448504, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
-      propertyPath: lowAmplitudeRTPC.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: d0e2743320dee87458a8f0d73a7cbaec, type: 2}
-    - target: {fileID: 498230214866448504, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
-      propertyPath: midAmplitudeRTPC.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 6f2381183a0f9ec45b72c829cdbe6db4, type: 2}
-    - target: {fileID: 498230214866448504, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
-      propertyPath: highAmplitudeRTPC.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: f16031c73d7a66e41bde5e883a07048a, type: 2}
     - target: {fileID: 1979217756860975084, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3302,22 +3322,6 @@ PrefabInstance:
       propertyPath: enemyNames._serializedList.Array.size
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 8802253318812338376, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8802253318812338376, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
-      propertyPath: low.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: d0e2743320dee87458a8f0d73a7cbaec, type: 2}
-    - target: {fileID: 8802253318812338376, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
-      propertyPath: mid.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: 6f2381183a0f9ec45b72c829cdbe6db4, type: 2}
-    - target: {fileID: 8802253318812338376, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
-      propertyPath: high.WwiseObjectReference
-      value: 
-      objectReference: {fileID: 11400000, guid: f16031c73d7a66e41bde5e883a07048a, type: 2}
     - target: {fileID: 8802253318812338376, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: electricPoints.Array.data[0]
       value: 
