@@ -9,13 +9,14 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{CD3B916A-DE5E-BC75-92D0-2F2D79582DF9}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{A2ADA68B-95E7-A5EF-965F-704D4648BC4F}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
 				<Custom>
 					<Plugin Id="134123109" Name="Gain (Custom)" LibName="Wwise Gain" LibId="9109507"/>
 					<Plugin Id="322348316" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
+					<Plugin Id="470699092" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
 					<Plugin Id="498184372" Name="Gain (Custom)" LibName="Wwise Gain" LibId="9109507"/>
 					<Plugin Id="562758421" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
 					<Plugin Id="610181853" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
@@ -31,7 +32,18 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
-				<Bus Id="1966988073" Name="testBus"/>
+				<Bus Id="1966988073" Name="testBus">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="470699092"/>
+						</Custom>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="221139265" Name="auxHigh"/>
+						<AuxBusRef Id="411780261" Name="auxLow"/>
+						<AuxBusRef Id="1049182825" Name="auxMid"/>
+					</AuxBusRefs>
+				</Bus>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 			<AuxBusses>
@@ -77,13 +89,17 @@
 				<GameParameter Id="3550808449" Name="High"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{87EC648A-B7F5-6E3E-33AC-4E37F4EAE563}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{548F632A-54C2-6468-3435-B6AD1E97623E}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
 				<File Id="83311950" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Initial498ConceptMusB2.wav</ShortName>
 					<CachePath>SFX/Initial498ConceptMusB2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="345662734" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>498FreqTest.wav</ShortName>
+					<CachePath>SFX/498FreqTest_818F3B66.wem</CachePath>
 				</File>
 				<File Id="437516516" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Space SHMUP music.wav</ShortName>
@@ -95,6 +111,11 @@
 				</File>
 			</Media>
 			<Events>
+				<Event Id="1061604899" Name="FreqTest" DurationType="OneShot" DurationMin="11.586208" DurationMax="11.586208">
+					<MediaRefs>
+						<MediaRef Id="345662734"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1097980931" Name="TestEvent" DurationType="OneShot" DurationMin="16" DurationMax="16">
 					<MediaRefs>
 						<MediaRef Id="437516516"/>
@@ -104,11 +125,6 @@
 					<MediaRefs>
 						<MediaRef Id="476678353"/>
 					</MediaRefs>
-					<AuxBusRefs>
-						<AuxBusRef Id="221139265" Name="auxHigh"/>
-						<AuxBusRef Id="411780261" Name="auxLow"/>
-						<AuxBusRef Id="1049182825" Name="auxMid"/>
-					</AuxBusRefs>
 				</Event>
 				<Event Id="1324413170" Name="TestMusic" DurationType="OneShot" DurationMin="21.75" DurationMax="21.75">
 					<MediaRefs>
@@ -118,5 +134,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{FFD9802E-8986-BF99-0518-4E6061B3986E}</FileHash>
+	<FileHash>{626DA644-FB67-F47A-590B-B56F7451B7AF}</FileHash>
 </SoundBanksInfo>

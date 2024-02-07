@@ -9,13 +9,14 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{3421F2DF-4015-F8E1-5369-838F3127A270}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{9B62531C-555B-F010-E41A-43E3B6146FCC}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
 				<Custom>
 					<Plugin Id="134123109" Name="Gain (Custom)" LibName="Wwise Gain" LibId="9109507"/>
 					<Plugin Id="322348316" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
+					<Plugin Id="470699092" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
 					<Plugin Id="498184372" Name="Gain (Custom)" LibName="Wwise Gain" LibId="9109507"/>
 					<Plugin Id="562758421" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
 					<Plugin Id="610181853" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
@@ -31,7 +32,18 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
-				<Bus Id="1966988073" Name="testBus"/>
+				<Bus Id="1966988073" Name="testBus">
+					<PluginRefs>
+						<Custom>
+							<PluginRef Id="470699092"/>
+						</Custom>
+					</PluginRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="221139265" Name="auxHigh"/>
+						<AuxBusRef Id="411780261" Name="auxLow"/>
+						<AuxBusRef Id="1049182825" Name="auxMid"/>
+					</AuxBusRefs>
+				</Bus>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 			<AuxBusses>
@@ -122,5 +134,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{645484AD-041D-4868-D8C5-C13021391EF7}</FileHash>
+	<FileHash>{9D64C5E2-2CE7-EFEA-85D0-1F3605F45E8B}</FileHash>
 </SoundBanksInfo>
