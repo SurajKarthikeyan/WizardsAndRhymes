@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 /// <summary>
-/// Class that represents a base character
+/// Class that represents a base health
 /// </summary>
 public class Health : MonoBehaviour
 {
@@ -28,7 +28,7 @@ public class Health : MonoBehaviour
     [SerializeField] 
     private GameObject fireEffect;
 
-    [Tooltip("Boolean representing if this character is on fire")]
+    [Tooltip("Boolean representing if this health is on fire")]
     [SerializeField] 
     private bool onFire;
 
@@ -80,9 +80,9 @@ public class Health : MonoBehaviour
     }
 
     /// <summary>
-    /// Has this character take damage by the value passed in
+    /// Has this health take damage by the value passed in
     /// </summary>
-    /// <param name="value">Float value representing the amount of damage this character takes</param>
+    /// <param name="value">Float value representing the amount of damage this health takes</param>
     public void TakeDamage(float value, DamageType dType)
     {
         //We should check what the damage type is when assigning effect
@@ -127,7 +127,7 @@ public class Health : MonoBehaviour
     }
     
     /// <summary>
-    /// Function that handles character death in conjunction with a helper function, 
+    /// Function that handles health death in conjunction with a helper function, 
     /// different for enemies and players
     /// </summary>
     public virtual void Death()

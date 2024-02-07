@@ -47,8 +47,8 @@ public class EnemyManager : MonoBehaviour
     {
         foreach (BaseEnemyBehavior enemy in enemies)
         {
-            enemy.GetComponent<MeshRenderer>().material = enemy.m_ActivatedMaterial;
-            enemy.m_Activated = true;
+            enemy.GetComponent<MeshRenderer>().material = enemy.activatedMaterial;
+            enemy.activated = true;
         }
         
     }

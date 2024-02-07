@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 /// <summary>
-/// Class that is responsible for controlling the player character and managing its abilities
+/// Class that is responsible for controlling the player health and managing its abilities
 /// 
 /// Author: Zane O'Dell
 /// </summary>

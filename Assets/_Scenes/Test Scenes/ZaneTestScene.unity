@@ -157,11 +157,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1281790501}
-  - {fileID: 727352517}
-  - {fileID: 1648464807}
-  - {fileID: 219179083}
-  - {fileID: 608970426}
+  - {fileID: 310369460}
   m_Father: {fileID: 1135783563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &74411733
@@ -170,7 +166,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2003689038}
+    m_TransformParent: {fileID: 2085863656}
     m_Modifications:
     - target: {fileID: 4496144272976407112, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: player
@@ -178,7 +174,7 @@ PrefabInstance:
       objectReference: {fileID: 1381010328}
     - target: {fileID: 5365247503409236134, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: m_Name
-      value: Chaser (2)
+      value: MeleeStrafe (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8537366243199547573, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1456,7 +1452,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 67700527}
+    m_TransformParent: {fileID: 310369460}
     m_Modifications:
     - target: {fileID: 1770502364318513358, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: player
@@ -1472,7 +1468,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5365247503409236134, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: m_Name
-      value: Ranged (3)
+      value: RangedStrafe (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8537366243199547573, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1524,6 +1520,42 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8537366243199547573, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
   m_PrefabInstance: {fileID: 219179082}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &310369459
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 310369460}
+  m_Layer: 0
+  m_Name: RangedStrafe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &310369460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310369459}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1281790501}
+  - {fileID: 727352517}
+  - {fileID: 1648464807}
+  - {fileID: 219179083}
+  - {fileID: 608970426}
+  m_Father: {fileID: 67700527}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &373293472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8537366243199547573, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
@@ -1535,7 +1567,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2003689038}
+    m_TransformParent: {fileID: 2085863656}
     m_Modifications:
     - target: {fileID: 4496144272976407112, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: player
@@ -1543,7 +1575,7 @@ PrefabInstance:
       objectReference: {fileID: 1381010328}
     - target: {fileID: 5365247503409236134, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: m_Name
-      value: Chaser (3)
+      value: MeleeStrafe (3)
       objectReference: {fileID: 0}
     - target: {fileID: 8537366243199547573, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1601,7 +1633,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 67700527}
+    m_TransformParent: {fileID: 310369460}
     m_Modifications:
     - target: {fileID: 1770502364318513358, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: player
@@ -1617,7 +1649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5365247503409236134, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: m_Name
-      value: Ranged (4)
+      value: RangedStrafe (4)
       objectReference: {fileID: 0}
     - target: {fileID: 8537366243199547573, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1865,7 +1897,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 67700527}
+    m_TransformParent: {fileID: 310369460}
     m_Modifications:
     - target: {fileID: 1770502364318513358, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: player
@@ -1881,7 +1913,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5365247503409236134, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: m_Name
-      value: Ranged (1)
+      value: RangedStrafe (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8537366243199547573, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2468,7 +2500,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2003689038}
+    m_TransformParent: {fileID: 2085863656}
     m_Modifications:
     - target: {fileID: 4496144272976407112, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: player
@@ -2476,7 +2508,7 @@ PrefabInstance:
       objectReference: {fileID: 1381010328}
     - target: {fileID: 5365247503409236134, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: m_Name
-      value: Chaser (4)
+      value: MeleeStrafe (4)
       objectReference: {fileID: 0}
     - target: {fileID: 8537366243199547573, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2788,7 +2820,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 67700527}
+    m_TransformParent: {fileID: 310369460}
     m_Modifications:
     - target: {fileID: 1770502364318513358, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: player
@@ -2804,7 +2836,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5365247503409236134, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: m_Name
-      value: Ranged (2)
+      value: RangedStrafe (2)
       objectReference: {fileID: 0}
     - target: {fileID: 8537366243199547573, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2816,7 +2848,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8537366243199547573, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.8
+      value: 1.7999992
       objectReference: {fileID: 0}
     - target: {fileID: 8537366243199547573, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2862,23 +2894,15 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 67700527}
+    m_TransformParent: {fileID: 310369460}
     m_Modifications:
     - target: {fileID: 1770502364318513358, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 1381010328}
-    - target: {fileID: 1770502364318513358, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
-      propertyPath: minDistance
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3549620065039660474, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
-      propertyPath: m_MaximumHP
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 5365247503409236134, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: m_Name
-      value: Ranged
+      value: RangedStrafe
       objectReference: {fileID: 0}
     - target: {fileID: 8537366243199547573, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3140,7 +3164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2003689038}
   m_Layer: 0
-  m_Name: Chasers
+  m_Name: Melee
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3159,11 +3183,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 373293472}
-  - {fileID: 64282171}
-  - {fileID: 1922163034}
-  - {fileID: 539473896}
-  - {fileID: 968197792}
+  - {fileID: 2085863656}
   m_Father: {fileID: 1135783563}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2027561531
@@ -3172,7 +3192,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2003689038}
+    m_TransformParent: {fileID: 2085863656}
     m_Modifications:
     - target: {fileID: 4496144272976407112, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: player
@@ -3180,7 +3200,7 @@ PrefabInstance:
       objectReference: {fileID: 1381010328}
     - target: {fileID: 5365247503409236134, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: m_Name
-      value: Chaser (1)
+      value: MeleeStrafe (1)
       objectReference: {fileID: 0}
     - target: {fileID: 8537366243199547573, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3289,6 +3309,42 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2085863655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2085863656}
+  m_Layer: 0
+  m_Name: MeleeStrafe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2085863656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085863655}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 373293472}
+  - {fileID: 64282171}
+  - {fileID: 1922163034}
+  - {fileID: 539473896}
+  - {fileID: 968197792}
+  m_Father: {fileID: 2003689038}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &81138555853967040
 PrefabInstance:
@@ -3516,15 +3572,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6543074965747046479, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.27032766
+      value: -0.2703276
       objectReference: {fileID: 0}
     - target: {fileID: 6543074965747046479, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.6533934
+      value: -0.65339345
       objectReference: {fileID: 0}
     - target: {fileID: 6543074965747046479, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.2703276
+      value: -0.27032757
       objectReference: {fileID: 0}
     - target: {fileID: 7103523572238913046, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3690,7 +3746,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 2003689038}
+    m_TransformParent: {fileID: 2085863656}
     m_Modifications:
     - target: {fileID: 4496144272976407112, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: player
@@ -3698,7 +3754,7 @@ PrefabInstance:
       objectReference: {fileID: 1381010328}
     - target: {fileID: 5365247503409236134, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: m_Name
-      value: Chaser
+      value: MeleeStrafe
       objectReference: {fileID: 0}
     - target: {fileID: 8537366243199547573, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: m_LocalPosition.x

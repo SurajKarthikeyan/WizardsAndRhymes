@@ -9,40 +9,39 @@ using UnityEngine.AI;
 
 public abstract class BaseEnemyBehavior : MonoBehaviour
 {
-    #region Class Variables
-    #region Attack Variables
+    #region Variables
+    
     /// <summary>
     /// Value representing the attack damage of this enemy
     /// </summary>
     [SerializeField]
-    protected float m_AttackDamage = 5f;
+    protected float attackDamage = 5f;
 
 
-    public bool m_Activated = false;
+    public bool activated = false;
 
-    public Material m_ActivatedMaterial;
+    public Material activatedMaterial;
     #endregion
 
     #region Script References
-    private Health m_Character;
+    private Health health;
     #endregion 
-    #endregion
 
 
     protected virtual void Start()
     {
-        m_Character = GetComponent<Health>();
+        health = GetComponent<Health>();
     }
     /// <summary>
     /// Unity method called every frame interval
     /// </summary>
     protected virtual void FixedUpdate()
     {
-        if (m_Character.HP <= 0)
+        if (health.HP <= 0)
         {
-            m_Activated = false;
+            activated = false;
             EnemyDeath();
-            m_Character.Death();
+            health.Death();
         }
     }
 

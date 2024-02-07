@@ -39,7 +39,7 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        if (m_Activated)
+        if (activated)
         {
             navMeshAgent.destination = player.position;
         }
@@ -51,11 +51,11 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
     /// <param name="collision">Collision object that this enemy collides with</param>
     private void OnCollisionEnter(Collision collision)
     {
-        if (m_Activated)
+        if (activated)
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                collision.gameObject.GetComponent<Health>().TakeDamage(m_AttackDamage, Health.DamageType.Fire);
+                collision.gameObject.GetComponent<Health>().TakeDamage(attackDamage, Health.DamageType.Fire);
             }
         }
     }
