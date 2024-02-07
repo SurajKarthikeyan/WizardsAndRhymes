@@ -18,7 +18,7 @@ public class MusicTime : MonoBehaviour
         float midVal = mid.GetGlobalValue();
         float highVal = high.GetGlobalValue();
         
-        Debug.Log(lowVal + " | " + midVal + " | " + highVal);
+        //Debug.Log(lowVal + " | " + midVal + " | " + highVal);
     }
 
 

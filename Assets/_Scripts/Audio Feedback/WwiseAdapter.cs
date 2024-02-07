@@ -68,6 +68,7 @@ public class WwiseAdapter : MonoBehaviour
     {
         amplitude = amplitudeRTPC.GetGlobalValue();
         amplitude = (amplitude + 48) / 48;
+        Debug.Log(amplitude);
     }
 
     private void OnDestroy()
