@@ -1,12 +1,10 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary>
-/// Enemy 
-/// </summary>
-public class DistancedProjectileStrafeEnemy : BaseEnemyBehavior
+public class DistancedProjectileEnemy : BaseEnemy
 {
-    #region Variables
+    #region Class Variables
     #region AI Variables
     /// <summary>
     /// NavMeshAgent component to control behavior of enemy
@@ -86,13 +84,15 @@ public class DistancedProjectileStrafeEnemy : BaseEnemyBehavior
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                collision.gameObject.GetComponent<Health>().TakeDamage(m_AttackDamage, Health.DamageType.Fire);
+                collision.gameObject.GetComponent<Character>().TakeDamage(m_AttackDamage, Character.DamageType.Fire);
             }
         }
     }
     #endregion
 
     #region Custom Methods
+
+
     public void ShootProjectile()
     {
         shooting = true;
