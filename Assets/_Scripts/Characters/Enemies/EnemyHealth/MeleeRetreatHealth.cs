@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeRetreatHealth : MonoBehaviour
+public class MeleeRetreatHealth : BaseEnemyHealth
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Custom Methods
+    /// <summary>
+    /// Method that is unique to each enemy in its own death
+    /// </summary>
+    protected override void EnemyDeath()
     {
-        
+        Debug.Log("MeleeRetreatDeath");
+        Destroy(gameObject);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #endregion
 }

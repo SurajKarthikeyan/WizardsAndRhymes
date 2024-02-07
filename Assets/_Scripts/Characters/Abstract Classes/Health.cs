@@ -7,7 +7,7 @@ using UnityEngine;
 public class Health : MonoBehaviour
 {
     #region Variables
-    [Tooltip("Enum representing the different damage types in the")]
+    [Tooltip("Enum representing the different damage types an entity can take")]
     public enum DamageType
     {
         Fire,
@@ -18,11 +18,11 @@ public class Health : MonoBehaviour
 
     [Tooltip("Current HP of this enemy")]
     [SerializeField]
-    protected float m_CurrentHP;
+    protected float currentHP;
 
     [Tooltip("Maximum HP of this enemy")]
     [SerializeField]
-    private float m_MaximumHP;
+    private float maximumHP;
 
     [Tooltip("GameObject holding the fireEffect VFX")]
     [SerializeField] 
@@ -47,8 +47,8 @@ public class Health : MonoBehaviour
     [Tooltip("C# property that allows us to access HP")]
     public float HP
     {
-        get { return m_CurrentHP; }
-        set { m_CurrentHP = value; }
+        get { return currentHP; }
+        set { currentHP = value; }
     }
     #endregion
 
@@ -58,7 +58,7 @@ public class Health : MonoBehaviour
     /// </summary>
     protected virtual void Start()
     {
-        m_CurrentHP = m_MaximumHP;
+        currentHP = maximumHP;
         onFire = false;
     }
     #endregion
@@ -74,9 +74,9 @@ public class Health : MonoBehaviour
     {
         if (maxHeal)
         {
-            m_CurrentHP = m_MaximumHP;
+            currentHP = maximumHP;
         }
-        else { m_CurrentHP = value; }
+        else { currentHP = value; }
     }
 
     /// <summary>
@@ -91,10 +91,13 @@ public class Health : MonoBehaviour
             fireEffect.SetActive(true);
             FireDamage(tickCount);
         }
-        m_CurrentHP -= value;
+        currentHP -= value;
     }
     
-
+    /// <summary>
+    /// Function that makes this entity take fire damage
+    /// </summary>
+    /// <param name="tickCount">Number of ticks of fire damage to take</param>
     public void FireDamage(int tickCount)
     {
         if (!onFire)
@@ -104,6 +107,13 @@ public class Health : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Coroutine that handles fire damage over a time interval
+    /// </summary>
+    /// <param name="tickCount">Number of ticks of fire damage to deal</param>
+    /// <param name="timeBetweenTicks">Time in between each individual damage tick</param>
+    /// <param name="fireDamage">Amount of fire damage to deal per tick</param>
+    /// <returns></returns>
     IEnumerator FireDamageCoroutine(int tickCount, float timeBetweenTicks, float fireDamage)
     {
         for (int i = 0; i < tickCount; i++)
@@ -120,7 +130,7 @@ public class Health : MonoBehaviour
     /// Function that handles character death in conjunction with a helper function, 
     /// different for enemies and players
     /// </summary>
-    public void Death()
+    public virtual void Death()
     {
         Destroy(gameObject);
     }

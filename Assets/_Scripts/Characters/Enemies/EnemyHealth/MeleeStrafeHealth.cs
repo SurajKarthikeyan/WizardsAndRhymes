@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
-public class MeleeStrafeHealth : MonoBehaviour
+public class MeleeStrafeHealth : BaseEnemyHealth
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Custom Methods
+    /// <summary>
+    /// Method that is unique to each enemy in its own death
+    /// </summary>
+    protected override void EnemyDeath()
     {
-        
+        Debug.Log("MeleeStrafeDeath");
+        Destroy(gameObject);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #endregion
 }
