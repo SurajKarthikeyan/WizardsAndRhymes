@@ -1,18 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class DistancedProjectileStrafeHealth : MonoBehaviour
+public class DistancedProjectileStrafeHealth : BaseEnemyHealth
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Custom Methods
+    /// <summary>
+    /// Method that is unique to each enemy in its own death
+    /// </summary>
+    protected override void EnemyDeath()
     {
-        
+        Debug.Log("DistancedProjectileStrafeDeath");
+        Destroy(gameObject);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #endregion
 }

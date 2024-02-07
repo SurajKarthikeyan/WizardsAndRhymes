@@ -50,7 +50,7 @@ public class DistancedProjectileStrafeEnemy : BaseEnemyBehavior
         if (m_Activated)
         {
             float currDistance = Vector3.Distance(transform.position, player.transform.position);
-            Debug.Log(currDistance);
+            //Debug.Log(currDistance);
             if (currDistance > maxDistance)
             {
                 navMeshAgent.destination = player.position;
