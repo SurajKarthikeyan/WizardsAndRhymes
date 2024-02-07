@@ -7,7 +7,7 @@ using UnityEngine.AI;
 /// Base class for enemies, all enemies derive in some way from here
 /// </summary>
 
-public class BaseEnemy : MonoBehaviour
+public abstract class BaseEnemyBehavior : MonoBehaviour
 {
     #region Class Variables
     #region Attack Variables
@@ -24,14 +24,14 @@ public class BaseEnemy : MonoBehaviour
     #endregion
 
     #region Script References
-    private Character m_Character;
+    private Health m_Character;
     #endregion 
     #endregion
 
 
     protected virtual void Start()
     {
-        m_Character = GetComponent<Character>();
+        m_Character = GetComponent<Health>();
     }
     /// <summary>
     /// Unity method called every frame interval
@@ -51,7 +51,7 @@ public class BaseEnemy : MonoBehaviour
     /// </summary>
     protected virtual void EnemyDeath()
     {
-        Debug.Log("Base BaseEnemy Death Helper");
+        Debug.Log("Base BaseEnemyBehavior Death Helper");
     }
 
 

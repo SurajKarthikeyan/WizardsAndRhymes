@@ -6,7 +6,7 @@ using UnityEngine.AI;
 /// <summary>
 /// Enemy type that follows the player
 /// </summary>
-public class FollowPlayerEnemy : BaseEnemy
+public class MeleeStrafeEnemy : BaseEnemyBehavior
 {
     #region Class Variables
     #region AI Variables
@@ -55,7 +55,7 @@ public class FollowPlayerEnemy : BaseEnemy
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                collision.gameObject.GetComponent<Character>().TakeDamage(m_AttackDamage, Character.DamageType.Fire);
+                collision.gameObject.GetComponent<Health>().TakeDamage(m_AttackDamage, Health.DamageType.Fire);
             }
         }
     }

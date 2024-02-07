@@ -1,11 +1,13 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+/// <summary>
+/// Class that represents a base character
+/// </summary>
+public class Health : MonoBehaviour
 {
-    #region Enums
-
+    #region Variables
+    [Tooltip("Enum representing the different damage types in the")]
     public enum DamageType
     {
         Fire,
@@ -14,44 +16,54 @@ public class Character : MonoBehaviour
         None
     }
 
-    #endregion
-    #region Health Variables
-    /// <summary>
-    /// Current HP of this enemy
-    /// </summary>
+    [Tooltip("Current HP of this enemy")]
     [SerializeField]
     protected float m_CurrentHP;
 
-    /// <summary>
-    /// Maximum HP of this enemy
-    /// </summary>
+    [Tooltip("Maximum HP of this enemy")]
     [SerializeField]
     private float m_MaximumHP;
-    #endregion
 
-    #region Damage Variables
-    [SerializeField] private GameObject fireEffect;
-    [SerializeField] private bool onFire;
-    [SerializeField] private int tickCount;
-    [SerializeField] private float timeBetweenTicks;
-    [SerializeField] private float fireDamage;
-    #endregion
-    
+    [Tooltip("GameObject holding the fireEffect VFX")]
+    [SerializeField] 
+    private GameObject fireEffect;
 
-    /// <summary>
-    /// C# property that allows us to access HP
-    /// </summary>
+    [Tooltip("Boolean representing if this character is on fire")]
+    [SerializeField] 
+    private bool onFire;
+
+    [Tooltip("Int representing the number of ticks from fire damage")]
+    [SerializeField] 
+    private int tickCount;
+
+    [Tooltip("Float representing the time between ticks in seconds")]
+    [SerializeField] 
+    private float timeBetweenTicks;
+
+    [Tooltip("Int representing the damage that the fire effect does")]
+    [SerializeField] 
+    private float fireDamage;
+
+    [Tooltip("C# property that allows us to access HP")]
     public float HP
     {
         get { return m_CurrentHP; }
         set { m_CurrentHP = value; }
     }
+    #endregion
 
+    #region Unity Methods
+    /// <summary>
+    /// Method that is called on scene load
+    /// </summary>
     protected virtual void Start()
     {
         m_CurrentHP = m_MaximumHP;
         onFire = false;
     }
+    #endregion
+
+    #region Custom Methods
 
     /// <summary>
     /// Method that heals this enemy
@@ -112,6 +124,6 @@ public class Character : MonoBehaviour
     {
         Destroy(gameObject);
     }
+    #endregion
 
-    
 }
