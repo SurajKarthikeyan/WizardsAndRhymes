@@ -7,8 +7,8 @@ public class MeleeStrafeHealth : BaseEnemyHealth
     /// </summary>
     protected override void EnemyDeath()
     {
-        Debug.Log("MeleeStrafeDeath");
-        Destroy(gameObject);
+       Debug.Log("MeleeStrafeDeath");
+       Destroy(gameObject);
     }
     #endregion
 }

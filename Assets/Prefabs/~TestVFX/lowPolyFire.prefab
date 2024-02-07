@@ -21,7 +21,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6766912331928271796
 Transform:
   m_ObjectHideFlags: 0
@@ -4848,10 +4848,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatInterval: 3
-  targets:
-    _serializedList:
-    - Key: {fileID: 527085525552488552}
-      Value: OneTime
+  eventsToTrigger:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6330335555511273841
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4864,6 +4863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a5869bb56804354cb1342b402506afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frequencyResponse: 0
   floatController: {fileID: 527085525552488552}
   floatControllerField: 1
   amplitudeRange: {x: 0, y: 3}
