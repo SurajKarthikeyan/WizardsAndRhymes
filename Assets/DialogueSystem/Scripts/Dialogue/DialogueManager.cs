@@ -15,7 +15,7 @@ public class DialogueManager : MonoBehaviour
 
     public Animator animator;
 
-    [Header("Character Representation Settings")]
+    [Header("Health Representation Settings")]
     public DialogueSprite leftSprite;
     public DialogueSprite rightSprite;
 

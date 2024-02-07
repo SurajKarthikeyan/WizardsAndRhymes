@@ -51,7 +51,7 @@ namespace TMPro.Examples
             m_textMeshPro.ForceMeshUpdate();
 
 
-            int totalVisibleCharacters = m_textMeshPro.textInfo.characterCount; // Get # of Visible Character in text object
+            int totalVisibleCharacters = m_textMeshPro.textInfo.characterCount; // Get # of Visible Health in text object
             int counter = 0;
             int visibleCount = 0;
 
