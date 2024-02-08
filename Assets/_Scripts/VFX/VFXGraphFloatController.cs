@@ -12,7 +12,7 @@ public class VFXGraphFloatController : MonoBehaviour
     #region Variables
     [Tooltip("The value to set it to")]
     [FormerlySerializedAs("value")][SerializeField] private float _value;
-    public float value {
+    public float Value {
         get { return _value; }
         set { _value = value; ValueUpdated(); }
     }
@@ -30,7 +30,7 @@ public class VFXGraphFloatController : MonoBehaviour
     void ValueUpdated()
     {
         if (vfx != null)
-            vfx.SetFloat(floatProperty, value);
+            vfx.SetFloat(floatProperty, Value);
     }
     #endregion
 }
