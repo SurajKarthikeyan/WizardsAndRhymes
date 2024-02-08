@@ -86,12 +86,22 @@ public class Health : MonoBehaviour
     public void TakeDamage(float value, DamageType dType)
     {
         //We should check what the damage type is when assigning effect
-        if (dType != DamageType.None)
+        if (dType == DamageType.Fire)
         {
             fireEffect.SetActive(true);
             FireDamage(tickCount);
         }
+        else if (dType == DamageType.Lightning)
+        {
+            LightningDamage();
+        }
+
         currentHP -= value;
+    }
+
+    public void LightningDamage()
+    {
+        Debug.Log("BZZZZZ");
     }
     
     /// <summary>
