@@ -62,14 +62,6 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
     #endregion
 
     #region Custom Methods
-    /// <summary>
-    /// Helper method called upon each enemy death, allows for easy implementation
-    /// of different enemy death behaviors
-    /// </summary>
-    protected override void EnemyDeath()
-    {
-        Debug.Log("FollowPlayer Death Helper");
-    }
     #endregion
     #endregion
 }

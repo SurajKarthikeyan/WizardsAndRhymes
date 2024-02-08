@@ -10,10 +10,7 @@ using UnityEngine.AI;
 public abstract class BaseEnemyBehavior : MonoBehaviour
 {
     #region Variables
-    
-    /// <summary>
-    /// Value representing the attack damage of this enemy
-    /// </summary>
+    [Tooltip("Value representing the attack damage of this enemy")]
     [SerializeField]
     protected float attackDamage = 5f;
 
@@ -23,15 +20,19 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     public Material activatedMaterial;
     #endregion
 
-    #region Script References
+    [Header("Script refernces")]
+    [Tooltip("Health Script Reference for this behavior")]
     private Health health;
-    #endregion 
 
-
+    #region Unity Methods
+    /// <summary>
+    /// Function that plays on scene start
+    /// </summary>
     protected virtual void Start()
     {
-        health = GetComponent<Health>();
+        health = GetComponent<BaseEnemyHealth>();
     }
+
     /// <summary>
     /// Unity method called every frame interval
     /// </summary>
@@ -40,18 +41,8 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         if (health.HP <= 0)
         {
             activated = false;
-            EnemyDeath();
             health.Death();
         }
     }
-
-    /// <summary>
-    /// Helper function that handles different enemy behavior upon death
-    /// </summary>
-    protected virtual void EnemyDeath()
-    {
-        Debug.Log("Base BaseEnemyBehavior Death Helper");
-    }
-
-
+    #endregion
 }

@@ -112,14 +112,6 @@ public class DistancedProjectileStrafeEnemy : BaseEnemyBehavior
         //attackStatus = AttackStatus.None;
         shooting = false;
     }
-    /// <summary>
-    /// Helper method called upon each enemy death, allows for easy implementation
-    /// of different enemy death behaviors
-    /// </summary>
-    protected override void EnemyDeath()
-    {
-        Debug.Log("FollowPlayer Death Helper");
-    }
     #endregion
     #endregion
 }

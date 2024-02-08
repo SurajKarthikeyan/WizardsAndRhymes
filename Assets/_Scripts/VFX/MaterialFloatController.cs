@@ -14,7 +14,7 @@ public class MaterialFloatController : MaterialPropertyController
     [Header("Material Float Controller Settings")]
     [Tooltip("The value to set")]
     [FormerlySerializedAs("value")][SerializeField] private float _value;
-    public float value
+    public float Value
     {
         get { return _value; }
         set { _value = value; ValueUpdated(); }
@@ -30,7 +30,7 @@ public class MaterialFloatController : MaterialPropertyController
     void ValueUpdated()
     {
         //Set the material property
-        material.SetFloat(floatProperty, value);
+        material.SetFloat(floatProperty, Value);
     }
     #endregion
 }
