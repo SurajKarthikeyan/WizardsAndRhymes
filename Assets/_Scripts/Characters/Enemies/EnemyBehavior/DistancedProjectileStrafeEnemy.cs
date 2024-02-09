@@ -2,35 +2,39 @@ using System.Collections;
 using UnityEngine;
 
 /// <summary>
-/// Enemy 
+/// Enemy that will shoot a projectile when in range and strafe before shooting another
 /// </summary>
 public class DistancedProjectileStrafeEnemy : BaseEnemyBehavior
 {
     #region Variables
-    #region AI Variables
-    /// <summary>
-    /// NavMeshAgent component to control behavior of enemy
-    /// </summary>
-    UnityEngine.AI.NavMeshAgent navMeshAgent;
+    [Tooltip("Transform of the player to follow")]
+    [SerializeField]
+    private Transform player;
 
-    /// <summary>
-    /// Transform of the player to follow
-    /// </summary>
-    public Transform player;
+    [Tooltip("Maximum distance this enemy will be from the player before it shoots")]
+    [SerializeField]
+    private float maxDistance = 10f;
 
-    public float maxDistance = 10f;
+    [Tooltip("Minimum distance this enemy will be from the player before it shoots")]
+    [SerializeField]
+    private float minDistance = 1f;
 
-    public float minDistance = 1f;
+    [Tooltip("Projectile object that this enemy shoots")]
+    [SerializeField]
+    private GameObject enemyProjectile;
 
-    public GameObject enemyProjectile;
+    [Tooltip("Transform that this enemy shoots the projectile from")]
+    [SerializeField]
+    private Transform projectileSpawnPoint;
 
-    public Transform projectileSpawnPoint;
+    [Tooltip("Cooldown in between every projectile shot by this enemy")]
+    [SerializeField]
+    private float shootCooldown = 1f;
 
-    public bool shooting = false;
+    [Tooltip("Boolean stating whether or not this enemy is currently shooting")]
+    private bool shooting = false;
     #endregion
-    #endregion
 
-    #region Methods
     #region Unity Methods
     /// <summary>
     /// Unity method called before the first frame update
@@ -38,7 +42,6 @@ public class DistancedProjectileStrafeEnemy : BaseEnemyBehavior
     protected override void Start()
     {
         base.Start();
-        navMeshAgent = GetComponent<UnityEngine.AI.NavMeshAgent>();
     }
 
     /// <summary>
@@ -50,7 +53,6 @@ public class DistancedProjectileStrafeEnemy : BaseEnemyBehavior
         if (activated)
         {
             float currDistance = Vector3.Distance(transform.position, player.transform.position);
-            //Debug.Log(currDistance);
             if (currDistance > maxDistance)
             {
                 navMeshAgent.destination = player.position;
@@ -71,28 +73,15 @@ public class DistancedProjectileStrafeEnemy : BaseEnemyBehavior
                 {
                     ShootProjectile();
                 }
-                
-            }
-        }
-    }
-
-    /// <summary>
-    /// Unity method called whenever this object collides with another
-    /// </summary>
-    /// <param name="collision">Collision object that this enemy collides with</param>
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (activated)
-        {
-            if (collision.gameObject.CompareTag("Player"))
-            {
-                collision.gameObject.GetComponent<Health>().TakeDamage(attackDamage, Health.DamageType.Fire);
             }
         }
     }
     #endregion
 
     #region Custom Methods
+    /// <summary>
+    /// Function that calls the coroutine to handle shooting and cooldown of projectiles
+    /// </summary>
     public void ShootProjectile()
     {
         shooting = true;
@@ -104,14 +93,11 @@ public class DistancedProjectileStrafeEnemy : BaseEnemyBehavior
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Projectile()
     {
-        //m_AbilityManager.ReduceAbilityGuage(2);
         GameObject projectile = Instantiate(enemyProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
         projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * 5;
-        //m_AbilityManager.ResetAbilityRecharge();
-        yield return new WaitForSeconds(1f);
-        //attackStatus = AttackStatus.None;
+        yield return new WaitForSeconds(shootCooldown);
         shooting = false;
     }
     #endregion
-    #endregion
+
 }

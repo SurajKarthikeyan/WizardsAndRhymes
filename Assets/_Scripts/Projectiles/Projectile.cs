@@ -14,7 +14,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] private Health.DamageType dType;
 
     [Tooltip("Damage that this projectile deals")]
-    public int damage;
+    [SerializeField]
+    private int damage;
     #endregion
 
     #region Unity Methods

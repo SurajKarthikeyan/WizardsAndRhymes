@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,19 +8,28 @@ using UnityEngine.AI;
 public abstract class BaseEnemyBehavior : MonoBehaviour
 {
     #region Variables
+    [Header("Attack Variables")]
     [Tooltip("Value representing the attack damage of this enemy")]
     [SerializeField]
     protected float attackDamage = 5f;
 
-
+    [Header("Activation Variables")]
+    [Tooltip("Boolean representing if this enemy is active or not")]
     public bool activated = false;
 
+    [Tooltip("Material applied to the enemy when activated, primarily used for early testing purposes")]
     public Material activatedMaterial;
-    #endregion
+
+    [Header("Navigation Variables")]
+    [Tooltip("NavMeshAgent that is enemy behavior uses for its general navigation")]
+    protected NavMeshAgent navMeshAgent;
 
     [Header("Script refernces")]
     [Tooltip("Health Script Reference for this behavior")]
-    private Health health;
+    private BaseEnemyHealth health;
+
+    #endregion
+
 
     #region Unity Methods
     /// <summary>
@@ -31,6 +38,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     protected virtual void Start()
     {
         health = GetComponent<BaseEnemyHealth>();
+        navMeshAgent = GetComponent<NavMeshAgent>();
     }
 
     /// <summary>
@@ -42,6 +50,21 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         {
             activated = false;
             health.Death();
+        }
+    }
+
+    /// <summary>
+    /// Unity method called whenever this object collides with another
+    /// </summary>
+    /// <param name="collision">Collision object that this enemy collides with</param>
+    protected virtual void OnCollisionEnter(Collision collision)
+    {
+        if (activated)
+        {
+            if (collision.gameObject.TryGetComponent(out PlayerHealth playerHealth))
+            {
+                playerHealth.TakeDamage(attackDamage, Health.DamageType.Fire);
+            }
         }
     }
     #endregion

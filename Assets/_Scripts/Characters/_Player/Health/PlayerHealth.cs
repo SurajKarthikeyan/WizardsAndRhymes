@@ -1,18 +1,25 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour
+/// <summary>
+/// Class that handles all of the health and status of the player character
+/// </summary>
+public class PlayerHealth : Health
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Custom Methods
+    /// <summary>
+    /// Overridden function of all deaths
+    /// </summary>
+    public override void Death()
     {
-        
+        PlayerDeath();
     }
-
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Method that is called upon the player's death
+    /// </summary>
+    private void PlayerDeath()
     {
-        
+        Debug.Log("PlayerDeath");
+        Heal(0, true);
     }
+    #endregion
 }

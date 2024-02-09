@@ -1,18 +1,31 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeRetreatEnemy : MonoBehaviour
+/// <summary>
+/// Enemy behavior class for enemy that melee attacks and then retreats afterwards
+/// </summary>
+public class MeleeRetreatEnemy : BaseEnemyBehavior
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    #region Variables
+    [Tooltip("Transform of the player to follow")]
+    [SerializeField]
+    private Transform player;
+    #endregion
 
-    // Update is called once per frame
-    void Update()
+
+    #region Unity Methods
+    /// <summary>
+    /// Unity method called every frame update
+    /// </summary>
+    protected override void FixedUpdate()
     {
-        
+        base.FixedUpdate();
+        if (activated)
+        {
+            navMeshAgent.destination = player.position;
+        }
     }
+    #endregion
+
+    #region Custom Methods
+    #endregion
 }

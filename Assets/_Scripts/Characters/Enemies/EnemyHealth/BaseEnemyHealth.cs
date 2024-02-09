@@ -6,6 +6,9 @@ using UnityEngine;
 public abstract class BaseEnemyHealth : Health
 {
     #region Custom Methods
+    /// <summary>
+    /// Death method that is overridden for all characters with health
+    /// </summary>
     public override void Death()
     {
         EnemyDeath();

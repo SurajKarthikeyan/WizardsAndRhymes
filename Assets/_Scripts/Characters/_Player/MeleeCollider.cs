@@ -1,6 +1,3 @@
-using AYellowpaper.SerializedCollections;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -11,9 +8,6 @@ public class MeleeCollider : MonoBehaviour
     #region Variables
     [Tooltip("Reference to the player controller")]
     PlayerController player;
-
-    [Tooltip("Base enemy class that is looked for when doing damage")]
-    BaseEnemyBehavior enemy;
     #endregion
 
     #region Unity Methods
@@ -31,9 +25,9 @@ public class MeleeCollider : MonoBehaviour
     /// <param name="other">Other collider that is in contact with this trigger</param>
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.TryGetComponent<BaseEnemyBehavior>(out var enemy))
+        if (other.gameObject.TryGetComponent(out BaseEnemyHealth enemyHealth))
         {
-            enemy.gameObject.GetComponent<Health>().TakeDamage(player.meleeDamage, Health.DamageType.Fire);
+            enemyHealth.TakeDamage(player.meleeDamage, Health.DamageType.Fire);
         }
     }
     #endregion
