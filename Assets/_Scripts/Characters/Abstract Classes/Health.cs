@@ -24,26 +24,7 @@ public class Health : MonoBehaviour
     [Tooltip("Maximum HP of this enemy")]
     [SerializeField]
     private float maximumHP;
-
-    [Tooltip("GameObject holding the fireEffect VFX")]
-    [SerializeField] 
-    private GameObject fireEffect;
-
-    [Tooltip("Boolean representing if this health is on fire")]
-    [SerializeField] 
-    private bool onFire;
-
-    [Tooltip("Int representing the number of ticks from fire damage")]
-    [SerializeField] 
-    private int tickCount;
-
-    [Tooltip("Float representing the time between ticks in seconds")]
-    [SerializeField] 
-    private float timeBetweenTicks;
-
-    [Tooltip("Int representing the damage that the fire effect does")]
-    [SerializeField] 
-    private float fireDamage;
+    
 
     [Tooltip("C# property that allows us to access HP")]
     public float HP
@@ -60,7 +41,6 @@ public class Health : MonoBehaviour
     protected virtual void Start()
     {
         currentHP = maximumHP;
-        onFire = false;
     }
     #endregion
 
@@ -80,75 +60,16 @@ public class Health : MonoBehaviour
         else { currentHP = value; }
     }
 
+    
     /// <summary>
     /// Has this health take damage by the value passed in
     /// </summary>
     /// <param name="value">Float value representing the amount of damage this health takes</param>
-    public void TakeDamage(float value, DamageType dType)
+    public virtual void TakeDamage(float value, DamageType dType)
     {
-        //We should check what the damage type is when assigning effect
-        if (dType == DamageType.Fire)
-        {
-            fireEffect.SetActive(true);
-            FireDamage(tickCount);
-        }
-        else if (dType == DamageType.Lightning)
-        {
-            LightningDamage();
-        }
-        
-        else if (dType == DamageType.Ice)
-        {
-            IceDamage();
-        }
-        
-
         currentHP -= value;
     }
 
-    public void LightningDamage()
-    {
-        Debug.Log("ZEUS");
-    }
-
-    public void IceDamage()
-    {
-        Debug.Log("ICE KING");
-    }
-    
-    /// <summary>
-    /// Function that makes this entity take fire damage
-    /// </summary>
-    /// <param name="tickCount">Number of ticks of fire damage to take</param>
-    public void FireDamage(int tickCount)
-    {
-        
-        Debug.Log("FIRE");
-        /*if (!onFire)
-        {
-            onFire = true;
-            StartCoroutine(FireDamageCoroutine(tickCount, timeBetweenTicks, fireDamage));
-        }*/
-    }
-
-    /// <summary>
-    /// Coroutine that handles fire damage over a time interval
-    /// </summary>
-    /// <param name="tickCount">Number of ticks of fire damage to deal</param>
-    /// <param name="timeBetweenTicks">Time in between each individual damage tick</param>
-    /// <param name="fireDamage">Amount of fire damage to deal per tick</param>
-    /// <returns></returns>
-    IEnumerator FireDamageCoroutine(int tickCount, float timeBetweenTicks, float fireDamage)
-    {
-        for (int i = 0; i < tickCount; i++)
-        {
-            this.TakeDamage(fireDamage, DamageType.None);
-            yield return new WaitForSeconds(timeBetweenTicks);
-        }
-
-        fireEffect.SetActive(false);
-        onFire = false;
-    }
     
     /// <summary>
     /// Function that handles health death in conjunction with a helper function, 
