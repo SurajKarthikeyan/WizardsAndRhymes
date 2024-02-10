@@ -28,6 +28,7 @@ public class FadeToBlack : MonoBehaviour
     
     IEnumerator FadeOut(float intervalWait)
     {
+        fadeImage.gameObject.SetActive(true);
         bool check = false;
         while (true)
         {
@@ -57,5 +58,6 @@ public class FadeToBlack : MonoBehaviour
             }
             yield return new WaitForSeconds(intervalWait);
         }
+        fadeImage.gameObject.SetActive(false);
     }
 }
