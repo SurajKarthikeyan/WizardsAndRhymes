@@ -63,7 +63,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         {
             if (collision.gameObject.TryGetComponent(out PlayerHealth playerHealth))
             {
-                playerHealth.TakeDamage(attackDamage, Health.DamageType.Fire);
+                playerHealth.TakeDamage(attackDamage, Health.DamageType.None);
             }
         }
     }

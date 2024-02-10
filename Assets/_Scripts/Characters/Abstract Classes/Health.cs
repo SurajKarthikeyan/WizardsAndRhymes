@@ -95,6 +95,7 @@ public class Health : MonoBehaviour
         {
             LightningDamage();
         }
+        
 
         currentHP -= value;
     }

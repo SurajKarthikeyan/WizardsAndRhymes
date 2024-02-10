@@ -13,28 +13,19 @@ using UnityEngine.UI;
 /// </summary>
 public class Door : MonoBehaviour
 {
+    /// <summary>
+    /// THIS CLASS NEEDS TO BE REFACTORED INTO THE GameEnd script because it makes more sense that way but its okay
+    /// </summary>
     #region Variables
-    [SerializeField] private FadeToBlack fadeToBlack;
-    [SerializeField] private Button fadeInButton;
-    [SerializeField] private TextMeshProUGUI doorText;
+
     #endregion
     #region Unity Methods
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            fadeToBlack.OnFadeOut();
-            fadeInButton.gameObject.SetActive(true);
-            doorText.gameObject.SetActive(true);
+            GameEnd.gameEnd.OpenDoorUI();
         }
-    }
-
-    public void FadeButton()
-    { 
-        string currentSceneName = SceneManager.GetActiveScene().name;
-        SceneManager.LoadScene(currentSceneName);
-        fadeInButton.gameObject.SetActive(false);
-        doorText.gameObject.SetActive(false);
     }
 
     #endregion
