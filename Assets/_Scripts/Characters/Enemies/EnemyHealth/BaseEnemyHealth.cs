@@ -14,12 +14,14 @@ public abstract class BaseEnemyHealth : Health
         EnemyDeath();
     }
     /// <summary>
-    /// Method that is unique to each enemy in its own death
+    /// Death method here is generalized to ensure that the script is removed from the manager
     /// </summary>
     protected virtual void EnemyDeath()
     {
-        Debug.Log("BaseEnemyDeath");
-        Destroy(gameObject);
+        EnemyManager.enemyManager.enemies.Remove(this.gameObject.GetComponent<BaseEnemyBehavior>());
+
+        /*Debug.Log("BaseEnemyDeath");
+        Destroy(gameObject);*/
     }
     #endregion
 }

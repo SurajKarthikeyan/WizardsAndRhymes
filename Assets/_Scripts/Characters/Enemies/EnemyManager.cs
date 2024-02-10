@@ -1,3 +1,4 @@
+using System;
 using AYellowpaper.SerializedCollections;
 using System.Collections;
 using System.Collections.Generic;
@@ -9,7 +10,13 @@ using UnityEngine;
 /// </summary>
 public class EnemyManager : MonoBehaviour
 {
-    public List<BaseEnemyBehavior> enemies;
+    #region Variables
+    [Tooltip("Singleton of the enemy manager - seemed useful to make")]
+    public static EnemyManager enemyManager;
+    
+    [Tooltip("List of enemies that are active in scene")]
+    [SerializeField] public List<BaseEnemyBehavior> enemies;
+    #endregion
 
     ///// <summary>
     ///// Dictionary that holds the names of the plant prefabs and a list of strings used for their text
@@ -30,6 +37,23 @@ public class EnemyManager : MonoBehaviour
     //private Dialogue dialogue;
 
     #region Unity Methods
+
+    /// <summary>
+    /// Method called on the first scene of the game
+    /// </summary>
+    private void Awake()
+    {
+        if (enemyManager == null)
+        {
+            enemyManager = this;
+        }
+        else
+        {
+            Debug.LogError("You have two EnemyManagers in Scene, remove one");
+        }
+    }
+
+
     /// <summary>
     /// Method called on scene start
     /// </summary>
