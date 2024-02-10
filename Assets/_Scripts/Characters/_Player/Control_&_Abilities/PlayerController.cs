@@ -131,6 +131,9 @@ public class PlayerController : MonoBehaviour
                 Screen.width < Input.mousePosition.x || Screen.height < Input.mousePosition.y);
         }
     }
+
+    
+    [SerializeField] private MixtapeInventory mixtapeInventory;
     #endregion
 
     #region Unity Methods
@@ -336,6 +339,7 @@ public class PlayerController : MonoBehaviour
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Projectile()
     {
+        mixtapeInventory.OnTapeChange();
         m_AbilityManager.ReduceAbilityGuage(m_AbilityManager.rangedAbilityCost);
         //Instantiate projectile and give it the proper velocity
         GameObject projectile = Instantiate(rangedPrefab, rangedSpawnPoint.position, rangedSpawnPoint.rotation);
@@ -351,6 +355,7 @@ public class PlayerController : MonoBehaviour
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Melee()
     {
+        mixtapeInventory.OnTapeChange();
         //Sets the collider to be active and pushes player forward as if they're lunging
         meleeBox.SetActive(true);
         m_AbilityManager.ReduceAbilityGuage(m_AbilityManager.meleeAbilityCost);
