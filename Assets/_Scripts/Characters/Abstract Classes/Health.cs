@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 /// <summary>
@@ -96,13 +97,23 @@ public class Health : MonoBehaviour
             LightningDamage();
         }
         
+        else if (dType == DamageType.Ice)
+        {
+            IceDamage();
+        }
+        
 
         currentHP -= value;
     }
 
     public void LightningDamage()
     {
-        Debug.Log("BZZZZZ");
+        Debug.Log("ZEUS");
+    }
+
+    public void IceDamage()
+    {
+        Debug.Log("ICE KING");
     }
     
     /// <summary>
@@ -111,11 +122,13 @@ public class Health : MonoBehaviour
     /// <param name="tickCount">Number of ticks of fire damage to take</param>
     public void FireDamage(int tickCount)
     {
-        if (!onFire)
+        
+        Debug.Log("FIRE");
+        /*if (!onFire)
         {
             onFire = true;
             StartCoroutine(FireDamageCoroutine(tickCount, timeBetweenTicks, fireDamage));
-        }
+        }*/
     }
 
     /// <summary>

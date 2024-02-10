@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     private float existenceTimeThreshold = 5f;
 
     [Tooltip("Instance of the damage type enum")]
-    [SerializeField] private Health.DamageType dType;
+    [SerializeField] public Health.DamageType dType;
 
     [Tooltip("Damage that this projectile deals")]
     [SerializeField]
@@ -25,6 +25,7 @@ public class Projectile : MonoBehaviour
     private void Awake()
     {
         Destroy(gameObject, existenceTimeThreshold);
+        dType = Health.DamageType.None;
     }
 
     /// <summary>

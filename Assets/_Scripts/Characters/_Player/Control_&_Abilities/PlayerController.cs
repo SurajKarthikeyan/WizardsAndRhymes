@@ -339,14 +339,15 @@ public class PlayerController : MonoBehaviour
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Projectile()
     {
-        mixtapeInventory.OnTapeChange();
         m_AbilityManager.ReduceAbilityGuage(m_AbilityManager.rangedAbilityCost);
         //Instantiate projectile and give it the proper velocity
         GameObject projectile = Instantiate(rangedPrefab, rangedSpawnPoint.position, rangedSpawnPoint.rotation);
         projectile.GetComponent<Rigidbody>().velocity = rangedSpawnPoint.forward * rangedPrefabSpeed;
+        projectile.GetComponent<Projectile>().dType = mixtapeInventory.damageType;
         m_AbilityManager.ResetAbilityRecharge();
         yield return new WaitForSeconds(0.3f);
         attackStatus = AttackStatus.None;
+        mixtapeInventory.OnTapeChange();
     }
 
     /// <summary>
@@ -355,15 +356,16 @@ public class PlayerController : MonoBehaviour
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Melee()
     {
-        mixtapeInventory.OnTapeChange();
         //Sets the collider to be active and pushes player forward as if they're lunging
         meleeBox.SetActive(true);
+        meleeBox.GetComponent<MeleeCollider>().damageType = mixtapeInventory.damageType;
         m_AbilityManager.ReduceAbilityGuage(m_AbilityManager.meleeAbilityCost);
         m_RigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
         m_AbilityManager.ResetAbilityRecharge();
         yield return new WaitForSeconds(0.5f);
         meleeBox.SetActive(false);
         attackStatus = AttackStatus.None;
+        mixtapeInventory.OnTapeChange();
     }
     
     #endregion

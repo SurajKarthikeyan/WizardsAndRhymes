@@ -8,6 +8,8 @@ public class MeleeCollider : MonoBehaviour
     #region Variables
     [Tooltip("Reference to the player controller")]
     PlayerController player;
+
+    [SerializeField] public Health.DamageType damageType;
     #endregion
 
     #region Unity Methods
@@ -17,6 +19,7 @@ public class MeleeCollider : MonoBehaviour
     private void Start()
     {
         player = transform.GetComponentInParent<PlayerController>();
+        damageType = Health.DamageType.None;
     }
 
     /// <summary>
@@ -27,7 +30,7 @@ public class MeleeCollider : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent(out BaseEnemyHealth enemyHealth))
         {
-            enemyHealth.TakeDamage(player.meleeDamage, Health.DamageType.Fire);
+            enemyHealth.TakeDamage(player.meleeDamage, damageType);
         }
     }
     #endregion

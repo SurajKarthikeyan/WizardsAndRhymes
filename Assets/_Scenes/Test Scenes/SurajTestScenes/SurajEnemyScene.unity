@@ -2516,6 +2516,7 @@ MonoBehaviour:
   currentTape: {fileID: 0}
   lowAlpha: 0.5
   highAlpha: 1
+  damageType: 0
 --- !u!4 &1281790501 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8537366243199547573, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
@@ -4309,11 +4310,15 @@ PrefabInstance:
       objectReference: {fileID: 1381010328}
     - target: {fileID: 4496144272976407112, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: activated
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5365247503409236134, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: m_Name
       value: MeleeStrafe
+      objectReference: {fileID: 0}
+    - target: {fileID: 7456348505891297766, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
+      propertyPath: m_Speed
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8537366243199547573, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       propertyPath: m_LocalPosition.x
