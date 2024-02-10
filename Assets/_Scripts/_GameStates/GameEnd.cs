@@ -9,25 +9,29 @@ using UnityEngine;
 public class GameEnd : MonoBehaviour
 {
     #region Variable
-    [Tooltip("This is a debug boolean used to test if the level is the 'final' level in the game")]
+    [Tooltip("This is a debug boolean used to test if the level is the 'final' level in the game(UnusedATM)")]
     [SerializeField] private bool isLastRoom;
+
+    [Tooltip("This is here to ensure that once the room has been cleared it doesn't clear again")]
+    [HideInInspector] private bool hasPassed;
+
+    [Tooltip("Door to Instantiate")]
+    [SerializeField] private GameObject doorRef;
     #endregion
 
     #region UnityMethods
 
+    private void Start()
+    {
+        hasPassed = true;
+    }
+
     private void Update()
     {
-        Debug.Log(EnemyManager.enemyManager.enemies.Count);
-        if (EnemyManager.enemyManager.enemies.Count <= 0)
+        if (EnemyManager.enemyManager.enemies.Count <= 0 && hasPassed)
         {
-            if (isLastRoom)
-            {
-                Debug.Log("FINAL LEVEL END");
-            }
-            else
-            {
-                Debug.Log("LEVEL END");
-            }
+            doorRef.SetActive(true);
+            hasPassed = false;
         }
     }
 
