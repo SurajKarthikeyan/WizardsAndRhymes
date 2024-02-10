@@ -13,18 +13,19 @@ using UnityEngine.UI;
 /// </summary>
 public class Door : MonoBehaviour
 {
-    /// <summary>
-    /// THIS CLASS NEEDS TO BE REFACTORED INTO THE GameEnd script because it makes more sense that way but its okay
-    /// </summary>
     #region Variables
 
     #endregion
     #region Unity Methods
+    /// <summary>
+    /// Collision function to check if the player ran into it
+    /// </summary>
+    /// <param name="collision"></param>
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameEnd.gameEnd.OpenDoorUI();
+            GameEnd.gameEnd.OpenDoorUI();   // open door to next room
         }
     }
 

@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 /// <summary>
-/// Class that handles ending the current game / level
+/// Class that handles current game state(win / loss)
 /// </summary>
 public class GameEnd : MonoBehaviour
 {
@@ -87,6 +87,9 @@ public class GameEnd : MonoBehaviour
     #endregion
 
     #region Custom Methods
+    /// <summary>
+    /// Activates appropriate UI elements when a end-room door is activated
+    /// </summary>
     public void OpenDoorUI()
     {
         fadeToBlack.OnFadeOut();
@@ -94,12 +97,19 @@ public class GameEnd : MonoBehaviour
         doorText.gameObject.SetActive(true);
     }
 
+    /// <summary>
+    /// Activates appropriate UI elements when player dies
+    /// </summary>
     public void PlayerDeathUI()
     {
         restartButton.gameObject.SetActive(true);
         deathText.gameObject.SetActive(true);
     }
 
+    /// <summary>
+    /// Reset button that is activated the PlayerDeathUI() and OpenDoorUI() is pressed
+    /// Reset all UI elements, reload scene
+    /// </summary>
     public void ResetButton()
     {
         restartButton.gameObject.SetActive(false);
