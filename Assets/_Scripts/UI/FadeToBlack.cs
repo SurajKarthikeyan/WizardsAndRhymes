@@ -1,17 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FadeToBlack : MonoBehaviour
 {
     [SerializeField] private Image fadeImage;
-    [SerializeField] private float fadeTime;
+    [SerializeField] private float fadeOutTime;
+    [SerializeField] private float fadeInTime;
 
-
-    public void OnFade()
+    private void Start()
     {
-        StartCoroutine(FadeOut(fadeTime));
+        OnFadeIn();
+    }
+
+    public void OnFadeOut()
+    {
+        StartCoroutine(FadeOut(fadeOutTime));
+    }
+
+    public void OnFadeIn()
+    {
+        StartCoroutine(FadeIn(fadeInTime));
     }
     
     IEnumerator FadeOut(float intervalWait)
@@ -30,8 +42,7 @@ public class FadeToBlack : MonoBehaviour
 
             yield return new WaitForSeconds(intervalWait);
         }
-
-        StartCoroutine(FadeIn(fadeTime));
+        
     }
 
     IEnumerator FadeIn(float intervalWait)
