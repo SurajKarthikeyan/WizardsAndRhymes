@@ -22,6 +22,169 @@
 									<ObjectRef Name="auxLow" ID="{7E06A85D-0A49-415A-B010-C446AA29AC86}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
 								</Reference>
 							</ReferenceList>
+							<ChildrenList>
+								<AuxBus Name="auxHigh" ID="{8C3475DB-90FE-4BC7-AC5A-1D519BFC7375}">
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{C048AF58-6E5D-45BA-949F-F0F5ABFCB799}" ShortID="944766167">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="High_Pass_60Hz" ID="{F9627628-0B10-4272-BC30-D4C20423CB38}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{5A0F9FF2-B34A-4260-A605-DAC64D0709B4}" ShortID="1019457514">
+														<ReferenceList>
+															<Reference Name="Effect">
+																<Custom>
+																	<Effect Name="Meter (Custom)" ID="{B76D1609-AF98-4ED7-8B8D-7B1673359A4A}" ShortID="322348316" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">																		<PluginData>
+	<GameParameter Name="High" ID="{FE378FE0-6CB0-44CA-85A6-35AA84BA9512}"/>
+</PluginData>
+																	</Effect>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{3E5CA211-E593-4C77-AB18-E6FE480CCE9D}" ShortID="355200893">
+														<ReferenceList>
+															<Reference Name="Effect">
+																<Custom>
+																	<Effect Name="Gain (Custom)" ID="{8FFD0F0A-4FD0-4BF2-AD11-6B063AA51F95}" ShortID="498184372" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+																		<PropertyList>
+																			<Property Name="FullBandGain" Type="Real32" Value="-96"/>
+																		</PropertyList>
+																	</Effect>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AuxBus>
+								<AuxBus Name="auxLow" ID="{7E06A85D-0A49-415A-B010-C446AA29AC86}">
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{66DF2557-8215-4F7A-AF55-15772656714F}" ShortID="899289734">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{CBCAA65A-5010-41D9-A868-49F7EA757023}" ShortID="90313682">
+														<ReferenceList>
+															<Reference Name="Effect">
+																<Custom>
+																	<Effect Name="Meter (Custom)" ID="{6C26820E-4AC4-4DFF-B257-32C56CC345C5}" ShortID="562758421" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">																		<PluginData>
+	<GameParameter Name="Low" ID="{8AE32C4F-17F9-4680-8D72-F120077958FB}"/>
+</PluginData>
+																	</Effect>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{E682BE08-E71C-4BD6-A894-1DD58DB8C022}" ShortID="245458376">
+														<ReferenceList>
+															<Reference Name="Effect">
+																<Custom>
+																	<Effect Name="Gain (Custom)" ID="{C00A9CF4-082E-4B96-B9A6-561C5C702C37}" ShortID="777683974" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+																		<PropertyList>
+																			<Property Name="FullBandGain" Type="Real32" Value="-96"/>
+																		</PropertyList>
+																	</Effect>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AuxBus>
+								<AuxBus Name="auxMid" ID="{C3836200-82B7-4A2D-8D75-5F360CE0B5E2}">
+									<ObjectLists>
+										<ObjectList Name="Effects">
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{690AF906-4B3C-445D-A945-4657DF8C69C6}" ShortID="303954141">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="High_Pass_60Hz" ID="{F9627628-0B10-4272-BC30-D4C20423CB38}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{35006174-D921-40D6-9F6B-43F411284C05}" ShortID="79580623">
+														<ReferenceList>
+															<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+																<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{C10F3194-9AC3-4091-9E75-7C46C2EC63C1}" ShortID="909409793">
+														<ReferenceList>
+															<Reference Name="Effect">
+																<Custom>
+																	<Effect Name="Meter (Custom)" ID="{17413161-137E-4687-A39B-89B2DD7536DF}" ShortID="610181853" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">																		<PluginData>
+	<GameParameter Name="Mid" ID="{D170008F-1343-41A6-A1AD-151D8583D2CB}"/>
+</PluginData>
+																	</Effect>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+											<Reference>
+												<Local>
+													<EffectSlot Name="" ID="{86D21133-E066-4D15-A005-243196E08AFA}" ShortID="604792296">
+														<ReferenceList>
+															<Reference Name="Effect">
+																<Custom>
+																	<Effect Name="Gain (Custom)" ID="{7CC9EC83-68D2-4AAD-989D-7F1FB8D52BDE}" ShortID="134123109" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+																		<PropertyList>
+																			<Property Name="FullBandGain" Type="Real32" Value="-96"/>
+																		</PropertyList>
+																	</Effect>
+																</Custom>
+															</Reference>
+														</ReferenceList>
+													</EffectSlot>
+												</Local>
+											</Reference>
+										</ObjectList>
+									</ObjectLists>
+								</AuxBus>
+							</ChildrenList>
 							<ObjectLists>
 								<ObjectList Name="Effects">
 									<Reference>
@@ -43,167 +206,6 @@
 								</ObjectList>
 							</ObjectLists>
 						</Bus>
-						<AuxBus Name="auxMid" ID="{C3836200-82B7-4A2D-8D75-5F360CE0B5E2}">
-							<ObjectLists>
-								<ObjectList Name="Effects">
-									<Reference>
-										<Local>
-											<EffectSlot Name="" ID="{690AF906-4B3C-445D-A945-4657DF8C69C6}" ShortID="303954141">
-												<ReferenceList>
-													<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-														<ObjectRef Name="High_Pass_60Hz" ID="{F9627628-0B10-4272-BC30-D4C20423CB38}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-													</Reference>
-												</ReferenceList>
-											</EffectSlot>
-										</Local>
-									</Reference>
-									<Reference>
-										<Local>
-											<EffectSlot Name="" ID="{35006174-D921-40D6-9F6B-43F411284C05}" ShortID="79580623">
-												<ReferenceList>
-													<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-														<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-													</Reference>
-												</ReferenceList>
-											</EffectSlot>
-										</Local>
-									</Reference>
-									<Reference>
-										<Local>
-											<EffectSlot Name="" ID="{C10F3194-9AC3-4091-9E75-7C46C2EC63C1}" ShortID="909409793">
-												<ReferenceList>
-													<Reference Name="Effect">
-														<Custom>
-															<Effect Name="Meter (Custom)" ID="{17413161-137E-4687-A39B-89B2DD7536DF}" ShortID="610181853" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">																<PluginData>
-	<GameParameter Name="Mid" ID="{D170008F-1343-41A6-A1AD-151D8583D2CB}"/>
-</PluginData>
-															</Effect>
-														</Custom>
-													</Reference>
-												</ReferenceList>
-											</EffectSlot>
-										</Local>
-									</Reference>
-									<Reference>
-										<Local>
-											<EffectSlot Name="" ID="{86D21133-E066-4D15-A005-243196E08AFA}" ShortID="604792296">
-												<ReferenceList>
-													<Reference Name="Effect">
-														<Custom>
-															<Effect Name="Gain (Custom)" ID="{7CC9EC83-68D2-4AAD-989D-7F1FB8D52BDE}" ShortID="134123109" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
-																<PropertyList>
-																	<Property Name="FullBandGain" Type="Real32" Value="-96"/>
-																</PropertyList>
-															</Effect>
-														</Custom>
-													</Reference>
-												</ReferenceList>
-											</EffectSlot>
-										</Local>
-									</Reference>
-								</ObjectList>
-							</ObjectLists>
-						</AuxBus>
-						<AuxBus Name="auxLow" ID="{7E06A85D-0A49-415A-B010-C446AA29AC86}">
-							<ObjectLists>
-								<ObjectList Name="Effects">
-									<Reference>
-										<Local>
-											<EffectSlot Name="" ID="{66DF2557-8215-4F7A-AF55-15772656714F}" ShortID="899289734">
-												<ReferenceList>
-													<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-														<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-													</Reference>
-												</ReferenceList>
-											</EffectSlot>
-										</Local>
-									</Reference>
-									<Reference>
-										<Local>
-											<EffectSlot Name="" ID="{CBCAA65A-5010-41D9-A868-49F7EA757023}" ShortID="90313682">
-												<ReferenceList>
-													<Reference Name="Effect">
-														<Custom>
-															<Effect Name="Meter (Custom)" ID="{6C26820E-4AC4-4DFF-B257-32C56CC345C5}" ShortID="562758421" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">																<PluginData>
-	<GameParameter Name="Low" ID="{8AE32C4F-17F9-4680-8D72-F120077958FB}"/>
-</PluginData>
-															</Effect>
-														</Custom>
-													</Reference>
-												</ReferenceList>
-											</EffectSlot>
-										</Local>
-									</Reference>
-									<Reference>
-										<Local>
-											<EffectSlot Name="" ID="{E682BE08-E71C-4BD6-A894-1DD58DB8C022}" ShortID="245458376">
-												<ReferenceList>
-													<Reference Name="Effect">
-														<Custom>
-															<Effect Name="Gain (Custom)" ID="{C00A9CF4-082E-4B96-B9A6-561C5C702C37}" ShortID="777683974" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
-																<PropertyList>
-																	<Property Name="FullBandGain" Type="Real32" Value="-96"/>
-																</PropertyList>
-															</Effect>
-														</Custom>
-													</Reference>
-												</ReferenceList>
-											</EffectSlot>
-										</Local>
-									</Reference>
-								</ObjectList>
-							</ObjectLists>
-						</AuxBus>
-						<AuxBus Name="auxHigh" ID="{8C3475DB-90FE-4BC7-AC5A-1D519BFC7375}">
-							<ObjectLists>
-								<ObjectList Name="Effects">
-									<Reference>
-										<Local>
-											<EffectSlot Name="" ID="{C048AF58-6E5D-45BA-949F-F0F5ABFCB799}" ShortID="944766167">
-												<ReferenceList>
-													<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
-														<ObjectRef Name="High_Pass_60Hz" ID="{F9627628-0B10-4272-BC30-D4C20423CB38}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
-													</Reference>
-												</ReferenceList>
-											</EffectSlot>
-										</Local>
-									</Reference>
-									<Reference>
-										<Local>
-											<EffectSlot Name="" ID="{5A0F9FF2-B34A-4260-A605-DAC64D0709B4}" ShortID="1019457514">
-												<ReferenceList>
-													<Reference Name="Effect">
-														<Custom>
-															<Effect Name="Meter (Custom)" ID="{B76D1609-AF98-4ED7-8B8D-7B1673359A4A}" ShortID="322348316" PluginName="Wwise Meter" CompanyID="0" PluginID="129" PluginType="3">																<PluginData>
-	<GameParameter Name="High" ID="{FE378FE0-6CB0-44CA-85A6-35AA84BA9512}"/>
-</PluginData>
-															</Effect>
-														</Custom>
-													</Reference>
-												</ReferenceList>
-											</EffectSlot>
-										</Local>
-									</Reference>
-									<Reference>
-										<Local>
-											<EffectSlot Name="" ID="{3E5CA211-E593-4C77-AB18-E6FE480CCE9D}" ShortID="355200893">
-												<ReferenceList>
-													<Reference Name="Effect">
-														<Custom>
-															<Effect Name="Gain (Custom)" ID="{8FFD0F0A-4FD0-4BF2-AD11-6B063AA51F95}" ShortID="498184372" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
-																<PropertyList>
-																	<Property Name="FullBandGain" Type="Real32" Value="-96"/>
-																</PropertyList>
-															</Effect>
-														</Custom>
-													</Reference>
-												</ReferenceList>
-											</EffectSlot>
-										</Local>
-									</Reference>
-								</ObjectList>
-							</ObjectLists>
-						</AuxBus>
 					</ChildrenList>
 				</Bus>
 			</ChildrenList>

@@ -69,6 +69,7 @@
 								<MusicTrack Name="Initial498ConceptMusB2" ID="{0C714187-727F-4953-B0A8-7B3D5C29CD21}" ShortID="727474260">
 									<PropertyList>
 										<Property Name="OverrideOutput" Type="bool" Value="True"/>
+										<Property Name="OverrideUserAuxSends" Type="bool" Value="True"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="OutputBus">
@@ -83,6 +84,15 @@
 													<TransitionInfo/>
 												</MusicTransition>
 											</Custom>
+										</Reference>
+										<Reference Name="UserAuxSend0">
+											<ObjectRef Name="auxHigh" ID="{8C3475DB-90FE-4BC7-AC5A-1D519BFC7375}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+										<Reference Name="UserAuxSend1">
+											<ObjectRef Name="auxLow" ID="{7E06A85D-0A49-415A-B010-C446AA29AC86}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+										<Reference Name="UserAuxSend2">
+											<ObjectRef Name="auxMid" ID="{C3836200-82B7-4A2D-8D75-5F360CE0B5E2}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>

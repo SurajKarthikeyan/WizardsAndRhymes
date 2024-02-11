@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{A2ADA68B-95E7-A5EF-965F-704D4648BC4F}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{88CFE019-86B5-2632-DF24-D500A6B0EC20}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -89,7 +89,7 @@
 				<GameParameter Id="3550808449" Name="High"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{548F632A-54C2-6468-3435-B6AD1E97623E}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{E75728BC-06E4-7EAD-EF2A-E819667F20AB}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -125,6 +125,11 @@
 					<MediaRefs>
 						<MediaRef Id="476678353"/>
 					</MediaRefs>
+					<AuxBusRefs>
+						<AuxBusRef Id="221139265" Name="auxHigh"/>
+						<AuxBusRef Id="411780261" Name="auxLow"/>
+						<AuxBusRef Id="1049182825" Name="auxMid"/>
+					</AuxBusRefs>
 				</Event>
 				<Event Id="1324413170" Name="TestMusic" DurationType="OneShot" DurationMin="21.75" DurationMax="21.75">
 					<MediaRefs>
@@ -134,5 +139,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{626DA644-FB67-F47A-590B-B56F7451B7AF}</FileHash>
+	<FileHash>{48EF965D-FAF8-6446-BF5A-7CCFF2DFA272}</FileHash>
 </SoundBanksInfo>
