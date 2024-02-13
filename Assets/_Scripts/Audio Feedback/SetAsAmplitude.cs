@@ -9,21 +9,33 @@ using MoreMountains.Tools;
 public class SetAsAmplitude : MonoBehaviour
 {
     #region Variables
-    [Tooltip("Possible fields to set on a FloatController")]
-    enum FloatControllerFields { Driven, OneTimeAmplitude}
+    [Tooltip("Types of components to control")]
+    enum TargetType { FloatController, ShaderController}
+
+    [Tooltip("Possible fields to control")]
+    enum ControlField { Driven, OneTimeAmplitude}
 
     [Tooltip("Enumerator to determine which frequency band to listen to")]
     [HideInInspector] public enum FrequencyResponse { All, Low, Mid, High };
 
+
+    [Tooltip("The type of component to control")]
+    [SerializeField] TargetType targetType;
+
+    [Tooltip("The FloatController to set a value on based on audio amplitude")]
+    [MMEnumCondition("targetType", (int)TargetType.FloatController, Hidden = true)]
+    [SerializeField] FloatController floatController;
+
+    [Tooltip("The ShaderController to set a value on based on audio amplitude")]
+    [MMEnumCondition("targetType", (int)TargetType.ShaderController, Hidden = true)]
+    [SerializeField] ShaderController shaderController;
+
+    [Tooltip("The field on the float controller to control")]
+    [SerializeField] ControlField controlField;
+
     [Tooltip("Which frequency range to respond to")]
     [SerializeField] private FrequencyResponse frequencyResponse;
-    
-    [Tooltip("The FloatController to set a value on based on audio amplitude")]
-    [SerializeField] FloatController floatController;
-    
-    [Tooltip("The field on the float controller to control")]
-    [SerializeField] FloatControllerFields floatControllerField;
-    
+
     [Tooltip("Range that the amplitude is remapped to fall within")]
     [SerializeField] Vector2 amplitudeRange = new Vector2(0, 1);
     
@@ -57,8 +69,8 @@ public class SetAsAmplitude : MonoBehaviour
 
     public void UpdateAmplitude()
     {
-        float readAmplitude = 0f;
         //Read the amplitude from the Wwise Adapter singleton
+        float readAmplitude = 0f;
         switch (frequencyResponse)
         {
             case FrequencyResponse.All:
@@ -76,13 +88,32 @@ public class SetAsAmplitude : MonoBehaviour
         }
         float amplitude = Mathf.Lerp(amplitudeRange.x, amplitudeRange.y, readAmplitude);
 
-        switch (floatControllerField)
+        //Apply the amplitude to the target field
+        switch (targetType)
         {
-            case FloatControllerFields.Driven:
-                floatController.DrivenLevel = amplitude;
+            case TargetType.FloatController:
+                //Apply amplitude to a FloatController
+                switch (controlField)
+                {
+                    case ControlField.Driven:
+                        floatController.DrivenLevel = amplitude;
+                        break;
+                    case ControlField.OneTimeAmplitude:
+                        floatController.OneTimeAmplitude = amplitude;
+                        break;
+                }
                 break;
-            case FloatControllerFields.OneTimeAmplitude:
-                floatController.OneTimeAmplitude = amplitude;
+            case TargetType.ShaderController:
+                //Apply amplitude to a ShaderController
+                switch (controlField)
+                {
+                    case ControlField.Driven:
+                        shaderController.DrivenLevel = amplitude;
+                        break;
+                    case ControlField.OneTimeAmplitude:
+                        shaderController.OneTimeAmplitude = amplitude;
+                        break;
+                }
                 break;
         }
     }

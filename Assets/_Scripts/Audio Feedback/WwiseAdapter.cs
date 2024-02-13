@@ -50,12 +50,17 @@ public class WwiseAdapter : MonoBehaviour
 
     [Tooltip("All frequency amplitude")]
     [HideInInspector] public float amplitude { get; private set; }
+    
     [Tooltip("Low frequency amplitude")]
     [HideInInspector] public float lowAmplitude { get; private set; }
+    
     [Tooltip("Middle frequency amplitude")]
     [HideInInspector] public float midAmplitude { get; private set; }
+    
     [Tooltip("High frequency amplitude")]
     [HideInInspector] public float highAmplitude { get; private set; }
+    
+    
     [Tooltip("Used to keep track of which interval events to call on each beat")]
     int beatCounter = 0;
     #endregion

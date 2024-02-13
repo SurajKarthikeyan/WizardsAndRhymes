@@ -23,7 +23,7 @@ public class MaterialPropertyController : MonoBehaviour
     [Tooltip("The type of component to control the material of")]
     [SerializeField] TargetType targetType = TargetType.None;
 
-    [MMEnumCondition("targetType", (int)TargetType.Renderer, Hidden =true)]
+    [MMEnumCondition("targetType", (int)TargetType.Renderer, Hidden = true)]
     [Tooltip("The renderer whose material to control")]
     [SerializeField] Renderer render;
     [MMEnumCondition("targetType", (int)TargetType.Renderer, Hidden = true)]
