@@ -65,6 +65,9 @@ public class GameEnd : MonoBehaviour
 
     /// <summary>
     /// Called every frame
+    /// Either instantiates the room end door when all enemies are dead
+    /// Or
+    /// Goes to player death screen when they player dies
     /// </summary>
     private void Update()
     {
