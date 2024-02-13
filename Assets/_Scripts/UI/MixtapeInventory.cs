@@ -6,19 +6,33 @@ using UnityEngine.UI;
 
 public class MixtapeInventory : MonoBehaviour
 {
-    public List<GameObject> mixtapeInventory;
-    public int index = 0;
-    public GameObject currentTape;
-    public float lowAlpha;
-    public float highAlpha;
-    public Health.DamageType damageType;
+    #region Variables
+    [Tooltip("The current tape the player is on")]
+    [SerializeField] private GameObject currentTape;
+    [Tooltip("Low alpha setting for when a mixtape is not selected")]
+    [SerializeField] private float lowAlpha;
+    [Tooltip("High alpha setting for when a mixtape is selected")]
+    [SerializeField] private float highAlpha;
+    [Tooltip("List of inventory mixtape objects in scene")]
+    [SerializeField] private List<GameObject> mixtapeInventory;
+
+    [Tooltip("Index on which mixtape the character is on")]
+    private int index = 0;
+    
+    [Tooltip("The damage type currently being used by the enemey")]
+    [SerializeField] public Health.DamageType damageType;
+    #endregion
+
+    #region UnityMethods
     private void Start()
     {
         currentTape = mixtapeInventory[index]; // default value
         ChangeColor(currentTape, highAlpha);
         SetDamageType(index);
     }
+    #endregion
 
+    #region CustomMethods
     public void OnTapeChange()
     {
         ChangeColor(currentTape, lowAlpha);
@@ -53,4 +67,6 @@ public class MixtapeInventory : MonoBehaviour
             damageType = Health.DamageType.Ice;
         }
     }
+    #endregion
+
 }

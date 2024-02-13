@@ -7,13 +7,16 @@ using UnityEngine.UI;
 
 public class FadeToBlack : MonoBehaviour
 {
+    #region Variables
     [Tooltip("Image that is used to change its alpha")]
     [SerializeField] private Image fadeImage;
     [Tooltip("Timer to fade to black")]
     [SerializeField] private float fadeOutTime;
     [Tooltip("Timer to fade to transparency")]
     [SerializeField] private float fadeInTime;
+    #endregion
 
+    #region UnityMethods
     /// <summary>
     /// When the game starts, fade in on first frame
     /// </summary>
@@ -21,7 +24,9 @@ public class FadeToBlack : MonoBehaviour
     {
         OnFadeIn();
     }
+    #endregion
 
+    #region CustomMethods
     /// <summary>
     /// Start the FadeOut Coroutine
     /// </summary>
@@ -87,4 +92,6 @@ public class FadeToBlack : MonoBehaviour
         }
         fadeImage.gameObject.SetActive(false);
     }
+    #endregion
+
 }
