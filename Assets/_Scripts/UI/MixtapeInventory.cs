@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// Class describing the inventory of the player; what mixtapes they have
+/// </summary>
 public class MixtapeInventory : MonoBehaviour
 {
     #region Variables
@@ -24,6 +27,9 @@ public class MixtapeInventory : MonoBehaviour
     #endregion
 
     #region UnityMethods
+    /// <summary>
+    /// Ensures starting parameters are set and the correct starting damage is rightd
+    /// </summary>
     private void Start()
     {
         currentTape = mixtapeInventory[index]; // default value
@@ -33,6 +39,10 @@ public class MixtapeInventory : MonoBehaviour
     #endregion
 
     #region CustomMethods
+    
+    /// <summary>
+    /// Changes what mixtape is the "main" mixtape
+    /// </summary>
     public void OnTapeChange()
     {
         ChangeColor(currentTape, lowAlpha);

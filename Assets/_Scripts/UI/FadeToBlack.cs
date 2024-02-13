@@ -5,6 +5,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// Script to alter the alpha of an image to fade to black or fade to transparency
+/// </summary>
 public class FadeToBlack : MonoBehaviour
 {
     #region Variables
@@ -47,6 +50,7 @@ public class FadeToBlack : MonoBehaviour
     /// Coroutine that loops to increment the alpha of an image
     /// Initially activates the image and then begins a while loop
     /// At the end of each iteration, yield return waits for the interval time
+    /// intervalWait is the time it yields between each change in alpha shade
     /// </summary>
     /// <param name="intervalWait"></param>
     /// <returns></returns>
@@ -75,6 +79,7 @@ public class FadeToBlack : MonoBehaviour
     /// At the end of each loop, yield return waits for the interval time
     /// IMPORTANT --- The image must be set to inactive after fading out
     /// IMPORTANT --- This is so you can click through it to other UI elements
+    /// intervalWait is the time it yields between each change in alpha shade
     /// </summary>
     /// <param name="intervalWait"></param>
     /// <returns></returns>
