@@ -46,6 +46,14 @@ public class GameEnd : MonoBehaviour
     #region UnityMethods
 
     /// <summary>
+    /// Called before the first from, registers room cleared callback
+    /// </summary>
+    private void Awake()
+    {
+        EnemyManager.roomCleared += RoomCleared;
+    }
+
+    /// <summary>
     /// Called at the first frame: ensures booleans are at correct starting values
     /// </summary>
     private void Start()
@@ -65,20 +73,11 @@ public class GameEnd : MonoBehaviour
 
     /// <summary>
     /// Called every frame
-    /// Either instantiates the room end door when all enemies are dead
-    /// Or
-    /// Goes to player death screen when they player dies
+    /// Goes to player death screen when the player dies
     /// </summary>
     private void Update()
     {
-        if (EnemyManager.enemyManager.enemies.Count <= 0 && hasPassed)
-        {
-            doorRef.SetActive(true);
-            hasPassed = false;
-        }
-
-        else if (player.GetComponent<Health>().HP <= 0 && !hasDied) // Running the check here but it might be able
-                                                                    // be abstracted
+        if (player.GetComponent<Health>().HP <= 0 && !hasDied) // Running the check here but it might be able to be abstracted
         {
             fadeToBlack.OnFadeOut();
             hasDied = true; 
@@ -90,6 +89,19 @@ public class GameEnd : MonoBehaviour
     #endregion
 
     #region Custom Methods
+
+    /// <summary>
+    /// Invoked by the room cleared callback. Activates the exit door
+    /// </summary>
+    private void RoomCleared()
+    {
+        if (hasPassed)
+        {
+            doorRef.SetActive(true);
+            hasPassed = false;
+        }
+    }
+
     /// <summary>
     /// Activates appropriate UI elements when a end-room door is activated
     /// </summary>

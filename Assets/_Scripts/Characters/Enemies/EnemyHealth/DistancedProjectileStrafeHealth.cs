@@ -8,6 +8,7 @@ public class DistancedProjectileStrafeHealth : BaseEnemyHealth
     /// </summary>
     protected override void EnemyDeath()
     {
+        base.EnemyDeath();
         Debug.Log("DistancedProjectileStrafeDeath");
         Destroy(gameObject);
     }

@@ -37,10 +37,6 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     [Tooltip("NavMeshAgent that is enemy behavior uses for its general navigation")]
     protected NavMeshAgent navMeshAgent;
 
-    [Tooltip("Transform of the player to follow")]
-    [SerializeField]
-    protected Transform player;
-
     [Header("Script refernces")]
     [Tooltip("Health Script Reference for this behavior")]
     private BaseEnemyHealth health;

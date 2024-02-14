@@ -135,7 +135,7 @@ public abstract class BaseEnemyHealth : Health
    
     protected virtual void EnemyDeath()
     {
-        EnemyManager.enemyManager.enemies.Remove(this.gameObject.GetComponent<BaseEnemyBehavior>());
+        EnemyManager.instance.EnemyDied();
 
         /*Debug.Log("BaseEnemyDeath");
         Destroy(gameObject);*/

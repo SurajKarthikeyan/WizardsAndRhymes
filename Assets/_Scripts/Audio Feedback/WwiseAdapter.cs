@@ -15,7 +15,7 @@ public class WwiseAdapter : MonoBehaviour
     [Tooltip("The potential intervals to trigger beats on")]
     public enum BeatIntervals { B32, B16, B8, B4, B2, B1 };
     [Tooltip("Singleton instance")]
-    [HideInInspector] public static WwiseAdapter S; //Suraj signed off on this, take it up with him
+    [HideInInspector] public static WwiseAdapter instance; //Suraj signed off on this, take it up with him
 
     //Events and delegates
     [HideInInspector] public static event BeatDelegate on32Beat;
@@ -27,6 +27,7 @@ public class WwiseAdapter : MonoBehaviour
 
     [HideInInspector] public delegate void BeatDelegate();
 
+    [Tooltip("Dictionary mapping beat intervals to their associated events")]
     [HideInInspector] public static Dictionary<BeatIntervals, BeatDelegate> beatEvents = new Dictionary<BeatIntervals, BeatDelegate>()
     {
         {BeatIntervals.B32, on32Beat },
@@ -69,8 +70,8 @@ public class WwiseAdapter : MonoBehaviour
     private void Awake()
     {
         //Initialize singleton
-        if (S == null)
-            S = this;
+        if (instance == null)
+            instance = this;
         else
         {
             Debug.LogError("Duplicate WWise Adapter in scene " + gameObject.name);
@@ -94,8 +95,8 @@ public class WwiseAdapter : MonoBehaviour
     private void OnDestroy()
     {
         //Free singleton
-        if (S == this)
-            S = null;
+        if (instance == this)
+            instance = null;
     }
     #endregion
 

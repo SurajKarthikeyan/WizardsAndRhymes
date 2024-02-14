@@ -10,6 +10,9 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     #region Variables
+    [Tooltip("Singleton of player controller")]
+    public static PlayerController instance;
+
 
     [Tooltip("Enum that represents the movement state of the player")]
     private enum MoveStatus
@@ -142,6 +145,15 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void Awake()
     {
+        //Initialize singleton
+        if (instance == null)
+            instance = this;
+        else
+        {
+            Debug.LogWarning("Duplicate player controller in scene: " + gameObject.name);
+            Destroy(this);
+        }
+
         m_RigidBody = GetComponent<Rigidbody>();
         m_PlayerInput = new PlayerInput();
     }

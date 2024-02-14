@@ -7,10 +7,6 @@ using UnityEngine;
 public class DistancedProjectileStrafeEnemy : BaseEnemyBehavior
 {
     #region Variables
-    [Tooltip("Transform of the player to follow")]
-    [SerializeField]
-    private Transform player;
-
     [Tooltip("Maximum distance this enemy will be from the player before it shoots")]
     [SerializeField]
     private float maxDistance = 10f;
@@ -52,22 +48,22 @@ public class DistancedProjectileStrafeEnemy : BaseEnemyBehavior
         base.FixedUpdate();
         if (activated)
         {
-            float currDistance = Vector3.Distance(transform.position, player.transform.position);
+            float currDistance = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
             if (currDistance > maxDistance)
             {
                 behaviorState = EnemyBehaviorState.TrackingPlayer;
-                navMeshAgent.destination = player.position;
+                navMeshAgent.destination = PlayerController.instance.transform.position;
             }
             else if (currDistance < minDistance)
             {
-                Vector3 dirToPlayer = transform.position - player.transform.position;
+                Vector3 dirToPlayer = transform.position - PlayerController.instance.transform.position;
                 Vector3 runPos = transform.position + dirToPlayer;
                 navMeshAgent.SetDestination(runPos);
             }
             else if (currDistance < maxDistance && currDistance > minDistance)
             {
                 //navMeshAgent.velocity = Vector3.zero;
-                //Vector3 lookDir = player.transform.position - transform.position;
+                //Vector3 lookDir = PlayerController.instance.transform.position - transform.position;
                 //navMeshAgent.transform.rotation = Quaternion.LookRotation(lookDir, Vector3.up);
 
                 //if (!shooting)
@@ -108,15 +104,15 @@ public class DistancedProjectileStrafeEnemy : BaseEnemyBehavior
         Vector3 offsetPlayer;
         if (strafeRight)
         {
-            offsetPlayer = player.position - transform.position;
+            offsetPlayer = PlayerController.instance.transform.position - transform.position;
         }
         else
         {
-            offsetPlayer = transform.position - player.position;
+            offsetPlayer = transform.position - PlayerController.instance.transform.position;
         }
         Vector3 dir = Vector3.Cross(offsetPlayer, Vector3.up);
         navMeshAgent.SetDestination(transform.position + dir);
-        Vector3 lookPos = player.position - transform.position;
+        Vector3 lookPos = PlayerController.instance.transform.position - transform.position;
         lookPos.y = 0;
         Quaternion rotation = Quaternion.LookRotation(lookPos);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 5);

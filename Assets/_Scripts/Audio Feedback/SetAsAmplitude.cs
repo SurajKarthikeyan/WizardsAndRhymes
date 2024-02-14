@@ -74,16 +74,16 @@ public class SetAsAmplitude : MonoBehaviour
         switch (frequencyResponse)
         {
             case FrequencyResponse.All:
-                readAmplitude = WwiseAdapter.S.amplitude;
+                readAmplitude = WwiseAdapter.instance.amplitude;
                 break;
             case FrequencyResponse.High:
-                readAmplitude = WwiseAdapter.S.highAmplitude;
+                readAmplitude = WwiseAdapter.instance.highAmplitude;
                 break;
             case FrequencyResponse.Mid:
-                readAmplitude = WwiseAdapter.S.midAmplitude;
+                readAmplitude = WwiseAdapter.instance.midAmplitude;
                 break;
             case FrequencyResponse.Low:
-                readAmplitude = WwiseAdapter.S.lowAmplitude;
+                readAmplitude = WwiseAdapter.instance.lowAmplitude;
                 break;
         }
         float amplitude = Mathf.Lerp(amplitudeRange.x, amplitudeRange.y, readAmplitude);

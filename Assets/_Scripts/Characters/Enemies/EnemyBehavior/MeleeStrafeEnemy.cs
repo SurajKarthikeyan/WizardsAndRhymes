@@ -83,12 +83,12 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
             //Else statement is when the enemy is not lunging at the player
             else
             {
-                float currDistance = Vector3.Distance(transform.position, player.transform.position);
+                float currDistance = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
                 //If the enemy is too far from the player, it will continue to follow it
                 if (currDistance > maxDistance)
                 {
                     behaviorState = EnemyBehaviorState.TrackingPlayer;
-                    navMeshAgent.destination = player.position;
+                    navMeshAgent.destination = PlayerController.instance.transform.position;
                 }
                 //If the enemy is too close to the player
                 else if (currDistance < minDistance)
@@ -129,7 +129,7 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
                     else if (behaviorState == EnemyBehaviorState.MeleeAttacking)
                     {
                         //If the enemy is far enough away to lunge
-                        if (Vector3.Distance(transform.position, player.transform.position) >= meleeLungeDistance)
+                        if (Vector3.Distance(transform.position, PlayerController.instance.transform.position) >= meleeLungeDistance)
                         {
                             LungeAttack();
                         }
@@ -159,11 +159,11 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
          */
         if (strafeRight)
         {
-            offsetPlayer = player.position - transform.position;
+            offsetPlayer = PlayerController.instance.transform.position - transform.position;
         }
         else
         {
-            offsetPlayer = transform.position - player.position;
+            offsetPlayer = transform.position - PlayerController.instance.transform.position;
         }
         /**
          * Cross product will calculate vector perpendicular to both the vector between the player
@@ -174,7 +174,7 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
         //Move to that location that we just found
         navMeshAgent.SetDestination(transform.position + dir);
         //Rest of the code calculates rotation that the enemy is looking in and smoothly rotates it
-        Vector3 lookPos = player.transform.position - transform.position;
+        Vector3 lookPos = PlayerController.instance.transform.position - transform.position;
         lookPos.y = 0;
         Quaternion rotation = Quaternion.LookRotation(lookPos, Vector3.up);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 15);
@@ -186,7 +186,7 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
     public void Retreat()
     {
         //Calculates a vector pointing away from the player and moves the navMesh there
-        Vector3 dirToPlayer = transform.position - player.transform.position;
+        Vector3 dirToPlayer = transform.position - PlayerController.instance.transform.position;
         Vector3 runPos = transform.position + dirToPlayer;
         navMeshAgent.SetDestination(runPos);
     }
@@ -200,7 +200,7 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
         navMeshAgent.enabled = false;
         rb.isKinematic = false;
         //Add a force in the direction the enemy is facing
-        rb.AddForce((player.transform.position - transform.position).normalized * meleeLungeForce, ForceMode.Impulse);
+        rb.AddForce((PlayerController.instance.transform.position - transform.position).normalized * meleeLungeForce, ForceMode.Impulse);
     }
     #endregion
 }
