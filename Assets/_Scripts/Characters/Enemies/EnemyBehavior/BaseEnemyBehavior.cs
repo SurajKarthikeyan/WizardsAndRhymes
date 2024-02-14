@@ -8,6 +8,19 @@ using UnityEngine.AI;
 public abstract class BaseEnemyBehavior : MonoBehaviour
 {
     #region Variables
+    [Tooltip("Enum representing the different states of behavior an enemy can be in")]
+    protected enum EnemyBehaviorState
+    {
+        Inactive,
+        TrackingPlayer,
+        Strafing,
+        MeleeAttacking,
+        RangedAttacking
+    }
+    [Header("Enemy Behavior State")]
+    [Tooltip("Instance of the EnemyBehaviorState enum")]
+    protected EnemyBehaviorState behaviorState;
+
     [Header("Attack Variables")]
     [Tooltip("Value representing the attack damage of this enemy")]
     [SerializeField]
@@ -23,6 +36,10 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     [Header("Navigation Variables")]
     [Tooltip("NavMeshAgent that is enemy behavior uses for its general navigation")]
     protected NavMeshAgent navMeshAgent;
+
+    [Tooltip("Transform of the player to follow")]
+    [SerializeField]
+    protected Transform player;
 
     [Header("Script refernces")]
     [Tooltip("Health Script Reference for this behavior")]

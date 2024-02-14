@@ -7,17 +7,6 @@ using UnityEngine;
 public class DistancedProjectileStrafeEnemy : BaseEnemyBehavior
 {
     #region Variables
-    public enum BehaviorState
-    {
-        Inactive,
-        TrackingPlayer,
-        Strafing,
-        Attacking
-    }
-
-    public BehaviorState behaviorState;
-
-
     [Tooltip("Transform of the player to follow")]
     [SerializeField]
     private Transform player;
@@ -53,7 +42,6 @@ public class DistancedProjectileStrafeEnemy : BaseEnemyBehavior
     protected override void Start()
     {
         base.Start();
-        behaviorState = BehaviorState.Inactive;
     }
 
     /// <summary>
@@ -67,7 +55,7 @@ public class DistancedProjectileStrafeEnemy : BaseEnemyBehavior
             float currDistance = Vector3.Distance(transform.position, player.transform.position);
             if (currDistance > maxDistance)
             {
-                behaviorState = BehaviorState.TrackingPlayer;
+                behaviorState = EnemyBehaviorState.TrackingPlayer;
                 navMeshAgent.destination = player.position;
             }
             else if (currDistance < minDistance)
