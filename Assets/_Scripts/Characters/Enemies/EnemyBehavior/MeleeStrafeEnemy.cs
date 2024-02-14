@@ -151,7 +151,7 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
     /// Function that lets this enemy strafe
     /// </summary>
     /// <param name="strafeRight"></param>
-    public void Strafe(bool strafeRight = true)
+    private void Strafe(bool strafeRight = true)
     {
         Vector3 offsetPlayer;
         /**
@@ -183,7 +183,7 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
     /// <summary>
     /// Function that lets this enemy move away from the player
     /// </summary>
-    public void Retreat()
+    private void Retreat()
     {
         //Calculates a vector pointing away from the player and moves the navMesh there
         Vector3 dirToPlayer = transform.position - PlayerController.instance.transform.position;
@@ -194,7 +194,7 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
     /// <summary>
     /// Function that makes this enemy lunge at the player
     /// </summary>
-    public void LungeAttack()
+    private void LungeAttack()
     {
         //Temporarily disable the navMesh because Unity physics do not like it
         navMeshAgent.enabled = false;

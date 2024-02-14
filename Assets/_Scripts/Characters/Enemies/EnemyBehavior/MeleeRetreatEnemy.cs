@@ -70,13 +70,15 @@ public class MeleeRetreatEnemy : BaseEnemyBehavior
             else
             {
                 float currDistance = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
-                //If the enemy is too far from the player, it will continue to follow it
+                //If we are retreating after the lunge attack
                 if (behaviorState == EnemyBehaviorState.Retreating)
                 {
+                    //If the navmesh has no current action, we make a full retreat
                     if (!navMeshAgent.hasPath)
                     {
                         FullRetreat();
                     }
+                    //Otherwise, we wait for it to finish its path
                     else
                     {
                         if (navMeshAgent.pathStatus == UnityEngine.AI.NavMeshPathStatus.PathComplete ||
@@ -86,20 +88,21 @@ public class MeleeRetreatEnemy : BaseEnemyBehavior
                         }
                     }
                 }
+                //This is when we are following the player at a great distance
                 else if (currDistance > maxDistance && behaviorState != EnemyBehaviorState.MeleeAttacking)
                 {
                     behaviorState = EnemyBehaviorState.TrackingPlayer;
                     navMeshAgent.destination = PlayerController.instance.transform.position;
                 }
                 //If the enemy is too close to the player
-                else if (currDistance < minDistance)
+                else if (currDistance < minDistance && behaviorState != EnemyBehaviorState.MeleeAttacking)
                 {
                     Retreat();
                 }
                 //If the enemy is in between the max and the min
                 else
                 {
-                    //If the enemy is either coming into range from tracking the player or is already strafing
+                    //If the enemy is tracking the player and in range, we begin to attack
                     if (behaviorState == EnemyBehaviorState.TrackingPlayer)
                     {
                         behaviorState = EnemyBehaviorState.MeleeAttacking;   
@@ -121,6 +124,7 @@ public class MeleeRetreatEnemy : BaseEnemyBehavior
                     }
                 }
             }
+            //Code handles looking at the player when not lunging at the player
             if (behaviorState != EnemyBehaviorState.Retreating && 
                 behaviorState != EnemyBehaviorState.MeleeAttacking)
             {
@@ -137,7 +141,7 @@ public class MeleeRetreatEnemy : BaseEnemyBehavior
     /// <summary>
     /// Function that lets this enemy move away from the player
     /// </summary>
-    public void Retreat(float retreatMultiplier = 1)
+    private void Retreat(float retreatMultiplier = 1)
     {
         //Calculates a vector pointing away from the player and moves the navMesh there
         Vector3 dirToPlayer = transform.position - PlayerController.instance.transform.position;
@@ -145,19 +149,23 @@ public class MeleeRetreatEnemy : BaseEnemyBehavior
         navMeshAgent.SetDestination(runPos);
     }
 
-    public void FullRetreat() 
+    /// <summary>
+    /// Function that has this enemy attempt to get to a farther distance away
+    /// </summary>
+    private void FullRetreat() 
     {
-        Vector2 randomPoint = Random.insideUnitCircle * 20;
-        Vector3 navMeshDest = new (randomPoint.x, 0, randomPoint.y);
-        navMeshDest += PlayerController.instance.transform.position;
-        navMeshAgent.SetDestination(navMeshDest);
+        //Picks a random point 20 units away from the player to travel to
+        Vector3 randomPoint = Random.onUnitSphere * retreatDistance;
+        randomPoint.y = 0;
+        randomPoint += PlayerController.instance.transform.position;
+        navMeshAgent.SetDestination(randomPoint);
     }
 
 
     /// <summary>
     /// Function that makes this enemy lunge at the player
     /// </summary>
-    public void LungeAttack()
+    private void LungeAttack()
     {
         //Temporarily disable the navMesh because Unity physics do not like it
         navMeshAgent.enabled = false;
