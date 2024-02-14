@@ -15,10 +15,12 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         TrackingPlayer,
         Strafing,
         MeleeAttacking,
-        RangedAttacking
+        RangedAttacking,
+        Retreating
     }
     [Header("Enemy Behavior State")]
     [Tooltip("Instance of the EnemyBehaviorState enum")]
+    [SerializeField]
     protected EnemyBehaviorState behaviorState;
 
     [Header("Attack Variables")]
