@@ -68,7 +68,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -876546973899608171, guid: c4201b7f5edf70a4e9272a77e04c947c, type: 3}
+  - {fileID: 2100000, guid: 4bb041fafbc61b44899bc1dce5cc5c6f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -171,11 +171,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ddf3ae74f42b2648a7a742b8294718f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  behaviorState: 0
   attackDamage: 5
   activated: 0
   activatedMaterial: {fileID: 2100000, guid: 4bb041fafbc61b44899bc1dce5cc5c6f, type: 2}
   maxDistance: 5
   minDistance: 1
+  retreatDistance: 20
   meleeLungeDistance: 5
   meleeLungeForce: 10
 --- !u!195 &2541438218870669449

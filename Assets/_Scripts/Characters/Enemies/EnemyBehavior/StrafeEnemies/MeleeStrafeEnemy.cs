@@ -3,27 +3,9 @@ using UnityEngine;
 /// <summary>
 /// Enemy type that follows the player and strafes around them before attacking
 /// </summary>
-public class MeleeStrafeEnemy : BaseEnemyBehavior
+public class MeleeStrafeEnemy : BaseStrafeEnemy
 {
     #region Variables
-    [Header("Distancing variables")]
-    [Tooltip("Maximum distance this enemy will be from the player before it shoots")]
-    [SerializeField]
-    private float maxDistance = 5f;
-
-    [Tooltip("Minimum distance this enemy will be from the player before it shoots")]
-    [SerializeField]
-    private float minDistance = 1f;
-
-    [Header("Strafing variables")]
-    [Tooltip("Speed that this enemy strafes, if set to 0 it will take the speed of the navMesh agent")]
-    [SerializeField]
-    private float strafeSpeed;
-
-    [Tooltip("Time in seconds in which this enemy will strafe for")]
-    [SerializeField]
-    private float strafeTimeThreshold;
-
     [Header("Melee specific attack variables")]
     [Tooltip("Distance in which the enemy will lunge at the player")]
     [SerializeField]
@@ -51,13 +33,9 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
     protected override void Start()
     {
         base.Start();
-        rb = GetComponent<Rigidbody>();
-        //Sets the default strafing speed to be the speed of the navMesh
-        if (strafeSpeed <= 0)
-        {
-            strafeSpeed = navMeshAgent.speed;
-        }
+        rb = GetComponent<Rigidbody>();        
     }
+
     /// <summary>
     /// Unity method called every frame update
     /// </summary>
@@ -93,7 +71,7 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
                 //If the enemy is too close to the player
                 else if (currDistance < minDistance)
                 {
-                    Retreat();
+                    SmallRetreat();
                 }
                 //If the enemy is in between the max and the min
                 else
@@ -137,7 +115,7 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
                         else
                         {
                             navMeshAgent.updateRotation = false;
-                            Retreat();
+                            SmallRetreat();
                         }                        
                     }
                 }
@@ -147,50 +125,6 @@ public class MeleeStrafeEnemy : BaseEnemyBehavior
     #endregion
 
     #region Custom Methods
-    /// <summary>
-    /// Function that lets this enemy strafe
-    /// </summary>
-    /// <param name="strafeRight"></param>
-    private void Strafe(bool strafeRight = true)
-    {
-        Vector3 offsetPlayer;
-        /**
-         * Conditional calculates different vector direction, magnitude remains same
-         */
-        if (strafeRight)
-        {
-            offsetPlayer = PlayerController.instance.transform.position - transform.position;
-        }
-        else
-        {
-            offsetPlayer = transform.position - PlayerController.instance.transform.position;
-        }
-        /**
-         * Cross product will calculate vector perpendicular to both the vector between the player
-         * and the upwards vector. 
-         * Result will be a vector pointing left or right relative to the direction facing the player
-         * */
-        Vector3 dir = Vector3.Cross(offsetPlayer, Vector3.up);
-        //Move to that location that we just found
-        navMeshAgent.SetDestination(transform.position + dir);
-        //Rest of the code calculates rotation that the enemy is looking in and smoothly rotates it
-        Vector3 lookPos = PlayerController.instance.transform.position - transform.position;
-        lookPos.y = 0;
-        Quaternion rotation = Quaternion.LookRotation(lookPos, Vector3.up);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 15);
-    }
-
-    /// <summary>
-    /// Function that lets this enemy move away from the player
-    /// </summary>
-    private void Retreat()
-    {
-        //Calculates a vector pointing away from the player and moves the navMesh there
-        Vector3 dirToPlayer = transform.position - PlayerController.instance.transform.position;
-        Vector3 runPos = transform.position + dirToPlayer;
-        navMeshAgent.SetDestination(runPos);
-    }
-
     /// <summary>
     /// Function that makes this enemy lunge at the player
     /// </summary>

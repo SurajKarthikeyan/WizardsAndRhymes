@@ -6,14 +6,7 @@ using UnityEngine;
 public class MeleeRetreatEnemy : BaseEnemyBehavior
 {
     #region Variables
-    [Header("Distancing variables")]
-    [Tooltip("Maximum distance this enemy will be from the player before it shoots")]
-    [SerializeField]
-    private float maxDistance = 5f;
-
-    [Tooltip("Minimum distance this enemy will be from the player before it shoots")]
-    [SerializeField]
-    private float minDistance = 1f;
+    
 
     [Header("Retreating variables")]
     [SerializeField]
@@ -33,7 +26,6 @@ public class MeleeRetreatEnemy : BaseEnemyBehavior
     [Tooltip("Rigidbody of this enemy")]
     private Rigidbody rb;
     #endregion
-
 
     #region Unity Methods
     /// <summary>

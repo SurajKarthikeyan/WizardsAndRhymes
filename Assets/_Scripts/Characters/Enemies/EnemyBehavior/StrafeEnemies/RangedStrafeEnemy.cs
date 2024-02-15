@@ -7,14 +7,6 @@ using UnityEngine;
 public class RangedStrafeEnemy : BaseEnemyBehavior
 {
     #region Variables
-    [Tooltip("Maximum distance this enemy will be from the player before it shoots")]
-    [SerializeField]
-    private float maxDistance = 10f;
-
-    [Tooltip("Minimum distance this enemy will be from the player before it shoots")]
-    [SerializeField]
-    private float minDistance = 1f;
-
     [Tooltip("Projectile object that this enemy shoots")]
     [SerializeField]
     private GameObject enemyProjectile;
@@ -55,11 +47,6 @@ public class RangedStrafeEnemy : BaseEnemyBehavior
     {
         base.Start();
         rb = GetComponent<Rigidbody>();
-        //Sets the default strafing speed to be the speed of the navMesh
-        if (strafeSpeed <= 0)
-        {
-            strafeSpeed = navMeshAgent.speed;
-        }
     }
 
     /// <summary>
@@ -101,7 +88,7 @@ public class RangedStrafeEnemy : BaseEnemyBehavior
                 //If the enemy is too close to the player
                 else if (currDistance < minDistance)
                 {
-                    Retreat();
+                    SmallRetreat();
                 }
                 //If the enemy is in between the max and the min
                 else
@@ -136,16 +123,11 @@ public class RangedStrafeEnemy : BaseEnemyBehavior
                     //If the enemy is ready to attack
                     else if (behaviorState == EnemyBehaviorState.RangedAttacking)
                     {
-                        Debug.Log("Shooting Projectile");
                         ShootProjectile();
                     }
                 }
             }
-            //Rest of the code calculates rotation that the enemy is looking in and smoothly rotates it
-            Vector3 lookPos = PlayerController.instance.transform.position - transform.position;
-            lookPos.y = 0;
-            Quaternion rotation = Quaternion.LookRotation(lookPos, Vector3.up);
-            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 15);
+            LookAtPlayer();
         }
     }
     #endregion
@@ -197,17 +179,5 @@ public class RangedStrafeEnemy : BaseEnemyBehavior
         //Move to that location that we just found
         navMeshAgent.SetDestination(transform.position + dir);
     }
-
-    /// <summary>
-    /// Function that lets this enemy move away from the player
-    /// </summary>
-    private void Retreat()
-    {
-        //Calculates a vector pointing away from the player and moves the navMesh there
-        Vector3 dirToPlayer = transform.position - PlayerController.instance.transform.position;
-        Vector3 runPos = transform.position + dirToPlayer;
-        navMeshAgent.SetDestination(runPos);
-    }
-
     #endregion
 }

@@ -43,8 +43,55 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     [Tooltip("Health Script Reference for this behavior")]
     private BaseEnemyHealth health;
 
+
+    [Header("Distancing variables")]
+    [Tooltip("Maximum distance this enemy will be from the player before it shoots")]
+    [SerializeField]
+    protected float maxDistance = 10f;
+
+    [Tooltip("Minimum distance this enemy will be from the player before it shoots")]
+    [SerializeField]
+    protected float minDistance = 1f;
+
     #endregion
 
+    #region Custom Methods
+    protected void LookAtPlayer()
+    {
+        //Rest of the code calculates rotation that the enemy is looking in and smoothly rotates it
+        Vector3 lookPos = PlayerController.instance.transform.position - transform.position;
+        lookPos.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(lookPos, Vector3.up);
+        transform.rotation = rotation;
+    }
+
+    /// <summary>
+    /// Function that lets this enemy move away from the player
+    /// </summary>
+    protected void SmallRetreat()
+    {
+        //Calculates a vector pointing away from the player and moves the navMesh there
+        Vector3 dirToPlayer = transform.position - PlayerController.instance.transform.position;
+        Vector3 runPos = transform.position + dirToPlayer;
+        navMeshAgent.SetDestination(runPos);
+    }
+
+
+    protected void EvaluateBehavior()
+    {
+
+    }
+
+    protected void EvaluateDistance()
+    {
+
+    }
+
+    protected virtual void SpecializedBehavior()
+    {
+        Debug.Log("BaseEnemyBehavior has no specialized behavior");
+    }
+    #endregion
 
     #region Unity Methods
     /// <summary>
