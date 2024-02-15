@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -7,6 +5,7 @@ using UnityEngine;
 /// </summary>
 public abstract class BaseStrafeEnemy : BaseEnemyBehavior
 {
+    #region Variables
     [Header("Strafing variables")]
     [Tooltip("Speed that this enemy strafes, if set to 0 it will take the speed of the navMesh agent")]
     [SerializeField]
@@ -21,7 +20,9 @@ public abstract class BaseStrafeEnemy : BaseEnemyBehavior
 
     [Tooltip("Current time elapsed in which this enemy is strafing")]
     protected float strafeTime;
+    #endregion
 
+    #region Unity Methods
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -33,6 +34,9 @@ public abstract class BaseStrafeEnemy : BaseEnemyBehavior
         }
     }
 
+    /// <summary>
+    /// Unity method called every frame
+    /// </summary>
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
@@ -42,6 +46,9 @@ public abstract class BaseStrafeEnemy : BaseEnemyBehavior
             LookAtPlayer();
         }
     }
+    #endregion
+
+    #region Custom Methods
 
     /// <summary>
     /// Function that lets this enemy strafe
@@ -72,6 +79,10 @@ public abstract class BaseStrafeEnemy : BaseEnemyBehavior
         LookAtPlayer();
     }
 
+    /// <summary>
+    /// Override of the base enemy's virtual function that evaluates this enemy's behavior
+    /// and sets its next state
+    /// </summary>
     protected override void EvaluateBehavior()
     {
         if (!rb.isKinematic)
@@ -88,13 +99,18 @@ public abstract class BaseStrafeEnemy : BaseEnemyBehavior
                 behaviorState = EnemyBehaviorState.TrackingPlayer;
             }
         }
-        //Else statement is when the enemy is not lunging at the player
+        //Else statement is when the enemy is not having its rigidbody active
         else
         {
+            //Next part of the enemy's logic is to evaluate its distance from the player
             EvaluateDistanceFromPlayer();
         }
     }
 
+    /// <summary>
+    /// Function evaluates the current distance from the player and uses that information 
+    /// to aid in deciding its next state
+    /// </summary>
     protected override void EvaluateDistanceFromPlayer()
     {
         float currDistance = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
@@ -109,10 +125,11 @@ public abstract class BaseStrafeEnemy : BaseEnemyBehavior
         {
             SmallRetreat();
         }
-        //If the enemy is in between the max and the min
+        //If the enemy is in between the max and the min, do this enemy's specific behavior pattern
         else
         {
             SpecializedBehavior();
         }
     }
+    #endregion
 }

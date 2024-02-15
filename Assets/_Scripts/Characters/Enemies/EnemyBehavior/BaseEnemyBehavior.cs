@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -78,6 +79,18 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
             activated = false;
             health.Death();
         }
+        else if (behaviorState == EnemyBehaviorState.Idle)
+        {
+            //Make NavMesh stay still for a certain period of time
+            navMeshAgent.isStopped = true;
+        }
+        else
+        {
+            if (navMeshAgent.isActiveAndEnabled)
+            {
+                navMeshAgent.isStopped = false;
+            }
+        }
     }
 
     /// <summary>
@@ -145,6 +158,18 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     protected virtual void SpecializedBehavior()
     {
         Debug.Log("BaseEnemyBehavior has no specialized behavior");
+    }
+
+    /// <summary>
+    /// Coroutine that stops the enemy from moving for a certain period of time
+    /// </summary>
+    /// <param name="seconds">How long the enemy stops moving</param>
+    /// <returns>A WaitForSeconds as long as the paramter passed in</returns>
+    protected IEnumerator PausePlayerTracking(float seconds)
+    {
+        behaviorState = EnemyBehaviorState.Idle;
+        yield return new WaitForSeconds(seconds);
+        behaviorState = EnemyBehaviorState.TrackingPlayer;
     }
     #endregion
 

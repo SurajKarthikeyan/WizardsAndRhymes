@@ -19,19 +19,6 @@ public class RangedStrafeEnemy : BaseStrafeEnemy
     [Tooltip("Cooldown in between every projectile shot by this enemy")]
     [SerializeField]
     private float shootCooldown = 1f;
-
-    #endregion
-
-    #region Unity Methods
-    /// <summary>
-    /// Method called on scene load
-    /// </summary>
-    protected override void Start()
-    {
-        base.Start();
-    }
-
-    
     #endregion
 
     #region Custom Methods
@@ -42,18 +29,24 @@ public class RangedStrafeEnemy : BaseStrafeEnemy
     {
         StartCoroutine(Projectile());
     }
+
     /// <summary>
     /// Coroutine called when the projectile function is called, handles cooldowns
     /// </summary>
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Projectile()
     {
+        //Instantiates and shoots projectile 
         GameObject projectile = Instantiate(enemyProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
         projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * 5;
         behaviorState = EnemyBehaviorState.TrackingPlayer;
         yield return new WaitForSeconds(shootCooldown);
     }
 
+    /// <summary>
+    /// Function override that executes this enemy's special behavior: 
+    /// Strafes around the player when within a certain range and shoots them
+    /// </summary>
     protected override void SpecializedBehavior()
     {
         //If the enemy is either coming into range from tracking the player or is already strafing

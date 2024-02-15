@@ -14,18 +14,6 @@ public class MeleeStrafeEnemy : BaseStrafeEnemy
     [Tooltip("Force in which the enemy will lunge at the player with")]
     [SerializeField]
     private float meleeLungeForce = 10f;
-   
-    #endregion
-
-
-    #region Unity Methods
-    /// <summary>
-    /// Method called on scene load
-    /// </summary>
-    protected override void Start()
-    {
-        base.Start();       
-    }
     #endregion
 
     #region Custom Methods
