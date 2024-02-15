@@ -89,7 +89,7 @@
 				<GameParameter Id="3550808449" Name="High"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{E75728BC-06E4-7EAD-EF2A-E819667F20AB}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{F36B51C0-7301-0CBF-DF05-885521FF91C4}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -109,11 +109,20 @@
 					<ShortName>Initial498ConceptMusB2.wav</ShortName>
 					<CachePath>SFX/Initial498ConceptMusB2_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="477280874" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CombatMusSprint2Crop.wav</ShortName>
+					<CachePath>SFX/CombatMusSprint2Crop_FBC78EF0.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
 				<Event Id="1061604899" Name="FreqTest" DurationType="OneShot" DurationMin="11.586208" DurationMax="11.586208">
 					<MediaRefs>
 						<MediaRef Id="345662734"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3855831843" Name="ProtoCombatLoop" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="477280874"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1097980931" Name="TestEvent" DurationType="OneShot" DurationMin="16" DurationMax="16">
@@ -139,5 +148,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{C786ECB1-15B2-AD2A-28E7-BEE1E8A9CB83}</FileHash>
+	<FileHash>{50D1BC61-9184-8BE4-023C-5A23ACB5C363}</FileHash>
 </SoundBanksInfo>

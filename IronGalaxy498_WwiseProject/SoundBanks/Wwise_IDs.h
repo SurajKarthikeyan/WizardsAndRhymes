@@ -14,6 +14,7 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID FREQTEST = 1061604899U;
+        static const AkUniqueID PROTOCOMBATLOOP = 3855831843U;
         static const AkUniqueID TESTEVENT = 1097980931U;
         static const AkUniqueID TESTINTERACTIVEMUSIC = 372047860U;
         static const AkUniqueID TESTMUSIC = 1324413170U;
