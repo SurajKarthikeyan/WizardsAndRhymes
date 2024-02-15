@@ -63,6 +63,8 @@ public class EnemyManager : MonoBehaviour
 
     [Tooltip("Array of enemy waves to spawn")]
     [SerializeField] EnemyWave[] waves = new EnemyWave[] { new EnemyWave() };
+    [Tooltip("The spotlight prefab to spawn alongside each enemy")]
+    [SerializeField] GameObject spotlightPrefab;
 
     [Tooltip("The index of the next wave of enemies")]
     int waveIndex = 0;
@@ -183,6 +185,13 @@ public class EnemyManager : MonoBehaviour
                 GameObject enemyGO = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
                 enemyGO.GetComponent<BaseEnemyBehavior>().activated = true; //Activate the enemy
                 yield return new WaitForSeconds(enemySpawnDelay);
+
+                //Spawn the spotlight for the enemy
+                if (spotlightPrefab != null)
+                {
+                    GameObject spotlightGO = Instantiate(spotlightPrefab);
+                    spotlightGO.GetComponent<SpotlightController>().target = enemyGO.transform;
+                }
             }
         }
 
