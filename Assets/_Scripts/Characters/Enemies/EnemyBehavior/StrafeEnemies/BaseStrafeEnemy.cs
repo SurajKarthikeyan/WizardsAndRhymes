@@ -2,7 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BaseStrafeEnemy : BaseEnemyBehavior
+/// <summary>
+/// Parent class of enemies who perform strafing actions
+/// </summary>
+public abstract class BaseStrafeEnemy : BaseEnemyBehavior
 {
     [Header("Strafing variables")]
     [Tooltip("Speed that this enemy strafes, if set to 0 it will take the speed of the navMesh agent")]
@@ -12,6 +15,13 @@ public class BaseStrafeEnemy : BaseEnemyBehavior
     [Tooltip("Time in seconds in which this enemy will strafe for")]
     [SerializeField]
     protected float strafeTimeThreshold;
+
+    [Tooltip("Boolean determining whether or not we strafe right or not")]
+    protected bool strafeRight;
+
+    [Tooltip("Current time elapsed in which this enemy is strafing")]
+    protected float strafeTime;
+
     // Start is called before the first frame update
     protected override void Start()
     {
@@ -23,11 +33,15 @@ public class BaseStrafeEnemy : BaseEnemyBehavior
         }
     }
 
-    //// Update is called once per frame
-    //void Update()
-    //{
-
-    //}
+    protected override void FixedUpdate()
+    {
+        base.FixedUpdate();
+        if (activated)
+        {
+            EvaluateBehavior();
+            LookAtPlayer();
+        }
+    }
 
     /// <summary>
     /// Function that lets this enemy strafe
@@ -56,5 +70,49 @@ public class BaseStrafeEnemy : BaseEnemyBehavior
         //Move to that location that we just found
         navMeshAgent.SetDestination(transform.position + dir);
         LookAtPlayer();
+    }
+
+    protected override void EvaluateBehavior()
+    {
+        if (!rb.isKinematic)
+        {
+            /**
+             * Check is here because navMesh and Unity physics do not play nice with each other
+             * This is when the enemy is currently lunging at the player
+             */
+            if (rb.velocity.magnitude <= 0.5f)
+            {
+                //All this is to get the navMesh back following the player
+                navMeshAgent.enabled = true;
+                rb.isKinematic = true;
+                behaviorState = EnemyBehaviorState.TrackingPlayer;
+            }
+        }
+        //Else statement is when the enemy is not lunging at the player
+        else
+        {
+            EvaluateDistanceFromPlayer();
+        }
+    }
+
+    protected override void EvaluateDistanceFromPlayer()
+    {
+        float currDistance = Vector3.Distance(transform.position, PlayerController.instance.transform.position);
+        //If the enemy is too far from the player, it will continue to follow it
+        if (currDistance > maxDistance)
+        {
+            behaviorState = EnemyBehaviorState.TrackingPlayer;
+            navMeshAgent.destination = PlayerController.instance.transform.position;
+        }
+        //If the enemy is too close to the player
+        else if (currDistance < minDistance)
+        {
+            SmallRetreat();
+        }
+        //If the enemy is in between the max and the min
+        else
+        {
+            SpecializedBehavior();
+        }
     }
 }

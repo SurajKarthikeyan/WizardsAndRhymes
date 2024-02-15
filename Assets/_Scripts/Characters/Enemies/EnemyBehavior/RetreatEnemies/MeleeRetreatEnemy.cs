@@ -22,9 +22,6 @@ public class MeleeRetreatEnemy : BaseEnemyBehavior
     [SerializeField]
     private float meleeLungeForce = 10f;
 
-
-    [Tooltip("Rigidbody of this enemy")]
-    private Rigidbody rb;
     #endregion
 
     #region Unity Methods

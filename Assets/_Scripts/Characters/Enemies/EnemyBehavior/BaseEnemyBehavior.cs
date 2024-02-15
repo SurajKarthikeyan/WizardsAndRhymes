@@ -11,7 +11,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     [Tooltip("Enum representing the different states of behavior an enemy can be in")]
     protected enum EnemyBehaviorState
     {
-        Inactive,
+        Idle,
         TrackingPlayer,
         Strafing,
         MeleeAttacking,
@@ -28,22 +28,6 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     [SerializeField]
     protected float attackDamage = 5f;
 
-    [Header("Activation Variables")]
-    [Tooltip("Boolean representing if this enemy is active or not")]
-    public bool activated = false;
-
-    [Tooltip("Material applied to the enemy when activated, primarily used for early testing purposes")]
-    public Material activatedMaterial;
-
-    [Header("Navigation Variables")]
-    [Tooltip("NavMeshAgent that is enemy behavior uses for its general navigation")]
-    protected NavMeshAgent navMeshAgent;
-
-    [Header("Script refernces")]
-    [Tooltip("Health Script Reference for this behavior")]
-    private BaseEnemyHealth health;
-
-
     [Header("Distancing variables")]
     [Tooltip("Maximum distance this enemy will be from the player before it shoots")]
     [SerializeField]
@@ -53,44 +37,24 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     [SerializeField]
     protected float minDistance = 1f;
 
-    #endregion
+    [Header("Activation Variables")]
+    [Tooltip("Boolean representing if this enemy is active or not")]
+    public bool activated = false;
 
-    #region Custom Methods
-    protected void LookAtPlayer()
-    {
-        //Rest of the code calculates rotation that the enemy is looking in and smoothly rotates it
-        Vector3 lookPos = PlayerController.instance.transform.position - transform.position;
-        lookPos.y = 0;
-        Quaternion rotation = Quaternion.LookRotation(lookPos, Vector3.up);
-        transform.rotation = rotation;
-    }
+    [Tooltip("Material applied to the enemy when activated, primarily used for early testing purposes")]
+    public Material activatedMaterial;
 
-    /// <summary>
-    /// Function that lets this enemy move away from the player
-    /// </summary>
-    protected void SmallRetreat()
-    {
-        //Calculates a vector pointing away from the player and moves the navMesh there
-        Vector3 dirToPlayer = transform.position - PlayerController.instance.transform.position;
-        Vector3 runPos = transform.position + dirToPlayer;
-        navMeshAgent.SetDestination(runPos);
-    }
+    [Header("Navigation/Movement Variables")]
+    [Tooltip("NavMeshAgent that is enemy behavior uses for its general navigation")]
+    protected NavMeshAgent navMeshAgent;
 
+    [Tooltip("Rigidbody of this enemy")]
+    protected Rigidbody rb;
 
-    protected void EvaluateBehavior()
-    {
+    [Header("Script refernces")]
+    [Tooltip("Health Script Reference for this behavior")]
+    private BaseEnemyHealth health;
 
-    }
-
-    protected void EvaluateDistance()
-    {
-
-    }
-
-    protected virtual void SpecializedBehavior()
-    {
-        Debug.Log("BaseEnemyBehavior has no specialized behavior");
-    }
     #endregion
 
     #region Unity Methods
@@ -101,6 +65,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     {
         health = GetComponent<BaseEnemyHealth>();
         navMeshAgent = GetComponent<NavMeshAgent>();
+        rb = GetComponent<Rigidbody>();
     }
 
     /// <summary>
@@ -130,4 +95,57 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         }
     }
     #endregion
+
+    #region Custom Methods
+    /// <summary>
+    /// Function that faces this enemy in the direction of the player
+    /// </summary>
+    protected void LookAtPlayer()
+    {
+        //Rest of the code calculates rotation that the enemy is looking in and smoothly rotates it
+        Vector3 lookPos = PlayerController.instance.transform.position - transform.position;
+        lookPos.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(lookPos, Vector3.up);
+        transform.rotation = rotation;
+    }
+
+    /// <summary>
+    /// Function that lets this enemy move away from the player a small amount
+    /// </summary>
+    protected void SmallRetreat()
+    {
+        //Calculates a vector pointing away from the player and moves the navMesh there
+        Vector3 dirToPlayer = transform.position - PlayerController.instance.transform.position;
+        Vector3 runPos = transform.position + dirToPlayer;
+        navMeshAgent.SetDestination(runPos);
+    }
+
+
+    /// <summary>
+    /// Virtual function that evaluates the current behavior status of this enemy and decides its next state
+    /// </summary>
+    protected virtual void EvaluateBehavior()
+    {
+        Debug.Log("BaseEnemyBehavior EvaluateBehavior");
+    }
+
+    /// <summary>
+    /// Virtual function called as a part of EvaluateBehavior, and it calculates the distance from
+    /// the player, and determines what the next course of action should be
+    /// </summary>
+    protected virtual void EvaluateDistanceFromPlayer()
+    {
+        Debug.Log("BaseEnemyBehavior EvaluateDistanceFromPlayer");
+    }
+
+    /// <summary>
+    /// Virtual function that each enemy type implements, and it allows each enemy's 
+    /// behavior to be executed
+    /// </summary>
+    protected virtual void SpecializedBehavior()
+    {
+        Debug.Log("BaseEnemyBehavior has no specialized behavior");
+    }
+    #endregion
+
 }
