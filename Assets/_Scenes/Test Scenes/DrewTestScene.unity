@@ -1342,7 +1342,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07baaf433beb05d46b900af5c71bb746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemies: []
+  waves:
+  - waveTrigger: 0
+    enemiesRemaining: 0
+    waveDelay: 0
+    waveDuration: 0
+    spawnPosition: {fileID: 0}
+    spawnRadius: 0
+    showSpawnSphere: 0
+    enemies: []
+  waveIndex: 0
+  enemiesRemaining: 0
 --- !u!4 &779231813
 Transform:
   m_ObjectHideFlags: 0
