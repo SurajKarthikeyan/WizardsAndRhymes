@@ -271,7 +271,8 @@ public class PlayerController : MonoBehaviour
             Vector3 mouseRotationVector = Camera.main.ScreenToWorldPoint(Input.mousePosition) - rigidBody.position;
             direction = new(mouseRotationVector.x, 0, mouseRotationVector.y);
             attackDirection = direction;
-            rigidBody.rotation = Quaternion.LookRotation(direction, Vector3.up);
+            Quaternion lookRotation = Quaternion.LookRotation(attackDirection, Vector3.up);
+            rigidBody.rotation = Quaternion.Slerp(rigidBody.rotation, lookRotation, 20 * Time.deltaTime);
         }
         //This is if neither are currently being used
         else
