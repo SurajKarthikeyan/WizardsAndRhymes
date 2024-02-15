@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DistancedProjectileRetreatHealth : BaseEnemyHealth
+public class RangedStrafeHealth : BaseEnemyHealth
 {
     #region Custom Methods
     /// <summary>
@@ -9,7 +9,7 @@ public class DistancedProjectileRetreatHealth : BaseEnemyHealth
     protected override void EnemyDeath()
     {
         base.EnemyDeath();
-        Debug.Log("DistancedProjectileRetreatDeath");
+        Debug.Log("DistancedProjectileStrafeDeath");
         Destroy(gameObject);
     }
     #endregion
