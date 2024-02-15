@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class SpotlightController : MonoBehaviour
 {
-    public Transform target; // Reference to the target object (the object the spotlight will shine on)
+    public Transform target; // Reference to the target object (the object the spotlight will follow)
+    public float yOffset = 2f; // Vertical offset from the target
 
     private void Update()
     {
         if (target != null)
         {
-            // Calculate the direction from the spotlight to the target
-            Vector3 directionToTarget = target.position - transform.position;
+            // Get the target's position
+            Vector3 targetPos = target.position;
 
-            // Ensure the spotlight remains fixed to the ceiling (ceiling is usually along the y-axis)
-            Vector3 fixedDirection = Vector3.ProjectOnPlane(directionToTarget, Vector3.up).normalized;
+            // Set the spotlight's position to be above the target with the yOffset
+            Vector3 spotlightPos = new Vector3(targetPos.x, targetPos.y + yOffset, targetPos.z);
 
-            // Calculate the rotation to point towards the target
-            Quaternion targetRotation = Quaternion.LookRotation(fixedDirection, Vector3.up);
+            // Set the spotlight's position
+            transform.position = spotlightPos;
 
-            // Apply the rotation to the spotlight
-            transform.rotation = targetRotation;
+            // Look at the target
+            transform.LookAt(targetPos);
         }
         else
         {
