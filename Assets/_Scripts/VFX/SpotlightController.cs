@@ -25,7 +25,7 @@ public class SpotlightController : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("Target reference is not set in the SpotlightController script.");
+            Destroy(gameObject);
         }
     }
 }
