@@ -3,50 +3,65 @@
 	<Events>
 		<WorkUnit Name="Default Work Unit" ID="{E42C1AA4-27CF-40ED-A437-64DDCDC1622D}" PersistMode="Standalone">
 			<ChildrenList>
-				<Event Name="TestEvent" ID="{B62348E6-AE1A-4538-90E2-E742B63F8638}">
+				<Folder Name="TestEvents" ID="{763277F7-D9D1-4D6E-BCA3-8B247380230E}" ShortID="855808806">
 					<ChildrenList>
-						<Action Name="" ID="{822E565C-0C23-456F-9792-D3C7FFE04B36}" ShortID="179280969">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="TestSFX" ID="{C353F776-9FC5-4196-B756-CB8CE5995AC4}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
+						<Event Name="TestEvent" ID="{B62348E6-AE1A-4538-90E2-E742B63F8638}">
+							<ChildrenList>
+								<Action Name="" ID="{822E565C-0C23-456F-9792-D3C7FFE04B36}" ShortID="179280969">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="TestSFX" ID="{C353F776-9FC5-4196-B756-CB8CE5995AC4}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="TestInteractiveMusic" ID="{E0DA3DD6-3B68-4D41-97D4-76C03A865ECD}">
+							<ChildrenList>
+								<Action Name="" ID="{96D6AC44-96AB-44BB-A3D5-373D7A1B3732}" ShortID="460013277">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="testPlayListContainer" ID="{2BB89549-C3C0-4436-A0B7-FBC119FBEA55}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="FreqTest" ID="{653C52C7-C7CC-4215-800F-EAF15BEE07D6}">
+							<ChildrenList>
+								<Action Name="" ID="{4DBBB405-66EA-48EC-9D99-E9A7C0B8D26A}" ShortID="546204908">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="498FreqTest" ID="{94BCE7EF-5686-4AB4-A47D-392FF257F911}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="TestMusic" ID="{DE57DDC4-E947-4C92-A911-3874EEE9E436}">
+							<ChildrenList>
+								<Action Name="" ID="{F69F8B76-A276-4355-9D09-97EAC93B4F56}" ShortID="459754434">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="TestMusic" ID="{D7EB265F-E204-4950-BA5F-EB0E05F8583E}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ProtoCombatLoop" ID="{7CD9AB8D-7FF0-47D4-955E-AC999F33F58D}">
+							<ChildrenList>
+								<Action Name="" ID="{56A88BFB-44D1-4D9D-B130-2F9DCA818950}" ShortID="93212521">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="TestCombat" ID="{6B6F35DC-BC3D-4953-8C8D-60FCF3D39F51}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
-				</Event>
-				<Event Name="TestMusic" ID="{DE57DDC4-E947-4C92-A911-3874EEE9E436}">
-					<ChildrenList>
-						<Action Name="" ID="{F69F8B76-A276-4355-9D09-97EAC93B4F56}" ShortID="459754434">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="TestMusic" ID="{D7EB265F-E204-4950-BA5F-EB0E05F8583E}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="TestInteractiveMusic" ID="{E0DA3DD6-3B68-4D41-97D4-76C03A865ECD}">
-					<ChildrenList>
-						<Action Name="" ID="{96D6AC44-96AB-44BB-A3D5-373D7A1B3732}" ShortID="460013277">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="testPlayListContainer" ID="{2BB89549-C3C0-4436-A0B7-FBC119FBEA55}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
-				<Event Name="FreqTest" ID="{653C52C7-C7CC-4215-800F-EAF15BEE07D6}">
-					<ChildrenList>
-						<Action Name="" ID="{4DBBB405-66EA-48EC-9D99-E9A7C0B8D26A}" ShortID="546204908">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="498FreqTest" ID="{94BCE7EF-5686-4AB4-A47D-392FF257F911}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
-				</Event>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>
