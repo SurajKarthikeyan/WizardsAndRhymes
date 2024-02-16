@@ -189,10 +189,12 @@
 								<Reference Name="PlaylistRoot">
 									<Custom>
 										<MusicPlaylistItem Name="" ID="{C8A45773-6149-4913-AB4E-4E0368BFD1B8}" ShortID="322812862">
+											<PropertyList>
+												<Property Name="LoopCount" Type="int16" Value="0"/>
+											</PropertyList>
 											<ChildrenList>
 												<MusicPlaylistItem Name="" ID="{9EBFC501-DD12-4B9A-929F-1B0407CF411D}" ShortID="40075744">
 													<PropertyList>
-														<Property Name="LoopCount" Type="int16" Value="0"/>
 														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
 													</PropertyList>
 													<ReferenceList>
@@ -224,7 +226,7 @@
 							<ChildrenList>
 								<MusicSegment Name="ProtoCombatMus" ID="{9157D8FC-3A23-4032-90DF-B53AC04B9A6B}" ShortID="662378634">
 									<PropertyList>
-										<Property Name="EndPosition" Type="Real64" Value="17418.7866927593"/>
+										<Property Name="EndPosition" Type="Real64" Value="59142.8571428571"/>
 										<Property Name="GridFrequencyPreset" Type="int16" Value="67"/>
 									</PropertyList>
 									<ReferenceList>
@@ -236,17 +238,14 @@
 										</Reference>
 									</ReferenceList>
 									<ChildrenList>
-										<MusicTrack Name="CombatMusSprint2Crop" ID="{8082FB94-A9C6-4517-9ACD-BFDED8A40527}" ShortID="1011058464">
-											<PropertyList>
-												<Property Name="OverrideOutput" Type="bool" Value="True"/>
-											</PropertyList>
+										<MusicTrack Name="1MinCombatLoop" ID="{46F07DC6-2A0F-4CD8-A254-8AC3F4228231}" ShortID="831591013">
 											<ReferenceList>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="testBus" ID="{4EAC6AF4-0261-4DCF-85FE-DD1B4F62A8BB}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
 												</Reference>
 												<Reference Name="TransitionRoot">
 													<Custom>
-														<MusicTransition Name="Root" ID="{C0C83B27-40E8-45D0-B3B1-94D742E943DB}">
+														<MusicTransition Name="Root" ID="{2C5A8278-10C2-4CD7-95CC-EAD536198E8D}">
 															<PropertyList>
 																<Property Name="IsFolder" Type="bool" Value="True"/>
 															</PropertyList>
@@ -256,11 +255,11 @@
 												</Reference>
 											</ReferenceList>
 											<ChildrenList>
-												<AudioFileSource Name="CombatMusSprint2Crop" ID="{4EB543A4-D4B3-4A1F-B02B-BA936C3E1FBF}">
+												<AudioFileSource Name="1MinCombatLoop" ID="{A5E81B50-B2CE-4FDF-BF44-E94834E26668}">
 													<Language>SFX</Language>
-													<AudioFile>CombatMusSprint2Crop.wav</AudioFile>
+													<AudioFile>1MinCombatLoop.wav</AudioFile>
 													<MediaIDList>
-														<MediaID ID="477280874"/>
+														<MediaID ID="205132952"/>
 													</MediaIDList>
 												</AudioFileSource>
 											</ChildrenList>
@@ -268,18 +267,18 @@
 												<ObjectList Name="Sequences">
 													<Reference>
 														<Local>
-															<MusicTrackSequence Name="" ID="{FDBABE44-46F5-4261-A279-5773E2A8CE55}">
+															<MusicTrackSequence Name="" ID="{1DC34833-7134-4B97-8925-927BEEC4065C}">
 																<ObjectLists>
 																	<ObjectList Name="Clips">
 																		<Reference>
 																			<Local>
-																				<MusicClip Name="CombatMusSprint2Crop" ID="{EEFD49E0-41FF-43A5-B11A-C45C70BC92F1}">
+																				<MusicClip Name="1MinCombatLoop" ID="{783B1AC8-45E0-4B3D-97A2-3BE5D0634BD7}">
 																					<PropertyList>
-																						<Property Name="EndTrimOffset" Type="Real64" Value="15919.9092970522"/>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="54857.1428571429"/>
 																						<Property Name="FadeInMode" Type="int16" Value="0"/>
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																					</PropertyList>
-																					<AudioSourceRef Name="CombatMusSprint2Crop" ID="{4EB543A4-D4B3-4A1F-B02B-BA936C3E1FBF}"/>
+																					<AudioSourceRef Name="1MinCombatLoop" ID="{A5E81B50-B2CE-4FDF-BF44-E94834E26668}"/>
 																				</MusicClip>
 																			</Local>
 																		</Reference>
@@ -304,7 +303,7 @@
 													<MusicCue Name="Exit Cue" ID="{6CFBA8CC-72B8-4837-BCDB-14ED0AE7FF73}">
 														<PropertyList>
 															<Property Name="CueType" Type="int16" Value="1"/>
-															<Property Name="TimeMs" Type="Real64" Value="15919.9092970522"/>
+															<Property Name="TimeMs" Type="Real64" Value="54857.1428571429"/>
 														</PropertyList>
 													</MusicCue>
 												</Local>

@@ -93,13 +93,17 @@
 				<GameParameter Id="3550808449" Name="High"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{00E92A6F-2CB0-43A4-EBB8-E5A1E5BF7F05}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{9D595338-72A0-884E-767F-CA86FBBD37BC}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
 				<File Id="83311950" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Initial498ConceptMusB2.wav</ShortName>
 					<CachePath>SFX/Initial498ConceptMusB2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="205132952" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>1MinCombatLoop.wav</ShortName>
+					<CachePath>SFX/1MinCombatLoop_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="345662734" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>498FreqTest.wav</ShortName>
@@ -113,10 +117,6 @@
 					<ShortName>Initial498ConceptMusB2.wav</ShortName>
 					<CachePath>SFX/Initial498ConceptMusB2_FBC78EF0.wem</CachePath>
 				</File>
-				<File Id="477280874" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>CombatMusSprint2Crop.wav</ShortName>
-					<CachePath>SFX/CombatMusSprint2Crop_FBC78EF0.wem</CachePath>
-				</File>
 			</Media>
 			<Events>
 				<Event Id="1061604899" Name="FreqTest" DurationType="OneShot" DurationMin="11.586208" DurationMax="11.586208">
@@ -126,7 +126,7 @@
 				</Event>
 				<Event Id="3855831843" Name="ProtoCombatLoop" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="477280874"/>
+						<MediaRef Id="205132952"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1097980931" Name="TestEvent" DurationType="OneShot" DurationMin="16" DurationMax="16">
@@ -152,5 +152,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{BFA04336-6529-F607-AE14-950D3053A21B}</FileHash>
+	<FileHash>{19E94EA1-F011-07E8-9A32-0727F10A2F4E}</FileHash>
 </SoundBanksInfo>
