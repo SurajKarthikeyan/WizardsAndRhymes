@@ -24,7 +24,7 @@ MonoBehaviour:
     ParentPath: Virtual Acoustics\Default Work Unit
     guid: d65a0535a3dc0a4383bd61f830f51b0a
     GuidInternal: 
-    m_lastTime: -8584954653971753931
+    m_lastTime: -8584955795492776224
     List: []
   AuxBusWwu:
   - PhysicalPath: Master-Mixer Hierarchy\Default Work Unit.wwu
@@ -38,7 +38,7 @@ MonoBehaviour:
     ParentPath: Master-Mixer Hierarchy\Default Work Unit
     guid: abb2383395205d439d32e5d31447086e
     GuidInternal: 
-    m_lastTime: -8584936425646736273
+    m_lastTime: -8584936460617642156
     List:
     - name: auxHigh
       guid: db75348cfe90c74bac5a1d519bfc7375
@@ -211,7 +211,7 @@ MonoBehaviour:
     ParentPath: SoundBanks\Default Work Unit
     guid: d3f493885beecf429da5f23f54b03198
     GuidInternal: 
-    m_lastTime: -8584936425646686410
+    m_lastTime: -8584936485108372241
     List:
     - name: Main
       guid: bc051ea7b86e754784c9f10c05a9baa5
@@ -239,8 +239,62 @@ MonoBehaviour:
     ParentPath: Events\Default Work Unit
     guid: a41a2ce4cf27ed40a43764ddcdc1622d
     GuidInternal: 
-    m_lastTime: -8584936425646826023
+    m_lastTime: -8584935615998151489
     List:
+    - name: Combat
+      guid: 9d3310eb5e83a84586a20ac2a7cf0ba7
+      id: 2764240573
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a41a2ce4cf27ed40a43764ddcdc1622d
+      - ElementName: Player
+        ObjectType: 4
+        guid: 7025acfe66572a42a4695c5bd8c2a72d
+      - ElementName: Combat
+        ObjectType: 4
+        guid: 9d3310eb5e83a84586a20ac2a7cf0ba7
+      Path: Events\Default Work Unit\Player\Combat
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Enemies
+      guid: e8f28f2a809c774d96df0ba597415a5c
+      id: 2242381963
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a41a2ce4cf27ed40a43764ddcdc1622d
+      - ElementName: Enemies
+        ObjectType: 4
+        guid: e8f28f2a809c774d96df0ba597415a5c
+      Path: Events\Default Work Unit\Enemies
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Environment
+      guid: 0beb5c49f319514c82daa3e0247f5970
+      id: 1229948536
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a41a2ce4cf27ed40a43764ddcdc1622d
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 0beb5c49f319514c82daa3e0247f5970
+      Path: Events\Default Work Unit\Environment
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: FreqTest
       guid: c7523c65ccc71542800feaf15bee07d6
       id: 1061604899
@@ -261,6 +315,43 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 11.586208
       minDuration: 11.586208
+    - name: Pickups
+      guid: 0b1529d89c3a83488a050b39146211a5
+      id: 488853820
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a41a2ce4cf27ed40a43764ddcdc1622d
+      - ElementName: Environment
+        ObjectType: 4
+        guid: 0beb5c49f319514c82daa3e0247f5970
+      - ElementName: Pickups
+        ObjectType: 4
+        guid: 0b1529d89c3a83488a050b39146211a5
+      Path: Events\Default Work Unit\Environment\Pickups
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Player
+      guid: 7025acfe66572a42a4695c5bd8c2a72d
+      id: 1069431850
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a41a2ce4cf27ed40a43764ddcdc1622d
+      - ElementName: Player
+        ObjectType: 4
+        guid: 7025acfe66572a42a4695c5bd8c2a72d
+      Path: Events\Default Work Unit\Player
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
     - name: ProtoCombatLoop
       guid: 8dabd97cf07fd447955eac999f33f58d
       id: 3855831843
@@ -358,6 +449,43 @@ MonoBehaviour:
       maxAttenuation: 0
       maxDuration: 21.75
       minDuration: 21.75
+    - name: UI
+      guid: ddef7c1e5256274fadeeb90bb1d0dc65
+      id: 1551306167
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a41a2ce4cf27ed40a43764ddcdc1622d
+      - ElementName: UI
+        ObjectType: 4
+        guid: ddef7c1e5256274fadeeb90bb1d0dc65
+      Path: Events\Default Work Unit\UI
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
+    - name: Wizzo
+      guid: 9e412e718cf2d147833bcee3fa94f3d4
+      id: 509213436
+      PathAndIcons:
+      - ElementName: Events
+        ObjectType: 5
+        guid: 00000000000000000000000000000000
+      - ElementName: Default Work Unit
+        ObjectType: 12
+        guid: a41a2ce4cf27ed40a43764ddcdc1622d
+      - ElementName: Enemies
+        ObjectType: 4
+        guid: e8f28f2a809c774d96df0ba597415a5c
+      - ElementName: Wizzo
+        ObjectType: 4
+        guid: 9e412e718cf2d147833bcee3fa94f3d4
+      Path: Events\Default Work Unit\Enemies\Wizzo
+      maxAttenuation: 0
+      maxDuration: -1
+      minDuration: -1
   RtpcWwu:
   - PhysicalPath: Game Parameters\Default Work Unit.wwu
     PathAndIcons:
@@ -370,7 +498,7 @@ MonoBehaviour:
     ParentPath: Game Parameters\Default Work Unit
     guid: 1f09ce28825d20469d59880825bbe977
     GuidInternal: 
-    m_lastTime: -8584945354814074079
+    m_lastTime: -8584943692282964960
     List:
     - name: Amp
       guid: 3b8c9338ce9ca042a8105f38131177e5
@@ -440,7 +568,7 @@ MonoBehaviour:
     ParentPath: States\Default Work Unit
     guid: a2d259bf147da54bbc8c398ec0cc8741
     GuidInternal: 
-    m_lastTime: -8584951846841950248
+    m_lastTime: -8584951846617035180
     List: []
   SwitchWwu:
   - PhysicalPath: Switches\Default Work Unit.wwu
@@ -454,7 +582,7 @@ MonoBehaviour:
     ParentPath: Switches\Default Work Unit
     guid: c1bc1b03be629f4f8caa7e7b7d4ada56
     GuidInternal: 
-    m_lastTime: -8584954653971763905
+    m_lastTime: -8584955795493516277
     List: []
   TriggerWwu:
   - PhysicalPath: Triggers\Default Work Unit.wwu
@@ -468,11 +596,11 @@ MonoBehaviour:
     ParentPath: Triggers\Default Work Unit
     guid: ce0a665708edcc40a71d6097a276a4fc
     GuidInternal: 
-    m_lastTime: -8584954653971753931
+    m_lastTime: -8584955795492242030
     List: []
-  ExpandedFileSystemItemIds: 020000000300000004000000
-  ExpandedWaapiItemIds: 020000000300000004000000
+  ExpandedFileSystemItemIds: 
+  ExpandedWaapiItemIds: 06000000070000000b000000
   AutoSyncSelection: 0
   autoPopulateEnabled: 1
-  currentDataSource: 1
+  currentDataSource: 0
   CurrentPluginConfig: 
