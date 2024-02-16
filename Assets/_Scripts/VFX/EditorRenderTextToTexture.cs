@@ -26,7 +26,7 @@ public class EditorRenderTextToTexture : MonoBehaviour
     {
         Texture2D texture = RTImage();
         System.IO.File.WriteAllBytes(folderPath + "/" + outputTextureName + ".png", texture.EncodeToPNG());
-        AssetDatabase.Refresh();
+        //AssetDatabase.Refresh();
     }
 
     //Render the camera's current view to a texture
