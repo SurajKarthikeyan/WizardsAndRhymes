@@ -176,6 +176,7 @@
 						</MusicPlaylistContainer>
 						<MusicPlaylistContainer Name="TestCombat" ID="{6B6F35DC-BC3D-4953-8C8D-60FCF3D39F51}" ShortID="476070547">
 							<PropertyList>
+								<Property Name="GridFrequencyPreset" Type="int16" Value="67"/>
 								<Property Name="Tempo" Type="Real64" Value="140"/>
 							</PropertyList>
 							<ReferenceList>
@@ -236,9 +237,12 @@
 									</ReferenceList>
 									<ChildrenList>
 										<MusicTrack Name="CombatMusSprint2Crop" ID="{8082FB94-A9C6-4517-9ACD-BFDED8A40527}" ShortID="1011058464">
+											<PropertyList>
+												<Property Name="OverrideOutput" Type="bool" Value="True"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+													<ObjectRef Name="testBus" ID="{4EAC6AF4-0261-4DCF-85FE-DD1B4F62A8BB}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
 												</Reference>
 												<Reference Name="TransitionRoot">
 													<Custom>
