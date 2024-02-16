@@ -268,9 +268,11 @@ public class PlayerController : MonoBehaviour
         else if (MouseOverGameWindow)
         {
             Cursor.visible = true;
-            Vector3 mouseRotationVector = Camera.main.ScreenToWorldPoint(Input.mousePosition) - rigidBody.position;
-            direction = new(mouseRotationVector.x, 0, mouseRotationVector.y);
-            attackDirection = direction;
+            Vector3 mouseRotationVector = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 projVector = Vector3.ProjectOnPlane(mouseRotationVector, Vector3.up) - rigidBody.position;
+            //direction = new(projVector.x, 0, projVector.y);
+            projVector.y = 0;
+            attackDirection = projVector;
             Quaternion lookRotation = Quaternion.LookRotation(attackDirection, Vector3.up);
             rigidBody.rotation = Quaternion.Slerp(rigidBody.rotation, lookRotation, 20 * Time.deltaTime);
         }
