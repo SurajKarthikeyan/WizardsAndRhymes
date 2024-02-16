@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using MoreMountains.Tools;
+using TMPro;
 using Unity.VisualScripting;
 
 /// <summary>
@@ -13,9 +14,9 @@ using Unity.VisualScripting;
 public class EnemyManager : MonoBehaviour
 {
     #region Variables
+
     [Tooltip("Singleton of the enemy manager - seemed useful to make")]
     public static EnemyManager instance;
-
     /// <summary>
     /// Class that describes a wave of enemies
     /// </summary>
@@ -103,6 +104,7 @@ public class EnemyManager : MonoBehaviour
             }
         }
     }
+
     #endregion
 
     #region Custom Methods
@@ -187,7 +189,7 @@ public class EnemyManager : MonoBehaviour
                 yield return new WaitForSeconds(enemySpawnDelay);
 
                 //Spawn the spotlight for the enemy
-                if (spotlightPrefab != null)
+                if (spotlightPrefab != null && enemyGO != null)
                 {
                     GameObject spotlightGO = Instantiate(spotlightPrefab);
                     spotlightGO.GetComponent<SpotlightController>().target = enemyGO.transform;

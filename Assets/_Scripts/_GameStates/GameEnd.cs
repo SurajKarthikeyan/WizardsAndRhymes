@@ -131,6 +131,7 @@ public class GameEnd : MonoBehaviour
         doorText.gameObject.SetActive(false);
         deathText.gameObject.SetActive(false);
         string currentSceneName = SceneManager.GetActiveScene().name;
+        AkSoundEngine.StopAll();
         SceneManager.LoadScene(currentSceneName);
     }
     #endregion
