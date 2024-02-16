@@ -77,6 +77,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         if (health.HP <= 0)
         {
             activated = false;
+            StopAllCoroutines();
             health.Death();
         }
         else if (behaviorState == EnemyBehaviorState.Idle)
