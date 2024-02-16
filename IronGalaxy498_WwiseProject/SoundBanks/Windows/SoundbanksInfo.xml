@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{88CFE019-86B5-2632-DF24-D500A6B0EC20}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{8EAC5BC1-C4B4-9869-E8AE-2D3BA882701E}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -32,6 +32,8 @@
 				</AudioDevices>
 			</Plugins>
 			<Busses>
+				<Bus Id="221867874" Name="EnvironmentBus"/>
+				<Bus Id="309504875" Name="DialogueBus"/>
 				<Bus Id="1966988073" Name="testBus">
 					<PluginRefs>
 						<Custom>
@@ -44,6 +46,8 @@
 						<AuxBusRef Id="1049182825" Name="auxMid"/>
 					</AuxBusRefs>
 				</Bus>
+				<Bus Id="2886307548" Name="MusicBus"/>
+				<Bus Id="3427258114" Name="SoundFXBus"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
 			<AuxBusses>
@@ -89,7 +93,7 @@
 				<GameParameter Id="3550808449" Name="High"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{E75728BC-06E4-7EAD-EF2A-E819667F20AB}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{C79F0A24-7608-49C4-E2EE-9B8B8D62BD69}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -109,11 +113,20 @@
 					<ShortName>Initial498ConceptMusB2.wav</ShortName>
 					<CachePath>SFX/Initial498ConceptMusB2_FBC78EF0.wem</CachePath>
 				</File>
+				<File Id="477280874" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CombatMusSprint2Crop.wav</ShortName>
+					<CachePath>SFX/CombatMusSprint2Crop_FBC78EF0.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
 				<Event Id="1061604899" Name="FreqTest" DurationType="OneShot" DurationMin="11.586208" DurationMax="11.586208">
 					<MediaRefs>
 						<MediaRef Id="345662734"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3855831843" Name="ProtoCombatLoop" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="477280874"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1097980931" Name="TestEvent" DurationType="OneShot" DurationMin="16" DurationMax="16">
@@ -139,5 +152,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{48EF965D-FAF8-6446-BF5A-7CCFF2DFA272}</FileHash>
+	<FileHash>{149DE605-5D3E-3466-148D-3B8BDFE7A71A}</FileHash>
 </SoundBanksInfo>

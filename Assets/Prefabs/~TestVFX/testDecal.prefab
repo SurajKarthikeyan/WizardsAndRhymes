@@ -115,11 +115,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a5869bb56804354cb1342b402506afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetType: 0
   floatController: {fileID: 6673601469329425481}
-  floatControllerField: 1
+  shaderController: {fileID: 0}
+  controlField: 0
+  frequencyResponse: 0
   amplitudeRange: {x: 0, y: 1}
   onlyUpdateOnBeat: 1
-  beatInterval: 5
+  beatInterval: 4
 --- !u!114 &6673601469329425481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,8 +267,8 @@ MonoBehaviour:
   PingPong: 0
   AttributeNames:
   - <Undefined Attribute>
-  - value
-  PropertyName: value
+  - Value
+  PropertyName: Value
   ChoiceIndex: 1
 --- !u!114 &5094548076977032315
 MonoBehaviour:
@@ -299,11 +302,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0a5869bb56804354cb1342b402506afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetType: 0
   floatController: {fileID: 8822451755439874984}
-  floatControllerField: 1
+  shaderController: {fileID: 0}
+  controlField: 0
+  frequencyResponse: 2
   amplitudeRange: {x: 0, y: 1}
   onlyUpdateOnBeat: 1
-  beatInterval: 5
+  beatInterval: 4
 --- !u!114 &8822451755439874984
 MonoBehaviour:
   m_ObjectHideFlags: 0
