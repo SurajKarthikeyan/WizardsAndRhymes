@@ -168,6 +168,7 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.RangedAttack.started += DoRanged;
         playerInput.Player.MeleeAttack.started += DoMelee;
         playerInput.UI.MenuSelect.started += MenuSelect;
+        playerInput.Player.Exit.started += QuitGame;
         moveAction = playerInput.Player.Movement;
         lookAction = playerInput.Player.Look;
         playerInput.UI.Enable();
@@ -184,6 +185,7 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.RangedAttack.canceled -= DoRanged;
         playerInput.Player.MeleeAttack.canceled -= DoMelee;
         playerInput.UI.MenuSelect.canceled -= MenuSelect;
+        playerInput.Player.Exit.canceled -= QuitGame;
         playerInput.UI.Disable();
         playerInput.Player.Disable();
     }
@@ -352,6 +354,13 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(Dash());
         }
     }
+
+
+    private void QuitGame(InputAction.CallbackContext obj)
+    {
+        Application.Quit();
+    }
+    
     /// <summary>
     /// Coroutine called in the do dash function that sets timing status for the dash
     /// </summary>
@@ -399,6 +408,6 @@ public class PlayerController : MonoBehaviour
         attackStatus = AttackStatus.None;
         mixtapeInventory.OnTapeChange();
     }
-    
+
     #endregion
 }
