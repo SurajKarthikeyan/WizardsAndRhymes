@@ -25,6 +25,7 @@ namespace AK
         static const AkUniqueID AMP = 1117531621U;
         static const AkUniqueID HIGH = 3550808449U;
         static const AkUniqueID LOW = 545371365U;
+        static const AkUniqueID MASTERVOLUME = 2918011349U;
         static const AkUniqueID MID = 1182670505U;
     } // namespace GAME_PARAMETERS
 

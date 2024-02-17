@@ -211,6 +211,45 @@
 						<Bus Name="DialogueBus" ID="{EC30F662-E684-467C-B428-B2E2BEF7AC70}"/>
 						<Bus Name="EnvironmentBus" ID="{273EC341-FB06-4452-A2D4-E8B9F4DE3817}"/>
 					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<Reference>
+								<Local>
+									<RTPC Name="" ID="{83084674-2073-4046-847A-CAD84DBA9A3B}" ShortID="17311351">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="Volume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="MasterVolume" ID="{6A499DE3-98B6-4253-A4F7-C8BC820F6471}" WorkUnitID="{28CE091F-5D82-4620-9D59-880825BBE977}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{4F1C4DA2-438B-417F-834E-03ED4DE21B8B}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-48</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</Local>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>
