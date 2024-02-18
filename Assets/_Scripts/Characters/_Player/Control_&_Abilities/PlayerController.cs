@@ -80,6 +80,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject rangedPrefab;
 
+    [Tooltip("Pause menu")]
+    [SerializeField] private GameObject pauseMenu;
+
+    [Tooltip("Pause menu active state")]
+    [SerializeField] private bool isPaused;
+    
     [Tooltip("Transform to spawn the projectiles")]
     [SerializeField]
     private Transform rangedSpawnPoint;
@@ -168,7 +174,7 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.RangedAttack.started += DoRanged;
         playerInput.Player.MeleeAttack.started += DoMelee;
         playerInput.UI.MenuSelect.started += MenuSelect;
-        playerInput.Player.Exit.started += QuitGame;
+        playerInput.Player.Exit.started += PauseAction;
         moveAction = playerInput.Player.Movement;
         lookAction = playerInput.Player.Look;
         playerInput.UI.Enable();
@@ -185,7 +191,7 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.RangedAttack.canceled -= DoRanged;
         playerInput.Player.MeleeAttack.canceled -= DoMelee;
         playerInput.UI.MenuSelect.canceled -= MenuSelect;
-        playerInput.Player.Exit.canceled -= QuitGame;
+        playerInput.Player.Exit.canceled -= PauseAction;
         playerInput.UI.Disable();
         playerInput.Player.Disable();
     }
@@ -356,9 +362,22 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void QuitGame(InputAction.CallbackContext obj)
+    /// <summary>
+    /// Function that is called when escape(KB) or start(Controller) is pressed
+    /// </summary>
+    /// <param name="obj"></param>
+    private void PauseAction(InputAction.CallbackContext obj)
     {
-        Application.Quit();
+        Pause();
+    }
+
+    /// <summary>
+    /// Function that can be accessed to pause or unpause the game 
+    /// </summary>
+    public void Pause()
+    {
+        isPaused = !isPaused;
+        pauseMenu.SetActive(isPaused);
     }
     
     /// <summary>
