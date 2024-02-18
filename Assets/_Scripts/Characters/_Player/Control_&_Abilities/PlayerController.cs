@@ -85,6 +85,12 @@ public class PlayerController : MonoBehaviour
 
     [Tooltip("Pause menu active state")]
     [SerializeField] private bool isPaused;
+
+    [Tooltip("Inventory menu")]
+    [SerializeField] private GameObject inventoryMenu;
+    
+    [Tooltip("Inventory menu active state")]
+    [SerializeField] private bool openInventory;
     
     [Tooltip("Transform to spawn the projectiles")]
     [SerializeField]
@@ -174,7 +180,8 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.RangedAttack.started += DoRanged;
         playerInput.Player.MeleeAttack.started += DoMelee;
         playerInput.UI.MenuSelect.started += MenuSelect;
-        playerInput.Player.Exit.started += PauseAction;
+        playerInput.UI.Exit.started += PauseAction;
+        playerInput.UI.Inventory.started += InventoryAction;
         moveAction = playerInput.Player.Movement;
         lookAction = playerInput.Player.Look;
         playerInput.UI.Enable();
@@ -191,9 +198,10 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.RangedAttack.canceled -= DoRanged;
         playerInput.Player.MeleeAttack.canceled -= DoMelee;
         playerInput.UI.MenuSelect.canceled -= MenuSelect;
-        playerInput.Player.Exit.canceled -= PauseAction;
+        playerInput.UI.Exit.canceled -= PauseAction;
         playerInput.UI.Disable();
         playerInput.Player.Disable();
+        playerInput.UI.Inventory.started -= InventoryAction;
     }
 
 
@@ -370,7 +378,7 @@ public class PlayerController : MonoBehaviour
     {
         Pause();
     }
-
+    
     /// <summary>
     /// Function that can be accessed to pause or unpause the game 
     /// </summary>
@@ -378,6 +386,17 @@ public class PlayerController : MonoBehaviour
     {
         isPaused = !isPaused;
         pauseMenu.SetActive(isPaused);
+    }
+
+    private void InventoryAction(InputAction.CallbackContext obj)
+    {
+        OpenInventory();
+    }
+
+    public void OpenInventory()
+    {
+        openInventory = !openInventory;
+        inventoryMenu.SetActive(openInventory);
     }
     
     /// <summary>
