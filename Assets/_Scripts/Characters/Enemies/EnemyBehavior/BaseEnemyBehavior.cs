@@ -17,7 +17,8 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         Strafing,
         MeleeAttacking,
         RangedAttacking,
-        Retreating
+        Retreating,
+        Ice
     }
     [Header("Enemy Behavior State")]
     [Tooltip("Instance of the EnemyBehaviorState enum")]
@@ -80,6 +81,11 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
             StopAllCoroutines();
             health.Death();
         }
+        
+        else if (behaviorState == EnemyBehaviorState.Ice)
+        {
+            //hehe haha
+        }
         else if (behaviorState == EnemyBehaviorState.Idle)
         {
             //Make NavMesh stay still for a certain period of time
@@ -92,6 +98,11 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
                 navMeshAgent.isStopped = false;
             }
         }
+    }
+
+    public void ResetNavmeshSpeed()
+    {
+        navMeshAgent.speed = 3.5f;
     }
 
     /// <summary>

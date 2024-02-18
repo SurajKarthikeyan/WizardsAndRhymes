@@ -46,9 +46,7 @@ public abstract class BaseEnemyHealth : Health
     [Tooltip("Base damage when chained to or when hit with lighitning")]
     [SerializeField] private int lightningBaseDamage;
 
-    [Tooltip("Enemy Navmesh agent reference for speed alterations")]
-    [SerializeField] private NavMeshAgent enemyNavMeshAgent;
-
+    [Header("Ice")]
     [Tooltip("Multiplier to reduce enemy speed of when hit with ice damage")]
     [SerializeField] private float iceSpeedDecreaseMultipler;
     
@@ -66,6 +64,9 @@ public abstract class BaseEnemyHealth : Health
 
     [Tooltip("Base damage that enemy takes when hit with ice attack")]
     [SerializeField] private int iceBaseDamage;
+    
+    [Tooltip("Base enemy behaviour reference for status settings")]
+    [SerializeField] private BaseEnemyBehavior enemyBehavior;
     #endregion
 
 
@@ -75,8 +76,6 @@ public abstract class BaseEnemyHealth : Health
     {
         base.Start();
         onFire = false;
-        originalEnemySpeed = enemyNavMeshAgent.speed;
-        slowedEnemySpeed = originalEnemySpeed * iceSpeedDecreaseMultipler;
     }
 
     #endregion
@@ -148,8 +147,8 @@ public abstract class BaseEnemyHealth : Health
     public void IceDamage()
     {
         TakeDamage(iceBaseDamage, DamageType.None);
-        enemyNavMeshAgent.speed = slowedEnemySpeed;
         onIce = true;
+        enemyBehavior.behaviorState = BaseEnemyBehavior.EnemyBehaviorState.Ice;
         StartCoroutine(IceDamageCoroutine());
     }
 
@@ -160,8 +159,9 @@ public abstract class BaseEnemyHealth : Health
     IEnumerator IceDamageCoroutine()
     {
         yield return new WaitForSeconds(iceDuration);
-        enemyNavMeshAgent.speed = originalEnemySpeed;
         onIce = false;
+        enemyBehavior.behaviorState = BaseEnemyBehavior.EnemyBehaviorState.Idle;
+        enemyBehavior.ResetNavmeshSpeed();
     }
     
     /// <summary>

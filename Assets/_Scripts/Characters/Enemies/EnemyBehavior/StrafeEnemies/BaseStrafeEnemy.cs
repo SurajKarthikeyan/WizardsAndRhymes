@@ -85,26 +85,36 @@ public abstract class BaseStrafeEnemy : BaseEnemyBehavior
     /// </summary>
     protected override void EvaluateBehavior()
     {
-        if (!rb.isKinematic)
+        if (behaviorState != EnemyBehaviorState.Ice)
         {
-            /**
-             * Check is here because navMesh and Unity physics do not play nice with each other
-             * This is when the enemy is currently lunging at the player
-             */
-            if (rb.velocity.magnitude <= 0.5f)
+            if (!rb.isKinematic)
             {
-                //All this is to get the navMesh back following the player
-                navMeshAgent.enabled = true;
-                rb.isKinematic = true;
-                behaviorState = EnemyBehaviorState.TrackingPlayer;
+                /**
+                 * Check is here because navMesh and Unity physics do not play nice with each other
+                 * This is when the enemy is currently lunging at the player
+                 */
+                if (rb.velocity.magnitude <= 0.5f)
+                {
+                    //All this is to get the navMesh back following the player
+                    navMeshAgent.enabled = true;
+                    rb.isKinematic = true;
+                    behaviorState = EnemyBehaviorState.TrackingPlayer;
+                }
             }
+            //Else statement is when the enemy is not having its rigidbody active
+            else
+            {
+                //Next part of the enemy's logic is to evaluate its distance from the player
+                EvaluateDistanceFromPlayer();
+            }
+            
         }
-        //Else statement is when the enemy is not having its rigidbody active
+
         else
         {
-            //Next part of the enemy's logic is to evaluate its distance from the player
-            EvaluateDistanceFromPlayer();
+            navMeshAgent.speed = 0;
         }
+
     }
 
     /// <summary>
