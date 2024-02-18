@@ -68,6 +68,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         health = GetComponent<BaseEnemyHealth>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
+        EnemyManager.EnemiesActivated += Activate;
     }
 
     /// <summary>
@@ -98,6 +99,15 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
                 navMeshAgent.isStopped = false;
             }
         }
+    }
+
+    private void Activate(bool enemyActivated)
+    {
+        if (!enemyActivated)
+        {
+            behaviorState = EnemyBehaviorState.Idle;
+        }
+        activated = enemyActivated;
     }
 
     public void ResetNavmeshSpeed()

@@ -7,6 +7,7 @@ using UnityEngine;
 using MoreMountains.Tools;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 
 /// <summary>
 /// Class that manages waves of enemies for the current room
@@ -60,7 +61,11 @@ public class EnemyManager : MonoBehaviour
 
     public delegate void RoomClearedDelegate();
     [Tooltip("Event fired when the all waves of enemies have been cleared")]
-    [HideInInspector] public static event RoomClearedDelegate roomCleared;
+    [HideInInspector] public static event RoomClearedDelegate RoomCleared;
+
+    public delegate void ActivateEnemiesDelegate(bool activateEnemies);
+    [Tooltip("Event fired when debug button is pressed")]
+    [HideInInspector] public static event ActivateEnemiesDelegate EnemiesActivated;
 
     [Tooltip("Array of enemy waves to spawn")]
     [SerializeField] EnemyWave[] waves = new EnemyWave[] { new EnemyWave() };
@@ -71,6 +76,8 @@ public class EnemyManager : MonoBehaviour
     int waveIndex = 0;
     [Tooltip("The number of enemies, spawned and yet to be spawned, remaining in the current waves")]
     int enemiesRemaining = 0;
+
+    public Toggle enemyToggle;
     #endregion
 
     #region Unity Methods
@@ -119,6 +126,15 @@ public class EnemyManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Function that deactivates the enemies in the scene
+    /// </summary>
+    public void ToggleEnemies()
+    {
+        Debug.Log("Activated is: " + enemyToggle.isOn);
+        EnemiesActivated?.Invoke(enemyToggle.isOn);
+    }
+
+    /// <summary>
     /// Called by the base enemy health script whenever an enemy dies
     /// </summary>
     public void EnemyDied()
@@ -138,7 +154,7 @@ public class EnemyManager : MonoBehaviour
         //Check if the last wave has been defeated
         else if (enemiesRemaining <= 0)
         {
-            roomCleared?.Invoke(); //Invoke the room cleared event
+            RoomCleared?.Invoke(); //Invoke the room cleared event
         }
     }
 

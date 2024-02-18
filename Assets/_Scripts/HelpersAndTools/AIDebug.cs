@@ -25,9 +25,15 @@ public class AIDebug : MonoBehaviour
     void Update()
     {
         debugText.text = enemyBehavior.behaviorState.ToString();
+        debugCanvas.transform.rotation = Quaternion.LookRotation(Camera.main.transform.position, Vector3.up);
     }
 
     private void OnDisable()
+    {
+        ClearDebugText();
+    }
+
+    public void ClearDebugText()
     {
         debugText.text = "";
     }

@@ -18224,7 +18224,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1306333073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18238,7 +18238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - waveTrigger: 0
+  - waveTrigger: 1
     enemiesRemaining: 0
     waveDelay: 0
     waveDuration: 3
@@ -18271,6 +18271,7 @@ MonoBehaviour:
     - type: {fileID: 2048348783821418587, guid: 9b5276f4867a9fb4888caaec058bfe94, type: 3}
       amount: 3
   spotlightPrefab: {fileID: 7697368496910734989, guid: 090855f5d93cc6b4285c4bc8e68ccc76, type: 3}
+  enemyToggle: {fileID: 1852366511}
 --- !u!4 &1306333074
 Transform:
   m_ObjectHideFlags: 0
@@ -25857,7 +25858,19 @@ MonoBehaviour:
   m_Group: {fileID: 0}
   onValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1306333073}
+        m_TargetAssemblyTypeName: EnemyManager, Assembly-CSharp
+        m_MethodName: ToggleEnemies
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_IsOn: 1
 --- !u!1 &1856378975
 GameObject:
@@ -29467,11 +29480,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3575433202476467507, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.067111574
+      value: 0.06711161
       objectReference: {fileID: 0}
     - target: {fileID: 3575433202476467507, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.02778784
+      value: -0.027787859
       objectReference: {fileID: 0}
     - target: {fileID: 5108746697505530432, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag

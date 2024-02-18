@@ -50,7 +50,7 @@ public class GameEnd : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        EnemyManager.roomCleared += RoomCleared;
+        EnemyManager.RoomCleared += RoomCleared;
     }
 
     /// <summary>
