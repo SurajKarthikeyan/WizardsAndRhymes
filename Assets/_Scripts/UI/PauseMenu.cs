@@ -38,5 +38,10 @@ public class PauseMenu : MonoBehaviour
         PlayerController.instance.Pause();
     }
 
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
     #endregion
 }
