@@ -26,4 +26,9 @@ public class AIDebug : MonoBehaviour
     {
         debugText.text = enemyBehavior.behaviorState.ToString();
     }
+
+    private void OnDisable()
+    {
+        debugText.text = "";
+    }
 }
