@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8523809703880744679}
   - component: {fileID: 8854430652972917034}
   - component: {fileID: 4436091323757095229}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +121,7 @@ GameObject:
   - component: {fileID: 4688092990424260812}
   - component: {fileID: 4496144272976407112}
   - component: {fileID: 7456348505891297766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MeleeStrafe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -257,13 +257,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4572e63d11a159244a31aebad1f22d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHP: 0
+  currentHP: 10
   maximumHP: 5
-  fireEffect: {fileID: 4427691106265978132, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
+  fireEffect: {fileID: 1748346369787294393}
   onFire: 0
-  tickCount: 4
-  timeBetweenTicks: 1
+  fireTickCount: 0
+  fireTimeBetweenTicks: 0
   fireDamage: 2
+  lightningDuration: 0
+  onLightning: 0
+  lightningChainDistance: 0
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &4496144272976407112
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,10 +284,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorState: 0
   attackDamage: 5
-  activated: 0
-  activatedMaterial: {fileID: 7933299137048178034, guid: a9f670f4eae962b4683c35ae3d1db878, type: 3}
   maxDistance: 10
   minDistance: 1
+  activated: 0
+  activatedMaterial: {fileID: 7933299137048178034, guid: a9f670f4eae962b4683c35ae3d1db878, type: 3}
   strafeSpeed: 5
   strafeTimeThreshold: 3
   meleeLungeDistance: 5
@@ -319,6 +325,10 @@ PrefabInstance:
     - target: {fileID: 4427691106265978132, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
       propertyPath: m_Name
       value: lowPolyFire
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427691106265978132, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4427691106265978132, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
       propertyPath: m_IsActive
@@ -364,11 +374,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7575357504288398284, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
+--- !u!1 &1748346369787294393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4427691106265978132, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
+  m_PrefabInstance: {fileID: 2679939027462793133}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8708247203508608025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6766912331928271796, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}

@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 328519280771591202}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: ProjectileSpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - component: {fileID: 8221448208829851114}
   - component: {fileID: 8777067974320303735}
   - component: {fileID: 3524378746947091620}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: RangedRetreat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -184,13 +184,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b83a3893e7c60f1478949746c5d6c486, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHP: 0
+  currentHP: 10
   maximumHP: 10
-  fireEffect: {fileID: 4427691106265978132, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
+  fireEffect: {fileID: 7359327942548742670}
   onFire: 0
-  tickCount: 4
-  timeBetweenTicks: 1
+  fireTickCount: 0
+  fireTimeBetweenTicks: 0
   fireDamage: 2
+  lightningDuration: 0
+  onLightning: 0
+  lightningChainDistance: 0
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &8777067974320303735
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,7 +254,7 @@ GameObject:
   - component: {fileID: 2865155300458349509}
   - component: {fileID: 1019187963931488064}
   - component: {fileID: 1917891244635088017}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,6 +360,10 @@ PrefabInstance:
       value: lowPolyFire
       objectReference: {fileID: 0}
     - target: {fileID: 4427691106265978132, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427691106265978132, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -397,6 +407,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7575357504288398284, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -405,5 +419,10 @@ PrefabInstance:
 --- !u!4 &485019551559437486 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6766912331928271796, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
+  m_PrefabInstance: {fileID: 6580819395320919834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7359327942548742670 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4427691106265978132, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
   m_PrefabInstance: {fileID: 6580819395320919834}
   m_PrefabAsset: {fileID: 0}

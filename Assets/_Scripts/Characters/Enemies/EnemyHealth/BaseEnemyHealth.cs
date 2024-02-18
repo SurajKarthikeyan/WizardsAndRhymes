@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// Base class that handles all enemy health, status effects, and death
@@ -19,15 +20,27 @@ public abstract class BaseEnemyHealth : Health
 
     [Tooltip("Int representing the number of ticks from fire damage")]
     [SerializeField] 
-    private int tickCount;
+    private int fireTickCount;
 
     [Tooltip("Float representing the time between ticks in seconds")]
     [SerializeField] 
-    private float timeBetweenTicks;
+    private float fireTimeBetweenTicks;
 
     [Tooltip("Int representing the damage that the fire effect does")]
     [SerializeField] 
     private float fireDamage;
+
+    [Tooltip("Duration of lightning status")]
+    [SerializeField] private int lightningDuration;
+    
+    [Tooltip("Status of being on lightning")]
+    [SerializeField] private bool onLightning;
+    
+    [Tooltip("Distance to which the enemies should chain to")]
+    [SerializeField] private float lightningChainDistance;
+
+    [Tooltip("Layer mask to mask enemies on lightning hit")]
+    [SerializeField] private LayerMask enemyLayerMask;
     
 
     #endregion
@@ -61,7 +74,7 @@ public abstract class BaseEnemyHealth : Health
         if (dType == DamageType.Fire)
         {
             fireEffect.SetActive(true);
-            FireDamage(tickCount);
+            FireDamage(fireTickCount);
         }
         else if (dType == DamageType.Lightning)
         {
@@ -83,7 +96,17 @@ public abstract class BaseEnemyHealth : Health
     public void LightningDamage()
     {
         Debug.Log("ZEUS");
+        Collider[] enemyLightiningCollider = Physics.OverlapSphere(this.gameObject.transform.position,
+            lightningChainDistance, enemyLayerMask);
+
+        for (int i = 0; i < enemyLightiningCollider.Length; i++)
+        {
+            Debug.LogWarning("This dude took lightning damage");
+            enemyLightiningCollider[i].gameObject.GetComponent<BaseEnemyHealth>().TakeDamage(1, DamageType.None);
+        }
     }
+    
+    
 
     /// <summary>
     /// Function representing taking Ice damage
@@ -100,12 +123,11 @@ public abstract class BaseEnemyHealth : Health
     public void FireDamage(int tickCount)
     {
         
-        Debug.Log("FIRE");
-        /*if (!onFire)
+        if (!onFire)
         {
             onFire = true;
-            StartCoroutine(FireDamageCoroutine(tickCount, timeBetweenTicks, fireDamage));
-        }*/
+            StartCoroutine(FireDamageCoroutine(tickCount, fireTimeBetweenTicks, fireDamage));
+        }
     }
 
     /// <summary>
@@ -123,7 +145,7 @@ public abstract class BaseEnemyHealth : Health
             yield return new WaitForSeconds(timeBetweenTicks);
         }
 
-        fireEffect.SetActive(false);
+        //fireEffect.SetActive(false);
         onFire = false;
     }
     

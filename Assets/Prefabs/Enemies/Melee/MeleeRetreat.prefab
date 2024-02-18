@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6631977244983303318}
   - component: {fileID: 8649267119166172581}
   - component: {fileID: 2541438218870669449}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: MeleeRetreat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,13 +152,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 660cb86003455d1438c72886870e44df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHP: 0
+  currentHP: 10
   maximumHP: 5
-  fireEffect: {fileID: 4427691106265978132, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
+  fireEffect: {fileID: 183942272249673635}
   onFire: 0
-  tickCount: 4
-  timeBetweenTicks: 1
+  fireTickCount: 0
+  fireTimeBetweenTicks: 0
   fireDamage: 2
+  lightningDuration: 0
+  onLightning: 0
+  lightningChainDistance: 0
+  enemyLayerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &8649267119166172581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,7 +221,7 @@ GameObject:
   - component: {fileID: 2704849844953369133}
   - component: {fileID: 107481160909258728}
   - component: {fileID: 693061956023686417}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -321,6 +327,10 @@ PrefabInstance:
       value: lowPolyFire
       objectReference: {fileID: 0}
     - target: {fileID: 4427691106265978132, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4427691106265978132, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -364,11 +374,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7575357504288398284, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
+--- !u!1 &183942272249673635 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4427691106265978132, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
+  m_PrefabInstance: {fileID: 4611456355935281847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7068340199695456515 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6766912331928271796, guid: a8a5a96bb2988d640a05db72d5fcbf8c, type: 3}
