@@ -10,7 +10,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
 {
     #region Variables
     [Tooltip("Enum representing the different states of behavior an enemy can be in")]
-    protected enum EnemyBehaviorState
+    public enum EnemyBehaviorState
     {
         Idle,
         TrackingPlayer,
@@ -21,8 +21,8 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     }
     [Header("Enemy Behavior State")]
     [Tooltip("Instance of the EnemyBehaviorState enum")]
-    [SerializeField]
-    protected EnemyBehaviorState behaviorState;
+    [HideInInspector]
+    public EnemyBehaviorState behaviorState;
 
     [Header("Attack Variables")]
     [Tooltip("Value representing the attack damage of this enemy")]
