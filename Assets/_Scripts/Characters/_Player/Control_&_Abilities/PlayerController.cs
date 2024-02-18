@@ -376,7 +376,10 @@ public class PlayerController : MonoBehaviour
     /// <param name="obj"></param>
     private void PauseAction(InputAction.CallbackContext obj)
     {
-        Pause();
+        if (!openInventory)
+        {
+            Pause();
+        }
     }
     
     /// <summary>
@@ -390,7 +393,10 @@ public class PlayerController : MonoBehaviour
 
     private void InventoryAction(InputAction.CallbackContext obj)
     {
-        OpenInventory();
+        if (!isPaused)
+        {
+            OpenInventory();
+        }
     }
 
     public void OpenInventory()
