@@ -41,6 +41,9 @@ public abstract class BaseEnemyHealth : Health
 
     [Tooltip("Layer mask to mask enemies on lightning hit")]
     [SerializeField] private LayerMask enemyLayerMask;
+
+    [Tooltip("Base damage when chained to or when hit with lighitning")]
+    [SerializeField] private int lightningBaseDamage;
     
 
     #endregion
@@ -95,15 +98,18 @@ public abstract class BaseEnemyHealth : Health
     /// </summary>
     public void LightningDamage()
     {
-        Debug.Log("ZEUS");
+        Debug.Log("Lighitnign");
         Collider[] enemyLightiningCollider = Physics.OverlapSphere(this.gameObject.transform.position,
             lightningChainDistance, enemyLayerMask);
-
+        
         for (int i = 0; i < enemyLightiningCollider.Length; i++)
         {
-            Debug.LogWarning("This dude took lightning damage");
-            enemyLightiningCollider[i].gameObject.GetComponent<BaseEnemyHealth>().TakeDamage(1, DamageType.None);
+            if (enemyLightiningCollider[i].gameObject.TryGetComponent(out BaseEnemyHealth curEnemyHealth))
+            {
+                curEnemyHealth.TakeDamage(lightningBaseDamage, DamageType.None);
+            }
         }
+        this.TakeDamage(lightningBaseDamage, DamageType.None);
     }
     
     

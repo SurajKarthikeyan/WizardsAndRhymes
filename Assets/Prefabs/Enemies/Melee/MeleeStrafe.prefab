@@ -257,19 +257,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4572e63d11a159244a31aebad1f22d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHP: 10
-  maximumHP: 5
+  currentHP: 1
+  maximumHP: 1
   fireEffect: {fileID: 1748346369787294393}
   onFire: 0
-  fireTickCount: 0
-  fireTimeBetweenTicks: 0
-  fireDamage: 2
-  lightningDuration: 0
+  fireTickCount: 4
+  fireTimeBetweenTicks: 4
+  fireDamage: 4
+  lightningDuration: 4
   onLightning: 0
-  lightningChainDistance: 0
+  lightningChainDistance: 4
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  lightningBaseDamage: 4
 --- !u!114 &4496144272976407112
 MonoBehaviour:
   m_ObjectHideFlags: 0
