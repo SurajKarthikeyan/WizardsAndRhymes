@@ -1,6 +1,7 @@
 using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.AI;
 using UnityEngine.Serialization;
 
 /// <summary>
@@ -44,8 +45,27 @@ public abstract class BaseEnemyHealth : Health
 
     [Tooltip("Base damage when chained to or when hit with lighitning")]
     [SerializeField] private int lightningBaseDamage;
-    
 
+    [Tooltip("Enemy Navmesh agent reference for speed alterations")]
+    [SerializeField] private NavMeshAgent enemyNavMeshAgent;
+
+    [Tooltip("Multiplier to reduce enemy speed of when hit with ice damage")]
+    [SerializeField] private float iceSpeedDecreaseMultipler;
+    
+    [Tooltip("Reference of the original enemy speed")]
+    [HideInInspector] private float originalEnemySpeed;
+    
+    [Tooltip("Slowed enemy speed")]
+    [HideInInspector] private float slowedEnemySpeed;
+
+    [Tooltip("Duration to be frozen")]
+    [SerializeField] private float iceDuration;
+
+    [Tooltip("Bool on if the enemy is forzen")]
+    [SerializeField] private bool onIce;
+
+    [Tooltip("Base damage that enemy takes when hit with ice attack")]
+    [SerializeField] private int iceBaseDamage;
     #endregion
 
 
@@ -55,6 +75,8 @@ public abstract class BaseEnemyHealth : Health
     {
         base.Start();
         onFire = false;
+        originalEnemySpeed = enemyNavMeshAgent.speed;
+        slowedEnemySpeed = originalEnemySpeed * iceSpeedDecreaseMultipler;
     }
 
     #endregion
@@ -71,6 +93,12 @@ public abstract class BaseEnemyHealth : Health
 
     #region DamageMethods
 
+    /// <summary>
+    /// Function that makes the enemy take damage
+    /// 
+    /// </summary>
+    /// <param name="value"></param>
+    /// <param name="dType"></param>
      public override void TakeDamage(float value, DamageType dType)
     {
         //We should check what the damage type is when assigning effect
@@ -119,7 +147,21 @@ public abstract class BaseEnemyHealth : Health
     /// </summary>
     public void IceDamage()
     {
-        Debug.Log("ICE KING");
+        TakeDamage(iceBaseDamage, DamageType.None);
+        enemyNavMeshAgent.speed = slowedEnemySpeed;
+        onIce = true;
+        StartCoroutine(IceDamageCoroutine());
+    }
+
+    /// <summary>
+    /// Coroutine that sets enemy status to ice
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator IceDamageCoroutine()
+    {
+        yield return new WaitForSeconds(iceDuration);
+        enemyNavMeshAgent.speed = originalEnemySpeed;
+        onIce = false;
     }
     
     /// <summary>
@@ -151,7 +193,7 @@ public abstract class BaseEnemyHealth : Health
             yield return new WaitForSeconds(timeBetweenTicks);
         }
 
-        //fireEffect.SetActive(false);
+        fireEffect.SetActive(false);
         onFire = false;
     }
     
