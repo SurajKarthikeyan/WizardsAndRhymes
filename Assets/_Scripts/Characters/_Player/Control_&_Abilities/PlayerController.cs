@@ -152,7 +152,13 @@ public class PlayerController : MonoBehaviour
     private MixtapeInventory mixtapeInventory;
 
 
-    public AK.Wwise.Event MyEvent;
+    public AK.Wwise.Event rangedFireEvent;
+    public AK.Wwise.Event meleeFireEvent;
+    public AK.Wwise.Event rangedLightningEvent;
+    public AK.Wwise.Event meleeLightningEvent;
+    public AK.Wwise.Event rangedIceEvent;
+    public AK.Wwise.Event meleeIceEvent;
+
     #endregion
 
     #region Unity Methods
@@ -440,6 +446,20 @@ public class PlayerController : MonoBehaviour
         GameObject projectile = Instantiate(rangedPrefab, rangedSpawnPoint.position, rangedSpawnPoint.rotation);
         projectile.GetComponent<Rigidbody>().velocity = rangedSpawnPoint.forward * rangedPrefabSpeed;
         projectile.GetComponent<Projectile>().dType = mixtapeInventory.damageType;
+        switch (mixtapeInventory.damageType)
+        {
+            case Health.DamageType.Fire:
+                rangedFireEvent.Post(gameObject);
+                break;
+            case Health.DamageType.Lightning:
+                rangedLightningEvent.Post(gameObject);
+                break;
+            case Health.DamageType.Ice:
+                rangedIceEvent.Post(gameObject);
+                break;
+            default:
+                break;
+        }
         abilityManager.ResetAbilityRecharge();
         yield return new WaitForSeconds(0.3f);
         attackStatus = AttackStatus.None;
@@ -458,7 +478,20 @@ public class PlayerController : MonoBehaviour
         abilityManager.ReduceAbilityGuage(abilityManager.meleeAbilityCost);
         rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
         abilityManager.ResetAbilityRecharge();
-        MyEvent.Post(gameObject);
+        switch (mixtapeInventory.damageType)
+        {
+            case Health.DamageType.Fire:
+                meleeFireEvent.Post(gameObject);
+                break;
+            case Health.DamageType.Lightning:
+                meleeLightningEvent.Post(gameObject);
+                break;
+            case Health.DamageType.Ice:
+                meleeIceEvent.Post(gameObject);
+                break;
+            default:
+                break;
+        }
         mixtapeInventory.OnTapeChange();    // this here might be problematic but not too sure
         yield return new WaitForSeconds(0.5f);
         meleeBox.SetActive(false);
@@ -466,4 +499,5 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
+    
 }
