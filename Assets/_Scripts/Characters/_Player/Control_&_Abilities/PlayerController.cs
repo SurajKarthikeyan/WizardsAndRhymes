@@ -150,6 +150,9 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Inventory for the player's mixtapes")]
     [SerializeField] 
     private MixtapeInventory mixtapeInventory;
+
+
+    public AK.Wwise.Event MyEvent;
     #endregion
 
     #region Unity Methods
@@ -284,8 +287,16 @@ public class PlayerController : MonoBehaviour
         else if (MouseOverGameWindow)
         {
             Cursor.visible = true;
-            Vector3 mouseRotationVector = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            Vector3 projVector = Vector3.ProjectOnPlane(mouseRotationVector, Vector3.up) - rigidBody.position;
+            Vector3 mouseRotationVector = Camera.main.ScreenToWorldPoint(Input.mousePosition) - rigidBody.position;
+
+
+            //Attempting to use vector projection
+            Vector3 projVector = Vector3.ProjectOnPlane(mouseRotationVector, Vector3.up);
+
+
+
+
+            Debug.DrawLine(transform.position, projVector);
             //direction = new(projVector.x, 0, projVector.y);
             projVector.y = 0;
             attackDirection = projVector;
