@@ -239,6 +239,13 @@
 									</ReferenceList>
 									<ChildrenList>
 										<MusicTrack Name="1MinCombatLoop" ID="{46F07DC6-2A0F-4CD8-A254-8AC3F4228231}" ShortID="831591013">
+											<PropertyList>
+												<Property Name="Inclusion" Type="bool">
+													<ValueList>
+														<Value>False</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="OutputBus">
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
@@ -279,6 +286,58 @@
 																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
 																					</PropertyList>
 																					<AudioSourceRef Name="1MinCombatLoop" ID="{A5E81B50-B2CE-4FDF-BF44-E94834E26668}"/>
+																				</MusicClip>
+																			</Local>
+																		</Reference>
+																	</ObjectList>
+																</ObjectLists>
+															</MusicTrackSequence>
+														</Local>
+													</Reference>
+												</ObjectList>
+											</ObjectLists>
+										</MusicTrack>
+										<MusicTrack Name="CombatLoopMixed" ID="{E3DE5A87-B3FE-4F95-987E-D3FFB2F8C8CC}" ShortID="470855330">
+											<ReferenceList>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+												<Reference Name="TransitionRoot">
+													<Custom>
+														<MusicTransition Name="Root" ID="{36F4120E-B863-4A79-B43A-C980FBED4C5A}">
+															<PropertyList>
+																<Property Name="IsFolder" Type="bool" Value="True"/>
+															</PropertyList>
+															<TransitionInfo/>
+														</MusicTransition>
+													</Custom>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CombatLoopMixed" ID="{E6E01B48-3760-43A8-90C4-42372C2DCF11}">
+													<Language>SFX</Language>
+													<AudioFile>CombatLoopMixed.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="891382884"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ObjectLists>
+												<ObjectList Name="Sequences">
+													<Reference>
+														<Local>
+															<MusicTrackSequence Name="" ID="{F2B62DFD-E891-456E-AC84-7AC1B0AAD0AF}">
+																<ObjectLists>
+																	<ObjectList Name="Clips">
+																		<Reference>
+																			<Local>
+																				<MusicClip Name="CombatLoopMixed" ID="{F2CDB6D4-D055-4687-855C-0826927067E9}">
+																					<PropertyList>
+																						<Property Name="EndTrimOffset" Type="Real64" Value="54857.1428571429"/>
+																						<Property Name="FadeInMode" Type="int16" Value="0"/>
+																						<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																					</PropertyList>
+																					<AudioSourceRef Name="CombatLoopMixed" ID="{E6E01B48-3760-43A8-90C4-42372C2DCF11}"/>
 																				</MusicClip>
 																			</Local>
 																		</Reference>
