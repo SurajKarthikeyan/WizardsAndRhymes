@@ -57,6 +57,8 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     [Tooltip("Health Script Reference for this behavior")]
     private BaseEnemyHealth health;
 
+    [Tooltip("Health Script Reference for this behavior")]
+    private AIDebug aiDebug;
     #endregion
 
     #region Unity Methods
@@ -68,6 +70,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         health = GetComponent<BaseEnemyHealth>();
         navMeshAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
+        aiDebug = GetComponent<AIDebug>();
         EnemyManager.EnemiesActivated += Activate;
     }
 
@@ -81,11 +84,6 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
             activated = false;
             StopAllCoroutines();
             health.Death();
-        }
-        
-        else if (behaviorState == EnemyBehaviorState.Ice)
-        {
-            //hehe haha
         }
         else if (behaviorState == EnemyBehaviorState.Idle)
         {
@@ -101,19 +99,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         }
     }
 
-    private void Activate(bool enemyActivated)
-    {
-        if (!enemyActivated)
-        {
-            behaviorState = EnemyBehaviorState.Idle;
-        }
-        activated = enemyActivated;
-    }
-
-    public void ResetNavmeshSpeed()
-    {
-        navMeshAgent.speed = 3.5f;
-    }
+    
 
     /// <summary>
     /// Unity method called whenever this object collides with another
@@ -128,6 +114,25 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
                 playerHealth.TakeDamage(attackDamage, Health.DamageType.None);
             }
         }
+    }
+
+    /// <summary>
+    /// Unity method called when this behavior is disabled
+    /// </summary>
+    private void OnDisable()
+    {
+        behaviorState = EnemyBehaviorState.Idle;
+        navMeshAgent.velocity = Vector3.zero;
+        aiDebug.ClearDebugText();
+        activated = false;
+    }
+
+    /// <summary>
+    /// Unity method called when this behavior is enabled
+    /// </summary>
+    private void OnEnable()
+    {
+        activated = true;
     }
     #endregion
 
@@ -153,6 +158,27 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         Vector3 dirToPlayer = transform.position - PlayerController.instance.transform.position;
         Vector3 runPos = transform.position + dirToPlayer;
         navMeshAgent.SetDestination(runPos);
+    }
+
+    /// <summary>
+    /// Activates this enemy
+    /// </summary>
+    /// <param name="enemyActivated"></param>
+    private void Activate(bool enemyActivated)
+    {
+        if (!enemyActivated)
+        {
+            behaviorState = EnemyBehaviorState.Idle;
+        }
+        activated = enemyActivated;
+    }
+
+    /// <summary>
+    /// Resets the speed of the navmesh
+    /// </summary>
+    public void ResetNavmeshSpeed()
+    {
+        navMeshAgent.speed = 3.5f;
     }
 
 

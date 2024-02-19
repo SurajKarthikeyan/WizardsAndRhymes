@@ -77,7 +77,10 @@ public class EnemyManager : MonoBehaviour
     [Tooltip("The number of enemies, spawned and yet to be spawned, remaining in the current waves")]
     int enemiesRemaining = 0;
 
-    public Toggle enemyToggle;
+    [Header("Debug tool variables")]
+    [Tooltip("Toggle used to toggle enemy behavior")]
+    [SerializeField]
+    private Toggle enemyToggle;
     #endregion
 
     #region Unity Methods
@@ -130,7 +133,6 @@ public class EnemyManager : MonoBehaviour
     /// </summary>
     public void ToggleEnemies()
     {
-        Debug.Log("Activated is: " + enemyToggle.isOn);
         EnemiesActivated?.Invoke(enemyToggle.isOn);
     }
 
