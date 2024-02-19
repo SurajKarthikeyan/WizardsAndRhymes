@@ -458,6 +458,7 @@ public class PlayerController : MonoBehaviour
         abilityManager.ReduceAbilityGuage(abilityManager.meleeAbilityCost);
         rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
         abilityManager.ResetAbilityRecharge();
+        MyEvent.Post(gameObject);
         mixtapeInventory.OnTapeChange();    // this here might be problematic but not too sure
         yield return new WaitForSeconds(0.5f);
         meleeBox.SetActive(false);
