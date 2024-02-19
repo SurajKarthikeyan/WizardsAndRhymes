@@ -25,7 +25,9 @@ public class AIDebug : MonoBehaviour
     void Update()
     {
         debugText.text = enemyBehavior.behaviorState.ToString();
-        debugCanvas.transform.rotation = Quaternion.LookRotation(Camera.main.transform.position, Vector3.up);
+        Vector3 rotation = Quaternion.LookRotation(Camera.main.transform.position, Vector3.up).eulerAngles;
+        rotation.y = 180;
+        debugCanvas.transform.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
     }
 
     private void OnDisable()
