@@ -52,6 +52,16 @@ public class MixtapeInventory : MonoBehaviour
         ChangeColor(currentTape, highAlpha);
     }
 
+    public void ResetCombo()
+    {
+        Debug.Log("reset");
+        ChangeColor(currentTape, lowAlpha);
+        index = 0;
+        SetDamageType(index);
+        currentTape = mixtapeInventory[index];
+        ChangeColor(currentTape, highAlpha);
+    }
+
     public void ChangeColor(GameObject tape, float setAlpha)
     {
         tape.GetComponent<Image>().color = new Color(tape.GetComponent<Image>().color.r,

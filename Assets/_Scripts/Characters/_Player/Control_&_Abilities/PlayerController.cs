@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -152,6 +153,13 @@ public class PlayerController : MonoBehaviour
     private MixtapeInventory mixtapeInventory;
 
 
+
+    [Tooltip("Enumerator to reset mixtape combo")]
+    [SerializeField] private IEnumerator mixtapeResetRoutine;
+
+    [Tooltip("How long should be allowed prior to restarting")] 
+    [SerializeField] private float mixtapeResetTimer;
+    
     public AK.Wwise.Event rangedFireEvent;
     public AK.Wwise.Event meleeFireEvent;
     public AK.Wwise.Event rangedLightningEvent;
@@ -160,11 +168,6 @@ public class PlayerController : MonoBehaviour
     public AK.Wwise.Event meleeIceEvent;
 
     public LayerMask lookLayerMask;
-
-
-    public GameObject testLight;
-
-
 
     public float randomAssZConstant;
 
@@ -317,7 +320,6 @@ public class PlayerController : MonoBehaviour
                 attackDirection = raycastHit.point - transform.position;
                 float sinY = Mathf.Abs(Mathf.Sin(transform.rotation.eulerAngles.y * Mathf.Deg2Rad));
                 attackDirection.z -= randomAssZConstant * sinY;
-                Debug.Log(sinY);
                 attackDirection.y = 0;
             }
 
@@ -383,6 +385,7 @@ public class PlayerController : MonoBehaviour
     /// <param name="obj">Input callback context for the ranged attack</param>
     private void DoRanged(InputAction.CallbackContext obj)
     {
+        ResetAttack();
         attackStatus = AttackStatus.Ranged;
         abilityManager.ResetAbilityRecharge();
         StartCoroutine(Projectile());
@@ -393,9 +396,20 @@ public class PlayerController : MonoBehaviour
     /// <param name="obj">Input callback context for the melee attack</param>
     private void DoMelee(InputAction.CallbackContext obj)
     {
+        ResetAttack();
         attackStatus = AttackStatus.Melee;
         abilityManager.ResetAbilityRecharge();
         StartCoroutine(Melee());
+    }
+
+    public void ResetAttack()
+    {
+        if (mixtapeResetRoutine != null)
+        {
+            StopCoroutine(mixtapeResetRoutine);
+        }
+        mixtapeResetRoutine = ResetMixtapeAttack(mixtapeResetTimer);
+        StartCoroutine(mixtapeResetRoutine);
     }
 
     /// <summary>
@@ -433,6 +447,11 @@ public class PlayerController : MonoBehaviour
         pauseMenu.SetActive(isPaused);
     }
 
+    
+    /// <summary>
+    /// Reads input for player to open inventory
+    /// </summary>
+    /// <param name="obj"></param>
     private void InventoryAction(InputAction.CallbackContext obj)
     {
         if (!isPaused)
@@ -441,10 +460,24 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Opens user inventory
+    /// </summary>
     public void OpenInventory()
     {
         openInventory = !openInventory;
         inventoryMenu.SetActive(openInventory);
+    }
+
+
+    /// <summary>
+    /// Coroutine called when attacked to measure time between attacks
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator ResetMixtapeAttack(float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        mixtapeInventory.ResetCombo();
     }
     
     /// <summary>
