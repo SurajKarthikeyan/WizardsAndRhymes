@@ -349,10 +349,6 @@ public class PlayerController : MonoBehaviour
         
     }
 
-    private void OnDrawGizmos()
-    {
-        Debug.DrawLine(transform.position, attackDirection);
-    }
     /// <summary>
     /// Gets the forward direction of the camera regarding the x and z directions
     /// </summary>
