@@ -110,6 +110,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject meleeBox;
 
+    [Tooltip("Delay between attacks")]
+    [SerializeField] private float attackDelayTimer;
+
+    [Tooltip("Bool defining if the player can attack")]
+    private bool canAttack;
+    
     [Tooltip("Timer that tracks how long it has been since last dash")]
     private float dashCooldownTimer;
 
@@ -154,6 +160,8 @@ public class PlayerController : MonoBehaviour
 
 
 
+    [Header("Mixtape Variables")]
+    
     [Tooltip("Enumerator to reset mixtape combo")]
     [SerializeField] private IEnumerator mixtapeResetRoutine;
 
@@ -190,6 +198,7 @@ public class PlayerController : MonoBehaviour
 
         rigidBody = GetComponent<Rigidbody>();
         playerInput = new PlayerInput();
+        canAttack = true;
     }
 
     /// <summary>
@@ -385,10 +394,15 @@ public class PlayerController : MonoBehaviour
     /// <param name="obj">Input callback context for the ranged attack</param>
     private void DoRanged(InputAction.CallbackContext obj)
     {
-        ResetAttack();
-        attackStatus = AttackStatus.Ranged;
-        abilityManager.ResetAbilityRecharge();
-        StartCoroutine(Projectile());
+        if (canAttack)
+        {
+            canAttack = false;
+            StartCoroutine(AttackDelays(attackDelayTimer));
+            ResetAttack();
+            attackStatus = AttackStatus.Ranged;
+            abilityManager.ResetAbilityRecharge();
+            StartCoroutine(Projectile());
+        }
     }
     /// <summary>
     /// Function that is called upon pressing any of the Melee Attack inputs
@@ -396,12 +410,20 @@ public class PlayerController : MonoBehaviour
     /// <param name="obj">Input callback context for the melee attack</param>
     private void DoMelee(InputAction.CallbackContext obj)
     {
-        ResetAttack();
-        attackStatus = AttackStatus.Melee;
-        abilityManager.ResetAbilityRecharge();
-        StartCoroutine(Melee());
+        if (canAttack)
+        {
+            canAttack = false;
+            StartCoroutine(AttackDelays(attackDelayTimer));
+            ResetAttack();
+            attackStatus = AttackStatus.Melee;
+            abilityManager.ResetAbilityRecharge();
+            StartCoroutine(Melee());
+        }
     }
 
+    /// <summary>
+    /// Function to reset attack combo
+    /// </summary>
     public void ResetAttack()
     {
         if (mixtapeResetRoutine != null)
@@ -470,6 +492,12 @@ public class PlayerController : MonoBehaviour
     }
 
 
+    IEnumerator AttackDelays(float timer)
+    {
+        yield return new WaitForSeconds(timer);
+        canAttack = true;
+    }
+    
     /// <summary>
     /// Coroutine called when attacked to measure time between attacks
     /// </summary>
