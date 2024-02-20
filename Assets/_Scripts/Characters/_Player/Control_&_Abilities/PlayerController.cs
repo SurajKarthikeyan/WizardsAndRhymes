@@ -313,7 +313,7 @@ public class PlayerController : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, lookLayerMask))
             {
-                testLight.transform.position = raycastHit.point;
+              //  testLight.transform.position = raycastHit.point;
                 attackDirection = raycastHit.point - transform.position;
                 float sinY = Mathf.Abs(Mathf.Sin(transform.rotation.eulerAngles.y * Mathf.Deg2Rad));
                 attackDirection.z -= randomAssZConstant * sinY;
