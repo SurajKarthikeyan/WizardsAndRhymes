@@ -283,6 +283,7 @@ public class PlayerController : MonoBehaviour
         else
         {
             moveStatus = MoveStatus.Idle;
+            rigidBody.velocity = Vector3.zero;
         }
 
         //Function that has the player look in the direction the player is inputting
