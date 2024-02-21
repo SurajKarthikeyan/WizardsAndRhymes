@@ -211,7 +211,6 @@ public class PlayerController : MonoBehaviour
         moveAction = playerInput.Player.Movement;
         lookAction = playerInput.Player.Look;
         playerInput.UI.Enable();
-        playerInput.Player.Enable();
     }
 
 
@@ -226,7 +225,7 @@ public class PlayerController : MonoBehaviour
         playerInput.UI.MenuSelect.canceled -= MenuSelect;
         playerInput.UI.Exit.canceled -= PauseAction;
         playerInput.UI.Disable();
-        playerInput.Player.Disable();
+        DisablePlayerControls();
         playerInput.UI.Inventory.started -= InventoryAction;
     }
 
@@ -473,6 +472,16 @@ public class PlayerController : MonoBehaviour
         {
             OpenInventory();
         }
+    }
+
+    public void EnablePlayerControls()
+    {
+        playerInput.Player.Enable();
+    }
+
+    public void DisablePlayerControls()
+    {
+        playerInput.Player.Disable();
     }
 
     /// <summary>
