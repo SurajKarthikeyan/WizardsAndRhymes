@@ -36,7 +36,10 @@ public class Projectile : MonoBehaviour
     {
         if (other.TryGetComponent<Health>(out var character))
         {
-            character.TakeDamage(damage, dType);
+            if (character.vulnerable)
+            {
+                character.TakeDamage(damage, dType);
+            }
         }
         Destroy(gameObject);
     }

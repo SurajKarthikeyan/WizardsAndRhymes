@@ -30,7 +30,10 @@ public class MeleeCollider : MonoBehaviour
     {
         if (other.gameObject.TryGetComponent(out BaseEnemyHealth enemyHealth))
         {
-            enemyHealth.TakeDamage(player.meleeDamage, damageType);
+            if (enemyHealth.vulnerable)
+            {
+                enemyHealth.TakeDamage(player.meleeDamage, damageType);
+            }
         }
     }
     #endregion

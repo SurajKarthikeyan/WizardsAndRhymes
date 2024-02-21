@@ -24,6 +24,8 @@ public class Health : MonoBehaviour
     [Tooltip("Maximum HP of this enemy")]
     [SerializeField]
     private float maximumHP;
+
+    public bool vulnerable;
     
 
     [Tooltip("C# property that allows us to access HP")]

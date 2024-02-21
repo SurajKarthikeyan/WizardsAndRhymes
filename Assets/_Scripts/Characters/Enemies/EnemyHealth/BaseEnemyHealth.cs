@@ -104,7 +104,7 @@ public abstract class BaseEnemyHealth : Health
     /// <param name="dType"></param>
      public override void TakeDamage(float value, DamageType dType)
     {
-        if (!isDead)
+        if (!isDead && vulnerable)
         {
             //We should check what the damage type is when assigning effect
             if (dType == DamageType.Fire)
@@ -140,10 +140,16 @@ public abstract class BaseEnemyHealth : Health
         {
             if (enemyLightiningCollider[i].gameObject.TryGetComponent(out BaseEnemyHealth curEnemyHealth))
             {
-                curEnemyHealth.TakeDamage(lightningBaseDamage, DamageType.None);
+                if (curEnemyHealth.vulnerable)
+                {
+                    curEnemyHealth.TakeDamage(lightningBaseDamage, DamageType.None);
+                }
             }
         }
-        this.TakeDamage(lightningBaseDamage, DamageType.None);
+        if (vulnerable)
+        {
+            this.TakeDamage(lightningBaseDamage, DamageType.None);
+        }
     }
     
     
@@ -153,10 +159,13 @@ public abstract class BaseEnemyHealth : Health
     /// </summary>
     public void IceDamage()
     {
-        TakeDamage(iceBaseDamage, DamageType.None);
-        onIce = true;
-        enemyBehavior.behaviorState = BaseEnemyBehavior.EnemyBehaviorState.Ice;
-        StartCoroutine(IceDamageCoroutine());
+        if (vulnerable)
+        {
+            TakeDamage(iceBaseDamage, DamageType.None);
+            onIce = true;
+            enemyBehavior.behaviorState = BaseEnemyBehavior.EnemyBehaviorState.Ice;
+            StartCoroutine(IceDamageCoroutine());
+        }
     }
 
     /// <summary>
@@ -196,8 +205,11 @@ public abstract class BaseEnemyHealth : Health
     {
         for (int i = 0; i < tickCount; i++)
         {
-            this.TakeDamage(fireDamage, DamageType.None);
-            yield return new WaitForSeconds(timeBetweenTicks);
+            if (vulnerable)
+            {
+                this.TakeDamage(fireDamage, DamageType.None);
+                yield return new WaitForSeconds(timeBetweenTicks);
+            }
         }
 
         fireEffect.SetActive(false);

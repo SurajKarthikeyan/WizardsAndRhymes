@@ -158,8 +158,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] 
     private MixtapeInventory mixtapeInventory;
 
-
-
     [Header("Mixtape Variables")]
     
     [Tooltip("Enumerator to reset mixtape combo")]
@@ -171,6 +169,10 @@ public class PlayerController : MonoBehaviour
     public LayerMask lookLayerMask;
 
     public float randomAssZConstant;
+
+    PlayerHealth playerHealth;
+
+    public GameObject model;
 
     #endregion
 
@@ -190,6 +192,7 @@ public class PlayerController : MonoBehaviour
         }
 
         rigidBody = GetComponent<Rigidbody>();
+        playerHealth =  GetComponent<PlayerHealth>();
         playerInput = new PlayerInput();
         canAttack = true;
     }
@@ -505,9 +508,15 @@ public class PlayerController : MonoBehaviour
     IEnumerator Dash()
     { 
         moveStatus = MoveStatus.Dashing;
+        model.SetActive(false);
+        rigidBody.useGravity = false;
+        playerHealth.vulnerable = false;
         abilityManager.ReduceAbilityGuage(abilityManager.dashAbilityCost);
         dashCooldownTimer = 0;
         yield return new WaitForSeconds(dashTime);
+        model.SetActive(true);
+        playerHealth.vulnerable = true;
+        rigidBody.useGravity = false;
         moveStatus = MoveStatus.Moving;
     }
 
