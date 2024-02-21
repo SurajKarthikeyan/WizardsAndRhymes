@@ -9,7 +9,7 @@ public class RangedStrafeHealth : BaseEnemyHealth
     protected override void EnemyDeath()
     {
         base.EnemyDeath();
-        Debug.Log("DistancedProjectileStrafeDeath");
+        StopAllCoroutines();
         Destroy(gameObject);
     }
     #endregion

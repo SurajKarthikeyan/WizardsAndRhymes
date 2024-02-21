@@ -67,6 +67,8 @@ public abstract class BaseEnemyHealth : Health
     
     [Tooltip("Base enemy behaviour reference for status settings")]
     [SerializeField] private BaseEnemyBehavior enemyBehavior;
+
+    private bool isDead;
     #endregion
 
 
@@ -76,6 +78,7 @@ public abstract class BaseEnemyHealth : Health
     {
         base.Start();
         onFire = false;
+        isDead = false;
     }
 
     #endregion
@@ -87,6 +90,7 @@ public abstract class BaseEnemyHealth : Health
     /// </summary>
     public override void Death()
     {
+        isDead = true;
         EnemyDeath();
     }
 
@@ -100,22 +104,25 @@ public abstract class BaseEnemyHealth : Health
     /// <param name="dType"></param>
      public override void TakeDamage(float value, DamageType dType)
     {
-        //We should check what the damage type is when assigning effect
-        if (dType == DamageType.Fire)
+        if (!isDead)
         {
-            fireEffect.SetActive(true);
-            FireDamage(fireTickCount);
+            //We should check what the damage type is when assigning effect
+            if (dType == DamageType.Fire)
+            {
+                fireEffect.SetActive(true);
+                FireDamage(fireTickCount);
+            }
+            else if (dType == DamageType.Lightning)
+            {
+                LightningDamage();
+            }
+            
+            else if (dType == DamageType.Ice)
+            {
+                IceDamage();
+            }
+            base.TakeDamage(value, dType);
         }
-        else if (dType == DamageType.Lightning)
-        {
-            LightningDamage();
-        }
-        
-        else if (dType == DamageType.Ice)
-        {
-            IceDamage();
-        }
-        base.TakeDamage(value, dType);
         
     }
     
@@ -205,10 +212,8 @@ public abstract class BaseEnemyHealth : Health
    
     protected virtual void EnemyDeath()
     {
+        StopAllCoroutines();
         EnemyManager.instance.EnemyDied();
-
-        /*Debug.Log("BaseEnemyDeath");
-        Destroy(gameObject);*/
     }
     #endregion
 }

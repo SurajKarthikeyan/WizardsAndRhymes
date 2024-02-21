@@ -9,7 +9,7 @@ public class RangedRetreatHealth : BaseEnemyHealth
     protected override void EnemyDeath()
     {
         base.EnemyDeath();
-        Debug.Log("DistancedProjectileRetreatDeath");
+        StopAllCoroutines();
         Destroy(gameObject);
     }
     #endregion

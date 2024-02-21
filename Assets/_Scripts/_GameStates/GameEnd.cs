@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -45,12 +46,14 @@ public class GameEnd : MonoBehaviour
 
     #region UnityMethods
 
-    /// <summary>
-    /// Called before the first from, registers room cleared callback
-    /// </summary>
-    private void Awake()
+    private void OnEnable()
     {
         EnemyManager.RoomCleared += RoomCleared;
+    }
+
+    private void OnDisable()
+    {
+        EnemyManager.RoomCleared -= RoomCleared;
     }
 
     /// <summary>

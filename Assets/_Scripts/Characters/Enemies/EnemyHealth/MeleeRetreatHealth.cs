@@ -10,7 +10,7 @@ public class MeleeRetreatHealth : BaseEnemyHealth
     protected override void EnemyDeath()
     {
         base.EnemyDeath();
-        Debug.Log("MeleeRetreatDeath");
+        StopAllCoroutines();
         Destroy(gameObject);
     }
     #endregion
