@@ -167,13 +167,6 @@ public class PlayerController : MonoBehaviour
 
     [Tooltip("How long should be allowed prior to restarting")] 
     [SerializeField] private float mixtapeResetTimer;
-    
-    public AK.Wwise.Event rangedFireEvent;
-    public AK.Wwise.Event meleeFireEvent;
-    public AK.Wwise.Event rangedLightningEvent;
-    public AK.Wwise.Event meleeLightningEvent;
-    public AK.Wwise.Event rangedIceEvent;
-    public AK.Wwise.Event meleeIceEvent;
 
     public LayerMask lookLayerMask;
 
@@ -529,24 +522,10 @@ public class PlayerController : MonoBehaviour
         GameObject projectile = Instantiate(rangedPrefab, rangedSpawnPoint.position, rangedSpawnPoint.rotation);
         projectile.GetComponent<Rigidbody>().velocity = rangedSpawnPoint.forward * rangedPrefabSpeed;
         projectile.GetComponent<Projectile>().dType = mixtapeInventory.damageType;
-        switch (mixtapeInventory.damageType)
-        {
-            case Health.DamageType.Fire:
-                rangedFireEvent.Post(gameObject);
-                break;
-            case Health.DamageType.Lightning:
-                rangedLightningEvent.Post(gameObject);
-                break;
-            case Health.DamageType.Ice:
-                rangedIceEvent.Post(gameObject);
-                break;
-            default:
-                break;
-        }
         abilityManager.ResetAbilityRecharge();
         yield return new WaitForSeconds(0.3f);
         attackStatus = AttackStatus.None;
-        mixtapeInventory.OnTapeChange();
+        mixtapeInventory.OnTapeChange(true);
     }
 
     /// <summary>
@@ -561,21 +540,7 @@ public class PlayerController : MonoBehaviour
         abilityManager.ReduceAbilityGuage(abilityManager.meleeAbilityCost);
         rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
         abilityManager.ResetAbilityRecharge();
-        switch (mixtapeInventory.damageType)
-        {
-            case Health.DamageType.Fire:
-                meleeFireEvent.Post(gameObject);
-                break;
-            case Health.DamageType.Lightning:
-                meleeLightningEvent.Post(gameObject);
-                break;
-            case Health.DamageType.Ice:
-                meleeIceEvent.Post(gameObject);
-                break;
-            default:
-                break;
-        }
-        mixtapeInventory.OnTapeChange();    // this here might be problematic but not too sure
+        mixtapeInventory.OnTapeChange(false);    // this here might be problematic but not too sure
         yield return new WaitForSeconds(0.5f);
         meleeBox.SetActive(false);
         attackStatus = AttackStatus.None;
