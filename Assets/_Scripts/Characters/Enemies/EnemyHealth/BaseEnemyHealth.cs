@@ -225,7 +225,7 @@ public abstract class BaseEnemyHealth : Health
     protected virtual void EnemyDeath()
     {
         StopAllCoroutines();
-        EnemyManager.instance.EnemyDied();
+        EnemyManager.instance.sd();
     }
     #endregion
 }
