@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5152378888163943074}
   - component: {fileID: 4010696941234732272}
   - component: {fileID: 931615317911870289}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MeleeHitbox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 5981059314923844403}
   - component: {fileID: 8802253318812338376}
   - component: {fileID: 498230214866448504}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -296,37 +296,15 @@ MonoBehaviour:
   rangedPrefabSpeed: 25
   meleeDamage: 100
   meleeBox: {fileID: 937923528513720809}
+  attackDelayTimer: 0
   abilityManager: {fileID: 4681948003197784821}
   mixtapeInventory: {fileID: 0}
-  rangedFireEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: ee402da87f013a542ae3160b016e09fb, type: 2}
-  meleeFireEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 50a656c07534b544fb5b320c6204a451, type: 2}
-  rangedLightningEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 12e800b06481b0046abd98dc4abae117, type: 2}
-  meleeLightningEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: ece58d948e9c76147bd7c0e127be5c30, type: 2}
-  rangedIceEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 4432da8847e1d814596b16f245115467, type: 2}
-  meleeIceEvent:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 120cf3390dc69734ca6004fc31cee271, type: 2}
+  mixtapeResetTimer: 0
   lookLayerMask:
     serializedVersion: 2
     m_Bits: 512
-  testLight: {fileID: 0}
   randomAssZConstant: 1.75
+  model: {fileID: 0}
 --- !u!114 &1531503870578908028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,6 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHP: 0
   maximumHP: 10
+  vulnerable: 0
 --- !u!114 &4681948003197784821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -520,7 +499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8785482165165407100}
   - component: {fileID: 2346255625442786790}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GameState
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -573,7 +552,7 @@ GameObject:
   - component: {fileID: 6435181584023639034}
   - component: {fileID: 6708750954924200214}
   - component: {fileID: 6478558809479232685}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: visor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -675,7 +654,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 241791450126428473}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ProjectileSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -706,7 +685,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5028973609557505707}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ProjectileSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -792,6 +771,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8391222552659086748, guid: 14f270ba2a9ae824d9ddc02747c69eca, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -4683669308469848369, guid: 14f270ba2a9ae824d9ddc02747c69eca, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -799,6 +782,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 14f270ba2a9ae824d9ddc02747c69eca, type: 3}
       propertyPath: m_Name
       value: player_wizard (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 14f270ba2a9ae824d9ddc02747c69eca, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -877,6 +864,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: abb0ec9471ca2ac46b15534f5c0ce44a, type: 3}
       propertyPath: m_Name
       value: wireless_vocal_microphone (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: abb0ec9471ca2ac46b15534f5c0ce44a, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

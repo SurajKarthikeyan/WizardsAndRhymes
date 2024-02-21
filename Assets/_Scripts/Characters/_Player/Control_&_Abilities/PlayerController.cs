@@ -172,7 +172,7 @@ public class PlayerController : MonoBehaviour
 
     PlayerHealth playerHealth;
 
-    public GameObject model;
+    public GameObject dashModel;
 
     #endregion
 
@@ -190,7 +190,7 @@ public class PlayerController : MonoBehaviour
             Debug.LogWarning("Duplicate player controller in scene: " + gameObject.name);
             Destroy(this);
         }
-
+        dashModel.SetActive(false);
         rigidBody = GetComponent<Rigidbody>();
         playerHealth =  GetComponent<PlayerHealth>();
         playerInput = new PlayerInput();
@@ -202,15 +202,7 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void OnEnable()
     {
-        playerInput.Player.Dash.started += DoDash;
-        playerInput.Player.RangedAttack.started += DoRanged;
-        playerInput.Player.MeleeAttack.started += DoMelee;
-        playerInput.UI.MenuSelect.started += MenuSelect;
-        playerInput.UI.Exit.started += PauseAction;
-        playerInput.UI.Inventory.started += InventoryAction;
-        moveAction = playerInput.Player.Movement;
-        lookAction = playerInput.Player.Look;
-        playerInput.UI.Enable();
+        EnableUIControls();        
     }
 
 
@@ -219,14 +211,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void OnDisable()
     {
-        playerInput.Player.Dash.canceled -= DoDash;
-        playerInput.Player.RangedAttack.canceled -= DoRanged;
-        playerInput.Player.MeleeAttack.canceled -= DoMelee;
-        playerInput.UI.MenuSelect.canceled -= MenuSelect;
-        playerInput.UI.Exit.canceled -= PauseAction;
-        playerInput.UI.Disable();
+        DisableUIControls();
         DisablePlayerControls();
-        playerInput.UI.Inventory.started -= InventoryAction;
     }
 
 
@@ -476,12 +462,36 @@ public class PlayerController : MonoBehaviour
 
     public void EnablePlayerControls()
     {
+        playerInput.Player.Dash.started += DoDash;
+        playerInput.Player.RangedAttack.started += DoRanged;
+        playerInput.Player.MeleeAttack.started += DoMelee;
+        moveAction = playerInput.Player.Movement;
+        lookAction = playerInput.Player.Look;
         playerInput.Player.Enable();
+    }
+
+    public void EnableUIControls()
+    {
+        playerInput.UI.MenuSelect.started += MenuSelect;
+        playerInput.UI.Exit.started += PauseAction;
+        playerInput.UI.Inventory.started += InventoryAction;
+        playerInput.UI.Enable();
     }
 
     public void DisablePlayerControls()
     {
+        playerInput.Player.Dash.canceled -= DoDash;
+        playerInput.Player.RangedAttack.canceled -= DoRanged;
+        playerInput.Player.MeleeAttack.canceled -= DoMelee;
         playerInput.Player.Disable();
+    }
+
+    public void DisableUIControls()
+    {
+        playerInput.UI.MenuSelect.canceled -= MenuSelect;
+        playerInput.UI.Exit.canceled -= PauseAction;
+        playerInput.UI.Inventory.started -= InventoryAction;
+        playerInput.UI.Disable();
     }
 
     /// <summary>
@@ -517,13 +527,15 @@ public class PlayerController : MonoBehaviour
     IEnumerator Dash()
     { 
         moveStatus = MoveStatus.Dashing;
-        model.SetActive(false);
+        gameObject.layer = 10;
+        dashModel.SetActive(true);
         rigidBody.useGravity = false;
         playerHealth.vulnerable = false;
         abilityManager.ReduceAbilityGuage(abilityManager.dashAbilityCost);
         dashCooldownTimer = 0;
         yield return new WaitForSeconds(dashTime);
-        model.SetActive(true);
+        dashModel.SetActive(false);
+        gameObject.layer = 3;
         playerHealth.vulnerable = true;
         rigidBody.useGravity = false;
         moveStatus = MoveStatus.Moving;
