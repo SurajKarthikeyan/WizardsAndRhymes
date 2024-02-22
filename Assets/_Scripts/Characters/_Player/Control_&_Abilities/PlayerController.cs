@@ -221,8 +221,6 @@ public class PlayerController : MonoBehaviour
         DisablePlayerControls();
     }
 
-
-
     /// <summary>
     /// Function called once every frame, generally 60 frames per second
     /// </summary>
@@ -303,28 +301,16 @@ public class PlayerController : MonoBehaviour
         else if (MouseOverGameWindow)
         {
             Cursor.visible = true;
-            //Vector3 mouseRotationVector = Camera.main.ScreenToWorldPoint(Input.mousePosition) - rigidBody.position;
-
-
-            //Attempting to use vector projection
-            //Vector3 projVector = Vector3.ProjectOnPlane(mouseRotationVector, Vector3.up);
-
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, lookLayerMask))
             {
-              //  testLight.transform.position = raycastHit.point;
                 attackDirection = raycastHit.point - transform.position;
                 float sinY = Mathf.Abs(Mathf.Sin(transform.rotation.eulerAngles.y * Mathf.Deg2Rad));
                 attackDirection.z -= aimAdjustmentConstant * sinY;
                 attackDirection.y = 0;
             }
 
-
-            //Debug.DrawLine(transform.position, projVector);
-            //direction = new(projVector.x, 0, projVector.y);
-            //projVector.y = 0;
-            //attackDirection = projVector;
             Quaternion lookRotation = Quaternion.LookRotation(attackDirection.normalized, Vector3.up);
             rigidBody.rotation = Quaternion.Slerp(rigidBody.rotation, lookRotation, 200 * Time.deltaTime);
         }
@@ -466,6 +452,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Function that enables the players inputs 
+    /// </summary>
     public void EnablePlayerControls()
     {
         playerInput.Player.Dash.started += DoDash;
@@ -476,6 +465,9 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.Enable();
     }
 
+    /// <summary>
+    /// Function that enables the inputs for all UI and menus
+    /// </summary>
     public void EnableUIControls()
     {
         playerInput.UI.MenuSelect.started += MenuSelect;
@@ -484,11 +476,18 @@ public class PlayerController : MonoBehaviour
         playerInput.UI.Enable();
     }
 
+    /// <summary>
+    /// Sets the boolean for if the player is able to attack
+    /// </summary>
+    /// <param name="attackPermission">Boolean that will set the canAttack boolean</param>
     public void SetCanAttack(bool attackPermission)
     {
         canAttack = attackPermission;
     }
 
+    /// <summary>
+    /// Function that disables the controls of the player
+    /// </summary>
     public void DisablePlayerControls()
     {
         playerInput.Player.Dash.canceled -= DoDash;
@@ -497,6 +496,9 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.Disable();
     }
 
+    /// <summary>
+    /// Disables all controls for UI and menus
+    /// </summary>
     public void DisableUIControls()
     {
         playerInput.UI.MenuSelect.canceled -= MenuSelect;
@@ -514,7 +516,11 @@ public class PlayerController : MonoBehaviour
         inventoryMenu.SetActive(openInventory);
     }
 
-
+    /// <summary>
+    /// Coroutine that handles delays between attacks
+    /// </summary>
+    /// <param name="timer">How long the in between attack is in seconds</param>
+    /// <returns>arious wait for seconds in between combos</returns>
     IEnumerator AttackDelays(float timer)
     {
         yield return new WaitForSeconds(timer);
@@ -524,7 +530,7 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// Coroutine called when attacked to measure time between attacks
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Various wait for seconds in between combos</returns>
     IEnumerator ResetMixtapeAttack(float timer)
     {
         yield return new WaitForSeconds(timer);
