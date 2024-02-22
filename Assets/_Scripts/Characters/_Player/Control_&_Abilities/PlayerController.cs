@@ -14,7 +14,6 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Singleton of player controller")]
     public static PlayerController instance;
 
-
     [Tooltip("Enum that represents the movement state of the player")]
     private enum MoveStatus
     {
@@ -50,6 +49,13 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Direction to apply the force of movement when moving")]
     private Vector3 forceDirection = Vector3.zero;
 
+    [Header("Aiming Variables")]
+    [Tooltip("LayerMask that is assigned for help in player aiming")]
+    [SerializeField]
+    private LayerMask lookLayerMask;
+
+    [Tooltip("Constant used in helping player aim")]
+    private const float aimAdjustmentConstant = 1.75f;
 
     [Header("Dashing Variables")]
 
@@ -69,7 +75,13 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float dashCooldownThreshold = 2f;
 
-    
+    [Tooltip("Model of the player displayed purely for dashing")]
+    [SerializeField]
+    private GameObject dashModel;
+
+    [Tooltip("Timer that tracks how long it has been since last dash")]
+    private float dashCooldownTimer;
+
     [Header("Camera")]
     [Tooltip("Reference to the camera focusing on the player")]
     [SerializeField]
@@ -80,18 +92,6 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Prefab used as the player's ranged attack")]
     [SerializeField]
     private GameObject rangedPrefab;
-
-    [Tooltip("Pause menu")]
-    [SerializeField] private GameObject pauseMenu;
-
-    [Tooltip("Pause menu active state")]
-    [SerializeField] private bool isPaused;
-
-    [Tooltip("Inventory menu")]
-    [SerializeField] private GameObject inventoryMenu;
-    
-    [Tooltip("Inventory menu active state")]
-    [SerializeField] private bool openInventory;
     
     [Tooltip("Transform to spawn the projectiles")]
     [SerializeField]
@@ -110,18 +110,45 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject meleeBox;
 
+    [Header("UI Variables")]
+    [Tooltip("Pause menu")]
+    [SerializeField] private GameObject pauseMenu;
+
+    [Tooltip("Pause menu active state")]
+    [SerializeField] private bool isPaused;
+
+    [Tooltip("Inventory menu")]
+    [SerializeField] private GameObject inventoryMenu;
+
+    [Tooltip("Inventory menu active state")]
+    [SerializeField] private bool openInventory;
+
+    [Header("General Attack/Combo Variables")]
+
     [Tooltip("Delay between attacks")]
     [SerializeField] private float attackDelayTimer;
 
+    [Tooltip("How long should be allowed prior to restarting")]
+    [SerializeField] private float mixtapeResetTimer;
+
     [Tooltip("Bool defining if the player can attack")]
     private bool canAttack;
-    
-    [Tooltip("Timer that tracks how long it has been since last dash")]
-    private float dashCooldownTimer;
+
+    [Tooltip("Enumerator to reset mixtape combo")]
+    private IEnumerator mixtapeResetRoutine;
 
     [Header("Script References")]
+    [Tooltip("C# Class that handles all of the player abilities")]
     [SerializeField]
     private AbilityManager abilityManager;
+
+    [Tooltip("Inventory for the player's mixtapes")]
+    [SerializeField]
+    private MixtapeInventory mixtapeInventory;
+
+    [Tooltip("C# Class generated from the input action map")]
+    [SerializeField]
+    private PlayerHealth playerHealth;
 
     [Tooltip("C# Class generated from the input action map")]
     private PlayerInput playerInput;
@@ -153,27 +180,6 @@ public class PlayerController : MonoBehaviour
                 Screen.width < Input.mousePosition.x || Screen.height < Input.mousePosition.y);
         }
     }
-
-    [Tooltip("Inventory for the player's mixtapes")]
-    [SerializeField] 
-    private MixtapeInventory mixtapeInventory;
-
-    [Header("Mixtape Variables")]
-    
-    [Tooltip("Enumerator to reset mixtape combo")]
-    [SerializeField] private IEnumerator mixtapeResetRoutine;
-
-    [Tooltip("How long should be allowed prior to restarting")] 
-    [SerializeField] private float mixtapeResetTimer;
-
-    public LayerMask lookLayerMask;
-
-    public float randomAssZConstant;
-
-    PlayerHealth playerHealth;
-
-    public GameObject dashModel;
-
     #endregion
 
     #region Unity Methods
@@ -192,9 +198,8 @@ public class PlayerController : MonoBehaviour
         }
         dashModel.SetActive(false);
         rigidBody = GetComponent<Rigidbody>();
-        playerHealth =  GetComponent<PlayerHealth>();
         playerInput = new PlayerInput();
-        canAttack = true;
+        SetCanAttack(false);
     }
 
     /// <summary>
@@ -202,7 +207,8 @@ public class PlayerController : MonoBehaviour
     /// </summary>
     private void OnEnable()
     {
-        EnableUIControls();        
+        EnableUIControls();   
+        EnablePlayerControls();
     }
 
 
@@ -310,7 +316,7 @@ public class PlayerController : MonoBehaviour
               //  testLight.transform.position = raycastHit.point;
                 attackDirection = raycastHit.point - transform.position;
                 float sinY = Mathf.Abs(Mathf.Sin(transform.rotation.eulerAngles.y * Mathf.Deg2Rad));
-                attackDirection.z -= randomAssZConstant * sinY;
+                attackDirection.z -= aimAdjustmentConstant * sinY;
                 attackDirection.y = 0;
             }
 
@@ -374,7 +380,7 @@ public class PlayerController : MonoBehaviour
     {
         if (canAttack)
         {
-            canAttack = false;
+            SetCanAttack(false);
             StartCoroutine(AttackDelays(attackDelayTimer));
             ResetAttack();
             attackStatus = AttackStatus.Ranged;
@@ -390,7 +396,7 @@ public class PlayerController : MonoBehaviour
     {
         if (canAttack)
         {
-            canAttack = false;
+            SetCanAttack(false);
             StartCoroutine(AttackDelays(attackDelayTimer));
             ResetAttack();
             attackStatus = AttackStatus.Melee;
@@ -478,6 +484,11 @@ public class PlayerController : MonoBehaviour
         playerInput.UI.Enable();
     }
 
+    public void SetCanAttack(bool attackPermission)
+    {
+        canAttack = attackPermission;
+    }
+
     public void DisablePlayerControls()
     {
         playerInput.Player.Dash.canceled -= DoDash;
@@ -507,7 +518,7 @@ public class PlayerController : MonoBehaviour
     IEnumerator AttackDelays(float timer)
     {
         yield return new WaitForSeconds(timer);
-        canAttack = true;
+        SetCanAttack(true);
     }
     
     /// <summary>

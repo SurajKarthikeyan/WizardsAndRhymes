@@ -282,29 +282,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementForce: 7
   maxMoveSpeed: 7
+  lookLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
   dashForce: 3
   maxDashSpeed: 15
   dashTime: 0.5
   dashCooldownThreshold: 0
+  dashModel: {fileID: 0}
   playerCamera: {fileID: 0}
   rangedPrefab: {fileID: 8332464805925598477, guid: 1c8ea5a92df42184d87ee0928e44598e, type: 3}
-  pauseMenu: {fileID: 0}
-  isPaused: 0
-  inventoryMenu: {fileID: 0}
-  openInventory: 0
   rangedSpawnPoint: {fileID: 5028973609557505707}
   rangedPrefabSpeed: 25
   meleeDamage: 100
   meleeBox: {fileID: 937923528513720809}
+  pauseMenu: {fileID: 0}
+  isPaused: 0
+  inventoryMenu: {fileID: 0}
+  openInventory: 0
   attackDelayTimer: 0
+  mixtapeResetTimer: 0
   abilityManager: {fileID: 4681948003197784821}
   mixtapeInventory: {fileID: 0}
-  mixtapeResetTimer: 0
-  lookLayerMask:
-    serializedVersion: 2
-    m_Bits: 512
-  randomAssZConstant: 1.75
-  model: {fileID: 0}
+  playerHealth: {fileID: 1531503870578908028}
 --- !u!114 &1531503870578908028
 MonoBehaviour:
   m_ObjectHideFlags: 0
