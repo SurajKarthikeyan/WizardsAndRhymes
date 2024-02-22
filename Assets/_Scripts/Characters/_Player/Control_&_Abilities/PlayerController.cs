@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -112,10 +111,13 @@ public class PlayerController : MonoBehaviour
 
     [Header("Melee Attack Variables")]
     [Tooltip("Damage inflicted by the player's melee attack")]
-    [SerializeField]
     public float meleeDamage = 10f;
 
-    [Tooltip("Damage inflicted by the player's melee attack")]
+    [Tooltip("Time that the melee attack lasts for in seconds")]
+    [SerializeField]
+    private float meleeAttackDuration = 0.5f;
+
+    [Tooltip("GameObject representing the hitbox of the melee attack")]
     [SerializeField]
     private GameObject meleeBox;
 
@@ -174,10 +176,6 @@ public class PlayerController : MonoBehaviour
     [Tooltip("Direction in which the will attack if they choose to attack")]
     private Vector3 attackDirection;
 
-    [Tooltip("Returns true if the player is able to dash")]
-    private bool CanDash => abilityManager.currentAbilityValue >= 10 && 
-        dashCooldownTimer >= dashCooldownThreshold && IsValidDash();
-
     [Tooltip("Returns true if the player is currently moving")]
     private bool IsMoving => moveAction.ReadValue<Vector2>().sqrMagnitude > 0.1f;
 
@@ -192,9 +190,8 @@ public class PlayerController : MonoBehaviour
     }
 
 
-
-    [Header("Test Variables")]
-    public GameObject testLight;
+    //[Header("Test Variables")]
+    //public GameObject testLight;
     #endregion
 
     #region Unity Methods
@@ -420,19 +417,25 @@ public class PlayerController : MonoBehaviour
         StartCoroutine(mixtapeResetRoutine);
     }
 
+    /// <summary>
+    /// Function that determines whether or not the dash that the player 
+    /// wants to do is valid. 
+    /// </summary>
+    /// <returns></returns>
     private bool IsValidDash()
     {
         //Puts a point out in front of the player, checks to see if it is above ground
-        Vector3 dashCheck = transform.position + dashDirection.normalized * allowedDashDistance + new Vector3(0, 1, 0);
-        testLight.transform.position = dashCheck;
+        Vector3 dashCheck = transform.position + dashDirection.normalized * 
+            allowedDashDistance + new Vector3(0, 1, 0);
         Ray dashCheckRay = new (dashCheck, Vector3.down);
         if (Physics.Raycast(dashCheckRay, float.MaxValue, groundLayerMask))
         {
-            Debug.Log("Hit ground");
-            return true;
+            if (abilityManager.currentAbilityValue >= 10 && dashCooldownTimer >= dashCooldownThreshold)
+            {
+                return true;
+            }
         }
         //If we do not hit any ground
-        Debug.Log("No ground");
         return false;
     }
 
@@ -443,7 +446,7 @@ public class PlayerController : MonoBehaviour
     private void DoDash(InputAction.CallbackContext obj)
     {
         abilityManager.ResetAbilityRecharge();
-        if (CanDash)
+        if (IsValidDash())
         {
             StartCoroutine(Dash());
         }
@@ -620,7 +623,7 @@ public class PlayerController : MonoBehaviour
         rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
         abilityManager.ResetAbilityRecharge();
         mixtapeInventory.OnTapeChange(false);    // this here might be problematic but not too sure
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(meleeAttackDuration);
         meleeBox.SetActive(false);
         attackStatus = AttackStatus.None;
     }
