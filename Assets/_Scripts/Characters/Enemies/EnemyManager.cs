@@ -8,6 +8,7 @@ using MoreMountains.Tools;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine.UI;
+using static Health;
 
 /// <summary>
 /// Class that manages waves of enemies for the current room
@@ -86,6 +87,10 @@ public class EnemyManager : MonoBehaviour
 
 
     public EnemyAugmentation currentAugment;
+
+    public delegate bool EnemyAugmentDelegate(GameObject enemyGO);
+
+    EnemyAugmentDelegate augmentEnemy;
     #endregion
 
     #region Unity Methods
@@ -172,6 +177,28 @@ public class EnemyManager : MonoBehaviour
     /// <returns>Coroutine</returns>
     IEnumerator TriggerWave(EnemyWave wave)
     {
+        if (currentAugment!= null)
+        {
+            switch (currentAugment.augmentationEffect)
+            {
+                case EnemyAugmentation.AugmentationEffects.MovementSpeed:
+                    augmentEnemy = AugmentMovementSpeed;
+                    break;
+                case EnemyAugmentation.AugmentationEffects.Health:
+                    augmentEnemy = AugmentHealth;
+                    break;
+
+                case EnemyAugmentation.AugmentationEffects.AttackDamage:
+                    augmentEnemy = AugmentAttackDamage;
+                    break;
+                //case EnemyAugmentation.AugmentationEffects.AttackSpeed:
+                //    augmentEnemy = AugmentAttackSpeed;
+                //    break;
+                default:
+                    augmentEnemy = NoAugment;
+                    break;
+            }
+        }
         //Wait for this wave's delay
         yield return new WaitForSeconds(wave.waveDelay);
 
@@ -208,6 +235,10 @@ public class EnemyManager : MonoBehaviour
                 Vector2 spawnPosition2D = UnityEngine.Random.insideUnitCircle * wave.spawnRadius;
                 Vector3 spawnPosition = new Vector3(wave.spawnPosition.position.x + spawnPosition2D.x, wave.spawnPosition.position.y, wave.spawnPosition.position.z + spawnPosition2D.y);
                 GameObject enemyGO = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
+                if (!augmentEnemy(enemyGO))
+                {
+                    Debug.LogError("Unable to augment enemy: " + enemyGO.name);
+                }
                 enemyGO.GetComponent<BaseEnemyBehavior>().activated = true; //Activate the enemy
                 yield return new WaitForSeconds(enemySpawnDelay);
 
@@ -234,6 +265,52 @@ public class EnemyManager : MonoBehaviour
     public void SetCurrentAugment(EnemyAugmentation augment)
     {
         currentAugment = augment;
+    }
+
+    public bool AugmentHealth(GameObject enemyGO)
+    {
+        if (enemyGO.TryGetComponent(out BaseEnemyHealth enemyHealth))
+        {
+            enemyHealth.HP *= currentAugment.GetHealthIncrease();
+            return true;
+        }
+        return false;
+    }
+
+    //public bool AugmentAttackSpeed(GameObject enemyGO)
+    //{
+    //    if (enemyGO.TryGetComponent(out BaseEnemyBehavior enemyBehavior))
+    //    {
+    //        enemyBehavior.att *= currentAugment.GetHealthIncrease();
+    //        return true;
+    //    }
+    //    return false;
+    //}
+
+    public bool AugmentAttackDamage(GameObject enemyGO)
+    {
+        if (enemyGO.TryGetComponent(out BaseEnemyBehavior enemyBehavior))
+        {
+            enemyBehavior.attackDamage *= currentAugment.GetAttackDamageIncrease();
+            return true;
+        }
+        return false;
+    }
+
+    public bool AugmentMovementSpeed(GameObject enemyGO)
+    {
+        if (enemyGO.TryGetComponent(out BaseEnemyBehavior enemyBehavior))
+        {
+            enemyBehavior.navMeshAgent.speed *= currentAugment.GetMovementSpeedIncrease() / 100;
+            return true;
+        }
+        return false;
+    }
+
+    public bool NoAugment(GameObject enemyGO)
+    {
+        Debug.Log("No augment assigned to " + enemyGO.name);
+        return false;
     }
     #endregion
 }

@@ -28,7 +28,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     [Header("Attack Variables")]
     [Tooltip("Value representing the attack damage of this enemy")]
     [SerializeField]
-    protected float attackDamage = 5f;
+    public float attackDamage = 5f;
 
     [Header("Distancing variables")]
     [Tooltip("Maximum distance this enemy will be from the player before it shoots")]
@@ -48,7 +48,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
 
     [Header("Navigation/Movement Variables")]
     [Tooltip("NavMeshAgent that is enemy behavior uses for its general navigation")]
-    protected NavMeshAgent navMeshAgent;
+    public NavMeshAgent navMeshAgent;
 
     [Tooltip("Rigidbody of this enemy")]
     protected Rigidbody rb;
@@ -62,13 +62,17 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     #endregion
 
     #region Unity Methods
+
+    private void Awake()
+    {
+        navMeshAgent = GetComponent<NavMeshAgent>();
+    }
     /// <summary>
     /// Function that plays on scene start
     /// </summary>
     protected virtual void Start()
     {
         health = GetComponent<BaseEnemyHealth>();
-        navMeshAgent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         aiDebug = GetComponent<AIDebug>();
         EnemyManager.EnemiesActivated += Activate;

@@ -14,7 +14,7 @@ public class EnemyAugmentation : ScriptableObject
     public enum AugmentationEffects
     {
         MovementSpeed,
-        AttackSpeed,
+        //AttackSpeed,
         AttackDamage,
         Health,
         //FireDamage,
@@ -33,13 +33,20 @@ public class EnemyAugmentation : ScriptableObject
 
     float attackDamageIncrease;
 
+    public float GetHealthIncrease() { return healthIncrease; }
+
+    public float GetAttackDamageIncrease() { return attackDamageIncrease; }
+
+    public float GetAttackSpeedIncrease() { return attackSpeedIncrease; }
+
+    public float GetMovementSpeedIncrease() { return movementSpeedIncrease; }
+
     [CustomEditor(typeof(EnemyAugmentation))]
     public class AugmentationEffectsEditor : Editor
     {
         public override void OnInspectorGUI()
         {
             base.OnInspectorGUI();
-
             EnemyAugmentation enemyAugmentation = (EnemyAugmentation)target;
 
             DrawDetails(enemyAugmentation);
@@ -56,9 +63,9 @@ public class EnemyAugmentation : ScriptableObject
                 case AugmentationEffects.MovementSpeed:
                     DrawMovementSpeedDetails(enemyAugmentation);
                     break;
-                case AugmentationEffects.AttackSpeed:
-                    DrawAttackSpeedDetails(enemyAugmentation);
-                    break;
+                //case AugmentationEffects.AttackSpeed:
+                //    DrawAttackSpeedDetails(enemyAugmentation);
+                //    break;
                 case AugmentationEffects.Health:
                     DrawHealthDetails(enemyAugmentation);
                     break;
@@ -75,36 +82,36 @@ public class EnemyAugmentation : ScriptableObject
         private void DrawMovementSpeedDetails(EnemyAugmentation enemyAugmentation)
         {
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Movement Speed Increase");
+            EditorGUILayout.LabelField("Movement Speed Increase", GUILayout.MaxWidth(150));
             enemyAugmentation.movementSpeedIncrease = EditorGUILayout.FloatField(enemyAugmentation.movementSpeedIncrease,
-                GUILayout.MaxWidth(30));
+                GUILayout.MaxWidth(40));
             EditorGUILayout.EndHorizontal();
         }
 
         private void DrawAttackSpeedDetails(EnemyAugmentation enemyAugmentation)
         {
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Attack Speed Increase");
+            EditorGUILayout.LabelField("Attack Speed Increase", GUILayout.MaxWidth(150));
             enemyAugmentation.attackSpeedIncrease = EditorGUILayout.FloatField(enemyAugmentation.attackSpeedIncrease,
-                GUILayout.MaxWidth(30));
+                GUILayout.MaxWidth(40));
             EditorGUILayout.EndHorizontal();
         }
 
         private void DrawHealthDetails(EnemyAugmentation enemyAugmentation)
         {
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Heatlh Increase");
+            EditorGUILayout.LabelField("Health Increase", GUILayout.MaxWidth(150));
             enemyAugmentation.healthIncrease = EditorGUILayout.FloatField(enemyAugmentation.healthIncrease,
-                GUILayout.MaxWidth(30));
+                GUILayout.MaxWidth(40));
             EditorGUILayout.EndHorizontal();
         }
 
         private void DrawAttackDamageDetails(EnemyAugmentation enemyAugmentation)
         {
             EditorGUILayout.BeginHorizontal();
-            EditorGUILayout.LabelField("Attack Damage Increase");
+            EditorGUILayout.LabelField("Attack Damage Increase", GUILayout.MaxWidth(150));
             enemyAugmentation.attackDamageIncrease = EditorGUILayout.FloatField(enemyAugmentation.attackDamageIncrease,
-                GUILayout.MaxWidth(30));
+                GUILayout.MaxWidth(40));
             EditorGUILayout.EndHorizontal();
         }
     }
