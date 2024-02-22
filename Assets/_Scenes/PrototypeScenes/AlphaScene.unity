@@ -11335,6 +11335,18 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
+          - m_Target: {fileID: 1306333073}
+            m_TargetAssemblyTypeName: EnemyManager, Assembly-CSharp
+            m_MethodName: SetCurrentAugment
+            m_Mode: 2
+            m_Arguments:
+              m_ObjectArgument: {fileID: 11400000, guid: 2ead7028a11a85a4fb71c3feecf8341d, type: 2}
+              m_ObjectArgumentAssemblyTypeName: EnemyAugmentation, Assembly-CSharp
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
   pauseOnTrigger: 1
   playOnStart: 0
 --- !u!4 &711062443
@@ -18665,6 +18677,7 @@ MonoBehaviour:
       amount: 3
   spotlightPrefab: {fileID: 7697368496910734989, guid: 090855f5d93cc6b4285c4bc8e68ccc76, type: 3}
   enemyToggle: {fileID: 1852366511}
+  currentAugment: {fileID: 0}
 --- !u!4 &1306333074
 Transform:
   m_ObjectHideFlags: 0
@@ -29621,6 +29634,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 937923528513720809, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1979217756860975084, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_Name
       value: Player

@@ -81,6 +81,11 @@ public class EnemyManager : MonoBehaviour
     [Tooltip("Toggle used to toggle enemy behavior")]
     [SerializeField]
     private Toggle enemyToggle;
+
+
+
+
+    public EnemyAugmentation currentAugment;
     #endregion
 
     #region Unity Methods
@@ -222,6 +227,13 @@ public class EnemyManager : MonoBehaviour
             if (nextWave.waveTrigger == EnemyWave.WaveTrigger.PreviousWaveDoneSpawning)
                 StartCoroutine(TriggerWave(nextWave));
         }
+    }
+
+
+
+    public void SetCurrentAugment(EnemyAugmentation augment)
+    {
+        currentAugment = augment;
     }
     #endregion
 }
