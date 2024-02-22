@@ -1,8 +1,5 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.AI;
-using UnityEngine.Serialization;
 
 /// <summary>
 /// Base class that handles all enemy health, status effects, and death

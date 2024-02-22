@@ -5,8 +5,6 @@ using UnityEngine.InputSystem;
 
 /// <summary>
 /// Class that is responsible for controlling the player health and managing its abilities
-/// 
-/// Author: Zane O'Dell
 /// </summary>
 public class PlayerController : MonoBehaviour
 {
@@ -75,12 +73,23 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float dashCooldownThreshold = 2f;
 
+    [Tooltip("Number in seconds of the cooldown in between dashes")]
+    [SerializeField]
+    private float allowedDashDistance = 10f;
+
+    [Tooltip("LayerMask of the ground layer, used for dashing logic")]
+    [SerializeField]
+    private LayerMask groundLayerMask;
+
     [Tooltip("Model of the player displayed purely for dashing")]
     [SerializeField]
     private GameObject dashModel;
 
     [Tooltip("Timer that tracks how long it has been since last dash")]
     private float dashCooldownTimer;
+
+    [Tooltip("Direction to apply the force of dashing when moving")]
+    private Vector3 dashDirection = Vector3.zero;
 
     [Header("Camera")]
     [Tooltip("Reference to the camera focusing on the player")]
@@ -166,7 +175,8 @@ public class PlayerController : MonoBehaviour
     private Vector3 attackDirection;
 
     [Tooltip("Returns true if the player is able to dash")]
-    private bool CanDash => abilityManager.currentAbilityValue >= 10 && dashCooldownTimer >= dashCooldownThreshold;
+    private bool CanDash => abilityManager.currentAbilityValue >= 10 && 
+        dashCooldownTimer >= dashCooldownThreshold && IsValidDash();
 
     [Tooltip("Returns true if the player is currently moving")]
     private bool IsMoving => moveAction.ReadValue<Vector2>().sqrMagnitude > 0.1f;
@@ -180,6 +190,11 @@ public class PlayerController : MonoBehaviour
                 Screen.width < Input.mousePosition.x || Screen.height < Input.mousePosition.y);
         }
     }
+
+
+
+    [Header("Test Variables")]
+    public GameObject testLight;
     #endregion
 
     #region Unity Methods
@@ -248,6 +263,7 @@ public class PlayerController : MonoBehaviour
 
             //Adds the force and then we assume that the player is not inputting a direction
             rigidBody.AddForce(forceDirection, ForceMode.Impulse);
+            dashDirection = forceDirection;
             forceDirection = Vector3.zero;
 
             Vector3 horizontalVelocity = rigidBody.velocity;
@@ -402,6 +418,22 @@ public class PlayerController : MonoBehaviour
         }
         mixtapeResetRoutine = ResetMixtapeAttack(mixtapeResetTimer);
         StartCoroutine(mixtapeResetRoutine);
+    }
+
+    private bool IsValidDash()
+    {
+        //Puts a point out in front of the player, checks to see if it is above ground
+        Vector3 dashCheck = transform.position + dashDirection.normalized * allowedDashDistance + new Vector3(0, 1, 0);
+        testLight.transform.position = dashCheck;
+        Ray dashCheckRay = new (dashCheck, Vector3.down);
+        if (Physics.Raycast(dashCheckRay, float.MaxValue, groundLayerMask))
+        {
+            Debug.Log("Hit ground");
+            return true;
+        }
+        //If we do not hit any ground
+        Debug.Log("No ground");
+        return false;
     }
 
     /// <summary>
