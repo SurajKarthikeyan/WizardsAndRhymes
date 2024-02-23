@@ -5805,7 +5805,7 @@ Transform:
   m_GameObject: {fileID: 310214212}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.61, y: 2.01, z: 14.77}
+  m_LocalPosition: {x: -1.8, y: 2.38, z: 12.47}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13711,6 +13711,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 873075747}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &874206783
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 874206784}
+  m_Layer: 0
+  m_Name: SpawnPosition (3)
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &874206784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 874206783}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 34.12, y: 2.01, z: -22.32}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1306333074}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &878304491
 GameObject:
   m_ObjectHideFlags: 0
@@ -17383,7 +17414,7 @@ Transform:
   m_GameObject: {fileID: 1218850802}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.07, y: 2.01, z: 12.28}
+  m_LocalPosition: {x: 4.59, y: 2.01, z: -15.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18646,16 +18677,16 @@ MonoBehaviour:
   - waveTrigger: 1
     enemiesRemaining: 0
     waveDelay: 0
-    waveDuration: 3
+    waveDuration: 2
     spawnPosition: {fileID: 310214213}
     spawnRadius: 7
     showSpawnSphere: 1
     enemies:
     - type: {fileID: 2048348783821418587, guid: 9b5276f4867a9fb4888caaec058bfe94, type: 3}
-      amount: 3
-    - type: {fileID: 5365247503409236134, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       amount: 2
-  - waveTrigger: 0
+    - type: {fileID: 5365247503409236134, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
+      amount: 1
+  - waveTrigger: 1
     enemiesRemaining: 2
     waveDelay: 0
     waveDuration: 0
@@ -18664,17 +18695,35 @@ MonoBehaviour:
     showSpawnSphere: 1
     enemies:
     - type: {fileID: 5365247503409236134, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
-      amount: 7
-  - waveTrigger: 1
-    enemiesRemaining: 2
-    waveDelay: 1
-    waveDuration: 5
+      amount: 1
+    - type: {fileID: 5365247503409236134, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
+      amount: 1
+  - waveTrigger: 2
+    enemiesRemaining: 3
+    waveDelay: 7
+    waveDuration: 2
     spawnPosition: {fileID: 1218850803}
     spawnRadius: 7
     showSpawnSphere: 1
     enemies:
+    - type: {fileID: 5365247503409236134, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
+      amount: 2
+    - type: {fileID: 3774833056916435751, guid: 28f44a33c4abb994c9ef8d557a5eb8c8, type: 3}
+      amount: 1
+  - waveTrigger: 0
+    enemiesRemaining: 2
+    waveDelay: 3
+    waveDuration: 3
+    spawnPosition: {fileID: 874206784}
+    spawnRadius: 7
+    showSpawnSphere: 1
+    enemies:
     - type: {fileID: 2048348783821418587, guid: 9b5276f4867a9fb4888caaec058bfe94, type: 3}
-      amount: 3
+      amount: 2
+    - type: {fileID: 3774833056916435751, guid: 28f44a33c4abb994c9ef8d557a5eb8c8, type: 3}
+      amount: 2
+    - type: {fileID: 5365247503409236134, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
+      amount: 1
   spotlightPrefab: {fileID: 7697368496910734989, guid: 090855f5d93cc6b4285c4bc8e68ccc76, type: 3}
   enemyToggle: {fileID: 1852366511}
   currentAugment: {fileID: 0}
@@ -18694,6 +18743,7 @@ Transform:
   - {fileID: 310214213}
   - {fileID: 1643596738}
   - {fileID: 1218850803}
+  - {fileID: 874206784}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1308426822 stripped
@@ -23584,7 +23634,7 @@ Transform:
   m_GameObject: {fileID: 1643596737}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.39, y: 2.01, z: -12.08}
+  m_LocalPosition: {x: 24.3, y: 2.01, z: 7.4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -29663,6 +29713,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1181510895252845157}
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: dashForce
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1281047001}
@@ -29679,9 +29733,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 849302178}
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: movementForce
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: attackDelayTimer
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: mixtapeInventory
       value: 
       objectReference: {fileID: 1181510895252845154}
+    - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: mixtapeResetTimer
+      value: 0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: meleeAttackDuration
+      value: 0.2
+      objectReference: {fileID: 0}
     - target: {fileID: 4681948003197784821, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: sliderFillArea
       value: 
@@ -29824,11 +29894,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3575433202476467507, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.067111574
+      value: 0.06711161
       objectReference: {fileID: 0}
     - target: {fileID: 3575433202476467507, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.02778784
+      value: -0.027787859
       objectReference: {fileID: 0}
     - target: {fileID: 5108746697505530432, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag

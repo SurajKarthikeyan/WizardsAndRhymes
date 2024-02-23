@@ -34,8 +34,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 4.699999, y: 0, z: -18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7068340199695456515}
   - {fileID: 6834089253984878700}
@@ -192,6 +192,7 @@ MonoBehaviour:
   minDistance: 1
   activated: 0
   activatedMaterial: {fileID: 2100000, guid: 4bb041fafbc61b44899bc1dce5cc5c6f, type: 2}
+  navMeshAgent: {fileID: 0}
   retreatDistance: 20
   retreatSpeed: 5
   meleeLungeDistance: 5
@@ -218,7 +219,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 7
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120

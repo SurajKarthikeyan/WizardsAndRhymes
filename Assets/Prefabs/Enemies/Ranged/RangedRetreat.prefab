@@ -66,7 +66,7 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -7.79, y: 0, z: -4.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1420807692104885658}
   - {fileID: 328519280771591202}
@@ -224,6 +224,7 @@ MonoBehaviour:
   minDistance: 1
   activated: 0
   activatedMaterial: {fileID: -1048756183676823253, guid: 98ad67e4ae4dbb54eb05b761fb2a2c02, type: 3}
+  navMeshAgent: {fileID: 0}
   retreatDistance: 5
   retreatSpeed: 5
   enemyProjectile: {fileID: 4155231900741922661, guid: 2aeae3acb6641b647a8581427672364d, type: 3}
