@@ -235,7 +235,7 @@ public class EnemyManager : MonoBehaviour
                 Vector2 spawnPosition2D = UnityEngine.Random.insideUnitCircle * wave.spawnRadius;
                 Vector3 spawnPosition = new Vector3(wave.spawnPosition.position.x + spawnPosition2D.x, wave.spawnPosition.position.y, wave.spawnPosition.position.z + spawnPosition2D.y);
                 GameObject enemyGO = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-                if (!augmentEnemy(enemyGO))
+                if (!augmentEnemy(enemyGO) || augmentEnemy == null)
                 {
                     Debug.LogError("Unable to augment enemy: " + enemyGO.name);
                 }
@@ -301,7 +301,8 @@ public class EnemyManager : MonoBehaviour
     {
         if (enemyGO.TryGetComponent(out BaseEnemyBehavior enemyBehavior))
         {
-            enemyBehavior.navMeshAgent.speed *= currentAugment.GetMovementSpeedIncrease() / 100;
+            float navMeshSpeed = enemyBehavior.navMeshAgent.speed;
+            enemyBehavior.navMeshAgent.speed *= (currentAugment.GetMovementSpeedIncrease() / 100) + navMeshSpeed;
             return true;
         }
         return false;
