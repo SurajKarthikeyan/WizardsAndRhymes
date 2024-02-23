@@ -179,25 +179,16 @@ public class EnemyManager : MonoBehaviour
     {
         if (currentAugment!= null)
         {
-            switch (currentAugment.augmentationEffect)
+            augmentEnemy = currentAugment.augmentationEffect switch
             {
-                case EnemyAugmentation.AugmentationEffects.MovementSpeed:
-                    augmentEnemy = AugmentMovementSpeed;
-                    break;
-                case EnemyAugmentation.AugmentationEffects.Health:
-                    augmentEnemy = AugmentHealth;
-                    break;
-
-                case EnemyAugmentation.AugmentationEffects.AttackDamage:
-                    augmentEnemy = AugmentAttackDamage;
-                    break;
+                EnemyAugmentation.AugmentationEffects.MovementSpeed => AugmentMovementSpeed,
+                EnemyAugmentation.AugmentationEffects.Health => AugmentHealth,
+                EnemyAugmentation.AugmentationEffects.AttackDamage => AugmentAttackDamage,
                 //case EnemyAugmentation.AugmentationEffects.AttackSpeed:
                 //    augmentEnemy = AugmentAttackSpeed;
                 //    break;
-                default:
-                    augmentEnemy = NoAugment;
-                    break;
-            }
+                _ => NoAugment,
+            };
         }
         //Wait for this wave's delay
         yield return new WaitForSeconds(wave.waveDelay);

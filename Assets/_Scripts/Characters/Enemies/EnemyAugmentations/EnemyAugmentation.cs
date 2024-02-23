@@ -21,17 +21,8 @@ public class EnemyAugmentation : ScriptableObject
         //LightningDamage,
         //IceDamage
     }
-    #region Editor
-#if UNITY_EDITOR
+
     public AugmentationEffects augmentationEffect;
-
-    float movementSpeedIncrease;
-
-    float attackSpeedIncrease;
-
-    float healthIncrease;
-
-    float attackDamageIncrease;
 
     public float GetHealthIncrease() { return healthIncrease; }
 
@@ -40,6 +31,16 @@ public class EnemyAugmentation : ScriptableObject
     public float GetAttackSpeedIncrease() { return attackSpeedIncrease; }
 
     public float GetMovementSpeedIncrease() { return movementSpeedIncrease; }
+
+    float movementSpeedIncrease;
+
+    float attackSpeedIncrease;
+
+    float healthIncrease;
+
+    float attackDamageIncrease;
+    #region Editor
+#if UNITY_EDITOR
 
     [CustomEditor(typeof(EnemyAugmentation))]
     public class AugmentationEffectsEditor : Editor
