@@ -40,7 +40,7 @@ public abstract class BaseStrafeEnemy : BaseEnemyBehavior
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        if (activated)
+        if (activated && hasBeenSeen)
         {
             EvaluateBehavior();
             LookAtPlayer();

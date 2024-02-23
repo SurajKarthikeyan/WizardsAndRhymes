@@ -23,7 +23,7 @@ public class MeleeRetreatEnemy : BaseRetreatEnemy
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        if (activated)
+        if (activated && hasBeenSeen)
         {
             //Code handles looking at the player when not lunging at the player
             if (behaviorState != EnemyBehaviorState.MeleeAttacking)

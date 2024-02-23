@@ -38,7 +38,7 @@ public class BaseRetreatEnemy : BaseEnemyBehavior
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        if (activated)
+        if (activated && hasBeenSeen)
         {
             EvaluateBehavior();
             LookAtPlayer();

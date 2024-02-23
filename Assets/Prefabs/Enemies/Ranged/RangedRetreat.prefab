@@ -226,6 +226,8 @@ MonoBehaviour:
   activated: 0
   activatedMaterial: {fileID: -1048756183676823253, guid: 98ad67e4ae4dbb54eb05b761fb2a2c02, type: 3}
   navMeshAgent: {fileID: 0}
+  hasBeenSeen: 0
+  modelRenderer: {fileID: 942491885384456824}
   retreatDistance: 5
   retreatSpeed: 5
   enemyProjectile: {fileID: 4155231900741922661, guid: 2aeae3acb6641b647a8581427672364d, type: 3}
@@ -683,6 +685,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aae60aaf55662ae49a8137d914169d79, type: 3}
+--- !u!23 &942491885384456824 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: aae60aaf55662ae49a8137d914169d79, type: 3}
+  m_PrefabInstance: {fileID: 1933718527960008444}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2116493624942829847 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aae60aaf55662ae49a8137d914169d79, type: 3}

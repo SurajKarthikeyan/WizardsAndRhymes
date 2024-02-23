@@ -48,6 +48,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
 
     [Header("Navigation/Movement Variables")]
     [Tooltip("NavMeshAgent that is enemy behavior uses for its general navigation")]
+    [HideInInspector]
     public NavMeshAgent navMeshAgent;
 
     [Tooltip("Rigidbody of this enemy")]
@@ -59,6 +60,9 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
 
     [Tooltip("Health Script Reference for this behavior")]
     private AIDebug aiDebug;
+
+    public bool hasBeenSeen;
+
     #endregion
 
     #region Unity Methods
@@ -78,11 +82,20 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         EnemyManager.EnemiesActivated += Activate;
     }
 
+
     /// <summary>
     /// Unity method called every frame interval
     /// </summary>
     protected virtual void FixedUpdate()
     {
+        if (!hasBeenSeen)
+        {
+            if (IsVisibleToCamera(transform))
+            {
+                hasBeenSeen = true;
+            }
+        }
+
         if (health.HP <= 0)
         {
             activated = false;
@@ -111,7 +124,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     /// <param name="collision">Collision object that this enemy collides with</param>
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        if (activated)
+        if (activated && hasBeenSeen)
         {
             if (collision.gameObject.TryGetComponent(out PlayerHealth playerHealth))
             {
@@ -155,6 +168,12 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         lookPos.y = 0;
         Quaternion rotation = Quaternion.LookRotation(lookPos, Vector3.up);
         transform.rotation = rotation;
+    }
+
+    public static bool IsVisibleToCamera(Transform transform)
+    {
+        Vector3 visTest = Camera.main.WorldToViewportPoint(transform.position);
+        return (visTest.x >= 0 && visTest.y >= 0) && (visTest.x <= 1 && visTest.y <= 1) && visTest.z >= 0;
     }
 
     /// <summary>

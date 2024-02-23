@@ -36,7 +36,7 @@ public class RangedRetreatEnemy : BaseRetreatEnemy
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        if (activated)
+        if (activated && hasBeenSeen)
         {
             LookAtPlayer();
         }
