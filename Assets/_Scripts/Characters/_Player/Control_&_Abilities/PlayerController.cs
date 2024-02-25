@@ -168,7 +168,10 @@ public class PlayerController : MonoBehaviour
     private InputAction moveAction;
 
     [Tooltip("Input action used specifically for controllers to look around the player")]
-    private InputAction lookAction;
+    private InputAction gamepadLookAction;
+
+    [Tooltip("Input action used specifically for controllers to look around the player")]
+    private InputAction mouseLookAction;
 
     [Tooltip("Rigidbody of the player")]
     private Rigidbody rigidBody;
@@ -189,6 +192,10 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
+    public Gamepad gamepad;
+
+    public Pointer pointer;
 
     //[Header("Test Variables")]
     //public GameObject testLight;
@@ -231,6 +238,11 @@ public class PlayerController : MonoBehaviour
     {
         DisableUIControls();
         DisablePlayerControls();
+    }
+
+    private void Update()
+    {
+        gamepad ??= Gamepad.current;
     }
 
     /// <summary>
@@ -296,13 +308,14 @@ public class PlayerController : MonoBehaviour
     private void Look()
     {
         //Gets the position of the player's look input
-        Vector2 aim = lookAction.ReadValue<Vector2>();
+        Vector2 aim = gamepadLookAction.ReadValue<Vector2>();
         Vector3 direction = new(aim.x, 0, aim.y);
+
         /**
          * First check is to see if the player is using a controller.
          * If the player is using a mouse, we have to calculate the look direction differently
          */
-        if (aim.magnitude > 0.2f)
+        if (aim.magnitude > 0.2f && gamepad.IsActuated())
         {
             Cursor.visible = false;
             Vector3 rotation = Vector3.Slerp(rigidBody.rotation.eulerAngles, direction, 0.5f);
@@ -311,7 +324,7 @@ public class PlayerController : MonoBehaviour
             rigidBody.rotation = Quaternion.LookRotation(rotation, Vector3.up);
         }
         //This is if the player is using the mouse to look around
-        else if (MouseOverGameWindow)
+        else if (MouseOverGameWindow && mouseLookAction.ReadValue<Vector2>().magnitude > 0.1f)
         {
             Cursor.visible = true;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -496,7 +509,8 @@ public class PlayerController : MonoBehaviour
         playerInput.Player.RangedAttack.started += DoRanged;
         playerInput.Player.MeleeAttack.started += DoMelee;
         moveAction = playerInput.Player.Movement;
-        lookAction = playerInput.Player.Look;
+        gamepadLookAction = playerInput.Player.GamepadLook;
+        mouseLookAction = playerInput.Player.MouseLook;
         playerInput.Player.Enable();
     }
 
