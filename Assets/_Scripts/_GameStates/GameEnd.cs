@@ -31,7 +31,7 @@ public class GameEnd : MonoBehaviour
     [SerializeField] private AK.Wwise.Event doorOpenEvent;
     [Tooltip("This is here to ensure that once the room has been cleared it doesn't clear again")]
     [HideInInspector] private bool hasPassed;
-    
+
 
     [Header("UI Elements")]
     [Tooltip("Restart button")] 
@@ -40,6 +40,10 @@ public class GameEnd : MonoBehaviour
     [SerializeField] private TextMeshProUGUI doorText;
     [Tooltip("TMP Pro text for dying")]
     [SerializeField] private TextMeshProUGUI deathText;
+    [Tooltip("Toggle showing the room is cleared - interactable set to false")]
+    [SerializeField] private Toggle roomClearedCheckbox;
+    [SerializeField] private Color toggleOnColor;
+    [SerializeField] private Color toggleOffColor;
 
     [Header("Etc.")]
     [Tooltip("Reference to scene fadeToBlack")]
@@ -71,6 +75,13 @@ public class GameEnd : MonoBehaviour
         {
             Debug.LogError("Two GameEnd scripts in scene");
         }
+
+        roomClearedCheckbox.interactable = false;
+        roomClearedCheckbox.isOn = false;
+        
+        var tempColorBlock = roomClearedCheckbox.colors;
+        tempColorBlock.disabledColor = toggleOffColor;
+        roomClearedCheckbox.colors = tempColorBlock;
         
         hasPassed = true;
         hasDied = false;
@@ -102,9 +113,14 @@ public class GameEnd : MonoBehaviour
     {
         if (hasPassed)
         {
+            var tempColorBlock = roomClearedCheckbox.colors;
+            tempColorBlock.disabledColor = toggleOnColor;
+            roomClearedCheckbox.colors = tempColorBlock;
+            
             doorRef.SetActive(true);
             doorOpenEvent.Post(this.gameObject);
             hasPassed = false;
+            roomClearedCheckbox.isOn = true;
         }
     }
 
