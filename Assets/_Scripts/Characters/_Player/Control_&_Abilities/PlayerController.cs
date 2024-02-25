@@ -635,11 +635,13 @@ public class PlayerController : MonoBehaviour
         meleeBox.GetComponent<MeleeCollider>().damageType = mixtapeInventory.damageType;
         abilityManager.ReduceAbilityGuage(abilityManager.meleeAbilityCost);
         rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
+        DisablePlayerControls();
         abilityManager.ResetAbilityRecharge();
         mixtapeInventory.OnTapeChange(false);    // this here might be problematic but not too sure
         yield return new WaitForSeconds(meleeAttackDuration);
         meleeBox.SetActive(false);
         attackStatus = AttackStatus.None;
+        EnablePlayerControls();
     }
 
     #endregion
