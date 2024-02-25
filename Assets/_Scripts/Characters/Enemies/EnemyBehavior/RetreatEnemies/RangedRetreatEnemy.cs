@@ -59,7 +59,7 @@ public class RangedRetreatEnemy : BaseRetreatEnemy
     IEnumerator Projectile()
     {
         GameObject projectile = Instantiate(enemyProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
-        projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * 5;
+        projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * 10;
         yield return new WaitForSeconds(shootCooldown);
     }
 

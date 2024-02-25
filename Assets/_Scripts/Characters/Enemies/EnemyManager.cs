@@ -226,7 +226,7 @@ public class EnemyManager : MonoBehaviour
                 Vector2 spawnPosition2D = UnityEngine.Random.insideUnitCircle * wave.spawnRadius;
                 Vector3 spawnPosition = new Vector3(wave.spawnPosition.position.x + spawnPosition2D.x, wave.spawnPosition.position.y, wave.spawnPosition.position.z + spawnPosition2D.y);
                 GameObject enemyGO = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-                if (!augmentEnemy(enemyGO) || augmentEnemy == null)
+                if (augmentEnemy == null || !augmentEnemy(enemyGO))
                 {
                     Debug.LogError("Unable to augment enemy: " + enemyGO.name);
                 }

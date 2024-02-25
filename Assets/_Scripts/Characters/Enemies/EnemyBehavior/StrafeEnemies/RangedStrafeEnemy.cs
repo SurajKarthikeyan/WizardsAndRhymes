@@ -38,7 +38,7 @@ public class RangedStrafeEnemy : BaseStrafeEnemy
     {
         //Instantiates and shoots projectile 
         GameObject projectile = Instantiate(enemyProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
-        projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * 5;
+        projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * 10;
         behaviorState = EnemyBehaviorState.TrackingPlayer;
         yield return new WaitForSeconds(shootCooldown);
     }
