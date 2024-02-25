@@ -18,6 +18,7 @@ public class InventoryMenu : MonoBehaviour
     [SerializeField] private Toggle[] elementalToggles;
     [SerializeField] private int toggleCount;
     [SerializeField] private Button swapButton;
+    [SerializeField] private MixtapeInventory mixtapeInventory;
     #endregion
 
 
@@ -29,7 +30,7 @@ public class InventoryMenu : MonoBehaviour
     {
         Time.timeScale = 0f;
         onScreenMixtapeInventory.SetActive(false);
-        swapButton.interactable = false;
+        DisableAllChecks();
     }
 
     /// <summary>
@@ -39,11 +40,22 @@ public class InventoryMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         onScreenMixtapeInventory.SetActive(true);
+        mixtapeInventory.SetOrder();
 
     }
     #endregion
 
     #region CustomMethods
+
+    public void CreateListOrder()
+    {
+        List<String> sendList = new List<String>();
+        for (int i = 0; i < elementalToggles.Length; i++)
+        {
+            sendList.Add(elementalToggles[i].name);
+        }
+        mixtapeInventory.inventoryOrder = sendList;
+    }
 
     public void OnToggleSelect(Toggle curToggle)
     {
@@ -84,6 +96,15 @@ public class InventoryMenu : MonoBehaviour
         }
     }
 
+    private void DisableAllChecks()
+    {
+        for(int i = 0; i<elementalToggles.Length; i++)
+        {
+            elementalToggles[i].isOn = false;
+        } 
+        swapButton.interactable = false;
+    }
+
     public void Swap()
     {
         // find both selected toggles via index
@@ -96,14 +117,13 @@ public class InventoryMenu : MonoBehaviour
             }
         }
 
+        // UI Location Swapping Shenannigans
         Vector3 tempPos0= elementalToggles[swapToggles[0]].GetComponent<RectTransform>().anchoredPosition;
         Vector3 tempPos1 = elementalToggles[swapToggles[1]].GetComponent<RectTransform>().anchoredPosition;
         
         elementalToggles[swapToggles[0]].gameObject.GetComponent<RectTransform>().anchoredPosition =
             tempPos1;
         
-        
-       
         elementalToggles[swapToggles[1]].gameObject.GetComponent<RectTransform>().anchoredPosition =
             tempPos0;
 
@@ -111,30 +131,13 @@ public class InventoryMenu : MonoBehaviour
         Toggle tempToggle = elementalToggles[swapToggles[0]];
         elementalToggles[swapToggles[0]] = elementalToggles[swapToggles[1]];
         elementalToggles[swapToggles[1]] = tempToggle;
+        
+        //Disable all checkmarks and swap button
 
-
-        // Extract both toggles and transforms for ease of use
-        /*Toggle leftToggle = swapToggles[0];
-        Toggle rightToggle = swapToggles[1];
+        CreateListOrder();
+        DisableAllChecks();
         
         
-        
-        //Swap order in list
-        for (int i = 0; i < elementalToggles.Length; i++)
-        {
-            if (elementalToggles[i] == leftToggle)
-            {
-                elementalToggles[i] = rightToggle;
-                elementalToggles[i].gameObject.GetComponent<RectTransform>().anchoredPosition =
-                    leftToggle.gameObject.GetComponent<RectTransform>().anchoredPosition;
-            }
-            if (elementalToggles[i] == rightToggle)
-            {
-                elementalToggles[i] = leftToggle;
-                elementalToggles[i].gameObject.GetComponent<RectTransform>().anchoredPosition =
-                    rightToggle.gameObject.GetComponent<RectTransform>().anchoredPosition;
-            }
-        }*/
     }
 
     #endregion

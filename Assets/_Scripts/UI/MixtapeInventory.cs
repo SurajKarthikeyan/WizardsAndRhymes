@@ -24,11 +24,19 @@ public class MixtapeInventory : MonoBehaviour
     
     [Tooltip("The damage type currently being used by the enemey")]
     [SerializeField] public Health.DamageType damageType;
+
+    [SerializeField] private List<RectTransform> slots;
+    public List<String> inventoryOrder;
+
+    public GameObject fire;
+    public GameObject lightning;
+    public GameObject ice;
+    
     #endregion
 
     #region UnityMethods
     /// <summary>
-    /// Ensures starting parameters are set and the correct starting damage is rightd
+    /// Ensures starting parameters are set and the correct starting damage is right
     /// </summary>
     private void Start()
     {
@@ -37,9 +45,38 @@ public class MixtapeInventory : MonoBehaviour
         damageType = mixtapeInventory[index].GetComponent<Mixtape>().mixtapeDType;  // set without playing sfx
 
     }
+
     #endregion
 
     #region CustomMethods
+
+    /// <summary>
+    /// Set the order of the mixtapes in scene
+    /// </summary>
+    public void SetOrder()
+    {
+        // Set list
+        for (int i = 0; i < inventoryOrder.Count; i++)
+        {
+            String currentOrder = inventoryOrder[i];
+            switch (currentOrder)
+            {
+                case "fire":
+                    mixtapeInventory[i] = fire;
+                    mixtapeInventory[i].GetComponent<RectTransform>().anchoredPosition = slots[i].anchoredPosition;
+                    break;
+                case "lightning":
+                    mixtapeInventory[i] = lightning;
+                    mixtapeInventory[i].GetComponent<RectTransform>().anchoredPosition = slots[i].anchoredPosition;
+                    break;
+                case "ice":
+                    mixtapeInventory[i] = ice;
+                    mixtapeInventory[i].GetComponent<RectTransform>().anchoredPosition = slots[i].anchoredPosition;
+                    break;
+            }
+        }
+    }
+    
     
     /// <summary>
     /// Changes what mixtape is the "main" mixtape
@@ -50,6 +87,7 @@ public class MixtapeInventory : MonoBehaviour
         damageType = mixtapeInventory[index].GetComponent<Mixtape>().GetDamagePlaySound(isRanged); // set WITH playing sfx
         index = (index + 1) % mixtapeInventory.Count;
         currentTape = mixtapeInventory[index];
+        damageType = mixtapeInventory[index].GetComponent<Mixtape>().mixtapeDType;
         ChangeColor(currentTape, highAlpha);
     }
 

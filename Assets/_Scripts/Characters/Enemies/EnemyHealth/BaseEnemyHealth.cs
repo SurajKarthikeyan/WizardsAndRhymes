@@ -129,7 +129,7 @@ public abstract class BaseEnemyHealth : Health
     /// </summary>
     public void LightningDamage()
     {
-        Debug.Log("Lighitnign");
+        Debug.Log("Lightning");
         Collider[] enemyLightiningCollider = Physics.OverlapSphere(this.gameObject.transform.position,
             lightningChainDistance, enemyLayerMask);
         
@@ -158,6 +158,7 @@ public abstract class BaseEnemyHealth : Health
     {
         if (vulnerable)
         {
+            Debug.Log("Ice");
             TakeDamage(iceBaseDamage, DamageType.None);
             onIce = true;
             enemyBehavior.behaviorState = BaseEnemyBehavior.EnemyBehaviorState.Ice;
@@ -184,8 +185,9 @@ public abstract class BaseEnemyHealth : Health
     public void FireDamage(int tickCount)
     {
         
-        if (!onFire)
+        if (!onFire && vulnerable)
         {
+            Debug.Log("Fire");
             onFire = true;
             StartCoroutine(FireDamageCoroutine(tickCount, fireTimeBetweenTicks, fireDamage));
         }
