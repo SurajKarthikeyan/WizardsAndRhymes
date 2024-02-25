@@ -25,12 +25,15 @@ public class MixtapeInventory : MonoBehaviour
     [Tooltip("The damage type currently being used by the enemey")]
     [SerializeField] public Health.DamageType damageType;
 
+    [Tooltip("Rect transforms for the 1st, 2nd and 3rd element slot locations")]
     [SerializeField] private List<RectTransform> slots;
-    public List<String> inventoryOrder;
-
-    public GameObject fire;
-    public GameObject lightning;
-    public GameObject ice;
+    [Tooltip("String element passed here to use for order")]
+    [HideInInspector] public List<String> inventoryOrder;
+    
+    [Header("Mixtape Object references")]
+    [SerializeField] private GameObject fire;
+    [SerializeField] private GameObject lightning;
+    [SerializeField] private GameObject ice;
     
     #endregion
 
@@ -91,6 +94,9 @@ public class MixtapeInventory : MonoBehaviour
         ChangeColor(currentTape, highAlpha);
     }
 
+    /// <summary>
+    /// Resets the combo
+    /// </summary>
     public void ResetCombo()
     {
         ChangeColor(currentTape, lowAlpha);
@@ -100,6 +106,11 @@ public class MixtapeInventory : MonoBehaviour
         ChangeColor(currentTape, highAlpha);
     }
 
+    /// <summary>
+    /// Changes Alpha of specific tape
+    /// </summary>
+    /// <param name="tape"></param>
+    /// <param name="setAlpha"></param>
     public void ChangeColor(GameObject tape, float setAlpha)
     {
         tape.GetComponent<Image>().color = new Color(tape.GetComponent<Image>().color.r,

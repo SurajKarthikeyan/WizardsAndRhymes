@@ -15,9 +15,13 @@ public class InventoryMenu : MonoBehaviour
     #region Variables
     [Tooltip("The mixtape that the player sees when outside of all menus(bottom left)")]
     [SerializeField] private GameObject onScreenMixtapeInventory;
+    [Tooltip("List of toggles representing each element")]
     [SerializeField] private Toggle[] elementalToggles;
+    [Tooltip("Int represeting how many toggles, up to 2, are selected")]
     [SerializeField] private int toggleCount;
+    [Tooltip("Button to swap")]
     [SerializeField] private Button swapButton;
+    [Tooltip("Ref to mixtape inventory")]
     [SerializeField] private MixtapeInventory mixtapeInventory;
     #endregion
 
@@ -47,6 +51,9 @@ public class InventoryMenu : MonoBehaviour
 
     #region CustomMethods
 
+    /// <summary>
+    /// Creates the list order to send to mixtape inventory
+    /// </summary>
     public void CreateListOrder()
     {
         List<String> sendList = new List<String>();
@@ -57,6 +64,12 @@ public class InventoryMenu : MonoBehaviour
         mixtapeInventory.inventoryOrder = sendList;
     }
 
+    /// <summary>
+    /// Called when a toggle is enabled or disabled
+    /// If equal to 2, enable swap button and make 3rd element uninteractable
+    /// Else, disable swap button and make other 2/3 elements clickable
+    /// </summary>
+    /// <param name="curToggle"></param>
     public void OnToggleSelect(Toggle curToggle)
     {
         if (toggleCount < 2 && curToggle.isOn)  // if we have less than 2 selected && it was turned on
@@ -77,6 +90,9 @@ public class InventoryMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Disables the element that isn't toggled
+    /// </summary>
     private void DisableLastElement()
     {
         for(int i = 0; i<elementalToggles.Length; i++)
@@ -88,6 +104,9 @@ public class InventoryMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Enables all the elements
+    /// </summary>
     private void EnableRemainingElements()
     {
         for(int i = 0; i<elementalToggles.Length; i++)
@@ -105,6 +124,10 @@ public class InventoryMenu : MonoBehaviour
         swapButton.interactable = false;
     }
 
+    /// <summary>
+    /// Initiates the swap
+    /// Changes both the rect transform and list location of the element
+    /// </summary>
     public void Swap()
     {
         // find both selected toggles via index
