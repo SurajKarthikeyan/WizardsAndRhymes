@@ -27,6 +27,8 @@ public class GameEnd : MonoBehaviour
     [SerializeField] private GameObject doorRef;
     [Tooltip("This is a debug boolean used to test if the level is the 'final' level in the game(UnusedATM)")]
     [SerializeField] private bool isLastRoom;
+    [Tooltip("Door open SFX")]
+    [SerializeField] private AK.Wwise.Event doorOpenEvent;
     [Tooltip("This is here to ensure that once the room has been cleared it doesn't clear again")]
     [HideInInspector] private bool hasPassed;
     
@@ -101,6 +103,7 @@ public class GameEnd : MonoBehaviour
         if (hasPassed)
         {
             doorRef.SetActive(true);
+            doorOpenEvent.Post(this.gameObject);
             hasPassed = false;
         }
     }

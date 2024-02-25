@@ -17,6 +17,7 @@ namespace AK
         static const AkUniqueID MELEEFIRE = 2248677623U;
         static const AkUniqueID MELEEICE = 1651067412U;
         static const AkUniqueID MELEELIGHTNING = 1583612915U;
+        static const AkUniqueID PLAY_TESTDOOROPEN = 3831721246U;
         static const AkUniqueID PROTOCOMBATLOOP = 3855831843U;
         static const AkUniqueID RANGEDFIRE = 1744863420U;
         static const AkUniqueID RANGEDICE = 2982846157U;

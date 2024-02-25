@@ -6,7 +6,6 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     #region Variables
-
     #endregion
     #region Unity Methods
     /// <summary>

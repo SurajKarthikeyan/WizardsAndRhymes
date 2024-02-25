@@ -94,7 +94,7 @@
 				<GameParameter Id="3550808449" Name="High"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{E9CAA4AF-341C-06F6-0532-17FCF00A5F99}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{14A732C1-71A3-E154-8612-0893EBFAA687}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -174,6 +174,10 @@
 					<ShortName>Ice2.wav</ShortName>
 					<CachePath>SFX/Ice2_818F3B66.wem</CachePath>
 				</File>
+				<File Id="871275059" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>242503__gabrielaraujo__failure-wrong-action.wav</ShortName>
+					<CachePath>SFX/242503__gabrielaraujo__failure-wrong-action_818F3B66.wem</CachePath>
+				</File>
 				<File Id="891382884" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CombatLoopMixed.wav</ShortName>
 					<CachePath>SFX/CombatLoopMixed_FBC78EF0.wem</CachePath>
@@ -233,6 +237,11 @@
 						<MediaRef Id="535223205"/>
 						<MediaRef Id="669664009"/>
 						<MediaRef Id="909458974"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3831721246" Name="Play_testDoorOpen" DurationType="OneShot" DurationMin="0.39736962" DurationMax="0.39736962">
+					<MediaRefs>
+						<MediaRef Id="871275059"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3855831843" Name="ProtoCombatLoop" DurationType="Infinite">
@@ -295,5 +304,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{732AB592-71F5-AA76-4BDE-19D49D1980D3}</FileHash>
+	<FileHash>{CF0AB4A3-BDD5-DB75-AC58-EBF6BFFCF8A3}</FileHash>
 </SoundBanksInfo>
