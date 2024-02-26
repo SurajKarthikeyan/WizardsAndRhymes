@@ -255,7 +255,10 @@ public class EnemyManager : MonoBehaviour
 
     public void SetCurrentAugment(EnemyAugmentation augment)
     {
-        currentAugment = augment;
+        if (augment != null)
+        {
+            currentAugment = augment;
+        }
     }
 
     public bool AugmentHealth(GameObject enemyGO)
@@ -293,7 +296,8 @@ public class EnemyManager : MonoBehaviour
         if (enemyGO.TryGetComponent(out BaseEnemyBehavior enemyBehavior))
         {
             float navMeshSpeed = enemyBehavior.navMeshAgent.speed;
-            enemyBehavior.navMeshAgent.speed *= (currentAugment.GetMovementSpeedIncrease() / 100) + navMeshSpeed;
+            float multiplier = (currentAugment.GetMovementSpeedIncrease() / 100) * navMeshSpeed;
+            enemyBehavior.navMeshAgent.speed = multiplier + navMeshSpeed;
             return true;
         }
         return false;
