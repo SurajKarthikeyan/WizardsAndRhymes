@@ -78,19 +78,21 @@ public class EnemyManager : MonoBehaviour
     [Tooltip("The number of enemies, spawned and yet to be spawned, remaining in the current waves")]
     int enemiesRemaining = 0;
 
+    [Header("Enemy Augmentation Variables")]
+
+    [Tooltip("Current augmentation that will be applied to the enemies")]
+    private EnemyAugmentation currentAugment;
+
+    [Tooltip("Delegate that will be called to augment the enemy")]
+    private delegate bool EnemyAugmentDelegate(GameObject enemyGO);
+
+    [Tooltip("Instance of the augment enemy delegate")]
+    private EnemyAugmentDelegate augmentEnemy;
+
     [Header("Debug tool variables")]
     [Tooltip("Toggle used to toggle enemy behavior")]
     [SerializeField]
     private Toggle enemyToggle;
-
-
-
-
-    public EnemyAugmentation currentAugment;
-
-    public delegate bool EnemyAugmentDelegate(GameObject enemyGO);
-
-    EnemyAugmentDelegate augmentEnemy;
     #endregion
 
     #region Unity Methods
@@ -177,6 +179,7 @@ public class EnemyManager : MonoBehaviour
     /// <returns>Coroutine</returns>
     IEnumerator TriggerWave(EnemyWave wave)
     {
+        //We check to see if we have an augment, and assign our respective augment method
         if (currentAugment!= null)
         {
             augmentEnemy = currentAugment.augmentationEffect switch
@@ -184,9 +187,6 @@ public class EnemyManager : MonoBehaviour
                 EnemyAugmentation.AugmentationEffects.MovementSpeed => AugmentMovementSpeed,
                 EnemyAugmentation.AugmentationEffects.Health => AugmentHealth,
                 EnemyAugmentation.AugmentationEffects.AttackDamage => AugmentAttackDamage,
-                //case EnemyAugmentation.AugmentationEffects.AttackSpeed:
-                //    augmentEnemy = AugmentAttackSpeed;
-                //    break;
                 _ => NoAugment,
             };
         }
@@ -226,10 +226,6 @@ public class EnemyManager : MonoBehaviour
                 Vector2 spawnPosition2D = UnityEngine.Random.insideUnitCircle * wave.spawnRadius;
                 Vector3 spawnPosition = new Vector3(wave.spawnPosition.position.x + spawnPosition2D.x, wave.spawnPosition.position.y, wave.spawnPosition.position.z + spawnPosition2D.y);
                 GameObject enemyGO = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
-                if (augmentEnemy == null || !augmentEnemy(enemyGO))
-                {
-                    Debug.LogError("Unable to augment enemy: " + enemyGO.name);
-                }
                 enemyGO.GetComponent<BaseEnemyBehavior>().activated = true; //Activate the enemy
                 yield return new WaitForSeconds(enemySpawnDelay);
 
@@ -252,7 +248,10 @@ public class EnemyManager : MonoBehaviour
     }
 
 
-
+    /// <summary>
+    /// Function that sets the current augment for the enemies in the room
+    /// </summary>
+    /// <param name="augment"></param>
     public void SetCurrentAugment(EnemyAugmentation augment)
     {
         if (augment != null)
@@ -261,37 +260,46 @@ public class EnemyManager : MonoBehaviour
         }
     }
 
-    public bool AugmentHealth(GameObject enemyGO)
+    /// <summary>
+    /// Function that takes in an enemy GameObject and augments its health
+    /// </summary>
+    /// <param name="enemyGO">GameObject of the enemy we are augmenting</param>
+    /// <returns>Boolean stating whether or not it successfully applied the augment</returns>
+    private bool AugmentHealth(GameObject enemyGO)
     {
         if (enemyGO.TryGetComponent(out BaseEnemyHealth enemyHealth))
         {
-            enemyHealth.HP *= currentAugment.GetHealthIncrease();
+            float hp = enemyHealth.HP;
+            float multiplier = (currentAugment.GetHealthIncrease() / 100) * hp;
+            enemyHealth.HP = multiplier + hp;
             return true;
         }
         return false;
     }
 
-    //public bool AugmentAttackSpeed(GameObject enemyGO)
-    //{
-    //    if (enemyGO.TryGetComponent(out BaseEnemyBehavior enemyBehavior))
-    //    {
-    //        enemyBehavior.att *= currentAugment.GetHealthIncrease();
-    //        return true;
-    //    }
-    //    return false;
-    //}
-
-    public bool AugmentAttackDamage(GameObject enemyGO)
+    /// <summary>
+    /// Function that takes in an enemy GameObject and augments its attack damage
+    /// </summary>
+    /// <param name="enemyGO">GameObject of the enemy we are augmenting</param>
+    /// <returns>Boolean stating whether or not it successfully applied the augment</returns>
+    private bool AugmentAttackDamage(GameObject enemyGO)
     {
         if (enemyGO.TryGetComponent(out BaseEnemyBehavior enemyBehavior))
         {
-            enemyBehavior.attackDamage *= currentAugment.GetAttackDamageIncrease();
+            float attackDamage = enemyBehavior.attackDamage;
+            float multiplier = (currentAugment.GetAttackDamageIncrease() / 100) * attackDamage;
+            enemyBehavior.attackDamage = multiplier + attackDamage;
             return true;
         }
         return false;
     }
 
-    public bool AugmentMovementSpeed(GameObject enemyGO)
+    /// <summary>
+    /// Function that takes in an enemy GameObject and augments its movement speed
+    /// </summary>
+    /// <param name="enemyGO">GameObject of the enemy we are augmenting</param>
+    /// <returns>Boolean stating whether or not it successfully applied the augment</returns>
+    private bool AugmentMovementSpeed(GameObject enemyGO)
     {
         if (enemyGO.TryGetComponent(out BaseEnemyBehavior enemyBehavior))
         {
@@ -303,7 +311,12 @@ public class EnemyManager : MonoBehaviour
         return false;
     }
 
-    public bool NoAugment(GameObject enemyGO)
+    /// <summary>
+    /// Function that takes in an enemy GameObject and augments nothing
+    /// </summary>
+    /// <param name="enemyGO">GameObject of the enemy we are augmenting</param>
+    /// <returns>Boolean stating whether or not it successfully applied the augment</returns>
+    private bool NoAugment(GameObject enemyGO)
     {
         Debug.Log("No augment assigned to " + enemyGO.name);
         return false;
