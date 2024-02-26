@@ -164,6 +164,9 @@ public class PlayerController : MonoBehaviour
     [Tooltip("C# Class generated from the input action map")]
     private PlayerInput playerInput;
 
+    [Tooltip("Gamepad object used to detect controller input")]
+    private Gamepad gamepad;
+
     [Tooltip("Move input action from the PlayerInput action map")]
     private InputAction moveAction;
 
@@ -191,11 +194,6 @@ public class PlayerController : MonoBehaviour
                 Screen.width < Input.mousePosition.x || Screen.height < Input.mousePosition.y);
         }
     }
-
-
-    public Gamepad gamepad;
-
-    public Pointer pointer;
 
     //[Header("Test Variables")]
     //public GameObject testLight;
@@ -240,8 +238,12 @@ public class PlayerController : MonoBehaviour
         DisablePlayerControls();
     }
 
+    /// <summary>
+    /// Unity function that is called as fast as is allowed
+    /// </summary>
     private void Update()
     {
+        //Assigns gamepad if it is null
         gamepad ??= Gamepad.current;
     }
 
