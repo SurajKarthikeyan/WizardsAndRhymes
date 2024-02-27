@@ -121,6 +121,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject meleeBox;
 
+    [Tooltip("Animator for melee")]
+   [SerializeField] private Animator meleeAnimator;
+
     [Header("UI Variables")]
     [Tooltip("Pause menu")]
     [SerializeField] private GameObject pauseMenu;
@@ -633,7 +636,8 @@ public class PlayerController : MonoBehaviour
     IEnumerator Melee()
     {
         //Sets the collider to be active and pushes player forward as if they're lunging
-        meleeBox.SetActive(true);
+        //meleeBox.SetActive(true);
+        meleeAnimator.SetTrigger("testSwingSword");
         meleeBox.GetComponent<MeleeCollider>().damageType = mixtapeInventory.damageType;
         abilityManager.ReduceAbilityGuage(abilityManager.meleeAbilityCost);
         rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
@@ -641,7 +645,7 @@ public class PlayerController : MonoBehaviour
         abilityManager.ResetAbilityRecharge();
         mixtapeInventory.OnTapeChange(false);    // this here might be problematic but not too sure
         yield return new WaitForSeconds(meleeAttackDuration);
-        meleeBox.SetActive(false);
+        //meleeBox.SetActive(false);
         attackStatus = AttackStatus.None;
         EnablePlayerControls();
     }

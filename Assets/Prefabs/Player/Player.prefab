@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &870732162357082628
 Transform:
   m_ObjectHideFlags: 0
@@ -28,12 +28,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 937923528513720809}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.01, y: -0.229, z: 1.03}
-  m_LocalScale: {x: 1, y: 0.8, z: 0.98}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.010000864, y: -0.22900003, z: 1.03}
+  m_LocalScale: {x: 1, y: 0.79999995, z: 0.98}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4711825495692764976}
+  m_Father: {fileID: 7615472884001184487}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7171622296665225275
 MeshFilter:
@@ -163,11 +163,11 @@ Transform:
   - {fileID: 8785482165165407100}
   - {fileID: 1846219819519118252}
   - {fileID: 5028973609557505707}
-  - {fileID: 870732162357082628}
   - {fileID: 8690087314031761253}
   - {fileID: 1115745979518025914}
   - {fileID: 3296920250045471408}
   - {fileID: 3475192689203738935}
+  - {fileID: 7615472884001184487}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 115.776, z: 0}
 --- !u!33 &6158063862811745361
@@ -301,6 +301,7 @@ MonoBehaviour:
   rangedSpawnPoint: {fileID: 5028973609557505707}
   rangedPrefabSpeed: 25
   meleeDamage: 100
+  meleeAttackDuration: 0.5
   meleeBox: {fileID: 937923528513720809}
   pauseMenu: {fileID: 0}
   isPaused: 0
@@ -311,7 +312,6 @@ MonoBehaviour:
   abilityManager: {fileID: 4681948003197784821}
   mixtapeInventory: {fileID: 0}
   playerHealth: {fileID: 1531503870578908028}
-  testLight: {fileID: 0}
 --- !u!114 &1531503870578908028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -541,9 +541,16 @@ MonoBehaviour:
   player: {fileID: 1979217756860975084}
   doorRef: {fileID: 0}
   isLastRoom: 0
+  doorOpenEvent:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   restartButton: {fileID: 0}
   doorText: {fileID: 0}
   deathText: {fileID: 0}
+  roomClearedCheckbox: {fileID: 0}
+  toggleOnColor: {r: 0, g: 0, b: 0, a: 0}
+  toggleOffColor: {r: 0, g: 0, b: 0, a: 0}
   fadeToBlack: {fileID: 0}
 --- !u!1 &2802089234719024440
 GameObject:
@@ -681,6 +688,38 @@ Transform:
   m_Children: []
   m_Father: {fileID: 8690087314031761253}
   m_LocalEulerAnglesHint: {x: -17.101, y: -123.701, z: 94.937}
+--- !u!1 &5544728551740817183
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7615472884001184487}
+  m_Layer: 3
+  m_Name: MeleeHitboxParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7615472884001184487
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5544728551740817183}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 870732162357082628}
+  m_Father: {fileID: 4711825495692764976}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8050265239055984153
 GameObject:
   m_ObjectHideFlags: 0
