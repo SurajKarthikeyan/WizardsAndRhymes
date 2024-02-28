@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -8,6 +9,7 @@ public abstract class BaseEnemyHealth : Health
 {
     #region Variables
     
+    [Header("Fire")]
     [Tooltip("GameObject holding the fireEffect VFX")]
     [SerializeField] 
     private GameObject fireEffect;
@@ -28,11 +30,15 @@ public abstract class BaseEnemyHealth : Health
     [SerializeField] 
     private float fireDamage;
 
+    [Header("Lightning")]
     [Tooltip("Duration of lightning status")]
     [SerializeField] private int lightningDuration;
     
     [Tooltip("Status of being on lightning")]
     [SerializeField] private bool onLightning;
+    
+    [Tooltip("Prefab to spawn lightning effect")]
+    [SerializeField] private GameObject lightningEffectPrefab;
     
     [Tooltip("Distance to which the enemies should chain to")]
     [SerializeField] private float lightningChainDistance;
@@ -43,6 +49,9 @@ public abstract class BaseEnemyHealth : Health
     [Tooltip("Base damage when chained to or when hit with lighitning")]
     [SerializeField] private int lightningBaseDamage;
 
+    [Tooltip("Used to store the vfx of the lightning. If the enemy dies, can be easily cleared")]
+    [HideInInspector] private List<GameObject> lightiningEffectStorage;
+    
     [Header("Ice")]
     [Tooltip("Multiplier to reduce enemy speed of when hit with ice damage")]
     [SerializeField] private float iceSpeedDecreaseMultipler;
@@ -76,6 +85,7 @@ public abstract class BaseEnemyHealth : Health
         base.Start();
         onFire = false;
         isDead = false;
+        lightiningEffectStorage = new List<GameObject>();
     }
 
     #endregion
@@ -132,24 +142,71 @@ public abstract class BaseEnemyHealth : Health
         Debug.Log("Lightning");
         Collider[] enemyLightiningCollider = Physics.OverlapSphere(this.gameObject.transform.position,
             lightningChainDistance, enemyLayerMask);
-        
+
         for (int i = 0; i < enemyLightiningCollider.Length; i++)
         {
             if (enemyLightiningCollider[i].gameObject.TryGetComponent(out BaseEnemyHealth curEnemyHealth))
             {
                 if (curEnemyHealth.vulnerable)
                 {
+                    Vector3 deltaPos = enemyLightiningCollider[i].gameObject.transform.position -
+                                     this.gameObject.transform.position;
+                    // Take Damage
                     curEnemyHealth.TakeDamage(lightningBaseDamage, DamageType.None);
+                    
+                    //Draw lightning arc
+                    GameObject curLightningEffect = Instantiate(lightningEffectPrefab);
+                    
+                    //set start to this object
+                    curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position =
+                        this.gameObject.transform.position;
+                    
+                    //set end to enemy object chained
+                    curLightningEffect.GetComponent<LightningVFXPosition>().pos4.transform.position =
+                        enemyLightiningCollider[i].gameObject.transform.position;
+
+                    Vector3 pos2 = new Vector3(
+                        curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.x + deltaPos.x * 0.33f,
+                        curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.y + deltaPos.y * 0.33f,
+                        curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.z + deltaPos.z * 0.33f);
+                    
+                    Vector3 pos3 = new Vector3(
+                        curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.x + deltaPos.x * 0.66f,
+                        curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.y + deltaPos.y * 0.66f,
+                        curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.z + deltaPos.z * 0.66f);
+
+                    curLightningEffect.GetComponent<LightningVFXPosition>().pos2.transform.position = pos2;
+                    curLightningEffect.GetComponent<LightningVFXPosition>().pos3.transform.position = pos3;
+                    
+                    
+                    lightiningEffectStorage.Add(curLightningEffect);
+                    
                 }
             }
         }
+
+        StartCoroutine(LightingArc());
+        
         if (vulnerable)
         {
             this.TakeDamage(lightningBaseDamage, DamageType.None);
         }
     }
-    
-    
+
+
+    IEnumerator LightingArc()
+    {
+        yield return new WaitForSeconds(0.5f);
+        ClearLightningObjects();
+    }
+
+    public void ClearLightningObjects()
+    {
+        foreach (GameObject go in lightiningEffectStorage)
+        {
+            Destroy(go);
+        }
+    }
 
     /// <summary>
     /// Function representing taking Ice damage
@@ -224,6 +281,7 @@ public abstract class BaseEnemyHealth : Health
     protected virtual void EnemyDeath()
     {
         StopAllCoroutines();
+        ClearLightningObjects();
         EnemyManager.instance.EnemyDied();
     }
     #endregion
