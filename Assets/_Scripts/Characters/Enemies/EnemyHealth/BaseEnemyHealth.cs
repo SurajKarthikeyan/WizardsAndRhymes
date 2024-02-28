@@ -194,12 +194,19 @@ public abstract class BaseEnemyHealth : Health
     }
 
 
+    /// <summary>
+    /// Coroutine to wait to show the lightning and then destroy it
+    /// </summary>
+    /// <returns></returns>
     IEnumerator LightingArc()
     {
         yield return new WaitForSeconds(0.5f);
         ClearLightningObjects();
     }
 
+    /// <summary>
+    /// Function to clear all lightning effects in scene
+    /// </summary>
     public void ClearLightningObjects()
     {
         foreach (GameObject go in lightiningEffectStorage)
