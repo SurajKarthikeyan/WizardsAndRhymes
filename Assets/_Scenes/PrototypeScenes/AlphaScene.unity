@@ -19991,12 +19991,12 @@ MonoBehaviour:
     showSpawnSphere: 1
     enemies:
     - type: {fileID: 5365247503409236134, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
-      amount: 1
+      amount: 2
     - type: {fileID: 5365247503409236134, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       amount: 1
   - waveTrigger: 2
     enemiesRemaining: 3
-    waveDelay: 7
+    waveDelay: 6
     waveDuration: 2
     spawnPosition: {fileID: 1218850803}
     spawnRadius: 7
@@ -20007,7 +20007,7 @@ MonoBehaviour:
     - type: {fileID: 3774833056916435751, guid: 28f44a33c4abb994c9ef8d557a5eb8c8, type: 3}
       amount: 1
   - waveTrigger: 0
-    enemiesRemaining: 0
+    enemiesRemaining: 1
     waveDelay: 3
     waveDuration: 3
     spawnPosition: {fileID: 874206784}
@@ -31391,6 +31391,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 935bb60520ed77945a7f46662c045b92, type: 2}
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: dashTime
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: dashForce
       value: 15
       objectReference: {fileID: 0}
@@ -31408,7 +31412,7 @@ PrefabInstance:
       objectReference: {fileID: 2137730278}
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: meleeDamage
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: playerCamera
@@ -31440,20 +31444,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: meleeAttackDuration
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 4681948003197784821, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: sliderFillArea
       value: 
       objectReference: {fileID: 1151880995}
     - target: {fileID: 4681948003197784821, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: dashAbilityCost
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681948003197784821, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: meleeAbilityCost
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681948003197784821, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: rangedAbilityCost
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4681948003197784821, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: maximumAbilityValue
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 4681948003197784821, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: abilitySliderGameObject
       value: 
       objectReference: {fileID: 1805266517}
+    - target: {fileID: 4681948003197784821, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: abilityRechargeThreshold
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_LocalPosition.x
       value: -39.23
@@ -32091,6 +32111,14 @@ PrefabInstance:
     - target: {fileID: 3840918221161849769, guid: 4bc888ff6ba9d2d4bb3bd7a67aff1d3c, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5618343853179660758, guid: 4bc888ff6ba9d2d4bb3bd7a67aff1d3c, type: 3}
+      propertyPath: m_Value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5618343853179660758, guid: 4bc888ff6ba9d2d4bb3bd7a67aff1d3c, type: 3}
+      propertyPath: m_MaxValue
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7516633906485848283, guid: 4bc888ff6ba9d2d4bb3bd7a67aff1d3c, type: 3}
       propertyPath: m_Pivot.x
