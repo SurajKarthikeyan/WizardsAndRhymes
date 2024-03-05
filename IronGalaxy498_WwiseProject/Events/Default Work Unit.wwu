@@ -235,6 +235,21 @@
 				<Folder Name="Environment" ID="{495CEB0B-19F3-4C51-82DA-A3E0247F5970}" ShortID="275595311">
 					<ChildrenList>
 						<Folder Name="Pickups" ID="{D829150B-3A9C-4883-8A05-0B39146211A5}" ShortID="599218656"/>
+						<Folder Name="Music" ID="{9CEEF249-6CBE-4183-A578-17E6A24E7BCD}" ShortID="271145348">
+							<ChildrenList>
+								<Event Name="RoomMus" ID="{2FBE0B1A-3484-4841-A533-386BC2FB8743}">
+									<ChildrenList>
+										<Action Name="" ID="{0E3696EB-34FF-455C-9B0F-A6C3F9CB22D4}" ShortID="99836259">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CombatMus" ID="{FAC9B9C2-4162-4300-B344-E7CB6520B897}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Enemies" ID="{2A8FF2E8-9C80-4D77-96DF-0BA597415A5C}" ShortID="957307035">
