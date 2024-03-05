@@ -13,12 +13,9 @@ using static Health;
 /// <summary>
 /// Class that manages waves of enemies for the current room
 /// </summary>
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : Singleton<EnemyManager>
 {
     #region Variables
-
-    [Tooltip("Singleton of the enemy manager - seemed useful to make")]
-    public static EnemyManager instance;
     /// <summary>
     /// Class that describes a wave of enemies
     /// </summary>
@@ -96,22 +93,6 @@ public class EnemyManager : MonoBehaviour
     #endregion
 
     #region Unity Methods
-    /// <summary>
-    /// Method called on the first scene of the game
-    /// </summary>
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Debug.LogError("You have two EnemyManagers in Scene, remove one");
-            Destroy(this);
-        }
-    }
-
     /// <summary>
     /// Method called to draw debug overlays in edit mode
     /// </summary>

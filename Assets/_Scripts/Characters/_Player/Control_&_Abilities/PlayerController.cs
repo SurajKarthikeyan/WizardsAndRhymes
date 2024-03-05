@@ -5,12 +5,9 @@ using UnityEngine.InputSystem;
 /// <summary>
 /// Class that is responsible for controlling the player health and managing its abilities
 /// </summary>
-public class PlayerController : MonoBehaviour
+public class PlayerController : Singleton<PlayerController>
 {
     #region Variables
-    [Tooltip("Singleton of player controller")]
-    public static PlayerController instance;
-
     [Tooltip("Enum that represents the movement state of the player")]
     private enum MoveStatus
     {
@@ -206,16 +203,10 @@ public class PlayerController : MonoBehaviour
     /// <summary>
     /// Method called on scene startup
     /// </summary>
-    private void Awake()
+    protected override void Awake()
     {
-        //Initialize singleton
-        if (instance == null)
-            instance = this;
-        else
-        {
-            Debug.LogWarning("Duplicate player controller in scene: " + gameObject.name);
-            Destroy(this);
-        }
+        base.Awake();
+
         dashModel.SetActive(false);
         rigidBody = GetComponent<Rigidbody>();
         playerInput = new PlayerInput();

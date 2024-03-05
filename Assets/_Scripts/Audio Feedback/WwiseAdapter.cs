@@ -9,13 +9,11 @@ using static UnityEngine.UIElements.UxmlAttributeDescription;
 /// <summary>
 /// Adapts the music for other scripts to use
 /// </summary>
-public class WwiseAdapter : MonoBehaviour
+public class WwiseAdapter : Singleton<WwiseAdapter>
 {
     #region Variables
     [Tooltip("The potential intervals to trigger beats on")]
     public enum BeatIntervals { B32, B16, B8, B4, B2, B1 };
-    [Tooltip("Singleton instance")]
-    [HideInInspector] public static WwiseAdapter instance; //Suraj signed off on this, take it up with him
 
     //Events and delegates
     [HideInInspector] public static event BeatDelegate on32Beat;
@@ -67,18 +65,9 @@ public class WwiseAdapter : MonoBehaviour
     #endregion
 
     #region Unity Methods
-    private void Awake()
-    {
-        //Initialize singleton
-        if (instance == null)
-            instance = this;
-        else
-        {
-            Debug.LogError("Duplicate WWise Adapter in scene " + gameObject.name);
-            Destroy(this);
-        }
-    }
-
+    /// <summary>
+    /// Read amplitude from Wwise RTPC values
+    /// </summary>
     private void Update()
     {
         // These lines read in RTPC values from WWise. 
@@ -90,13 +79,6 @@ public class WwiseAdapter : MonoBehaviour
         highAmplitude = Normalize48(highAmplitudeRTPC.GetGlobalValue());
         
         //Debug.Log(amplitude + " | " + lowAmplitude + " | " + midAmplitude + " | " + highAmplitude);
-    }
-
-    private void OnDestroy()
-    {
-        //Free singleton
-        if (instance == this)
-            instance = null;
     }
     #endregion
 
