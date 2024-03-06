@@ -16,6 +16,10 @@ public class RangedRetreatEnemy : BaseRetreatEnemy
     [SerializeField]
     private Transform projectileSpawnPoint;
 
+    [Tooltip("Float representing the speed of the enemy projectile")]
+    [SerializeField]
+    private float projectileSpeed = 12f;
+
     [Tooltip("Cooldown in between every projectile shot by this enemy")]
     [SerializeField]
     private float shootCooldown = 1f;
@@ -59,7 +63,7 @@ public class RangedRetreatEnemy : BaseRetreatEnemy
     IEnumerator Projectile()
     {
         GameObject projectile = Instantiate(enemyProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
-        projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * 10;
+        projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * projectileSpeed;
         yield return new WaitForSeconds(shootCooldown);
     }
 
