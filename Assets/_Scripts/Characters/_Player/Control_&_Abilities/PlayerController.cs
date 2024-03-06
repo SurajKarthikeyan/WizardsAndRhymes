@@ -386,7 +386,7 @@ public class PlayerController : Singleton<PlayerController>
     /// <param name="obj">Input callback context for the ranged attack</param>
     private void DoRanged(InputAction.CallbackContext obj)
     {
-        if (canAttack)
+        if (canAttack && abilityManager.currentAbilityValue >= abilityManager.rangedAbilityCost)
         {
             SetCanAttack(false);
             StartCoroutine(AttackDelays(attackDelayTimer));
@@ -439,7 +439,7 @@ public class PlayerController : Singleton<PlayerController>
         Ray dashCheckRay = new (dashCheck, Vector3.down);
         if (Physics.Raycast(dashCheckRay, float.MaxValue, groundLayerMask))
         {
-            if (abilityManager.currentAbilityValue >= 10 && dashCooldownTimer >= dashCooldownThreshold)
+            if (abilityManager.currentAbilityValue >= abilityManager.dashAbilityCost && dashCooldownTimer >= dashCooldownThreshold)
             {
                 return true;
             }
