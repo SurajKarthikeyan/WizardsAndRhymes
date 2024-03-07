@@ -395,8 +395,17 @@ public class PlayerController : Singleton<PlayerController>
         if (canAttack && abilityManager.currentAbilityValue >= abilityManager.rangedAbilityCost)
         {
             SetCanAttack(false);
-            StartCoroutine(AttackDelays(attackDelayTimer));
-            ResetAttack();
+            mixtapeInventory.IncrementSuccessiveAttack();
+            
+            if (mixtapeInventory.successiveAttacks >= 3)
+            {
+                ComboCoolDown();
+            }
+            else
+            {
+                StartCoroutine(AttackDelays(attackDelayTimer));
+                ResetAttack();
+            }
             attackStatus = AttackStatus.Ranged;
             abilityManager.ResetAbilityRecharge();
             StartCoroutine(Projectile());
@@ -411,8 +420,17 @@ public class PlayerController : Singleton<PlayerController>
         if (canAttack)
         {
             SetCanAttack(false);
-            StartCoroutine(AttackDelays(attackDelayTimer));
-            ResetAttack();
+            mixtapeInventory.IncrementSuccessiveAttack();
+            
+            if (mixtapeInventory.successiveAttacks >= 3)
+            {
+                ComboCoolDown();
+            }
+            else
+            {
+                StartCoroutine(AttackDelays(attackDelayTimer));
+                ResetAttack();
+            }
             attackStatus = AttackStatus.Melee;
             abilityManager.ResetAbilityRecharge();
             StartCoroutine(Melee());
