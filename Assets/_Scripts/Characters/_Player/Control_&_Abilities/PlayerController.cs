@@ -122,7 +122,7 @@ public class PlayerController : Singleton<PlayerController>
     private GameObject meleeBox;
 
     [Tooltip("Animator for melee")]
-   [SerializeField] private Animator meleeAnimator;
+    [SerializeField] private Animator meleeAnimator;
 
     [Header("UI Variables")]
     [Tooltip("Pause menu")]
@@ -589,12 +589,19 @@ public class PlayerController : Singleton<PlayerController>
         ComboCoolDown();
     }
 
+    /// <summary>
+    /// Function that initiates combo cooldown
+    /// </summary>
     public void ComboCoolDown()
     {
         canAttack = false;
         StartCoroutine(ComboCoolDownWait());
     }
 
+    /// <summary>
+    /// Cooldown of combo
+    /// </summary>
+    /// <returns></returns>
     IEnumerator ComboCoolDownWait()
     {
         yield return new WaitForSeconds(comboCooldownTime);
@@ -660,7 +667,11 @@ public class PlayerController : Singleton<PlayerController>
         EnablePlayerControls();
     }
 
-
+    /// <summary>
+    /// Function that knocks the player back in a certain direction
+    /// </summary>
+    /// <param name="direction">Direction the player is knocked back</param>
+    /// <param name="magnitude">Magnitude the player is knocked back</param>
     public void Knockback(Vector3 direction, float magnitude)
     {
         rigidBody.AddForce(direction.normalized * magnitude, ForceMode.Impulse);

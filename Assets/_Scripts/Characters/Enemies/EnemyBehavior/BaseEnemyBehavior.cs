@@ -27,8 +27,11 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
 
     [Header("Attack Variables")]
     [Tooltip("Value representing the attack damage of this enemy")]
-    [SerializeField]
     public float attackDamage = 5f;
+
+    [Tooltip("Knockback power of this enemy's attack")]
+    [SerializeField]
+    private float knockbackPower = 200f;
 
     [Header("Distancing variables")]
     [Tooltip("Maximum distance this enemy will be from the player before it shoots")]
@@ -46,31 +49,41 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     [Tooltip("Material applied to the enemy when activated, primarily used for early testing purposes")]
     public Material activatedMaterial;
 
+    [Tooltip("Boolean that states whether this enemy has been seen")]
+    public bool hasBeenSeen;
+
     [Header("Navigation/Movement Variables")]
     [Tooltip("NavMeshAgent that is enemy behavior uses for its general navigation")]
     [HideInInspector]
     public NavMeshAgent navMeshAgent;
 
+    [Header("Knockback variables")]
+    [Tooltip("Speed of this enemy when knocked back")]
+    [SerializeField]
+    private float knockbackSpeed = 10f;
+
     [Tooltip("Rigidbody of this enemy")]
     protected Rigidbody rb;
+
+    [Tooltip("Boolean saying whether or not this enemy is knocked back")]
+    private bool knockedBack;
+
+    [Tooltip("Direction that this enemy will be knocked back")]
+    private Vector3 knockBackDirection;
 
     [Header("Script refernces")]
     [Tooltip("Health Script Reference for this behavior")]
     private BaseEnemyHealth health;
 
-    [Tooltip("Health Script Reference for this behavior")]
+    [Tooltip("Script of enemy debug text")]
     private AIDebug aiDebug;
-
-    public bool hasBeenSeen;
-
-    public bool knockedBack;
-
-    public Vector3 knockBackDirection;
-
     #endregion
 
     #region Unity Methods
 
+    /// <summary>
+    /// Unity method called immediately upon scene load
+    /// </summary>
     private void Awake()
     {
         navMeshAgent = GetComponent<NavMeshAgent>();
@@ -115,7 +128,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         {
             if (knockedBack)
             {
-                navMeshAgent.velocity = knockBackDirection.normalized * 10;
+                navMeshAgent.velocity = knockBackDirection.normalized * knockbackSpeed;
             }
             if (navMeshAgent.isActiveAndEnabled)
             {
@@ -124,7 +137,6 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         }
     }
 
-    
 
     /// <summary>
     /// Unity method called whenever this object collides with another
@@ -139,7 +151,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
                 if (playerHealth.vulnerable)
                 {
                     playerHealth.TakeDamage(attackDamage, Health.DamageType.None);
-                    playerHealth.GetComponent<PlayerController>().Knockback(transform.forward, 200);
+                    playerHealth.GetComponent<PlayerController>().Knockback(transform.forward, knockbackPower);
                 }
                 
             }
@@ -179,6 +191,12 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         transform.rotation = rotation;
     }
 
+    /// <summary>
+    /// Function that says if this enemy is visible to the camera
+    /// NOT FULLY WORKING AS INTENDED RIGHT NOW
+    /// </summary>
+    /// <param name="transform">Transform to check if it is visible within the camera</param>
+    /// <returns></returns>
     public static bool IsVisibleToCamera(Transform transform)
     {
         Vector3 visTest = Camera.main.WorldToViewportPoint(transform.position);
@@ -199,7 +217,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     /// <summary>
     /// Activates this enemy
     /// </summary>
-    /// <param name="enemyActivated"></param>
+    /// <param name="enemyActivated">Boolean stating if this enemy is activated or not</param>
     private void Activate(bool enemyActivated)
     {
         if (!enemyActivated)
@@ -217,6 +235,10 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         navMeshAgent.speed = 3.5f;
     }
 
+    /// <summary>
+    /// Function that initiates the knocking back of this enemy
+    /// </summary>
+    /// <param name="direction">Direction that this enemy will be knocked back</param>
     public void Knockback(Vector3 direction)
     {
         StartCoroutine(KnockbackTimer(direction));
@@ -234,19 +256,16 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         float baseAngularSpeed = navMeshAgent.angularSpeed;
         float baseAcceleration = navMeshAgent.acceleration;
 
+        //Knocks the enemy back fast
         knockedBack = true;
         navMeshAgent.speed = 30;
         navMeshAgent.angularSpeed = 0;
         navMeshAgent.acceleration = 30;
 
-        Debug.Log("Right before the .5 seconds");
-
-        
-        Debug.Log("Knocked back");
         yield return new WaitForSeconds(1f);
-        knockedBack = false;
 
-        Debug.Log("Not knocked back anymore");
+        //Resets values to previous values
+        knockedBack = false;
         navMeshAgent.speed = baseSpeed;
         navMeshAgent.angularSpeed = baseAngularSpeed;
         navMeshAgent.acceleration = baseAcceleration;

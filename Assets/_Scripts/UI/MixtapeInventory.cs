@@ -35,8 +35,8 @@ public class MixtapeInventory : MonoBehaviour
     [SerializeField] private GameObject lightning;
     [SerializeField] private GameObject ice;
 
-
-    public PlayerController player;
+    [Tooltip("Reference to the player script")]
+    [SerializeField] private PlayerController player;
     #endregion
 
     #region UnityMethods

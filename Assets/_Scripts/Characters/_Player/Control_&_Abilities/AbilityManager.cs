@@ -1,4 +1,3 @@
-using UnityEngine.UI;
 using UnityEngine;
 using System.Collections.Generic;
 
@@ -8,14 +7,6 @@ using System.Collections.Generic;
 public class AbilityManager : MonoBehaviour
 {
     #region Variables
-    //[Header("Ability Slider Relevant References")]
-    //[Tooltip("GameObject that contains the ability slider")]
-    //[SerializeField]
-    //private GameObject abilitySliderGameObject;
-
-    //[Tooltip("GameObject that contains the ability slider fill area")]
-    //[SerializeField]
-    //private GameObject sliderFillArea;
 
     [Header("Ability Slider values")]
     [Tooltip("Interval in seconds of one charge of ability meter (Every x seconds, the ability meter will charge a bit)")]
@@ -49,13 +40,16 @@ public class AbilityManager : MonoBehaviour
     [Tooltip("Float that acts as a timer in between each charge of the ability meter.")]
     private float abilityRechargeTimer;
 
+    [Tooltip("GameObject containing the canvas with the mana pips")]
+    [SerializeField]
+    private GameObject abilityCanvas;
+
     [Tooltip("Vector offset that is used for displaying the ability slider at the proper place")]
     private Vector3 abilityPipUIOffset = new(0, 1.5f, -3.75f);
 
 
-    public GameObject abilityCanvas;
-
-    public List<SpriteRenderer> manaSprites = new();
+    [Tooltip("List of sprites that will be modified for the pips")]
+    private List<SpriteRenderer> manaSprites = new();
     #endregion
 
     #region Unity Methods
@@ -126,8 +120,13 @@ public class AbilityManager : MonoBehaviour
         abilityRechargeTimer = 0;
     }
 
+    /// <summary>
+    /// Sets the mana pips based off of the percentage of ability meter
+    /// </summary>
+    /// <param name="abilityPercentage">Percentage of ability bar available</param>
     public void SetManaPips(float abilityPercentage)
     {
+        //These just go down the line and depending on the ability percentage and set the pips
         if (abilityPercentage < 100)
         {
             manaSprites[manaSprites.Count - 1].color = Color.red;
