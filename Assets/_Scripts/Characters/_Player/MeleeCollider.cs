@@ -1,4 +1,6 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 /// <summary>
 /// Class used for physical attacks
@@ -33,8 +35,14 @@ public class MeleeCollider : MonoBehaviour
             if (enemyHealth.vulnerable)
             {
                 enemyHealth.TakeDamage(player.meleeDamage, damageType);
+                if (enemyHealth.transform.gameObject.TryGetComponent(out BaseEnemyBehavior enemy))
+                {
+                    enemy.Knockback(player.transform.forward);
+                }
+                
             }
         }
     }
     #endregion
+
 }

@@ -63,6 +63,10 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
 
     public bool hasBeenSeen;
 
+    public bool knockedBack;
+
+    public Vector3 knockBackDirection;
+
     #endregion
 
     #region Unity Methods
@@ -109,6 +113,10 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         }
         else
         {
+            if (knockedBack)
+            {
+                navMeshAgent.velocity = knockBackDirection.normalized * 10;
+            }
             if (navMeshAgent.isActiveAndEnabled)
             {
                 navMeshAgent.isStopped = false;
@@ -206,6 +214,42 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     public void ResetNavmeshSpeed()
     {
         navMeshAgent.speed = 3.5f;
+    }
+
+    public void Knockback(Vector3 direction)
+    {
+        StartCoroutine(KnockbackTimer(direction));
+    }
+
+    /// <summary>
+    /// Waits for the enemy to be knocked back a bit.
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator KnockbackTimer(Vector3 direction)
+    {
+        knockBackDirection = direction;
+
+        float baseSpeed = navMeshAgent.speed;
+        float baseAngularSpeed = navMeshAgent.angularSpeed;
+        float baseAcceleration = navMeshAgent.acceleration;
+
+        knockedBack = true;
+        navMeshAgent.speed = 30;
+        navMeshAgent.angularSpeed = 0;
+        navMeshAgent.acceleration = 30;
+
+        Debug.Log("Right before the .5 seconds");
+
+        
+        Debug.Log("Knocked back");
+        yield return new WaitForSeconds(1f);
+        knockedBack = false;
+
+        Debug.Log("Not knocked back anymore");
+        navMeshAgent.speed = baseSpeed;
+        navMeshAgent.angularSpeed = baseAngularSpeed;
+        navMeshAgent.acceleration = baseAcceleration;
+
     }
 
 

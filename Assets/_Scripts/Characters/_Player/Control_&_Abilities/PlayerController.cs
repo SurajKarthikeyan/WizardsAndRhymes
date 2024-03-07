@@ -114,6 +114,9 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField]
     private float meleeAttackDuration = 0.5f;
 
+    [Tooltip("Time that the melee attack lasts for in seconds")]
+    public float meleeAttackKnockback = 5f;
+
     [Tooltip("GameObject representing the hitbox of the melee attack")]
     [SerializeField]
     private GameObject meleeBox;
@@ -140,7 +143,10 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float attackDelayTimer;
 
     [Tooltip("How long should be allowed prior to restarting")]
-    [SerializeField] private float mixtapeResetTimer;
+    [SerializeField] private float timeBeforeReset;
+
+    [Tooltip("How long the cooldown of the combo is")]
+    [SerializeField] private float comboCooldownTime;
 
     [Tooltip("Bool defining if the player can attack")]
     private bool canAttack;
@@ -422,7 +428,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             StopCoroutine(mixtapeResetRoutine);
         }
-        mixtapeResetRoutine = ResetMixtapeAttack(mixtapeResetTimer);
+        mixtapeResetRoutine = ResetMixtapeAttack(timeBeforeReset);
         StartCoroutine(mixtapeResetRoutine);
     }
 
@@ -580,6 +586,18 @@ public class PlayerController : Singleton<PlayerController>
     {
         yield return new WaitForSeconds(timer);
         mixtapeInventory.ResetCombo();
+        ComboCoolDown();
+        StopCoroutine(ResetMixtapeAttack(timer));
+    }
+
+    private void ComboCoolDown()
+    {
+        StartCoroutine(ComboCoolDownWait());
+    }
+
+    IEnumerator ComboCoolDownWait()
+    {
+        yield return new WaitForSeconds(comboCooldownTime);
     }
     
     /// <summary>
