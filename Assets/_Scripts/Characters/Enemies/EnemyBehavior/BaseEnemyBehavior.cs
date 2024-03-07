@@ -139,6 +139,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
                 if (playerHealth.vulnerable)
                 {
                     playerHealth.TakeDamage(attackDamage, Health.DamageType.None);
+                    playerHealth.GetComponent<PlayerController>().Knockback(transform.forward, 200);
                 }
                 
             }

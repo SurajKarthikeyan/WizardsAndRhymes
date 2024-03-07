@@ -659,6 +659,12 @@ public class PlayerController : Singleton<PlayerController>
         EnablePlayerControls();
     }
 
+
+    public void Knockback(Vector3 direction, float magnitude)
+    {
+        rigidBody.AddForce(direction.normalized * magnitude, ForceMode.Impulse);
+    }
+
     #endregion
     
 }
