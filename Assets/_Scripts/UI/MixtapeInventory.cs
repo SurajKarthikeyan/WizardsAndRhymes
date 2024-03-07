@@ -34,7 +34,9 @@ public class MixtapeInventory : MonoBehaviour
     [SerializeField] private GameObject fire;
     [SerializeField] private GameObject lightning;
     [SerializeField] private GameObject ice;
-    
+
+
+    public PlayerController player;
     #endregion
 
     #region UnityMethods
@@ -88,7 +90,13 @@ public class MixtapeInventory : MonoBehaviour
     {
         ChangeColor(currentTape, lowAlpha);
         damageType = mixtapeInventory[index].GetComponent<Mixtape>().GetDamagePlaySound(isRanged); // set WITH playing sfx
-        index = (index + 1) % mixtapeInventory.Count;
+        int newIndex = index + 1;
+
+        if (newIndex >= mixtapeInventory.Count)
+        {
+            player.ComboCoolDown();
+        }
+        index = (newIndex) % mixtapeInventory.Count;
         currentTape = mixtapeInventory[index];
         damageType = mixtapeInventory[index].GetComponent<Mixtape>().mixtapeDType;
         ChangeColor(currentTape, highAlpha);

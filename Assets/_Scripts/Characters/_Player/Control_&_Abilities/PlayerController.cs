@@ -587,17 +587,18 @@ public class PlayerController : Singleton<PlayerController>
         yield return new WaitForSeconds(timer);
         mixtapeInventory.ResetCombo();
         ComboCoolDown();
-        StopCoroutine(ResetMixtapeAttack(timer));
     }
 
-    private void ComboCoolDown()
+    public void ComboCoolDown()
     {
+        canAttack = false;
         StartCoroutine(ComboCoolDownWait());
     }
 
     IEnumerator ComboCoolDownWait()
     {
         yield return new WaitForSeconds(comboCooldownTime);
+        canAttack = true;
     }
     
     /// <summary>
