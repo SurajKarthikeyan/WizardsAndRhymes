@@ -1,5 +1,6 @@
 using UnityEngine.UI;
 using UnityEngine;
+using System.Collections.Generic;
 
 /// <summary>
 /// Class that manages all the player ability logic
@@ -7,14 +8,14 @@ using UnityEngine;
 public class AbilityManager : MonoBehaviour
 {
     #region Variables
-    [Header("Ability Slider Relevant References")]
-    [Tooltip("GameObject that contains the ability slider")]
-    [SerializeField]
-    private GameObject abilitySliderGameObject;
+    //[Header("Ability Slider Relevant References")]
+    //[Tooltip("GameObject that contains the ability slider")]
+    //[SerializeField]
+    //private GameObject abilitySliderGameObject;
 
-    [Tooltip("GameObject that contains the ability slider fill area")]
-    [SerializeField]
-    private GameObject sliderFillArea;
+    //[Tooltip("GameObject that contains the ability slider fill area")]
+    //[SerializeField]
+    //private GameObject sliderFillArea;
 
     [Header("Ability Slider values")]
     [Tooltip("Interval in seconds of one charge of ability meter (Every x seconds, the ability meter will charge a bit)")]
@@ -48,11 +49,13 @@ public class AbilityManager : MonoBehaviour
     [Tooltip("Float that acts as a timer in between each charge of the ability meter.")]
     private float abilityRechargeTimer;
 
-    [Tooltip("Slider that is obtained from its GameObject, used for value changes and display")]
-    private Slider abilitySlider;
-
     [Tooltip("Vector offset that is used for displaying the ability slider at the proper place")]
-    private Vector3 abilitySliderUIOffset = new(-0.1f, -0.45f, -1.25f);
+    private Vector3 abilityPipUIOffset = new(0, 1.5f, -3.75f);
+
+
+    public GameObject abilityCanvas;
+
+    public List<SpriteRenderer> manaSprites = new();
     #endregion
 
     #region Unity Methods
@@ -61,9 +64,13 @@ public class AbilityManager : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        abilitySlider = abilitySliderGameObject.GetComponent<Slider>();
+
+        abilityCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
+        foreach(SpriteRenderer spriteRenderer in abilityCanvas.transform.GetComponentsInChildren<SpriteRenderer>())
+        {
+            manaSprites.Add(spriteRenderer);
+        }
         currentAbilityValue = maximumAbilityValue;
-        abilitySlider.value = currentAbilityValue;
     }
 
     /// <summary>
@@ -72,7 +79,7 @@ public class AbilityManager : MonoBehaviour
     private void FixedUpdate()
     {
         //Keeps ability slider with the player below them
-        abilitySliderGameObject.transform.position = transform.position + abilitySliderUIOffset;
+        abilityCanvas.transform.position = transform.position + abilityPipUIOffset;
 
         abilityRechargeTimer += Time.deltaTime;
 
@@ -86,17 +93,9 @@ public class AbilityManager : MonoBehaviour
         currentAbilityValue = Mathf.Clamp(currentAbilityValue,
             minimumAbilityValue, maximumAbilityValue);
 
-        abilitySlider.value = currentAbilityValue;
+        float abilityPercentage = currentAbilityValue / maximumAbilityValue * 100;
 
-        //These checks essentially make the bar go away entirely if it's empty, it doesn't do that on its own
-        if (abilitySlider.value <= 0)
-        {
-            sliderFillArea.SetActive(false);
-        }
-        else if (abilitySlider.value > 0 && !sliderFillArea.activeInHierarchy)
-        {
-            sliderFillArea.SetActive(true);
-        }
+        SetManaPips(abilityPercentage); 
     }
     #endregion
 
@@ -125,6 +124,45 @@ public class AbilityManager : MonoBehaviour
     public void ResetAbilityRecharge()
     {
         abilityRechargeTimer = 0;
+    }
+
+    public void SetManaPips(float abilityPercentage)
+    {
+        if (abilityPercentage < 100)
+        {
+            manaSprites[manaSprites.Count - 1].color = Color.red;
+        }
+        else
+        {
+            manaSprites[manaSprites.Count - 1].color = Color.green;
+        }
+
+        if (abilityPercentage < 75)
+        {
+            manaSprites[manaSprites.Count - 2].color = Color.red;
+        }
+        else
+        {
+            manaSprites[manaSprites.Count - 2].color = Color.green;
+        }
+
+        if (abilityPercentage < 50)
+        {
+            manaSprites[manaSprites.Count - 3].color = Color.red;
+        }
+        else
+        {
+            manaSprites[manaSprites.Count - 3].color = Color.green;
+        }
+
+        if (abilityPercentage < 25)
+        {
+            manaSprites[manaSprites.Count - 4].color = Color.red;
+        }
+        else
+        {
+            manaSprites[manaSprites.Count - 4].color = Color.green;
+        }
     }
     #endregion
 }
