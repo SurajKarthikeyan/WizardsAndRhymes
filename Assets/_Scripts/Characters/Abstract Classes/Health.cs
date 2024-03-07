@@ -22,8 +22,8 @@ public class Health : MonoBehaviour
     protected float currentHP;
 
     [Tooltip("Maximum HP of this enemy")]
-    [SerializeField]
-    private float maximumHP;
+    
+    public float maximumHP;
 
     public bool vulnerable;
     
