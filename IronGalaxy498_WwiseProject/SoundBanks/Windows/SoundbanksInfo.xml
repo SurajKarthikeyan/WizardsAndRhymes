@@ -94,7 +94,7 @@
 				<GameParameter Id="3550808449" Name="High"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{14A732C1-71A3-E154-8612-0893EBFAA687}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{596E4154-8ED5-AECD-DD63-E81942FC17AB}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -178,10 +178,6 @@
 					<ShortName>242503__gabrielaraujo__failure-wrong-action.wav</ShortName>
 					<CachePath>SFX/242503__gabrielaraujo__failure-wrong-action_818F3B66.wem</CachePath>
 				</File>
-				<File Id="891382884" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>CombatLoopMixed.wav</ShortName>
-					<CachePath>SFX/CombatLoopMixed_FBC78EF0.wem</CachePath>
-				</File>
 				<File Id="909458974" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Zap1.wav</ShortName>
 					<CachePath>SFX/Zap1_818F3B66.wem</CachePath>
@@ -189,6 +185,10 @@
 				<File Id="929853616" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fire2.wav</ShortName>
 					<CachePath>SFX/Fire2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="930081507" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CombatLoopRenewed.wav</ShortName>
+					<CachePath>SFX/CombatLoopRenewed_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="930947941" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ice1.wav</ShortName>
@@ -246,7 +246,7 @@
 				</Event>
 				<Event Id="3855831843" Name="ProtoCombatLoop" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="891382884"/>
+						<MediaRef Id="930081507"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1744863420" Name="RangedFire" DurationType="OneShot" DurationMin="0.6250113" DurationMax="0.6250113">
@@ -304,5 +304,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{04FEB0AD-A28A-5BE4-CFB8-765394AE94AA}</FileHash>
+	<FileHash>{7ED6B5E0-03B9-A998-A16F-607D4305A3AB}</FileHash>
 </SoundBanksInfo>
