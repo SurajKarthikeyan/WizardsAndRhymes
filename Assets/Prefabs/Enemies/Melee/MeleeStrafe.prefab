@@ -394,8 +394,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4572e63d11a159244a31aebad1f22d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentHP: 10
-  maximumHP: 10
+  currentHP: 25
+  maximumHP: 25
   vulnerable: 1
   fireEffect: {fileID: 1748346369787294393}
   onFire: 0
@@ -409,7 +409,7 @@ MonoBehaviour:
   enemyLayerMask:
     serializedVersion: 2
     m_Bits: 256
-  lightningBaseDamage: 4
+  lightningBaseDamage: 1
   iceSpeedDecreaseMultipler: 0.35
   iceDuration: 1
   onIce: 0
@@ -436,7 +436,7 @@ MonoBehaviour:
   activatedMaterial: {fileID: 7933299137048178034, guid: a9f670f4eae962b4683c35ae3d1db878, type: 3}
   hasBeenSeen: 0
   navMeshAgent: {fileID: 0}
-  knockbackSpeed: 10
+  knockbackSpeed: 4
   strafeSpeed: 5
   strafeTimeThreshold: 3
   meleeLungeDistance: 5
@@ -463,8 +463,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
-  m_Acceleration: 8
+  m_Speed: 9
+  m_Acceleration: 9
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0

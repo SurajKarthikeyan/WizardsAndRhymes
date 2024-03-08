@@ -105,6 +105,8 @@ MonoBehaviour:
   controlField: 0
   frequencyResponse: 0
   amplitudeRange: {x: 0, y: 1}
+  smooth: 0
+  maxAmplitudeChange: 1
   onlyUpdateOnBeat: 0
   beatInterval: 3
 --- !u!114 &1765933524040922094
@@ -587,8 +589,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   existenceTimeThreshold: 3
-  dType: 1
-  damage: 2
+  dType: 3
+  damage: 4
 --- !u!54 &6057820704440497991
 Rigidbody:
   m_ObjectHideFlags: 0
