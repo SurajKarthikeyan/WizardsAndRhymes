@@ -38,12 +38,27 @@ public class SetAsAmplitude : MonoBehaviour
 
     [Tooltip("Range that the amplitude is remapped to fall within")]
     [SerializeField] Vector2 amplitudeRange = new Vector2(0, 1);
+
+    [Tooltip("Whether or not to smooth the amplitude")]
+    [SerializeField] bool smooth;
+
+    [Tooltip("The maximum amount the reported amplitude can change in one second")]
+    [MMCondition("smooth", Hidden = true)]
+    [SerializeField] float maxAmplitudeChange = 1f;
     
     [Tooltip("Whether the amplitude should only update on beats")]
     [SerializeField] bool onlyUpdateOnBeat;
     
     [MMCondition("onlyUpdateOnBeat", true)][Tooltip("The beat interval to update the amplitude on")]
     [SerializeField] WwiseAdapter.BeatIntervals beatInterval;
+
+
+    [Tooltip("Whether previous amplitude has been recorded yet or not")]
+    private bool initializedPreviousAmplitude = false;
+    [Tooltip("The last amplitude that was read")]
+    private float previousAmplitude = 0;
+    [Tooltip("The time the last amplitude was read")]
+    private float previousAmplitudeTime = 0;
     #endregion
 
     #region Unity Methods
@@ -87,6 +102,19 @@ public class SetAsAmplitude : MonoBehaviour
                 break;
         }
         float amplitude = Mathf.Lerp(amplitudeRange.x, amplitudeRange.y, readAmplitude);
+
+        //Smooth the amplitude
+        if (smooth)
+        {
+            if (initializedPreviousAmplitude)
+            {
+                float timeSinceLastAmplitude = Time.time - previousAmplitudeTime;
+                amplitude = Mathf.Clamp(amplitude, previousAmplitude - maxAmplitudeChange * timeSinceLastAmplitude, previousAmplitude + maxAmplitudeChange * timeSinceLastAmplitude);
+            }
+            previousAmplitude = amplitude;
+            previousAmplitudeTime = Time.time;
+            initializedPreviousAmplitude = true;
+        }
 
         //Apply the amplitude to the target field
         switch (targetType)
