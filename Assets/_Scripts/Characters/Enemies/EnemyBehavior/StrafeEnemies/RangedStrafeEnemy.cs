@@ -16,6 +16,10 @@ public class RangedStrafeEnemy : BaseStrafeEnemy
     [SerializeField]
     private Transform projectileSpawnPoint;
 
+    [Tooltip("Float representing the speed of the enemy projectile")]
+    [SerializeField]
+    private float projectileSpeed = 12f;
+
     [Tooltip("Cooldown in between every projectile shot by this enemy")]
     [SerializeField]
     private float shootCooldown = 1f;
@@ -38,7 +42,7 @@ public class RangedStrafeEnemy : BaseStrafeEnemy
     {
         //Instantiates and shoots projectile 
         GameObject projectile = Instantiate(enemyProjectile, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
-        projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * 10;
+        projectile.GetComponent<Rigidbody>().velocity = projectileSpawnPoint.forward * projectileSpeed;
         behaviorState = EnemyBehaviorState.TrackingPlayer;
         yield return new WaitForSeconds(shootCooldown);
     }

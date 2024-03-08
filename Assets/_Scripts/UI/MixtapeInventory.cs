@@ -34,7 +34,11 @@ public class MixtapeInventory : MonoBehaviour
     [SerializeField] private GameObject fire;
     [SerializeField] private GameObject lightning;
     [SerializeField] private GameObject ice;
-    
+
+    [Tooltip("Reference to the player script")]
+    [SerializeField] private PlayerController player;
+
+    public int successiveAttacks;
     #endregion
 
     #region UnityMethods
@@ -88,7 +92,12 @@ public class MixtapeInventory : MonoBehaviour
     {
         ChangeColor(currentTape, lowAlpha);
         damageType = mixtapeInventory[index].GetComponent<Mixtape>().GetDamagePlaySound(isRanged); // set WITH playing sfx
-        index = (index + 1) % mixtapeInventory.Count;
+        int newIndex = index + 1;
+        if (newIndex >= mixtapeInventory.Count)
+        {
+            player.ComboCoolDown();
+        }
+        index = (newIndex) % mixtapeInventory.Count;
         currentTape = mixtapeInventory[index];
         damageType = mixtapeInventory[index].GetComponent<Mixtape>().mixtapeDType;
         ChangeColor(currentTape, highAlpha);
@@ -100,10 +109,16 @@ public class MixtapeInventory : MonoBehaviour
     public void ResetCombo()
     {
         ChangeColor(currentTape, lowAlpha);
+        successiveAttacks = 0;
         index = 0;
         damageType = mixtapeInventory[index].GetComponent<Mixtape>().mixtapeDType;  // reset without playing sounds
         currentTape = mixtapeInventory[index];
         ChangeColor(currentTape, highAlpha);
+    }
+
+    public void IncrementSuccessiveAttack()
+    {
+        successiveAttacks++;
     }
 
     /// <summary>

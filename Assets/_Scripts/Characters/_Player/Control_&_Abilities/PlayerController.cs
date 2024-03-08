@@ -114,12 +114,15 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField]
     private float meleeAttackDuration = 0.5f;
 
+    [Tooltip("Time that the melee attack lasts for in seconds")]
+    public float meleeAttackKnockback = 5f;
+
     [Tooltip("GameObject representing the hitbox of the melee attack")]
     [SerializeField]
     private GameObject meleeBox;
 
     [Tooltip("Animator for melee")]
-   [SerializeField] private Animator meleeAnimator;
+    [SerializeField] private Animator meleeAnimator;
 
     [Header("UI Variables")]
     [Tooltip("Pause menu")]
@@ -140,7 +143,10 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private float attackDelayTimer;
 
     [Tooltip("How long should be allowed prior to restarting")]
-    [SerializeField] private float mixtapeResetTimer;
+    [SerializeField] private float timeBeforeReset;
+
+    [Tooltip("How long the cooldown of the combo is")]
+    [SerializeField] private float comboCooldownTime;
 
     [Tooltip("Bool defining if the player can attack")]
     private bool canAttack;
@@ -386,11 +392,20 @@ public class PlayerController : Singleton<PlayerController>
     /// <param name="obj">Input callback context for the ranged attack</param>
     private void DoRanged(InputAction.CallbackContext obj)
     {
-        if (canAttack)
+        if (canAttack && abilityManager.currentAbilityValue >= abilityManager.rangedAbilityCost)
         {
             SetCanAttack(false);
-            StartCoroutine(AttackDelays(attackDelayTimer));
-            ResetAttack();
+            mixtapeInventory.IncrementSuccessiveAttack();
+            
+            if (mixtapeInventory.successiveAttacks >= 3)
+            {
+                ComboCoolDown();
+            }
+            else
+            {
+                StartCoroutine(AttackDelays(attackDelayTimer));
+                ResetAttack();
+            }
             attackStatus = AttackStatus.Ranged;
             abilityManager.ResetAbilityRecharge();
             StartCoroutine(Projectile());
@@ -405,8 +420,17 @@ public class PlayerController : Singleton<PlayerController>
         if (canAttack)
         {
             SetCanAttack(false);
-            StartCoroutine(AttackDelays(attackDelayTimer));
-            ResetAttack();
+            mixtapeInventory.IncrementSuccessiveAttack();
+            
+            if (mixtapeInventory.successiveAttacks >= 3)
+            {
+                ComboCoolDown();
+            }
+            else
+            {
+                StartCoroutine(AttackDelays(attackDelayTimer));
+                ResetAttack();
+            }
             attackStatus = AttackStatus.Melee;
             abilityManager.ResetAbilityRecharge();
             StartCoroutine(Melee());
@@ -422,7 +446,7 @@ public class PlayerController : Singleton<PlayerController>
         {
             StopCoroutine(mixtapeResetRoutine);
         }
-        mixtapeResetRoutine = ResetMixtapeAttack(mixtapeResetTimer);
+        mixtapeResetRoutine = ResetMixtapeAttack(timeBeforeReset);
         StartCoroutine(mixtapeResetRoutine);
     }
 
@@ -439,7 +463,7 @@ public class PlayerController : Singleton<PlayerController>
         Ray dashCheckRay = new (dashCheck, Vector3.down);
         if (Physics.Raycast(dashCheckRay, float.MaxValue, groundLayerMask))
         {
-            if (abilityManager.currentAbilityValue >= 10 && dashCooldownTimer >= dashCooldownThreshold)
+            if (abilityManager.currentAbilityValue >= abilityManager.dashAbilityCost && dashCooldownTimer >= dashCooldownThreshold)
             {
                 return true;
             }
@@ -580,6 +604,26 @@ public class PlayerController : Singleton<PlayerController>
     {
         yield return new WaitForSeconds(timer);
         mixtapeInventory.ResetCombo();
+        ComboCoolDown();
+    }
+
+    /// <summary>
+    /// Function that initiates combo cooldown
+    /// </summary>
+    public void ComboCoolDown()
+    {
+        canAttack = false;
+        StartCoroutine(ComboCoolDownWait());
+    }
+
+    /// <summary>
+    /// Cooldown of combo
+    /// </summary>
+    /// <returns></returns>
+    IEnumerator ComboCoolDownWait()
+    {
+        yield return new WaitForSeconds(comboCooldownTime);
+        canAttack = true;
     }
     
     /// <summary>
@@ -639,6 +683,16 @@ public class PlayerController : Singleton<PlayerController>
         //meleeBox.SetActive(false);
         attackStatus = AttackStatus.None;
         EnablePlayerControls();
+    }
+
+    /// <summary>
+    /// Function that knocks the player back in a certain direction
+    /// </summary>
+    /// <param name="direction">Direction the player is knocked back</param>
+    /// <param name="magnitude">Magnitude the player is knocked back</param>
+    public void Knockback(Vector3 direction, float magnitude)
+    {
+        rigidBody.AddForce(direction.normalized * magnitude, ForceMode.Impulse);
     }
 
     #endregion

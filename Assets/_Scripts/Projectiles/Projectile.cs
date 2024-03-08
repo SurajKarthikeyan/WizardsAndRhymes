@@ -39,6 +39,9 @@ public class Projectile : MonoBehaviour
             if (character.vulnerable)
             {
                 character.TakeDamage(damage, dType);
+                if (character.gameObject.TryGetComponent(out BaseEnemyBehavior enemy)){
+                    enemy.Knockback(transform.forward);
+                }
             }
         }
         Destroy(gameObject);

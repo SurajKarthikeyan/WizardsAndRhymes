@@ -302,13 +302,16 @@ MonoBehaviour:
   rangedPrefabSpeed: 25
   meleeDamage: 100
   meleeAttackDuration: 0.5
+  meleeAttackKnockback: 5
   meleeBox: {fileID: 937923528513720809}
+  meleeAnimator: {fileID: 0}
   pauseMenu: {fileID: 0}
   isPaused: 0
   inventoryMenu: {fileID: 0}
   openInventory: 0
   attackDelayTimer: 0
-  mixtapeResetTimer: 2
+  timeBeforeReset: 0
+  comboCooldownTime: 0
   abilityManager: {fileID: 4681948003197784821}
   mixtapeInventory: {fileID: 0}
   playerHealth: {fileID: 1531503870578908028}
@@ -339,8 +342,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e86a9cb7a645d2040b54dfe5514f428e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  abilitySliderGameObject: {fileID: 0}
-  sliderFillArea: {fileID: 0}
   abilityRechargeThreshold: 0.5
   abilityGaugeFillValue: 3
   minimumAbilityValue: 0
@@ -349,6 +350,8 @@ MonoBehaviour:
   rangedAbilityCost: 2
   meleeAbilityCost: 5
   dashAbilityCost: 10
+  abilityCanvas: {fileID: 0}
+  manaSprites: []
 --- !u!114 &5530131915041016451
 MonoBehaviour:
   m_ObjectHideFlags: 0

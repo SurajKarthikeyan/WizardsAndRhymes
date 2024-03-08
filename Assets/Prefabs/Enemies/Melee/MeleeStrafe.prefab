@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 150}
+  m_AnchoredPosition: {x: 0, y: 335}
   m_SizeDelta: {x: 350, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7176066091232775055
@@ -429,12 +429,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorState: 0
   attackDamage: 5
+  knockbackPower: 200
   maxDistance: 10
   minDistance: 1
   activated: 0
   activatedMaterial: {fileID: 7933299137048178034, guid: a9f670f4eae962b4683c35ae3d1db878, type: 3}
-  navMeshAgent: {fileID: 0}
   hasBeenSeen: 0
+  navMeshAgent: {fileID: 0}
+  knockbackSpeed: 10
   strafeSpeed: 5
   strafeTimeThreshold: 3
   meleeLungeDistance: 5

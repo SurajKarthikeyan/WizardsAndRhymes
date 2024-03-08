@@ -136,7 +136,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 150}
+  m_AnchoredPosition: {x: 0, y: 335}
   m_SizeDelta: {x: 350, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2759199174959016686
@@ -427,16 +427,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorState: 0
   attackDamage: 5
+  knockbackPower: 200
   maxDistance: 10
   minDistance: 1
   activated: 0
   activatedMaterial: {fileID: -1629089541868478897, guid: 4f428a8918c559c44b229715a237c4cc, type: 3}
-  navMeshAgent: {fileID: 0}
   hasBeenSeen: 0
+  navMeshAgent: {fileID: 0}
+  knockbackSpeed: 10
   strafeSpeed: 5
   strafeTimeThreshold: 3
   enemyProjectile: {fileID: 4155231900741922661, guid: 2aeae3acb6641b647a8581427672364d, type: 3}
   projectileSpawnPoint: {fileID: 8193508159964680096}
+  projectileSpeed: 12
   shootCooldown: 1
 --- !u!114 &1632420440880774631
 MonoBehaviour:

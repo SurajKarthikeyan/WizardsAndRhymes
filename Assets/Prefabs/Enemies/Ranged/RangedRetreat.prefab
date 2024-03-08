@@ -222,16 +222,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   behaviorState: 0
   attackDamage: 5
+  knockbackPower: 200
   maxDistance: 10
   minDistance: 1
   activated: 0
   activatedMaterial: {fileID: -1048756183676823253, guid: 98ad67e4ae4dbb54eb05b761fb2a2c02, type: 3}
-  navMeshAgent: {fileID: 0}
   hasBeenSeen: 0
+  navMeshAgent: {fileID: 0}
+  knockbackSpeed: 10
   retreatDistance: 5
   retreatSpeed: 5
   enemyProjectile: {fileID: 4155231900741922661, guid: 2aeae3acb6641b647a8581427672364d, type: 3}
   projectileSpawnPoint: {fileID: 328519280771591202}
+  projectileSpeed: 12
   shootCooldown: 1
 --- !u!114 &5009567518836030861
 MonoBehaviour:
@@ -508,7 +511,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 150}
+  m_AnchoredPosition: {x: 0, y: 335}
   m_SizeDelta: {x: 350, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2806913383873668745
