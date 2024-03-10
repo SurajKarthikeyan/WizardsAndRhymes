@@ -131,11 +131,11 @@ public class PlayerController : Singleton<PlayerController>
     [Tooltip("Pause menu active state")]
     [SerializeField] private bool isPaused;
 
-    [Tooltip("Inventory menu")]
-    [SerializeField] private GameObject inventoryMenu;
+    /*[Tooltip("Inventory menu")]
+    [SerializeField] private GameObject inventoryMenu;*/
 
-    [Tooltip("Inventory menu active state")]
-    [SerializeField] private bool openInventory;
+    /*[Tooltip("Inventory menu active state")]
+    [SerializeField] private bool openInventory;*/
 
     [Header("General Attack/Combo Variables")]
 
@@ -492,10 +492,9 @@ public class PlayerController : Singleton<PlayerController>
     /// <param name="obj"></param>
     private void PauseAction(InputAction.CallbackContext obj)
     {
-        if (!openInventory)
-        {
-            Pause();
-        }
+
+        Pause();
+        
     }
     
     /// <summary>
@@ -506,19 +505,7 @@ public class PlayerController : Singleton<PlayerController>
         isPaused = !isPaused;
         pauseMenu.SetActive(isPaused);
     }
-
     
-    /// <summary>
-    /// Reads input for player to open inventory
-    /// </summary>
-    /// <param name="obj"></param>
-    private void InventoryAction(InputAction.CallbackContext obj)
-    {
-        if (!isPaused)
-        {
-            OpenInventory();
-        }
-    }
 
     /// <summary>
     /// Function that enables the players inputs 
@@ -541,7 +528,6 @@ public class PlayerController : Singleton<PlayerController>
     {
         playerInput.UI.MenuSelect.started += MenuSelect;
         playerInput.UI.Exit.started += PauseAction;
-        playerInput.UI.Inventory.started += InventoryAction;
         playerInput.UI.Enable();
     }
 
@@ -572,18 +558,9 @@ public class PlayerController : Singleton<PlayerController>
     {
         playerInput.UI.MenuSelect.canceled -= MenuSelect;
         playerInput.UI.Exit.canceled -= PauseAction;
-        playerInput.UI.Inventory.started -= InventoryAction;
         playerInput.UI.Disable();
     }
-
-    /// <summary>
-    /// Opens user inventory
-    /// </summary>
-    public void OpenInventory()
-    {
-        openInventory = !openInventory;
-        inventoryMenu.SetActive(openInventory);
-    }
+    
 
     /// <summary>
     /// Coroutine that handles delays between attacks
