@@ -12,9 +12,7 @@ public class BoxFace : MonoBehaviour
     #region Variables
     [Tooltip("Reference to parent PushBox script")]
     [SerializeField] private PushBox parentPushBox;
-    [Tooltip("If this is the face the player pushes to move it 'forward'")]
-    [SerializeField] private bool forward;
-
+    
     #endregion
 
     #region CustomMethods
@@ -27,19 +25,15 @@ public class BoxFace : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //parentPushBox.Push(forward);
+            parentPushBox.isPushed = true;
         }
     }
 
-    /// <summary>
-    /// On Trigger Stay checks if its the player then KEEPS moves the box in direction
-    /// </summary>
-    /// <param name="other"></param>
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //parentPushBox.Push(forward);
+            parentPushBox.isPushed = false;
         }
     }
 
