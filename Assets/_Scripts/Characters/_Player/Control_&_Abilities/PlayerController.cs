@@ -92,6 +92,10 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField]
     private Camera playerCamera;
 
+    [Header("General Attack Variables")] 
+    [Tooltip("Damage type of the player for the entire level")]
+    [SerializeField] private Health.DamageType playerLevelDamageType;
+    
     [Header("Ranged Attack Variables")]
 
     [Tooltip("Prefab used as the player's ranged attack")]
@@ -634,7 +638,7 @@ public class PlayerController : Singleton<PlayerController>
         //Instantiate projectile and give it the proper velocity
         GameObject projectile = Instantiate(rangedPrefab, rangedSpawnPoint.position, rangedSpawnPoint.rotation);
         projectile.GetComponent<Rigidbody>().velocity = rangedSpawnPoint.forward * rangedPrefabSpeed;
-        projectile.GetComponent<Projectile>().dType = mixtapeInventory.damageType;
+        projectile.GetComponent<Projectile>().dType = playerLevelDamageType;
         abilityManager.ResetAbilityRecharge();
         yield return new WaitForSeconds(0.3f);
         attackStatus = AttackStatus.None;
@@ -650,7 +654,7 @@ public class PlayerController : Singleton<PlayerController>
         //Sets the collider to be active and pushes player forward as if they're lunging
         //meleeBox.SetActive(true);
         meleeAnimator.SetTrigger("testSwingSword");
-        meleeBox.GetComponent<MeleeCollider>().damageType = mixtapeInventory.damageType;
+        meleeBox.GetComponent<MeleeCollider>().damageType = playerLevelDamageType;
         abilityManager.ReduceAbilityGuage(abilityManager.meleeAbilityCost);
         rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
         DisablePlayerControls();
