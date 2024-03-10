@@ -18508,6 +18508,75 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 1
+--- !u!1001 &939220590
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2032758729}
+    m_Modifications:
+    - target: {fileID: 454929511043733613, guid: bc544e1abd405324e87ae8d430184298, type: 3}
+      propertyPath: m_Name
+      value: FloorScuffDecal
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462209767062740809, guid: bc544e1abd405324e87ae8d430184298, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462209767062740809, guid: bc544e1abd405324e87ae8d430184298, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462209767062740809, guid: bc544e1abd405324e87ae8d430184298, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462209767062740809, guid: bc544e1abd405324e87ae8d430184298, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 4.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462209767062740809, guid: bc544e1abd405324e87ae8d430184298, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462209767062740809, guid: bc544e1abd405324e87ae8d430184298, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.273
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462209767062740809, guid: bc544e1abd405324e87ae8d430184298, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.26991385
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462209767062740809, guid: bc544e1abd405324e87ae8d430184298, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.26991385
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462209767062740809, guid: bc544e1abd405324e87ae8d430184298, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.65356445
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462209767062740809, guid: bc544e1abd405324e87ae8d430184298, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.65356445
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462209767062740809, guid: bc544e1abd405324e87ae8d430184298, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462209767062740809, guid: bc544e1abd405324e87ae8d430184298, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3462209767062740809, guid: bc544e1abd405324e87ae8d430184298, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: bc544e1abd405324e87ae8d430184298, type: 3}
 --- !u!1 &950389419
 GameObject:
   m_ObjectHideFlags: 0
@@ -18710,8 +18779,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef1b133e2142e5842bbeff4181cbcdfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 950827738}
-  pushForce: 0.05
 --- !u!54 &950827738
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -34536,6 +34603,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3516245921582239295, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
   m_PrefabInstance: {fileID: 1181510895252845153}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1957575871 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3462209767062740809, guid: bc544e1abd405324e87ae8d430184298, type: 3}
+  m_PrefabInstance: {fileID: 939220590}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1961561953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35481,6 +35553,7 @@ Transform:
   m_LocalScale: {x: 3.2200003, y: 3.22, z: 3.2200003}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1957575871}
   - {fileID: 1326221736}
   - {fileID: 1025216418}
   - {fileID: 1060779924}
