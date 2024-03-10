@@ -95,6 +95,10 @@ public class PlayerController : Singleton<PlayerController>
     [Header("General Attack Variables")] 
     [Tooltip("Damage type of the player for the entire level")]
     [SerializeField] private Health.DamageType playerLevelDamageType;
+    [Tooltip("Audio Event for ranged attacks")]
+    [SerializeField] private AK.Wwise.Event rangedEvent;
+    [Tooltip("Audio Event for melee attacks")]
+    [SerializeField] private AK.Wwise.Event meleeEvent;
     
     [Header("Ranged Attack Variables")]
 
@@ -634,6 +638,7 @@ public class PlayerController : Singleton<PlayerController>
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Projectile()
     {
+        rangedEvent.Post(this.gameObject);
         abilityManager.ReduceAbilityGuage(abilityManager.rangedAbilityCost);
         //Instantiate projectile and give it the proper velocity
         GameObject projectile = Instantiate(rangedPrefab, rangedSpawnPoint.position, rangedSpawnPoint.rotation);
@@ -642,7 +647,7 @@ public class PlayerController : Singleton<PlayerController>
         abilityManager.ResetAbilityRecharge();
         yield return new WaitForSeconds(0.3f);
         attackStatus = AttackStatus.None;
-        mixtapeInventory.OnTapeChange(true);
+        mixtapeInventory.OnTapeChange();
     }
 
     /// <summary>
@@ -651,15 +656,15 @@ public class PlayerController : Singleton<PlayerController>
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Melee()
     {
-        //Sets the collider to be active and pushes player forward as if they're lunging
-        //meleeBox.SetActive(true);
+        meleeEvent.Post(this.gameObject);
+        abilityManager.ReduceAbilityGuage(abilityManager.meleeAbilityCost);
         meleeAnimator.SetTrigger("testSwingSword");
         meleeBox.GetComponent<MeleeCollider>().damageType = playerLevelDamageType;
         abilityManager.ReduceAbilityGuage(abilityManager.meleeAbilityCost);
         rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
         DisablePlayerControls();
         abilityManager.ResetAbilityRecharge();
-        mixtapeInventory.OnTapeChange(false);    // this here might be problematic but not too sure
+        mixtapeInventory.OnTapeChange();    // this here might be problematic but not too sure
         yield return new WaitForSeconds(meleeAttackDuration);
         //meleeBox.SetActive(false);
         attackStatus = AttackStatus.None;
