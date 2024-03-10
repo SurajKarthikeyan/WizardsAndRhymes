@@ -32,7 +32,7 @@ public class AbilityManager : MonoBehaviour
     public float rangedAbilityCost = 2f;
 
     [Tooltip("Amount of ability gauge used when ranged attacking")]
-    public float meleeAbilityCost = 5f;
+    public float meleeAbilityCost;
 
     [Tooltip("Amount of ability gauge used when dashing")]
     public float dashAbilityCost = 10f;

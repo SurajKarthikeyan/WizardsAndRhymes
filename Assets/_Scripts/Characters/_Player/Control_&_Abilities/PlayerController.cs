@@ -660,7 +660,6 @@ public class PlayerController : Singleton<PlayerController>
         abilityManager.ReduceAbilityGuage(abilityManager.meleeAbilityCost);
         meleeAnimator.SetTrigger("testSwingSword");
         meleeBox.GetComponent<MeleeCollider>().damageType = playerLevelDamageType;
-        abilityManager.ReduceAbilityGuage(abilityManager.meleeAbilityCost);
         rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
         DisablePlayerControls();
         abilityManager.ResetAbilityRecharge();
