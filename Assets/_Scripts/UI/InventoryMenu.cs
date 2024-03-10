@@ -44,7 +44,6 @@ public class InventoryMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         onScreenMixtapeInventory.SetActive(true);
-        mixtapeInventory.SetOrder();
 
     }
     #endregion
@@ -61,7 +60,6 @@ public class InventoryMenu : MonoBehaviour
         {
             sendList.Add(elementalToggles[i].name);
         }
-        mixtapeInventory.inventoryOrder = sendList;
     }
 
     /// <summary>
