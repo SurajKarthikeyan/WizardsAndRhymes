@@ -255,6 +255,17 @@
 				<Folder Name="Enemies" ID="{2A8FF2E8-9C80-4D77-96DF-0BA597415A5C}" ShortID="957307035">
 					<ChildrenList>
 						<Folder Name="Wizzo" ID="{712E419E-F28C-47D1-833B-CEE3FA94F3D4}" ShortID="937761896"/>
+						<Event Name="SkeletonHit" ID="{31A629A8-34A3-4051-BE66-8A5621F7B29B}">
+							<ChildrenList>
+								<Action Name="" ID="{5B50BA88-3B5A-499E-A269-B9848BDCB3F4}" ShortID="853244009">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SkeletonImpact" ID="{D44FCAE2-E26A-4643-9A77-06A9C8997E75}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 			</ChildrenList>
