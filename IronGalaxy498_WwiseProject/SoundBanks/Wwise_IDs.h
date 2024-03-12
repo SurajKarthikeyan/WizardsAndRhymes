@@ -22,6 +22,7 @@ namespace AK
         static const AkUniqueID RANGEDFIRE = 1744863420U;
         static const AkUniqueID RANGEDICE = 2982846157U;
         static const AkUniqueID RANGEDLIGHTNING = 1899629126U;
+        static const AkUniqueID SKELETONHIT = 2460311919U;
         static const AkUniqueID TESTEVENT = 1097980931U;
         static const AkUniqueID TESTINTERACTIVEMUSIC = 372047860U;
         static const AkUniqueID TESTMUSIC = 1324413170U;

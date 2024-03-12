@@ -73,6 +73,9 @@ public abstract class BaseEnemyHealth : Health
     
     [Tooltip("Base enemy behaviour reference for status settings")]
     [SerializeField] private BaseEnemyBehavior enemyBehavior;
+    
+    [Tooltip("Audio Event for skeleton hit")]
+    [SerializeField] private AK.Wwise.Event enemyHitSFX;
 
     private bool isDead;
     #endregion
@@ -113,6 +116,7 @@ public abstract class BaseEnemyHealth : Health
     {
         if (!isDead && vulnerable)
         {
+            enemyHitSFX.Post(this.gameObject);
             //We should check what the damage type is when assigning effect
             if (dType == DamageType.Fire)
             {

@@ -94,7 +94,7 @@
 				<GameParameter Id="3550808449" Name="High"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{596E4154-8ED5-AECD-DD63-E81942FC17AB}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{42BD1918-17E2-04C7-27AC-B145B6BDCBE0}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -122,6 +122,10 @@
 					<ShortName>Initial498ConceptMusB2.wav</ShortName>
 					<CachePath>SFX/Initial498ConceptMusB2_818F3B66.wem</CachePath>
 				</File>
+				<File Id="94231916" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_E9170620.wem</CachePath>
+				</File>
 				<File Id="128351763" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Kick1.wav</ShortName>
 					<CachePath>SFX/Kick1_818F3B66.wem</CachePath>
@@ -133,6 +137,10 @@
 				<File Id="345662734" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>498FreqTest.wav</ShortName>
 					<CachePath>SFX/498FreqTest_818F3B66.wem</CachePath>
+				</File>
+				<File Id="361976253" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_BA5A28CF.wem</CachePath>
 				</File>
 				<File Id="362380582" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Swoosh1.wav</ShortName>
@@ -150,6 +158,10 @@
 					<ShortName>Ice3.wav</ShortName>
 					<CachePath>SFX/Ice3_818F3B66.wem</CachePath>
 				</File>
+				<File Id="470829322" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_73616B20.wem</CachePath>
+				</File>
 				<File Id="476678353" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Initial498ConceptMusB2.wav</ShortName>
 					<CachePath>SFX/Initial498ConceptMusB2_FBC78EF0.wem</CachePath>
@@ -157,6 +169,18 @@
 				<File Id="535223205" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MicTap3.wav</ShortName>
 					<CachePath>SFX/MicTap3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="560172071" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_651E6C52.wem</CachePath>
+				</File>
+				<File Id="583637567" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_2D5FA1F8.wem</CachePath>
+				</File>
+				<File Id="596267822" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_8DF2FD27.wem</CachePath>
 				</File>
 				<File Id="654079656" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fire1.wav</ShortName>
@@ -178,6 +202,10 @@
 					<ShortName>242503__gabrielaraujo__failure-wrong-action.wav</ShortName>
 					<CachePath>SFX/242503__gabrielaraujo__failure-wrong-action_818F3B66.wem</CachePath>
 				</File>
+				<File Id="896693686" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_3CE83CA9.wem</CachePath>
+				</File>
 				<File Id="909458974" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Zap1.wav</ShortName>
 					<CachePath>SFX/Zap1_818F3B66.wem</CachePath>
@@ -193,6 +221,10 @@
 				<File Id="930947941" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ice1.wav</ShortName>
 					<CachePath>SFX/Ice1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="935653253" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_4396A49F.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -281,6 +313,18 @@
 						<MediaRef Id="909458974"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2460311919" Name="SkeletonHit" DurationType="OneShot" DurationMin="0.86824834" DurationMax="1.3890802">
+					<MediaRefs>
+						<MediaRef Id="94231916"/>
+						<MediaRef Id="361976253"/>
+						<MediaRef Id="470829322"/>
+						<MediaRef Id="560172071"/>
+						<MediaRef Id="583637567"/>
+						<MediaRef Id="596267822"/>
+						<MediaRef Id="896693686"/>
+						<MediaRef Id="935653253"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1097980931" Name="TestEvent" DurationType="OneShot" DurationMin="16" DurationMax="16">
 					<MediaRefs>
 						<MediaRef Id="437516516"/>
@@ -304,5 +348,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{7ED6B5E0-03B9-A998-A16F-607D4305A3AB}</FileHash>
+	<FileHash>{8E8BA4A7-C3C1-5C84-53B9-35E1900646EB}</FileHash>
 </SoundBanksInfo>

@@ -10,6 +10,7 @@ public class PushBox : MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
     [SerializeField] public bool isPushed;
+    [SerializeField] private float pushForce;
 
     private void Start()
     {
@@ -29,7 +30,7 @@ public class PushBox : MonoBehaviour
         }
         else if (isPushed)
         {
-            rb.velocity = direction.normalized * 10f;
+            rb.velocity = direction.normalized * pushForce;
         }
     }
 
