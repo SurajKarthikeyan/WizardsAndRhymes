@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,9 @@ using UnityEngine.InputSystem;
 public class PlayerController : Singleton<PlayerController>
 {
     #region Variables
+    [Tooltip("The player's tag")]
+    public const string PlayerTag = "Player";
+
     [Tooltip("Enum that represents the movement state of the player")]
     private enum MoveStatus
     {
@@ -209,6 +213,9 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
+    [Tooltip("A set of sources locking the player's movement")]
+    private HashSet<MonoBehaviour> movementLockSources = new HashSet<MonoBehaviour>();
+
     //[Header("Test Variables")]
     //public GameObject testLight;
     #endregion
@@ -263,7 +270,7 @@ public class PlayerController : Singleton<PlayerController>
 
         dashCooldownTimer += Time.deltaTime;
 
-        if (IsMoving)
+        if (IsMoving && !IsMovementLocked())
         {
             //Adds different force to the rigidbody depending on if we are dashing or not
             float appliedForce;
@@ -486,6 +493,9 @@ public class PlayerController : Singleton<PlayerController>
     /// <param name="obj">Input callback context for the dash</param>
     private void DoDash(InputAction.CallbackContext obj)
     {
+        if (IsMovementLocked()) //Cannot dash with a movement lock in place
+            return;
+
         abilityManager.ResetAbilityRecharge();
         if (IsValidDash())
         {
@@ -678,6 +688,38 @@ public class PlayerController : Singleton<PlayerController>
     public void Knockback(Vector3 direction, float magnitude)
     {
         rigidBody.AddForce(direction.normalized * magnitude, ForceMode.Impulse);
+    }
+
+    /// <summary>
+    /// Register a source that is preventing the player from moving. The player's rigidbody is set to kinematic while movement is locked
+    /// </summary>
+    /// <param name="lockSource">The source to add</param>
+    public void AddMovementLock(MonoBehaviour lockSource)
+    {
+        movementLockSources.Add(lockSource);
+
+        rigidBody.isKinematic = true;
+    }
+
+    /// <summary>
+    /// Removes a source that is preventing the player from moving. Resets the player's rigidbody to no longer be kinematic if the last lock is removed
+    /// </summary>
+    /// <param name="lockSource">The source to remove</param>
+    public void RemoveMovementLock(MonoBehaviour lockSource)
+    {
+        movementLockSources.Remove(lockSource);
+
+        if (!IsMovementLocked())
+            rigidBody.isKinematic=false;
+    }
+
+    /// <summary>
+    /// Returns whether any movement locks are currently on the player
+    /// </summary>
+    /// <returns>Whether any movement locks are currently on the player</returns>
+    private bool IsMovementLocked()
+    {
+        return movementLockSources.Count > 0;
     }
 
     #endregion
