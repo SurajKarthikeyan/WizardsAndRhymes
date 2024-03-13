@@ -462,6 +462,8 @@ MonoBehaviour:
   degreesPerSecond: 15
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!65 &15685779
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -602,6 +604,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &35233989
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -726,6 +730,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &36880391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1192,6 +1198,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &83639843 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5731077476133941631, guid: 46e654c102087004988f6462e5ae7133, type: 3}
@@ -1726,6 +1734,8 @@ MonoBehaviour:
   degreesPerSecond: -8
   amplitude: 0.3
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &106779898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4930,7 +4940,7 @@ PrefabInstance:
       addedObject: {fileID: 1253613551}
     - targetCorrespondingSourceObject: {fileID: 7469089215001020137, guid: f173e37265dcfcf40ab9d96294c603e9, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 451662025}
+      addedObject: {fileID: 8455060215713326648}
     - targetCorrespondingSourceObject: {fileID: 7469089215001020137, guid: f173e37265dcfcf40ab9d96294c603e9, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1701274115}
@@ -6718,6 +6728,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.7
   frequency: 0.7
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &255244320
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7420,6 +7432,8 @@ MonoBehaviour:
   degreesPerSecond: 15
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!65 &278109211
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7516,6 +7530,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &281967065
 GameObject:
   m_ObjectHideFlags: 0
@@ -7596,6 +7612,8 @@ MonoBehaviour:
   degreesPerSecond: 15
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!65 &281967069
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7830,6 +7848,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &314852347 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6235409801154746877, guid: 86509780b07285a44a69b1eb089a3ed1, type: 3}
@@ -8686,6 +8706,8 @@ MonoBehaviour:
   degreesPerSecond: -8
   amplitude: 0.3
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &374366851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6908656363998969129, guid: 0dd050efb10a21c4f8d1c3ab7e33f70b, type: 3}
@@ -8716,6 +8738,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &381072767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8900,6 +8924,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &404008880
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9694,6 +9720,8 @@ MonoBehaviour:
   degreesPerSecond: 15
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!65 &431741810
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9790,6 +9818,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &446376336
 GameObject:
   m_ObjectHideFlags: 0
@@ -9869,72 +9899,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446376336}
   m_CullTransparentMesh: 1
---- !u!1001 &451662024
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 156153672}
-    m_Modifications:
-    - target: {fileID: 1462265463794877128, guid: f4c0973155f461d4895742d7e836ecb5, type: 3}
-      propertyPath: m_Name
-      value: gen_floor_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1462265463794877128, guid: f4c0973155f461d4895742d7e836ecb5, type: 3}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 8455060215892195056, guid: f4c0973155f461d4895742d7e836ecb5, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -28
-      objectReference: {fileID: 0}
-    - target: {fileID: 8455060215892195056, guid: f4c0973155f461d4895742d7e836ecb5, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8455060215892195056, guid: f4c0973155f461d4895742d7e836ecb5, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -12
-      objectReference: {fileID: 0}
-    - target: {fileID: 8455060215892195056, guid: f4c0973155f461d4895742d7e836ecb5, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8455060215892195056, guid: f4c0973155f461d4895742d7e836ecb5, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.7071068
-      objectReference: {fileID: 0}
-    - target: {fileID: 8455060215892195056, guid: f4c0973155f461d4895742d7e836ecb5, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8455060215892195056, guid: f4c0973155f461d4895742d7e836ecb5, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8455060215892195056, guid: f4c0973155f461d4895742d7e836ecb5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8455060215892195056, guid: f4c0973155f461d4895742d7e836ecb5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8455060215892195056, guid: f4c0973155f461d4895742d7e836ecb5, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f4c0973155f461d4895742d7e836ecb5, type: 3}
---- !u!4 &451662025 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8455060215892195056, guid: f4c0973155f461d4895742d7e836ecb5, type: 3}
-  m_PrefabInstance: {fileID: 451662024}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &454382225
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10193,6 +10157,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &474326734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11992,6 +11958,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &548334500
 Transform:
   m_ObjectHideFlags: 0
@@ -12145,6 +12113,8 @@ MonoBehaviour:
   degreesPerSecond: -8
   amplitude: 0.3
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &561249312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12368,6 +12338,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &592637235
 GameObject:
   m_ObjectHideFlags: 0
@@ -12501,6 +12473,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &602333075
 GameObject:
   m_ObjectHideFlags: 0
@@ -12660,6 +12634,8 @@ MonoBehaviour:
   degreesPerSecond: 15
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!65 &602636541
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13225,6 +13201,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &628613829
 GameObject:
   m_ObjectHideFlags: 0
@@ -13416,6 +13394,8 @@ MonoBehaviour:
   degreesPerSecond: -8
   amplitude: 0.3
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &634674535
 GameObject:
   m_ObjectHideFlags: 0
@@ -13683,6 +13663,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &651110469
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13987,6 +13969,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &668839049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7a84fb301c6963b46828f9bd4340ff60, type: 3}
@@ -14017,6 +14001,8 @@ MonoBehaviour:
   degreesPerSecond: -8
   amplitude: 0.3
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &682529135
 GameObject:
   m_ObjectHideFlags: 0
@@ -14116,6 +14102,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &705600458
 GameObject:
   m_ObjectHideFlags: 0
@@ -14249,6 +14237,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &708873912
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14524,6 +14514,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.4
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &715551423
 Transform:
   m_ObjectHideFlags: 0
@@ -14599,6 +14591,89 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66432058a39105348b7730f815c42f3a, type: 3}
+--- !u!1 &717780100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 717780101}
+  - component: {fileID: 717780102}
+  - component: {fileID: 717780103}
+  m_Layer: 3
+  m_Name: IceCheck
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &717780101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717780100}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.796, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1381010328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &717780102
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717780100}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &717780103
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717780100}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.2616463
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.13082305, z: 0}
 --- !u!1 &724896793 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2684695994064820914, guid: 86509780b07285a44a69b1eb089a3ed1, type: 3}
@@ -14624,6 +14699,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &727247391
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14895,6 +14972,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &745893914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15255,6 +15334,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &760766096
 Transform:
   m_ObjectHideFlags: 0
@@ -15324,6 +15405,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &775453463 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 59d2e0923fe0b0840a2cfa6b6e4ace5b, type: 3}
@@ -15354,6 +15437,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &780927637
 GameObject:
   m_ObjectHideFlags: 0
@@ -15721,6 +15806,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1.1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &795504750
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16116,6 +16203,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &812663382
 GameObject:
   m_ObjectHideFlags: 0
@@ -16298,6 +16387,8 @@ MonoBehaviour:
   degreesPerSecond: -8
   amplitude: 0.3
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &822918737
 GameObject:
   m_ObjectHideFlags: 0
@@ -16734,6 +16825,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &841350068
 GameObject:
   m_ObjectHideFlags: 0
@@ -16869,6 +16962,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.7
   frequency: 0.7
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &851413491
 GameObject:
   m_ObjectHideFlags: 0
@@ -17650,6 +17745,8 @@ MonoBehaviour:
   degreesPerSecond: 15
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!65 &882543925
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17864,6 +17961,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &904499648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18508,6 +18607,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &939220590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19068,6 +19169,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 0.8
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &999100859
 Transform:
   m_ObjectHideFlags: 0
@@ -19619,6 +19722,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1044484864
 GameObject:
   m_ObjectHideFlags: 0
@@ -20061,6 +20166,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 0.8
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &1060779923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20212,6 +20319,8 @@ MonoBehaviour:
   degreesPerSecond: 9
   amplitude: 0.3
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1074745997
 GameObject:
   m_ObjectHideFlags: 0
@@ -20262,6 +20371,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.4
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1082886188
 GameObject:
   m_ObjectHideFlags: 0
@@ -21125,6 +21236,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &1160057621
 Transform:
   m_ObjectHideFlags: 0
@@ -21357,6 +21470,8 @@ MonoBehaviour:
   degreesPerSecond: 15
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!65 &1173012363
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22178,6 +22293,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &1228606831
 Transform:
   m_ObjectHideFlags: 0
@@ -23559,6 +23676,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &1312966781
 Transform:
   m_ObjectHideFlags: 0
@@ -24297,6 +24416,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &1345899722
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24912,6 +25033,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &1381010328 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
@@ -25221,6 +25344,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1401813022
 GameObject:
   m_ObjectHideFlags: 0
@@ -25301,6 +25426,8 @@ MonoBehaviour:
   degreesPerSecond: 15
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!65 &1401813026
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25827,6 +25954,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.4
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1426985111
 GameObject:
   m_ObjectHideFlags: 0
@@ -26972,6 +27101,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1487485355
 GameObject:
   m_ObjectHideFlags: 0
@@ -27327,6 +27458,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.7
   frequency: 0.7
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &1499202619
 Transform:
   m_ObjectHideFlags: 0
@@ -28160,6 +28293,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &1548550971
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28979,6 +29114,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &1593055494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29099,6 +29236,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 0.8
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &1606998437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29666,6 +29805,8 @@ MonoBehaviour:
   degreesPerSecond: 8
   amplitude: 0.3
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &1634680987 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6235409801154746877, guid: 86509780b07285a44a69b1eb089a3ed1, type: 3}
@@ -29996,6 +30137,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &1652471777
 Transform:
   m_ObjectHideFlags: 0
@@ -30308,6 +30451,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1681809827
 GameObject:
   m_ObjectHideFlags: 0
@@ -30934,6 +31079,8 @@ MonoBehaviour:
   degreesPerSecond: -6
   amplitude: 0.6
   frequency: 0.8
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1715808878
 GameObject:
   m_ObjectHideFlags: 0
@@ -31144,6 +31291,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1738556919
 GameObject:
   m_ObjectHideFlags: 0
@@ -31531,6 +31680,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &1771277298
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31657,6 +31808,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1.1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1779021239
 GameObject:
   m_ObjectHideFlags: 0
@@ -31931,6 +32084,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1799312449
 GameObject:
   m_ObjectHideFlags: 0
@@ -32129,6 +32284,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1.1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &1805872141
 Transform:
   m_ObjectHideFlags: 0
@@ -32186,6 +32343,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &1811076548
 Transform:
   m_ObjectHideFlags: 0
@@ -32390,6 +32549,8 @@ MonoBehaviour:
   degreesPerSecond: -8
   amplitude: 0.3
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1842805255 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2684695994064820914, guid: 86509780b07285a44a69b1eb089a3ed1, type: 3}
@@ -32415,6 +32576,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1844948649
 GameObject:
   m_ObjectHideFlags: 0
@@ -32737,6 +32900,8 @@ MonoBehaviour:
   degreesPerSecond: 15
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!65 &1848880504
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32959,6 +33124,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1864309398
 GameObject:
   m_ObjectHideFlags: 0
@@ -32991,6 +33158,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &1864309400
 Transform:
   m_ObjectHideFlags: 0
@@ -33165,6 +33334,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1877282566
 GameObject:
   m_ObjectHideFlags: 0
@@ -34236,6 +34407,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &1942932975
 GameObject:
   m_ObjectHideFlags: 0
@@ -34268,6 +34441,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &1942932977
 Transform:
   m_ObjectHideFlags: 0
@@ -35144,6 +35319,8 @@ MonoBehaviour:
   degreesPerSecond: 7
   amplitude: 0.3
   frequency: 0.9
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1 &2014951463
 GameObject:
   m_ObjectHideFlags: 0
@@ -35807,6 +35984,8 @@ MonoBehaviour:
   degreesPerSecond: 10
   amplitude: 0.6
   frequency: 1.2
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &2077815595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36262,6 +36441,8 @@ MonoBehaviour:
   degreesPerSecond: 0
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!4 &2109304436 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5731077476133941631, guid: 46e654c102087004988f6462e5ae7133, type: 3}
@@ -36808,6 +36989,8 @@ MonoBehaviour:
   degreesPerSecond: 15
   amplitude: 0.5
   frequency: 1
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!65 &2138537733
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37405,6 +37588,10 @@ PrefabInstance:
       value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: iceSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: dashForce
       value: 15
       objectReference: {fileID: 0}
@@ -37593,6 +37780,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 775453463}
+    - targetCorrespondingSourceObject: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 717780101}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 5544728551740817183, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       insertIndex: -1
@@ -37740,11 +37930,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3575433202476467507, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.067111574
+      value: 0.06711161
       objectReference: {fileID: 0}
     - target: {fileID: 3575433202476467507, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.02778784
+      value: -0.027787859
       objectReference: {fileID: 0}
     - target: {fileID: 5108746697505530432, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
@@ -38315,6 +38505,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5567488654085584367, guid: 9b5276f4867a9fb4888caaec058bfe94, type: 3}
   m_PrefabInstance: {fileID: 1986829735894038510}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5323433190459729864
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 156153672}
+    m_Modifications:
+    - target: {fileID: 2463142954598932081, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
+      propertyPath: m_Name
+      value: IceBlockFloor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430811357378117283, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -28
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430811357378117283, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430811357378117283, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430811357378117283, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430811357378117283, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430811357378117283, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430811357378117283, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430811357378117283, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430811357378117283, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5430811357378117283, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
 --- !u!1001 &6365628833043843550
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38404,6 +38651,11 @@ PrefabInstance:
 Rigidbody:
   m_CorrespondingSourceObject: {fileID: 6813885362098989773, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
   m_PrefabInstance: {fileID: 6365628833043843550}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8455060215713326648 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5430811357378117283, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
+  m_PrefabInstance: {fileID: 5323433190459729864}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &8537366244497927174 stripped
 Transform:

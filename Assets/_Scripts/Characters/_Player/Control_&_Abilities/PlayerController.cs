@@ -17,7 +17,8 @@ public class PlayerController : Singleton<PlayerController>
     {
         Idle,
         Moving,
-        Dashing
+        Dashing,
+        Ice
     }
 
     [Tooltip("MoveStatus instance")]
@@ -216,8 +217,14 @@ public class PlayerController : Singleton<PlayerController>
     [Tooltip("A set of sources locking the player's movement")]
     private HashSet<MonoBehaviour> movementLockSources = new HashSet<MonoBehaviour>();
 
-    //[Header("Test Variables")]
-    //public GameObject testLight;
+    [Header("Ice Slide Variables")] 
+    [Tooltip("Check if player is on ice")]
+    [SerializeField] public bool isOnIce;
+    [Tooltip("Saved direction when entering ice")]
+    [HideInInspector] private Vector3 savedVelocityVector;
+
+    [Tooltip("Speed of sliding on the ice")]
+    [SerializeField] private float iceSpeed;
     #endregion
 
     #region Unity Methods
@@ -270,7 +277,7 @@ public class PlayerController : Singleton<PlayerController>
 
         dashCooldownTimer += Time.deltaTime;
 
-        if (IsMoving && !IsMovementLocked())
+        if (IsMoving && !IsMovementLocked() && !isOnIce)
         {
             //Adds different force to the rigidbody depending on if we are dashing or not
             float appliedForce;
@@ -306,6 +313,11 @@ public class PlayerController : Singleton<PlayerController>
             }
         }
 
+        else if (isOnIce)
+        {
+            moveStatus = MoveStatus.Ice;
+            rigidBody.velocity = savedVelocityVector * iceSpeed;
+        }
         //If we are not moving, we are assumed idle
         else
         {
@@ -319,6 +331,14 @@ public class PlayerController : Singleton<PlayerController>
     #endregion
 
     #region Custom Methods
+    
+    
+    public void SaveCurrentVelocityVector()
+    {
+        savedVelocityVector = rigidBody.velocity.normalized;
+    }
+    
+    
     /// <summary>
     /// Function that makes the player look in the direction that the player inputs
     /// </summary>
