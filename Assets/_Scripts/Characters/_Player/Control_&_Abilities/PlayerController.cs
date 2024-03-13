@@ -17,8 +17,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         Idle,
         Moving,
-        Dashing,
-        Ice
+        Dashing
     }
 
     [Tooltip("MoveStatus instance")]
@@ -203,16 +202,6 @@ public class PlayerController : Singleton<PlayerController>
 
     [Tooltip("Returns true if the player is currently moving")]
     private bool IsMoving => moveAction.ReadValue<Vector2>().sqrMagnitude > 0.1f;
-    
-    [Header("Player Ice Movement")]
-    [Tooltip("Bool to check if player is on Ice")]
-    [SerializeField] public bool isOnIce;
-
-    [Tooltip("Saved direction when entering ice")]
-    [SerializeField] private Vector3 savedVelocityVector;
-
-    [Tooltip("Speed of sliding on the ice")]
-    [SerializeField] private float iceSpeed;
 
     [Tooltip("Returns true if the mouse is over the game window, used for looking")]
     private bool MouseOverGameWindow
@@ -281,15 +270,7 @@ public class PlayerController : Singleton<PlayerController>
 
         dashCooldownTimer += Time.deltaTime;
 
-<<<<<<< Updated upstream
         if (IsMoving && !IsMovementLocked())
-=======
-<<<<<<< HEAD
-        if (IsMoving && !isOnIce)
-=======
-        if (IsMoving && !IsMovementLocked())
->>>>>>> 0449d3db15990ab01d42acb5808b60afa682fc24
->>>>>>> Stashed changes
         {
             //Adds different force to the rigidbody depending on if we are dashing or not
             float appliedForce;
@@ -324,12 +305,6 @@ public class PlayerController : Singleton<PlayerController>
                 rigidBody.velocity = horizontalVelocity.normalized * maxMoveSpeed + Vector3.up * rigidBody.velocity.y;
             }
         }
-        
-        else if (isOnIce)
-        {
-            moveStatus = MoveStatus.Ice;
-            rigidBody.velocity = savedVelocityVector * iceSpeed;
-        }
 
         //If we are not moving, we are assumed idle
         else
@@ -344,15 +319,6 @@ public class PlayerController : Singleton<PlayerController>
     #endregion
 
     #region Custom Methods
-
-    /// <summary>
-    /// Saves the current rigidbody velocity direction
-    /// </summary>
-    public void SaveCurrentVelocityVector()
-    {
-        savedVelocityVector = rigidBody.velocity.normalized;
-    }
-    
     /// <summary>
     /// Function that makes the player look in the direction that the player inputs
     /// </summary>
@@ -510,7 +476,7 @@ public class PlayerController : Singleton<PlayerController>
         Vector3 dashCheck = transform.position + dashDirection.normalized * 
             allowedDashDistance + new Vector3(0, 1, 0);
         Ray dashCheckRay = new (dashCheck, Vector3.down);
-        if (Physics.Raycast(dashCheckRay, float.MaxValue, groundLayerMask) && !isOnIce)
+        if (Physics.Raycast(dashCheckRay, float.MaxValue, groundLayerMask))
         {
             if (abilityManager.currentAbilityValue >= abilityManager.dashAbilityCost && dashCooldownTimer >= dashCooldownThreshold)
             {
