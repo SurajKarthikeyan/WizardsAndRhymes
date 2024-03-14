@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -228,6 +229,16 @@ public class PlayerController : Singleton<PlayerController>
     #endregion
 
     #region Unity Methods
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.GetComponent<IInteractable>() != null)
+        {
+            collision.gameObject.GetComponent<IInteractable>().Interact();
+        }
+    }
+
+
     /// <summary>
     /// Method called on scene startup
     /// </summary>
