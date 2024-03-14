@@ -327,6 +327,26 @@ public class PlayerController : Singleton<PlayerController>
         else if (isOnIce)
         {
             moveStatus = MoveStatus.Ice;
+
+            float savedX = savedVelocityVector.x;
+            float savedZ = savedVelocityVector.z;
+            //Vector3 direction = Vector3.Project(curVelocity, transform.right);
+            //savedVelocityVector = Vector3.Project(savedVelocityVector, transform.forward);
+            /*if (Math.Abs(savedX) > Math.Abs(savedZ))
+            {
+                savedVelocityVector = Vector3.Project(savedVelocityVector, transform.right);
+            }
+
+            else if(Math.Abs(savedX) < Math.Abs(savedZ))
+            {
+                savedVelocityVector = Vector3.Project(savedVelocityVector, transform.up);
+            }
+
+            else
+            {
+                savedVelocityVector = Vector3.Project(savedVelocityVector, transform.right);
+            }*/
+            
             rigidBody.velocity = savedVelocityVector * iceSpeed;
         }
         //If we are not moving, we are assumed idle

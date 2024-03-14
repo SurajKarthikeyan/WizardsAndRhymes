@@ -14,13 +14,13 @@ public class IceCheck : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider collision)
+    /*private void OnTriggerExit(Collider collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
             PlayerController.instance.isOnIce = false;
         }
-    }
+    }*/
 
     #endregion
 }
