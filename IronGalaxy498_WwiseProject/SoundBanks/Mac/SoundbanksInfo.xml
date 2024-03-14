@@ -94,7 +94,7 @@
 				<GameParameter Id="3550808449" Name="High"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{42BD1918-17E2-04C7-27AC-B145B6BDCBE0}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{8DF1EA37-EEA2-D29B-5259-57768239D9E6}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -145,6 +145,10 @@
 				<File Id="362380582" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Swoosh1.wav</ShortName>
 					<CachePath>SFX/Swoosh1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="378334012" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Lever01.wav</ShortName>
+					<CachePath>SFX/Lever01_818F3B66.wem</CachePath>
 				</File>
 				<File Id="397062548" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Shimmer1.wav</ShortName>
@@ -340,6 +344,11 @@
 						<AuxBusRef Id="1049182825" Name="auxMid"/>
 					</AuxBusRefs>
 				</Event>
+				<Event Id="1177918645" Name="testLeverEvent" DurationType="OneShot" DurationMin="0.6956875" DurationMax="0.6956875">
+					<MediaRefs>
+						<MediaRef Id="378334012"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="1324413170" Name="TestMusic" DurationType="OneShot" DurationMin="21.75" DurationMax="21.75">
 					<MediaRefs>
 						<MediaRef Id="83311950"/>
@@ -348,5 +357,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{A7F55107-025D-EF88-22D9-9A8840F0481E}</FileHash>
+	<FileHash>{1F5F47A4-5935-CC76-D75A-901A512928FE}</FileHash>
 </SoundBanksInfo>

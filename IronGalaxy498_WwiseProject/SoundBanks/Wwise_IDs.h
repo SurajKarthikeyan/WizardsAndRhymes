@@ -25,6 +25,7 @@ namespace AK
         static const AkUniqueID SKELETONHIT = 2460311919U;
         static const AkUniqueID TESTEVENT = 1097980931U;
         static const AkUniqueID TESTINTERACTIVEMUSIC = 372047860U;
+        static const AkUniqueID TESTLEVEREVENT = 1177918645U;
         static const AkUniqueID TESTMUSIC = 1324413170U;
     } // namespace EVENTS
 
