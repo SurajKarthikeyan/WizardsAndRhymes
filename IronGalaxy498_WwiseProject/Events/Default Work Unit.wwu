@@ -245,7 +245,43 @@
 				<Folder Name="UI" ID="{1E7CEFDD-5652-4F27-ADEE-B90BB1D0DC65}" ShortID="1046850686"/>
 				<Folder Name="Environment" ID="{495CEB0B-19F3-4C51-82DA-A3E0247F5970}" ShortID="275595311">
 					<ChildrenList>
-						<Folder Name="Pickups" ID="{D829150B-3A9C-4883-8A05-0B39146211A5}" ShortID="599218656"/>
+						<Folder Name="Interaction" ID="{D829150B-3A9C-4883-8A05-0B39146211A5}" ShortID="599218656">
+							<ChildrenList>
+								<Event Name="Crystal" ID="{0E82AA65-6BB9-47C8-80F6-769FD139CD15}">
+									<ChildrenList>
+										<Action Name="" ID="{F009881A-1BAA-4F66-964B-685B8596E070}" ShortID="690976957">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Crystal" ID="{544B078B-0797-40B1-BC64-43A55BDB53B1}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="IceBlock" ID="{49B2BD03-2144-4EE7-A095-478BD2FE769E}">
+									<ChildrenList>
+										<Action Name="" ID="{57DDCC18-249A-47DE-88C0-1A3ACFB03991}" ShortID="926740527">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="IceBlockWoosh" ID="{A87015F1-01D5-49D6-AE81-52915DE17040}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Lever" ID="{893269FF-16A8-4A30-8EC3-99BFBED9C982}">
+									<ChildrenList>
+										<Action Name="" ID="{79A49192-3CFB-4384-81FF-A0EC2979D0A5}" ShortID="110584619">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Lever" ID="{34BC6584-AA1E-40F2-9719-75F620F0ABD1}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+							</ChildrenList>
+						</Folder>
 						<Folder Name="Music" ID="{9CEEF249-6CBE-4183-A578-17E6A24E7BCD}" ShortID="271145348">
 							<ChildrenList>
 								<Event Name="RoomMus" ID="{2FBE0B1A-3484-4841-A533-386BC2FB8743}">
@@ -253,7 +289,7 @@
 										<Action Name="" ID="{0E3696EB-34FF-455C-9B0F-A6C3F9CB22D4}" ShortID="99836259">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="CombatMus" ID="{FAC9B9C2-4162-4300-B344-E7CB6520B897}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
+													<ObjectRef Name="UndergroundBasic" ID="{251B01AE-B49C-4CF1-B09B-8CDDD1B8B2A3}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
