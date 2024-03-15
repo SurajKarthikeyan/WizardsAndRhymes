@@ -15,6 +15,10 @@ public class GameLight : MonoBehaviour
     [SerializeField] private Color onColor;
     [SerializeField] private Color offColor;
 
+    public GameObject platform;
+
+    #endregion
+
     #region UnityMethods
 
     private void Start()
@@ -22,8 +26,9 @@ public class GameLight : MonoBehaviour
         SetColor(isOn);
     }
 
+
     #endregion
-    
+
     #region CustomMethods
 
     public void FlipLight()
@@ -45,6 +50,19 @@ public class GameLight : MonoBehaviour
         }
     }
 
-    #endregion
+    public void LightTrigger()
+    {
+        SetColor(true);
+        platform.SetActive(false);
+    }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.GetComponent<Projectile>() != null)
+        {
+            LightTrigger();
+        }
+    }
     #endregion
 }
