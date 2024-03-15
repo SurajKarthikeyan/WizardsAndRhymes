@@ -222,8 +222,9 @@ public class PlayerController : Singleton<PlayerController>
     [Tooltip("Check if player is on ice")]
     [SerializeField] public bool isOnIce;
     [Tooltip("Saved direction when entering ice")]
-    [HideInInspector] private Vector3 savedVelocityVector;
+    [SerializeField] private Vector3 savedVelocityVector;
 
+    [SerializeField] private Vector3 rbVelocity;
     [Tooltip("Speed of sliding on the ice")]
     [SerializeField] private float iceSpeed;
     #endregion
@@ -284,8 +285,9 @@ public class PlayerController : Singleton<PlayerController>
     /// Function called once every frame, generally 60 frames per second
     /// </summary>
     private void FixedUpdate()
-    { 
+    {
 
+        rbVelocity = rigidBody.velocity;
         dashCooldownTimer += Time.deltaTime;
 
         if (IsMoving && !IsMovementLocked() && !isOnIce)
@@ -330,23 +332,29 @@ public class PlayerController : Singleton<PlayerController>
 
             float savedX = savedVelocityVector.x;
             float savedZ = savedVelocityVector.z;
-            //Vector3 direction = Vector3.Project(curVelocity, transform.right);
-            //savedVelocityVector = Vector3.Project(savedVelocityVector, transform.forward);
-            /*if (Math.Abs(savedX) > Math.Abs(savedZ))
+            Vector3 newUp = new Vector3();
+            if (Math.Abs(savedZ) > Math.Abs(savedX) || Math.Abs(Math.Abs(savedZ) - Math.Abs(savedX)) < 0.1f  )
             {
-                savedVelocityVector = Vector3.Project(savedVelocityVector, transform.right);
+                newUp = Vector3.forward;
+                if (savedZ < 0)
+                {
+                    newUp *= -1;
+                }
             }
 
-            else if(Math.Abs(savedX) < Math.Abs(savedZ))
+            /*else
             {
-                savedVelocityVector = Vector3.Project(savedVelocityVector, transform.up);
-            }
-
-            else
-            {
-                savedVelocityVector = Vector3.Project(savedVelocityVector, transform.right);
+                newUp = Vector3.right;
+                if (savedX < 0)
+                {
+                    newUp *= -1;
+                }
             }*/
+            newUp = newUp.normalized;
             
+            
+            savedVelocityVector = Vector3.Project(savedVelocityVector, newUp);
+
             rigidBody.velocity = savedVelocityVector * iceSpeed;
         }
         //If we are not moving, we are assumed idle

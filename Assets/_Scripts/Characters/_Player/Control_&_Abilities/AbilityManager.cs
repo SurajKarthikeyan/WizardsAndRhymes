@@ -45,7 +45,7 @@ public class AbilityManager : MonoBehaviour
     private GameObject abilityCanvas;
 
     [Tooltip("Vector offset that is used for displaying the ability slider at the proper place")]
-    private Vector3 abilityPipUIOffset = new(0, 1.5f, -3.75f);
+    private Vector3 abilityPipUIOffset = new(3.75f, 1.5f, -3.75f);
 
 
     [Tooltip("List of sprites that will be modified for the pips")]
