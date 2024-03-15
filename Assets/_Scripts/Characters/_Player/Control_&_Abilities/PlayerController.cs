@@ -227,6 +227,10 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private Vector3 rbVelocity;
     [Tooltip("Speed of sliding on the ice")]
     [SerializeField] private float iceSpeed;
+
+    [Header("Animation")] 
+    [Tooltip("Player Animator")]
+    [SerializeField] private Animator playerAnimator;
     #endregion
 
     #region Unity Methods
@@ -292,6 +296,7 @@ public class PlayerController : Singleton<PlayerController>
 
         if (IsMoving && !IsMovementLocked() && !isOnIce)
         {
+            playerAnimator.SetBool("isRunning", true);
             //Adds different force to the rigidbody depending on if we are dashing or not
             float appliedForce;
             if (moveStatus == MoveStatus.Dashing)
@@ -328,6 +333,7 @@ public class PlayerController : Singleton<PlayerController>
 
         else if (isOnIce)
         {
+            playerAnimator.SetBool("isRunning", false);
             moveStatus = MoveStatus.Ice;
 
             float savedX = savedVelocityVector.x;
@@ -360,6 +366,7 @@ public class PlayerController : Singleton<PlayerController>
         //If we are not moving, we are assumed idle
         else
         {
+            playerAnimator.SetBool("isRunning", false);
             moveStatus = MoveStatus.Idle;
             rigidBody.velocity = Vector3.zero;
         }
@@ -491,6 +498,7 @@ public class PlayerController : Singleton<PlayerController>
     /// <param name="obj">Input callback context for the melee attack</param>
     private void DoMelee(InputAction.CallbackContext obj)
     {
+        playerAnimator.SetTrigger("meleeAttack");
         if (canAttack)
         {
             SetCanAttack(false);
