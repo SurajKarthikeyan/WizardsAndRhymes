@@ -12664,6 +12664,8 @@ MonoBehaviour:
   lightReference: {fileID: 476363626}
   onColor: {r: 0, g: 0, b: 0, a: 0}
   offColor: {r: 0, g: 0, b: 0, a: 0}
+  electroBlock: {fileID: 0}
+  platform: {fileID: 0}
 --- !u!1 &593986962
 GameObject:
   m_ObjectHideFlags: 0
@@ -37724,6 +37726,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: player_wizard03
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 59d2e0923fe0b0840a2cfa6b6e4ace5b, type: 3}
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -37973,6 +37978,10 @@ PrefabInstance:
       value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 81138555853967041}
+    - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: timeBeforeReset
       value: 0.5
       objectReference: {fileID: 0}
@@ -38133,6 +38142,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1899863600}
   m_SourcePrefab: {fileID: 100100000, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+--- !u!95 &81138555853967041 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 2715564584532326082, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+  m_PrefabInstance: {fileID: 81138555853967040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &81138555853967075 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
@@ -38347,11 +38361,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6543074965747046479, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.06711225
+      value: 0.06711222
       objectReference: {fileID: 0}
     - target: {fileID: 6543074965747046479, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.027786322
+      value: 0.027786305
       objectReference: {fileID: 0}
     - target: {fileID: 6745870337105400009, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_Enabled
