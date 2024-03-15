@@ -48,7 +48,7 @@ public class AudienceMember : Floater
         if (fanMode == FanMode.ConvertToPlayer)
         {
             //Register room cleared callback
-            EnemyManager.RoomCleared += () => { StartCoroutine(BecomePlayerFan()); };
+            EnemyManager.RoomCleared += StartBecomePlayerFan;
         }
         else if (fanMode == FanMode.AlwaysPlayer)
         {
@@ -75,6 +75,17 @@ public class AudienceMember : Floater
         }
     }
 
+     void OnDestroy()
+    {
+        if (fanMode == FanMode.ConvertToPlayer)
+        {
+            //Remove room cleared callback
+            EnemyManager.RoomCleared -= StartBecomePlayerFan;
+        }
+    }
+    #endregion
+
+    #region Custom Methods
     Color RandomColor(bool playerFan)
     {
         Color[] colorArray = wizzoColors;
@@ -89,6 +100,14 @@ public class AudienceMember : Floater
 
         int colorIndex = Random.Range(0, colorArray.Length);
         return colorArray[colorIndex];
+    }
+
+    /// <summary>
+    /// Start the coroutine to become a player fan
+    /// </summary>
+    void StartBecomePlayerFan()
+    {
+        StartCoroutine(BecomePlayerFan());
     }
 
     IEnumerator BecomePlayerFan()
