@@ -12,6 +12,7 @@ public class Generator : MonoBehaviour
    [SerializeField] private Material generatorOnMaterial;
    [SerializeField] private Renderer generatorRenderer;
    [SerializeField] private List<GameLight> allLights;
+   [SerializeField] private AK.Wwise.Event generatorOnSoundEffect;
    #endregion
 
 
@@ -31,7 +32,11 @@ public class Generator : MonoBehaviour
             return;
          }
       }
-      TurnOn();
+
+      if (!isOn)
+      {
+         TurnOn();
+      }
       
    }
 
@@ -44,7 +49,7 @@ public class Generator : MonoBehaviour
       isOn = true;
       gate.SetActive(false);
       generatorRenderer.material = generatorOnMaterial;
-      //post AK soundevent for generator ON
+      generatorOnSoundEffect.Post(this.gameObject);
    }
 
    #endregion
