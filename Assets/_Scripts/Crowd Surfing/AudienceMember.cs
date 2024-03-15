@@ -7,6 +7,8 @@ using UnityEngine;
 public class AudienceMember : Floater
 {
     #region Variables
+    enum FanMode { ConvertToPlayer, AlwaysPlayer, AlwaysWizzo}
+
     [Header("Audience Member Options")]
     [Tooltip("The renderer for this audience member")]
     [SerializeField] Renderer render;
@@ -23,9 +25,13 @@ public class AudienceMember : Floater
     [Tooltip("The possible colors for a player fan to be")]
     [SerializeField] Color[] playerColors;
 
+    [Tooltip("How this audience member handles who it is a fan of")]
+    [SerializeField] FanMode fanMode = FanMode.ConvertToPlayer;
     [Tooltip("The maximum amount of time this audience member can delay becoming a fan of the player")]
+    [MMEnumCondition("fanMode", (int)FanMode.ConvertToPlayer, Hidden = true)]
     [SerializeField] float maxPlayerFanDelay = 1f;
     [Tooltip("How long this audience member takes to fade to its player color")]
+    [MMEnumCondition("fanMode", (int)FanMode.ConvertToPlayer, Hidden = true)]
     [SerializeField] float colorFadeDuration = 0.25f;
 
     [Tooltip("Whether this audience member is a fan of the player")]
@@ -38,9 +44,18 @@ public class AudienceMember : Floater
         base.Start();
 
         render.material.color = RandomColor(false);
-
-        //Register room cleared callback
-        EnemyManager.RoomCleared += () => { StartCoroutine(BecomePlayerFan()); };
+        
+        if (fanMode == FanMode.ConvertToPlayer)
+        {
+            //Register room cleared callback
+            EnemyManager.RoomCleared += () => { StartCoroutine(BecomePlayerFan()); };
+        }
+        else if (fanMode == FanMode.AlwaysPlayer)
+        {
+            //Set initial fan state
+            playerFan = true;
+            render.material.color = RandomColor(playerFan);
+        }
     }
 
     protected override void Update()
