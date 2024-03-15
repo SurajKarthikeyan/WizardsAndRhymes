@@ -498,10 +498,10 @@ public class PlayerController : Singleton<PlayerController>
     /// <param name="obj">Input callback context for the melee attack</param>
     private void DoMelee(InputAction.CallbackContext obj)
     {
-        playerAnimator.SetTrigger("meleeAttack");
         if (canAttack)
         {
             SetCanAttack(false);
+            playerAnimator.SetTrigger("meleeAttack");
             mixtapeInventory.IncrementSuccessiveAttack();
             
             if (mixtapeInventory.successiveAttacks >= 3)
