@@ -14,6 +14,8 @@ public class MovingPlatform : MonoBehaviour
     public bool movingToEnd = true;
 
     public float movementSpeed = 5f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,5 +46,9 @@ public class MovingPlatform : MonoBehaviour
         }    
     }
 
+    public void Activate()
+    {
+        activated = true;
+    }
     
 }
