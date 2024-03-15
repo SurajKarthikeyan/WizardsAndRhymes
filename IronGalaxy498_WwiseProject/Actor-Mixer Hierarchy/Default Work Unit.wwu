@@ -942,6 +942,506 @@
 						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Interaction" ID="{85C831FA-85F4-4F5A-B48E-50F2D6F12C4A}" ShortID="221045545">
+					<ChildrenList>
+						<RandomSequenceContainer Name="Lever" ID="{34BC6584-AA1E-40F2-9719-75F620F0ABD1}" ShortID="248825747">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Lever1" ID="{924BAA50-CD92-4164-8BC5-2E786E601DFE}" ShortID="246809745">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Lever1" ID="{6BD0856B-0EF8-4C66-8AB6-BB256B7F486A}">
+											<Language>SFX</Language>
+											<AudioFile>Lever1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="630432816"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Lever1" ID="{6BD0856B-0EF8-4C66-8AB6-BB256B7F486A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Lever2" ID="{DB969C9B-AA50-4A56-B493-85226B923B95}" ShortID="548025253">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Lever2" ID="{80FF6CA2-E1DF-418C-AA39-4590F5503B35}">
+											<Language>SFX</Language>
+											<AudioFile>Lever2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="567844658"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Lever2" ID="{80FF6CA2-E1DF-418C-AA39-4590F5503B35}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="IceBlockWoosh" ID="{A87015F1-01D5-49D6-AE81-52915DE17040}" ShortID="335840724">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="IBW1" ID="{EED3D261-EA40-48BC-B00A-CFE87FEC6320}" ShortID="477091441">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="IceBlockWooshes" ID="{91F71468-83AC-4EB6-B93C-5B0AAFEFC9E5}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.27774872285363"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0944149302601203"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.41293639793745"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>IceBlockWooshes.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="618127826"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="IceBlockWooshes" ID="{91F71468-83AC-4EB6-B93C-5B0AAFEFC9E5}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="IBW2" ID="{3A0FD1F6-17A4-460E-A3B0-EEF9220852BE}" ShortID="739463306">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="IceBlockWooshes" ID="{CCBFA75E-B112-431F-99B6-2912BE47FACB}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.706223678345701"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.43149833264688"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.6067027027027"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>IceBlockWooshes.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="320125018"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="IceBlockWooshes" ID="{CCBFA75E-B112-431F-99B6-2912BE47FACB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="IBW3" ID="{D5142533-8060-494F-BFAE-FB35E533B086}" ShortID="197339653">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="IceBlockWooshes" ID="{79A0B295-15A9-4B2B-9A87-FCB88B1FBE21}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.89379467312914"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.81621807326076"/>
+												<Property Name="TrimEnd" Type="Real64" Value="7.10562162162162"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>IceBlockWooshes.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1032575052"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="IceBlockWooshes" ID="{79A0B295-15A9-4B2B-9A87-FCB88B1FBE21}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="IBW4" ID="{97CF5FA4-19D6-4440-9381-BC2388DB88AF}" ShortID="633500649">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="IceBlockWooshes" ID="{29AC2D14-573C-4A73-8423-626428B29BBC}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.824557057605052"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="7.26822994771391"/>
+												<Property Name="TrimEnd" Type="Real64" Value="9.648"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>IceBlockWooshes.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="101762498"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="IceBlockWooshes" ID="{29AC2D14-573C-4A73-8423-626428B29BBC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="IBW5" ID="{E4B928B4-484A-48A0-8119-7023F850D788}" ShortID="387978761">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="IceBlockWooshes" ID="{D22A8955-FF0A-4D30-8A62-4E4A2E4FB358}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.389103955011404"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="9.70659463029211"/>
+												<Property Name="TrimEnd" Type="Real64" Value="11.4099961400816"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>IceBlockWooshes.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="733335054"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="IceBlockWooshes" ID="{D22A8955-FF0A-4D30-8A62-4E4A2E4FB358}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="IBW6" ID="{A99BB6E3-AA0A-43AB-8156-FDCA4DC7EEC2}" ShortID="441456449">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="IceBlockWooshes" ID="{1E9347CC-1EF6-44A5-A0B0-C00CD60E7B6B}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.799379742869018"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="12.0761937053396"/>
+												<Property Name="TrimEnd" Type="Real64" Value="14.2981621621622"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>IceBlockWooshes.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="956823132"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="IceBlockWooshes" ID="{1E9347CC-1EF6-44A5-A0B0-C00CD60E7B6B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="IBW7" ID="{705F0A21-C790-4683-8AA2-3ABBCCD0D915}" ShortID="923925816">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="IceBlockWooshes" ID="{6DFCC72F-1FA8-43CF-BC9B-55CC2F75CC81}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.52620587798307"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="14.4793530536422"/>
+												<Property Name="TrimEnd" Type="Real64" Value="16.5580540540541"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>IceBlockWooshes.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="771010357"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="IceBlockWooshes" ID="{6DFCC72F-1FA8-43CF-BC9B-55CC2F75CC81}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Crystal" ID="{544B078B-0797-40B1-BC64-43A55BDB53B1}" ShortID="428215408">
+							<PropertyList>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="CrystalZap" ID="{4F9729BA-B93A-4172-9F08-086A83184818}" ShortID="60224063">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="CrystalZap" ID="{1E272264-7CC1-4A2E-923A-51BC7BAB9520}">
+											<Language>SFX</Language>
+											<AudioFile>CrystalZap.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="497414986"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="CrystalZap" ID="{1E272264-7CC1-4A2E-923A-51BC7BAB9520}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<RandomSequenceContainer Name="CrystalShimmers" ID="{30E3930D-A6D6-41D3-8FB7-D6E14C8A15EC}" ShortID="269629844">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="CS1" ID="{501C58B3-D48A-4DFF-B795-1662377E241C}" ShortID="120268270">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CrystalShimmers" ID="{68C476FE-B852-4CAE-B7B2-16CE80C67444}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.588108108108108"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.0518918918918919"/>
+														<Property Name="TrimEnd" Type="Real64" Value="2.47351351351351"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>CrystalShimmers.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="853954014"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CrystalShimmers" ID="{68C476FE-B852-4CAE-B7B2-16CE80C67444}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CS2" ID="{F15961D0-41E8-488B-8BD6-81B691BD5E27}" ShortID="293274944">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CrystalShimmers" ID="{07B0FC1B-260B-4F87-B296-38C68B937E42}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.441081081081081"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="4.00432432432432"/>
+														<Property Name="TrimEnd" Type="Real64" Value="6.4"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>CrystalShimmers.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="706702062"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CrystalShimmers" ID="{07B0FC1B-260B-4F87-B296-38C68B937E42}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="CrystalTones" ID="{D2F89178-067C-468F-964A-B0ACE991A192}" ShortID="663802225">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="CT1" ID="{D1B75349-AABD-4CEA-B3BD-B66C41015CD7}" ShortID="224489867">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CrystalTones" ID="{95EE4F6C-32F2-44D0-B63B-B3CFA4A737CC}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.825626279340565"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.20922047102479"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>CrystalTones.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="144065966"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CrystalTones" ID="{95EE4F6C-32F2-44D0-B63B-B3CFA4A737CC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CT2" ID="{0A7071A6-34A3-45B1-BD33-14B368819592}" ShortID="176987791">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CrystalTones" ID="{8CF7D03E-00FF-4F6F-B5B9-15FFE68E3062}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.951265060979346"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="4.03604682695377"/>
+														<Property Name="TrimEnd" Type="Real64" Value="7.82550125635838"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>CrystalTones.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="660611193"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CrystalTones" ID="{8CF7D03E-00FF-4F6F-B5B9-15FFE68E3062}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CT3" ID="{1975DB51-163F-4766-84D1-D53AF5FA8195}" ShortID="472809933">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CrystalTones" ID="{C7933EBD-282F-4F8A-A6F1-BFFEB09799E7}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="1.25638781638782"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="8.07677881963596"/>
+														<Property Name="TrimEnd" Type="Real64" Value="11.2536451553594"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>CrystalTones.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="162829338"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CrystalTones" ID="{C7933EBD-282F-4F8A-A6F1-BFFEB09799E7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CT4" ID="{1B1281D9-17F3-4DA7-A5A8-ACBDA846EFDF}" ShortID="152740289">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CrystalTones" ID="{B29670A1-361C-49A4-9238-5C1E45F27B3D}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="1.68714935343507"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="12.0074778451921"/>
+														<Property Name="TrimEnd" Type="Real64" Value="15.8843316786174"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>CrystalTones.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="108359842"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CrystalTones" ID="{B29670A1-361C-49A4-9238-5C1E45F27B3D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
