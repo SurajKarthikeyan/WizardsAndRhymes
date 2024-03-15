@@ -18,7 +18,7 @@ public class PressurePlate : MonoBehaviour, IInteractable
     [Tooltip("Reference to animator interaction trigger")]
     private static readonly int Interaction = Animator.StringToHash("interaction");
 
-
+    public MovingPlatform triggerPlatform;
     #endregion
 
     // Start is called before the first frame update
@@ -38,6 +38,15 @@ public class PressurePlate : MonoBehaviour, IInteractable
         Debug.Log("Interacting with pressurePlate)");
         isOn = !isOn;
         pressurePlateAnimator.SetTrigger(Interaction);
+        if (!isOn)
+        {
+            triggerPlatform.SendToStart();
+        }
+        else
+        {
+            triggerPlatform.ableToMove = true;
+        }
+        triggerPlatform.stopAtDestination = true;
     }
 
     private void OnTriggerEnter(Collider other)
