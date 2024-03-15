@@ -249,10 +249,30 @@
 							<ChildrenList>
 								<Event Name="Crystal" ID="{0E82AA65-6BB9-47C8-80F6-769FD139CD15}">
 									<ChildrenList>
-										<Action Name="" ID="{F009881A-1BAA-4F66-964B-685B8596E070}" ShortID="690976957">
+										<Action Name="" ID="{883E209F-DA9C-4053-A1D3-D5F4FD43650E}" ShortID="741094032">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Crystal" ID="{544B078B-0797-40B1-BC64-43A55BDB53B1}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+													<ObjectRef Name="CrystalZaps" ID="{50CA0200-B346-4190-97B2-634F780E4735}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{DB2CD505-5ECC-44C2-A50C-E39B71C060DA}" ShortID="213803605">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrystalTones" ID="{D2F89178-067C-468F-964A-B0ACE991A192}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{DF7CF30A-5CF0-4081-986E-CC1A98F3B718}" ShortID="137715344">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrystalShimmers" ID="{30E3930D-A6D6-41D3-8FB7-D6E14C8A15EC}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>

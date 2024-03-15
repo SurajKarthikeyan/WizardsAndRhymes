@@ -1213,6 +1213,8 @@
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Crystal" ID="{544B078B-0797-40B1-BC64-43A55BDB53B1}" ShortID="428215408">
 							<PropertyList>
+								<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+								<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="10"/>
 								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
 							</PropertyList>
@@ -1225,28 +1227,6 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<Sound Name="CrystalZap" ID="{4F9729BA-B93A-4172-9F08-086A83184818}" ShortID="60224063">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="CrystalZap" ID="{1E272264-7CC1-4A2E-923A-51BC7BAB9520}">
-											<Language>SFX</Language>
-											<AudioFile>CrystalZap.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="497414986"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="CrystalZap" ID="{1E272264-7CC1-4A2E-923A-51BC7BAB9520}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
 								<RandomSequenceContainer Name="CrystalShimmers" ID="{30E3930D-A6D6-41D3-8FB7-D6E14C8A15EC}" ShortID="269629844">
 									<ReferenceList>
 										<Reference Name="Conversion">
@@ -1438,7 +1418,58 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="CrystalZaps" ID="{50CA0200-B346-4190-97B2-634F780E4735}" ShortID="384291343">
+									<PropertyList>
+										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+										<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="CrystalZap" ID="{4F9729BA-B93A-4172-9F08-086A83184818}" ShortID="60224063">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CrystalZap" ID="{1E272264-7CC1-4A2E-923A-51BC7BAB9520}">
+													<Language>SFX</Language>
+													<AudioFile>CrystalZap.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="497414986"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CrystalZap" ID="{1E272264-7CC1-4A2E-923A-51BC7BAB9520}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
 							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Playlist">
+									<Reference>
+										<ObjectRef Name="CrystalZaps" ID="{50CA0200-B346-4190-97B2-634F780E4735}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+									</Reference>
+									<Reference>
+										<ObjectRef Name="CrystalTones" ID="{D2F89178-067C-468F-964A-B0ACE991A192}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+									</Reference>
+									<Reference>
+										<ObjectRef Name="CrystalShimmers" ID="{30E3930D-A6D6-41D3-8FB7-D6E14C8A15EC}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
 						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
