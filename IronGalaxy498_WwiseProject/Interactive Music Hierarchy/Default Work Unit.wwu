@@ -900,6 +900,7 @@
 					<ChildrenList>
 						<MusicPlaylistContainer Name="UndergroundBasic" ID="{251B01AE-B49C-4CF1-B09B-8CDDD1B8B2A3}" ShortID="258860406">
 							<PropertyList>
+								<Property Name="GridFrequencyPreset" Type="int16" Value="67"/>
 								<Property Name="Tempo" Type="Real64" Value="100"/>
 							</PropertyList>
 							<ReferenceList>
@@ -915,6 +916,18 @@
 											<PropertyList>
 												<Property Name="LoopCount" Type="int16" Value="0"/>
 											</PropertyList>
+											<ChildrenList>
+												<MusicPlaylistItem Name="" ID="{B79139DB-13CB-4F4D-AC2A-A1E5B2CD5C6F}" ShortID="575797365">
+													<PropertyList>
+														<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+													</PropertyList>
+													<ReferenceList>
+														<Reference Name="Segment">
+															<ObjectRef Name="Underground" ID="{6A296121-06F2-49B2-B0FD-0F633BCEBBF3}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
+														</Reference>
+													</ReferenceList>
+												</MusicPlaylistItem>
+											</ChildrenList>
 										</MusicPlaylistItem>
 									</Custom>
 								</Reference>
