@@ -135,9 +135,6 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField]
     private GameObject meleeBox;
 
-    [Tooltip("Animator for melee")]
-    [SerializeField] private Animator meleeAnimator;
-
     [Header("UI Variables")]
     [Tooltip("Pause menu")]
     [SerializeField] private GameObject pauseMenu;
@@ -501,7 +498,6 @@ public class PlayerController : Singleton<PlayerController>
         if (canAttack)
         {
             SetCanAttack(false);
-            playerAnimator.SetTrigger("meleeAttack");
             mixtapeInventory.IncrementSuccessiveAttack();
             
             if (mixtapeInventory.successiveAttacks >= 3)
@@ -734,15 +730,14 @@ public class PlayerController : Singleton<PlayerController>
     IEnumerator Melee()
     {
         meleeEvent.Post(this.gameObject);
-        abilityManager.ReduceAbilityGuage(abilityManager.meleeAbilityCost);
-        meleeAnimator.SetTrigger("testSwingSword");
+        abilityManager.ReduceAbilityGuage(abilityManager.meleeAbilityCost); 
+        playerAnimator.SetTrigger("meleeAttack");
         meleeBox.GetComponent<MeleeCollider>().damageType = playerLevelDamageType;
         rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
         DisablePlayerControls();
         abilityManager.ResetAbilityRecharge();
         mixtapeInventory.OnTapeChange();    // this here might be problematic but not too sure
         yield return new WaitForSeconds(meleeAttackDuration);
-        //meleeBox.SetActive(false);
         attackStatus = AttackStatus.None;
         EnablePlayerControls();
     }
