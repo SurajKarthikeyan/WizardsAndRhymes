@@ -12,12 +12,14 @@ public class GameLight : MonoBehaviour
     [Tooltip("Reference to the light on this gameobject")]
     [SerializeField] private Light lightReference;
 
+    [SerializeField] private Color onColor;
+    [SerializeField] private Color offColor;
 
     #region UnityMethods
 
     private void Start()
     {
-        lightReference.enabled = isOn;
+        SetColor(isOn);
     }
 
     #endregion
@@ -27,7 +29,20 @@ public class GameLight : MonoBehaviour
     public void FlipLight()
     {
         isOn = !isOn;
-        lightReference.enabled = isOn;
+        SetColor(isOn);
+    }
+
+    private void SetColor(bool lightOn)
+    {
+        if (lightOn)
+        {
+            lightReference.color = onColor;
+        }
+
+        else
+        {
+            lightReference.color = offColor;
+        }
     }
 
     #endregion
