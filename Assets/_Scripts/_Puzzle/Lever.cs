@@ -24,6 +24,7 @@ public class Lever : MonoBehaviour, IInteractable
     [Tooltip("Reference to animator interaction trigger")]
     private static readonly int Interaction = Animator.StringToHash("interaction");
 
+    [Tooltip("List of OTHER lights this lever interacts with")]
     [SerializeField] private List<GameLight> lightList;
 
     #endregion
