@@ -12,6 +12,8 @@ public class BoxFace : MonoBehaviour
     #region Variables
     [Tooltip("Reference to parent PushBox script")]
     [SerializeField] private PushBox parentPushBox;
+    [Tooltip("Sound Event for box push")]
+    [SerializeField] private AK.Wwise.Event pushEvent;
     
     #endregion
 
@@ -25,6 +27,7 @@ public class BoxFace : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            pushEvent.Post(this.gameObject);
             parentPushBox.isPushed = true;
         }
     }
