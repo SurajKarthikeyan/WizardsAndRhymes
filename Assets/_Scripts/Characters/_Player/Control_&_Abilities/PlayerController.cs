@@ -342,14 +342,14 @@ public class PlayerController : Singleton<PlayerController>
                 }
             }
 
-            /*else
+            else
             {
                 newUp = Vector3.right;
                 if (savedX < 0)
                 {
                     newUp *= -1;
                 }
-            }*/
+            }
             newUp = newUp.normalized;
             
             
