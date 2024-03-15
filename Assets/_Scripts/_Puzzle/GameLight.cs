@@ -15,6 +15,8 @@ public class GameLight : MonoBehaviour
     [SerializeField] private Color onColor;
     [SerializeField] private Color offColor;
 
+    [SerializeField] private GameObject electroBlock;
+
     public GameObject platform;
 
     #endregion
@@ -24,6 +26,7 @@ public class GameLight : MonoBehaviour
     private void Start()
     {
         SetColor(isOn);
+        electroBlock.SetActive(isOn);
     }
 
 
@@ -35,6 +38,7 @@ public class GameLight : MonoBehaviour
     {
         isOn = !isOn;
         SetColor(isOn);
+        electroBlock.SetActive(isOn);
     }
 
     private void SetColor(bool lightOn)
