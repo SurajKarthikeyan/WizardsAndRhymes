@@ -13,7 +13,10 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID CRYSTAL = 3444057113U;
         static const AkUniqueID FREQTEST = 1061604899U;
+        static const AkUniqueID ICEBLOCK = 418751485U;
+        static const AkUniqueID LEVER = 2782712987U;
         static const AkUniqueID MELEEFIRE = 2248677623U;
         static const AkUniqueID MELEEICE = 1651067412U;
         static const AkUniqueID MELEELIGHTNING = 1583612915U;
