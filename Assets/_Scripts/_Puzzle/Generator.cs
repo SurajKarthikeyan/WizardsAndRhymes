@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+
+/// <summary>
+/// Generator script to turn door on or off based on either the spotlights alone OR the lightning boxes they spawn in
+/// </summary>
 public class Generator : MonoBehaviour
 {
    #region Variables
@@ -17,7 +21,8 @@ public class Generator : MonoBehaviour
    [SerializeField] private Renderer generatorRenderer;
    [Tooltip("Reference to the lights if not using lightning blocks")]
    [SerializeField] private List<GameLight> allLights;
-
+   [Tooltip("The last lightning block to turn on")]
+   [SerializeField] private LightningBlock lastLightningBlock;
    [Tooltip("Are you using lightning blocks or spotlights to turn on the generator?")]
    [SerializeField] private bool useLightningBlocks;
    [Tooltip("AK Sound event for generator sfx")]
@@ -46,10 +51,11 @@ public class Generator : MonoBehaviour
             }
          }
       }
-
-      else
+      
+      // IF using lightning boxes, checks if the last box is on. If so, then turn on generator
+      else if(lastLightningBlock.isOn)
       {
-         
+         TurnOn();
       }
 
 

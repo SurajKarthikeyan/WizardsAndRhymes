@@ -39,10 +39,16 @@ public class Projectile : MonoBehaviour
             if (character.vulnerable)
             {
                 character.TakeDamage(damage, dType);
-                if (character.gameObject.TryGetComponent(out BaseEnemyBehavior enemy)){
+                if (character.gameObject.TryGetComponent(out BaseEnemyBehavior enemy))
+                {
                     enemy.Knockback(transform.forward);
                 }
             }
+        }
+
+        else if (other.TryGetComponent<LightningBlock>(out var lightningBlock))
+        {
+            lightningBlock.isOn = true;
         }
         Destroy(gameObject);
     }

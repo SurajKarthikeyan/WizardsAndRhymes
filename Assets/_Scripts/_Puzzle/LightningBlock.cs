@@ -1,18 +1,38 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class LightningBlock : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Variables
+    [SerializeField] public bool isOn;
+    [SerializeField] private LightningBlock previousGO;
+    [SerializeField] private bool isFirstBlock;
+
+    #endregion
+
+
+    #region UnityMethods
+
+    private void Update()
     {
-        
+        if (!isFirstBlock)
+        {
+            if (previousGO.isOn)
+            {
+                isOn = true;
+                Debug.Log(gameObject.name);
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    #endregion
+    
+
+    #region CustomMethods
+
+    
+
+    #endregion
 }
