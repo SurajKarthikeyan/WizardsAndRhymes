@@ -53,7 +53,7 @@ public class Generator : MonoBehaviour
       }
       
       // IF using lightning boxes, checks if the last box is on. If so, then turn on generator
-      else if(lastLightningBlock.isOn)
+      else if(lastLightningBlock.isOn && !isOn)
       {
          TurnOn();
       }
