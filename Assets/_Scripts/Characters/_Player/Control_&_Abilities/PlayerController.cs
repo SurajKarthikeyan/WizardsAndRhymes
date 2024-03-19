@@ -215,19 +215,13 @@ public class PlayerController : Singleton<PlayerController>
     [Tooltip("A set of sources locking the player's movement")]
     private HashSet<MonoBehaviour> movementLockSources = new HashSet<MonoBehaviour>();
 
-    [Header("Ice Slide Variables")] 
-    [Tooltip("Check if player is on ice")]
-    [SerializeField] public bool isOnIce;
-    [Tooltip("Saved direction when entering ice")]
-    [SerializeField] private Vector3 savedVelocityVector;
-
-    [SerializeField] private Vector3 rbVelocity;
-    [Tooltip("Speed of sliding on the ice")]
-    [SerializeField] private float iceSpeed;
 
     [Header("Animation")] 
     [Tooltip("Player Animator")]
     [SerializeField] private Animator playerAnimator;
+
+
+    public bool topDownControl;
     #endregion
 
     #region Unity Methods
@@ -288,10 +282,9 @@ public class PlayerController : Singleton<PlayerController>
     private void FixedUpdate()
     {
 
-        rbVelocity = rigidBody.velocity;
         dashCooldownTimer += Time.deltaTime;
 
-        if (IsMoving && !IsMovementLocked() && !isOnIce)
+        if (IsMoving && !IsMovementLocked())
         {
             playerAnimator.SetBool("isRunning", true);
             //Adds different force to the rigidbody depending on if we are dashing or not
@@ -305,10 +298,19 @@ public class PlayerController : Singleton<PlayerController>
                 appliedForce = movementForce;
                 moveStatus = MoveStatus.Moving;
             }
-            //Reading the input given by the player and moving away from the camera
-            forceDirection += moveAction.ReadValue<Vector2>().x * appliedForce * GetCameraRight(playerCamera);
-            forceDirection += moveAction.ReadValue<Vector2>().y * appliedForce * GetCameraForward(playerCamera);
 
+            if (topDownControl)
+            {
+                forceDirection += moveAction.ReadValue<Vector2>().x * appliedForce * Vector3.right;
+                forceDirection += moveAction.ReadValue<Vector2>().y * appliedForce * Vector3.forward;
+            }
+            else
+            {
+                //Reading the input given by the player and moving away from the camera
+                forceDirection += moveAction.ReadValue<Vector2>().x * appliedForce * GetCameraRight(playerCamera);
+                forceDirection += moveAction.ReadValue<Vector2>().y * appliedForce * GetCameraForward(playerCamera);
+            }
+            
             //Adds the force and then we assume that the player is not inputting a direction
             rigidBody.AddForce(forceDirection, ForceMode.Impulse);
             dashDirection = forceDirection;
