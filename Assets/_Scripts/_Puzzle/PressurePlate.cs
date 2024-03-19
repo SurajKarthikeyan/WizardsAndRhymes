@@ -53,12 +53,12 @@ public class PressurePlate : MonoBehaviour, IInteractable
     {
         if (!isOn)
         {
-            if (other.gameObject.TryGetComponent(out PushBox pushBox) ||
+/*            if (other.gameObject.TryGetComponent(out PushBox pushBox) ||
             other.gameObject.TryGetComponent(out PlayerController player))
             {
                 Debug.Log(other.gameObject.name + "entering");
                 Interact();
-            }
+            }*/
         }
     }
 
@@ -66,12 +66,12 @@ public class PressurePlate : MonoBehaviour, IInteractable
     {
         if (isOn)
         {
-            if (other.gameObject.TryGetComponent(out PushBox pushBox) ||
+/*            if (other.gameObject.TryGetComponent(out PushBox pushBox) ||
             other.gameObject.TryGetComponent(out PlayerController player))
             {
                 Debug.Log(other.gameObject.name + "leaving");
                 Interact();
-            }
+            }*/
         }
     }
 }
