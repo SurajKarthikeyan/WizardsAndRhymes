@@ -328,38 +328,6 @@ public class PlayerController : Singleton<PlayerController>
             }
         }
 
-        else if (isOnIce)
-        {
-            playerAnimator.SetBool("isRunning", false);
-            moveStatus = MoveStatus.Ice;
-
-            float savedX = savedVelocityVector.x;
-            float savedZ = savedVelocityVector.z;
-            Vector3 newUp = new Vector3();
-            if (Math.Abs(savedZ) > Math.Abs(savedX) || Math.Abs(Math.Abs(savedZ) - Math.Abs(savedX)) < 0.1f  )
-            {
-                newUp = Vector3.forward;
-                if (savedZ < 0)
-                {
-                    newUp *= -1;
-                }
-            }
-
-            else
-            {
-                newUp = Vector3.right;
-                if (savedX < 0)
-                {
-                    newUp *= -1;
-                }
-            }
-            newUp = newUp.normalized;
-            
-            
-            savedVelocityVector = Vector3.Project(savedVelocityVector, newUp);
-
-            rigidBody.velocity = savedVelocityVector * iceSpeed;
-        }
         //If we are not moving, we are assumed idle
         else
         {
@@ -375,11 +343,7 @@ public class PlayerController : Singleton<PlayerController>
 
     #region Custom Methods
     
-    
-    public void SaveCurrentVelocityVector()
-    {
-        savedVelocityVector = rigidBody.velocity.normalized;
-    }
+
     
     
     /// <summary>
