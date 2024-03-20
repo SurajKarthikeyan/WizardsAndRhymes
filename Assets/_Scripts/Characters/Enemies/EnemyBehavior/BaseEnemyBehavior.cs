@@ -77,6 +77,10 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
 
     [Tooltip("Script of enemy debug text")]
     private AIDebug aiDebug;
+
+
+
+    public Renderer objectRenderer;
     #endregion
 
     #region Unity Methods
@@ -97,6 +101,13 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         aiDebug = GetComponent<AIDebug>();
         EnemyManager.EnemiesActivated += Activate;
+        // Check if the GameObject has a Renderer component
+        objectRenderer = GetComponent<Renderer>();
+        if (objectRenderer == null)
+        {
+            Debug.LogError("Renderer component not found on the GameObject.");
+        }
+        
     }
 
 
@@ -107,7 +118,7 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     {
         if (!hasBeenSeen)
         {
-            if (IsVisibleToCamera(transform))
+            if (IsVisibleToCamera())
             {
                 hasBeenSeen = true;
             }
@@ -195,12 +206,21 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     /// Function that says if this enemy is visible to the camera
     /// NOT FULLY WORKING AS INTENDED RIGHT NOW
     /// </summary>
-    /// <param name="transform">Transform to check if it is visible within the camera</param>
     /// <returns></returns>
-    public static bool IsVisibleToCamera(Transform transform)
+    public bool IsVisibleToCamera()
     {
-        Vector3 visTest = Camera.main.WorldToViewportPoint(transform.position);
-        return (visTest.x >= 0 && visTest.y >= 0) && (visTest.x <= 1 && visTest.y <= 1) && visTest.z >= 0;
+        // Get the camera's view frustum
+        Plane[] planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
+
+        // Get the bounds of the object
+        Bounds bounds = objectRenderer.bounds;
+
+        // Check if the bounds intersect with the camera's view frustum
+        bool isVisible = GeometryUtility.TestPlanesAABB(planes, bounds);
+
+        return isVisible;
+        //Vector3 visTest = Camera.main.WorldToViewportPoint(transform.position);
+        //return (visTest.x >= 0 && visTest.y >= 0) && (visTest.x <= 1 && visTest.y <= 1) && visTest.z >= 0;
     }
 
     /// <summary>
