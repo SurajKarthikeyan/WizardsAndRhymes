@@ -22,6 +22,19 @@ public class PlayerController : Singleton<PlayerController>
         Ice
     }
 
+    [Tooltip("Enum representing the direction the player is moving in")]
+    public enum MoveDirection
+    {
+        Up,
+        Down,
+        Right,
+        Left,
+        Idle
+    }
+
+    [Tooltip("MoveDireciton instance")]
+    [SerializeField] public MoveDirection moveDirection;
+
     [Tooltip("MoveStatus instance")]
     private MoveStatus moveStatus;
 
@@ -301,8 +314,55 @@ public class PlayerController : Singleton<PlayerController>
 
             if (topDownControl)
             {
-                forceDirection += moveAction.ReadValue<Vector2>().x * appliedForce * Vector3.right;
-                forceDirection += moveAction.ReadValue<Vector2>().y * appliedForce * Vector3.forward;
+                Vector2 movementDirection = moveAction.ReadValue<Vector2>();
+                if (!Mathf.Approximately(Mathf.Abs(movementDirection.magnitude), 0))
+                {
+                    // we are moving in a direction
+
+                    if(Mathf.Abs(movementDirection.y) >= Mathf.Abs(movementDirection.x))
+                    {
+                        // We are moving up / down
+                        if(movementDirection.y < 0)
+                        {
+                            moveDirection = MoveDirection.Down;
+                        }
+                        else
+                        {
+                            moveDirection = MoveDirection.Up;
+                        }
+                    }
+
+                    else
+                    {
+                        // We are moving right / left
+
+                        if (movementDirection.x < 0)
+                        {
+                            moveDirection = MoveDirection.Left;
+                        }
+                        else
+                        {
+                            moveDirection = MoveDirection.Right;
+                        }
+                    }
+                }
+
+                else
+                {
+                    moveDirection = MoveDirection.Idle;
+                }
+
+
+                if(moveDirection == MoveDirection.Up || moveDirection == MoveDirection.Down)
+                {
+
+                    forceDirection += moveAction.ReadValue<Vector2>().y * appliedForce * Vector3.forward;
+                }
+                else
+                {
+                    forceDirection += moveAction.ReadValue<Vector2>().x * appliedForce * Vector3.right;
+
+                }
             }
             else
             {
