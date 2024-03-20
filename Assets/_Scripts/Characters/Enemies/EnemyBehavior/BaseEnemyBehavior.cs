@@ -215,6 +215,8 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         // Get the bounds of the object
         Bounds bounds = objectRenderer.bounds;
 
+        bounds.Expand(3);
+
         // Check if the bounds intersect with the camera's view frustum
         bool isVisible = GeometryUtility.TestPlanesAABB(planes, bounds);
 
