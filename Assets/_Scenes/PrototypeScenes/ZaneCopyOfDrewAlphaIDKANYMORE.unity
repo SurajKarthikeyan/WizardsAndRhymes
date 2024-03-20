@@ -7014,6 +7014,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &251075364
 GameObject:
   m_ObjectHideFlags: 0
@@ -9215,6 +9216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1001 &381072767
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11398,6 +11400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 0
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1001 &503277041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12767,6 +12770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 0
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &586807435
 GameObject:
   m_ObjectHideFlags: 0
@@ -16840,6 +16844,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &792950590
 GameObject:
   m_ObjectHideFlags: 0
@@ -18454,6 +18459,9 @@ MonoBehaviour:
   - {fileID: 828332517}
   - {fileID: 1706584345}
   - {fileID: 786668881}
+  moveDirection: 0
+  moveObject: {fileID: 0}
+  isRunning: 0
 --- !u!1 &847126316
 GameObject:
   m_ObjectHideFlags: 0
@@ -20320,6 +20328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &926601848
 GameObject:
   m_ObjectHideFlags: 0
@@ -21275,6 +21284,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &999100857
 GameObject:
   m_ObjectHideFlags: 0
@@ -21417,6 +21427,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1031981834
 GameObject:
   m_ObjectHideFlags: 0
@@ -21605,6 +21616,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1043870613 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2684695994064820914, guid: 86509780b07285a44a69b1eb089a3ed1, type: 3}
@@ -22072,6 +22084,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1074745997
 GameObject:
   m_ObjectHideFlags: 0
@@ -22552,6 +22565,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 0
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1104977828
 GameObject:
   m_ObjectHideFlags: 0
@@ -23286,6 +23300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1173012359
 GameObject:
   m_ObjectHideFlags: 0
@@ -23948,6 +23963,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 0
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1001 &1194540355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24119,6 +24135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1202213875
 GameObject:
   m_ObjectHideFlags: 0
@@ -24377,6 +24394,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 0
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1001 &1216846152
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24658,6 +24676,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1221247220
 GameObject:
   m_ObjectHideFlags: 0
@@ -25287,6 +25306,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 0
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1266519487
 GameObject:
   m_ObjectHideFlags: 0
@@ -28213,6 +28233,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1001 &1425561763
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28628,6 +28649,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1001 &1444809770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29576,6 +29598,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487485355}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!136 &1488062086 stripped
+CapsuleCollider:
+  m_CorrespondingSourceObject: {fileID: 1701144819065626365, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+  m_PrefabInstance: {fileID: 81138555853967040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1489075868
 GameObject:
   m_ObjectHideFlags: 0
@@ -29989,6 +30016,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 0
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1499202617
 GameObject:
   m_ObjectHideFlags: 0
@@ -31476,6 +31504,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1001 &1572942462
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31797,6 +31826,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1001 &1586933414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31892,6 +31922,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1590028814
 GameObject:
   m_ObjectHideFlags: 0
@@ -33403,6 +33434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1681785004 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2463142954598932081, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
@@ -33422,6 +33454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1681809827
 GameObject:
   m_ObjectHideFlags: 0
@@ -33666,6 +33699,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1001 &1690705666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34220,6 +34254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1001 &1711310547
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34820,6 +34855,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1738556919
 GameObject:
   m_ObjectHideFlags: 0
@@ -35525,6 +35561,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1786720127
 GameObject:
   m_ObjectHideFlags: 0
@@ -36057,6 +36094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1805872139
 GameObject:
   m_ObjectHideFlags: 0
@@ -36208,6 +36246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 0
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &1811076546
 GameObject:
   m_ObjectHideFlags: 0
@@ -37278,6 +37317,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!4 &1871012029 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6235409801154746877, guid: 86509780b07285a44a69b1eb089a3ed1, type: 3}
@@ -37740,6 +37780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1001 &1905521745
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38249,6 +38290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1001 &1935584284
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39091,6 +39133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!4 &2003465169 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3056814859386007060, guid: 02242455c6b758c4eac0ecdbc00797fa, type: 3}
@@ -40011,6 +40054,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1001 &2065062782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40382,6 +40426,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!4 &2080138025 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5731077476133941631, guid: 46e654c102087004988f6462e5ae7133, type: 3}
@@ -40878,6 +40923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1 &2113134505 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2463142954598932081, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
@@ -40897,6 +40943,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1001 &2117324179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40992,6 +41039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   floorStatus: 1
   occupationStatus: 0
+  puzzleGrid: {fileID: 844705221}
 --- !u!1001 &2125259478
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41929,6 +41977,10 @@ PrefabInstance:
       propertyPath: testLight
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 1488062086}
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: meleeDamage
       value: 3

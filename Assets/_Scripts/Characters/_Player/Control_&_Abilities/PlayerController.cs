@@ -25,11 +25,11 @@ public class PlayerController : Singleton<PlayerController>
     [Tooltip("Enum representing the direction the player is moving in")]
     public enum MoveDirection
     {
-        Up,
+        Idle,
         Down,
         Right,
         Left,
-        Idle
+        Up
     }
 
     [Tooltip("MoveDireciton instance")]
@@ -235,6 +235,8 @@ public class PlayerController : Singleton<PlayerController>
 
 
     public bool topDownControl;
+
+    public Collider groundCheck;
     #endregion
 
     #region Unity Methods
@@ -315,11 +317,12 @@ public class PlayerController : Singleton<PlayerController>
             if (topDownControl)
             {
                 Vector2 movementDirection = moveAction.ReadValue<Vector2>();
-                if (!Mathf.Approximately(Mathf.Abs(movementDirection.magnitude), 0))
+                if (Mathf.Abs(movementDirection.magnitude) > 0.001f)
                 {
                     // we are moving in a direction
+                    groundCheck.enabled = true;
 
-                    if(Mathf.Abs(movementDirection.y) >= Mathf.Abs(movementDirection.x))
+                    if (Mathf.Abs(movementDirection.y) >= Mathf.Abs(movementDirection.x))
                     {
                         // We are moving up / down
                         if(movementDirection.y < 0)
@@ -347,21 +350,20 @@ public class PlayerController : Singleton<PlayerController>
                     }
                 }
 
-                else
-                {
-                    moveDirection = MoveDirection.Idle;
-                }
-
 
                 if(moveDirection == MoveDirection.Up || moveDirection == MoveDirection.Down)
                 {
 
                     forceDirection += moveAction.ReadValue<Vector2>().y * appliedForce * Vector3.forward;
                 }
-                else
+                else if (moveDirection == MoveDirection.Right || moveDirection == MoveDirection.Left)
                 {
                     forceDirection += moveAction.ReadValue<Vector2>().x * appliedForce * Vector3.right;
 
+                }
+                else
+                {
+                    forceDirection = Vector3.zero;
                 }
             }
             else
@@ -396,6 +398,8 @@ public class PlayerController : Singleton<PlayerController>
             playerAnimator.SetBool("isRunning", false);
             moveStatus = MoveStatus.Idle;
             rigidBody.velocity = Vector3.zero;
+            groundCheck.enabled = false;
+            moveDirection = MoveDirection.Idle;
         }
 
         //Function that has the player look in the direction the player is inputting
