@@ -182,7 +182,7 @@ public class PuzzleGrid : MonoBehaviour
                 {
                     return (-1, -1, -1);
                 }
-                for (int i = startCoord.Item1+1; i<5; i++)
+                for (int i = startCoord.Item1+1; i<gridArray.Count; i++)
                 {
                     GridTile currentTile = gridArray[i][startCoord.Item2].GetComponent<GridTile>();
 
@@ -190,9 +190,9 @@ public class PuzzleGrid : MonoBehaviour
                         currentTile.occupationStatus == GridTile.OccupationStatus.None)
                     {
                         tileCount++;
-                        if (i == 4)
+                        if (i == gridArray.Count - 1)
                         {
-                            return (4, startCoord.Item2, tileCount);
+                            return (gridArray.Count - 1, startCoord.Item2, tileCount);
                         }
                         continue;
                     }
@@ -227,21 +227,21 @@ public class PuzzleGrid : MonoBehaviour
                 return (-1, -1, -1);
             case PlayerController.MoveDirection.Right:
                 //iterate through j
-                if (startCoord.Item2 == 7)
+                if (startCoord.Item2 == gridArray[0].Count - 1)
                 {
                     return (-1, -1, -1);
                 }
 
-                for (int j = startCoord.Item2 + 1; j < 8; j++)
+                for (int j = startCoord.Item2 + 1; j < gridArray[0].Count; j++)
                 {
                     GridTile currentTile = gridArray[startCoord.Item1][j].GetComponent<GridTile>();
                     if (currentTile.floorStatus == GridTile.FloorStatus.Ice &&
                         currentTile.occupationStatus == GridTile.OccupationStatus.None)
                     {
                         tileCount++;
-                        if (j == 7)
+                        if (j == gridArray[0].Count - 1)
                         {
-                            return (startCoord.Item1,7, tileCount);
+                            return (startCoord.Item1, gridArray[0].Count - 1, tileCount);
                         }
                         continue;
                     }
