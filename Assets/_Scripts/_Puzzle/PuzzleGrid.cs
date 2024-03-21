@@ -31,6 +31,12 @@ public class PuzzleGrid : MonoBehaviour
     public GameObject moveObject;
 
     public bool isMovingObject;
+
+    private int letterCoord;
+
+    private int numberCoord;
+
+    private bool hasTouchedIceBox;
     #endregion
 
     #region UnityMethods
@@ -57,9 +63,30 @@ public class PuzzleGrid : MonoBehaviour
         moveDirection = PlayerController.instance.moveDirection;
         (int, int) startCoord = StringToGridCoordinate(name);
 
-        (int, int,int) endCoord = CalculateEndCoordinate(startCoord, moveDirection);
+        GridTile startTile = gridArray[startCoord.Item1][startCoord.Item2].GetComponent<GridTile>();
 
-        MoveObject(startCoord, (endCoord.Item1, endCoord.Item2), endCoord.Item3, moveObject);
+        if (startTile.occupationStatus == GridTile.OccupationStatus.IceBox)
+        {
+            moveObject = startTile.occupyingObject;
+            (int, int, int) endCoord = CalculateEndCoordinate(startCoord, moveDirection);
+            GridTile endtile = gridArray[endCoord.Item1][endCoord.Item2].GetComponent<GridTile>();
+
+            MoveObject(startCoord, (endCoord.Item1, endCoord.Item2), endCoord.Item3, moveObject);
+            endtile.occupyingObject = startTile.occupyingObject;
+            endtile.occupationStatus = GridTile.OccupationStatus.IceBox;
+            startTile.occupationStatus = GridTile.OccupationStatus.None;
+            startTile.occupyingObject = null;
+        }
+
+        else
+        {
+            moveObject = PlayerController.instance.gameObject;
+
+            (int, int,int) endCoord = CalculateEndCoordinate(startCoord, moveDirection);
+
+            MoveObject(startCoord, (endCoord.Item1, endCoord.Item2), endCoord.Item3, moveObject);
+
+        }
     }
 
     (int, int) StringToGridCoordinate(string name)
@@ -132,6 +159,9 @@ public class PuzzleGrid : MonoBehaviour
                     else if (currentTile.occupationStatus == GridTile.OccupationStatus.IceBox)
                     {
                         //Move the box that you are collding with 
+                        hasTouchedIceBox = true;
+                        letterCoord = i;
+                        numberCoord = startCoord.Item2;
                         return (i + 1, startCoord.Item2, tileCount);
                     }
                     else
@@ -177,6 +207,9 @@ public class PuzzleGrid : MonoBehaviour
                     else if (currentTile.occupationStatus == GridTile.OccupationStatus.IceBox)
                     {
                         //Move the box that you are collding with 
+                        hasTouchedIceBox = true;
+                        letterCoord = i;
+                        numberCoord = startCoord.Item2;
                         return (i - 1, startCoord.Item2, tileCount);
                     }
 
@@ -224,6 +257,9 @@ public class PuzzleGrid : MonoBehaviour
                     else if (currentTile.occupationStatus == GridTile.OccupationStatus.IceBox)
                     {
                         //Move box
+                        hasTouchedIceBox = true;
+                        letterCoord = startCoord.Item1;
+                        numberCoord = j;
                         return (startCoord.Item1, j - 1, tileCount);
                     }
 
@@ -271,6 +307,9 @@ public class PuzzleGrid : MonoBehaviour
                     else if (currentTile.occupationStatus == GridTile.OccupationStatus.IceBox)
                     {
                         //Move box
+                        hasTouchedIceBox = true;
+                        letterCoord = startCoord.Item1;
+                        numberCoord = j;
                         return (startCoord.Item1, j + 1, tileCount);
                     }
 
@@ -290,6 +329,29 @@ public class PuzzleGrid : MonoBehaviour
         }
     }
 
+    void MoveSecondObject((int,int) startCoord, PlayerController.MoveDirection direction)
+    {
+        Debug.Log(direction);
+        (int, int, int) iceBoxEndCoord = CalculateEndCoordinate(startCoord, direction);
+        GridTile startTile = gridArray[startCoord.Item1][startCoord.Item2].GetComponent<GridTile>();
+        GridTile endTile;
+        if (iceBoxEndCoord == (-1, -1, -1))
+        {
+            endTile = startTile;
+            isMovingObject = false;
+        }
+        else
+        {
+            endTile = gridArray[iceBoxEndCoord.Item1][iceBoxEndCoord.Item2].GetComponent<GridTile>();
+            endTile.occupyingObject = startTile.occupyingObject;
+            endTile.occupationStatus = GridTile.OccupationStatus.IceBox;
+            startTile.occupyingObject = null;
+            startTile.occupationStatus = GridTile.OccupationStatus.None;
+            MoveObject(startCoord, (iceBoxEndCoord.Item1, iceBoxEndCoord.Item2),
+                iceBoxEndCoord.Item3, endTile.occupyingObject);
+        }
+    }
+
     public void MoveObject((int, int) startCoord, (int, int) endCoord, int tileCount, GameObject go)
     {
         Debug.Log("Start coord: " + startCoord.Item1 + "," + startCoord.Item2);
@@ -304,11 +366,14 @@ public class PuzzleGrid : MonoBehaviour
         {
             end = gridArray[endCoord.Item1][endCoord.Item2].transform;
         }
-        float time = 1 * tileCount;
+        float time = 0.33f * tileCount;
         if (!isMovingObject)
         {
             isMovingObject = true;
-            StartCoroutine(MoveObjectCoroutine(time, start, end, go));
+            if (go != null)
+            {
+                StartCoroutine(MoveObjectCoroutine(time, start, end, go));
+            }
         }
     }
 
@@ -327,7 +392,18 @@ public class PuzzleGrid : MonoBehaviour
             yield return null;
         }
         isMovingObject = false;
-        PlayerController.instance.EnablePlayerControls();
+        if (hasTouchedIceBox)
+        {
+            hasTouchedIceBox = false;
+            (int, int) iceBoxStartCoord = (letterCoord, numberCoord);
+            MoveSecondObject(iceBoxStartCoord, moveDirection);
+        }
+
+        if (!isMovingObject)
+        {
+
+            PlayerController.instance.EnablePlayerControls();
+        }
     }
     #endregion
 }

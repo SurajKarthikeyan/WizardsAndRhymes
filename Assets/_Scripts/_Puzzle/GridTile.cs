@@ -27,6 +27,9 @@ public class GridTile : MonoBehaviour
 
     [SerializeField] private PuzzleGrid puzzleGrid;
 
+    [Tooltip("Object currently occupying this tile")]
+    public GameObject occupyingObject;
+
     #endregion
 
     private void OnTriggerEnter(Collider other)
