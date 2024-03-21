@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class that represents a grid for an ice puzzle
+/// </summary>
 public class PuzzleGrid : MonoBehaviour
 {
     #region Variables
@@ -23,23 +26,23 @@ public class PuzzleGrid : MonoBehaviour
     [SerializeField] private PlayerController.MoveDirection moveDirection;
 
     [Tooltip("2D Array representing the entier grid array")]
-    public List<List<GameObject>> GridArray;
+    public List<List<GameObject>> gridArray;
 
     public GameObject moveObject;
 
-    public bool isRunning;
+    public bool isMovingObject;
     #endregion
 
     #region UnityMethods
 
     private void Start()
     {
-        GridArray = new List<List<GameObject>>();
-        GridArray.Add(AGrid);
-        GridArray.Add(BGrid);
-        GridArray.Add(CGrid);
-        GridArray.Add(DGrid);
-        GridArray.Add(EGrid);
+        gridArray = new List<List<GameObject>>();
+        gridArray.Add(AGrid);
+        gridArray.Add(BGrid);
+        gridArray.Add(CGrid);
+        gridArray.Add(DGrid);
+        gridArray.Add(EGrid);
 
 
         // temp code;
@@ -94,7 +97,7 @@ public class PuzzleGrid : MonoBehaviour
 
     (int,int,int) CalculateEndCoordinate((int,int) startCoord, PlayerController.MoveDirection direction)
     {
-        int tileCount = 0;
+        int tileCount = 1;
         switch (direction)
         {
             case PlayerController.MoveDirection.Up:
@@ -105,7 +108,7 @@ public class PuzzleGrid : MonoBehaviour
                 }
                 for (int i = startCoord.Item1-1; i >= 0; i--)
                 {
-                    GridTile currentTile = GridArray[i][startCoord.Item2].GetComponent<GridTile>();
+                    GridTile currentTile = gridArray[i][startCoord.Item2].GetComponent<GridTile>();
                     if (currentTile.floorStatus == GridTile.FloorStatus.Ice && 
                         currentTile.occupationStatus == GridTile.OccupationStatus.None)
                     {
@@ -147,7 +150,7 @@ public class PuzzleGrid : MonoBehaviour
                 }
                 for (int i = startCoord.Item1+1; i<5; i++)
                 {
-                    GridTile currentTile = GridArray[i][startCoord.Item2].GetComponent<GridTile>();
+                    GridTile currentTile = gridArray[i][startCoord.Item2].GetComponent<GridTile>();
 
                     if (currentTile.floorStatus == GridTile.FloorStatus.Ice &&
                         currentTile.occupationStatus == GridTile.OccupationStatus.None)
@@ -194,7 +197,7 @@ public class PuzzleGrid : MonoBehaviour
 
                 for (int j = startCoord.Item2 + 1; j < 8; j++)
                 {
-                    GridTile currentTile = GridArray[startCoord.Item1][j].GetComponent<GridTile>();
+                    GridTile currentTile = gridArray[startCoord.Item1][j].GetComponent<GridTile>();
                     if (currentTile.floorStatus == GridTile.FloorStatus.Ice &&
                         currentTile.occupationStatus == GridTile.OccupationStatus.None)
                     {
@@ -241,7 +244,7 @@ public class PuzzleGrid : MonoBehaviour
 
                 for (int j = startCoord.Item2-1; j >= 0; j--)
                 {
-                    GridTile currentTile = GridArray[startCoord.Item1][j].GetComponent<GridTile>();
+                    GridTile currentTile = gridArray[startCoord.Item1][j].GetComponent<GridTile>();
                     if (currentTile.floorStatus == GridTile.FloorStatus.Ice &&
                         currentTile.occupationStatus == GridTile.OccupationStatus.None)
                     {
@@ -291,7 +294,7 @@ public class PuzzleGrid : MonoBehaviour
     {
         Debug.Log("Start coord: " + startCoord.Item1 + "," + startCoord.Item2);
         Debug.Log("End coord: " + endCoord.Item1 + "," + endCoord.Item2);
-        Transform start = GridArray[startCoord.Item1][startCoord.Item2].transform;
+        Transform start = gridArray[startCoord.Item1][startCoord.Item2].transform;
         Transform end;
         if (endCoord.Item1 < 0 || endCoord.Item2 < 0)
         {
@@ -299,18 +302,19 @@ public class PuzzleGrid : MonoBehaviour
         }
         else
         {
-            end = GridArray[endCoord.Item1][endCoord.Item2].transform;
+            end = gridArray[endCoord.Item1][endCoord.Item2].transform;
         }
         float time = 1 * tileCount;
-        if (!isRunning)
+        if (!isMovingObject)
         {
-            isRunning = true;
+            isMovingObject = true;
             StartCoroutine(MoveObjectCoroutine(time, start, end, go));
         }
     }
 
     private IEnumerator MoveObjectCoroutine(float time, Transform start, Transform end, GameObject go)
     {
+        PlayerController.instance.DisablePlayerControls();
         Vector3 startingPos = new Vector3(start.position.x, 2.3f, start.position.z);
         Vector3 endingPos = new Vector3(end.position.x, 2.3f, end.position.z);
 
@@ -322,7 +326,8 @@ public class PuzzleGrid : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-        isRunning = false;
+        isMovingObject = false;
+        PlayerController.instance.EnablePlayerControls();
     }
     #endregion
 }
