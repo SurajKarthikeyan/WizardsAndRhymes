@@ -12,11 +12,11 @@ public class FadeToBlack : MonoBehaviour
 {
     #region Variables
     [Tooltip("Image that is used to change its alpha")]
-    [SerializeField] private Image fadeImage;
+    public Image fadeImage;
     [Tooltip("Timer to fade to black")]
-    [SerializeField] private float fadeOutTime;
+    public float fadeOutTime;
     [Tooltip("Timer to fade to transparency")]
-    [SerializeField] private float fadeInTime;
+    public float fadeInTime;
     #endregion
 
     #region UnityMethods
@@ -57,7 +57,6 @@ public class FadeToBlack : MonoBehaviour
     IEnumerator FadeOut(float intervalWait)
     {
         fadeImage.gameObject.SetActive(true);
-        bool check = false;
         while (true)
         {
             fadeImage.color = new Color(fadeImage.color.r, fadeImage.color.g, fadeImage.color.b,
