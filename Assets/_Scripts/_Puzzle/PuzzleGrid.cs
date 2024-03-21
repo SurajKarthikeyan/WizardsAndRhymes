@@ -32,11 +32,11 @@ public class PuzzleGrid : MonoBehaviour
 
     public bool isMovingObject;
 
-    private int letterCoord;
+    public int letterCoord;
 
-    private int numberCoord;
+    public int numberCoord;
 
-    private bool hasTouchedIceBox;
+    public bool hasTouchedIceBox;
     #endregion
 
     #region UnityMethods
@@ -159,6 +159,7 @@ public class PuzzleGrid : MonoBehaviour
                     else if (currentTile.occupationStatus == GridTile.OccupationStatus.IceBox)
                     {
                         //Move the box that you are collding with 
+                        Debug.LogError("Hitting Ice box going up");
                         hasTouchedIceBox = true;
                         letterCoord = i;
                         numberCoord = startCoord.Item2;
@@ -333,6 +334,7 @@ public class PuzzleGrid : MonoBehaviour
     {
         Debug.Log(direction);
         (int, int, int) iceBoxEndCoord = CalculateEndCoordinate(startCoord, direction);
+        Debug.Log(iceBoxEndCoord);
         GridTile startTile = gridArray[startCoord.Item1][startCoord.Item2].GetComponent<GridTile>();
         GridTile endTile;
         if (iceBoxEndCoord == (-1, -1, -1))
@@ -347,8 +349,10 @@ public class PuzzleGrid : MonoBehaviour
             endTile.occupationStatus = GridTile.OccupationStatus.IceBox;
             startTile.occupyingObject = null;
             startTile.occupationStatus = GridTile.OccupationStatus.None;
+            moveObject = endTile.occupyingObject;
+            Debug.Log(endTile.occupyingObject);
             MoveObject(startCoord, (iceBoxEndCoord.Item1, iceBoxEndCoord.Item2),
-                iceBoxEndCoord.Item3, endTile.occupyingObject);
+                iceBoxEndCoord.Item3, moveObject);
         }
     }
 
@@ -361,6 +365,7 @@ public class PuzzleGrid : MonoBehaviour
         if (endCoord.Item1 < 0 || endCoord.Item2 < 0)
         {
             end = start;
+            isMovingObject = false;
         }
         else
         {
@@ -401,7 +406,6 @@ public class PuzzleGrid : MonoBehaviour
 
         if (!isMovingObject)
         {
-
             PlayerController.instance.EnablePlayerControls();
         }
     }
