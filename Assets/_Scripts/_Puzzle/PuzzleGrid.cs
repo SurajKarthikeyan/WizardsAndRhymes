@@ -341,6 +341,7 @@ public class PuzzleGrid : MonoBehaviour
         {
             endTile = startTile;
             isMovingObject = false;
+            moveObject = null;
         }
         else
         {
@@ -366,6 +367,7 @@ public class PuzzleGrid : MonoBehaviour
         {
             end = start;
             isMovingObject = false;
+            moveObject = null;
         }
         else
         {
@@ -397,11 +399,13 @@ public class PuzzleGrid : MonoBehaviour
             yield return null;
         }
         isMovingObject = false;
+        moveObject = null;
         if (hasTouchedIceBox)
         {
             hasTouchedIceBox = false;
             (int, int) iceBoxStartCoord = (letterCoord, numberCoord);
             MoveSecondObject(iceBoxStartCoord, moveDirection);
+            isMovingObject = false;
         }
 
         if (!isMovingObject)
