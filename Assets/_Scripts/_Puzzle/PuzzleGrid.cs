@@ -37,12 +37,15 @@ public class PuzzleGrid : MonoBehaviour
     public int numberCoord;
 
     public bool hasTouchedIceBox;
+
+    public bool touchedTile;
     #endregion
 
     #region UnityMethods
 
     private void Start()
     {
+        touchedTile = false;
         gridArray = new List<List<GameObject>>();
         gridArray.Add(AGrid);
         gridArray.Add(BGrid);
@@ -346,12 +349,20 @@ public class PuzzleGrid : MonoBehaviour
         else
         {
             endTile = gridArray[iceBoxEndCoord.Item1][iceBoxEndCoord.Item2].GetComponent<GridTile>();
-            endTile.occupyingObject = startTile.occupyingObject;
-            endTile.occupationStatus = GridTile.OccupationStatus.IceBox;
-            startTile.occupyingObject = null;
-            startTile.occupationStatus = GridTile.OccupationStatus.None;
+            if (endTile.gameObject != startTile.gameObject)
+            {
+                
+                endTile.occupyingObject = startTile.occupyingObject;
+                endTile.occupationStatus = GridTile.OccupationStatus.IceBox;
+                startTile.occupyingObject = null;
+                startTile.occupationStatus = GridTile.OccupationStatus.None;
+                
+            }
+            else
+            {
+                Debug.Log("Same Tile");
+            }
             moveObject = endTile.occupyingObject;
-            Debug.Log(endTile.occupyingObject);
             MoveObject(startCoord, (iceBoxEndCoord.Item1, iceBoxEndCoord.Item2),
                 iceBoxEndCoord.Item3, moveObject);
         }
@@ -386,6 +397,7 @@ public class PuzzleGrid : MonoBehaviour
 
     private IEnumerator MoveObjectCoroutine(float time, Transform start, Transform end, GameObject go)
     {
+        isMovingObject = true;
         PlayerController.instance.DisablePlayerControls();
         Vector3 startingPos = new Vector3(start.position.x, 2.3f, start.position.z);
         Vector3 endingPos = new Vector3(end.position.x, 2.3f, end.position.z);
@@ -394,6 +406,8 @@ public class PuzzleGrid : MonoBehaviour
         go.transform.position = startingPos;
         while(elapsedTime < time)
         {
+            isMovingObject = true;
+            PlayerController.instance.DisablePlayerControls();
             go.transform.position = Vector3.Lerp(startingPos, endingPos, (elapsedTime / time));
             elapsedTime += Time.deltaTime;
             yield return null;
