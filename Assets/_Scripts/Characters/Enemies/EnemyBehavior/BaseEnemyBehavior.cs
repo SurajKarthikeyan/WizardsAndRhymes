@@ -65,6 +65,9 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
     [Tooltip("Rigidbody of this enemy")]
     protected Rigidbody rb;
 
+    [Tooltip("Renderer of the enemy")]
+    private Renderer enemyRenderer;
+
     [Tooltip("Boolean saying whether or not this enemy is knocked back")]
     private bool knockedBack;
 
@@ -77,10 +80,6 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
 
     [Tooltip("Script of enemy debug text")]
     private AIDebug aiDebug;
-
-
-
-    public Renderer objectRenderer;
     #endregion
 
     #region Unity Methods
@@ -102,8 +101,8 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         aiDebug = GetComponent<AIDebug>();
         EnemyManager.EnemiesActivated += Activate;
         // Check if the GameObject has a Renderer component
-        objectRenderer = GetComponent<Renderer>();
-        if (objectRenderer == null)
+        enemyRenderer = GetComponent<Renderer>();
+        if (enemyRenderer == null)
         {
             Debug.LogError("Renderer component not found on the GameObject.");
         }
@@ -164,7 +163,6 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
                     playerHealth.TakeDamage(attackDamage, Health.DamageType.None);
                     playerHealth.GetComponent<PlayerController>().Knockback(transform.forward, knockbackPower);
                 }
-                
             }
         }
     }
@@ -204,25 +202,23 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
 
     /// <summary>
     /// Function that says if this enemy is visible to the camera
-    /// NOT FULLY WORKING AS INTENDED RIGHT NOW
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Boolean representing if this enemy is visible in the camera</returns>
     public bool IsVisibleToCamera()
     {
         // Get the camera's view frustum
         Plane[] planes = GeometryUtility.CalculateFrustumPlanes(Camera.main);
 
         // Get the bounds of the object
-        Bounds bounds = objectRenderer.bounds;
+        Bounds bounds = enemyRenderer.bounds;
 
+        //Expands bounds to make enemy move when they're just offscreen
         bounds.Expand(3);
 
         // Check if the bounds intersect with the camera's view frustum
         bool isVisible = GeometryUtility.TestPlanesAABB(planes, bounds);
 
         return isVisible;
-        //Vector3 visTest = Camera.main.WorldToViewportPoint(transform.position);
-        //return (visTest.x >= 0 && visTest.y >= 0) && (visTest.x <= 1 && visTest.y <= 1) && visTest.z >= 0;
     }
 
     /// <summary>
