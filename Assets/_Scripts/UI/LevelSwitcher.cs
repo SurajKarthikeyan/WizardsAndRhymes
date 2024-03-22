@@ -15,6 +15,7 @@ public class LevelSwitcher : MonoBehaviour
     {
         if (!string.IsNullOrEmpty(levelName))
         {
+            AkSoundEngine.StopAll();
             SceneManager.LoadScene(levelName);
         }
         else
@@ -29,6 +30,7 @@ public class LevelSwitcher : MonoBehaviour
     /// <param name="levelId">The ID of the level to load</param>
     public void LoadLevel(int levelId)
     {
+        AkSoundEngine.StopAll();
         SceneManager.LoadScene(levelId);
     }
 }
