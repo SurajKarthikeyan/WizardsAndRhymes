@@ -19397,6 +19397,7 @@ GameObject:
   - component: {fileID: 463799425}
   - component: {fileID: 463799424}
   - component: {fileID: 463799423}
+  - component: {fileID: 463799428}
   m_Layer: 0
   m_Name: Word
   m_TagString: Untagged
@@ -19426,7 +19427,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -19446,7 +19447,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -19518,6 +19519,19 @@ Transform:
   - {fileID: 707995680}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 89.938}
+--- !u!114 &463799428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463799422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31b3b88713bfc784589ebf121ac9df92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleToggle: {fileID: 361363677}
 --- !u!1001 &465181758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31318,8 +31332,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 361363676}
-  - {fileID: 1046387860}
   - {fileID: 610350125}
+  - {fileID: 1046387860}
   - {fileID: 955862244}
   - {fileID: 643861621}
   - {fileID: 1037419992}
@@ -44573,7 +44587,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1046387859}
   m_LocalRotation: {x: -0, y: 0.000000029802319, z: -0.0000000074505797, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.000022888184}
+  m_LocalPosition: {x: 0, y: 0, z: 0.2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -44582,7 +44596,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -754, y: 236.99979}
+  m_AnchoredPosition: {x: -754, y: 237}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1046387861

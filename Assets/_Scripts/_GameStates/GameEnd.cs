@@ -30,7 +30,7 @@ public class GameEnd : MonoBehaviour
     [Tooltip("Door open SFX")]
     [SerializeField] private AK.Wwise.Event doorOpenEvent;
     [Tooltip("This is here to ensure that once the room has been cleared it doesn't clear again")]
-    [HideInInspector] private bool hasPassed;
+    [HideInInspector] public bool hasPassed;
 
 
     [Header("UI Elements")]
@@ -113,11 +113,10 @@ public class GameEnd : MonoBehaviour
     /// <summary>
     /// Invoked by the room cleared callback. Activates the exit door
     /// </summary>
-    private void RoomCleared()
+    public void RoomCleared()
     {
         if (hasPassed)
         {
-            Debug.Log("RoomCleared");
             var tempColorBlock = roomClearedCheckbox.colors;
             tempColorBlock.disabledColor = toggleOnColor;
             roomClearedCheckbox.colors = tempColorBlock;
