@@ -1,3 +1,4 @@
+using MoreMountains.Feedbacks;
 using System.Collections;
 using System.Runtime.CompilerServices;
 using UnityEngine;
@@ -34,6 +35,9 @@ public class Health : MonoBehaviour
         get { return currentHP; }
         set { currentHP = value; }
     }
+
+    [Tooltip("The MMF_Player to play feedbacks from when taking damage")]
+    [SerializeField] MMF_Player damageFeedbacks;
     #endregion
 
     #region Unity Methods
@@ -70,6 +74,7 @@ public class Health : MonoBehaviour
     public virtual void TakeDamage(float value, DamageType dType)
     {
         currentHP -= value;
+        damageFeedbacks?.PlayFeedbacks();
     }
 
     
