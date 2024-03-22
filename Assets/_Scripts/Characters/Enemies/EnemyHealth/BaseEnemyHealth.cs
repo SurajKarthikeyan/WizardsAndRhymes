@@ -77,6 +77,10 @@ public abstract class BaseEnemyHealth : Health
     [Tooltip("Audio Event for skeleton hit")]
     [SerializeField] private AK.Wwise.Event enemyHitSFX;
 
+    public delegate void EnemyDiedDelegate(GameObject enemyGO);
+    [Tooltip("Event fired when an enemy dies")]
+    [HideInInspector] public static event EnemyDiedDelegate EnemyDied;
+
     private bool isDead;
     #endregion
 
@@ -293,7 +297,7 @@ public abstract class BaseEnemyHealth : Health
     {
         StopAllCoroutines();
         ClearLightningObjects();
-        EnemyManager.instance.EnemyDied();
+        EnemyDied?.Invoke(gameObject);
     }
     #endregion
 }

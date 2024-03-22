@@ -9,11 +9,12 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEngine.UI;
 using static Health;
+using UnityEngine.Events;
 
 /// <summary>
 /// Class that manages waves of enemies for the current room
 /// </summary>
-public class EnemyManager : Singleton<EnemyManager>
+public class EnemyManager : MonoBehaviour
 {
     #region Variables
     /// <summary>
@@ -24,7 +25,6 @@ public class EnemyManager : Singleton<EnemyManager>
     {
         [Tooltip("Potential ways for this wave to trigger")]
         public enum WaveTrigger { EnemiesRemaining, WithPreviousWave, PreviousWaveDoneSpawning }
-
 
         [Tooltip("When to trigger this wave (doesn't affect first wave)")]
         public WaveTrigger waveTrigger = WaveTrigger.EnemiesRemaining;
@@ -65,15 +65,28 @@ public class EnemyManager : Singleton<EnemyManager>
     [Tooltip("Event fired when debug button is pressed")]
     [HideInInspector] public static event ActivateEnemiesDelegate EnemiesActivated;
 
+    [Tooltip("The number of enemy managers that haven't had all their waves cleared yet")]
+    static int remainingEnemyManagers = 0;
+
+    [Header("Call the function ActivateEnemies() using an event or script to start enemy spawning.")]
     [Tooltip("Array of enemy waves to spawn")]
     [SerializeField] EnemyWave[] waves = new EnemyWave[] { new EnemyWave() };
     [Tooltip("The spotlight prefab to spawn alongside each enemy")]
     [SerializeField] GameObject spotlightPrefab;
+    [Tooltip("The events to trigger when all waves from this EnemyManager have been cleared")]
+    [SerializeField] UnityEvent wavesClearedEvent;
 
+    [Tooltip("Whether all of this enemy manager's waves have been completed")]
+    [HideInInspector] public bool wavesCleared = false;
+
+    [Tooltip("Whether enemy spawning has started")]
+    bool spawningStarted = false;
     [Tooltip("The index of the next wave of enemies")]
     int waveIndex = 0;
     [Tooltip("The number of enemies, spawned and yet to be spawned, remaining in the current waves")]
-    [SerializeField] private int enemiesRemaining = 0;
+    int enemiesRemaining = 0;
+    [Tooltip("A set of all the enemies that have been spawned")]
+    HashSet<GameObject> enemiesSpawned = new HashSet<GameObject>();
 
     [Header("Enemy Augmentation Variables")]
 
@@ -93,6 +106,31 @@ public class EnemyManager : Singleton<EnemyManager>
     #endregion
 
     #region Unity Methods
+    /// <summary>
+    /// Register callbacks
+    /// </summary>
+    private void Start()
+    {
+        //Add self to count of enemy managers without all waves cleared
+        remainingEnemyManagers += 1;
+
+        //Register enemy died callback
+        BaseEnemyHealth.EnemyDied += EnemyDied;
+    }
+
+    /// <summary>
+    /// Unregister callbacks
+    /// </summary>
+    private void OnDestroy()
+    {
+        //Remove self from count of enemy managers if still has uncleared waves
+        if (!wavesCleared)
+            remainingEnemyManagers -= 1;
+
+        //Unregister enemy died callback
+        BaseEnemyHealth.EnemyDied -= EnemyDied;
+    }
+
     /// <summary>
     /// Method called to draw debug overlays in edit mode
     /// </summary>
@@ -117,8 +155,11 @@ public class EnemyManager : Singleton<EnemyManager>
     public void ActivateEnemies()
     {
         //Spawn the first wave of enemies
-        if (waves.Length > 0)
+        if (waves.Length > 0 && !spawningStarted)
+        {
+            spawningStarted = true;
             StartCoroutine(TriggerWave(waves[0]));
+        }
     }
 
     /// <summary>
@@ -132,24 +173,38 @@ public class EnemyManager : Singleton<EnemyManager>
     /// <summary>
     /// Called by the base enemy health script whenever an enemy dies
     /// </summary>
-    public void EnemyDied()
+    public void EnemyDied(GameObject enemyGO)
     {
-        enemiesRemaining--;
+        //Check if this enemy was spawned by this EnemyManager
+        if (enemiesSpawned.Contains(enemyGO))
+        {
+            enemiesSpawned.Remove(enemyGO);
+            enemiesRemaining--;
 
-        //Check if the next wave should spawn now
-        if (waveIndex < waves.Length)
-        {
-            EnemyWave currentWave = waves[waveIndex];
-            if (currentWave.waveTrigger == EnemyWave.WaveTrigger.EnemiesRemaining)
+            //Check if the next wave should spawn now
+            if (waveIndex < waves.Length)
             {
-                if (enemiesRemaining <= currentWave.enemiesRemaining)
-                    StartCoroutine(TriggerWave(currentWave));
+                EnemyWave currentWave = waves[waveIndex];
+                if (currentWave.waveTrigger == EnemyWave.WaveTrigger.EnemiesRemaining)
+                {
+                    if (enemiesRemaining <= currentWave.enemiesRemaining)
+                        StartCoroutine(TriggerWave(currentWave));
+                }
             }
-        }
-        //Check if the last wave has been defeated
-        else if (enemiesRemaining <= 0)
-        {
-            RoomCleared?.Invoke(); //Invoke the room cleared event
+            //Check if the last wave has been defeated
+            else if (enemiesRemaining <= 0)
+            {
+                //Mark this enemy manager as completed
+                wavesCleared = true;
+                remainingEnemyManagers -= 1;
+
+                //Trigger the local event
+                wavesClearedEvent?.Invoke();
+
+                //If all enemy managers have had all their waves completed, trigger
+                if (remainingEnemyManagers <= 0)
+                    RoomCleared?.Invoke();
+            }
         }
     }
 
@@ -161,7 +216,7 @@ public class EnemyManager : Singleton<EnemyManager>
     IEnumerator TriggerWave(EnemyWave wave)
     {
         //We check to see if we have an augment, and assign our respective augment method
-        if (currentAugment!= null)
+        if (currentAugment != null)
         {
             augmentEnemy = currentAugment.augmentationEffect switch
             {
@@ -202,12 +257,14 @@ public class EnemyManager : Singleton<EnemyManager>
         {
             GameObject enemyPrefab = waveGroup.type;
 
-            for (int i = 0; i<waveGroup.amount; i++)
+            for (int i = 0; i < waveGroup.amount; i++)
             {
                 Vector2 spawnPosition2D = UnityEngine.Random.insideUnitCircle * wave.spawnRadius;
                 Vector3 spawnPosition = new Vector3(wave.spawnPosition.position.x + spawnPosition2D.x, wave.spawnPosition.position.y, wave.spawnPosition.position.z + spawnPosition2D.y);
                 GameObject enemyGO = Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
                 enemyGO.GetComponent<BaseEnemyBehavior>().activated = true; //Activate the enemy
+                augmentEnemy?.Invoke(enemyGO); //Augment the enemy
+                enemiesSpawned.Add(enemyGO); //Save this enemy to the list of enemies spawned by this manager
                 yield return new WaitForSeconds(enemySpawnDelay);
 
                 //Spawn the spotlight for the enemy
