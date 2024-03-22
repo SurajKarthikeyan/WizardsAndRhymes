@@ -162,7 +162,6 @@ public class PuzzleGrid : MonoBehaviour
                     else if (currentTile.occupationStatus == GridTile.OccupationStatus.IceBox)
                     {
                         //Move the box that you are collding with 
-                        Debug.LogError("Hitting Ice box going up");
                         hasTouchedIceBox = true;
                         letterCoord = i;
                         numberCoord = startCoord.Item2;
@@ -170,11 +169,9 @@ public class PuzzleGrid : MonoBehaviour
                     }
                     else
                     {
-                        Debug.LogError("in the up case but still broke");
                         return (-1, -1, -1);
                     }
                 }
-                Debug.LogError("full iteration");
                 return (-1, -1, -1);
             case PlayerController.MoveDirection.Down:
                 //iterate through i 
@@ -219,11 +216,9 @@ public class PuzzleGrid : MonoBehaviour
 
                     else
                     {
-                        Debug.LogError("in the down case but still broke");
                         return (-1, -1, -1);
                     }
                 }
-                Debug.LogError("full iteration");
                 return (-1, -1, -1);
             case PlayerController.MoveDirection.Right:
                 //iterate through j
@@ -269,12 +264,10 @@ public class PuzzleGrid : MonoBehaviour
 
                     else
                     {
-                        Debug.LogError("in the right case but still broke");
                         return (-1, -1, -1);
                     }
 
                 }
-                Debug.LogError("full iteration");
                 return (-1, -1, -1);
             case PlayerController.MoveDirection.Left:
                 if (startCoord.Item2 == 0)
@@ -319,15 +312,12 @@ public class PuzzleGrid : MonoBehaviour
 
                     else
                     {
-                        Debug.LogError("in the left case but still broke");
                         return (-1, -1, -1);
                     }
 
                 }
-                Debug.LogError("full iteration");
                 return (-1, -1, -1);
             default:
-                Debug.LogError("default case");
                 return (-1, -1, -1);
 
         }
@@ -335,9 +325,7 @@ public class PuzzleGrid : MonoBehaviour
 
     void MoveSecondObject((int,int) startCoord, PlayerController.MoveDirection direction)
     {
-        Debug.Log(direction);
         (int, int, int) iceBoxEndCoord = CalculateEndCoordinate(startCoord, direction);
-        Debug.Log(iceBoxEndCoord);
         GridTile startTile = gridArray[startCoord.Item1][startCoord.Item2].GetComponent<GridTile>();
         GridTile endTile;
         if (iceBoxEndCoord == (-1, -1, -1))
@@ -370,8 +358,6 @@ public class PuzzleGrid : MonoBehaviour
 
     public void MoveObject((int, int) startCoord, (int, int) endCoord, int tileCount, GameObject go)
     {
-        Debug.Log("Start coord: " + startCoord.Item1 + "," + startCoord.Item2);
-        Debug.Log("End coord: " + endCoord.Item1 + "," + endCoord.Item2);
         Transform start = gridArray[startCoord.Item1][startCoord.Item2].transform;
         Transform end;
         if (endCoord.Item1 < 0 || endCoord.Item2 < 0)

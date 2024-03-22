@@ -10,28 +10,16 @@ public class CameraSwitch : MonoBehaviour
 
     public Animator camAnimator;
 
-    public bool switchCam;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        switchCam = false;
-    }
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log(collision.gameObject.name);
-        
-    }
+    public static bool is2D;
+    
     private void OnTriggerEnter(Collider other)
     {
         
         if (other.gameObject.CompareTag("Player"))
         {
-            switchCam = !switchCam;
-            camAnimator.SetBool("SwitchCam", switchCam);
-            PlayerController.instance.topDownControl = switchCam;
+            is2D = !is2D;
+            camAnimator.SetBool("SwitchCam", is2D);
+            PlayerController.instance.topDownControl = is2D;
         }
     }
 }
