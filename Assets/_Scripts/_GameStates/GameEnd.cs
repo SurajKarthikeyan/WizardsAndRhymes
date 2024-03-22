@@ -36,6 +36,8 @@ public class GameEnd : MonoBehaviour
     [Header("UI Elements")]
     [Tooltip("Restart button")] 
     [SerializeField] private Button restartButton;
+    [Tooltip("Restart button")] 
+    [SerializeField] private Button nextLevelButton;
     [Tooltip("TMP text for opening the door to the next room")]
     [SerializeField] private TextMeshProUGUI doorText;
     [Tooltip("TMP Pro text for dying")]
@@ -48,6 +50,8 @@ public class GameEnd : MonoBehaviour
     [Header("Etc.")]
     [Tooltip("Reference to scene fadeToBlack")]
     [SerializeField] private FadeToBlack fadeToBlack;
+    [Tooltip("Name for the next scene")]
+    [SerializeField] private string nextSceneName;
     #endregion
 
     #region UnityMethods
@@ -113,6 +117,7 @@ public class GameEnd : MonoBehaviour
     {
         if (hasPassed)
         {
+            Debug.Log("RoomCleared");
             var tempColorBlock = roomClearedCheckbox.colors;
             tempColorBlock.disabledColor = toggleOnColor;
             roomClearedCheckbox.colors = tempColorBlock;
@@ -130,6 +135,7 @@ public class GameEnd : MonoBehaviour
     public void OpenDoorUI()
     {
         fadeToBlack.OnFadeOut();
+        nextLevelButton.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
         doorText.gameObject.SetActive(true);
     }
@@ -155,6 +161,16 @@ public class GameEnd : MonoBehaviour
         string currentSceneName = SceneManager.GetActiveScene().name;
         AkSoundEngine.StopAll();
         SceneManager.LoadScene(currentSceneName);
+    }
+
+    public void NextSceneButton()
+    {
+        nextLevelButton.gameObject.SetActive(false);
+        restartButton.gameObject.SetActive(false);
+        doorText.gameObject.SetActive(false);
+        deathText.gameObject.SetActive(false);
+        AkSoundEngine.StopAll();
+        SceneManager.LoadScene(nextSceneName);
     }
     #endregion
 }

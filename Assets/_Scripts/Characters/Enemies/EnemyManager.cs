@@ -73,7 +73,7 @@ public class EnemyManager : Singleton<EnemyManager>
     [Tooltip("The index of the next wave of enemies")]
     int waveIndex = 0;
     [Tooltip("The number of enemies, spawned and yet to be spawned, remaining in the current waves")]
-    int enemiesRemaining = 0;
+    [SerializeField] private int enemiesRemaining = 0;
 
     [Header("Enemy Augmentation Variables")]
 
