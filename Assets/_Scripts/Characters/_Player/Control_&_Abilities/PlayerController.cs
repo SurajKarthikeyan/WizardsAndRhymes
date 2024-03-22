@@ -168,7 +168,18 @@ public class PlayerController : Singleton<PlayerController>
     [Header("General Attack/Combo Variables")]
 
     [Tooltip("Bool defining if the player can attack")]
-    private bool canAttack;
+    public bool canAttack;
+
+    public bool attackPerformed = false;
+    
+    [Tooltip("Bool defining if the player can attack")]
+    public bool comboActive;
+
+    public float comboContinuationTime = .2f;
+
+    public float comboResetTime = .5f;
+
+    private IEnumerator comboContinuationCoroutine = null;
 
     [Header("Script References")]
     [Tooltip("C# Class that handles all of the player abilities")]
@@ -495,18 +506,18 @@ public class PlayerController : Singleton<PlayerController>
         if (canAttack && abilityManager.currentAbilityValue >= abilityManager.rangedAbilityCost)
         {
             SetCanAttack(false);
+            if (comboContinuationCoroutine != null)
+            {
+                StopCoroutine(comboContinuationCoroutine);
+            }
+            comboActive = true;
+            attackPerformed = true;
             abilityManager.IncrementSuccessiveAttack();
-            
-            if (abilityManager.successiveAttacks >= 3)
-            {
-                // ComboCoolDown();
-            }
-            else
-            {
-                // StartCoroutine(AttackDelays(attackDelayTimer));
-                // ResetAttack();
-            }
             attackStatus = AttackStatus.Ranged;
+            // if (abilityManager.successiveAttacks >= 3)
+            // {
+            //     ResetCombo();
+            // }
             abilityManager.ResetAbilityRecharge();
             StartCoroutine(Projectile());
         }
@@ -517,20 +528,21 @@ public class PlayerController : Singleton<PlayerController>
     /// <param name="obj">Input callback context for the melee attack</param>
     private void DoMelee(InputAction.CallbackContext obj)
     {
-        if (canAttack)
+        if (canAttack && abilityManager.currentAbilityValue >= abilityManager.meleeAbilityCost)
         {
             SetCanAttack(false);
+            if (comboContinuationCoroutine != null)
+            {
+                StopCoroutine(comboContinuationCoroutine);
+            }
             abilityManager.IncrementSuccessiveAttack();
-            
-            if (abilityManager.successiveAttacks >= 3)
-            {
-                // ComboCoolDown();
-            }
-            else
-            {
-                // StartCoroutine(AttackDelays(attackDelayTimer));
-                // ResetAttack();
-            }
+            attackPerformed = true;
+            comboActive = true;
+            attackPerformed = true;
+            // if (abilityManager.successiveAttacks >= 3)
+            // {
+            //     ResetCombo();
+            // }
             attackStatus = AttackStatus.Melee;
             abilityManager.ResetAbilityRecharge();
             StartCoroutine(Melee());
@@ -540,9 +552,9 @@ public class PlayerController : Singleton<PlayerController>
     /// <summary>
     /// Function to reset attack combo
     /// </summary>
-    public void ResetAttack()
+    public void ResetCombo()
     {
-        
+        StartCoroutine(ComboCooldown(comboResetTime));
     }
 
     /// <summary>
@@ -665,52 +677,42 @@ public class PlayerController : Singleton<PlayerController>
         playerInput.UI.Disable();
     }
     
-
-    /// <summary>
-    /// Coroutine that handles delays between attacks
-    /// </summary>
-    /// <param name="timer">How long the in between attack is in seconds</param>
-    /// <returns>arious wait for seconds in between combos</returns>
-    // IEnumerator AttackDelays(float timer)
-    // {
-    //     yield return new WaitForSeconds(timer);
-    //     SetCanAttack(true);
-    // }
-    
-    /// <summary>
-    /// Coroutine called when attacked to measure time between attacks
-    /// </summary>
-    /// <returns>Various wait for seconds in between combos</returns>
-    // IEnumerator ResetMixtapeAttack(float timer)
-    // {
-    //     yield return new WaitForSeconds(timer);
-    //     mixtapeInventory.ResetCombo();
-    //     ComboCoolDown();
-    // }
-
-    /// <summary>
-    /// Function that initiates combo cooldown
-    /// </summary>
-    // public void ComboCoolDown()
-    // {
-    //     canAttack = false;
-    //     StartCoroutine(ComboCoolDownWait());
-    // }
-
-    /// <summary>
-    /// Cooldown of combo
-    /// </summary>
-    /// <returns></returns>
-    // IEnumerator ComboCoolDownWait()
-    // {
-    //     yield return new WaitForSeconds(comboCooldownTime);
-    //     canAttack = true;
-    // }
-
     IEnumerator AttackDelay(float seconds)
     {
+        Debug.Log(abilityManager.successiveAttacks);
+        if (abilityManager.successiveAttacks >= 3)
+        {
+            yield return new WaitForSeconds(seconds);
+            ResetCombo();
+        }
+        
+        else
+        {
+            yield return new WaitForSeconds(seconds);
+            SetCanAttack(true);
+        }
+    }
+
+    IEnumerator ComboContinueDelay(float seconds)
+    {
+        if (comboActive)
+        {
+            yield return new WaitForSeconds(seconds);
+            if (!attackPerformed)
+            {
+                ResetCombo();
+            }
+        }
+    }
+
+    IEnumerator ComboCooldown(float seconds)
+    {
+        abilityManager.successiveAttacks = 0;
+        canAttack = false;
         yield return new WaitForSeconds(seconds);
-        SetCanAttack(true);
+        comboActive = false;
+        attackPerformed = false;
+        canAttack = true;
     }
     
     /// <summary>
@@ -748,8 +750,11 @@ public class PlayerController : Singleton<PlayerController>
         projectile.GetComponent<Projectile>().dType = playerLevelDamageType;
         abilityManager.ResetAbilityRecharge();
         StartCoroutine(AttackDelay(rangedAttackDuration));
+        comboContinuationCoroutine = ComboContinueDelay(comboContinuationTime);
+        StartCoroutine(comboContinuationCoroutine);
         attackStatus = AttackStatus.None;
         mixtapeInventory.OnTapeChange();
+        attackPerformed = false;
         yield return null;
     }
 
@@ -768,8 +773,11 @@ public class PlayerController : Singleton<PlayerController>
         abilityManager.ResetAbilityRecharge();
         mixtapeInventory.OnTapeChange();    // this here might be problematic but not too sure
         StartCoroutine(AttackDelay(meleeAttackDuration));
+        comboContinuationCoroutine = ComboContinueDelay(comboContinuationTime);
+        StartCoroutine(comboContinuationCoroutine);
         attackStatus = AttackStatus.None;
         EnablePlayerControls();
+        attackPerformed = false;
         yield return null;
     }
 
