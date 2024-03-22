@@ -50,6 +50,8 @@ public class AbilityManager : MonoBehaviour
 
     [Tooltip("List of sprites that will be modified for the pips")]
     private List<SpriteRenderer> manaSprites = new();
+    
+    public int successiveAttacks;
     #endregion
 
     #region Unity Methods
@@ -118,6 +120,19 @@ public class AbilityManager : MonoBehaviour
     public void ResetAbilityRecharge()
     {
         abilityRechargeTimer = 0;
+    }
+    
+    /// <summary>
+    /// Resets the combo
+    /// </summary>
+    public void ResetCombo()
+    {
+        successiveAttacks = 0;
+    }
+
+    public void IncrementSuccessiveAttack()
+    {
+        successiveAttacks++;
     }
 
     /// <summary>

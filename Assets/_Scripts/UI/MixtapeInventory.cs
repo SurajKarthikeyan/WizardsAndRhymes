@@ -19,7 +19,7 @@ public class MixtapeInventory : MonoBehaviour
     [Tooltip("Reference to the player script")]
     [SerializeField] private PlayerController player;
 
-    public int successiveAttacks;
+    
     #endregion
 
     #region UnityMethods
@@ -38,24 +38,12 @@ public class MixtapeInventory : MonoBehaviour
         int newIndex = index + 1;
         if (newIndex >= mixtapeInventory.Count)
         {
-            player.ComboCoolDown();
+            // player.ComboCoolDown();
         }
         index = (newIndex) % mixtapeInventory.Count;
     }
 
-    /// <summary>
-    /// Resets the combo
-    /// </summary>
-    public void ResetCombo()
-    {
-        successiveAttacks = 0;
-        index = 0;
-    }
-
-    public void IncrementSuccessiveAttack()
-    {
-        successiveAttacks++;
-    }
+    
     
     
     #endregion
