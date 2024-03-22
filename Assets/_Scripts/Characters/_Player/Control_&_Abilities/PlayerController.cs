@@ -179,6 +179,8 @@ public class PlayerController : Singleton<PlayerController>
 
     public float comboResetTime = .5f;
 
+    private IEnumerator comboContinuationCoroutine = null;
+
     [Header("Script References")]
     [Tooltip("C# Class that handles all of the player abilities")]
     [SerializeField]
@@ -504,6 +506,10 @@ public class PlayerController : Singleton<PlayerController>
         if (canAttack && abilityManager.currentAbilityValue >= abilityManager.rangedAbilityCost)
         {
             SetCanAttack(false);
+            if (comboContinuationCoroutine != null)
+            {
+                StopCoroutine(comboContinuationCoroutine);
+            }
             comboActive = true;
             attackPerformed = true;
             abilityManager.IncrementSuccessiveAttack();
@@ -525,6 +531,10 @@ public class PlayerController : Singleton<PlayerController>
         if (canAttack && abilityManager.currentAbilityValue >= abilityManager.meleeAbilityCost)
         {
             SetCanAttack(false);
+            if (comboContinuationCoroutine != null)
+            {
+                StopCoroutine(comboContinuationCoroutine);
+            }
             abilityManager.IncrementSuccessiveAttack();
             attackPerformed = true;
             comboActive = true;
@@ -740,7 +750,8 @@ public class PlayerController : Singleton<PlayerController>
         projectile.GetComponent<Projectile>().dType = playerLevelDamageType;
         abilityManager.ResetAbilityRecharge();
         StartCoroutine(AttackDelay(rangedAttackDuration));
-        StartCoroutine((ComboContinueDelay(comboContinuationTime)));
+        comboContinuationCoroutine = ComboContinueDelay(comboContinuationTime);
+        StartCoroutine(comboContinuationCoroutine);
         attackStatus = AttackStatus.None;
         mixtapeInventory.OnTapeChange();
         attackPerformed = false;
@@ -762,7 +773,8 @@ public class PlayerController : Singleton<PlayerController>
         abilityManager.ResetAbilityRecharge();
         mixtapeInventory.OnTapeChange();    // this here might be problematic but not too sure
         StartCoroutine(AttackDelay(meleeAttackDuration));
-        StartCoroutine((ComboContinueDelay(comboContinuationTime)));
+        comboContinuationCoroutine = ComboContinueDelay(comboContinuationTime);
+        StartCoroutine(comboContinuationCoroutine);
         attackStatus = AttackStatus.None;
         EnablePlayerControls();
         attackPerformed = false;
