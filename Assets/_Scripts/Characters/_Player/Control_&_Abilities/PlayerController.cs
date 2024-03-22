@@ -771,7 +771,7 @@ public class PlayerController : Singleton<PlayerController>
         rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
         DisablePlayerControls();
         abilityManager.ResetAbilityRecharge();
-        mixtapeInventory.OnTapeChange();    // this here might be problematic but not too sure
+        //mixtapeInventory.OnTapeChange();    // this here might be problematic but not too sure
         StartCoroutine(AttackDelay(meleeAttackDuration));
         comboContinuationCoroutine = ComboContinueDelay(comboContinuationTime);
         StartCoroutine(comboContinuationCoroutine);

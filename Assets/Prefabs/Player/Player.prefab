@@ -500,9 +500,14 @@ MonoBehaviour:
   meleeDamage: 3
   meleeAttackDuration: 0.5
   meleeAttackKnockback: 0.3
-  meleeBox: {fileID: 937923528513720809}
+  meleeBox: {fileID: 5959002909045132198}
   pauseMenu: {fileID: 0}
   isPaused: 0
+  canAttack: 0
+  attackPerformed: 0
+  comboActive: 0
+  comboContinuationTime: 0.2
+  comboResetTime: 0.5
   abilityManager: {fileID: 4681948003197784821}
   mixtapeInventory: {fileID: 0}
   playerHealth: {fileID: 1531503870578908028}
@@ -742,6 +747,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 935bb60520ed77945a7f46662c045b92, type: 2}
+  hasPassed: 0
   restartButton: {fileID: 0}
   nextLevelButton: {fileID: 0}
   doorText: {fileID: 0}
@@ -929,6 +935,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2458604962855225205}
   - component: {fileID: 2715564584532326082}
+  - component: {fileID: 209735941241035034}
   m_Layer: 0
   m_Name: player_wizard
   m_TagString: Untagged
@@ -974,6 +981,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &209735941241035034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2978401642158742991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2e652671f613f4cbf54a4e91889997, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeBoxCollider: {fileID: 5707900434022860912}
 --- !u!1 &3001852436077095384
 GameObject:
   m_ObjectHideFlags: 0
@@ -1507,9 +1527,11 @@ GameObject:
   - component: {fileID: 2773578272785640251}
   - component: {fileID: 837331873508345536}
   - component: {fileID: 2835583523388207800}
+  - component: {fileID: 5707900434022860912}
+  - component: {fileID: 4329089386861660237}
   m_Layer: 0
   m_Name: mic full
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1580,6 +1602,40 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &5707900434022860912
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5959002909045132198}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.21430017, y: 1.1997036, z: 5.002208}
+  m_Center: {x: 0.0000030422284, y: 0.09754222, z: 1.46559}
+--- !u!114 &4329089386861660237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5959002909045132198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb02cea8e25ef33469b897a0b42c7c00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageType: 0
 --- !u!1 &6117120641769697758
 GameObject:
   m_ObjectHideFlags: 0
