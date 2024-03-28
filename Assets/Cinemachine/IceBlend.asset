@@ -13,11 +13,22 @@ MonoBehaviour:
   m_Name: IceBlend
   m_EditorClassIdentifier: 
   m_CustomBlends:
-  - m_From: '**ANY CAMERA**'
-    m_To: '**ANY CAMERA**'
+  - m_From: FreeLook Camera
+    m_To: TopDownCamera
     m_Blend:
       m_Style: 1
-      m_Time: 0.3
+      m_Time: 0.5
+      m_CustomCurve:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 0
+        m_PostInfinity: 0
+        m_RotationOrder: 0
+  - m_From: TopDownCamera
+    m_To: FreeLook Camera
+    m_Blend:
+      m_Style: 1
+      m_Time: 0.4
       m_CustomCurve:
         serializedVersion: 2
         m_Curve: []

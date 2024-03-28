@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -17,7 +19,17 @@ public class CameraSwitch : MonoBehaviour
         
         if (other.gameObject.CompareTag("Player"))
         {
-            is2D = !is2D;
+            is2D = true;
+            camAnimator.SetBool("SwitchCam", is2D);
+            PlayerController.instance.topDownControl = is2D;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            is2D = false;
             camAnimator.SetBool("SwitchCam", is2D);
             PlayerController.instance.topDownControl = is2D;
         }
