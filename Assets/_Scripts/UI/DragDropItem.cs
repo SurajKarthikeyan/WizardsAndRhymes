@@ -12,9 +12,12 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     [SerializeField] private Canvas canvas;
 
+    private CanvasGroup canvasGroup;
+
     private void Awake()
     {
         rectTransform = GetComponent <RectTransform> ();
+        canvasGroup = GetComponent<CanvasGroup>();
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -24,12 +27,14 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        
+        canvasGroup.blocksRaycasts = false;
+        canvasGroup.alpha = .6f;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        
+        canvasGroup.blocksRaycasts = true;
+        canvasGroup.alpha = 1;
     }
 
     public void OnDrag(PointerEventData eventData)
