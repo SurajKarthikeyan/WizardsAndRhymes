@@ -60,7 +60,11 @@ public class Lever : MonoBehaviour
             //spline.GetComponent<Renderer>().material = newMaterial;
 
         }
-        StartCoroutine(emissionChanger.AlterEmissionOverTime(isOn));
+
+        if (emissionChanger != null)
+        {
+            StartCoroutine(emissionChanger.AlterEmissionOverTime(isOn));
+        }
 
     }
 
@@ -93,7 +97,10 @@ public class Lever : MonoBehaviour
         isOn = !isOn;
         leverAnimator.SetTrigger("interaction");
         electricBlock.SetActive(isOn);
-        StartCoroutine(emissionChanger.AlterEmissionOverTime(isOn));
+        if (emissionChanger != null)
+        {
+            StartCoroutine(emissionChanger.AlterEmissionOverTime(isOn));
+        }
         ChangeColorLight(isOn);
         if (sound)
         {
@@ -115,31 +122,7 @@ public class Lever : MonoBehaviour
             otherLevers[i].LeverSwitch(false, false);
         }
     }
-
-
-
-    /*IEnumerator AlterEmissionOverTime(bool up)
-    {
-        float timer = 0;
-        while (timer < timeToFullEmission)
-        {
-            // change color
-            Color color = newMaterial.GetColor("_EmissionColor");
-            if (up)
-            {
-                color = Color.Lerp(color, maxEmissionValue, timer/timeToFullEmission);
-
-            }
-            else
-            {
-                color = Color.Lerp(color, minEmissionValue, timer/timeToFullEmission);
-            }
-            newMaterial.SetColor("_EmissionColor", color);
-            spline.GetComponent<Renderer>().material = newMaterial;
-            timer += Time.deltaTime;
-            yield return null;
-        }
-    }*/
+    
 
     #endregion
 

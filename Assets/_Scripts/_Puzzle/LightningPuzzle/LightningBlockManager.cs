@@ -74,6 +74,8 @@ public class LightningBlockManager : MonoBehaviour
         for (int i = 0; i < lightBlockList.Count - 1; i++)
         {
             Vector3 startPos = lightBlockList[i].transform.position;
+            // bloom current box
+           StartCoroutine(lightBlockList[i].GetComponent<IndividualEmissionChange>().AlterEmissionOverTime(true));
             if (lightBlockList[i + 1].activeSelf)
             {
             Vector3 endPos = lightBlockList[i + 1].transform.position;
@@ -83,6 +85,10 @@ public class LightningBlockManager : MonoBehaviour
             else
             {
                 yield return new WaitForSeconds(waitLightningDestroy);
+                for (int k = 0; k <= i; k++)
+                {
+                    StartCoroutine(lightBlockList[k].GetComponent<IndividualEmissionChange>().AlterEmissionOverTime(false));
+                }
                 chainList.ForEach(obj => Destroy(obj));
                 yield break;
             }
