@@ -1,16 +1,26 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
+/// <summary>
+/// Item slot for a UI canvas
+/// </summary>
 public class DragDropItemSlot : MonoBehaviour, IDropHandler
 {
-    public WordCanvasManager manager;
+    [Tooltip("String that is the correct word for this item slot")]
+    [SerializeField]
+    private string correctWord;
 
-    public string correctWord;
-
+    [Tooltip("Boolean stating if this is the correct slot for an item")]
     public bool correctSlot;
     
+    [Tooltip("Reference to the WordCanvasManager")]
+    public WordCanvasManager manager;
+
+    
+    /// <summary>
+    /// Event handler for dropping an item into an item slot
+    /// </summary>
+    /// <param name="eventData">Pointer data for the item dropping event handler</param>
     public void OnDrop(PointerEventData eventData)
     {
         if (eventData.pointerDrag != null)
@@ -32,7 +42,12 @@ public class DragDropItemSlot : MonoBehaviour, IDropHandler
         }
     }
 
-    public bool HasValidWord(string word)
+    /// <summary>
+    /// Function that calculates if this slot has the correct word
+    /// </summary>
+    /// <param name="word">String with the word we are comparing to</param>
+    /// <returns></returns>
+    private bool HasValidWord(string word)
     {
         return word == correctWord;
     }
