@@ -36,6 +36,7 @@ public class Lever : MonoBehaviour
     private void Start()
     {
         ChangeColorLight(isOn);
+        electricBlock.SetActive(isOn);
         if (!isOn)
         {
             leverAnimator.SetTrigger("interaction");
@@ -70,10 +71,7 @@ public class Lever : MonoBehaviour
     {
         isOn = !isOn;
         leverAnimator.SetTrigger("interaction");
-        if (electricBlock)
-        {
-            electricBlock.SetActive(isOn);
-        }
+        electricBlock.SetActive(isOn);
         ChangeColorLight(isOn);
         if (sound)
         {

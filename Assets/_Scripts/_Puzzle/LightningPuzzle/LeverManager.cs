@@ -20,15 +20,12 @@ public class LeverManager : MonoBehaviour
 
     public void CheckLevers()
     {
-        if (leverGenerator.isLeverControlled)
+        isLeverCoolDown = true;
+        StartCoroutine(LeverCoolDown());
+        if (leverList.All(obj => obj.isOn) && leverGenerator.isLeverControlled)
         {
-            isLeverCoolDown = true;
-            StartCoroutine(LeverCoolDown());
-            if (leverList.All(obj => obj.isOn))
-            {
-                completedLeverSystem = true;
-                leverGenerator.Hodor();
-            }
+            completedLeverSystem = true;
+            leverGenerator.Hodor();
         }
     }
 
