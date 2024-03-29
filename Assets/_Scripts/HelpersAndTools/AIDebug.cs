@@ -44,10 +44,11 @@ public class AIDebug : MonoBehaviour
         }
         else
         {
-            debugText.text = enemyBehavior.behaviorState.ToString() + '\n' + enemyHealth.HP + '/' + enemyHealth.maximumHP;
+            debugText.text = enemyBehavior.behaviorState.ToString();
             Vector3 rotation = Quaternion.LookRotation(Camera.main.transform.position, Vector3.up).eulerAngles;
-            rotation.y = 180;
-            debugCanvas.transform.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
+            // rotation.y = 180;
+            rotation.x = 0;
+            debugCanvas.transform.forward = -debugCanvas.worldCamera.transform.forward;
         }
     }
     #endregion

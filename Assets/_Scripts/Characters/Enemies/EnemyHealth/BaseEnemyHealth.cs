@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Base class that handles all enemy health, status effects, and death
@@ -77,6 +80,8 @@ public abstract class BaseEnemyHealth : Health
     [Tooltip("Audio Event for skeleton hit")]
     [SerializeField] private AK.Wwise.Event enemyHitSFX;
 
+    public Image healthBar;
+
     public delegate void EnemyDiedDelegate(GameObject enemyGO);
     [Tooltip("Event fired when an enemy dies")]
     [HideInInspector] public static event EnemyDiedDelegate EnemyDied;
@@ -93,6 +98,11 @@ public abstract class BaseEnemyHealth : Health
         onFire = false;
         isDead = false;
         lightiningEffectStorage = new List<GameObject>();
+    }
+
+    private void Update()
+    {
+        healthBar.fillAmount = currentHP / maximumHP;
     }
 
     #endregion
