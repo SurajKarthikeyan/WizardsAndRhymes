@@ -86,6 +86,7 @@ public abstract class BaseEnemyHealth : Health
     [Tooltip("Event fired when an enemy dies")]
     [HideInInspector] public static event EnemyDiedDelegate EnemyDied;
 
+    [Tooltip("Boolean stating if this enemy is dead")]
     private bool isDead;
     #endregion
 
