@@ -5127,7 +5127,7 @@ Transform:
   m_GameObject: {fileID: 310214212}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -112.7, y: 2.38, z: -196.2}
+  m_LocalPosition: {x: -96.7, y: 2.38, z: -194.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -6667,8 +6667,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 9, y: -2.3}
-  m_SizeDelta: {x: -28, y: -3}
+  m_AnchoredPosition: {x: 12.805, y: -9.07}
+  m_SizeDelta: {x: -20.39, y: 10.540002}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &446376338
 MonoBehaviour:
@@ -6703,7 +6703,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Kill All Enemies
+  m_Text: Kill All Enemies To Unlock the Northern Gate
 --- !u!222 &446376339
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12947,7 +12947,7 @@ MonoBehaviour:
   dialogueToPlayBack:
   - speaker: {fileID: 11400000, guid: f5d36dfd0f4b4ba4091821cb5d7594ae, type: 2}
     dialogueSentences:
-    - sentence: In this arcane chamber, your steps drag like lead.
+    - sentence: Own this beat? Ha, more like let me press DEL-ETE.
       leaveAtEndOfSentence: 0
       dialgoueSpritePosition: 0
       eventsWhenStartingDialogueString:
@@ -12956,7 +12956,7 @@ MonoBehaviour:
       eventsWhenFinishingDialogueString:
         m_PersistentCalls:
           m_Calls: []
-    - sentence: I'll hit fast forward, leave you lost in my thread.
+    - sentence: Ya speech is weak, go on ahead, you need me to spell de-FEAT?
       leaveAtEndOfSentence: 1
       dialgoueSpritePosition: 0
       eventsWhenStartingDialogueString:
@@ -19240,7 +19240,7 @@ Transform:
   m_GameObject: {fileID: 1218850802}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -80.2, y: 2.01, z: -198.8}
+  m_LocalPosition: {x: -115.6, y: 2.01, z: -173.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -20320,8 +20320,8 @@ MonoBehaviour:
     enemies:
     - type: {fileID: 5365247503409236134, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
       amount: 2
-    - type: {fileID: 3774833056916435751, guid: 28f44a33c4abb994c9ef8d557a5eb8c8, type: 3}
-      amount: 1
+    - type: {fileID: 5365247503409236134, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
+      amount: 2
   - waveTrigger: 0
     enemiesRemaining: 1
     waveDelay: 0
@@ -20333,7 +20333,7 @@ MonoBehaviour:
     - type: {fileID: 5365247503409236134, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       amount: 2
     - type: {fileID: 2048348783821418587, guid: 9b5276f4867a9fb4888caaec058bfe94, type: 3}
-      amount: 1
+      amount: 2
   - waveTrigger: 2
     enemiesRemaining: 0
     waveDelay: 3
@@ -20343,8 +20343,10 @@ MonoBehaviour:
     showSpawnSphere: 1
     enemies:
     - type: {fileID: 5365247503409236134, guid: 18fbfabec344fa046b049f3edf412827, type: 3}
-      amount: 1
+      amount: 2
     - type: {fileID: 2048348783821418587, guid: 9b5276f4867a9fb4888caaec058bfe94, type: 3}
+      amount: 2
+    - type: {fileID: 5365247503409236134, guid: 7e3d11d98e239454abeb1f4370e17bb4, type: 3}
       amount: 1
   spotlightPrefab: {fileID: 7697368496910734989, guid: 090855f5d93cc6b4285c4bc8e68ccc76, type: 3}
   wavesClearedEvent:
@@ -24760,7 +24762,7 @@ Transform:
   m_GameObject: {fileID: 1643596737}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -96.24, y: 2.01, z: -170.81}
+  m_LocalPosition: {x: -96.61, y: 2.01, z: -170.57}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -30909,6 +30911,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ice
       objectReference: {fileID: 0}
+    - target: {fileID: 2921027080228460496, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
+      propertyPath: m_Text
+      value: Kill All Enemies To Unlock the Northern Gate
+      objectReference: {fileID: 0}
     - target: {fileID: 3516245921582239295, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -42.663498
@@ -31104,6 +31110,22 @@ PrefabInstance:
     - target: {fileID: 7250246532100682040, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_Name
       value: lightning
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578575322679767407, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -20.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578575322679767407, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 10.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578575322679767407, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 12.805
+      objectReference: {fileID: 0}
+    - target: {fileID: 8578575322679767407, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -9.07
       objectReference: {fileID: 0}
     - target: {fileID: 8688614234345951829, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalPosition.x
