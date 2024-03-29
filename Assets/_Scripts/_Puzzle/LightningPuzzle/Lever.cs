@@ -24,6 +24,8 @@ public class Lever : MonoBehaviour
     [SerializeField] public bool isOn;
     [Tooltip("Electric block to turn on when lever is turned on")]
     [SerializeField] private GameObject electricBlock;
+    [Tooltip("Animator for lever")]
+    [SerializeField] private Animator leverAnimator;
     [Tooltip("List of other levers to affect")]
     [SerializeField] private List<Lever> otherLevers;
     #endregion
@@ -34,13 +36,16 @@ public class Lever : MonoBehaviour
     private void Start()
     {
         ChangeColorLight(isOn);
+        if (!isOn)
+        {
+            leverAnimator.SetTrigger("interaction");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && !leverManager.isLeverCoolDown && !leverManager.completedLeverSystem)
         {
-
             LeverSwitch(true, true);
         }
     }
@@ -64,6 +69,7 @@ public class Lever : MonoBehaviour
     public void LeverSwitch(bool sound, bool listSwitch)
     {
         isOn = !isOn;
+        leverAnimator.SetTrigger("interaction");
         if (electricBlock)
         {
             electricBlock.SetActive(isOn);
