@@ -8,6 +8,8 @@ public class Word : MonoBehaviour
 {
     #region Variables
     [SerializeField] public Toggle puzzleToggle;
+
+    [SerializeField] private GameObject wordUIObject;
     #endregion
 
     #region UnityMethods
@@ -19,6 +21,7 @@ public class Word : MonoBehaviour
             GameEnd.gameEnd.hasPassed = true;
             GameEnd.gameEnd.RoomCleared();
             puzzleToggle.isOn = true;
+            wordUIObject.SetActive(true);
         }
     }
 

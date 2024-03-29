@@ -19970,6 +19970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   puzzleToggle: {fileID: 361363677}
+  wordUIObject: {fileID: 718978760}
 --- !u!1001 &465181758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31180,7 +31181,7 @@ PrefabInstance:
       objectReference: {fileID: 162592637}
     - target: {fileID: 2346255625442786790, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: nextSceneName
-      value: BetaScene003
+      value: MainArea 3
       objectReference: {fileID: 0}
     - target: {fileID: 2346255625442786790, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: restartButton
@@ -31230,6 +31231,10 @@ PrefabInstance:
       propertyPath: doorOpenEvent.WwiseObjectReference
       value: 
       objectReference: {fileID: 11400000, guid: 935bb60520ed77945a7f46662c045b92, type: 2}
+    - target: {fileID: 2950160608220503976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: dashTime
       value: 0.3
@@ -31443,6 +31448,11 @@ PrefabInstance:
       addedObject: {fileID: 71729944}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+--- !u!1 &718978760 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2950160608220503976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+  m_PrefabInstance: {fileID: 718978759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &722635690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81737,32 +81747,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
---- !u!1 &1899863598 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5544728551740817183, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
-  m_PrefabInstance: {fileID: 81138555853967040}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1899863600
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1899863598}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 92b4c20c01ba97b41a80da5a1637f788, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &1900121188
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -90710,7 +90694,7 @@ PrefabInstance:
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: meleeAnimator
       value: 
-      objectReference: {fileID: 1899863600}
+      objectReference: {fileID: 0}
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: movementForce
       value: 8
@@ -90883,10 +90867,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 717780101}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5544728551740817183, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1899863600}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
 --- !u!114 &81138555853967075 stripped
 MonoBehaviour:
