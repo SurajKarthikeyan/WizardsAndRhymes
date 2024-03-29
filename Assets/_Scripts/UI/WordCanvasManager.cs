@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -43,6 +44,7 @@ public class WordCanvasManager : MonoBehaviour
         }
 
         GameEnd.gameEnd.OpenDoorUI();
+        wordCanvas.gameObject.SetActive(false);
         return true;
     }
 
