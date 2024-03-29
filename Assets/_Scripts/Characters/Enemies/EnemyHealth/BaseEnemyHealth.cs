@@ -164,6 +164,7 @@ public abstract class BaseEnemyHealth : Health
                     
                     //Draw lightning arc
                     GameObject curLightningEffect = Instantiate(lightningEffectPrefab);
+                    curLightningEffect.transform.position = PlayerController.instance.transform.position;
                     
                     //set start to this object
                     curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position =
@@ -188,12 +189,11 @@ public abstract class BaseEnemyHealth : Health
                     
                     
                     lightiningEffectStorage.Add(curLightningEffect);
-                    
                 }
             }
         }
 
-        //StartCoroutine(LightingArc());
+        StartCoroutine(LightingArc());
         
         if (vulnerable)
         {
