@@ -17,6 +17,9 @@ public class LightningBlockManager : MonoBehaviour
     [SerializeField] private float lightningChainDelay;
     [Tooltip("Time to wait before destorying all lightning on incorrect puzzle completion")]
     [SerializeField] private float waitLightningDestroy;
+
+    [Tooltip("Y offset for lighting chain spawn")]
+    [SerializeField] private float yOffSet;
     #endregion
 
 
@@ -35,6 +38,8 @@ public class LightningBlockManager : MonoBehaviour
     /// </summary>
     public GameObject ChainLightning(Vector3 startPos, Vector3 endPos)
     {
+        startPos = new Vector3(startPos.x, startPos.y + yOffSet, startPos.z);
+        endPos = new Vector3(endPos.x, endPos.y + yOffSet, endPos.z);
         Vector3 deltaPos = endPos - startPos;
         GameObject curLightningEffect = Instantiate(lightningEffectPrefab);
         
@@ -47,16 +52,8 @@ public class LightningBlockManager : MonoBehaviour
         curLightningEffect.GetComponent<LightningVFXPosition>().pos4.transform.position =
             endPos;
         
-        Vector3 pos2 = new Vector3(
-            curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.x + deltaPos.x * 0.33f,
-            curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.y + deltaPos.y * 0.33f,
-            curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.z + deltaPos.z * 0.33f);
-        
-        Vector3 pos3 = new Vector3(
-            curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.x + deltaPos.x * 0.66f,
-            curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.y + deltaPos.y * 0.66f,
-            curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.z + deltaPos.z * 0.66f);
-
+        Vector3 pos2 = startPos + deltaPos * 0.33f;
+        Vector3 pos3 = startPos + deltaPos * 0.66f;
         curLightningEffect.GetComponent<LightningVFXPosition>().pos2.transform.position = pos2;
         curLightningEffect.GetComponent<LightningVFXPosition>().pos3.transform.position = pos3;
 
