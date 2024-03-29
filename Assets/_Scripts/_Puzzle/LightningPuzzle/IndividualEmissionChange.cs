@@ -29,7 +29,7 @@ public class IndividualEmissionChange : MonoBehaviour
 
     #region UnityMethods
 
-    private void Start()
+    private void Awake()
     {
         newMaterial = new Material(originalMaterial);
         newMaterial.EnableKeyword("_EMISSION");
