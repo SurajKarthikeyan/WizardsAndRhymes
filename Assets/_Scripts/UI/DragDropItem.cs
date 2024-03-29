@@ -14,6 +14,8 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     private CanvasGroup canvasGroup;
 
+    public bool canMove = true;
+
     private void Awake()
     {
         rectTransform = GetComponent <RectTransform> ();
@@ -27,18 +29,25 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+   
         canvasGroup.blocksRaycasts = false;
         canvasGroup.alpha = .6f;
+        
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
+
         canvasGroup.blocksRaycasts = true;
         canvasGroup.alpha = 1;
+        
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        if (canMove)
+        {
+            rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        }
     }
 }
