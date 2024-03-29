@@ -21,7 +21,7 @@ public class CameraSwitch : MonoBehaviour
         {
             is2D = true;
             camAnimator.SetBool("SwitchCam", is2D);
-            PlayerController.instance.topDownControl = is2D;
+            PlayerController.instance.gridBasedControl = is2D;
         }
     }
 
@@ -31,7 +31,7 @@ public class CameraSwitch : MonoBehaviour
         {
             is2D = false;
             camAnimator.SetBool("SwitchCam", is2D);
-            PlayerController.instance.topDownControl = is2D;
+            PlayerController.instance.gridBasedControl = is2D;
         }
     }
 }
