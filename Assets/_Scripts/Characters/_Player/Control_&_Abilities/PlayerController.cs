@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +9,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : Singleton<PlayerController>
 {
     #region Variables
+    #region General Player Info
     [Tooltip("The player's tag")]
     public const string PlayerTag = "Player";
 
@@ -19,7 +19,6 @@ public class PlayerController : Singleton<PlayerController>
         Idle,
         Moving,
         Dashing,
-        Ice
     }
 
     [Tooltip("Enum representing the direction the player is moving in")]
@@ -48,7 +47,9 @@ public class PlayerController : Singleton<PlayerController>
 
     [Tooltip("AttackStatus instance")]
     private AttackStatus attackStatus;
+    #endregion
 
+    #region Movement Variables
     [Header("Movement Variables")]
 
     [Tooltip("Magnitude of appliedForce applied to player Rigidbody for movement")]
@@ -61,7 +62,16 @@ public class PlayerController : Singleton<PlayerController>
 
     [Tooltip("Direction to apply the force of movement when moving")]
     private Vector3 forceDirection = Vector3.zero;
+    
+    [Tooltip("Boolean stating whether or not the player is moving with full control or on a grid")]
+    public bool gridBasedControl;
+    
+    [Tooltip("Collider used to check if this player is on the ground")]
+    [SerializeField]
+    private Collider groundCheck;
+    #endregion
 
+    #region Aiming Variables
     [Header("Aiming Variables")]
     [Tooltip("LayerMask that is assigned for help in player aiming")]
     [SerializeField]
@@ -69,7 +79,9 @@ public class PlayerController : Singleton<PlayerController>
 
     [Tooltip("Constant used in helping player aim")]
     private const float aimAdjustmentConstant = 1.75f;
-
+    #endregion
+    
+    #region Dashing Variables
     [Header("Dashing Variables")]
 
     [Tooltip("Magnitude of appliedForce applied to player Rigidbody for dashing")]
@@ -105,13 +117,15 @@ public class PlayerController : Singleton<PlayerController>
 
     [Tooltip("Direction to apply the force of dashing when moving")]
     private Vector3 dashDirection = Vector3.zero;
+    #endregion
 
     [Header("Camera")]
     [Tooltip("Reference to the camera focusing on the player")]
     [SerializeField]
     private Camera playerCamera;
 
-    [Header("General Attack Variables")] 
+    #region Attack Variables
+    [Header("General Attack/Combo Variables")]
     [Tooltip("Damage type of the player for the entire level")]
     [SerializeField] private Health.DamageType playerLevelDamageType;
     [Tooltip("Audio Event for ranged attacks")]
@@ -119,6 +133,27 @@ public class PlayerController : Singleton<PlayerController>
     [Tooltip("Audio Event for melee attacks")]
     [SerializeField] private AK.Wwise.Event meleeEvent;
     
+    [Tooltip("Bool defining if the player can attack")]
+    private bool canAttack;
+
+    [Tooltip("Bool defining if an attack has been performed by the player")]
+    private bool attackPerformed = false;
+    
+    [Tooltip("Bool defining if the player can attack")]
+    private bool comboActive;
+
+    [Tooltip("Time in which the player has to continue the combo before it resets")]
+    [SerializeField]
+    private float comboContinuationTime = .2f;
+
+    [Tooltip("Time taken to reset the combo")]
+    [SerializeField]
+    private float comboResetTime = .5f;
+
+    [Tooltip("Coroutine that handles the timing of continuing the combo")]
+    private IEnumerator comboContinuationCoroutine = null;
+    
+    #region Ranged Attack Variables
     [Header("Ranged Attack Variables")]
 
     [Tooltip("Prefab used as the player's ranged attack")]
@@ -136,7 +171,9 @@ public class PlayerController : Singleton<PlayerController>
     [Tooltip("Time that the ranged attack lasts for in seconds")]
     [SerializeField]
     private float rangedAttackDuration = 0.3f;
+    #endregion
 
+    #region Melee Attack Variables
     [Header("Melee Attack Variables")]
     [Tooltip("Damage inflicted by the player's melee attack")]
     public float meleeDamage = 10f;
@@ -145,42 +182,20 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField]
     private float meleeAttackDuration = 0.5f;
 
-    [Tooltip("Time that the melee attack lasts for in seconds")]
-    public float meleeAttackKnockback = 5f;
-
     [Tooltip("GameObject representing the hitbox of the melee attack")]
     [SerializeField]
     private GameObject meleeBox;
+    #endregion
+    #endregion
 
+    #region UI Variables
     [Header("UI Variables")]
     [Tooltip("Pause menu")]
     [SerializeField] private GameObject pauseMenu;
 
     [Tooltip("Pause menu active state")]
     [SerializeField] private bool isPaused;
-
-    /*[Tooltip("Inventory menu")]
-    [SerializeField] private GameObject inventoryMenu;*/
-
-    /*[Tooltip("Inventory menu active state")]
-    [SerializeField] private bool openInventory;*/
-
-    [Header("General Attack/Combo Variables")]
-
-    [Tooltip("Bool defining if the player can attack")]
-    public bool canAttack;
-
-    public bool attackPerformed = false;
     
-    [Tooltip("Bool defining if the player can attack")]
-    public bool comboActive;
-
-    public float comboContinuationTime = .2f;
-
-    public float comboResetTime = .5f;
-
-    private IEnumerator comboContinuationCoroutine = null;
-
     [Header("Script References")]
     [Tooltip("C# Class that handles all of the player abilities")]
     [SerializeField]
@@ -235,24 +250,11 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")] 
     [Tooltip("Player Animator")]
     [SerializeField] private Animator playerAnimator;
-
-
-    public bool topDownControl;
-
-    public Collider groundCheck;
+    #endregion
+    
     #endregion
 
     #region Unity Methods
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.GetComponent<IInteractable>() != null)
-        {
-            collision.gameObject.GetComponent<IInteractable>().Interact();
-        }
-    }
-
-
     /// <summary>
     /// Method called on scene startup
     /// </summary>
@@ -317,7 +319,8 @@ public class PlayerController : Singleton<PlayerController>
                 moveStatus = MoveStatus.Moving;
             }
 
-            if (topDownControl)
+            //Calculates movement differently if we are moving in a grid-based fashion
+            if (gridBasedControl)
             {
                 Vector2 movementDirection = moveAction.ReadValue<Vector2>();
                 if (Mathf.Abs(movementDirection.magnitude) > 0.001f)
@@ -328,28 +331,14 @@ public class PlayerController : Singleton<PlayerController>
                     if (Mathf.Abs(movementDirection.y) >= Mathf.Abs(movementDirection.x))
                     {
                         // We are moving up / down
-                        if(movementDirection.y < 0)
-                        {
-                            moveDirection = MoveDirection.Down;
-                        }
-                        else
-                        {
-                            moveDirection = MoveDirection.Up;
-                        }
+                        moveDirection = movementDirection.y < 0 ? MoveDirection.Down : MoveDirection.Up;
                     }
 
                     else
                     {
                         // We are moving right / left
 
-                        if (movementDirection.x < 0)
-                        {
-                            moveDirection = MoveDirection.Left;
-                        }
-                        else
-                        {
-                            moveDirection = MoveDirection.Right;
-                        }
+                        moveDirection = movementDirection.x < 0 ? MoveDirection.Left : MoveDirection.Right;
                     }
                 }
 
@@ -408,13 +397,23 @@ public class PlayerController : Singleton<PlayerController>
         //Function that has the player look in the direction the player is inputting
         Look();
     }
+    
+    /// <summary>
+    /// Unity method called when this collider enters another collider
+    /// </summary>
+    /// <param name="collision">Collision between the two colliders</param>
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.TryGetComponent(out IInteractable interactable))
+        {
+            interactable.Interact();
+        }
+    }
     #endregion
 
     #region Custom Methods
     
-
-    
-    
+    #region Looking Methods
     /// <summary>
     /// Function that makes the player look in the direction that the player inputs
     /// </summary>
@@ -484,7 +483,9 @@ public class PlayerController : Singleton<PlayerController>
         right.y = 0;
         return right.normalized;
     }
-
+    #endregion
+    
+    #region Input Handling Methods
     /// <summary>
     /// Performs various actions for UI
     /// </summary>
@@ -514,10 +515,6 @@ public class PlayerController : Singleton<PlayerController>
             attackPerformed = true;
             abilityManager.IncrementSuccessiveAttack();
             attackStatus = AttackStatus.Ranged;
-            // if (abilityManager.successiveAttacks >= 3)
-            // {
-            //     ResetCombo();
-            // }
             abilityManager.ResetAbilityRecharge();
             StartCoroutine(Projectile());
         }
@@ -539,48 +536,12 @@ public class PlayerController : Singleton<PlayerController>
             attackPerformed = true;
             comboActive = true;
             attackPerformed = true;
-            // if (abilityManager.successiveAttacks >= 3)
-            // {
-            //     ResetCombo();
-            // }
             attackStatus = AttackStatus.Melee;
             abilityManager.ResetAbilityRecharge();
             StartCoroutine(Melee());
         }
     }
-
-    /// <summary>
-    /// Function to reset attack combo
-    /// </summary>
-    public void ResetCombo()
-    {
-        StartCoroutine(ComboCooldown(comboResetTime));
-    }
-
-    /// <summary>
-    /// Function that determines whether or not the dash that the player 
-    /// wants to do is valid. 
-    /// </summary>
-    /// <returns></returns>
-    private bool IsValidDash()
-    {
-        //Puts a point out in front of the player, checks to see if it is above ground
-        Vector3 dashCheck = transform.position + dashDirection.normalized * 
-            allowedDashDistance + new Vector3(0, 1, 0);
-        Ray dashCheckRay = new (dashCheck, Vector3.down);
-        if (Physics.Raycast(dashCheckRay, float.MaxValue, groundLayerMask))
-        {
-            if (abilityManager.currentAbilityValue >= abilityManager.dashAbilityCost && dashCooldownTimer >= dashCooldownThreshold)
-            {
-                Debug.Log("Is valid dash");
-                return true;
-            }
-        }
-        //If we do not hit any ground
-        Debug.Log("Is not valid dash");
-        return false;
-    }
-
+    
     /// <summary>
     /// Function that is called upon pressing any of the Dash inputs
     /// </summary>
@@ -600,29 +561,18 @@ public class PlayerController : Singleton<PlayerController>
             StartCoroutine(Dash());
         }
     }
-
-
+    
     /// <summary>
     /// Function that is called when escape(KB) or start(Controller) is pressed
     /// </summary>
     /// <param name="obj"></param>
     private void PauseAction(InputAction.CallbackContext obj)
     {
-
         Pause();
-        
     }
+    #endregion
     
-    /// <summary>
-    /// Function that can be accessed to pause or unpause the game 
-    /// </summary>
-    public void Pause()
-    {
-        isPaused = !isPaused;
-        pauseMenu.SetActive(isPaused);
-    }
-    
-
+    #region Player Control Permissions
     /// <summary>
     /// Function that enables the players inputs 
     /// </summary>
@@ -676,7 +626,9 @@ public class PlayerController : Singleton<PlayerController>
         playerInput.UI.Exit.canceled -= PauseAction;
         playerInput.UI.Disable();
     }
+    #endregion
     
+    #region Attack Combo Methods
     IEnumerator AttackDelay(float seconds)
     {
         Debug.Log(abilityManager.successiveAttacks);
@@ -713,6 +665,51 @@ public class PlayerController : Singleton<PlayerController>
         comboActive = false;
         attackPerformed = false;
         canAttack = true;
+    }
+    
+    /// <summary>
+    /// Function to reset attack combo
+    /// </summary>
+    private void ResetCombo()
+    {
+        StartCoroutine(ComboCooldown(comboResetTime));
+    }
+    #endregion
+    
+    #region Player Action Methods
+    
+    /// <summary>
+    /// Function that determines whether or not the dash that the player 
+    /// wants to do is valid. 
+    /// </summary>
+    /// <returns></returns>
+    private bool IsValidDash()
+    {
+        //Puts a point out in front of the player, checks to see if it is above ground
+        Vector3 dashCheck = transform.position + dashDirection.normalized * 
+            allowedDashDistance + new Vector3(0, 1, 0);
+        Ray dashCheckRay = new (dashCheck, Vector3.down);
+        if (Physics.Raycast(dashCheckRay, float.MaxValue, groundLayerMask))
+        {
+            if (abilityManager.currentAbilityValue >= abilityManager.dashAbilityCost && dashCooldownTimer >= dashCooldownThreshold)
+            {
+                Debug.Log("Is valid dash");
+                return true;
+            }
+        }
+        //If we do not hit any ground
+        Debug.Log("Is not valid dash");
+        return false;
+    }
+
+
+    /// <summary>
+    /// Function that can be accessed to pause or unpause the game 
+    /// </summary>
+    public void Pause()
+    {
+        isPaused = !isPaused;
+        pauseMenu.SetActive(isPaused);
     }
     
     /// <summary>
@@ -753,7 +750,6 @@ public class PlayerController : Singleton<PlayerController>
         comboContinuationCoroutine = ComboContinueDelay(comboContinuationTime);
         StartCoroutine(comboContinuationCoroutine);
         attackStatus = AttackStatus.None;
-        //mixtapeInventory.OnTapeChange();
         attackPerformed = false;
         yield return null;
     }
@@ -771,7 +767,6 @@ public class PlayerController : Singleton<PlayerController>
         rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
         DisablePlayerControls();
         abilityManager.ResetAbilityRecharge();
-        //mixtapeInventory.OnTapeChange();    // this here might be problematic but not too sure
         StartCoroutine(AttackDelay(meleeAttackDuration));
         comboContinuationCoroutine = ComboContinueDelay(comboContinuationTime);
         StartCoroutine(comboContinuationCoroutine);
@@ -780,7 +775,7 @@ public class PlayerController : Singleton<PlayerController>
         attackPerformed = false;
         yield return null;
     }
-
+    
     /// <summary>
     /// Function that knocks the player back in a certain direction
     /// </summary>
@@ -790,7 +785,11 @@ public class PlayerController : Singleton<PlayerController>
     {
         rigidBody.AddForce(direction.normalized * magnitude, ForceMode.Impulse);
     }
+    #endregion
+    
+    #region MovementLocks
 
+    
     /// <summary>
     /// Register a source that is preventing the player from moving. The player's rigidbody is set to kinematic while movement is locked
     /// </summary>
@@ -823,6 +822,8 @@ public class PlayerController : Singleton<PlayerController>
         return movementLockSources.Count > 0;
     }
 
+    #endregion
+    
     #endregion
     
 }
