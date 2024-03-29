@@ -15,6 +15,8 @@ public class LightningBlockManager : MonoBehaviour
     [SerializeField] private GameObject lightningEffectPrefab;
     [Tooltip("Time between each chain between blocks")]
     [SerializeField] private float lightningChainDelay;
+    [Tooltip("Time to wait before destorying all lightning on incorrect puzzle completion")]
+    [SerializeField] private float waitLightningDestroy;
     #endregion
 
 
@@ -22,16 +24,16 @@ public class LightningBlockManager : MonoBehaviour
 
     public void CheckAllBlocks()
     {
-        if (lightBlockList.All(obj => obj.activeSelf))  // checks if all objects are enabled in the list
+        StartCoroutine(ChainLightingWithDelayCoroutine());
+        /*if (lightBlockList.All(obj => obj.activeSelf))  // checks if all objects are enabled in the list
         {
-            StartCoroutine(ChainLightingWithDelayCoroutine());
-        }
+        }*/
     }
     
     /// <summary>
     /// Chains lightning between two objects
     /// </summary>
-    public void ChainLightning(Vector3 startPos, Vector3 endPos)
+    public GameObject ChainLightning(Vector3 startPos, Vector3 endPos)
     {
         Vector3 deltaPos = endPos - startPos;
         GameObject curLightningEffect = Instantiate(lightningEffectPrefab);
@@ -57,6 +59,8 @@ public class LightningBlockManager : MonoBehaviour
 
         curLightningEffect.GetComponent<LightningVFXPosition>().pos2.transform.position = pos2;
         curLightningEffect.GetComponent<LightningVFXPosition>().pos3.transform.position = pos3;
+
+        return curLightningEffect;
     }
 
     /// <summary>
@@ -66,13 +70,22 @@ public class LightningBlockManager : MonoBehaviour
     /// <returns></returns>
     IEnumerator ChainLightingWithDelayCoroutine()
     {
+        List<GameObject> chainList = new List<GameObject>();
         for (int i = 0; i < lightBlockList.Count - 1; i++)
         {
             Vector3 startPos = lightBlockList[i].transform.position;
+            if (lightBlockList[i + 1].activeSelf)
+            {
             Vector3 endPos = lightBlockList[i + 1].transform.position;
-            
-            ChainLightning(startPos, endPos);
+            chainList.Add(ChainLightning(startPos, endPos));
             yield return new WaitForSeconds(lightningChainDelay);
+            }
+            else
+            {
+                yield return new WaitForSeconds(waitLightningDestroy);
+                chainList.ForEach(obj => Destroy(obj));
+                yield break;
+            }
         }
         lightningGenerator.Hodor();
     }
