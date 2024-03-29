@@ -38,6 +38,8 @@ public class PuzzleGrid : MonoBehaviour
 
     public bool hasTouchedIceBox;
 
+    [SerializeField] private AK.Wwise.Event icePushSoundEffect;
+
     public bool touchedTile;
     #endregion
 
@@ -393,6 +395,7 @@ public class PuzzleGrid : MonoBehaviour
         go.transform.position = startingPos;
         if(go.TryGetComponent(out IndividualEmissionChange var))
         {
+            icePushSoundEffect.Post(this.gameObject);
             hasEmission = true;
             StartCoroutine(var.AlterEmissionOverTime(true));
         }

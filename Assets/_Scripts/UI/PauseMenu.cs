@@ -62,6 +62,7 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     public void ReloadScene()
     {
+        AkSoundEngine.StopAll();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
