@@ -12,6 +12,7 @@ public class LeverManager : MonoBehaviour
     [SerializeField] public bool isLeverCoolDown;
     [SerializeField] private int leverCoolDown;
     [SerializeField] public bool completedLeverSystem;
+    [SerializeField] private Generator leverGenerator;
     #endregion
 
 
@@ -19,14 +20,15 @@ public class LeverManager : MonoBehaviour
 
     public void CheckLevers()
     {
-        isLeverCoolDown = true;
-        StartCoroutine(LeverCoolDown());
-        bool check =  leverList.All(obj => obj.isOn);
-        if (check)
+        if (leverGenerator.isLeverControlled)
         {
-            Debug.Log("Here");
-            completedLeverSystem = true;
-            //Call generator on
+            isLeverCoolDown = true;
+            StartCoroutine(LeverCoolDown());
+            if (leverList.All(obj => obj.isOn))
+            {
+                completedLeverSystem = true;
+                leverGenerator.Hodor();
+            }
         }
     }
 

@@ -46,9 +46,9 @@ public class Projectile : MonoBehaviour
             }
         }
 
-        else if (other.TryGetComponent<LightningBlock>(out var lightningBlock))
+        else if (other.TryGetComponent<FirstLightningBlock>(out var lightningBlock))
         {
-            lightningBlock.isOn = true;
+            lightningBlock.StartLightingChain();
         }
         Destroy(gameObject);
     }
