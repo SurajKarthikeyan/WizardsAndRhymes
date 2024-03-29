@@ -13,6 +13,8 @@ public class LeverManager : MonoBehaviour
     [SerializeField] private int leverCoolDown;
     [SerializeField] public bool completedLeverSystem;
     [SerializeField] private Generator leverGenerator;
+
+    [SerializeField] private List<IndividualEmissionChange> emissionChangeList;
     #endregion
 
 
@@ -25,6 +27,10 @@ public class LeverManager : MonoBehaviour
         if (leverList.All(obj => obj.isOn) && leverGenerator.isLeverControlled)
         {
             completedLeverSystem = true;
+            for (int i = 0; i < emissionChangeList.Count; i++)
+            {
+                StartCoroutine(emissionChangeList[i].AlterEmissionOverTime(true));
+            }
             leverGenerator.Hodor();
         }
     }

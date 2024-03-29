@@ -28,6 +28,20 @@ public class Lever : MonoBehaviour
     [SerializeField] private Animator leverAnimator;
     [Tooltip("List of other levers to affect")]
     [SerializeField] private List<Lever> otherLevers;
+
+
+
+
+    [SerializeField] private IndividualEmissionChange emissionChanger;
+    
+    /*[SerializeField] private GameObject spline;
+    [Tooltip("Emission Material to copy")]
+    [SerializeField] private Material originalMaterial;
+    [Tooltip("Copy of emission material, do not set")]
+    [SerializeField] private Material newMaterial;
+    [Tooltip("Time to reach max or minimum emission")]
+    [SerializeField] private float timeToFullEmission;
+*/
     #endregion
 
 
@@ -37,10 +51,17 @@ public class Lever : MonoBehaviour
     {
         ChangeColorLight(isOn);
         electricBlock.SetActive(isOn);
+        /*newMaterial = new Material(originalMaterial);
+        newMaterial.EnableKeyword("_EMISSION");*/
         if (!isOn)
         {
             leverAnimator.SetTrigger("interaction");
+            //newMaterial.SetColor("_EmissionColor", minEmissionValue);
+            //spline.GetComponent<Renderer>().material = newMaterial;
+
         }
+        StartCoroutine(emissionChanger.AlterEmissionOverTime(isOn));
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -72,6 +93,7 @@ public class Lever : MonoBehaviour
         isOn = !isOn;
         leverAnimator.SetTrigger("interaction");
         electricBlock.SetActive(isOn);
+        StartCoroutine(emissionChanger.AlterEmissionOverTime(isOn));
         ChangeColorLight(isOn);
         if (sound)
         {
@@ -93,6 +115,31 @@ public class Lever : MonoBehaviour
             otherLevers[i].LeverSwitch(false, false);
         }
     }
+
+
+
+    /*IEnumerator AlterEmissionOverTime(bool up)
+    {
+        float timer = 0;
+        while (timer < timeToFullEmission)
+        {
+            // change color
+            Color color = newMaterial.GetColor("_EmissionColor");
+            if (up)
+            {
+                color = Color.Lerp(color, maxEmissionValue, timer/timeToFullEmission);
+
+            }
+            else
+            {
+                color = Color.Lerp(color, minEmissionValue, timer/timeToFullEmission);
+            }
+            newMaterial.SetColor("_EmissionColor", color);
+            spline.GetComponent<Renderer>().material = newMaterial;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+    }*/
 
     #endregion
 
