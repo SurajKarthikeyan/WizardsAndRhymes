@@ -33,7 +33,7 @@ public class Lever : MonoBehaviour
 
 
     [SerializeField] private IndividualEmissionChange emissionChanger;
-    
+    [SerializeField] private bool emission;
     /*[SerializeField] private GameObject spline;
     [Tooltip("Emission Material to copy")]
     [SerializeField] private Material originalMaterial;
@@ -61,7 +61,7 @@ public class Lever : MonoBehaviour
 
         }
 
-        if (emissionChanger != null)
+        if (emission)
         {
             StartCoroutine(emissionChanger.AlterEmissionOverTime(isOn));
         }
@@ -97,7 +97,7 @@ public class Lever : MonoBehaviour
         isOn = !isOn;
         leverAnimator.SetTrigger("interaction");
         electricBlock.SetActive(isOn);
-        if (emissionChanger != null)
+        if (emission)
         {
             StartCoroutine(emissionChanger.AlterEmissionOverTime(isOn));
         }
