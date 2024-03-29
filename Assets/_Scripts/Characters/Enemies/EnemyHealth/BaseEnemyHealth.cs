@@ -193,7 +193,7 @@ public abstract class BaseEnemyHealth : Health
             }
         }
 
-        StartCoroutine(LightingArc());
+        //StartCoroutine(LightingArc());
         
         if (vulnerable)
         {

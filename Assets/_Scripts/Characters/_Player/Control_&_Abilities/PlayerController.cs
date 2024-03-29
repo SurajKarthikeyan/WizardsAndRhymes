@@ -753,7 +753,7 @@ public class PlayerController : Singleton<PlayerController>
         comboContinuationCoroutine = ComboContinueDelay(comboContinuationTime);
         StartCoroutine(comboContinuationCoroutine);
         attackStatus = AttackStatus.None;
-        mixtapeInventory.OnTapeChange();
+        //mixtapeInventory.OnTapeChange();
         attackPerformed = false;
         yield return null;
     }
