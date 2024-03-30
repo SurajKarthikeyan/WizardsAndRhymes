@@ -41,7 +41,33 @@ public class IndividualEmissionChange : MonoBehaviour
     
     #region CustomMethods
 
-    
+    public void AlterEmissionCycle()
+    {
+        StartCoroutine(AlterEmissionFullCycle());
+    }
+
+    public IEnumerator AlterEmissionFullCycle()
+    {
+        float timer = 0;
+        while (timer < timeToFullEmission * 2)
+        {
+            Color color = newMaterial.GetColor("_EmissionColor");
+            if (timer < timeToFullEmission)
+            {
+                color = Color.Lerp(color, maxEmissionValue, timer/timeToFullEmission);
+            }
+
+            else
+            {
+                color = Color.Lerp(color, minEmissionValue, (timer - timeToFullEmission)/timeToFullEmission);
+            }
+            newMaterial.SetColor("_EmissionColor", color);
+            go.GetComponent<Renderer>().material = newMaterial;
+            timer += Time.deltaTime;
+            yield return null;
+        }
+    }
+
     public IEnumerator AlterEmissionOverTime(bool up)
     {
         float timer = 0;
