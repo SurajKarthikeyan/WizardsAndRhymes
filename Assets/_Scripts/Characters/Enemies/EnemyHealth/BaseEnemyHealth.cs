@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -180,10 +181,15 @@ public abstract class BaseEnemyHealth : Health
                     //set start to this object
                     curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position =
                         this.gameObject.transform.position;
+                    curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.parent =
+                        this.gameObject.transform;  // Set start as child to this object
                     
                     //set end to enemy object chained
                     curLightningEffect.GetComponent<LightningVFXPosition>().pos4.transform.position =
                         enemyLightiningCollider[i].gameObject.transform.position;
+
+                    curLightningEffect.GetComponent<LightningVFXPosition>().pos4.transform.parent =
+                        enemyLightiningCollider[i].gameObject.transform;    // set end point to child of parent
 
                     Vector3 pos2 = new Vector3(
                         curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.x + deltaPos.x * 0.33f,
