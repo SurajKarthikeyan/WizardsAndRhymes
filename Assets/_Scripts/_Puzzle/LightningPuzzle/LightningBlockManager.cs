@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,17 +21,45 @@ public class LightningBlockManager : MonoBehaviour
 
     [Tooltip("Y offset for lighting chain spawn")]
     [SerializeField] private float yOffSet;
+
+    [Tooltip("Holographic block list to spawn in location of deactivated block")]
+    [SerializeField] private List<GameObject> holoBlockList;
     #endregion
 
 
+    #region UnityMethods
+
+    private void Start()
+    {
+        
+        SetHoloBlocks();
+
+    }
+
+    #endregion
+    
+
     #region CustomMethods
 
+    /// <summary>
+    /// Spawn all the holo blocks and set them active if the eletric block in that location is decativated
+    /// </summary>
+    public void SetHoloBlocks()
+    {
+        for (int i = 0; i < holoBlockList.Count; i++)
+        {
+            Vector3 pos = lightBlockList[i].transform.position;
+            GameObject curHoloBlock = holoBlockList[i];
+            curHoloBlock.transform.position = pos;
+            if (lightBlockList[i].activeSelf == false)
+            {
+                curHoloBlock.SetActive(true);
+            }
+        }
+    }
     public void CheckAllBlocks()
     {
         StartCoroutine(ChainLightingWithDelayCoroutine());
-        /*if (lightBlockList.All(obj => obj.activeSelf))  // checks if all objects are enabled in the list
-        {
-        }*/
     }
     
     /// <summary>

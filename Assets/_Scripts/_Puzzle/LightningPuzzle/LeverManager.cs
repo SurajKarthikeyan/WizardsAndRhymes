@@ -13,7 +13,8 @@ public class LeverManager : MonoBehaviour
     [SerializeField] private int leverCoolDown;
     [SerializeField] public bool completedLeverSystem;
     [SerializeField] private Generator leverGenerator;
-
+    [SerializeField] private LightningBlockManager lbManager;
+    [SerializeField] private bool useLBManager;
     [SerializeField] private List<IndividualEmissionChange> emissionChangeList;
     #endregion
 
@@ -24,6 +25,10 @@ public class LeverManager : MonoBehaviour
     {
         isLeverCoolDown = true;
         StartCoroutine(LeverCoolDown());
+        if (useLBManager)
+        {
+            lbManager.SetHoloBlocks();
+        }
         if (leverList.All(obj => obj.isOn) && leverGenerator.isLeverControlled)
         {
             completedLeverSystem = true;
