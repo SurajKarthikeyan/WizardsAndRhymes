@@ -268,11 +268,11 @@ public class EnemyManager : MonoBehaviour
                 yield return new WaitForSeconds(enemySpawnDelay);
 
                 //Spawn the spotlight for the enemy
-                if (spotlightPrefab != null && enemyGO != null)
+                /*if (spotlightPrefab != null && enemyGO != null)
                 {
                     GameObject spotlightGO = Instantiate(spotlightPrefab);
                     spotlightGO.GetComponent<SpotlightController>().target = enemyGO.transform;
-                }
+                }*/
             }
         }
 
