@@ -108,9 +108,12 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField]
     private LayerMask groundLayerMask;
 
-    [Tooltip("Model of the player displayed purely for dashing")]
-    [SerializeField]
-    private GameObject dashModel;
+    [Tooltip("Default Material reference of the player")]
+    [SerializeField] private Material defaultMaterial;
+    [Tooltip("Dashing Material reference of the player")]
+    [SerializeField] private Material dashMaterial;
+    [Tooltip("Reference to renderer of player model(body)")]
+    [SerializeField] private Renderer playerRenderer;
 
     [Tooltip("Timer that tracks how long it has been since last dash")]
     private float dashCooldownTimer;
@@ -262,7 +265,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         base.Awake();
 
-        dashModel.SetActive(false);
+        //dashModel.SetActive(false);
         rigidBody = GetComponent<Rigidbody>();
         playerInput = new PlayerInput();
         SetCanAttack(false);
@@ -720,13 +723,13 @@ public class PlayerController : Singleton<PlayerController>
     { 
         moveStatus = MoveStatus.Dashing;
         gameObject.layer = 10;
-        dashModel.SetActive(true);
+        playerRenderer.material = dashMaterial;
         rigidBody.useGravity = false;
         playerHealth.vulnerable = false;
         abilityManager.ReduceAbilityGuage(abilityManager.dashAbilityCost);
         dashCooldownTimer = 0;
         yield return new WaitForSeconds(dashTime);
-        dashModel.SetActive(false);
+        playerRenderer.material = defaultMaterial;
         gameObject.layer = 3;
         playerHealth.vulnerable = true;
         rigidBody.useGravity = false;
@@ -739,6 +742,7 @@ public class PlayerController : Singleton<PlayerController>
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Projectile()
     {
+        playerAnimator.SetTrigger("rangedAttack");
         rangedEvent.Post(this.gameObject);
         abilityManager.ReduceAbilityGuage(abilityManager.rangedAbilityCost);
         //Instantiate projectile and give it the proper velocity
