@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Represents an audience member in the crowd
+/// </summary>
 public class AudienceMember : Floater
 {
     #region Variables
-    enum FanMode { ConvertToPlayer, AlwaysPlayer, AlwaysWizzo}
+    public enum FanMode { ConvertToPlayer, AlwaysPlayer, AlwaysWizzo}
 
     [Header("Audience Member Options")]
     [Tooltip("The renderer for this audience member")]
@@ -25,7 +28,7 @@ public class AudienceMember : Floater
     [SerializeField] Color[] playerColors;
 
     [Tooltip("How this audience member handles who it is a fan of")]
-    [SerializeField] FanMode fanMode = FanMode.ConvertToPlayer;
+    public FanMode fanMode = FanMode.ConvertToPlayer;
     [Tooltip("The maximum amount of time this audience member can delay becoming a fan of the player")]
     [MMEnumCondition("fanMode", (int)FanMode.ConvertToPlayer, Hidden = true)]
     [SerializeField] float maxPlayerFanDelay = 1f;
@@ -85,6 +88,11 @@ public class AudienceMember : Floater
     #endregion
 
     #region Custom Methods
+    /// <summary>
+    /// Pick a random color based on current allegiance
+    /// </summary>
+    /// <param name="playerFan">Whether to pick a player color or not</param>
+    /// <returns>The random color selected</returns>
     Color RandomColor(bool playerFan)
     {
         Color[] colorArray = wizzoColors;
@@ -109,6 +117,10 @@ public class AudienceMember : Floater
         StartCoroutine(BecomePlayerFan());
     }
 
+    /// <summary>
+    /// Fade color to player color
+    /// </summary>
+    /// <returns>Coroutine</returns>
     IEnumerator BecomePlayerFan()
     {
         yield return new WaitForSeconds(Random.Range(0, maxPlayerFanDelay));
