@@ -29,15 +29,14 @@ public class AudienceMember : Floater
 
     [Tooltip("How this audience member handles who it is a fan of")]
     public FanMode fanMode = FanMode.ConvertToPlayer;
-    [Tooltip("The maximum amount of time this audience member can delay becoming a fan of the player")]
-    [MMEnumCondition("fanMode", (int)FanMode.ConvertToPlayer, Hidden = true)]
-    [SerializeField] float maxPlayerFanDelay = 1f;
     [Tooltip("How long this audience member takes to fade to its player color")]
     [MMEnumCondition("fanMode", (int)FanMode.ConvertToPlayer, Hidden = true)]
     [SerializeField] float colorFadeDuration = 0.25f;
 
     [Tooltip("Whether this audience member is a fan of the player")]
     bool playerFan = false;
+    [Tooltip("The percentage of enemies in the scene that must be killed before this audience member switches sides")]
+    [SerializeField] float conversionPercentage;
     #endregion
 
     #region Unity Methods
@@ -49,8 +48,9 @@ public class AudienceMember : Floater
         
         if (fanMode == FanMode.ConvertToPlayer)
         {
-            //Register room cleared callback
-            EnemyManager.RoomCleared += StartBecomePlayerFan;
+            //Register enemy died callback
+            BaseEnemyHealth.EnemyDied += CheckBecomePlayerFan;
+            conversionPercentage = Random.Range(0.01f, 0.99f);
         }
         else if (fanMode == FanMode.AlwaysPlayer)
         {
@@ -81,8 +81,8 @@ public class AudienceMember : Floater
     {
         if (fanMode == FanMode.ConvertToPlayer)
         {
-            //Remove room cleared callback
-            EnemyManager.RoomCleared -= StartBecomePlayerFan;
+            //Remove enemy died callback
+            BaseEnemyHealth.EnemyDied -= CheckBecomePlayerFan;
         }
     }
     #endregion
@@ -110,11 +110,17 @@ public class AudienceMember : Floater
     }
 
     /// <summary>
-    /// Start the coroutine to become a player fan
+    /// 
     /// </summary>
-    void StartBecomePlayerFan()
+    /// <param name="enemyGO"></param>
+    void CheckBecomePlayerFan(GameObject enemyGO)
     {
-        StartCoroutine(BecomePlayerFan());
+        if (!playerFan)
+        {
+            if (conversionPercentage >= (float)(EnemyManager.RemainingEnemiesInScene - 1) / EnemyManager.TotalEnemiesInScene)
+                StartCoroutine(BecomePlayerFan());
+        }
+        
     }
 
     /// <summary>
@@ -123,8 +129,6 @@ public class AudienceMember : Floater
     /// <returns>Coroutine</returns>
     IEnumerator BecomePlayerFan()
     {
-        yield return new WaitForSeconds(Random.Range(0, maxPlayerFanDelay));
-
         Color wizzoColor = render.material.color;
         Color playerColor = RandomColor(true);
 
