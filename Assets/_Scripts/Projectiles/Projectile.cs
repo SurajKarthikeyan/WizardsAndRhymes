@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Serialization;
 
 /// <summary>
-/// Base class for a projectile
+/// Base class for a projectile fired by the player
 /// </summary>
 public class Projectile : MonoBehaviour
 {
@@ -72,6 +72,9 @@ public class Projectile : MonoBehaviour
     #endregion
 
     #region Custom Methods
+    /// <summary>
+    /// Changes the color of the projectile when damage type updates
+    /// </summary>
     void DamageTypeUpdated()
     {
         if ((int)DType < damageTypeColors.Count)
