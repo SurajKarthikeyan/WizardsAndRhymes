@@ -12,6 +12,10 @@ public class CrowdSurfPath : MonoBehaviour
     #region Variables
     [Tooltip("The spline computer component that defines the path")]
     [SerializeField] SplineComputer splineComputer;
+    [Tooltip("The trigger at the start of the path")]
+    [SerializeField] CrowdSurfTrigger startTrigger;
+    [Tooltip("The trigger at the end of the path")]
+    [SerializeField] CrowdSurfTrigger endTrigger;
     [Tooltip("How fast the player should move to the start of the path")]
     [SerializeField] float approachSpeed = 15f;
     [Tooltip("How fast the player should move along the path")]
@@ -24,31 +28,69 @@ public class CrowdSurfPath : MonoBehaviour
     public bool active;
     [Tooltip("Whether this path activates when all enemies have been defeated")]
     [SerializeField] bool activateOnRoomCleared = true;
+    [Tooltip("Whether to automatically place the start and and triggers at the start and end of the path")]
+    [SerializeField] bool autoPlaceTriggers = true;
 
     [Tooltip("Whether the player is currently crowd-surfing on this path")]
     public bool PlayerOnPath { get; private set; }
     #endregion
 
     #region Unity Methods
+    /// <summary>
+    /// Initialization
+    /// </summary>
     private void Start()
     {
         //Register enemies defeated callback
         if (activateOnRoomCleared)
             EnemyManager.RoomCleared += () => { active = true; };
+
+        //Initialize start and end triggers
+        InitializeTriggers();
     }
     #endregion
 
     #region Custom Methods
+    /// <summary>
+    /// Initialize the values of the triggers at the start and end of this crowd surf path
+    /// </summary>
+    [ContextMenu("Initialize Triggers")]
+    void InitializeTriggers()
+    {
+        //References
+        startTrigger.crowdSurfPath = this;
+        endTrigger.crowdSurfPath = this;
+
+        //Auto place
+        if (autoPlaceTriggers)
+        {
+            startTrigger.transform.position = splineComputer.EvaluatePosition(0);
+            endTrigger.transform.position = splineComputer.EvaluatePosition(1);
+        }
+
+        //Configure end trigger
+        endTrigger.end = true;
+        if (!twoWay)
+            endTrigger.gameObject.SetActive(false);
+    }
+
+    /// <summary>
+    /// Trigger a crowd surf. Called by a CrowdSurfTrigger
+    /// </summary>
+    /// <param name="reverse">Whether this crowd surf goes from end to start</param>
     public void StartCrowdSurf(bool reverse)
     {
         if (active)
             StartCoroutine(CrowdSurf(reverse));
     }
 
+    /// <summary>
+    /// Move the player along the crowd surf path
+    /// </summary>
+    /// <param name="reverse">Whether the crowd surf goes from end to start</param>
+    /// <returns>Coroutine</returns>
     IEnumerator CrowdSurf(bool reverse)
     {
-        Debug.Log("Starting crowd surf");
-
         PlayerOnPath = true;
 
         PlayerController.instance.AddMovementLock(this); //Lock the player's movement
@@ -69,8 +111,6 @@ public class CrowdSurfPath : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        Debug.Log("Player at start of path");
-
         //Move player along path
         distance = splineComputer.CalculateLength();
         t = 0;
@@ -87,24 +127,12 @@ public class CrowdSurfPath : MonoBehaviour
             yield return new WaitForEndOfFrame();
         }
 
-        Debug.Log("Player at end of path");
-
         //Restore normal movement
         PlayerController.instance.RemoveMovementLock(this);
 
         yield return new WaitForSeconds(pathCooldown); //Prevent triggers from firing twice
 
         PlayerOnPath = false;
-    }
-
-    public Vector3 GetPositionOnPath(float percentage)
-    {
-        return splineComputer.EvaluatePosition(percentage);
-    }
-
-    public bool IsTwoWay()
-    {
-        return twoWay;
     }
     #endregion
 }
