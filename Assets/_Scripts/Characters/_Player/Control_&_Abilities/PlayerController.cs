@@ -766,8 +766,8 @@ public class PlayerController : Singleton<PlayerController>
     {
         meleeEvent.Post(this.gameObject);
         abilityManager.ReduceAbilityGuage(abilityManager.meleeAbilityCost); 
-        playerAnimator.SetTrigger("meleeAttack");
         meleeBox.GetComponent<MeleeCollider>().damageType = playerLevelDamageType;
+        playerAnimator.SetTrigger("meleeAttack");
         rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
         DisablePlayerControls();
         abilityManager.ResetAbilityRecharge();
