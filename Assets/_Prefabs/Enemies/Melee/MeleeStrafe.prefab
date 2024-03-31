@@ -431,8 +431,8 @@ Transform:
   - {fileID: 6021471805957434481}
   - {fileID: 8708247203508608025}
   - {fileID: 4413380026006246751}
-  - {fileID: 5938648234663959740}
   - {fileID: 1302926144954967376}
+  - {fileID: 5938648234663959740}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6937307776809416572
@@ -949,6 +949,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d9d87bd21712e6046bb7d97f5aed4532, type: 3}
   m_PrefabInstance: {fileID: 1557776054903456443}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &4424853120189542164 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -6271709529158947409, guid: d9d87bd21712e6046bb7d97f5aed4532, type: 3}
+  m_PrefabInstance: {fileID: 1557776054903456443}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2679939027462793133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1036,6 +1041,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8537366243199547573}
     m_Modifications:
+    - target: {fileID: 194635393168082750, guid: 4deff1a8d071cf243a0b82272e59c8ff, type: 3}
+      propertyPath: managedReferences[7722084172183896066].TargetRenderer
+      value: 
+      objectReference: {fileID: 735021074681021623}
+    - target: {fileID: 194635393168082750, guid: 4deff1a8d071cf243a0b82272e59c8ff, type: 3}
+      propertyPath: managedReferences[7722084172183896067].TargetRenderer
+      value: 
+      objectReference: {fileID: 4424853120189542164}
     - target: {fileID: 6031799343244303715, guid: 4deff1a8d071cf243a0b82272e59c8ff, type: 3}
       propertyPath: render
       value: 
