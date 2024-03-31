@@ -748,7 +748,7 @@ public class PlayerController : Singleton<PlayerController>
         //Instantiate projectile and give it the proper velocity
         GameObject projectile = Instantiate(rangedPrefab, rangedSpawnPoint.position, rangedSpawnPoint.rotation);
         projectile.GetComponent<Rigidbody>().velocity = rangedSpawnPoint.forward * rangedPrefabSpeed;
-        projectile.GetComponent<Projectile>().dType = playerLevelDamageType;
+        projectile.GetComponent<Projectile>().DType = playerLevelDamageType;
         abilityManager.ResetAbilityRecharge();
         StartCoroutine(AttackDelay(rangedAttackDuration));
         comboContinuationCoroutine = ComboContinueDelay(comboContinuationTime);

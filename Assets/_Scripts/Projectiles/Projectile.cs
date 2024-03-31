@@ -1,4 +1,7 @@
+using AYellowpaper.SerializedCollections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// Base class for a projectile
@@ -10,12 +13,27 @@ public class Projectile : MonoBehaviour
     [SerializeField]
     private float existenceTimeThreshold = 5f;
 
+
     [Tooltip("Instance of the damage type enum")]
-    [SerializeField] public Health.DamageType dType;
+    [FormerlySerializedAs("DType")][SerializeField] private Health.DamageType _dType = Health.DamageType.None;
+    public Health.DamageType DType
+    {
+        get { return _dType; }
+        set { _dType = value; DamageTypeUpdated(); }
+    }
 
     [Tooltip("Damage that this projectile deals")]
     [SerializeField]
     private int damage;
+
+    [Header("VFX Settings")]
+    [Tooltip("The projectile's renderer")]
+    [SerializeField] Renderer render;
+    [Tooltip("The property on the projectile's renderer that controls its color")]
+    [SerializeField] string colorProperty;
+    [Tooltip("The colors to use for each damage type")]
+    [ColorUsage(false, hdr:true)]
+    [SerializeField] List<Color> damageTypeColors;
     #endregion
 
     #region Unity Methods
@@ -25,7 +43,6 @@ public class Projectile : MonoBehaviour
     private void Awake()
     {
         Destroy(gameObject, existenceTimeThreshold);
-        dType = Health.DamageType.None;
     }
 
     /// <summary>
@@ -38,7 +55,7 @@ public class Projectile : MonoBehaviour
         {
             if (character.vulnerable)
             {
-                character.TakeDamage(damage, dType);
+                character.TakeDamage(damage, DType);
                 if (character.gameObject.TryGetComponent(out BaseEnemyBehavior enemy))
                 {
                     enemy.Knockback(transform.forward);
@@ -51,6 +68,18 @@ public class Projectile : MonoBehaviour
             lightningBlock.StartLightingChain();
         }
         Destroy(gameObject);
+    }
+    #endregion
+
+    #region Custom Methods
+    void DamageTypeUpdated()
+    {
+        if ((int)DType < damageTypeColors.Count)
+        {
+            render.material.SetColor(colorProperty, damageTypeColors[(int)DType]);
+        }
+        else
+            Debug.LogError("No color set for " + DType.ToString() + " type projectile");
     }
     #endregion
 }
