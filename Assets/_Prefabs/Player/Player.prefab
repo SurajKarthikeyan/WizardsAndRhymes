@@ -776,7 +776,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   RemapRangeFalloff: {x: 0, y: 1}
   IgnoreRangeEvents: 0
-  CooldownDuration: 0
+  CooldownDuration: 0.15
   InitialDelay: 0
   CanPlay: 1
   CanPlayWhileAlreadyPlaying: 1
@@ -808,10 +808,10 @@ MonoBehaviour:
         m_Calls: []
   DebugActive: 0
   FeedbacksList:
-  - rid: 7722083982816313348
   - rid: 7722083982816313345
   - rid: 7722083982816313346
   - rid: 7722083982816313347
+  - rid: 7722084172183896068
   KeepPlayModeChanges: 0
   PerformanceMode: 0
   StopFeedbacksOnDisable: 0
@@ -1106,12 +1106,12 @@ MonoBehaviour:
         RemapIntensityZero: 0
         RemapIntensityOne: 0.05
         RelativeIntensity: 1
-    - rid: 7722083982816313348
-      type: {class: MMF_FloatController, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks.MMTools}
+    - rid: 7722084172183896068
+      type: {class: MMF_Material, ns: MoreMountains.Feedbacks, asm: MoreMountains.Feedbacks}
       data:
         Active: 1
-        UniqueID: 1206637890
-        Label: FloatController
+        UniqueID: -1335494413
+        Label: Material
         ChannelMode: 0
         Channel: 0
         MMChannelDefinition: {fileID: 0}
@@ -1123,12 +1123,12 @@ MonoBehaviour:
           ContributeToTotalDuration: 1
           InitialDelay: 0
           CooldownDuration: 0
-          InterruptsOnStop: 1
-          NumberOfRepeats: 0
+          InterruptsOnStop: 0
+          NumberOfRepeats: 1
           RepeatForever: 0
-          DelayBetweenRepeats: 1
+          DelayBetweenRepeats: 0.1
           MMFeedbacksDirectionCondition: 0
-          PlayDirection: 0
+          PlayDirection: 2
           ConstantIntensity: 0
           UseIntensityInterval: 0
           IntensityIntervalMin: 0
@@ -1174,59 +1174,18 @@ MonoBehaviour:
         RemapRangeFalloff: {x: 0, y: 1}
         Owner: {fileID: 6620715516619426797}
         DebugActive: 0
-        Mode: 0
-        TargetFloatController: {fileID: 0}
-        ExtraTargetFloatControllers: []
-        RevertToInitialValueAfterEnd: 0
-        OneTimeDuration: 0.1
-        OneTimeAmplitude: 1
-        OneTimeRemapMin: 0
-        OneTimeRemapMax: 1
-        OneTimeCurve:
-          serializedVersion: 2
-          m_Curve:
-          - serializedVersion: 3
-            time: 0
-            value: 0
-            inSlope: 12.81251
-            outSlope: 10
-            tangentMode: 69
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.1
-            value: 1
-            inSlope: 10
-            outSlope: 0
-            tangentMode: 69
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0.33333334
-          - serializedVersion: 3
-            time: 0.9
-            value: 1
-            inSlope: -0
-            outSlope: -9.999998
-            tangentMode: 69
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 1
-          - serializedVersion: 3
-            time: 1
-            value: 0
-            inSlope: -9.999998
-            outSlope: -7.8668594
-            tangentMode: 69
-            weightedMode: 0
-            inWeight: 0.33333334
-            outWeight: 0
-          m_PreInfinity: 2
-          m_PostInfinity: 2
-          m_RotationOrder: 4
-        ToDestinationValue: 1
-        ToDestinationDuration: 1
-        ToDestinationCurve:
+        TargetRenderer: {fileID: 3433364081559039257}
+        RendererMaterialIndexes: 
+        Method: 0
+        Loop: 1
+        AlwaysNewMaterial: 1
+        InitialIndex: 0
+        Materials:
+        - {fileID: 2100000, guid: f7ddb47575e82cb43bd33140856d71d6, type: 2}
+        - {fileID: 2100000, guid: f96a78af3a9d30e48854cc953b49f4ea, type: 2}
+        InterpolateTransition: 0
+        TransitionDuration: 1
+        TransitionCurve:
           serializedVersion: 2
           m_Curve:
           - serializedVersion: 3
@@ -1239,17 +1198,8 @@ MonoBehaviour:
             inWeight: 0
             outWeight: 0
           - serializedVersion: 3
-            time: 0.5
-            value: 1
-            inSlope: 0
-            outSlope: 0
-            tangentMode: 0
-            weightedMode: 0
-            inWeight: 0
-            outWeight: 0
-          - serializedVersion: 3
             time: 1
-            value: 0
+            value: 1
             inSlope: 0
             outSlope: 0
             tangentMode: 0
