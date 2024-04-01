@@ -38,6 +38,8 @@ public class PuzzleGrid : MonoBehaviour
 
     public bool hasTouchedIceBox;
 
+    [SerializeField] private AK.Wwise.Event icePushSoundEffect;
+
     public bool touchedTile;
     #endregion
 
@@ -383,6 +385,7 @@ public class PuzzleGrid : MonoBehaviour
 
     private IEnumerator MoveObjectCoroutine(float time, Transform start, Transform end, GameObject go)
     {
+        bool hasEmission = false;
         isMovingObject = true;
         PlayerController.instance.DisablePlayerControls();
         Vector3 startingPos = new Vector3(start.position.x, 2.3f, start.position.z);
@@ -390,6 +393,12 @@ public class PuzzleGrid : MonoBehaviour
 
         float elapsedTime = 0;
         go.transform.position = startingPos;
+        if(go.TryGetComponent(out IndividualEmissionChange var))
+        {
+            icePushSoundEffect.Post(this.gameObject);
+            hasEmission = true;
+            StartCoroutine(var.AlterEmissionOverTime(true));
+        }
         while(elapsedTime < time)
         {
             isMovingObject = true;
@@ -397,6 +406,12 @@ public class PuzzleGrid : MonoBehaviour
             go.transform.position = Vector3.Lerp(startingPos, endingPos, (elapsedTime / time));
             elapsedTime += Time.deltaTime;
             yield return null;
+        }
+
+        if (hasEmission)
+        {
+            StartCoroutine(var.AlterEmissionOverTime(false));
+
         }
         isMovingObject = false;
         moveObject = null;

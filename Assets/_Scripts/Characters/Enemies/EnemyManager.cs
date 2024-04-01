@@ -65,6 +65,10 @@ public class EnemyManager : MonoBehaviour
     [Tooltip("Event fired when debug button is pressed")]
     [HideInInspector] public static event ActivateEnemiesDelegate EnemiesActivated;
 
+    [Tooltip("The total number of enemies in the scene unspawned, active, or dead")]
+    public static int TotalEnemiesInScene { get; private set; } = 0;
+    [Tooltip("The remaining enemies in the scene, unspawned or active")]
+    public static int RemainingEnemiesInScene { get; private set; } = 0;
     [Tooltip("The number of enemy managers that haven't had all their waves cleared yet")]
     static int remainingEnemyManagers = 0;
 
@@ -84,9 +88,13 @@ public class EnemyManager : MonoBehaviour
     [Tooltip("The index of the next wave of enemies")]
     int waveIndex = 0;
     [Tooltip("The number of enemies, spawned and yet to be spawned, remaining in the current waves")]
-    int enemiesRemaining = 0;
+    int enemiesRemainingInWave = 0;
     [Tooltip("A set of all the enemies that have been spawned")]
     HashSet<GameObject> enemiesSpawned = new HashSet<GameObject>();
+    [Tooltip("The total number of enemies this EnemyManager is capable of spawning")]
+    int totalEnemies = 0;
+    [Tooltip("The remaining number of enemies from this EnemyManager that are unspawned or active but not killed")]
+    int remainingEnemies = 0;
 
     [Header("Enemy Augmentation Variables")]
 
@@ -114,6 +122,21 @@ public class EnemyManager : MonoBehaviour
         //Add self to count of enemy managers without all waves cleared
         remainingEnemyManagers += 1;
 
+        //Calculate the total number of enemies this EnemyManager can spawn
+        totalEnemies = 0;
+        foreach (EnemyWave wave in waves)
+        {
+            foreach (EnemyWaveGroup waveGroup in wave.enemies)
+            {
+                totalEnemies += waveGroup.amount;
+            }
+        }
+        remainingEnemies = totalEnemies;
+
+        //Add total number of enemies to total in scene
+        TotalEnemiesInScene += totalEnemies;
+        RemainingEnemiesInScene += totalEnemies;
+
         //Register enemy died callback
         BaseEnemyHealth.EnemyDied += EnemyDied;
     }
@@ -126,6 +149,10 @@ public class EnemyManager : MonoBehaviour
         //Remove self from count of enemy managers if still has uncleared waves
         if (!wavesCleared)
             remainingEnemyManagers -= 1;
+
+        //Remove total enemies from total in scene
+        TotalEnemiesInScene -= totalEnemies;
+        RemainingEnemiesInScene -= remainingEnemies;
 
         //Unregister enemy died callback
         BaseEnemyHealth.EnemyDied -= EnemyDied;
@@ -179,7 +206,9 @@ public class EnemyManager : MonoBehaviour
         if (enemiesSpawned.Contains(enemyGO))
         {
             enemiesSpawned.Remove(enemyGO);
-            enemiesRemaining--;
+            enemiesRemainingInWave--;
+            RemainingEnemiesInScene--;
+            remainingEnemies--;
 
             //Check if the next wave should spawn now
             if (waveIndex < waves.Length)
@@ -187,12 +216,12 @@ public class EnemyManager : MonoBehaviour
                 EnemyWave currentWave = waves[waveIndex];
                 if (currentWave.waveTrigger == EnemyWave.WaveTrigger.EnemiesRemaining)
                 {
-                    if (enemiesRemaining <= currentWave.enemiesRemaining)
+                    if (enemiesRemainingInWave <= currentWave.enemiesRemaining)
                         StartCoroutine(TriggerWave(currentWave));
                 }
             }
             //Check if the last wave has been defeated
-            else if (enemiesRemaining <= 0)
+            else if (enemiesRemainingInWave <= 0)
             {
                 //Mark this enemy manager as completed
                 wavesCleared = true;
@@ -247,7 +276,7 @@ public class EnemyManager : MonoBehaviour
             waveEnemyCount += waveGroup.amount;
 
         //Increase the enemies remaining count to account for this wave
-        enemiesRemaining += waveEnemyCount;
+        enemiesRemainingInWave += waveEnemyCount;
 
         //Calculate the delay there should be between spawning each enemy
         float enemySpawnDelay = wave.waveDuration / waveEnemyCount;
@@ -268,11 +297,11 @@ public class EnemyManager : MonoBehaviour
                 yield return new WaitForSeconds(enemySpawnDelay);
 
                 //Spawn the spotlight for the enemy
-                if (spotlightPrefab != null && enemyGO != null)
+                /*if (spotlightPrefab != null && enemyGO != null)
                 {
                     GameObject spotlightGO = Instantiate(spotlightPrefab);
                     spotlightGO.GetComponent<SpotlightController>().target = enemyGO.transform;
-                }
+                }*/
             }
         }
 

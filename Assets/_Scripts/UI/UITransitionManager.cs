@@ -19,8 +19,7 @@ public class UITransitionManager : MonoBehaviour
         button1.onClick.AddListener(OnClickButton1);
         button4.onClick.AddListener(OnClickButton4);
 
-        // Initially, buttons 2-4 are inactive
-        button2.gameObject.SetActive(false);
+        // Initially, buttons 3-4 are inactive
         button3.gameObject.SetActive(false);
         button4.gameObject.SetActive(false);
     }

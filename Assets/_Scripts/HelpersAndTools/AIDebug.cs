@@ -15,9 +15,6 @@ public class AIDebug : MonoBehaviour
 
     [Tooltip("Enemy script reference to get the behavior from")]
     private BaseEnemyBehavior enemyBehavior;
-
-    [Tooltip("Enemy script reference to get the health from")]
-    private BaseEnemyHealth enemyHealth;
     #endregion
 
     #region Unity Methods
@@ -30,7 +27,6 @@ public class AIDebug : MonoBehaviour
         debugCanvas.worldCamera = Camera.main;
         debugText = debugCanvas.GetComponentInChildren <TextMeshProUGUI>();
         enemyBehavior = GetComponent<BaseEnemyBehavior>();
-        enemyHealth = GetComponent<BaseEnemyHealth>();
     }
 
     /// <summary>
@@ -44,10 +40,8 @@ public class AIDebug : MonoBehaviour
         }
         else
         {
-            debugText.text = enemyBehavior.behaviorState.ToString() + '\n' + enemyHealth.HP + '/' + enemyHealth.maximumHP;
-            Vector3 rotation = Quaternion.LookRotation(Camera.main.transform.position, Vector3.up).eulerAngles;
-            rotation.y = 180;
-            debugCanvas.transform.rotation = Quaternion.Euler(rotation.x, rotation.y, rotation.z);
+            debugText.text = enemyBehavior.behaviorState.ToString();
+            debugCanvas.transform.forward = -debugCanvas.worldCamera.transform.forward;
         }
     }
     #endregion
