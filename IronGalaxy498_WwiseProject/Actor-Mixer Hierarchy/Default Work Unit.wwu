@@ -954,6 +954,23 @@
 							</ReferenceList>
 							<ChildrenList>
 								<RandomSequenceContainer Name="Impact" ID="{170FF16D-4134-4C94-B435-E68C4D33F05A}" ShortID="655417195">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>15</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>50</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
@@ -962,8 +979,210 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="PlayerHitImpact" ID="{C3CEA806-86DE-4148-94B8-EA2171620EF9}" ShortID="495753329">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlayerHitImpact" ID="{81CCCB01-0C30-4FB0-895A-516FF4F4738F}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.940111980738902"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.9706802381834"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>PlayerHitImpact.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="123022695"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PlayerHitImpact" ID="{81CCCB01-0C30-4FB0-895A-516FF4F4738F}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PlayerHitImpact_01" ID="{F459DE9B-CAA3-482A-B2F4-9C60E8B3C1B8}" ShortID="914841788">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlayerHitImpact" ID="{46DF79F5-4DDE-455E-A7A4-BDB995C0D6DF}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.774517445726498"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="1.98398906759234"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.97247587537756"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>PlayerHitImpact.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="695187573"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PlayerHitImpact" ID="{46DF79F5-4DDE-455E-A7A4-BDB995C0D6DF}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PlayerHitImpact_02" ID="{1E488305-DAAB-40CA-B14E-1E3A2CBA6AE4}" ShortID="144609653">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlayerHitImpact" ID="{872CB117-BA3C-40DB-8B90-4B40B5185751}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.744220145643666"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="3.9727502704519"/>
+														<Property Name="TrimEnd" Type="Real64" Value="5.98674929912655"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>PlayerHitImpact.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1028609631"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PlayerHitImpact" ID="{872CB117-BA3C-40DB-8B90-4B40B5185751}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PlayerHitImpact_03" ID="{8C6B3D7E-3D9D-41CD-911F-890CA9562D9A}" ShortID="733322969">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlayerHitImpact" ID="{68905788-4D6D-4012-AEDE-A1FD5CEBDCC9}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.659461740167583"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="5.96964804750904"/>
+														<Property Name="TrimEnd" Type="Real64" Value="7.85876727047172"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>PlayerHitImpact.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="639389320"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PlayerHitImpact" ID="{68905788-4D6D-4012-AEDE-A1FD5CEBDCC9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PlayerHitImpact_04" ID="{F2E72FDC-0276-4CE8-AE38-7FEC8F9C2B98}" ShortID="769493966">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlayerHitImpact" ID="{05F727A1-E3CE-4684-ABFB-0A541DE0F227}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.738331848287626"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="7.85514811806672"/>
+														<Property Name="TrimEnd" Type="Real64" Value="9.97792002424111"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>PlayerHitImpact.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1027865135"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PlayerHitImpact" ID="{05F727A1-E3CE-4684-ABFB-0A541DE0F227}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PlayerHitImpact_05" ID="{0446018E-1D9D-4327-8DEB-03564139879E}" ShortID="655373127">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlayerHitImpact" ID="{7A1D1FC2-009A-4C37-A28D-CC57CF9C15F9}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="9.9536513926652"/>
+														<Property Name="TrimEnd" Type="Real64" Value="11.9667902446152"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>PlayerHitImpact.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="930362323"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PlayerHitImpact" ID="{7A1D1FC2-009A-4C37-A28D-CC57CF9C15F9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PlayerHitImpact_06" ID="{AC3EDCC0-DEF7-49DC-9CC7-D788AC5D185A}" ShortID="952828130">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlayerHitImpact" ID="{4302836B-CF2B-46D7-90EF-287802E42D17}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.775494016295028"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="11.9561695473436"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>PlayerHitImpact.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="908953981"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PlayerHitImpact" ID="{4302836B-CF2B-46D7-90EF-287802E42D17}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="AfterWoosh" ID="{FBA4417E-5253-4C51-9A9F-B296B83B2808}" ShortID="7512179">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>8</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
@@ -972,8 +1191,225 @@
 											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
 										</Reference>
 									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="PlayerHitDowner" ID="{F2B26D54-2183-475F-9778-B6138553C808}" ShortID="193953365">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlayerHitDowner" ID="{610FCA5F-9F2B-40A1-B0F0-BAA6C16D84CA}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.30320080007705"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.800369807196439"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>PlayerHitDowner.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="524500419"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PlayerHitDowner" ID="{610FCA5F-9F2B-40A1-B0F0-BAA6C16D84CA}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PlayerHitDowner_01" ID="{51F80CEE-24C6-475A-9A97-7D3318F67C43}" ShortID="474214193">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlayerHitDowner" ID="{D78D4977-061B-4BDE-8E39-2647D32002B9}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.336003891896054"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="1.95671140252516"/>
+														<Property Name="TrimEnd" Type="Real64" Value="2.7090637165832"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>PlayerHitDowner.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="742707364"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PlayerHitDowner" ID="{D78D4977-061B-4BDE-8E39-2647D32002B9}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PlayerHitDowner_02" ID="{F547E30E-B31E-4C72-BC84-A16E3BFD480D}" ShortID="80347975">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlayerHitDowner" ID="{24442C3D-8C93-4891-A7A8-56C74A82C792}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0532480743936965"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.457306991851749"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="3.94781919664072"/>
+														<Property Name="TrimEnd" Type="Real64" Value="4.94585817457559"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>PlayerHitDowner.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="953151695"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PlayerHitDowner" ID="{24442C3D-8C93-4891-A7A8-56C74A82C792}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PlayerHitDowner_03" ID="{8530A235-F12B-4D33-B5F5-0D99388A670F}" ShortID="312799586">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlayerHitDowner" ID="{DE366939-F3DA-4283-95F0-D1CF01615AB3}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0484073403579064"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.242036701789532"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="5.96500741479778"/>
+														<Property Name="TrimEnd" Type="Real64" Value="6.80926248682766"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>PlayerHitDowner.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="700571979"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PlayerHitDowner" ID="{DE366939-F3DA-4283-95F0-D1CF01615AB3}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PlayerHitDowner_04" ID="{3DAB14A8-25D6-4E0B-950C-D2042903D6C5}" ShortID="771262797">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlayerHitDowner" ID="{8298C144-FFEB-4AC5-A591-23D21D8F26BB}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0723547363820245"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.292864409165333"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="7.84790150674358"/>
+														<Property Name="TrimEnd" Type="Real64" Value="8.88164672194912"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>PlayerHitDowner.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="654308591"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PlayerHitDowner" ID="{8298C144-FFEB-4AC5-A591-23D21D8F26BB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PlayerHitDowner_05" ID="{7D17C76A-344F-4F64-A659-3787B3AFCB80}" ShortID="79551529">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlayerHitDowner" ID="{7F8CB8D0-A323-4D73-A71E-06DD559CDD7D}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0550309452139857"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.16967874774312"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="9.96050503066866"/>
+														<Property Name="TrimEnd" Type="Real64" Value="10.6405610727665"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>PlayerHitDowner.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="403578445"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PlayerHitDowner" ID="{7F8CB8D0-A323-4D73-A71E-06DD559CDD7D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="PlayerHitDowner_06" ID="{87992D65-9E0C-4DFD-88D6-77361CFF7DCD}" ShortID="1016138651">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="PlayerHitDowner" ID="{653E5B66-6CCA-41BB-81D1-ED59417FE954}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0275637090979117"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.196391427322634"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="11.9731232474806"/>
+														<Property Name="TrimEnd" Type="Real64" Value="12.5736253593084"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>PlayerHitDowner.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="220814183"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="PlayerHitDowner" ID="{653E5B66-6CCA-41BB-81D1-ED59417FE954}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
 								</RandomSequenceContainer>
 							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{C8722834-F1B4-43E5-8A47-61C7AC7C7E6D}" ShortID="741188474">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+														<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
 						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>

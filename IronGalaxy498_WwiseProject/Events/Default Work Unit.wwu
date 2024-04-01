@@ -238,7 +238,27 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="PlayerHurt" ID="{1B39E77C-A5F7-4D4F-9C4B-84386FB9BB5E}"/>
+								<Event Name="PlayerHurt" ID="{1B39E77C-A5F7-4D4F-9C4B-84386FB9BB5E}">
+									<ChildrenList>
+										<Action Name="" ID="{A86EC9F2-22D3-43B9-AAF3-8987A29BF4C8}" ShortID="328005255">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Impact" ID="{170FF16D-4134-4C94-B435-E68C4D33F05A}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{4D1AE991-1804-46BD-8614-E93F9B27F9EE}" ShortID="913124740">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.05"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="AfterWoosh" ID="{FBA4417E-5253-4C51-9A9F-B296B83B2808}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
