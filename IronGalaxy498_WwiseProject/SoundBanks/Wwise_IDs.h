@@ -13,6 +13,9 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID BUTTONHOVER = 3035572085U;
+        static const AkUniqueID BUTTONPRESS = 317641954U;
+        static const AkUniqueID CROWDSURF = 1739654744U;
         static const AkUniqueID CRYSTAL = 3444057113U;
         static const AkUniqueID FREQTEST = 1061604899U;
         static const AkUniqueID ICEBLOCK = 418751485U;
@@ -21,10 +24,12 @@ namespace AK
         static const AkUniqueID MELEEICE = 1651067412U;
         static const AkUniqueID MELEELIGHTNING = 1583612915U;
         static const AkUniqueID PLAY_TESTDOOROPEN = 3831721246U;
+        static const AkUniqueID PLAYBUTTON = 1843531235U;
         static const AkUniqueID PROTOCOMBATLOOP = 3855831843U;
         static const AkUniqueID RANGEDFIRE = 1744863420U;
         static const AkUniqueID RANGEDICE = 2982846157U;
         static const AkUniqueID RANGEDLIGHTNING = 1899629126U;
+        static const AkUniqueID ROCKPLATFORMPUZZLE = 1518733879U;
         static const AkUniqueID ROOMMUS = 427386941U;
         static const AkUniqueID SKELETONHIT = 2460311919U;
         static const AkUniqueID TESTEVENT = 1097980931U;
@@ -32,6 +37,34 @@ namespace AK
         static const AkUniqueID TESTLEVEREVENT = 1177918645U;
         static const AkUniqueID TESTMUSIC = 1324413170U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace CROWDSURFING
+        {
+            static const AkUniqueID GROUP = 2352559104U;
+
+            namespace STATE
+            {
+                static const AkUniqueID INCROWDSURF = 2260458779U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID OUTOFCROWDSURF = 2475500331U;
+            } // namespace STATE
+        } // namespace CROWDSURFING
+
+        namespace MUSICSTATE
+        {
+            static const AkUniqueID GROUP = 1021618141U;
+
+            namespace STATE
+            {
+                static const AkUniqueID COMBAT = 2764240573U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID PUZZLE = 1780448749U;
+            } // namespace STATE
+        } // namespace MUSICSTATE
+
+    } // namespace STATES
 
     namespace GAME_PARAMETERS
     {

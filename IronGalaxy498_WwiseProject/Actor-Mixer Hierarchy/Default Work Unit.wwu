@@ -940,6 +940,41 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="PlayerHurt" ID="{5ED0BC12-992E-4C3E-B69F-6DB5BDE85BE2}" ShortID="682256937">
+							<PropertyList>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="Impact" ID="{170FF16D-4134-4C94-B435-E68C4D33F05A}" ShortID="655417195">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="AfterWoosh" ID="{FBA4417E-5253-4C51-9A9F-B296B83B2808}" ShortID="7512179">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Interaction" ID="{85C831FA-85F4-4F5A-B48E-50F2D6F12C4A}" ShortID="221045545">
@@ -1470,6 +1505,949 @@
 									</Reference>
 								</ObjectList>
 							</ObjectLists>
+						</RandomSequenceContainer>
+						<Sound Name="CrowdSurf" ID="{43ECC8DC-D809-4BD1-9110-3026A59169C5}" ShortID="552762066">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-12</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="CrowdSurfLoop" ID="{45E25EFA-21E5-4009-AE03-18E59670E7EA}">
+									<PropertyList>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>CrowdSurfLoop.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="546120684"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="CrowdSurfLoop" ID="{45E25EFA-21E5-4009-AE03-18E59670E7EA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<RandomSequenceContainer Name="RockPlatformPuzzle" ID="{58713384-2328-4EAE-B81D-A084C8E5C586}" ShortID="309898155">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="RockPlatformPush1" ID="{D8D2D22A-EE88-4182-8E43-91B9737BEE47}" ShortID="241240747">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="RockPlatformPush1" ID="{2211C8FD-1D1F-4719-955A-82488B261F36}">
+											<Language>SFX</Language>
+											<AudioFile>RockPlatformPush1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="64644625"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="RockPlatformPush1" ID="{2211C8FD-1D1F-4719-955A-82488B261F36}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="RockPlatformPush2" ID="{67C38537-28EB-4C5D-806A-9B726F9D8C14}" ShortID="758305973">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="RockPlatformPush2" ID="{BA8DC280-E43C-4A47-8E84-CA5434BAD014}">
+											<Language>SFX</Language>
+											<AudioFile>RockPlatformPush2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="595136245"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="RockPlatformPush2" ID="{BA8DC280-E43C-4A47-8E84-CA5434BAD014}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+				</Folder>
+				<RandomSequenceContainer Name="LevelEnd" ID="{1964C497-A0CB-4E1D-843F-64649D241F1D}" ShortID="898460991">
+					<PropertyList>
+						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<RandomSequenceContainer Name="LevelEndGateOpen" ID="{5740B0DC-112F-49D0-9E37-B67EBC394F19}" ShortID="623710990">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="GateOpen" ID="{2004AF12-020B-4C6F-8663-5A906BF74FAA}" ShortID="914211124">
+									<PropertyList>
+										<Property Name="Weight" Type="Real64">
+											<ValueList>
+												<Value>25</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GateOpen" ID="{BDED0BFE-EB3E-4458-9E3B-1D59328F36C6}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0631256865352702"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.305107484920473"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0526047387793918"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.65791787422947"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>GateOpen.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="568257500"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GateOpen" ID="{BDED0BFE-EB3E-4458-9E3B-1D59328F36C6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="GateOpen_01" ID="{E878EC0B-6AAA-40E2-AEB8-56FCE9BE875C}" ShortID="146464752">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GateOpen" ID="{6CC759C6-0B7F-4DD6-963B-BD5F739A7A86}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0841675820470269"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.505005492282161"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.64656079956204"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.52330985150557"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>GateOpen.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="985564156"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GateOpen" ID="{6CC759C6-0B7F-4DD6-963B-BD5F739A7A86}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="GateOpen_02" ID="{57A6C74A-5D16-48A9-85F5-4DDEF661C02B}" ShortID="66646654">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GateOpen" ID="{DF87A0DA-5352-48FD-8ED5-BB413603079A}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0632363501480295"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.363609013351168"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.98260140550846"/>
+												<Property Name="TrimEnd" Type="Real64" Value="6.83548473602859"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>GateOpen.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="718078501"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GateOpen" ID="{DF87A0DA-5352-48FD-8ED5-BB413603079A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="GateOpen_03" ID="{6137BFAF-91AC-4F3C-8E04-2A93CF5439A6}" ShortID="676700848">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GateOpen" ID="{CB6422EB-5E73-405D-BEA7-962ED16D73E6}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.05"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.509549102432468"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="7.68268042536213"/>
+												<Property Name="TrimEnd" Type="Real64" Value="9.33493820758336"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>GateOpen.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="651268478"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GateOpen" ID="{CB6422EB-5E73-405D-BEA7-962ED16D73E6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="GateOpen_04" ID="{A67C499E-952C-4743-B35E-5537E25A0DAF}" ShortID="968033370">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GateOpen" ID="{A2143C44-BD73-4819-BF56-051CA21E8A5E}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.05"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.455114706401513"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="11.0676767899027"/>
+												<Property Name="TrimEnd" Type="Real64" Value="12.5856940285568"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>GateOpen.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="620045000"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GateOpen" ID="{A2143C44-BD73-4819-BF56-051CA21E8A5E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="GateOpen_05" ID="{BC086A6A-2BFD-45F4-87E1-24F43AA380D2}" ShortID="173616234">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GateOpen" ID="{139F2E50-1413-46A1-ADFA-3BA2581F8B30}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0457287656029131"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.32663404002081"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="13.6736517535585"/>
+												<Property Name="TrimEnd" Type="Real64" Value="15.266887186662"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>GateOpen.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="327120337"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GateOpen" ID="{139F2E50-1413-46A1-ADFA-3BA2581F8B30}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="GateOpen_06" ID="{143751D5-1A5F-4B3C-9D91-EBCC68B02C4F}" ShortID="449255835">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GateOpen" ID="{F552256E-8439-4555-B1E5-D43FF4C91A1A}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.05"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.388721502173532"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="16.223637794117"/>
+												<Property Name="TrimEnd" Type="Real64" Value="17.7973708920188"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>GateOpen.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="271985866"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GateOpen" ID="{F552256E-8439-4555-B1E5-D43FF4C91A1A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="GateOpen_07" ID="{16F267E1-E5F2-4876-A278-38DE7BFE1B1E}" ShortID="940641339">
+									<PropertyList>
+										<Property Name="Weight" Type="Real64">
+											<ValueList>
+												<Value>75</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="GateOpen" ID="{CFF1D88B-E4E5-445D-97FD-61EFD03C6590}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.05"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.30000347928283"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="18.7960317654415"/>
+												<Property Name="TrimEnd" Type="Real64" Value="22.4445437835533"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>GateOpen.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="296816978"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="GateOpen" ID="{CFF1D88B-E4E5-445D-97FD-61EFD03C6590}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="DoorRumble" ID="{77F8FFFD-15C7-442B-906D-73F574B553DD}" ShortID="202780271">
+							<PropertyList>
+								<Property Name="Lowpass" Type="int16">
+									<ValueList>
+										<Value>25</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309" ID="{A11F21AA-42BB-468D-A8D2-0A44616E52A5}" ShortID="903209829">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309" ID="{056B437C-91BF-454E-9DB9-BE2CB6276DF9}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.14340377678607"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.824571716519902"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.197180193080846"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.56633940904718"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="968532410"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309" ID="{056B437C-91BF-454E-9DB9-BE2CB6276DF9}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_01" ID="{BB8C5833-77A6-4593-A7EA-3AB7D3B34B20}" ShortID="875794833">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309" ID="{EF7F5D07-FC27-4BBE-8CE3-D0DA12131DB6}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.134676725005701"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.68958073188969"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="7.35918952216559"/>
+												<Property Name="TrimEnd" Type="Real64" Value="11.234621271946"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="555433054"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309" ID="{EF7F5D07-FC27-4BBE-8CE3-D0DA12131DB6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_02" ID="{38D990EA-35BB-4E59-924A-1F08E85DEE10}" ShortID="567879457">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309" ID="{165FD927-BA09-4B1C-8442-E8403F7953B6}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.133329957755645"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.92587716758152"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="14.0248831382416"/>
+												<Property Name="TrimEnd" Type="Real64" Value="18.0324985352051"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="914480457"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309" ID="{165FD927-BA09-4B1C-8442-E8403F7953B6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_03" ID="{5C82827E-8D99-4D7D-8EFD-45606896B3BD}" ShortID="306607835">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309" ID="{FE6C971A-15F7-41D4-9FA0-A7DEB238B7DF}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.208136756826988"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="2.06912422963303"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="21.8723253933481"/>
+												<Property Name="TrimEnd" Type="Real64" Value="26.484694900081"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="577030918"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309" ID="{FE6C971A-15F7-41D4-9FA0-A7DEB238B7DF}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_04" ID="{36DDF2BB-84A6-4E64-A3DC-9721682D4EDB}" ShortID="1029507771">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309" ID="{9FBC1991-03BC-4E00-9790-DA7CD6642875}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.161612070006839"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.73732975257353"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="28.7579483829881"/>
+												<Property Name="TrimEnd" Type="Real64" Value="32.5932834024823"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="167300729"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309" ID="{9FBC1991-03BC-4E00-9790-DA7CD6642875}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="Playlist">
+							<Reference>
+								<ObjectRef Name="DoorRumble" ID="{77F8FFFD-15C7-442B-906D-73F574B553DD}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+							</Reference>
+							<Reference>
+								<ObjectRef Name="LevelEndGateOpen" ID="{5740B0DC-112F-49D0-9E37-B67EBC394F19}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+							</Reference>
+						</ObjectList>
+					</ObjectLists>
+				</RandomSequenceContainer>
+				<Folder Name="UI" ID="{210F7DCB-F88C-47B3-8D1C-BBE5D32AA47F}" ShortID="72009929">
+					<ChildrenList>
+						<RandomSequenceContainer Name="ButtonHover" ID="{DAEE19E8-BBAA-4EAD-BDA1-DC4B39832920}" ShortID="1033242055">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="LotsOfSmallScratch" ID="{8301E5A3-7917-4A79-8E54-8133CAEA6C3E}" ShortID="1061354064">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="LotsOfSmallScratch" ID="{9AF5B085-F5F1-4E79-9FB1-29BE9E36E3EE}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.021380490549392"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0427609810987839"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="3.82049764481563"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.03367538463075"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>LotsOfSmallScratch.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="20835932"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="LotsOfSmallScratch" ID="{9AF5B085-F5F1-4E79-9FB1-29BE9E36E3EE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SmallScratch" ID="{E5ACC58F-0D96-4683-A6EE-9F824AED1BEA}" ShortID="294823485">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SmallScratch" ID="{34E2D238-9641-4F09-BA49-69EB3B631545}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0103501368613139"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0483006386861314"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>SmallScratch.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="989052792"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SmallScratch" ID="{34E2D238-9641-4F09-BA49-69EB3B631545}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SmollScratch" ID="{8EB39ED1-B513-464E-A3D4-F67A3863A4C8}" ShortID="116105535">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>4</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SmollScratch" ID="{F2CFDBCC-265D-4E82-A878-6EF7B1DCB1D4}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0282192822384428"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0897886253041362"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.165467609489051"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>SmollScratch.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="624941402"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SmollScratch" ID="{F2CFDBCC-265D-4E82-A878-6EF7B1DCB1D4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="SmolScratch" ID="{CB736DBF-FC8D-4DE2-993B-21C4C54D542F}" ShortID="270163771">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="SmolScratch" ID="{9E257046-6B93-454C-9485-1DFA0DB99286}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0153647607461476"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0242693379967559"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>SmolScratch.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="404034492"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="SmolScratch" ID="{9E257046-6B93-454C-9485-1DFA0DB99286}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="LotsOfSmallScratch_01" ID="{00D56908-736D-4B8C-858B-F04A524C4101}" ShortID="841690302">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="LotsOfSmallScratch" ID="{7269F18A-FC58-451F-AEF5-BA7B950C2E95}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.021380490549392"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0427609810987839"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.0148657407192"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.23157744591438"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>LotsOfSmallScratch.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="891929607"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="LotsOfSmallScratch" ID="{7269F18A-FC58-451F-AEF5-BA7B950C2E95}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="LotsOfSmallScratch_02" ID="{8AF4CD50-1541-4870-8A51-C1A37CF4B21B}" ShortID="1029053097">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="LotsOfSmallScratch" ID="{C9CECA7E-F823-434D-A6E7-DFC21515A83B}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.021380490549392"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0427609810987839"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="5.10675926941919"/>
+												<Property Name="TrimEnd" Type="Real64" Value="5.25528502077096"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>LotsOfSmallScratch.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="870905338"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="LotsOfSmallScratch" ID="{C9CECA7E-F823-434D-A6E7-DFC21515A83B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="ButtonPress" ID="{2A9D8BE8-B39B-439C-88FE-6403DD313180}" ShortID="707836110">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Communications, Phonograph, Vinyl, Record Scratch 14 SND13866" ID="{74F49ACA-0DB6-4F0D-95E7-11C6828B6C5A}" ShortID="259559835">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Communications, Phonograph, Vinyl, Record Scratch 14 SND13866" ID="{D44B95F5-30E5-4A91-B200-A40F482F711F}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.00699949310624493"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0543806772100568"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0161526763990268"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.432353304947283"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Communications, Phonograph, Vinyl, Record Scratch 14 SND13866.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="188725556"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Communications, Phonograph, Vinyl, Record Scratch 14 SND13866" ID="{D44B95F5-30E5-4A91-B200-A40F482F711F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Communications, Phonograph, Vinyl, Record Scratch 09 SND13871" ID="{1520CA22-B613-493D-9BC9-6F71D34875D5}" ShortID="76488062">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Communications, Phonograph, Vinyl, Record Scratch 09 SND13871" ID="{11DC76AB-463E-4836-B99C-EAB5E714B937}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0236370640713706"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0472741281427413"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0664792427007299"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.95434646188159"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Communications, Phonograph, Vinyl, Record Scratch 09 SND13871.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="859013703"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Communications, Phonograph, Vinyl, Record Scratch 09 SND13871" ID="{11DC76AB-463E-4836-B99C-EAB5E714B937}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Communications, Phonograph, Vinyl, Record Scratch 08 SND13872" ID="{83EB6033-67AD-49EA-AA96-61D6607500B2}" ShortID="758674964">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Communications, Phonograph, Vinyl, Record Scratch 08 SND13872" ID="{FE301517-C4A0-4995-AAB9-1C6294525773}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0179967558799676"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0956077656123276"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0134975669099757"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.690625506893755"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Communications, Phonograph, Vinyl, Record Scratch 08 SND13872.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="73496553"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Communications, Phonograph, Vinyl, Record Scratch 08 SND13872" ID="{FE301517-C4A0-4995-AAB9-1C6294525773}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Communications, Phonograph, Vinyl, Record Scratch 04 SND13876 1" ID="{F7A6F7A1-6AF7-4AED-BCE8-7CC5EDF6EB9F}" ShortID="190505776">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Communications, Phonograph, Vinyl, Record Scratch 04 SND13876 1" ID="{F55E2963-14E9-43F0-A64F-C796C92787B6}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0158994829683698"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0823882299270073"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0563708941605839"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.576717609489051"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Communications, Phonograph, Vinyl, Record Scratch 04 SND13876 1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="647426739"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Communications, Phonograph, Vinyl, Record Scratch 04 SND13876 1" ID="{F55E2963-14E9-43F0-A64F-C796C92787B6}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="PlayButton" ID="{2C47BC27-A9B9-482C-A4AE-F599F7A8F9DA}" ShortID="164386459">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="Communications, Phonograph, Transition, Scratch, Rewind, Vinyl 01 SND61199" ID="{6AF594EF-0ADD-4927-9E64-CB7C0ABEB85E}" ShortID="409565577">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Communications, Phonograph, Transition, Scratch, Rewind, Vinyl 01 SND61199" ID="{B87A4ADE-1AFB-419A-9CAC-45D2C773C143}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0750107714922952"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0885127103609084"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Communications, Phonograph, Transition, Scratch, Rewind, Vinyl 01 SND61199.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="680414174"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Communications, Phonograph, Transition, Scratch, Rewind, Vinyl 01 SND61199" ID="{B87A4ADE-1AFB-419A-9CAC-45D2C773C143}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PlayRecordScratch" ID="{3B3ED86E-A969-4FA3-9952-3B9E7168B615}" ShortID="113539219">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PlayRecordScratch" ID="{9BF3458E-FA3C-4DAA-A267-2AC8B7701399}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.672839111922141"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PlayRecordScratch.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="766739187"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PlayRecordScratch" ID="{9BF3458E-FA3C-4DAA-A267-2AC8B7701399}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
 						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>

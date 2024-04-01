@@ -238,11 +238,48 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="PlayerHurt" ID="{1B39E77C-A5F7-4D4F-9C4B-84386FB9BB5E}"/>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
 				</Folder>
-				<Folder Name="UI" ID="{1E7CEFDD-5652-4F27-ADEE-B90BB1D0DC65}" ShortID="1046850686"/>
+				<Folder Name="UI" ID="{1E7CEFDD-5652-4F27-ADEE-B90BB1D0DC65}" ShortID="1046850686">
+					<ChildrenList>
+						<Event Name="ButtonHover" ID="{2E9A1E32-4B6E-4318-9314-4B317C8E9C7E}">
+							<ChildrenList>
+								<Action Name="" ID="{16D21EE0-7064-4C98-BAA3-99F80BF2B435}" ShortID="487217139">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ButtonHover" ID="{DAEE19E8-BBAA-4EAD-BDA1-DC4B39832920}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="ButtonPress" ID="{91C505DB-4BAF-4704-93EE-A012ADC7969B}">
+							<ChildrenList>
+								<Action Name="" ID="{1F4C9282-2CF0-4079-B9B4-883DE316367A}" ShortID="360894515">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ButtonPress" ID="{2A9D8BE8-B39B-439C-88FE-6403DD313180}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="PlayButton" ID="{1A712861-E6EA-4245-B32A-51A29C475347}">
+							<ChildrenList>
+								<Action Name="" ID="{6292D0A1-B9A9-4E9D-BA52-E083460567F5}" ShortID="798142044">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="PlayButton" ID="{2C47BC27-A9B9-482C-A4AE-F599F7A8F9DA}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 				<Folder Name="Environment" ID="{495CEB0B-19F3-4C51-82DA-A3E0247F5970}" ShortID="275595311">
 					<ChildrenList>
 						<Folder Name="Interaction" ID="{D829150B-3A9C-4883-8A05-0B39146211A5}" ShortID="599218656">
@@ -300,6 +337,41 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="CrowdSurf" ID="{35B6F48E-2E81-40BC-9E79-98B65CA78D0E}">
+									<ChildrenList>
+										<Action Name="" ID="{9D8197F1-8FFB-4061-91A2-5F3BCF8B0C55}" ShortID="413249491">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="InCrowdSurf" ID="{184A1F32-FFC0-4B45-92B7-DE526EA782E8}" WorkUnitID="{BF59D2A2-7D14-4BA5-BC8C-398EC0CC8741}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{31C0AC7F-C542-4E53-A678-F977518C74B0}" ShortID="133828179">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="1.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CrowdSurf" ID="{43ECC8DC-D809-4BD1-9110-3026A59169C5}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="RockPlatformPuzzle" ID="{FEE64AC3-4A2D-4F96-A3C7-C5127E16B7A3}">
+									<ChildrenList>
+										<Action Name="" ID="{6D38AE09-112B-48B0-B644-44A97D855408}" ShortID="630720702">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="RockPlatformPuzzle" ID="{58713384-2328-4EAE-B81D-A084C8E5C586}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Music" ID="{9CEEF249-6CBE-4183-A578-17E6A24E7BCD}" ShortID="271145348">
@@ -317,6 +389,27 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
+						<Event Name="LevelComplete" ID="{4FDBF72F-D683-4B71-A163-8BB18C120D26}">
+							<ChildrenList>
+								<Action Name="" ID="{1935F6CC-DE4E-454D-B49A-5C2112E85091}" ShortID="327332019">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="DoorRumble" ID="{77F8FFFD-15C7-442B-906D-73F574B553DD}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{96450CD6-D7FE-4EF1-87A4-718050A2DEA3}" ShortID="656368555">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="0.2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="LevelEndGateOpen" ID="{5740B0DC-112F-49D0-9E37-B67EBC394F19}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Enemies" ID="{2A8FF2E8-9C80-4D77-96DF-0BA597415A5C}" ShortID="957307035">

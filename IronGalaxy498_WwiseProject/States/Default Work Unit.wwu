@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{BF59D2A2-7D14-4BA5-BC8C-398EC0CC8741}" SchemaVersion="119">
 	<States>
-		<WorkUnit Name="Default Work Unit" ID="{BF59D2A2-7D14-4BA5-BC8C-398EC0CC8741}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{BF59D2A2-7D14-4BA5-BC8C-398EC0CC8741}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="CrowdSurfing" ID="{4F9FFB14-EED9-42C2-B476-BADD686255F6}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0"/>
+					</PropertyList>
+					<ChildrenList>
+						<State Name="None" ID="{58418D74-A481-44EC-B555-85A5BDD123D8}"/>
+						<State Name="InCrowdSurf" ID="{184A1F32-FFC0-4B45-92B7-DE526EA782E8}"/>
+						<State Name="OutOfCrowdSurf" ID="{847FC695-15DF-4675-8AB1-03EEE006B583}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
 	</States>
 </WwiseDocument>

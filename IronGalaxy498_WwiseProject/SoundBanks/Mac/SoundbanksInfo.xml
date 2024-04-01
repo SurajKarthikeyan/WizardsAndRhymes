@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{0FB799F3-D359-FE71-24E3-065099C4E78C}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{D2297BCF-9C94-4B32-EF58-AB639F34C8D7}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -93,14 +93,34 @@
 				<GameParameter Id="2918011349" Name="MasterVolume"/>
 				<GameParameter Id="3550808449" Name="High"/>
 			</GameParameters>
+			<StateGroups>
+				<StateGroup Id="1021618141" Name="MusicState">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="1780448749" Name="Puzzle"/>
+						<State Id="2764240573" Name="Combat"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="2352559104" Name="CrowdSurfing">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="2260458779" Name="InCrowdSurf"/>
+						<State Id="2475500331" Name="OutOfCrowdSurf"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{75C7FF50-B771-B5D5-17CE-EC8DEDEFCAE7}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{F918C60A-D04B-45F4-7213-097DB7E6D9E6}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
 				<File Id="5318352" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Zap2.wav</ShortName>
 					<CachePath>SFX/Zap2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="20835932" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>LotsOfSmallScratch.wav</ShortName>
+					<CachePath>SFX/LotsOfSmallScratch_F2771B8A.wem</CachePath>
 				</File>
 				<File Id="28928322" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Kick3.wav</ShortName>
@@ -117,6 +137,14 @@
 				<File Id="59239616" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MicTap1.wav</ShortName>
 					<CachePath>SFX/MicTap1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="64644625" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RockPlatformPush1.wav</ShortName>
+					<CachePath>SFX/RockPlatformPush1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="73496553" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Communications, Phonograph, Vinyl, Record Scratch 08 SND13872.wav</ShortName>
+					<CachePath>SFX/Communications, Phonograph, Vinyl, Record Scratch 08 SND13872_204509F1.wem</CachePath>
 				</File>
 				<File Id="83311950" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Initial498ConceptMusB2.wav</ShortName>
@@ -150,6 +178,10 @@
 					<ShortName>Fire3.wav</ShortName>
 					<CachePath>SFX/Fire3_818F3B66.wem</CachePath>
 				</File>
+				<File Id="188725556" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Communications, Phonograph, Vinyl, Record Scratch 14 SND13866.wav</ShortName>
+					<CachePath>SFX/Communications, Phonograph, Vinyl, Record Scratch 14 SND13866_1CB970D3.wem</CachePath>
+				</File>
 				<File Id="242173308" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Underground50S3.wav</ShortName>
 					<CachePath>SFX/Underground50S3_FBC78EF0.wem</CachePath>
@@ -178,6 +210,10 @@
 					<ShortName>Shimmer1.wav</ShortName>
 					<CachePath>SFX/Shimmer1_818F3B66.wem</CachePath>
 				</File>
+				<File Id="404034492" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SmolScratch.wav</ShortName>
+					<CachePath>SFX/SmolScratch_E404ADC9.wem</CachePath>
+				</File>
 				<File Id="437516516" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Space SHMUP music.wav</ShortName>
 					<CachePath>SFX/Space SHMUP music_818F3B66.wem</CachePath>
@@ -202,6 +238,10 @@
 					<ShortName>MicTap3.wav</ShortName>
 					<CachePath>SFX/MicTap3_818F3B66.wem</CachePath>
 				</File>
+				<File Id="546120684" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CrowdSurfLoop.wav</ShortName>
+					<CachePath>SFX/CrowdSurfLoop_11A93380.wem</CachePath>
+				</File>
 				<File Id="560172071" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>EnemyHitFull.wav</ShortName>
 					<CachePath>SFX/EnemyHitFull_651E6C52.wem</CachePath>
@@ -214,6 +254,10 @@
 					<ShortName>EnemyHitFull.wav</ShortName>
 					<CachePath>SFX/EnemyHitFull_2D5FA1F8.wem</CachePath>
 				</File>
+				<File Id="595136245" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RockPlatformPush2.wav</ShortName>
+					<CachePath>SFX/RockPlatformPush2_818F3B66.wem</CachePath>
+				</File>
 				<File Id="596267822" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>EnemyHitFull.wav</ShortName>
 					<CachePath>SFX/EnemyHitFull_8DF2FD27.wem</CachePath>
@@ -222,9 +266,17 @@
 					<ShortName>IceBlockWooshes.wav</ShortName>
 					<CachePath>SFX/IceBlockWooshes_40878711.wem</CachePath>
 				</File>
+				<File Id="624941402" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SmollScratch.wav</ShortName>
+					<CachePath>SFX/SmollScratch_33CB0FF1.wem</CachePath>
+				</File>
 				<File Id="630432816" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Lever1.wav</ShortName>
 					<CachePath>SFX/Lever1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="647426739" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Communications, Phonograph, Vinyl, Record Scratch 04 SND13876 1.wav</ShortName>
+					<CachePath>SFX/Communications, Phonograph, Vinyl, Record Scratch 04 SND13876 1_7DC8EE71.wem</CachePath>
 				</File>
 				<File Id="654079656" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fire1.wav</ShortName>
@@ -242,6 +294,10 @@
 					<ShortName>Kick2.wav</ShortName>
 					<CachePath>SFX/Kick2_818F3B66.wem</CachePath>
 				</File>
+				<File Id="680414174" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Communications, Phonograph, Transition, Scratch, Rewind, Vinyl 01 SND61199.wav</ShortName>
+					<CachePath>SFX/Communications, Phonograph, Transition, Scratch, Rewind, Vinyl 01 SND61199_CCC0F6F7.wem</CachePath>
+				</File>
 				<File Id="706702062" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CrystalShimmers.wav</ShortName>
 					<CachePath>SFX/CrystalShimmers_C3225900.wem</CachePath>
@@ -249,6 +305,10 @@
 				<File Id="733335054" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>IceBlockWooshes.wav</ShortName>
 					<CachePath>SFX/IceBlockWooshes_861873C6.wem</CachePath>
+				</File>
+				<File Id="766739187" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayRecordScratch.wav</ShortName>
+					<CachePath>SFX/PlayRecordScratch_B40E1A19.wem</CachePath>
 				</File>
 				<File Id="771010357" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>IceBlockWooshes.wav</ShortName>
@@ -262,9 +322,21 @@
 					<ShortName>CrystalShimmers.wav</ShortName>
 					<CachePath>SFX/CrystalShimmers_9DF8CA20.wem</CachePath>
 				</File>
+				<File Id="859013703" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Communications, Phonograph, Vinyl, Record Scratch 09 SND13871.wav</ShortName>
+					<CachePath>SFX/Communications, Phonograph, Vinyl, Record Scratch 09 SND13871_1A8B9097.wem</CachePath>
+				</File>
+				<File Id="870905338" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>LotsOfSmallScratch.wav</ShortName>
+					<CachePath>SFX/LotsOfSmallScratch_06960399.wem</CachePath>
+				</File>
 				<File Id="871275059" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>242503__gabrielaraujo__failure-wrong-action.wav</ShortName>
 					<CachePath>SFX/242503__gabrielaraujo__failure-wrong-action_818F3B66.wem</CachePath>
+				</File>
+				<File Id="891929607" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>LotsOfSmallScratch.wav</ShortName>
+					<CachePath>SFX/LotsOfSmallScratch_9295C03D.wem</CachePath>
 				</File>
 				<File Id="896693686" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>EnemyHitFull.wav</ShortName>
@@ -294,12 +366,42 @@
 					<ShortName>IceBlockWooshes.wav</ShortName>
 					<CachePath>SFX/IceBlockWooshes_1AE3F1DC.wem</CachePath>
 				</File>
+				<File Id="989052792" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SmallScratch.wav</ShortName>
+					<CachePath>SFX/SmallScratch_925ABC86.wem</CachePath>
+				</File>
 				<File Id="1032575052" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>IceBlockWooshes.wav</ShortName>
 					<CachePath>SFX/IceBlockWooshes_BA941C4D.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
+				<Event Id="3035572085" Name="ButtonHover" DurationType="OneShot" DurationMin="0.14352083" DurationMax="0.36171988">
+					<MediaRefs>
+						<MediaRef Id="20835932"/>
+						<MediaRef Id="404034492"/>
+						<MediaRef Id="624941402"/>
+						<MediaRef Id="870905338"/>
+						<MediaRef Id="891929607"/>
+						<MediaRef Id="989052792"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="317641954" Name="ButtonPress" DurationType="OneShot" DurationMin="0.41620064" DurationMax="0.8878672">
+					<MediaRefs>
+						<MediaRef Id="73496553"/>
+						<MediaRef Id="188725556"/>
+						<MediaRef Id="647426739"/>
+						<MediaRef Id="859013703"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1739654744" Name="CrowdSurf" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="546120684"/>
+					</MediaRefs>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="2352559104" Id="2260458779" Name="InCrowdSurf"/>
+					</ActionSetState>
+				</Event>
 				<Event Id="3444057113" Name="Crystal" DurationType="OneShot" DurationMin="3.4768662" DurationMax="4.176854">
 					<MediaRefs>
 						<MediaRef Id="108359842"/>
@@ -376,6 +478,12 @@
 						<MediaRef Id="871275059"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="1843531235" Name="PlayButton" DurationType="OneShot" DurationMin="1.1446644" DurationMax="2.1689167">
+					<MediaRefs>
+						<MediaRef Id="680414174"/>
+						<MediaRef Id="766739187"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3855831843" Name="ProtoCombatLoop" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="930081507"/>
@@ -411,6 +519,12 @@
 						<MediaRef Id="397062548"/>
 						<MediaRef Id="664797136"/>
 						<MediaRef Id="909458974"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1518733879" Name="RockPlatformPuzzle" DurationType="OneShot" DurationMin="3.515" DurationMax="3.7346876">
+					<MediaRefs>
+						<MediaRef Id="64644625"/>
+						<MediaRef Id="595136245"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="427386941" Name="RoomMus" DurationType="Infinite">
@@ -456,7 +570,16 @@
 					</MediaRefs>
 				</Event>
 			</Events>
+			<StateGroups>
+				<StateGroup Id="2352559104" Name="CrowdSurfing">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="2260458779" Name="InCrowdSurf"/>
+						<State Id="2475500331" Name="OutOfCrowdSurf"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{AA948E46-610B-151C-DCA5-34922001EFB4}</FileHash>
+	<FileHash>{4DB8F5B1-8AC3-EF70-D9D3-1891D0153083}</FileHash>
 </SoundBanksInfo>
