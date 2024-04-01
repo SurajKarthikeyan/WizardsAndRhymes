@@ -93,9 +93,10 @@ public abstract class BaseStrafeEnemy : BaseEnemyBehavior
                  * Check is here because navMesh and Unity physics do not play nice with each other
                  * This is when the enemy is currently lunging at the player
                  */
-                if (rb.velocity.magnitude <= 0.5f)
+                if (rb.velocity.magnitude <= 0.5f) // slowed down and no longer attacking
                 {
                     //All this is to get the navMesh back following the player
+                    //YOU HAVE FINISHED THE DISTANCE TO MELEE
                     navMeshAgent.enabled = true;
                     rb.isKinematic = true;
                     behaviorState = EnemyBehaviorState.TrackingPlayer;
