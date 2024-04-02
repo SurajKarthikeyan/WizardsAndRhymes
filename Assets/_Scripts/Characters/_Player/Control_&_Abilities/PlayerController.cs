@@ -73,12 +73,16 @@ public class PlayerController : Singleton<PlayerController>
 
     #region Aiming Variables
     [Header("Aiming Variables")]
+    
+    [Tooltip("Constant used in helping player aim")]
+    public float aimAdjustmentConstant = 0f;
+    
+    
     [Tooltip("LayerMask that is assigned for help in player aiming")]
     [SerializeField]
     private LayerMask lookLayerMask;
 
-    [Tooltip("Constant used in helping player aim")]
-    private const float aimAdjustmentConstant = 1.75f;
+    
     #endregion
     
     #region Dashing Variables

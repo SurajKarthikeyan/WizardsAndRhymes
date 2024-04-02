@@ -5,6 +5,12 @@ using UnityEngine;
 /// </summary>
 public class PlayerHealth : Health
 {
+    #region Vars
+
+    [SerializeField] private AK.Wwise.Event playerHurtSoundEffect;
+ 
+    #endregion
+    
     #region Custom Methods
     /// <summary>
     /// Overridden function of all deaths
@@ -20,6 +26,12 @@ public class PlayerHealth : Health
     {
         Debug.Log("PlayerDeath");
         Heal(0, true);
+    }
+
+    public override void TakeDamage(float value, DamageType dType)
+    {
+        base.TakeDamage(value, dType);
+        playerHurtSoundEffect.Post(this.gameObject);
     }
     #endregion
 }
