@@ -16,7 +16,7 @@ public class Door : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameEnd.gameEnd.OpenDoorUI();   // open door to next room
+            // GameEnd.gameEnd.OpenDoorUI();   // open door to next room
         }
     }
 

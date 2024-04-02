@@ -48,20 +48,10 @@ public class LoadSubSceneTrigger : MonoBehaviour
 
     private void SubsceneLoadOperation_completed(AsyncOperation obj)
     {
-        // Once the subscene is loaded, find its root GameObject
-        GameObject subsceneRoot = SceneManager.GetSceneByName(subscene).GetRootGameObjects()[0];
-
-        // Parent the subscene root GameObject to an appropriate GameObject in the main scene
-        subsceneRoot.transform.SetParent(transform);
-
-        // Optionally, activate the subscene (make it visible)
-        subsceneRoot.SetActive(true);
-
         isLoaded = true;
 
         isLoadingScene = false;
-
-
+        
         Debug.Log("Scene loaded");
     }
     

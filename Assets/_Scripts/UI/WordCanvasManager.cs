@@ -43,7 +43,7 @@ public class WordCanvasManager : MonoBehaviour
             }
         }
 
-        GameEnd.gameEnd.OpenDoorUI();
+        // GameEnd.gameEnd.OpenDoorUI();
         wordCanvas.gameObject.SetActive(false);
         return true;
     }
