@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +8,36 @@ using UnityEngine;
 /// </summary>
 public class PlayerStatusUI : MonoBehaviour
 {
+    #region Variables
+    /// <summary>
+    /// First word in canvas
+    /// </summary>
     public GameObject word1;
     
+    /// <summary>
+    /// Second word in canvas
+    /// </summary>
     public GameObject word2;
 
+    /// <summary>
+    /// Third word in canvas
+    /// </summary>
     public GameObject word3;
+    #endregion
 
-    // Update is called once per frame
+    #region Unity Methods
+    /// <summary>
+    /// Function called on scene load
+    /// </summary>
+    private void Start()
+    {
+        //Temporarily gives the player the first word
+        FlagManager.instance.SetFlag("word1", true);
+    }
+
+    /// <summary>
+    /// Function called once per frame
+    /// </summary>
     void Update()
     {
         if (!word1.activeInHierarchy)
@@ -31,4 +55,5 @@ public class PlayerStatusUI : MonoBehaviour
             word3.SetActive(FlagManager.instance.GetFlag("word3"));
         }
     }
+    #endregion
 }
