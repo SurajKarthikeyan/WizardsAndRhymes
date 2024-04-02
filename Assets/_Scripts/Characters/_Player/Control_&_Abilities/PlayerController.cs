@@ -551,16 +551,12 @@ public class PlayerController : Singleton<PlayerController>
     /// <param name="obj">Input callback context for the dash</param>
     private void DoDash(InputAction.CallbackContext obj)
     {
-        Debug.Log("Made it into DoDash");
         if (IsMovementLocked()) //Cannot dash with a movement lock in place
             return;
-
-        Debug.Log("Made it into DoDash");
+        
         abilityManager.ResetAbilityRecharge();
-        Debug.Log("Past ability recharge");
         if (IsValidDash())
         {
-            Debug.Log("Starting dash coroutine");
             StartCoroutine(Dash());
         }
     }
@@ -634,7 +630,6 @@ public class PlayerController : Singleton<PlayerController>
     #region Attack Combo Methods
     IEnumerator AttackDelay(float seconds)
     {
-        Debug.Log(abilityManager.successiveAttacks);
         if (abilityManager.successiveAttacks >= 3)
         {
             yield return new WaitForSeconds(seconds);
@@ -696,12 +691,10 @@ public class PlayerController : Singleton<PlayerController>
         {
             if (abilityManager.currentAbilityValue >= abilityManager.dashAbilityCost && dashCooldownTimer >= dashCooldownThreshold)
             {
-                Debug.Log("Is valid dash");
                 return true;
             }
         }
         //If we do not hit any ground
-        Debug.Log("Is not valid dash");
         return false;
     }
 

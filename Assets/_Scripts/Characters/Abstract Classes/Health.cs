@@ -75,6 +75,11 @@ public class Health : MonoBehaviour
     {
         currentHP -= value;
         damageFeedbacks?.PlayFeedbacks();
+
+        if (currentHP <= 0)
+        {
+            Death();
+        }
     }
 
     
