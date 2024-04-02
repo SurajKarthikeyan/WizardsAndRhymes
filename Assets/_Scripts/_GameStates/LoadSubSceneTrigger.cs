@@ -1,8 +1,5 @@
-using System.Collections;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
 
 public class LoadSubSceneTrigger : MonoBehaviour
 {

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 /**
@@ -10,6 +11,8 @@ public class FlagManager : Singleton<FlagManager>
     #region Variables
     [Tooltip("Dictionary containing all the flags throughout the game")]
     private Dictionary<string, bool> flags = new Dictionary<string, bool>();
+
+    public List<string> wordFlags = new List<string>();
     #endregion
     
     #region Unity Methods
@@ -58,6 +61,19 @@ public class FlagManager : Singleton<FlagManager>
     public void ClearFlags()
     {
         flags.Clear();
+    }
+
+    public bool HasAllWordFlags()
+    {
+        foreach (string wordFlag in wordFlags)
+        {
+            if (!(flags.ContainsKey(wordFlag) && flags[wordFlag]))
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
     #endregion
 }

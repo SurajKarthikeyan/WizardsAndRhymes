@@ -74,10 +74,6 @@ public class PlayerController : Singleton<PlayerController>
     #region Aiming Variables
     [Header("Aiming Variables")]
     
-    [Tooltip("Constant used in helping player aim")]
-    public float aimAdjustmentConstant = 0f;
-    
-    
     [Tooltip("LayerMask that is assigned for help in player aiming")]
     [SerializeField]
     private LayerMask lookLayerMask;
@@ -451,8 +447,6 @@ public class PlayerController : Singleton<PlayerController>
             if (Physics.Raycast(ray, out RaycastHit raycastHit, float.MaxValue, lookLayerMask))
             {
                 attackDirection = raycastHit.point - transform.position;
-                float sinY = Mathf.Abs(Mathf.Sin(transform.rotation.eulerAngles.y * Mathf.Deg2Rad));
-                attackDirection.z -= aimAdjustmentConstant * sinY;
                 attackDirection.y = 0;
             }
 
