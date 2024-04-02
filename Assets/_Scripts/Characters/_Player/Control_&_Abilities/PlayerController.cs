@@ -199,6 +199,9 @@ public class PlayerController : Singleton<PlayerController>
     [Tooltip("Pause menu active state")]
     [SerializeField] private bool isPaused;
     
+   
+    #endregion
+    
     [Header("Script References")]
     [Tooltip("C# Class that handles all of the player abilities")]
     [SerializeField]
@@ -242,7 +245,7 @@ public class PlayerController : Singleton<PlayerController>
         get
         {
             return !(0 > Input.mousePosition.x || 0 > Input.mousePosition.y ||
-                Screen.width < Input.mousePosition.x || Screen.height < Input.mousePosition.y);
+                     Screen.width < Input.mousePosition.x || Screen.height < Input.mousePosition.y);
         }
     }
 
@@ -253,7 +256,6 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")] 
     [Tooltip("Player Animator")]
     [SerializeField] private Animator playerAnimator;
-    #endregion
     
     #endregion
 
