@@ -78,7 +78,6 @@ public class IndividualEmissionChange : MonoBehaviour
             while(timer < timeToFullEmission)
             {
                 color = Vector4.Lerp(color, maxEmissionValue, timer / timeToFullEmission);
-                Debug.Log(color);
                 newMaterial.SetColor("_EmissionColor", color);
                 go.GetComponent<Renderer>().material = newMaterial;
                 timer += Time.deltaTime;
@@ -92,7 +91,7 @@ public class IndividualEmissionChange : MonoBehaviour
             while(timer < timeToFullEmission)
             {
                 color = Vector4.Lerp(color, minEmissionValue, timer / timeToFullEmission);
-                Debug.Log(color);
+
                 newMaterial.SetColor("_EmissionColor", color);
                 go.GetComponent<Renderer>().material = newMaterial;
                 timer += Time.deltaTime;

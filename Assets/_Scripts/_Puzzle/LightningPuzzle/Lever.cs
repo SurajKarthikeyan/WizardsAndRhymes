@@ -119,7 +119,7 @@ public class Lever : MonoBehaviour
     {
         for (int i = 0; i < otherLevers.Count; i++)
         {
-            otherLevers[i].LeverSwitch(false, false, false);
+            otherLevers[i].LeverSwitch(false, false, true);
         }
     }
     
