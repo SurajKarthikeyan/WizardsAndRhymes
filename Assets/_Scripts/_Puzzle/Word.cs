@@ -7,9 +7,7 @@ using UnityEngine.UI;
 public class Word : MonoBehaviour
 {
     #region Variables
-    [SerializeField] public Toggle puzzleToggle;
-
-    [SerializeField] private GameObject wordUIObject;
+    // [SerializeField] public Toggle puzzleToggle;
 
     [SerializeField] private string wordAcquisitionkey;
     #endregion
@@ -21,12 +19,13 @@ public class Word : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             FlagManager.instance.SetFlag(wordAcquisitionkey, true);
-            puzzleToggle.isOn = true;
-            wordUIObject.SetActive(true);
+            // puzzleToggle.isOn = true;
             if (FlagManager.instance.HasAllWordFlags())
             {
                 //set rap rock to interactable
+                Debug.Log("Rap rock interactable");
             }
+            Destroy(gameObject);
         }
     }
 

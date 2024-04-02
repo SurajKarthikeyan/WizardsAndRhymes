@@ -20083,7 +20083,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   puzzleToggle: {fileID: 361363677}
   wordUIObject: {fileID: 1724491368}
-  wordAcquisitionkey: 
+  wordAcquisitionkey: word1
 --- !u!1001 &465181758
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32101,17 +32101,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5430811357378117283, guid: a282bf50d8ea7f74aa132a2d0f088f79, type: 3}
   m_PrefabInstance: {fileID: 442910870}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &736814892 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2346255625442786790, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
-  m_PrefabInstance: {fileID: 718978759}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379265080b2c03b44bf94b4b063f3f37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &737181459
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41258,7 +41247,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 736814892}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameEnd, Assembly-CSharp
         m_MethodName: ResetButton
         m_Mode: 1
@@ -45233,7 +45222,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 736814892}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameEnd, Assembly-CSharp
         m_MethodName: NextSceneButton
         m_Mode: 1
@@ -80208,17 +80197,6 @@ MonoBehaviour:
   isOn: 0
   minEmissionValue: {r: 3.9999998, g: 3.9999998, b: 3.9999998, a: 1}
   maxEmissionValue: {r: 9.734285, g: 9.734285, b: 9.734285, a: 1}
---- !u!114 &1886597200 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2346255625442786790, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
-  m_PrefabInstance: {fileID: 81138555853967040}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 379265080b2c03b44bf94b4b063f3f37, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1887030947
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -89663,7 +89641,7 @@ PrefabInstance:
     - target: {fileID: 5742391575841787312, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1886597200}
+      objectReference: {fileID: 0}
     - target: {fileID: 5906875311529818963, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_Name
       value: IsoCamera
