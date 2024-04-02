@@ -2,6 +2,7 @@ using Dreamteck.Splines;
 using Language.Lua;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -31,7 +32,10 @@ public class CrowdSurfPath : MonoBehaviour
     [Tooltip("Whether to automatically place the start and and triggers at the start and end of the path")]
     [SerializeField] bool autoPlaceTriggers = true;
 
-    [Tooltip("Whether the player is currently crowd-surfing on this path")]
+    [SerializeField]
+    private AK.Wwise.Event crowdSurfSoundEffect;
+    
+    [Tooltip("Whether the player is currently crowd-surfing on this path")] 
     public bool PlayerOnPath { get; private set; }
     #endregion
 
@@ -91,6 +95,9 @@ public class CrowdSurfPath : MonoBehaviour
     /// <returns>Coroutine</returns>
     IEnumerator CrowdSurf(bool reverse)
     {
+        //play enter state
+        crowdSurfSoundEffect.Post(this.GameObject());
+        AkSoundEngine.SetState("CrowdSurfing", "InCrowdSurf");
         PlayerOnPath = true;
 
         PlayerController.instance.AddMovementLock(this); //Lock the player's movement
@@ -133,6 +140,7 @@ public class CrowdSurfPath : MonoBehaviour
         yield return new WaitForSeconds(pathCooldown); //Prevent triggers from firing twice
 
         PlayerOnPath = false;
+        AkSoundEngine.SetState("CrowdSurfing", "OutOfCrowdSurf");
     }
     #endregion
 }

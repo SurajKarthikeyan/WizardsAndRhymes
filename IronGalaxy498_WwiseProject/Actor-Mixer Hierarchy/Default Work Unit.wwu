@@ -1971,6 +1971,27 @@
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="CrowdSurfing" ID="{4F9FFB14-EED9-42C2-B476-BADD686255F6}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="OutOfCrowdSurf" ID="{847FC695-15DF-4675-8AB1-03EEE006B583}"/>
+										<CustomState Name="" ID="{7F815633-1766-461E-A3DC-3EAEED8F2DE1}" ShortID="533444142">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64" Value="-96"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="InCrowdSurf" ID="{184A1F32-FFC0-4B45-92B7-DE526EA782E8}"/>
+										<CustomState Name="" ID="{E8AEBBD7-CE80-4FB2-BCC4-F5B4C0F84867}" ShortID="504899902"/>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
 							<ActiveSourceList>
 								<ActiveSource Name="CrowdSurfLoop" ID="{45E25EFA-21E5-4009-AE03-18E59670E7EA}" Platform="Linked"/>
 							</ActiveSourceList>

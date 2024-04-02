@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{030FF40D-15EC-089D-9EAE-6C9E867DC14D}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{FDC2BEE3-5DEC-70BF-90F1-E53CAFB5B561}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -96,9 +96,8 @@
 			<StateGroups>
 				<StateGroup Id="1021618141" Name="MusicState">
 					<States>
+						<State Id="89505537" Name="Gameplay"/>
 						<State Id="748895195" Name="None"/>
-						<State Id="1780448749" Name="Puzzle"/>
-						<State Id="2764240573" Name="Combat"/>
 					</States>
 				</StateGroup>
 				<StateGroup Id="2352559104" Name="CrowdSurfing">
@@ -110,7 +109,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{CC002854-B30A-7CB9-2619-89A1D2196906}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{053A3182-5F74-FA0D-A7F8-555D804F1880}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -534,6 +533,11 @@
 						<MediaRef Id="909458974"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3991942870" Name="Music" DurationType="Infinite">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="1021618141" Id="89505537" Name="Gameplay"/>
+					</ActionSetState>
+				</Event>
 				<Event Id="3831721246" Name="Play_testDoorOpen" DurationType="OneShot" DurationMin="0.39736962" DurationMax="0.39736962">
 					<MediaRefs>
 						<MediaRef Id="871275059"/>
@@ -655,6 +659,12 @@
 				</Event>
 			</Events>
 			<StateGroups>
+				<StateGroup Id="1021618141" Name="MusicState">
+					<States>
+						<State Id="89505537" Name="Gameplay"/>
+						<State Id="748895195" Name="None"/>
+					</States>
+				</StateGroup>
 				<StateGroup Id="2352559104" Name="CrowdSurfing">
 					<States>
 						<State Id="748895195" Name="None"/>
@@ -665,5 +675,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{BBD9DE79-379E-D568-3957-BC8B3EA6080B}</FileHash>
+	<FileHash>{0D79391E-F347-E442-7D19-3E1177CB55BF}</FileHash>
 </SoundBanksInfo>
