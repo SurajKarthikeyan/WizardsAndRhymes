@@ -2908,6 +2908,34 @@
 						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
+				<Sound Name="HauntedDropStinger" ID="{6FB07221-3F3C-44C3-96E8-914A5F1EB05C}" ShortID="442611796">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="NewStems HauntedDrop" ID="{C38DF40A-6353-4053-88E2-0BFD901D8A90}">
+							<PropertyList>
+								<Property Name="FadeOutDuration" Type="Real64" Value="0.97333879626472"/>
+								<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+								<Property Name="TrimBegin" Type="Real64" Value="9.54004545756162"/>
+								<Property Name="TrimEnd" Type="Real64" Value="21.1080395432005"/>
+							</PropertyList>
+							<Language>SFX</Language>
+							<AudioFile>NewStems HauntedDrop.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="975254132"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="NewStems HauntedDrop" ID="{C38DF40A-6353-4053-88E2-0BFD901D8A90}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

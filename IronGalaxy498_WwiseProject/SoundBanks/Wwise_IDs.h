@@ -76,6 +76,11 @@ namespace AK
         static const AkUniqueID MID = 1182670505U;
     } // namespace GAME_PARAMETERS
 
+    namespace TRIGGERS
+    {
+        static const AkUniqueID HAUNTEDDROPSTINGER = 4275975763U;
+    } // namespace TRIGGERS
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
