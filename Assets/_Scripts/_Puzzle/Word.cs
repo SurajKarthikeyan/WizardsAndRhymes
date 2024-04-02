@@ -10,6 +10,8 @@ public class Word : MonoBehaviour
     [SerializeField] public Toggle puzzleToggle;
 
     [SerializeField] private GameObject wordUIObject;
+
+    [SerializeField] private string wordAcquisitionkey;
     #endregion
 
     #region UnityMethods
@@ -18,10 +20,13 @@ public class Word : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            GameEnd.gameEnd.hasPassed = true;
-            GameEnd.gameEnd.RoomCleared();
+            FlagManager.instance.SetFlag(wordAcquisitionkey, true);
             puzzleToggle.isOn = true;
             wordUIObject.SetActive(true);
+            if (FlagManager.instance.HasAllWordFlags())
+            {
+                //set rap rock to interactable
+            }
         }
     }
 
