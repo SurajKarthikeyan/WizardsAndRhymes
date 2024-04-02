@@ -11,6 +11,10 @@ public class CameraSwitch : MonoBehaviour
 
     [Tooltip("Boolean that states if the camera is in a top down state or not")]
     private static bool is2D;
+
+    public GameObject angledCam;
+
+    public Transform angledCamTransform;
     
     /// <summary>
     /// Function that is called whenever a collider enters this trigger
@@ -22,6 +26,8 @@ public class CameraSwitch : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             is2D = true;
+            angledCam.transform.position = angledCamTransform.position;
+            angledCam.transform.rotation = angledCamTransform.rotation;
             camAnimator.SetBool("SwitchCam", is2D);
             PlayerController.instance.gridBasedControl = is2D;
         }

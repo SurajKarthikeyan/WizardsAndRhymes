@@ -41,6 +41,9 @@ public class PuzzleGrid : MonoBehaviour
     [SerializeField] private AK.Wwise.Event icePushSoundEffect;
 
     public bool touchedTile;
+
+
+    public float boxPushYOffset = 0;
     #endregion
 
     #region UnityMethods
@@ -388,8 +391,9 @@ public class PuzzleGrid : MonoBehaviour
         bool hasEmission = false;
         isMovingObject = true;
         PlayerController.instance.DisablePlayerControls();
-        Vector3 startingPos = new Vector3(start.position.x, 2.3f, start.position.z);
-        Vector3 endingPos = new Vector3(end.position.x, 2.3f, end.position.z);
+
+        Vector3 startingPos = new Vector3(start.position.x, go.transform.position.y, start.position.z);
+        Vector3 endingPos = new Vector3(end.position.x, go.transform.position.y, end.position.z);
 
         float elapsedTime = 0;
         go.transform.position = startingPos;
