@@ -23,6 +23,7 @@ namespace AK
         static const AkUniqueID MELEEFIRE = 2248677623U;
         static const AkUniqueID MELEEICE = 1651067412U;
         static const AkUniqueID MELEELIGHTNING = 1583612915U;
+        static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID PLAY_TESTDOOROPEN = 3831721246U;
         static const AkUniqueID PLAYBUTTON = 1843531235U;
         static const AkUniqueID PLAYERHURT = 3537581393U;
@@ -59,9 +60,8 @@ namespace AK
 
             namespace STATE
             {
-                static const AkUniqueID COMBAT = 2764240573U;
+                static const AkUniqueID GAMEPLAY = 89505537U;
                 static const AkUniqueID NONE = 748895195U;
-                static const AkUniqueID PUZZLE = 1780448749U;
             } // namespace STATE
         } // namespace MUSICSTATE
 

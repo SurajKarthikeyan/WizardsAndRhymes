@@ -96,9 +96,8 @@
 			<StateGroups>
 				<StateGroup Id="1021618141" Name="MusicState">
 					<States>
+						<State Id="89505537" Name="Gameplay"/>
 						<State Id="748895195" Name="None"/>
-						<State Id="1780448749" Name="Puzzle"/>
-						<State Id="2764240573" Name="Combat"/>
 					</States>
 				</StateGroup>
 				<StateGroup Id="2352559104" Name="CrowdSurfing">
@@ -110,7 +109,11 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
+<<<<<<< Updated upstream
 		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{CC002854-B30A-7CB9-2619-89A1D2196906}">
+=======
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{D03AA68C-4A46-1026-41C3-428640ABFB37}">
+>>>>>>> Stashed changes
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -534,6 +537,11 @@
 						<MediaRef Id="909458974"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="3991942870" Name="Music" DurationType="Infinite">
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="1021618141" Id="89505537" Name="Gameplay"/>
+					</ActionSetState>
+				</Event>
 				<Event Id="3831721246" Name="Play_testDoorOpen" DurationType="OneShot" DurationMin="0.39736962" DurationMax="0.39736962">
 					<MediaRefs>
 						<MediaRef Id="871275059"/>
@@ -655,6 +663,12 @@
 				</Event>
 			</Events>
 			<StateGroups>
+				<StateGroup Id="1021618141" Name="MusicState">
+					<States>
+						<State Id="89505537" Name="Gameplay"/>
+						<State Id="748895195" Name="None"/>
+					</States>
+				</StateGroup>
 				<StateGroup Id="2352559104" Name="CrowdSurfing">
 					<States>
 						<State Id="748895195" Name="None"/>
@@ -665,5 +679,9 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
+<<<<<<< Updated upstream
 	<FileHash>{A874B869-EBE0-1B4E-730C-61A9A8510682}</FileHash>
+=======
+	<FileHash>{1D60C4F2-00A2-7909-991D-957CBD6DDD71}</FileHash>
+>>>>>>> Stashed changes
 </SoundBanksInfo>
