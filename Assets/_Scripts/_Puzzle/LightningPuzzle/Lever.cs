@@ -63,7 +63,7 @@ public class Lever : MonoBehaviour
 
         if (emission)
         {
-            StartCoroutine(emissionChanger.AlterEmissionOverTime(isOn));
+            //StartCoroutine(emissionChanger.AlterEmissionOverTime(isOn));
         }
 
     }
@@ -72,7 +72,7 @@ public class Lever : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && !leverManager.isLeverCoolDown && !leverManager.completedLeverSystem)
         {
-            LeverSwitch(true, true);
+            LeverSwitch(true, true, true);
         }
     }
 
@@ -92,12 +92,12 @@ public class Lever : MonoBehaviour
         }
     }
 
-    public void LeverSwitch(bool sound, bool listSwitch)
+    public void LeverSwitch(bool sound, bool listSwitch, bool emissionSub)
     {
         isOn = !isOn;
         leverAnimator.SetTrigger("interaction");
         electricBlock.SetActive(isOn);
-        if (emission)
+        if (emission && emissionSub)
         {
             StartCoroutine(emissionChanger.AlterEmissionOverTime(isOn));
         }
@@ -119,7 +119,7 @@ public class Lever : MonoBehaviour
     {
         for (int i = 0; i < otherLevers.Count; i++)
         {
-            otherLevers[i].LeverSwitch(false, false);
+            otherLevers[i].LeverSwitch(false, false, false);
         }
     }
     

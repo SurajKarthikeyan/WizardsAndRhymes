@@ -71,25 +71,40 @@ public class IndividualEmissionChange : MonoBehaviour
     public IEnumerator AlterEmissionOverTime(bool up)
     {
         float timer = 0;
-        while (timer < timeToFullEmission)
+        Color color = newMaterial.GetColor("_EmissionColor");
+
+        if (up)
         {
-            // change color
-            Color color = newMaterial.GetColor("_EmissionColor");
-            if (up)
+            while(timer < timeToFullEmission)
             {
-                color = Color.Lerp(color, maxEmissionValue, timer/timeToFullEmission);
+                color = Vector4.Lerp(color, maxEmissionValue, timer / timeToFullEmission);
+                Debug.Log(color);
+                newMaterial.SetColor("_EmissionColor", color);
+                go.GetComponent<Renderer>().material = newMaterial;
+                timer += Time.deltaTime;
+                yield return new WaitForSeconds(Time.deltaTime);
 
             }
-            else
+        }
+
+        else
+        {
+            while(timer < timeToFullEmission)
             {
-                color = Color.Lerp(color, minEmissionValue, timer/timeToFullEmission);
+                color = Vector4.Lerp(color, minEmissionValue, timer / timeToFullEmission);
+                Debug.Log(color);
+                newMaterial.SetColor("_EmissionColor", color);
+                go.GetComponent<Renderer>().material = newMaterial;
+                timer += Time.deltaTime;
+                yield return new WaitForSeconds(Time.deltaTime);
+
             }
-            newMaterial.SetColor("_EmissionColor", color);
-            go.GetComponent<Renderer>().material = newMaterial;
-            timer += Time.deltaTime;
-            yield return null;
+        }
+
+        newMaterial.SetColor("_EmissionColor", color);
+        go.GetComponent<Renderer>().material = newMaterial;
+        yield return null;
         }
     }
 
     #endregion
-}
