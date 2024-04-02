@@ -24,6 +24,7 @@ public class CrowdSurfTrigger : MonoBehaviour
     /// <param name="other">The collider that entered the trigger</param>
     private void OnTriggerEnter(Collider other)
     {
+        
         if (crowdSurfPath.PlayerOnPath || ignorePlayerInCollider) //Don't try to start a crowd-surf if the player is already crowd surfing
         {
             ignorePlayerInCollider = true;
