@@ -30,7 +30,7 @@ public class Floater : MonoBehaviour
     /// </summary>
     virtual protected void Start()
     {
-        posOffset = transform.position;
+        posOffset = transform.localPosition;
 
         //Randomize sine offset
         if (randomizeStartingHeight)
@@ -50,10 +50,11 @@ public class Floater : MonoBehaviour
         transform.Rotate(new Vector3(0f, Time.deltaTime * degreesPerSecond, 0f), Space.World);
 
         // Float up/down with a Sin()
-        Vector3 tempPos = posOffset;
+        Vector3 tempPos = transform.localPosition;
+        tempPos.y = posOffset.y;
         tempPos.y += Mathf.Sin((Time.time + sineOffset) * Mathf.PI * frequency) * amplitude;
 
-        transform.position = tempPos;
+        transform.localPosition = tempPos;
     }
 }
 

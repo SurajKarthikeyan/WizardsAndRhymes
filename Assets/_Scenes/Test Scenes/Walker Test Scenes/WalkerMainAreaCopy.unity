@@ -4205,7 +4205,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2976512263861208820, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.300005
+      value: -4.14
       objectReference: {fileID: 0}
     - target: {fileID: 2976512263861208820, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4247,6 +4247,10 @@ PrefabInstance:
       propertyPath: pathCooldown
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 4891351688078977235, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: activateOnRoomCleared
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5069186976769406225, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
       propertyPath: m_Radius
       value: 3.4
@@ -4276,6 +4280,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+--- !u!114 &248342639 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4891351688078977235, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+  m_PrefabInstance: {fileID: 248342638}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf509e1de8a3fa4f898c77f30414992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &250240157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13418,7 +13433,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &689772470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13469,6 +13484,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 248342639}
+        m_TargetAssemblyTypeName: CrowdSurfPath, Assembly-CSharp
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   wavesCleared: 0
   enemyManagerClearedEvent: 
@@ -21247,7 +21274,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1306333073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21261,6 +21288,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
+  - waveTrigger: 1
+    enemiesRemaining: 0
+    waveDelay: 0
+    waveDuration: 2
+    spawnPosition: {fileID: 310214213}
+    spawnRadius: 2.85
+    showSpawnSphere: 1
+    enemies:
+    - type: {fileID: 2048348783821418587, guid: 9b5276f4867a9fb4888caaec058bfe94, type: 3}
+      amount: 3
   - waveTrigger: 1
     enemiesRemaining: 0
     waveDelay: 0
@@ -21298,6 +21335,18 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 248342639}
+        m_TargetAssemblyTypeName: CrowdSurfPath, Assembly-CSharp
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
   wavesCleared: 0
   enemyManagerClearedEvent: 

@@ -16,9 +16,11 @@ public class TriggerOnBeat : MonoBehaviour
     [SerializeField] int beatDelay = 0;
     [Tooltip("The number of beats to wait before triggering the first time")]
     [SerializeField] int initialBeatDelay = 0;
-
     [Tooltip("The events to invoke")]
     [SerializeField] UnityEvent eventsToTrigger;
+
+    [Tooltip("Tracks how many beats to wait before triggering again")]
+    int beatCounter = 0;
     #endregion
 
     #region Unity Methods
@@ -26,6 +28,9 @@ public class TriggerOnBeat : MonoBehaviour
     {
         //Register listener
         WwiseAdapter.beatEvents[beatInterval] += BeatTriggered;
+
+        //Initial beat delay
+        beatCounter = initialBeatDelay;
     }
     #endregion
 
@@ -35,7 +40,13 @@ public class TriggerOnBeat : MonoBehaviour
     /// </summary>
     void BeatTriggered()
     {
-        eventsToTrigger?.Invoke(); //Invoke the event(s) set in the inspector
+        if (beatCounter <= 0)
+        {
+            eventsToTrigger?.Invoke(); //Invoke the event(s) set in the inspector
+            beatCounter = beatDelay;
+        }
+        else
+            beatCounter--;
     }
     #endregion
 }
