@@ -30,8 +30,10 @@ public class FlagManager : Singleton<FlagManager>
     public GameObject spawnPoint2;
     
     public GameObject spawnPoint3;
-    
-    public GameObject spawnPoint4;
+
+    public GameObject dialogueTrigger2;
+
+    public GameObject dialogueTrigger3;
     
     #endregion
     
@@ -63,11 +65,13 @@ public class FlagManager : Singleton<FlagManager>
         {
             PlayerController.instance.gameObject.transform.position = spawnPoint3.transform.position;
             puzzle2Gate1.SetActive(true);
+            dialogueTrigger3.SetActive(true);
         }
         else if (GetFlag("puzzle1Completed"))
         {
             PlayerController.instance.gameObject.transform.position = spawnPoint2.transform.position;
             puzzle1Gate1.SetActive(true);
+            dialogueTrigger2.SetActive(true);
         }
         else
         {
@@ -76,7 +80,21 @@ public class FlagManager : Singleton<FlagManager>
     }
 
     #endregion
-    
+
+    private void Update()
+    {
+        if (GetFlag("puzzle2Completed") && !dialogueTrigger3.activeInHierarchy && 
+            !dialogueTrigger3.GetComponent<DialogueTriggerer>().alreadyPlayed)
+        {
+            dialogueTrigger3.SetActive(true);
+        }
+        else if (GetFlag("puzzle1Completed") && !dialogueTrigger2.activeInHierarchy && 
+                 !dialogueTrigger2.GetComponent<DialogueTriggerer>().alreadyPlayed)
+        {
+            dialogueTrigger2.SetActive(true);
+        }
+    }
+
     #region Custom Methods
     
     /// <summary>
@@ -102,6 +120,7 @@ public class FlagManager : Singleton<FlagManager>
     public void SetFlag(string key, bool value)
     {
         flags[key] = value;
+        Debug.Log("Just set flag " + key + " to be " + value);
     }
 
     /// <summary>
