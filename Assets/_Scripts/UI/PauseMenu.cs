@@ -15,6 +15,18 @@ public class PauseMenu : MonoBehaviour
     [Tooltip("Reference to the pause menu(currently unused)")]
     [SerializeField] private GameObject pauseMenu;
 
+
+    public GameObject deathText;
+
+    public GameObject levelCompletionText;
+
+    public GameObject quitButton;
+
+    public GameObject continueButton;
+
+    public GameObject nextLevelButton;
+
+    public FadeToBlack fadeToBlack;
     #endregion
 
 
@@ -64,6 +76,28 @@ public class PauseMenu : MonoBehaviour
     {
         AkSoundEngine.StopAll();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        FlagManager.instance.ClearFlags();
+        SceneManager.LoadScene(sceneName);
+    }
+
+    public void PlayerDeathUI()
+    {
+        fadeToBlack.OnFadeOut();
+        deathText.SetActive(true);
+        continueButton.SetActive(true);
+        quitButton.SetActive(true);
+    }
+
+    public void SceneCompleteUI()
+    {
+        fadeToBlack.OnFadeOut();
+        quitButton.SetActive(true);
+        nextLevelButton.SetActive(true);
+        levelCompletionText.SetActive(true);
     }
 
     #endregion

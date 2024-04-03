@@ -38,6 +38,8 @@ public class FlagManager : Singleton<FlagManager>
     public GameObject dialogueTrigger3;
 
     public GameObject rapRockTrigger;
+
+    public GameObject pauseMenu;
     
     #endregion
     
@@ -154,5 +156,6 @@ public class FlagManager : Singleton<FlagManager>
 
         return true;
     }
+    
     #endregion
 }

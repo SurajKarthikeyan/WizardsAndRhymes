@@ -9,6 +9,8 @@ public class PlayerHealth : Health
     #region Vars
 
     [SerializeField] private AK.Wwise.Event playerHurtSoundEffect;
+
+    public PauseMenu pauseMenu;
  
     #endregion
     
@@ -26,14 +28,14 @@ public class PlayerHealth : Health
     private void PlayerDeath()
     {
         Debug.Log("PlayerDeath");
-        Heal(0, true);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        PlayerController.instance.DisablePlayerControls();
+        pauseMenu.PlayerDeathUI();
     }
 
     public override void TakeDamage(float value, DamageType dType)
     {
         base.TakeDamage(value, dType);
-        playerHurtSoundEffect.Post(this.gameObject);
+        playerHurtSoundEffect.Post(gameObject);
     }
     #endregion
 }

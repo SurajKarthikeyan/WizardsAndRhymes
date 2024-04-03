@@ -18,6 +18,8 @@ public class WordCanvasManager : MonoBehaviour, IInteractable
     [SerializeField]
     private List<DragDropItemSlot> wordSlots;
 
+    public PauseMenu pauseMenu;
+
     /// <summary>
     /// Function that is called on scene start
     /// </summary>
@@ -42,8 +44,8 @@ public class WordCanvasManager : MonoBehaviour, IInteractable
                 return false;
             }
         }
-        
         wordCanvas.gameObject.SetActive(false);
+        pauseMenu.SceneCompleteUI();
         return true;
     }
 
@@ -69,6 +71,6 @@ public class WordCanvasManager : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        Debug.Log("Interacting with word canvas");
+        ToggleCanvas(true);
     }
 }
