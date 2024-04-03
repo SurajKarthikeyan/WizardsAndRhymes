@@ -34,7 +34,7 @@ public class Floater : MonoBehaviour
 
         //Randomize sine offset
         if (randomizeStartingHeight)
-            sineOffset = Random.Range(0.0f, 1.0f);
+            sineOffset = Random.Range(0.0f, 2*Mathf.PI);
 
         //Randomize starting rotation
         if (randomizeStartingRotation)

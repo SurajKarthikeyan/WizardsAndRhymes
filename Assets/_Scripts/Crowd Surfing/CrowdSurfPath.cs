@@ -142,5 +142,14 @@ public class CrowdSurfPath : MonoBehaviour
         PlayerOnPath = false;
         AkSoundEngine.SetState("CrowdSurfing", "OutOfCrowdSurf");
     }
+
+    /// <summary>
+    /// Sets whether this crowd surf path is active
+    /// </summary>
+    /// <param name="value">The value to set</param>
+    public void SetActive(bool value)
+    {
+        active = value;
+    }
     #endregion
 }
