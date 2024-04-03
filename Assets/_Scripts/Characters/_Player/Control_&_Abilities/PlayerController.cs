@@ -256,6 +256,10 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")] 
     [Tooltip("Player Animator")]
     [SerializeField] private Animator playerAnimator;
+
+    public bool canInteract;
+
+    public IInteractable interactable;
     
     #endregion
 
@@ -266,8 +270,6 @@ public class PlayerController : Singleton<PlayerController>
     protected override void Awake()
     {
         base.Awake();
-
-        //dashModel.SetActive(false);
         rigidBody = GetComponent<Rigidbody>();
         playerInput = new PlayerInput();
         SetCanAttack(false);
@@ -560,6 +562,18 @@ public class PlayerController : Singleton<PlayerController>
             StartCoroutine(Dash());
         }
     }
+
+    /// <summary>
+    /// Function that is called upon pressing any of the Interact inputs
+    /// </summary>
+    /// <param name="obj">Input callback context for the dash</param>
+    private void DoInteract(InputAction.CallbackContext obj)
+    {
+        if (canInteract && interactable != null)
+        {
+            interactable.Interact();
+        }
+    }
     
     /// <summary>
     /// Function that is called when escape(KB) or start(Controller) is pressed
@@ -580,6 +594,7 @@ public class PlayerController : Singleton<PlayerController>
         playerInput.Player.Dash.started += DoDash;
         playerInput.Player.RangedAttack.started += DoRanged;
         playerInput.Player.MeleeAttack.started += DoMelee;
+        playerInput.Player.Interact.started += DoInteract;
         moveAction = playerInput.Player.Movement;
         gamepadLookAction = playerInput.Player.GamepadLook;
         mouseLookAction = playerInput.Player.MouseLook;

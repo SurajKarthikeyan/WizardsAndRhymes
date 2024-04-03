@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Class that handles the word canvas 
 /// </summary>
-public class WordCanvasManager : MonoBehaviour
+public class WordCanvasManager : MonoBehaviour, IInteractable
 {
     [Tooltip("Boolean stating whether or not the canvas is activated")]
     private bool canvasActivated;
@@ -42,8 +42,7 @@ public class WordCanvasManager : MonoBehaviour
                 return false;
             }
         }
-
-        // GameEnd.gameEnd.OpenDoorUI();
+        
         wordCanvas.gameObject.SetActive(false);
         return true;
     }
@@ -66,5 +65,10 @@ public class WordCanvasManager : MonoBehaviour
         {
             PlayerController.instance.EnablePlayerControls();
         }
+    }
+
+    public void Interact()
+    {
+        Debug.Log("Interacting with word canvas");
     }
 }

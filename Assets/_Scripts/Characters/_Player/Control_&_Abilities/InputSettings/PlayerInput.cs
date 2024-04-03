@@ -80,6 +80,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""7b8f2f2a-afc1-4c59-b828-9f923fd349c3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -302,6 +311,28 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""MouseLook"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ae53ede6-61a3-4fd5-bc89-d0acfb74aa19"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aa94f317-97f4-493e-ae1c-29e569be4bf9"",
+                    ""path"": ""<Keyboard>/#(E)"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -395,6 +426,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_Player_MeleeAttack = m_Player.FindAction("MeleeAttack", throwIfNotFound: true);
         m_Player_GamepadLook = m_Player.FindAction("GamepadLook", throwIfNotFound: true);
         m_Player_MouseLook = m_Player.FindAction("MouseLook", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_MenuSelect = m_UI.FindAction("MenuSelect", throwIfNotFound: true);
@@ -467,6 +499,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_MeleeAttack;
     private readonly InputAction m_Player_GamepadLook;
     private readonly InputAction m_Player_MouseLook;
+    private readonly InputAction m_Player_Interact;
     public struct PlayerActions
     {
         private @PlayerInput m_Wrapper;
@@ -477,6 +510,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @MeleeAttack => m_Wrapper.m_Player_MeleeAttack;
         public InputAction @GamepadLook => m_Wrapper.m_Player_GamepadLook;
         public InputAction @MouseLook => m_Wrapper.m_Player_MouseLook;
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -504,6 +538,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @MouseLook.started += instance.OnMouseLook;
             @MouseLook.performed += instance.OnMouseLook;
             @MouseLook.canceled += instance.OnMouseLook;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -526,6 +563,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @MouseLook.started -= instance.OnMouseLook;
             @MouseLook.performed -= instance.OnMouseLook;
             @MouseLook.canceled -= instance.OnMouseLook;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -613,6 +653,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnMeleeAttack(InputAction.CallbackContext context);
         void OnGamepadLook(InputAction.CallbackContext context);
         void OnMouseLook(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
