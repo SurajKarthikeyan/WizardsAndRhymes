@@ -3613,6 +3613,10 @@ PrefabInstance:
       propertyPath: pathCooldown
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 4891351688078977235, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: activateOnRoomCleared
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5069186976769406225, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
       propertyPath: m_Radius
       value: 3.4
@@ -3647,6 +3651,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2976512263861208820, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
   m_PrefabInstance: {fileID: 248342638}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &248342640 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4891351688078977235, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+  m_PrefabInstance: {fileID: 248342638}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf509e1de8a3fa4f898c77f30414992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &250240157
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19171,6 +19186,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 248342640}
+        m_TargetAssemblyTypeName: CrowdSurfPath, Assembly-CSharp
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1839414507}
+        m_TargetAssemblyTypeName: CrowdSurfPath, Assembly-CSharp
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   wavesCleared: 0
   enemyManagerClearedEvent: enemyWave1Completed
   enemyToggle: {fileID: 0}
@@ -25324,6 +25363,10 @@ PrefabInstance:
       propertyPath: pathCooldown
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 4891351688078977235, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: activateOnRoomCleared
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5069186976769406225, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
       propertyPath: m_Radius
       value: 3.4
@@ -25358,6 +25401,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2976512263861208820, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
   m_PrefabInstance: {fileID: 1839414505}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1839414507 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4891351688078977235, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+  m_PrefabInstance: {fileID: 1839414505}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf509e1de8a3fa4f898c77f30414992, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1844146005 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3552317740834125453, guid: 726594df7b4c9a74797b6549eee9299a, type: 3}
@@ -29536,11 +29590,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.35379905
+      value: -0.353799
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.14716484
+      value: 0.1471648
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
