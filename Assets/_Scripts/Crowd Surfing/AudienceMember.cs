@@ -37,9 +37,11 @@ public class AudienceMember : Floater
     [SerializeField] float colorFadeDuration = 0.25f;
 
     [Tooltip("Whether this audience member is a fan of the player")]
-    [SerializeField] bool playerFan = false;
+    bool playerFan = false;
     [Tooltip("The percentage of enemies in the scene that must be killed before this audience member switches sides")]
-    [SerializeField] float conversionPercentage;
+    float conversionPercentage;
+    [Tooltip("Whether this audience member is currently fading")]
+    bool isFading = false;
     #endregion
 
     #region Unity Methods
@@ -136,18 +138,21 @@ public class AudienceMember : Floater
     void CheckWavesCleared(EnemyManager clearedEnemyManager)
     {
         if (clearedEnemyManager == enemyManager)
-            StartBecomePlayerFan();
+            StartBecomePlayerFan(false);
     }
 
     /// <summary>
     /// Become a player fan and start the fade coroutine
     /// </summary>
-    void StartBecomePlayerFan()
+    void StartBecomePlayerFan(bool fade = true)
     {
         if (!playerFan)
         {
             playerFan = true;
-            StartCoroutine(BecomePlayerFan());
+            if (fade)
+                StartCoroutine(BecomePlayerFan());
+            else if (!isFading)
+                render.material.color = RandomColor(true);
         }
     }
 
@@ -157,7 +162,8 @@ public class AudienceMember : Floater
     /// <returns>Coroutine</returns>
     IEnumerator BecomePlayerFan()
     {
-        Debug.Log("Becoming player fan");
+        isFading = true;
+
         Color wizzoColor = render.material.color;
         Color playerColor = RandomColor(true);
 
@@ -169,7 +175,6 @@ public class AudienceMember : Floater
 
             yield return new WaitForEndOfFrame();
         }
-        Debug.Log("Done becoming player fan");
     }
     #endregion
 }

@@ -202,9 +202,9 @@ public class EnemyManager : MonoBehaviour
         enemiesRemainingInWave = 0;
         RemainingEnemies = 0;
 
+        AllWavesCleared();
         DestroyAllEnemies();
         StopCoroutine(nameof(TriggerWave));
-        AllWavesCleared();
     }
 
     /// <summary>
