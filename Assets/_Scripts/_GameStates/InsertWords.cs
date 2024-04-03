@@ -6,12 +6,16 @@ using UnityEngine;
 public class InsertWords : MonoBehaviour
 {
     public WordCanvasManager wordCanvasManager;
+    
+    
+    public GameObject interactCanvas;
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
             PlayerController.instance.canInteract = true;
             PlayerController.instance.interactable = wordCanvasManager;
+            interactCanvas.SetActive(true);
         }
     }
 
@@ -21,6 +25,7 @@ public class InsertWords : MonoBehaviour
         {
             PlayerController.instance.canInteract = true;
             PlayerController.instance.interactable = wordCanvasManager;
+            interactCanvas.SetActive(true);
         }
     }
 
@@ -30,6 +35,7 @@ public class InsertWords : MonoBehaviour
         {
             PlayerController.instance.canInteract = false;
             PlayerController.instance.interactable = null;
+            interactCanvas.SetActive(false);
         }
     }
 }
