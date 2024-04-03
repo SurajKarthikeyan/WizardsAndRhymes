@@ -7,7 +7,7 @@ public class FirstLightningBlock : MonoBehaviour
     #region Vars
 
     [SerializeField] private LightningBlockManager lbManager;
-
+    [SerializeField] public bool isActive;
     #endregion
 
 
@@ -19,7 +19,11 @@ public class FirstLightningBlock : MonoBehaviour
     /// </summary>
     public void StartLightingChain()
     {
-        lbManager.CheckAllBlocks();
+
+        if (isActive)
+        {
+            lbManager.CheckAllBlocks();
+        }
     }
 
     #endregion
