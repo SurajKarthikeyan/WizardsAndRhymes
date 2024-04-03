@@ -9,7 +9,8 @@ public class Word : MonoBehaviour
     #region Variables
     // [SerializeField] public Toggle puzzleToggle;
 
-    [SerializeField] private string wordAcquisitionkey;
+    [SerializeField] private List<string> flagsToSet = new();
+    
     #endregion
 
     #region UnityMethods
@@ -18,7 +19,11 @@ public class Word : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            FlagManager.instance.SetFlag(wordAcquisitionkey, true);
+            foreach(string flag in flagsToSet)
+            {
+                FlagManager.instance.SetFlag(flag, true);
+            }
+            
             // puzzleToggle.isOn = true;
             if (FlagManager.instance.HasAllWordFlags())
             {
