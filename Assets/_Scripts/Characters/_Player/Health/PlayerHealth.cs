@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Class that handles all of the health and status of the player character
@@ -26,6 +27,7 @@ public class PlayerHealth : Health
     {
         Debug.Log("PlayerDeath");
         Heal(0, true);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public override void TakeDamage(float value, DamageType dType)

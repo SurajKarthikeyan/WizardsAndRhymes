@@ -83,6 +83,9 @@ public class EnemyManager : MonoBehaviour
     [Tooltip("Whether all of this enemy manager's waves have been completed")]
     [HideInInspector] public bool wavesCleared = false;
 
+    [Tooltip("String of flag to set when this enemy manager's waves have been defeated")]
+    [SerializeField] private string enemyManagerClearedEvent;
+
     [Tooltip("Whether enemy spawning has started")]
     bool spawningStarted = false;
     [Tooltip("The index of the next wave of enemies")]
@@ -233,6 +236,9 @@ public class EnemyManager : MonoBehaviour
                 //If all enemy managers have had all their waves completed, trigger
                 if (remainingEnemyManagers <= 0)
                     RoomCleared?.Invoke();
+                
+                //Set the flag in the flag manager stating that the enemies of this manager have been defeated
+                FlagManager.instance.SetFlag(enemyManagerClearedEvent, true);
             }
         }
     }

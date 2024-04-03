@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,13 @@ public class FlagManager : Singleton<FlagManager>
 {
     #region Variables
     [Tooltip("Dictionary containing all the flags throughout the game")]
-    private Dictionary<string, bool> flags = new Dictionary<string, bool>();
+    private static Dictionary<string, bool> flags = new Dictionary<string, bool>();
 
     public List<string> wordFlags = new List<string>();
+
+    public GameObject gate1;
+
+    public GameObject gate2;
     #endregion
     
     #region Unity Methods
@@ -23,7 +28,17 @@ public class FlagManager : Singleton<FlagManager>
     protected override void Awake()
     {
         base.Awake();
-        DontDestroyOnLoad(gameObject);
+        if (GetFlag("enemyWave1Completed"))
+        {
+            gate1.SetActive(false);
+            gate2.SetActive(false);
+        }
+    }
+
+
+    private void Start()
+    {
+        
     }
 
     #endregion
