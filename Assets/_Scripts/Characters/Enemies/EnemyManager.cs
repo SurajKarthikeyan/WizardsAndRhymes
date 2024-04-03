@@ -57,18 +57,18 @@ public class EnemyManager : MonoBehaviour
         public int amount;
     }
 
+    public delegate void WavesClearedDelegate(EnemyManager enemyManager);
+    [Tooltip("Event fired when all waves of enemies from this enemy manager have been cleared")]
+    [HideInInspector] public static event WavesClearedDelegate WavesCleared;
+
     public delegate void RoomClearedDelegate();
-    [Tooltip("Event fired when the all waves of enemies have been cleared")]
+    [Tooltip("Event fired when the all waves of enemies from all enemy managers in the scene have been cleared")]
     [HideInInspector] public static event RoomClearedDelegate RoomCleared;
 
     public delegate void ActivateEnemiesDelegate(bool activateEnemies);
     [Tooltip("Event fired when debug button is pressed")]
     [HideInInspector] public static event ActivateEnemiesDelegate EnemiesActivated;
 
-    [Tooltip("The total number of enemies in the scene unspawned, active, or dead")]
-    public static int TotalEnemiesInScene { get; private set; } = 0;
-    [Tooltip("The remaining enemies in the scene, unspawned or active")]
-    public static int RemainingEnemiesInScene { get; private set; } = 0;
     [Tooltip("The number of enemy managers that haven't had all their waves cleared yet")]
     static int remainingEnemyManagers = 0;
 
@@ -95,9 +95,9 @@ public class EnemyManager : MonoBehaviour
     [Tooltip("A set of all the enemies that have been spawned")]
     HashSet<GameObject> enemiesSpawned = new HashSet<GameObject>();
     [Tooltip("The total number of enemies this EnemyManager is capable of spawning")]
-    int totalEnemies = 0;
+    public int TotalEnemies { get; private set; } = 0;
     [Tooltip("The remaining number of enemies from this EnemyManager that are unspawned or active but not killed")]
-    int remainingEnemies = 0;
+    public int RemainingEnemies { get; private set; } = 0;
 
     [Header("Enemy Augmentation Variables")]
 
@@ -126,22 +126,22 @@ public class EnemyManager : MonoBehaviour
         remainingEnemyManagers += 1;
 
         //Calculate the total number of enemies this EnemyManager can spawn
-        totalEnemies = 0;
+        TotalEnemies = 0;
         foreach (EnemyWave wave in waves)
         {
             foreach (EnemyWaveGroup waveGroup in wave.enemies)
             {
-                totalEnemies += waveGroup.amount;
+                TotalEnemies += waveGroup.amount;
             }
         }
-        remainingEnemies = totalEnemies;
-
-        //Add total number of enemies to total in scene
-        TotalEnemiesInScene += totalEnemies;
-        RemainingEnemiesInScene += totalEnemies;
+        RemainingEnemies = TotalEnemies;
 
         //Register enemy died callback
         BaseEnemyHealth.EnemyDied += EnemyDied;
+
+        //Check whether this enemy manager has already been cleared
+        if (FlagManager.instance.GetFlag(enemyManagerClearedEvent))
+            ClearAllWaves();
     }
 
     /// <summary>
@@ -152,10 +152,6 @@ public class EnemyManager : MonoBehaviour
         //Remove self from count of enemy managers if still has uncleared waves
         if (!wavesCleared)
             remainingEnemyManagers -= 1;
-
-        //Remove total enemies from total in scene
-        TotalEnemiesInScene -= totalEnemies;
-        RemainingEnemiesInScene -= remainingEnemies;
 
         //Unregister enemy died callback
         BaseEnemyHealth.EnemyDied -= EnemyDied;
@@ -182,6 +178,7 @@ public class EnemyManager : MonoBehaviour
     /// <summary>
     /// Function that activates the enemies in the scene
     /// </summary>
+    [ContextMenu("Activate Enemies")]
     public void ActivateEnemies()
     {
         //Spawn the first wave of enemies
@@ -190,6 +187,35 @@ public class EnemyManager : MonoBehaviour
             spawningStarted = true;
             StartCoroutine(TriggerWave(waves[0]));
         }
+    }
+
+    /// <summary>
+    /// Instantly clears all of this enemy manager's waves
+    /// </summary>
+    [ContextMenu("Clear All Waves")]
+    public void ClearAllWaves()
+    {
+        //If this enemy manager has already had all its waves cleared, skip
+        if (wavesCleared)
+            return;
+
+        enemiesRemainingInWave = 0;
+        RemainingEnemies = 0;
+
+        DestroyAllEnemies();
+        StopCoroutine(nameof(TriggerWave));
+        AllWavesCleared();
+    }
+
+    /// <summary>
+    /// Destroys all currently-active enemies this enemy manager has spawned
+    /// </summary>
+    [ContextMenu("Destroy All Enemies")]
+    public void DestroyAllEnemies()
+    {
+        foreach (GameObject enemy in enemiesSpawned)
+            Destroy(enemy);
+        enemiesSpawned.Clear();
     }
 
     /// <summary>
@@ -210,8 +236,7 @@ public class EnemyManager : MonoBehaviour
         {
             enemiesSpawned.Remove(enemyGO);
             enemiesRemainingInWave--;
-            RemainingEnemiesInScene--;
-            remainingEnemies--;
+            RemainingEnemies--;
 
             //Check if the next wave should spawn now
             if (waveIndex < waves.Length)
@@ -226,21 +251,27 @@ public class EnemyManager : MonoBehaviour
             //Check if the last wave has been defeated
             else if (enemiesRemainingInWave <= 0)
             {
-                //Mark this enemy manager as completed
-                wavesCleared = true;
-                remainingEnemyManagers -= 1;
-
-                //Trigger the local event
-                wavesClearedEvent?.Invoke();
-
-                //If all enemy managers have had all their waves completed, trigger
-                if (remainingEnemyManagers <= 0)
-                    RoomCleared?.Invoke();
-                
-                //Set the flag in the flag manager stating that the enemies of this manager have been defeated
-                FlagManager.instance.SetFlag(enemyManagerClearedEvent, true);
+                AllWavesCleared();
             }
         }
+    }
+
+    private void AllWavesCleared()
+    {
+        //Mark this enemy manager as completed
+        wavesCleared = true;
+        remainingEnemyManagers -= 1;
+
+        //Trigger the local events
+        wavesClearedEvent?.Invoke();
+        WavesCleared?.Invoke(this);
+
+        //If all enemy managers have had all their waves completed, trigger
+        if (remainingEnemyManagers <= 0)
+            RoomCleared?.Invoke();
+
+        //Set the flag in the flag manager stating that the enemies of this manager have been defeated
+        FlagManager.instance.SetFlag(enemyManagerClearedEvent, true);
     }
 
     /// <summary>

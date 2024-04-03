@@ -29,12 +29,15 @@ public class AudienceMember : Floater
 
     [Tooltip("How this audience member handles who it is a fan of")]
     public FanMode fanMode = FanMode.ConvertToPlayer;
+    [Tooltip("The enemy manager this audience members tracks to determine when to convert to a player fan")]
+    [MMEnumCondition("fanMode", (int)FanMode.ConvertToPlayer, Hidden = true)]
+    public EnemyManager enemyManager;
     [Tooltip("How long this audience member takes to fade to its player color")]
     [MMEnumCondition("fanMode", (int)FanMode.ConvertToPlayer, Hidden = true)]
     [SerializeField] float colorFadeDuration = 0.25f;
 
     [Tooltip("Whether this audience member is a fan of the player")]
-    bool playerFan = false;
+    [SerializeField] bool playerFan = false;
     [Tooltip("The percentage of enemies in the scene that must be killed before this audience member switches sides")]
     [SerializeField] float conversionPercentage;
     #endregion
@@ -51,6 +54,9 @@ public class AudienceMember : Floater
             //Register enemy died callback
             BaseEnemyHealth.EnemyDied += CheckBecomePlayerFan;
             conversionPercentage = Random.Range(0.01f, 0.99f);
+
+            //Register waves cleared callback
+            EnemyManager.WavesCleared += CheckWavesCleared;
         }
         else if (fanMode == FanMode.AlwaysPlayer)
         {
@@ -81,8 +87,9 @@ public class AudienceMember : Floater
     {
         if (fanMode == FanMode.ConvertToPlayer)
         {
-            //Remove enemy died callback
+            //Remove callbacks
             BaseEnemyHealth.EnemyDied -= CheckBecomePlayerFan;
+            EnemyManager.WavesCleared -= CheckWavesCleared;
         }
     }
     #endregion
@@ -110,17 +117,38 @@ public class AudienceMember : Floater
     }
 
     /// <summary>
-    /// 
+    /// Check whether this audience member should convert to being a player fan
     /// </summary>
-    /// <param name="enemyGO"></param>
+    /// <param name="enemyGO">The enemy that was killed to trigger this function (unused)</param>
     void CheckBecomePlayerFan(GameObject enemyGO)
+    {
+        if (!playerFan && enemyManager != null)
+        {
+            if (conversionPercentage >= (float)(enemyManager.RemainingEnemies) / enemyManager.TotalEnemies)
+                StartBecomePlayerFan();
+        }
+    }
+
+    /// <summary>
+    /// Called when an enemy manager has all of its waves cleared, convert to player fan if it is this audience member's enemy manager
+    /// </summary>
+    /// <param name="clearedEnemyManager">The enemy manager that had all its waves cleared</param>
+    void CheckWavesCleared(EnemyManager clearedEnemyManager)
+    {
+        if (clearedEnemyManager == enemyManager)
+            StartBecomePlayerFan();
+    }
+
+    /// <summary>
+    /// Become a player fan and start the fade coroutine
+    /// </summary>
+    void StartBecomePlayerFan()
     {
         if (!playerFan)
         {
-            if (conversionPercentage >= (float)(EnemyManager.RemainingEnemiesInScene - 1) / EnemyManager.TotalEnemiesInScene)
-                StartCoroutine(BecomePlayerFan());
+            playerFan = true;
+            StartCoroutine(BecomePlayerFan());
         }
-        
     }
 
     /// <summary>
@@ -129,6 +157,7 @@ public class AudienceMember : Floater
     /// <returns>Coroutine</returns>
     IEnumerator BecomePlayerFan()
     {
+        Debug.Log("Becoming player fan");
         Color wizzoColor = render.material.color;
         Color playerColor = RandomColor(true);
 
@@ -140,8 +169,7 @@ public class AudienceMember : Floater
 
             yield return new WaitForEndOfFrame();
         }
-
-        playerFan = true;
+        Debug.Log("Done becoming player fan");
     }
     #endregion
 }
