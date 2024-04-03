@@ -29,7 +29,7 @@ public class PressurePlate : MonoBehaviour
     {
         pressurePlateSoundEffect.Stop(this.GameObject());
         pressurePlateSoundEffect.Post(this.GameObject());
-        if (other.CompareTag("PushBox"))
+        if (other.CompareTag("PushBox") || (other.CompareTag("Player")))
         {
             ActivateDefaultPressurePlate();
             hasBeenPushedDown = true;
