@@ -14,31 +14,65 @@ public class FlagManager : Singleton<FlagManager>
     private static Dictionary<string, bool> flags = new Dictionary<string, bool>();
 
     public List<string> wordFlags = new List<string>();
+    
+    [Header("Gate Objects")]
 
-    public GameObject gate1;
+    public GameObject puzzle1Gate1;
 
-    public GameObject gate2;
+    public GameObject puzzle1Gate2;
+    
+    public GameObject puzzle2Gate1;
+
+    public GameObject puzzle2Gate2;
+
+    public GameObject spawnPoint1;
+    
+    public GameObject spawnPoint2;
+    
+    public GameObject spawnPoint3;
+    
+    public GameObject spawnPoint4;
+    
     #endregion
     
     #region Unity Methods
 
-    /**
-     * Function called upon scene load
-     */
-    protected override void Awake()
-    {
-        base.Awake();
-        if (GetFlag("enemyWave1Completed"))
-        {
-            gate1.SetActive(false);
-            gate2.SetActive(false);
-        }
-    }
-
-
+    
     private void Start()
     {
+        if (GetFlag("enemyWave3Complated") && GetFlag("allWordsAcquired"))
+        {
+            puzzle1Gate1.SetActive(true);
+            puzzle1Gate2.SetActive(true);
+            puzzle2Gate1.SetActive(true);
+            puzzle2Gate2.SetActive(true);
+        }
+        else if (GetFlag("enemyWave2Completed"))
+        {
+            puzzle2Gate1.SetActive(false);
+            puzzle2Gate2.SetActive(false);
+        }
         
+        else if (GetFlag("enemyWave1Completed"))
+        {
+            puzzle1Gate1.SetActive(false);
+            puzzle1Gate2.SetActive(false);
+        }
+
+        if (GetFlag("puzzle2Completed"))
+        {
+            PlayerController.instance.gameObject.transform.position = spawnPoint3.transform.position;
+            puzzle2Gate1.SetActive(true);
+        }
+        else if (GetFlag("puzzle1Completed"))
+        {
+            PlayerController.instance.gameObject.transform.position = spawnPoint2.transform.position;
+            puzzle1Gate1.SetActive(true);
+        }
+        else
+        {
+            PlayerController.instance.gameObject.transform.position = spawnPoint1.transform.position;
+        }
     }
 
     #endregion
