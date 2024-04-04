@@ -71,6 +71,13 @@ public class WordCanvasManager : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        ToggleCanvas(true);
+        if (!canvasActivated)
+        {
+            ToggleCanvas(true);
+        }
+        else
+        {
+            ToggleCanvas(false);
+        }
     }
 }

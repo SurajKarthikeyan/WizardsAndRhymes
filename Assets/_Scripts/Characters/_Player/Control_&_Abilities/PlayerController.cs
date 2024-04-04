@@ -628,6 +628,7 @@ public class PlayerController : Singleton<PlayerController>
         playerInput.Player.Dash.canceled -= DoDash;
         playerInput.Player.RangedAttack.canceled -= DoRanged;
         playerInput.Player.MeleeAttack.canceled -= DoMelee;
+        playerInput.Player.Interact.canceled -= DoInteract;
         playerInput.Player.Disable();
     }
 
