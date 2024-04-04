@@ -82,6 +82,7 @@ public class FlagManager : Singleton<FlagManager>
             puzzle1Gate1.SetTrigger("interaction");
             puzzle1Gate2.SetTrigger("interaction");
             dialogueTrigger2.SetActive(true);
+            dialogueTrigger1.SetActive(false);
         }
         else
         {
