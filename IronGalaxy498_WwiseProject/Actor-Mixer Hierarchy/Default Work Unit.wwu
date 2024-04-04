@@ -3504,6 +3504,11 @@
 										</ModifierInfo>
 									</ModifierList>
 								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -3747,17 +3752,15 @@
 						<ObjectList Name="Effects">
 							<Reference>
 								<Local>
-									<EffectSlot Name="" ID="{5F2F96D0-3A2E-444C-8B0B-BB8FCE18B3CB}" ShortID="356308699">
-										<ReferenceList/>
-									</EffectSlot>
+									<EffectSlot Name="" ID="{5F2F96D0-3A2E-444C-8B0B-BB8FCE18B3CB}" ShortID="356308699"/>
 								</Local>
 							</Reference>
 							<Reference>
 								<Local>
-									<EffectSlot Name="" ID="{3D38A935-9C5F-45B0-A328-B2DAF0498AB2}" ShortID="212081440">
+									<EffectSlot Name="" ID="{161648C9-B4EC-4F0B-B1ED-81F394C42E64}" ShortID="753716024">
 										<ReferenceList>
-											<Reference Name="Effect" PluginName="iZotope Trash Distortion" CompanyID="259" PluginID="3" PluginType="3">
-												<ObjectRef Name="VoxDistort" ID="{32C703D6-9D8C-4935-8239-5BF354F79739}" WorkUnitID="{A66D10A1-C26F-4E40-B419-653F3C1F30B8}"/>
+											<Reference Name="Effect" PluginName="Wwise Guitar Distortion" CompanyID="0" PluginID="126" PluginType="3">
+												<ObjectRef Name="New_Guitar_Distortion" ID="{6F469D49-CC36-47CA-A863-47433A20E4B5}" WorkUnitID="{A66D10A1-C26F-4E40-B419-653F3C1F30B8}"/>
 											</Reference>
 										</ReferenceList>
 									</EffectSlot>
