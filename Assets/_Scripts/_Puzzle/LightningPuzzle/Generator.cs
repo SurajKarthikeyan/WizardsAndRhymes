@@ -47,6 +47,7 @@ public class Generator : MonoBehaviour
         {
             gateCollider.enabled = false;
         }
+        Debug.Log("BIGGGGGGG");
         generatorRenderer.material = onMat;
         generatorOnSoundEffect.Post(this.gameObject);
     }
