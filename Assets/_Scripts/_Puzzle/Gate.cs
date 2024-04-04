@@ -6,7 +6,7 @@ public class Gate : MonoBehaviour
 {
     [SerializeField] private Animator gateAnim;
 
-    public void SwitchGate()
+    public virtual void SwitchGate()
     {
         gateAnim.SetTrigger("interaction");
     }

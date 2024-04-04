@@ -5171,6 +5171,18 @@ MonoBehaviour:
               m_StringArgument: Kill All Enemies To Unlock The Roast Rock
               m_BoolArgument: 1
             m_CallState: 2
+          - m_Target: {fileID: 1336706523}
+            m_TargetAssemblyTypeName: AKChangeState, Assembly-CSharp
+            m_MethodName: ChangeState
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Kill All Enemies To Unlock The Roast Rock
+              m_BoolArgument: 1
+            m_CallState: 2
   pauseOnTrigger: 1
   playOnStart: 0
 --- !u!4 &313899433 stripped
@@ -7652,7 +7664,7 @@ Transform:
   m_GameObject: {fileID: 521895201}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13378,6 +13390,18 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
+          - m_Target: {fileID: 1336706523}
+            m_TargetAssemblyTypeName: AKChangeState, Assembly-CSharp
+            m_MethodName: ChangeState
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
   pauseOnTrigger: 1
   playOnStart: 0
 --- !u!4 &711062443
@@ -15674,7 +15698,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1518529648}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+        m_MethodName: 
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15686,7 +15710,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1282274231}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+        m_MethodName: 
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15698,7 +15722,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 81138555853967076}
         m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: set_HP
+        m_MethodName: 
         m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15710,8 +15734,20 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1507415808}
         m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
+        m_MethodName: 
         m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: Unleash your ultimate roast on Wizzo!
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1277705097}
+        m_TargetAssemblyTypeName: AKChangeState, Assembly-CSharp
+        m_MethodName: ChangeState
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -16151,6 +16187,7 @@ MonoBehaviour:
   isLoaded: 0
   isLoadingScene: 0
   isUnloadingScene: 0
+  enterPuzzleState: {fileID: 0}
 --- !u!65 &918240553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18042,11 +18079,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2113800785987245767, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1091166938}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1091166941 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 8492979641042242476, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-  m_PrefabInstance: {fileID: 1091166938}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1091166942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18060,7 +18092,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gateAnim: {fileID: 1091166940}
-  gateCollider: {fileID: 1091166941}
 --- !u!1001 &1092531252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21015,6 +21046,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3552317740834125453, guid: 726594df7b4c9a74797b6549eee9299a, type: 3}
   m_PrefabInstance: {fileID: 1268243160}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1277705095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1277705096}
+  - component: {fileID: 1277705097}
+  m_Layer: 3
+  m_Name: SetLightningOutOfCombat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1277705096
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277705095}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1381010328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1277705097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1277705095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88d3ec50308d444db1a6477295b1830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  akState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 4dc79f85724b83a4ab8239c96269b31a, type: 2}
 --- !u!1 &1282274231 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1737190785696282241, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
@@ -21622,6 +21703,18 @@ MonoBehaviour:
           m_StringArgument: Move Northwest to solve puzzle 1
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1277705097}
+        m_TargetAssemblyTypeName: AKChangeState, Assembly-CSharp
+        m_MethodName: ChangeState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: Move Northwest to solve puzzle 1
+          m_BoolArgument: 0
+        m_CallState: 2
   wavesCleared: 0
   enemyManagerClearedEvent: enemyWave1Completed
   enemyToggle: {fileID: 0}
@@ -22004,6 +22097,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3521096967233506011, guid: 1a244b4cb4787f24b9a555b26fff36f8, type: 3}
   m_PrefabInstance: {fileID: 371899099}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1336706521
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1336706522}
+  - component: {fileID: 1336706523}
+  m_Layer: 3
+  m_Name: SetLightningCombat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1336706522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336706521}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1381010328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1336706523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1336706521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88d3ec50308d444db1a6477295b1830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  akState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a5a6a9d3ceff5194e86ac7ba37f49cb1, type: 2}
 --- !u!4 &1338102685 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3247662601864608305, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
@@ -23080,6 +23223,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 224f0b542dda3824db6d11cc62959a40, type: 3}
+--- !u!1 &1425819137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1425819138}
+  - component: {fileID: 1425819139}
+  m_Layer: 3
+  m_Name: SetLightningInPuzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1425819138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425819137}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1381010328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1425819139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1425819137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88d3ec50308d444db1a6477295b1830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  akState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 50c8c15fd9af26a4daad3303254ed23e, type: 2}
 --- !u!1 &1427001914
 GameObject:
   m_ObjectHideFlags: 0
@@ -23292,6 +23485,7 @@ MonoBehaviour:
   isLoaded: 0
   isLoadingScene: 0
   isUnloadingScene: 0
+  enterPuzzleState: {fileID: 1425819139}
 --- !u!65 &1437669563
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24865,11 +25059,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2113800785987245767, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1565664286}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1565664289 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 8492979641042242476, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-  m_PrefabInstance: {fileID: 1565664286}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1565664290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24883,7 +25072,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gateAnim: {fileID: 1565664288}
-  gateCollider: {fileID: 1565664289}
 --- !u!1001 &1567745359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25429,6 +25617,18 @@ MonoBehaviour:
             m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
             m_MethodName: set_text
             m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Kill All Enemies To Unlock The Eastern Gate
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1336706523}
+            m_TargetAssemblyTypeName: AKChangeState, Assembly-CSharp
+            m_MethodName: ChangeState
+            m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -26860,6 +27060,7 @@ MonoBehaviour:
   isLoaded: 0
   isLoadingScene: 0
   isUnloadingScene: 0
+  enterPuzzleState: {fileID: 1425819139}
 --- !u!1 &1635428724
 GameObject:
   m_ObjectHideFlags: 0
@@ -27410,7 +27611,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1565664290}
         m_TargetAssemblyTypeName: Gate, Assembly-CSharp
-        m_MethodName: SwitchGate
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27422,7 +27623,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2079257622}
         m_TargetAssemblyTypeName: Gate, Assembly-CSharp
-        m_MethodName: SwitchGate
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27434,7 +27635,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1970810021}
         m_TargetAssemblyTypeName: CrowdSurfPath, Assembly-CSharp
-        m_MethodName: SetActive
+        m_MethodName: 
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27446,7 +27647,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1606980501}
         m_TargetAssemblyTypeName: CrowdSurfPath, Assembly-CSharp
-        m_MethodName: SetActive
+        m_MethodName: 
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -27456,22 +27657,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1518529648}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1282274231}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 1277705097}
+        m_TargetAssemblyTypeName: AKChangeState, Assembly-CSharp
+        m_MethodName: ChangeState
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -27479,30 +27668,6 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 81138555853967076}
-        m_TargetAssemblyTypeName: Health, Assembly-CSharp
-        m_MethodName: set_HP
-        m_Mode: 4
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 25
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1507415808}
-        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
-        m_MethodName: set_text
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 25
-          m_StringArgument: Move northeast to solve the second puzzle
-          m_BoolArgument: 1
         m_CallState: 2
   wavesCleared: 0
   enemyManagerClearedEvent: enemyWave2Completed
@@ -31615,11 +31780,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1924979231}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2032880846 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 8492979641042242476, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-  m_PrefabInstance: {fileID: 1924979231}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2032880847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31633,7 +31793,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gateAnim: {fileID: 1924979233}
-  gateCollider: {fileID: 2032880846}
 --- !u!1 &2033369103
 GameObject:
   m_ObjectHideFlags: 0
@@ -31977,11 +32136,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1862894639}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2079257621 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 8492979641042242476, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-  m_PrefabInstance: {fileID: 1862894639}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2079257622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31995,7 +32149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gateAnim: {fileID: 1862894641}
-  gateCollider: {fileID: 2079257621}
 --- !u!4 &2080354632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3247662601864608305, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
@@ -34069,6 +34222,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 775453463}
+    - targetCorrespondingSourceObject: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1336706522}
+    - targetCorrespondingSourceObject: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1277705096}
+    - targetCorrespondingSourceObject: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1425819138}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
 --- !u!114 &81138555853967075 stripped
@@ -34308,7 +34470,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.024297059
+      value: -0.024297088
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -34606,15 +34768,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7120159554502453663, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.38140965
+      value: 0.38140962
       objectReference: {fileID: 0}
     - target: {fileID: 7120159554502453663, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.024318963
+      value: -0.024318993
       objectReference: {fileID: 0}
     - target: {fileID: 7120159554502453663, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.010038048
+      value: 0.010038093
       objectReference: {fileID: 0}
     - target: {fileID: 7271955309154457001, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_IsActive
