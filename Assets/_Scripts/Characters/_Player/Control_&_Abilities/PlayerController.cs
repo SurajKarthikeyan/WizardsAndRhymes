@@ -120,6 +120,9 @@ public class PlayerController : Singleton<PlayerController>
 
     [Tooltip("Direction to apply the force of dashing when moving")]
     private Vector3 dashDirection = Vector3.zero;
+
+    [Tooltip("Dash Sound Effect")]
+    [SerializeField] private AK.Wwise.Event dashSoundEffect;
     #endregion
 
     [Header("Camera")]
@@ -559,6 +562,7 @@ public class PlayerController : Singleton<PlayerController>
         abilityManager.ResetAbilityRecharge();
         if (IsValidDash())
         {
+            dashSoundEffect.Post(this.gameObject);
             StartCoroutine(Dash());
         }
     }
