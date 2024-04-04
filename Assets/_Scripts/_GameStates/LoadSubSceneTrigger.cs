@@ -11,6 +11,8 @@ public class LoadSubSceneTrigger : MonoBehaviour
 
     public bool isUnloadingScene;
 
+    public AKChangeState enterPuzzleState;
+
     private void LoadSubscene()
     {
         isLoadingScene = true;
@@ -73,6 +75,7 @@ public class LoadSubSceneTrigger : MonoBehaviour
             {
                 // Load the subscene asynchronously
                 LoadSubscene();
+                enterPuzzleState.ChangeState();
             }
             else
             {

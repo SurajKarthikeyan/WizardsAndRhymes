@@ -4056,6 +4056,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1417210135444854531, guid: bd53c4c459fb0604fb8fb90ed713e90b, type: 3}
   m_PrefabInstance: {fileID: 265480650}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &255718404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 255718405}
+  - component: {fileID: 255718406}
+  m_Layer: 3
+  m_Name: SetIceInPuzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &255718405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255718404}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1381010328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &255718406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255718404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88d3ec50308d444db1a6477295b1830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  akState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d430fdc893e197446b7dde77cc9ef132, type: 2}
 --- !u!1001 &257087511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5163,6 +5213,18 @@ MonoBehaviour:
             m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
             m_MethodName: set_text
             m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Kill All Enemies To Unlock The Roast Rock
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1406631200}
+            m_TargetAssemblyTypeName: AKChangeState, Assembly-CSharp
+            m_MethodName: ChangeState
+            m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -13516,7 +13578,7 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
-          - m_Target: {fileID: 81138555853967077}
+          - m_Target: {fileID: 1406631200}
             m_TargetAssemblyTypeName: AKChangeState, Assembly-CSharp
             m_MethodName: ChangeState
             m_Mode: 1
@@ -13864,6 +13926,56 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61c4df6368cee2649b610592124b49bc, type: 3}
+--- !u!1 &749953070
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 749953071}
+  - component: {fileID: 749953072}
+  m_Layer: 3
+  m_Name: SetIceOutOfCombat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &749953071
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749953070}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1381010328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &749953072
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749953070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88d3ec50308d444db1a6477295b1830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  akState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 499844e8b3679dc42a1aa4bc122c4841, type: 2}
 --- !u!1001 &751254581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16285,6 +16397,7 @@ MonoBehaviour:
   isLoaded: 0
   isLoadingScene: 0
   isUnloadingScene: 0
+  enterPuzzleState: {fileID: 0}
 --- !u!65 &918240553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21794,6 +21907,18 @@ MonoBehaviour:
           m_StringArgument: Move Northwest to solve puzzle 1
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 749953072}
+        m_TargetAssemblyTypeName: AKChangeState, Assembly-CSharp
+        m_MethodName: ChangeState
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: Move Northwest to solve puzzle 1
+          m_BoolArgument: 0
+        m_CallState: 2
   wavesCleared: 0
   enemyManagerClearedEvent: enemyWave1Completed
   enemyToggle: {fileID: 0}
@@ -23191,6 +23316,106 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
+--- !u!1 &1406631198
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1406631199}
+  - component: {fileID: 1406631200}
+  m_Layer: 3
+  m_Name: SetIceInCombat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1406631199
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406631198}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1381010328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1406631200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406631198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88d3ec50308d444db1a6477295b1830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  akState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a5bf2a03815554f49b73ce19583944d4, type: 2}
+--- !u!1 &1418063118
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1418063119}
+  - component: {fileID: 1418063120}
+  m_Layer: 3
+  m_Name: SetIceOutOfPuzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1418063119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418063118}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1381010328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1418063120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1418063118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88d3ec50308d444db1a6477295b1830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  akState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 230e33cf5fe62d74ea753210a4fbfbe8, type: 2}
 --- !u!1001 &1423600065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23464,6 +23689,7 @@ MonoBehaviour:
   isLoaded: 0
   isLoadingScene: 0
   isUnloadingScene: 0
+  enterPuzzleState: {fileID: 255718406}
 --- !u!65 &1437669563
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25609,6 +25835,18 @@ MonoBehaviour:
               m_StringArgument: Kill All Enemies To Unlock The Eastern Gate
               m_BoolArgument: 1
             m_CallState: 2
+          - m_Target: {fileID: 1406631200}
+            m_TargetAssemblyTypeName: AKChangeState, Assembly-CSharp
+            m_MethodName: ChangeState
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Kill All Enemies To Unlock The Eastern Gate
+              m_BoolArgument: 1
+            m_CallState: 2
   pauseOnTrigger: 1
   playOnStart: 0
 --- !u!1 &1577433710
@@ -27037,6 +27275,7 @@ MonoBehaviour:
   isLoaded: 0
   isLoadingScene: 0
   isUnloadingScene: 0
+  enterPuzzleState: {fileID: 255718406}
 --- !u!1 &1635428724
 GameObject:
   m_ObjectHideFlags: 0
@@ -27673,6 +27912,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
         m_MethodName: set_text
         m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: Move northeast to solve the second puzzle
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 749953072}
+        m_TargetAssemblyTypeName: AKChangeState, Assembly-CSharp
+        m_MethodName: ChangeState
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -34238,6 +34489,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       insertIndex: -1
       addedObject: {fileID: 775453463}
+    - targetCorrespondingSourceObject: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 749953071}
+    - targetCorrespondingSourceObject: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1406631199}
+    - targetCorrespondingSourceObject: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 255718405}
+    - targetCorrespondingSourceObject: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1418063119}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1979217756860975084, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       insertIndex: -1
@@ -34287,7 +34550,7 @@ MonoBehaviour:
     valueGuidInternal: 
     groupIdInternal: 0
     groupGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: a5bf2a03815554f49b73ce19583944d4, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 77d415847dcb8504683a2b125d98cce5, type: 2}
 --- !u!114 &522614002026916890 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5277050906424848010, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
