@@ -17,6 +17,7 @@ namespace AK
         static const AkUniqueID BUTTONPRESS = 317641954U;
         static const AkUniqueID CROWDSURF = 1739654744U;
         static const AkUniqueID CRYSTAL = 3444057113U;
+        static const AkUniqueID FART = 2948602592U;
         static const AkUniqueID ICEBLOCK = 418751485U;
         static const AkUniqueID LEVER = 2782712987U;
         static const AkUniqueID LIGHTNINGMUSICLOOP = 2689877988U;
