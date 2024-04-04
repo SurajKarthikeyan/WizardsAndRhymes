@@ -96,8 +96,9 @@
 			<StateGroups>
 				<StateGroup Id="1021618141" Name="MusicState">
 					<States>
-						<State Id="89505537" Name="Gameplay"/>
+						<State Id="733150682" Name="IceCombat"/>
 						<State Id="748895195" Name="None"/>
+						<State Id="1125500713" Name="Intro"/>
 					</States>
 				</StateGroup>
 				<StateGroup Id="2352559104" Name="CrowdSurfing">
@@ -109,7 +110,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{E304C9DD-B995-0E9C-E57E-3FB25B935521}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{399EEB35-D49A-DCAE-14C2-719E2782DD41}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -739,9 +740,26 @@
 					</MediaRefs>
 				</Event>
 				<Event Id="3991942870" Name="Music" DurationType="Infinite">
-					<ActionSetState>
-						<ActionSetStateEntry GroupId="1021618141" Id="89505537" Name="Gameplay"/>
-					</ActionSetState>
+					<SwitchContainers>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="733150682"/>
+							<MediaRefs>
+								<MediaRef Id="77993868"/>
+								<MediaRef Id="190951527"/>
+								<MediaRef Id="522681793"/>
+								<MediaRef Id="648565713"/>
+								<MediaRef Id="771789552"/>
+								<MediaRef Id="799885752"/>
+								<MediaRef Id="834049591"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="1125500713"/>
+							<MediaRefs>
+								<MediaRef Id="771789552"/>
+							</MediaRefs>
+						</SwitchContainer>
+					</SwitchContainers>
 				</Event>
 				<Event Id="1843531235" Name="PlayButton" DurationType="OneShot" DurationMin="1.1446644" DurationMax="2.1689167">
 					<MediaRefs>
@@ -857,8 +875,9 @@
 			<StateGroups>
 				<StateGroup Id="1021618141" Name="MusicState">
 					<States>
-						<State Id="89505537" Name="Gameplay"/>
+						<State Id="733150682" Name="IceCombat"/>
 						<State Id="748895195" Name="None"/>
+						<State Id="1125500713" Name="Intro"/>
 					</States>
 				</StateGroup>
 				<StateGroup Id="2352559104" Name="CrowdSurfing">
@@ -871,5 +890,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E2B1D7C1-780C-84A1-CC5C-CD956C3782CA}</FileHash>
+	<FileHash>{ADA03308-12D5-5FF8-BB20-7A05E2CF6C5C}</FileHash>
 </SoundBanksInfo>

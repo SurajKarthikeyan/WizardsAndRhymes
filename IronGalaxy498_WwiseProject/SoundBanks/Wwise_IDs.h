@@ -59,7 +59,8 @@ namespace AK
 
             namespace STATE
             {
-                static const AkUniqueID GAMEPLAY = 89505537U;
+                static const AkUniqueID ICECOMBAT = 733150682U;
+                static const AkUniqueID INTRO = 1125500713U;
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE
         } // namespace MUSICSTATE
