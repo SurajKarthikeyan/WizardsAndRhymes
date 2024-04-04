@@ -13425,6 +13425,18 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
+          - m_Target: {fileID: 941926340}
+            m_TargetAssemblyTypeName: AKChangeState, Assembly-CSharp
+            m_MethodName: ChangeState
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
       eventsWhenFinishingDialogueString:
         m_PersistentCalls:
           m_Calls: []
@@ -16637,6 +16649,56 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1417210135444854531, guid: bd53c4c459fb0604fb8fb90ed713e90b, type: 3}
   m_PrefabInstance: {fileID: 1477380378}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &941926338
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 941926339}
+  - component: {fileID: 941926340}
+  m_Layer: 3
+  m_Name: SetLightningIntro
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &941926339
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941926338}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1381010328}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &941926340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 941926338}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88d3ec50308d444db1a6477295b1830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  akState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 77d415847dcb8504683a2b125d98cce5, type: 2}
 --- !u!1001 &948418749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34316,6 +34378,9 @@ PrefabInstance:
       addedObject: {fileID: 1425819138}
     - targetCorrespondingSourceObject: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 941926339}
+    - targetCorrespondingSourceObject: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 230735217}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
@@ -34548,19 +34613,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9231997
+      value: 0.92319965
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.38341913
+      value: -0.38341916
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.024297118
+      value: -0.024297059
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.010090962
+      value: -0.010090947
       objectReference: {fileID: 0}
     - target: {fileID: 357537751564058929, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
