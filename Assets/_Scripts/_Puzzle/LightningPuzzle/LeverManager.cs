@@ -24,7 +24,6 @@ public class LeverManager : MonoBehaviour
     public void CheckLevers()
     {
         isLeverCoolDown = true;
-        StartCoroutine(LeverCoolDown());
         if (useLBManager)
         {
             lbManager.SetHoloBlocks();
@@ -38,6 +37,8 @@ public class LeverManager : MonoBehaviour
             }
             leverGenerator.Hodor();
         }
+        StartCoroutine(LeverCoolDown());
+
     }
 
     IEnumerator LeverCoolDown()
