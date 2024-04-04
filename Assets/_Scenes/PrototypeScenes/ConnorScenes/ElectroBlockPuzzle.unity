@@ -2321,7 +2321,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5336344484668636035, guid: 80358e877a879c14cb431fca9e3b8537, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7836,10 +7836,10 @@ MonoBehaviour:
   go: {fileID: 305455171}
   originalMaterial: {fileID: 2100000, guid: 01edd2cd8047dd742a9b609ce345137b, type: 2}
   newMaterial: {fileID: 0}
-  timeToFullEmission: 0
+  timeToFullEmission: 1
   isOn: 0
-  minEmissionValue: {r: 3.9999998, g: 3.9999998, b: 3.9999998, a: 1}
-  maxEmissionValue: {r: 15.033962, g: 9.37065, b: 0.3120253, a: 0}
+  minEmissionValue: {r: 0.99999994, g: 0.99999994, b: 0.99999994, a: 1}
+  maxEmissionValue: {r: 72.65929, g: 72.65929, b: 72.65929, a: 1}
 --- !u!1 &310214212
 GameObject:
   m_ObjectHideFlags: 0
@@ -9448,8 +9448,8 @@ MonoBehaviour:
   newMaterial: {fileID: 0}
   timeToFullEmission: 1
   isOn: 0
-  minEmissionValue: {r: 3.9999998, g: 3.9999998, b: 3.9999998, a: 1}
-  maxEmissionValue: {r: 12.414608, g: 7.7861767, b: 2.1315646, a: 0}
+  minEmissionValue: {r: 0.99999994, g: 0.99999994, b: 0.99999994, a: 1}
+  maxEmissionValue: {r: 72.65929, g: 72.65929, b: 72.65929, a: 1}
 --- !u!1001 &488491180
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11348,7 +11348,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5336344484668636035, guid: 80358e877a879c14cb431fca9e3b8537, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -13151,6 +13151,7 @@ MonoBehaviour:
   activatableGameObject: {fileID: 775294626}
   pressurePlateAnimator: {fileID: 875814236}
   hasBeenPushedDown: 0
+  lbManager: {fileID: 0}
   onPP: 0
 --- !u!114 &875814239
 MonoBehaviour:
@@ -13670,10 +13671,10 @@ MonoBehaviour:
   go: {fileID: 882241891}
   originalMaterial: {fileID: 2100000, guid: 01edd2cd8047dd742a9b609ce345137b, type: 2}
   newMaterial: {fileID: 0}
-  timeToFullEmission: 0
+  timeToFullEmission: 1
   isOn: 0
-  minEmissionValue: {r: 3.9999998, g: 3.9999998, b: 3.9999998, a: 1}
-  maxEmissionValue: {r: 15.033962, g: 9.37065, b: 0.3120253, a: 0}
+  minEmissionValue: {r: 0.99999994, g: 0.99999994, b: 0.99999994, a: 1}
+  maxEmissionValue: {r: 72.65929, g: 72.65929, b: 72.65929, a: 1}
 --- !u!114 &921716215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14709,6 +14710,7 @@ MonoBehaviour:
   activatableGameObject: {fileID: 311351980}
   pressurePlateAnimator: {fileID: 460755333}
   hasBeenPushedDown: 0
+  lbManager: {fileID: 1151535009}
   onPP: 0
 --- !u!4 &1038512035 stripped
 Transform:
@@ -15275,6 +15277,7 @@ MonoBehaviour:
   activatableGameObject: {fileID: 0}
   pressurePlateAnimator: {fileID: 1085511868}
   hasBeenPushedDown: 0
+  lbManager: {fileID: 0}
   onPP: 0
 --- !u!1001 &1085879448
 PrefabInstance:
@@ -15351,6 +15354,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5336344484668636035, guid: 089b5490e39612c40ba5f520adea9486, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1358586958}
+    - targetCorrespondingSourceObject: {fileID: 5336344484668636035, guid: 089b5490e39612c40ba5f520adea9486, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1358586962}
   m_SourcePrefab: {fileID: 100100000, guid: 089b5490e39612c40ba5f520adea9486, type: 3}
 --- !u!1 &1085879449 stripped
 GameObject:
@@ -15672,10 +15678,10 @@ MonoBehaviour:
   go: {fileID: 1096814269}
   originalMaterial: {fileID: 2100000, guid: 01edd2cd8047dd742a9b609ce345137b, type: 2}
   newMaterial: {fileID: 0}
-  timeToFullEmission: 0
+  timeToFullEmission: 1
   isOn: 0
-  minEmissionValue: {r: 3.9999998, g: 3.9999998, b: 3.9999998, a: 1}
-  maxEmissionValue: {r: 11.566747, g: 7.262841, b: 2.0174558, a: 0}
+  minEmissionValue: {r: 0.99999994, g: 0.99999994, b: 0.99999994, a: 1}
+  maxEmissionValue: {r: 72.65929, g: 72.65929, b: 72.65929, a: 1}
 --- !u!114 &1096814274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16660,6 +16666,7 @@ MonoBehaviour:
   activatableGameObject: {fileID: 1353042380}
   pressurePlateAnimator: {fileID: 1617729953}
   hasBeenPushedDown: 0
+  lbManager: {fileID: 0}
   onPP: 0
 --- !u!1001 &1223670247
 PrefabInstance:
@@ -17138,10 +17145,10 @@ MonoBehaviour:
   go: {fileID: 102515801}
   originalMaterial: {fileID: 2100000, guid: 01edd2cd8047dd742a9b609ce345137b, type: 2}
   newMaterial: {fileID: 0}
-  timeToFullEmission: 0
+  timeToFullEmission: 1
   isOn: 0
-  minEmissionValue: {r: 3.9999998, g: 3.9999998, b: 3.9999998, a: 1}
-  maxEmissionValue: {r: 15.033962, g: 9.37065, b: 0.3120253, a: 0}
+  minEmissionValue: {r: 0.99999994, g: 0.99999994, b: 0.99999994, a: 1}
+  maxEmissionValue: {r: 72.65929, g: 72.65929, b: 72.65929, a: 1}
 --- !u!114 &1258096621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17373,10 +17380,10 @@ MonoBehaviour:
   go: {fileID: 311351980}
   originalMaterial: {fileID: 2100000, guid: 01edd2cd8047dd742a9b609ce345137b, type: 2}
   newMaterial: {fileID: 0}
-  timeToFullEmission: 0
+  timeToFullEmission: 1
   isOn: 0
-  minEmissionValue: {r: 3.9999998, g: 3.9999998, b: 3.9999998, a: 1}
-  maxEmissionValue: {r: 15.033962, g: 9.37065, b: 0.3120253, a: 0}
+  minEmissionValue: {r: 0.99999994, g: 0.99999994, b: 0.99999994, a: 1}
+  maxEmissionValue: {r: 72.65929, g: 72.65929, b: 72.65929, a: 1}
 --- !u!114 &1280118615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18807,6 +18814,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lbManager: {fileID: 1151535009}
   isActive: 1
+--- !u!114 &1358586962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085879449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1458620097fb5ae408bceee3395e0881, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  go: {fileID: 1085879449}
+  originalMaterial: {fileID: 2100000, guid: 01edd2cd8047dd742a9b609ce345137b, type: 2}
+  newMaterial: {fileID: 0}
+  timeToFullEmission: 1
+  isOn: 0
+  minEmissionValue: {r: 0.99999994, g: 0.99999994, b: 0.99999994, a: 1}
+  maxEmissionValue: {r: 72.65929, g: 72.65929, b: 72.65929, a: 1}
 --- !u!1001 &1362454210
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19019,10 +19045,10 @@ MonoBehaviour:
   go: {fileID: 1229632604}
   originalMaterial: {fileID: 2100000, guid: 01edd2cd8047dd742a9b609ce345137b, type: 2}
   newMaterial: {fileID: 0}
-  timeToFullEmission: 0
+  timeToFullEmission: 1
   isOn: 0
-  minEmissionValue: {r: 3.9999998, g: 3.9999998, b: 3.9999998, a: 1}
-  maxEmissionValue: {r: 15.033962, g: 9.37065, b: 0.3120253, a: 0}
+  minEmissionValue: {r: 0.99999994, g: 0.99999994, b: 0.99999994, a: 1}
+  maxEmissionValue: {r: 72.65929, g: 72.65929, b: 72.65929, a: 1}
 --- !u!114 &1372860487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19347,7 +19373,7 @@ MonoBehaviour:
   wordPickUpSoundEffect:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 2e2ae16c6892ed1419ec9dbd8b2fde29, type: 2}
 --- !u!65 &1400156561
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23887,6 +23913,7 @@ MonoBehaviour:
   activatableGameObject: {fileID: 1085879449}
   pressurePlateAnimator: {fileID: 765119371}
   hasBeenPushedDown: 1
+  lbManager: {fileID: 1151535009}
   onPP: 0
 --- !u!4 &1779506160 stripped
 Transform:
@@ -24565,10 +24592,10 @@ MonoBehaviour:
   go: {fileID: 1848951498}
   originalMaterial: {fileID: 2100000, guid: 01edd2cd8047dd742a9b609ce345137b, type: 2}
   newMaterial: {fileID: 0}
-  timeToFullEmission: 0
+  timeToFullEmission: 1
   isOn: 0
-  minEmissionValue: {r: 3.9999998, g: 3.9999998, b: 3.9999998, a: 1}
-  maxEmissionValue: {r: 15.033962, g: 9.37065, b: 0.3120253, a: 0}
+  minEmissionValue: {r: 0.99999994, g: 0.99999994, b: 0.99999994, a: 1}
+  maxEmissionValue: {r: 72.65929, g: 72.65929, b: 72.65929, a: 1}
 --- !u!114 &1848951506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25355,6 +25382,7 @@ MonoBehaviour:
   activatableGameObject: {fileID: 1752325683}
   pressurePlateAnimator: {fileID: 1879147090}
   hasBeenPushedDown: 0
+  lbManager: {fileID: 0}
   onPP: 0
 --- !u!95 &1879147090 stripped
 Animator:
@@ -25390,6 +25418,7 @@ MonoBehaviour:
   activatableGameObject: {fileID: 289239358}
   pressurePlateAnimator: {fileID: 1894961277}
   hasBeenPushedDown: 0
+  lbManager: {fileID: 0}
   onPP: 0
 --- !u!95 &1894961277 stripped
 Animator:
@@ -27736,7 +27765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5336344484668636035, guid: 80358e877a879c14cb431fca9e3b8537, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29660,7 +29689,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3516245921582239295, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9402693
+      value: -0.94026935
       objectReference: {fileID: 0}
     - target: {fileID: 3516245921582239295, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -29668,11 +29697,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3516245921582239295, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.00000017881392
+      value: 0.00000014901161
       objectReference: {fileID: 0}
     - target: {fileID: 3516245921582239295, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.00000002235174
+      value: 0.000000022351742
       objectReference: {fileID: 0}
     - target: {fileID: 3575433202476467507, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29788,19 +29817,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6543074965747046479, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.35238498
+      value: -0.35238507
       objectReference: {fileID: 0}
     - target: {fileID: 6543074965747046479, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.1465772
+      value: 0.14657725
       objectReference: {fileID: 0}
     - target: {fileID: 6543074965747046479, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8534194
+      value: 0.85341936
       objectReference: {fileID: 0}
     - target: {fileID: 6543074965747046479, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.35498625
+      value: 0.35498628
       objectReference: {fileID: 0}
     - target: {fileID: 6745870337105400009, guid: 2539e623778d7154f96e8650e163dd6b, type: 3}
       propertyPath: m_Enabled

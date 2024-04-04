@@ -18,6 +18,9 @@ public class PressurePlate : MonoBehaviour
     
     [Tooltip("Bool for if its been interacted with and reverse the animation on exit")]
     [SerializeField] private bool hasBeenPushedDown;
+
+    [Tooltip("LB Manager of the lightning block IF lightning block is being changed :)")]
+    [SerializeField] private LightningBlockManager lbManager;
     public int onPP = 0;
 
     private bool isElectroBlock;
@@ -65,12 +68,17 @@ public class PressurePlate : MonoBehaviour
 
                 if (isElectroBlock)
                 {
+                    
                     other.GameObject().GetComponent<FirstLightningBlock>().isActive = false;
                 }
 
                 else
                 {
                     activatableGameObject.SetActive(!activatableGameObject.activeSelf);
+                    if (lbManager != null)
+                    {
+                        lbManager.SetHoloBlocks();
+                    }
                 }
             }
         }
@@ -82,6 +90,10 @@ public class PressurePlate : MonoBehaviour
     public void ActivateDefaultPressurePlate()
     {
         activatableGameObject.SetActive(!activatableGameObject.activeSelf);
+        if (lbManager != null)
+        {
+            lbManager.SetHoloBlocks();
+        }
     }
 
     /// <summary>

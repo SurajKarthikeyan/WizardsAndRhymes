@@ -55,6 +55,10 @@ public class LightningBlockManager : MonoBehaviour
             {
                 curHoloBlock.SetActive(true);
             }
+            else
+            {
+                curHoloBlock.SetActive(false);
+            }
         }
     }
     public void CheckAllBlocks()
