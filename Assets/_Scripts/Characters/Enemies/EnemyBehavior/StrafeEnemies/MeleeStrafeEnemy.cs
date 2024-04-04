@@ -22,7 +22,7 @@ public class MeleeStrafeEnemy : BaseStrafeEnemy
     /// </summary>
     private void LungeAttack()
     {
-        //BEGIN MELEE ANIMATION
+        skellyAnimator.SetTrigger("meleeCharge");
         //Temporarily disable the navMesh because Unity physics do not like it
         navMeshAgent.enabled = false;
         rb.isKinematic = false;

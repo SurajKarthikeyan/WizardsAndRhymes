@@ -80,6 +80,8 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
 
     [Tooltip("Script of enemy debug text")]
     private AIDebug aiDebug;
+
+    [SerializeField] protected Animator skellyAnimator;
     #endregion
 
     #region Unity Methods
@@ -133,9 +135,11 @@ public abstract class BaseEnemyBehavior : MonoBehaviour
         {
             //Make NavMesh stay still for a certain period of time
             navMeshAgent.isStopped = true;
+            skellyAnimator.SetBool("isMoving", false);
         }
         else
         {
+            skellyAnimator.SetBool("isMoving", true);
             if (knockedBack)
             {
                 navMeshAgent.velocity = knockBackDirection.normalized * knockbackSpeed;

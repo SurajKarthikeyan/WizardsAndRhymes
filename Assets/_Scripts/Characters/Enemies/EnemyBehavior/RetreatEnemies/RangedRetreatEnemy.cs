@@ -53,6 +53,7 @@ public class RangedRetreatEnemy : BaseRetreatEnemy
     /// </summary>
     public void ShootProjectile()
     {
+        skellyAnimator.SetTrigger("rangedShoot");
         StartCoroutine(Projectile());
         navMeshAgent.enabled = true;
     }
