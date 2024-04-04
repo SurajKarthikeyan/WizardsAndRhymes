@@ -17,27 +17,21 @@ namespace AK
         static const AkUniqueID BUTTONPRESS = 317641954U;
         static const AkUniqueID CROWDSURF = 1739654744U;
         static const AkUniqueID CRYSTAL = 3444057113U;
-        static const AkUniqueID FREQTEST = 1061604899U;
         static const AkUniqueID ICEBLOCK = 418751485U;
         static const AkUniqueID LEVER = 2782712987U;
+        static const AkUniqueID LIGHTNINGMUSICLOOP = 2689877988U;
         static const AkUniqueID MELEEFIRE = 2248677623U;
         static const AkUniqueID MELEEICE = 1651067412U;
         static const AkUniqueID MELEELIGHTNING = 1583612915U;
         static const AkUniqueID MUSIC = 3991942870U;
-        static const AkUniqueID PLAY_TESTDOOROPEN = 3831721246U;
         static const AkUniqueID PLAYBUTTON = 1843531235U;
         static const AkUniqueID PLAYERHURT = 3537581393U;
-        static const AkUniqueID PROTOCOMBATLOOP = 3855831843U;
         static const AkUniqueID RANGEDFIRE = 1744863420U;
         static const AkUniqueID RANGEDICE = 2982846157U;
         static const AkUniqueID RANGEDLIGHTNING = 1899629126U;
         static const AkUniqueID ROCKPLATFORMPUZZLE = 1518733879U;
         static const AkUniqueID ROOMMUS = 427386941U;
         static const AkUniqueID SKELETONHIT = 2460311919U;
-        static const AkUniqueID TESTEVENT = 1097980931U;
-        static const AkUniqueID TESTINTERACTIVEMUSIC = 372047860U;
-        static const AkUniqueID TESTLEVEREVENT = 1177918645U;
-        static const AkUniqueID TESTMUSIC = 1324413170U;
     } // namespace EVENTS
 
     namespace STATES
