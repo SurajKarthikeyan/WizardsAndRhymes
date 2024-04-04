@@ -53,6 +53,7 @@ public class LightningBlockManager : MonoBehaviour
             curHoloBlock.transform.position = pos;
             if (lightBlockList[i].activeInHierarchy == false)
             {
+                lightBlockList[i].SetActive(false);
                 curHoloBlock.SetActive(true);
             }
         }
