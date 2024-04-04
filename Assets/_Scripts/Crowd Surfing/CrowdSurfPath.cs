@@ -68,8 +68,8 @@ public class CrowdSurfPath : MonoBehaviour
         //Auto place
         if (autoPlaceTriggers)
         {
-            startTrigger.transform.position = splineComputer.EvaluatePosition(0);
-            endTrigger.transform.position = splineComputer.EvaluatePosition(1);
+            startTrigger.transform.position = splineComputer.EvaluatePosition(0.0);
+            endTrigger.transform.position = splineComputer.EvaluatePosition(1.0);
         }
 
         //Configure end trigger
