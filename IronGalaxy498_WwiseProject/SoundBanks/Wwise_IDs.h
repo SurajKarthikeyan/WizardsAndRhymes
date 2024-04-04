@@ -32,6 +32,7 @@ namespace AK
         static const AkUniqueID ROCKPLATFORMPUZZLE = 1518733879U;
         static const AkUniqueID ROOMMUS = 427386941U;
         static const AkUniqueID SKELETONHIT = 2460311919U;
+        static const AkUniqueID WORDPICKUP = 3290622745U;
     } // namespace EVENTS
 
     namespace STATES

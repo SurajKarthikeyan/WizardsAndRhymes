@@ -1946,6 +1946,492 @@
 								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="WordPickup" ID="{D9D0A613-E668-46AB-B5AC-807AFCC16C09}" ShortID="666578924">
+							<PropertyList>
+								<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+								<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<RandomSequenceContainer Name="CanShake" ID="{1F532E61-30FC-4328-95AA-6B20DE20DBC6}" ShortID="412805072">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Objects, Misc, Paint, Spray Can, Marble, Shake SND30684" ID="{499F3659-D957-40BB-A0A3-802B3D06FA29}" ShortID="839598044">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Objects, Misc, Paint, Spray Can, Marble, Shake SND30684" ID="{ADAA9BC3-9822-4553-9B0E-7978351B8B47}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0717867669286578"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.0576161260190217"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.633461554160127"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Objects, Misc, Paint, Spray Can, Marble, Shake SND30684.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="200077581"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Objects, Misc, Paint, Spray Can, Marble, Shake SND30684" ID="{ADAA9BC3-9822-4553-9B0E-7978351B8B47}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Objects, Misc, Paint, Spray Paint Can, Shake SND29085" ID="{026BBE91-ADA2-4F36-A515-94550170A971}" ShortID="818606331">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Objects, Misc, Paint, Spray Paint Can, Shake SND29085" ID="{4BD35E00-25E4-4084-997E-0D7D26519AE5}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0873525815217391"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.0272976817255435"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.741599123173071"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Objects, Misc, Paint, Spray Paint Can, Shake SND29085.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="152936960"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Objects, Misc, Paint, Spray Paint Can, Shake SND29085" ID="{4BD35E00-25E4-4084-997E-0D7D26519AE5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Objects, Misc, Paint, Spray Paint Can, Shake SND29085_01" ID="{E39A536C-2C7F-4C33-A69C-CB67F1E83F1A}" ShortID="875861888">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Objects, Misc, Paint, Spray Paint Can, Shake SND29085" ID="{E0B77563-9F0A-425D-9043-C6F7EC61B0BD}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.131028872282609"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.26570758322011"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.03024072001217"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Objects, Misc, Paint, Spray Paint Can, Shake SND29085.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="119298661"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Objects, Misc, Paint, Spray Paint Can, Shake SND29085" ID="{E0B77563-9F0A-425D-9043-C6F7EC61B0BD}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Objects, Misc, Paint, Spray Can, Marble, Shake SND30684_01" ID="{32B540E3-D9F4-467F-937F-15CA33EC46C1}" ShortID="1055594125">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Objects, Misc, Paint, Spray Can, Marble, Shake SND30684" ID="{3B3C1FFE-F71E-45D7-A5ED-9EA09EE7C5A0}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.597726086720349"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.1496425925519"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Objects, Misc, Paint, Spray Can, Marble, Shake SND30684.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="3886522"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Objects, Misc, Paint, Spray Can, Marble, Shake SND30684" ID="{3B3C1FFE-F71E-45D7-A5ED-9EA09EE7C5A0}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Objects, Misc, Paint, Spray Can, Marble, Shake SND30684_03" ID="{A1D47892-5910-410D-9E15-15929B85A6A3}" ShortID="784231752">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Objects, Misc, Paint, Spray Can, Marble, Shake SND30684" ID="{F35DB321-A692-4F73-94BE-9938DE004714}">
+													<PropertyList>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="1.67110917317743"/>
+														<Property Name="TrimEnd" Type="Real64" Value="2.37685446528467"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Objects, Misc, Paint, Spray Can, Marble, Shake SND30684.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="672424488"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Objects, Misc, Paint, Spray Can, Marble, Shake SND30684" ID="{F35DB321-A692-4F73-94BE-9938DE004714}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Objects, Misc, Paint, Spray Paint Can, Shake SND29085_02" ID="{6D39FEC4-440A-4595-85C9-C03ED1DE64B4}" ShortID="499383898">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Objects, Misc, Paint, Spray Paint Can, Shake SND29085" ID="{617B5054-BBC0-4C9B-93E0-35C4E065AFA7}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0873525815217391"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.741539708630018"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.48499388586957"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Objects, Misc, Paint, Spray Paint Can, Shake SND29085.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="510362844"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Objects, Misc, Paint, Spray Paint Can, Shake SND29085" ID="{617B5054-BBC0-4C9B-93E0-35C4E065AFA7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Objects, Misc, Paint, Spray Paint Can, Shake SND29085_03" ID="{C62DC09F-D674-4C04-9E9F-1A3F3CA7E3BC}" ShortID="189061108">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Objects, Misc, Paint, Spray Paint Can, Shake SND29085" ID="{829F243A-1FA4-418A-BD6D-75DA8DB2A332}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0873525815217391"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.99601794321285"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.80443202085852"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Objects, Misc, Paint, Spray Paint Can, Shake SND29085.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="167927468"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Objects, Misc, Paint, Spray Paint Can, Shake SND29085" ID="{829F243A-1FA4-418A-BD6D-75DA8DB2A332}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="Spray" ID="{0D669562-335A-43D7-87D4-82294E2F1854}" ShortID="644109093">
+									<PropertyList>
+										<Property Name="Highpass" Type="int16">
+											<ValueList>
+												<Value>18</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{D46C2AF3-6335-4C40-8104-3EEF529133AD}" ShortID="622744028">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{4F1FE6E0-FD75-4F51-A183-D3F6D430F5E1}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0266666666666666"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.146666666666667"/>
+														<Property Name="TrimEnd" Type="Real64" Value="0.955029093931835"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="355475302"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{4F1FE6E0-FD75-4F51-A183-D3F6D430F5E1}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613_01" ID="{553072AB-4A1A-40F4-A529-324D4DCB49A7}" ShortID="469651198">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{71766043-4BAF-4DFD-A9F7-2FEC42C87909}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.118985868661679"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.913931837073979"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.73220282626766"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="682767542"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{71766043-4BAF-4DFD-A9F7-2FEC42C87909}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613_02" ID="{3B693957-BE21-4877-89E1-D98904A1EB3C}" ShortID="710094646">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{98D3F166-6698-4C3E-A232-757C6E69231A}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0533333333333332"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="1.70676641729011"/>
+														<Property Name="TrimEnd" Type="Real64" Value="2.37820448877805"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="896701260"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{98D3F166-6698-4C3E-A232-757C6E69231A}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613_03" ID="{0341B592-8D50-42BE-917E-7F1528ED5018}" ShortID="354710321">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{611AF911-06C4-445F-AD2B-F80C3AB9126B}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.100083125519535"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.17981712385702"/>
+														<Property Name="TrimEnd" Type="Real64" Value="2.83876974231088"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="135118416"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{611AF911-06C4-445F-AD2B-F80C3AB9126B}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613_04" ID="{7F6ADFBC-221C-46E0-808B-4A2DF8502A00}" ShortID="785152871">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{6644EE68-3F04-4B13-A126-09FD57B768AD}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0878470490440566"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="2.61835411471322"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.26764754779717"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="256974757"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{6644EE68-3F04-4B13-A126-09FD57B768AD}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613_05" ID="{2BCA6C3C-E7F1-4228-82F8-73AC49C9B2F8}" ShortID="469936598">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{C9A157FD-1C68-4BC9-B009-A2D4F530D1D7}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0489443059019119"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="3.04661679135495"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.76871155444721"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="42034528"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{C9A157FD-1C68-4BC9-B009-A2D4F530D1D7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613_06" ID="{CF9FE63B-A03D-438F-B852-302709BE1A4B}" ShortID="476053363">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{FA7BADD7-3A18-4286-BDF5-A413BB63F6E8}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0266666666666666"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="3.63394846217789"/>
+														<Property Name="TrimEnd" Type="Real64" Value="4.23368246051538"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="904304785"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{FA7BADD7-3A18-4286-BDF5-A413BB63F6E8}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613_07" ID="{632FC2F8-349D-47A7-90F2-7C94418B0312}" ShortID="489214334">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{C34CC81D-0D3C-4758-8D77-0CC5E3B9E6D5}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.0266666666666666"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="4.14786367414797"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="21833884"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Objects, Misc, Spray Paint, Painting, Aerosol SND70613" ID="{C34CC81D-0D3C-4758-8D77-0CC5E3B9E6D5}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Playlist">
+									<Reference>
+										<ObjectRef Name="CanShake" ID="{1F532E61-30FC-4328-95AA-6B20DE20DBC6}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+									</Reference>
+									<Reference>
+										<ObjectRef Name="Spray" ID="{0D669562-335A-43D7-87D4-82294E2F1854}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
 				<RandomSequenceContainer Name="LevelEnd" ID="{1964C497-A0CB-4E1D-843F-64649D241F1D}" ShortID="898460991">

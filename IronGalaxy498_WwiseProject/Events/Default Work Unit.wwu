@@ -326,6 +326,27 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="WordPickup" ID="{8FD07182-A5CD-4D56-8C8A-DCDBC33C619A}">
+									<ChildrenList>
+										<Action Name="" ID="{ACB75749-493D-4170-9267-0EE92D440C17}" ShortID="918010281">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="CanShake" ID="{1F532E61-30FC-4328-95AA-6B20DE20DBC6}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{BF093A0A-D017-4E33-9D2D-F5ABBBE495A4}" ShortID="274221393">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Spray" ID="{0D669562-335A-43D7-87D4-82294E2F1854}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Music" ID="{9CEEF249-6CBE-4183-A578-17E6A24E7BCD}" ShortID="271145348">
