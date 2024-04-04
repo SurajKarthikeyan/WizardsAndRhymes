@@ -9,6 +9,7 @@ public class Word : MonoBehaviour
     #region Variables
     [SerializeField] private List<string> flagsToSet = new();
     [SerializeField] private AK.Wwise.Event wordPickUpSoundEffect;
+    public AKChangeState iceOutOfPuzzleState;
     #endregion
 
     #region UnityMethods
@@ -29,6 +30,7 @@ public class Word : MonoBehaviour
                 //set rap rock to interactable
                 Debug.Log("Rap rock interactable");
             }
+            iceOutOfPuzzleState.ChangeState();
             Destroy(gameObject);
         }
     }

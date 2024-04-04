@@ -14,10 +14,10 @@ public class Generator : MonoBehaviour
     [SerializeField] private Material onMat;
     /*[Tooltip("Gate to open when generator is on")]
     [SerializeField] private GameObject gate;*/
-    [Tooltip("Animator for the gate attached to this generator")]
-    [SerializeField] private Animator gateAnimator;
-    [Tooltip("Collider for the gate collider")]
-    [SerializeField] private BoxCollider gateCollider;
+
+
+    public Gate gate;
+    
     [Tooltip("Renderer for the generator")]
     [SerializeField] private Renderer generatorRenderer;
     [Tooltip("Sound Effect for generator sound")]
@@ -38,16 +38,7 @@ public class Generator : MonoBehaviour
     /// </summary>
     public void Hodor()
     {
-        gateAnimator.SetTrigger("interaction");
-        if (gateCollider.enabled == false)
-        {
-            gateCollider.enabled = true;
-        }
-        else
-        {
-            gateCollider.enabled = false;
-        }
-        Debug.Log("BIGGGGGGG");
+        gate.SwitchGate();
         generatorRenderer.material = onMat;
         generatorOnSoundEffect.Post(this.gameObject);
     }

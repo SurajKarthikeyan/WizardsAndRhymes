@@ -100,8 +100,12 @@
 						<State Id="733150682" Name="IceCombat"/>
 						<State Id="748895195" Name="None"/>
 						<State Id="1125500713" Name="Intro"/>
+						<State Id="2437783708" Name="LightningOutOfPuzzle"/>
+						<State Id="2990546425" Name="LightningCombat"/>
 						<State Id="3099519893" Name="IceOutOfCombat"/>
+						<State Id="3485352473" Name="LightningPuzzle"/>
 						<State Id="4102602869" Name="IceOutOfPuzzle"/>
+						<State Id="4114645792" Name="LightningOutOfCombat"/>
 					</States>
 				</StateGroup>
 				<StateGroup Id="2352559104" Name="CrowdSurfing">
@@ -113,7 +117,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{C7234B27-7A6C-FE18-718E-67440E5D7884}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{E05874A6-FBB5-75A3-EA80-67655C8E912F}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -812,6 +816,44 @@
 								<MediaRef Id="834049591"/>
 							</MediaRefs>
 						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="2990546425"/>
+							<MediaRefs>
+								<MediaRef Id="77993868"/>
+								<MediaRef Id="190951527"/>
+								<MediaRef Id="522681793"/>
+								<MediaRef Id="648565713"/>
+								<MediaRef Id="771789552"/>
+								<MediaRef Id="799885752"/>
+								<MediaRef Id="834049591"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="4114645792"/>
+							<MediaRefs>
+								<MediaRef Id="237657344"/>
+								<MediaRef Id="820207910"/>
+								<MediaRef Id="834049591"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="2437783708"/>
+							<MediaRefs>
+								<MediaRef Id="237657344"/>
+								<MediaRef Id="533533018"/>
+								<MediaRef Id="834049591"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="3485352473"/>
+							<MediaRefs>
+								<MediaRef Id="415398760"/>
+								<MediaRef Id="603966075"/>
+								<MediaRef Id="771789552"/>
+								<MediaRef Id="809109169"/>
+								<MediaRef Id="834049591"/>
+							</MediaRefs>
+						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 				<Event Id="1843531235" Name="PlayButton" DurationType="OneShot" DurationMin="1.1446644" DurationMax="2.1689167">
@@ -932,8 +974,12 @@
 						<State Id="733150682" Name="IceCombat"/>
 						<State Id="748895195" Name="None"/>
 						<State Id="1125500713" Name="Intro"/>
+						<State Id="2437783708" Name="LightningOutOfPuzzle"/>
+						<State Id="2990546425" Name="LightningCombat"/>
 						<State Id="3099519893" Name="IceOutOfCombat"/>
+						<State Id="3485352473" Name="LightningPuzzle"/>
 						<State Id="4102602869" Name="IceOutOfPuzzle"/>
+						<State Id="4114645792" Name="LightningOutOfCombat"/>
 					</States>
 				</StateGroup>
 				<StateGroup Id="2352559104" Name="CrowdSurfing">
@@ -946,5 +992,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{36D232AB-9378-1F78-0CFE-D2959D877068}</FileHash>
+	<FileHash>{111F1D2B-423E-E094-63DC-90DAD4C630B3}</FileHash>
 </SoundBanksInfo>
