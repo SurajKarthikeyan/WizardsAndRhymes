@@ -51,7 +51,7 @@ public class LightningBlockManager : MonoBehaviour
             Vector3 pos = lightBlockList[i].transform.position;
             GameObject curHoloBlock = holoBlockList[i];
             curHoloBlock.transform.position = pos;
-            if (lightBlockList[i].activeSelf == false)
+            if (lightBlockList[i].activeInHierarchy == false)
             {
                 curHoloBlock.SetActive(true);
             }
