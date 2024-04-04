@@ -17,13 +17,13 @@ public class FlagManager : Singleton<FlagManager>
     
     [Header("Gate Objects")]
 
-    public GameObject puzzle1Gate1;
+    public Animator puzzle1Gate1;
 
-    public GameObject puzzle1Gate2;
+    public Animator puzzle1Gate2;
     
-    public GameObject puzzle2Gate1;
+    public Animator puzzle2Gate1;
 
-    public GameObject puzzle2Gate2;
+    public Animator puzzle2Gate2;
 
     public GameObject spawnPoint1;
     
@@ -51,36 +51,36 @@ public class FlagManager : Singleton<FlagManager>
         dialogueTrigger1.SetActive(false);
         if (GetFlag("enemyWave3Completed") && HasAllWordFlags())
         {
-            puzzle1Gate1.SetActive(true);
-            puzzle1Gate2.SetActive(true);
-            puzzle2Gate1.SetActive(true);
-            puzzle2Gate2.SetActive(true);
+            puzzle1Gate1.SetTrigger("interaction");
+            puzzle1Gate2.SetTrigger("interaction");
+            puzzle2Gate1.SetTrigger("interaction");
+            puzzle2Gate2.SetTrigger("interaction");
         }
         else if (GetFlag("enemyWave2Completed"))
         {
-            puzzle2Gate1.SetActive(false);
-            puzzle2Gate2.SetActive(false);
+            puzzle2Gate1.SetTrigger("interaction");
+            puzzle2Gate2.SetTrigger("interaction");
         }
         
         else if (GetFlag("enemyWave1Completed"))
         {
-            puzzle1Gate1.SetActive(false);
-            puzzle1Gate2.SetActive(false);
+            puzzle1Gate1.SetTrigger("interaction");
+            puzzle1Gate2.SetTrigger("interaction");
         }
 
         if (GetFlag("puzzle2Completed"))
         {
             PlayerController.instance.gameObject.transform.position = spawnPoint3.transform.position;
-            puzzle2Gate1.SetActive(false);
-            puzzle2Gate2.SetActive(true);
+            puzzle2Gate1.SetTrigger("interaction");
+            puzzle2Gate2.SetTrigger("interaction");
             dialogueTrigger3.SetActive(true);
             dialogueTrigger2.SetActive(false);
         }
         else if (GetFlag("puzzle1Completed"))
         {
             PlayerController.instance.gameObject.transform.position = spawnPoint2.transform.position;
-            puzzle1Gate1.SetActive(false);
-            puzzle1Gate2.SetActive(true);
+            puzzle1Gate1.SetTrigger("interaction");
+            puzzle1Gate2.SetTrigger("interaction");
             dialogueTrigger2.SetActive(true);
         }
         else
