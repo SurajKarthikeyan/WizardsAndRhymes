@@ -5,7 +5,7 @@ using UnityEngine;
 /// <summary>
 /// Class that handles the word canvas 
 /// </summary>
-public class WordCanvasManager : MonoBehaviour
+public class WordCanvasManager : MonoBehaviour, IInteractable
 {
     [Tooltip("Boolean stating whether or not the canvas is activated")]
     private bool canvasActivated;
@@ -17,6 +17,8 @@ public class WordCanvasManager : MonoBehaviour
     [Tooltip("List of all word slots")]
     [SerializeField]
     private List<DragDropItemSlot> wordSlots;
+
+    public PauseMenu pauseMenu;
 
     /// <summary>
     /// Function that is called on scene start
@@ -42,9 +44,8 @@ public class WordCanvasManager : MonoBehaviour
                 return false;
             }
         }
-
-        // GameEnd.gameEnd.OpenDoorUI();
         wordCanvas.gameObject.SetActive(false);
+        pauseMenu.SceneCompleteUI();
         return true;
     }
 
@@ -66,5 +67,10 @@ public class WordCanvasManager : MonoBehaviour
         {
             PlayerController.instance.EnablePlayerControls();
         }
+    }
+
+    public void Interact()
+    {
+        ToggleCanvas(true);
     }
 }

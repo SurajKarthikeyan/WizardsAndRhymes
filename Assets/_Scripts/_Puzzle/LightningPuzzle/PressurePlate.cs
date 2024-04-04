@@ -18,7 +18,7 @@ public class PressurePlate : MonoBehaviour
     
     [Tooltip("Bool for if its been interacted with and reverse the animation on exit")]
     [SerializeField] private bool hasBeenPushedDown;
-
+    public int onPP = 0;
 
     private bool isElectroBlock;
     #endregion
@@ -27,14 +27,17 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        pressurePlateSoundEffect.Stop(this.GameObject());
-        pressurePlateSoundEffect.Post(this.GameObject());
-        if (other.CompareTag("PushBox") || other.CompareTag("Player"))
+        
+        if (other.CompareTag("PushBox") || (other.CompareTag("Player")) && onPP <= 2 && onPP >= 0)
         {
+            pressurePlateSoundEffect.Stop(this.GameObject());
+            pressurePlateSoundEffect.Post(this.GameObject());
             ActivateDefaultPressurePlate();
             hasBeenPushedDown = true;
             pressurePlateAnimator.SetTrigger("interaction");
             isElectroBlock = false;
+            onPP += 1;
+            Debug.Log("Plus 1");
         }
         else if (other.CompareTag("PushBoxEletric"))
         {
@@ -49,21 +52,26 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        pressurePlateSoundEffect.Stop(this.GameObject());
-        pressurePlateSoundEffect.Post(this.GameObject());
-        if (hasBeenPushedDown)
+        if (other.CompareTag("PushBox") || (other.CompareTag("Player")))
         {
-            hasBeenPushedDown = false;
-            pressurePlateAnimator.SetTrigger("interaction");
-
-            if (isElectroBlock)
+            pressurePlateSoundEffect.Stop(this.GameObject());
+            pressurePlateSoundEffect.Post(this.GameObject());
+            onPP -= 1;
+            Debug.Log("Minus 1");
+            if (hasBeenPushedDown && onPP == 0)
             {
-                other.GameObject().GetComponent<FirstLightningBlock>().isActive = false;
-            }
+                hasBeenPushedDown = false;
+                pressurePlateAnimator.SetTrigger("interaction");
 
-            else
-            {
-                activatableGameObject.SetActive(!activatableGameObject.activeSelf);
+                if (isElectroBlock)
+                {
+                    other.GameObject().GetComponent<FirstLightningBlock>().isActive = false;
+                }
+
+                else
+                {
+                    activatableGameObject.SetActive(!activatableGameObject.activeSelf);
+                }
             }
         }
     }

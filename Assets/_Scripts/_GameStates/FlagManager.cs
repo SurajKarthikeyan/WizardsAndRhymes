@@ -31,9 +31,15 @@ public class FlagManager : Singleton<FlagManager>
     
     public GameObject spawnPoint3;
 
+    public GameObject dialogueTrigger1;
+
     public GameObject dialogueTrigger2;
 
     public GameObject dialogueTrigger3;
+
+    public GameObject rapRockTrigger;
+
+    public GameObject pauseMenu;
     
     #endregion
     
@@ -42,7 +48,8 @@ public class FlagManager : Singleton<FlagManager>
     
     private void Start()
     {
-        if (GetFlag("enemyWave3Complated") && GetFlag("allWordsAcquired"))
+        dialogueTrigger1.SetActive(false);
+        if (GetFlag("enemyWave3Completed") && HasAllWordFlags())
         {
             puzzle1Gate1.SetActive(true);
             puzzle1Gate2.SetActive(true);
@@ -75,6 +82,7 @@ public class FlagManager : Singleton<FlagManager>
         }
         else
         {
+            dialogueTrigger1.SetActive(true);
             PlayerController.instance.gameObject.transform.position = spawnPoint1.transform.position;
         }
     }
@@ -92,6 +100,11 @@ public class FlagManager : Singleton<FlagManager>
                  !dialogueTrigger2.GetComponent<DialogueTriggerer>().alreadyPlayed)
         {
             dialogueTrigger2.SetActive(true);
+        }
+
+        if (!rapRockTrigger.activeInHierarchy && HasAllWordFlags() && GetFlag(("enemyWave3Completed")))
+        {
+            rapRockTrigger.SetActive(true);
         }
     }
 
@@ -143,5 +156,6 @@ public class FlagManager : Singleton<FlagManager>
 
         return true;
     }
+    
     #endregion
 }
