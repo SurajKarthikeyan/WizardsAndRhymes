@@ -12,8 +12,10 @@ public class Generator : MonoBehaviour
     [SerializeField] private bool turnOn;
     [Tooltip("Generator material to turn on")]
     [SerializeField] private Material onMat;
-    [Tooltip("Gate to open when generator is on")]
-    [SerializeField] private GameObject gate;
+    /*[Tooltip("Gate to open when generator is on")]
+    [SerializeField] private GameObject gate;*/
+    [Tooltip("Animator for the gate attached to this generator")]
+    [SerializeField] private Animator gateAnimator;
     [Tooltip("Renderer for the generator")]
     [SerializeField] private Renderer generatorRenderer;
     [Tooltip("Sound Effect for generator sound")]
@@ -34,7 +36,7 @@ public class Generator : MonoBehaviour
     /// </summary>
     public void Hodor()
     {
-        gate.SetActive(false);
+        gateAnimator.SetTrigger("interaction");
         generatorRenderer.material = onMat;
         generatorOnSoundEffect.Post(this.gameObject);
     }
