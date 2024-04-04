@@ -109,7 +109,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{25CB05E7-26DC-58AF-17F4-61C9023DCE56}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{91044202-DD57-8B67-D803-755FE198DF1D}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -120,6 +120,10 @@
 				<File Id="5318352" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Zap2.wav</ShortName>
 					<CachePath>SFX/Zap2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="8926796" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Farts, Designed, Human Fart 07 SND88353.wav</ShortName>
+					<CachePath>SFX/Farts, Designed, Human Fart 07 SND88353_818F3B66.wem</CachePath>
 				</File>
 				<File Id="20835932" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LotsOfSmallScratch.wav</ShortName>
@@ -260,6 +264,10 @@
 				<File Id="404034492" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SmolScratch.wav</ShortName>
 					<CachePath>SFX/SmolScratch_DC99C211.wem</CachePath>
+				</File>
+				<File Id="456996073" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dashing.wav</ShortName>
+					<CachePath>SFX/Dashing_C929A674.wem</CachePath>
 				</File>
 				<File Id="469236046" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ice3.wav</ShortName>
@@ -421,6 +429,10 @@
 					<ShortName>Communications, Phonograph, Vinyl, Record Scratch 09 SND13871.wav</ShortName>
 					<CachePath>SFX/Communications, Phonograph, Vinyl, Record Scratch 09 SND13871_BC92987B.wem</CachePath>
 				</File>
+				<File Id="860878555" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dashing.wav</ShortName>
+					<CachePath>SFX/Dashing_8E7D0228.wem</CachePath>
+				</File>
 				<File Id="870905338" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LotsOfSmallScratch.wav</ShortName>
 					<CachePath>SFX/LotsOfSmallScratch_977BC18E.wem</CachePath>
@@ -476,6 +488,10 @@
 				<File Id="989052792" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>SmallScratch.wav</ShortName>
 					<CachePath>SFX/SmallScratch_91CA9725.wem</CachePath>
+				</File>
+				<File Id="1025029307" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dashing.wav</ShortName>
+					<CachePath>SFX/Dashing_592E849F.wem</CachePath>
 				</File>
 				<File Id="1027865135" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PlayerHitImpact.wav</ShortName>
@@ -610,6 +626,14 @@
 						<MediaRef Id="766739187"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="2525052962" Name="PlayerDash" DurationType="OneShot" DurationMin="0.2684375" DurationMax="2.8776808">
+					<MediaRefs>
+						<MediaRef Id="8926796"/>
+						<MediaRef Id="456996073"/>
+						<MediaRef Id="860878555"/>
+						<MediaRef Id="1025029307"/>
+					</MediaRefs>
+				</Event>
 				<Event Id="3537581393" Name="PlayerHurt" DurationType="OneShot" DurationMin="1.8891193" DurationMax="2.3589551">
 					<MediaRefs>
 						<MediaRef Id="123022695"/>
@@ -725,5 +749,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9C683C74-EA79-96AE-6BF9-E66410345C86}</FileHash>
+	<FileHash>{2274FCC0-0A5A-ECAC-07C6-EFAF2D32F30A}</FileHash>
 </SoundBanksInfo>

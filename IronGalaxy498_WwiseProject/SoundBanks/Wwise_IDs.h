@@ -25,6 +25,7 @@ namespace AK
         static const AkUniqueID MELEELIGHTNING = 1583612915U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID PLAYBUTTON = 1843531235U;
+        static const AkUniqueID PLAYERDASH = 2525052962U;
         static const AkUniqueID PLAYERHURT = 3537581393U;
         static const AkUniqueID RANGEDFIRE = 1744863420U;
         static const AkUniqueID RANGEDICE = 2982846157U;
