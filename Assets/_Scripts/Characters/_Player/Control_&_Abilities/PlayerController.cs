@@ -590,6 +590,18 @@ public class PlayerController : Singleton<PlayerController>
             interactable.Interact();
         }
     }
+
+    /// <summary>
+    /// Handles interacting when the player's main controls are disabled
+    /// </summary>
+    /// <param name="obj"></param>
+    private void UIInteract(InputAction.CallbackContext obj)
+    {
+        if (canInteract && interactable != null)
+        {
+            interactable.Interact();
+        }
+    }
     
     /// <summary>
     /// Function that is called when escape(KB) or start(Controller) is pressed
@@ -624,6 +636,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         playerInput.UI.MenuSelect.started += MenuSelect;
         playerInput.UI.Exit.started += PauseAction;
+        playerInput.UI.Interact.started += UIInteract;
         playerInput.UI.Enable();
     }
 
@@ -655,6 +668,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         playerInput.UI.MenuSelect.canceled -= MenuSelect;
         playerInput.UI.Exit.canceled -= PauseAction;
+        playerInput.UI.Interact.canceled -= UIInteract;
         playerInput.UI.Disable();
     }
     #endregion

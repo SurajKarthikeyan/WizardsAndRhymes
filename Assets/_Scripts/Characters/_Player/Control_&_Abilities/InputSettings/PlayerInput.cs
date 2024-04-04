@@ -366,6 +366,15 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""Button"",
+                    ""id"": ""005fdf44-52a7-4ba8-9c6b-81cfe6c3d5e9"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -412,6 +421,28 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
                     ""action"": ""Inventory"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9c64fa12-e472-475b-815a-cbb61a8a2f78"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""81f0f60a-db18-4daf-a0d9-a17330af8cf5"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -432,6 +463,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         m_UI_MenuSelect = m_UI.FindAction("MenuSelect", throwIfNotFound: true);
         m_UI_Exit = m_UI.FindAction("Exit", throwIfNotFound: true);
         m_UI_Inventory = m_UI.FindAction("Inventory", throwIfNotFound: true);
+        m_UI_Interact = m_UI.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -590,6 +622,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
     private readonly InputAction m_UI_MenuSelect;
     private readonly InputAction m_UI_Exit;
     private readonly InputAction m_UI_Inventory;
+    private readonly InputAction m_UI_Interact;
     public struct UIActions
     {
         private @PlayerInput m_Wrapper;
@@ -597,6 +630,7 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         public InputAction @MenuSelect => m_Wrapper.m_UI_MenuSelect;
         public InputAction @Exit => m_Wrapper.m_UI_Exit;
         public InputAction @Inventory => m_Wrapper.m_UI_Inventory;
+        public InputAction @Interact => m_Wrapper.m_UI_Interact;
         public InputActionMap Get() { return m_Wrapper.m_UI; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -615,6 +649,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Inventory.started += instance.OnInventory;
             @Inventory.performed += instance.OnInventory;
             @Inventory.canceled += instance.OnInventory;
+            @Interact.started += instance.OnInteract;
+            @Interact.performed += instance.OnInteract;
+            @Interact.canceled += instance.OnInteract;
         }
 
         private void UnregisterCallbacks(IUIActions instance)
@@ -628,6 +665,9 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
             @Inventory.started -= instance.OnInventory;
             @Inventory.performed -= instance.OnInventory;
             @Inventory.canceled -= instance.OnInventory;
+            @Interact.started -= instance.OnInteract;
+            @Interact.performed -= instance.OnInteract;
+            @Interact.canceled -= instance.OnInteract;
         }
 
         public void RemoveCallbacks(IUIActions instance)
@@ -660,5 +700,6 @@ public partial class @PlayerInput: IInputActionCollection2, IDisposable
         void OnMenuSelect(InputAction.CallbackContext context);
         void OnExit(InputAction.CallbackContext context);
         void OnInventory(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }
