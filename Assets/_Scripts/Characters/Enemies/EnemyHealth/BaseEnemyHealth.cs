@@ -211,7 +211,7 @@ public abstract class BaseEnemyHealth : Health
             }
         }
 
-        for (int i = 0; i < eletricBlockCollider.Length; i++)
+       /* for (int i = 0; i < eletricBlockCollider.Length; i++)
         {
             if(eletricBlockCollider[i].gameObject.TryGetComponent(out FirstLightningBlock firstLightningBlock))
             {
@@ -251,7 +251,7 @@ public abstract class BaseEnemyHealth : Health
                     eletricBlockCollider[i].gameObject.GetComponent<FirstLightningBlock>().StartLightingChain();
                     lightiningEffectStorage.Add(curLightningEffect);
             }
-        }
+        }*/
 
         StartCoroutine(LightingArc());
         
