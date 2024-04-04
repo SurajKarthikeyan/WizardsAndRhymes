@@ -7,10 +7,8 @@ using UnityEngine.UI;
 public class Word : MonoBehaviour
 {
     #region Variables
-    // [SerializeField] public Toggle puzzleToggle;
-
     [SerializeField] private List<string> flagsToSet = new();
-    
+    [SerializeField] private AK.Wwise.Event wordPickUpSoundEffect;
     #endregion
 
     #region UnityMethods
@@ -19,6 +17,7 @@ public class Word : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            wordPickUpSoundEffect.Post(other.gameObject);
             foreach(string flag in flagsToSet)
             {
                 FlagManager.instance.SetFlag(flag, true);
