@@ -19,6 +19,8 @@ public class WordCanvasManager : MonoBehaviour, IInteractable
     private List<DragDropItemSlot> wordSlots;
 
     public PauseMenu pauseMenu;
+    
+    public GameObject wordParent;
 
     /// <summary>
     /// Function that is called on scene start
@@ -45,6 +47,7 @@ public class WordCanvasManager : MonoBehaviour, IInteractable
             }
         }
         wordCanvas.gameObject.SetActive(false);
+        wordParent.SetActive(false);
         pauseMenu.SceneCompleteUI();
         return true;
     }

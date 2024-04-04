@@ -2764,6 +2764,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8950625432799242158, guid: 3769ba9bbbdfac5429787924ba62343a, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1386
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5017,7 +5021,7 @@ MonoBehaviour:
   dialogueToPlayBack:
   - speaker: {fileID: 11400000, guid: f5d36dfd0f4b4ba4091821cb5d7594ae, type: 2}
     dialogueSentences:
-    - sentence: In this arcane chamber, your steps drag like lead.
+    - sentence: Burned twice, feeling the heat, you're just a liar,
       leaveAtEndOfSentence: 0
       dialgoueSpritePosition: 0
       eventsWhenStartingDialogueString:
@@ -5062,7 +5066,7 @@ MonoBehaviour:
       eventsWhenFinishingDialogueString:
         m_PersistentCalls:
           m_Calls: []
-    - sentence: I'll hit fast forward, leave you lost in my thread.
+    - sentence: But I'll keep blazing, leaving you in the mire.
       leaveAtEndOfSentence: 1
       dialgoueSpritePosition: 0
       eventsWhenStartingDialogueString:
@@ -5153,6 +5157,18 @@ MonoBehaviour:
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1507415808}
+            m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+            m_MethodName: set_text
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Kill All Enemies To Unlock The Roast Rock
               m_BoolArgument: 1
             m_CallState: 2
   pauseOnTrigger: 1
@@ -13406,7 +13422,7 @@ MonoBehaviour:
   dialogueToPlayBack:
   - speaker: {fileID: 11400000, guid: f5d36dfd0f4b4ba4091821cb5d7594ae, type: 2}
     dialogueSentences:
-    - sentence: In this arcane chamber, your steps drag like lead.
+    - sentence: Wizzo's spitting flames, burnin' up the mic,
       leaveAtEndOfSentence: 0
       dialgoueSpritePosition: 0
       eventsWhenStartingDialogueString:
@@ -13451,7 +13467,7 @@ MonoBehaviour:
       eventsWhenFinishingDialogueString:
         m_PersistentCalls:
           m_Calls: []
-    - sentence: I'll hit fast forward, leave you lost in my thread.
+    - sentence: Your weak lines fizzle out, can't match my hype.
       leaveAtEndOfSentence: 1
       dialgoueSpritePosition: 0
       eventsWhenStartingDialogueString:
@@ -15239,8 +15255,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 192200826420971586, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_text
-      value: "Not ________ the flow? You've gotta go, \r\n\r\nI've gotta ______,
-        while you sit on the lines \r\n\r\nYou wastin' my time, your raps not ________"
+      value: 'Melted your ice, with flames that never tire,
+
+        Thought you
+        were cold, but I''m the eternal ______.
+
+
+        Your frosty lines crack,
+        I''m a scorching inferno,
+
+        Your rhymes turn to _______, while mine''s
+        the eternal flow.
+
+
+        Watch me thaw, leaving you in a _______,
+
+        Wizzo''s
+        throne melts, leaving a chaotic muddle.'
       objectReference: {fileID: 0}
     - target: {fileID: 192200826420971586, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_fontAsset
@@ -15265,6 +15296,10 @@ PrefabInstance:
     - target: {fileID: 765526685794740703, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 853450774715143721, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: m_text
+      value: water
       objectReference: {fileID: 0}
     - target: {fileID: 853450774715143721, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_fontAsset
@@ -15280,24 +15315,32 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1406625563919156629, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -103.33332
+      value: 22.222244
       objectReference: {fileID: 0}
     - target: {fileID: 1406625563919156629, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 91.666664
+      value: 88.33333
       objectReference: {fileID: 0}
     - target: {fileID: 4105427232212621477, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -144.44443
+      value: 265.00003
       objectReference: {fileID: 0}
     - target: {fileID: 4105427232212621477, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 161.1111
+      value: 185.55556
       objectReference: {fileID: 0}
     - target: {fileID: 4203910337534281682, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 7880565755402555761}
+    - target: {fileID: 4203910337534281682, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: wordParent
+      value: 
+      objectReference: {fileID: 998896553}
+    - target: {fileID: 5785139685911423424, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: m_text
+      value: fire
+      objectReference: {fileID: 0}
     - target: {fileID: 5785139685911423424, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_fontAsset
       value: 
@@ -15312,6 +15355,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6245559176825110319, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365483049184134891, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: -30.5491
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365483049184134891, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: -36.1685
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365483049184134891, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6365483049184134891, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7084823387279456737, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
@@ -15364,11 +15423,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9020662439662617195, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 221.11113
+      value: 198.33334
       objectReference: {fileID: 0}
     - target: {fileID: 9020662439662617195, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 28.333328
+      value: -6.666672
+      objectReference: {fileID: 0}
+    - target: {fileID: 9035180544810620268, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: m_text
+      value: puddle
       objectReference: {fileID: 0}
     - target: {fileID: 9035180544810620268, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_fontAsset
@@ -15761,6 +15824,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 25
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1507415808}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: Unleash your ultimate roast on Wizzo!
           m_BoolArgument: 0
         m_CallState: 2
   wavesCleared: 0
@@ -17182,6 +17257,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2028541720}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &998896553 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3394246408728364336, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+  m_PrefabInstance: {fileID: 81138555853967040}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1003020045
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21686,6 +21766,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1507415808}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: Move Northwest to solve puzzle 1
+          m_BoolArgument: 0
+        m_CallState: 2
   wavesCleared: 0
   enemyManagerClearedEvent: enemyWave1Completed
   enemyToggle: {fileID: 0}
@@ -24143,6 +24235,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1417210135444854531, guid: bd53c4c459fb0604fb8fb90ed713e90b, type: 3}
   m_PrefabInstance: {fileID: 361097472}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1507415808 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8996010620304517789, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
+  m_PrefabInstance: {fileID: 8673254656212189721}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1515872449 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6398087126486879238, guid: c839fec5338938d4c8f67a5c61ebbf6f, type: 3}
@@ -25340,7 +25443,7 @@ MonoBehaviour:
   dialogueToPlayBack:
   - speaker: {fileID: 11400000, guid: f5d36dfd0f4b4ba4091821cb5d7594ae, type: 2}
     dialogueSentences:
-    - sentence: In this arcane chamber, your steps drag like lead.
+    - sentence: You're sparking a match, but your situation is still dire,
       leaveAtEndOfSentence: 0
       dialgoueSpritePosition: 0
       eventsWhenStartingDialogueString:
@@ -25385,7 +25488,7 @@ MonoBehaviour:
       eventsWhenFinishingDialogueString:
         m_PersistentCalls:
           m_Calls: []
-    - sentence: I'll hit fast forward, leave you lost in my thread.
+    - sentence: Your rhymes always stutter, while I spit that fire.
       leaveAtEndOfSentence: 1
       dialgoueSpritePosition: 0
       eventsWhenStartingDialogueString:
@@ -25476,6 +25579,18 @@ MonoBehaviour:
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1507415808}
+            m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+            m_MethodName: set_text
+            m_Mode: 5
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Kill All Enemies To Unlock The Eastern Gate
               m_BoolArgument: 1
             m_CallState: 2
   pauseOnTrigger: 1
@@ -27512,7 +27627,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1282274231}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
@@ -27524,7 +27639,7 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 81138555853967076}
         m_TargetAssemblyTypeName: Health, Assembly-CSharp
@@ -27536,6 +27651,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 25
           m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1507415808}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Text, UnityEngine.UI
+        m_MethodName: set_text
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: Move northeast to solve the second puzzle
           m_BoolArgument: 1
         m_CallState: 2
   wavesCleared: 0
@@ -33255,6 +33382,10 @@ PrefabInstance:
       value: -26.91286
       objectReference: {fileID: 0}
     - target: {fileID: 762046938041194728, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: m_Name
+      value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 762046938041194728, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -33535,6 +33666,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 935bb60520ed77945a7f46662c045b92, type: 2}
     - target: {fileID: 2378667808405922676, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: m_text
+      value: Fire
+      objectReference: {fileID: 0}
+    - target: {fileID: 2378667808405922676, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: f726d5b3184a9bd48bae9974aa494e6c, type: 2}
@@ -33569,6 +33704,10 @@ PrefabInstance:
     - target: {fileID: 2811195359307336949, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 2.0896094
+      objectReference: {fileID: 0}
+    - target: {fileID: 2950160608220503976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: m_Name
+      value: Puddle
       objectReference: {fileID: 0}
     - target: {fileID: 2950160608220503976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_IsActive
@@ -33854,6 +33993,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4785079732634199312, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.000014019013
+      objectReference: {fileID: 0}
+    - target: {fileID: 4785079732634199312, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 17.00003
+      objectReference: {fileID: 0}
+    - target: {fileID: 4862165341277540149, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: m_Name
+      value: Water
+      objectReference: {fileID: 0}
     - target: {fileID: 4862165341277540149, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -33943,6 +34094,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6591032878527471735, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: m_text
+      value: Puddle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6591032878527471735, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_fontAsset
       value: 
       objectReference: {fileID: 11400000, guid: f726d5b3184a9bd48bae9974aa494e6c, type: 2}
@@ -33985,6 +34140,10 @@ PrefabInstance:
     - target: {fileID: 7861740465018370680, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_UseSpriteMesh
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052087149723375579, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      propertyPath: m_text
+      value: Water
       objectReference: {fileID: 0}
     - target: {fileID: 8052087149723375579, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_fontAsset
@@ -34298,7 +34457,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.3834191
+      value: -0.38341916
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -34539,6 +34698,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CameraStateMachine
       objectReference: {fileID: 0}
+    - target: {fileID: 4535999138013366740, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812692780087139411, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5003358472373464883, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_text
       value: Next Level
@@ -34601,6 +34768,10 @@ PrefabInstance:
     - target: {fileID: 7120159554502453663, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.010038093
+      objectReference: {fileID: 0}
+    - target: {fileID: 7271955309154457001, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7324286372960558193, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_IsActive
