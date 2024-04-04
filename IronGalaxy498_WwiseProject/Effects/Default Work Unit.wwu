@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{A66D10A1-C26F-4E40-B419-653F3C1F30B8}" SchemaVersion="119">
 	<Effects>
-		<WorkUnit Name="Default Work Unit" ID="{A66D10A1-C26F-4E40-B419-653F3C1F30B8}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{A66D10A1-C26F-4E40-B419-653F3C1F30B8}" PersistMode="Standalone">
+			<ChildrenList>
+				<Effect Name="VoxDistort" ID="{32C703D6-9D8C-4935-8239-5BF354F79739}" PluginName="iZotope Trash Distortion" CompanyID="259" PluginID="3" PluginType="3">
+					<PropertyList>
+						<Property Name="Distortion1Type" Type="int32" Value="6"/>
+						<Property Name="Distortion2Type" Type="int32" Value="19"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="New_Compressor" ID="{C36A5C18-A74C-4F34-86F6-28B9D7EDC5D0}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3"/>
+				<Effect Name="New_RoomVerb" ID="{7720562C-1CB8-454B-A29A-9107A929BE35}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
+					<PropertyList>
+						<Property Name="DryLevel" Type="Real32" Value="-11.3"/>
+						<Property Name="ERLevel" Type="Real32" Value="-14"/>
+						<Property Name="ERPattern" Type="int32" Value="4"/>
+						<Property Name="LFELevel" Type="Real32" Value="-19.3"/>
+						<Property Name="RearLevel" Type="Real32" Value="-5"/>
+						<Property Name="ReverbLevel" Type="Real32" Value="-14"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="New_iZotope_Trash_Filters" ID="{AECA9393-78BF-4D92-BFD8-E084A98BBF85}" PluginName="iZotope Trash Filters" CompanyID="259" PluginID="6" PluginType="3">
+					<PropertyList>
+						<Property Name="Filter1Type" Type="int32" Value="1"/>
+					</PropertyList>
+				</Effect>
+			</ChildrenList>
+		</WorkUnit>
 	</Effects>
 </WwiseDocument>

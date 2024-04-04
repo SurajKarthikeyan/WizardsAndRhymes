@@ -406,7 +406,7 @@
 								</Event>
 							</ChildrenList>
 						</Folder>
-						<Event Name="LevelComplete" ID="{4FDBF72F-D683-4B71-A163-8BB18C120D26}">
+						<Event Name="GateLift" ID="{4FDBF72F-D683-4B71-A163-8BB18C120D26}">
 							<ChildrenList>
 								<Action Name="" ID="{1935F6CC-DE4E-454D-B49A-5C2112E85091}" ShortID="327332019">
 									<ReferenceList>
@@ -433,6 +433,24 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="LightningCombat" ID="{93F55A21-F3CC-4EBA-92C7-6C890868E752}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="LeveLCompleteSting" ID="{85D904FB-F937-4B25-9F89-4060A3C6B850}">
+							<ChildrenList>
+								<Action Name="" ID="{4C2CD871-C0C1-498E-9099-7BCB6FBED31E}" ShortID="162549484">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Cheer" ID="{38D7E995-FCC3-4C3A-A013-6AA60EB77A2A}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{E04FC486-66EC-4B48-8C8D-EFD01484D178}" ShortID="922904621">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Sting" ID="{8AD5260D-A867-4A89-B43B-36D549B81A6B}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
