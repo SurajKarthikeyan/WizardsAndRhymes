@@ -60,6 +60,9 @@ namespace AK
             namespace STATE
             {
                 static const AkUniqueID ICECOMBAT = 733150682U;
+                static const AkUniqueID ICEOUTOFCOMBAT = 3099519893U;
+                static const AkUniqueID ICEOUTOFPUZZLE = 4102602869U;
+                static const AkUniqueID ICEPUZZLE = 192579722U;
                 static const AkUniqueID INTRO = 1125500713U;
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE

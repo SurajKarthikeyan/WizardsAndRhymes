@@ -96,9 +96,12 @@
 			<StateGroups>
 				<StateGroup Id="1021618141" Name="MusicState">
 					<States>
+						<State Id="192579722" Name="IcePuzzle"/>
 						<State Id="733150682" Name="IceCombat"/>
 						<State Id="748895195" Name="None"/>
 						<State Id="1125500713" Name="Intro"/>
+						<State Id="3099519893" Name="IceOutOfCombat"/>
+						<State Id="4102602869" Name="IceOutOfPuzzle"/>
 					</States>
 				</StateGroup>
 				<StateGroup Id="2352559104" Name="CrowdSurfing">
@@ -110,7 +113,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{399EEB35-D49A-DCAE-14C2-719E2782DD41}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{C7234B27-7A6C-FE18-718E-67440E5D7884}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -246,6 +249,10 @@
 					<ShortName>PlayerHitDowner.wav</ShortName>
 					<CachePath>SFX/PlayerHitDowner_ACD55C21.wem</CachePath>
 				</File>
+				<File Id="237657344" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewStems 27-UVIWorkstation.wav</ShortName>
+					<CachePath>SFX/NewStems 27-UVIWorkstation_FBC78EF0.wem</CachePath>
+				</File>
 				<File Id="242173308" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Underground50S3.wav</ShortName>
 					<CachePath>SFX/Underground50S3_FBC78EF0.wem</CachePath>
@@ -294,6 +301,10 @@
 					<ShortName>SmolScratch.wav</ShortName>
 					<CachePath>SFX/SmolScratch_DC99C211.wem</CachePath>
 				</File>
+				<File Id="415398760" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewStems 26-UVIWorkstation.wav</ShortName>
+					<CachePath>SFX/NewStems 26-UVIWorkstation_FBC78EF0.wem</CachePath>
+				</File>
 				<File Id="456996073" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Dashing.wav</ShortName>
 					<CachePath>SFX/Dashing_D8DE3F02.wem</CachePath>
@@ -321,6 +332,10 @@
 				<File Id="524500419" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PlayerHitDowner.wav</ShortName>
 					<CachePath>SFX/PlayerHitDowner_094C70E3.wem</CachePath>
+				</File>
+				<File Id="533533018" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewStems 24-Agile Shot Kit.wav</ShortName>
+					<CachePath>SFX/NewStems 24-Agile Shot Kit_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="535223205" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MicTap3.wav</ShortName>
@@ -365,6 +380,10 @@
 				<File Id="596267822" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>EnemyHitFull.wav</ShortName>
 					<CachePath>SFX/EnemyHitFull_8DF2FD27.wem</CachePath>
+				</File>
+				<File Id="603966075" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewStems 25-Group.wav</ShortName>
+					<CachePath>SFX/NewStems 25-Group_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="618127826" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>IceBlockWooshes.wav</ShortName>
@@ -477,6 +496,14 @@
 				<File Id="799885752" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems 10-Chants &amp; Stabs Kit.wav</ShortName>
 					<CachePath>SFX/NewStems 10-Chants &amp; Stabs Kit_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="809109169" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewStems 14-BBC Symphony Orchestra.wav</ShortName>
+					<CachePath>SFX/NewStems 14-BBC Symphony Orchestra_FBC78EF0.wem</CachePath>
+				</File>
+				<File Id="820207910" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewStems 4-Kontakt 7.wav</ShortName>
+					<CachePath>SFX/NewStems 4-Kontakt 7_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="824108392" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Ice2.wav</ShortName>
@@ -759,6 +786,32 @@
 								<MediaRef Id="771789552"/>
 							</MediaRefs>
 						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="3099519893"/>
+							<MediaRefs>
+								<MediaRef Id="237657344"/>
+								<MediaRef Id="820207910"/>
+								<MediaRef Id="834049591"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="4102602869"/>
+							<MediaRefs>
+								<MediaRef Id="237657344"/>
+								<MediaRef Id="533533018"/>
+								<MediaRef Id="834049591"/>
+							</MediaRefs>
+						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="192579722"/>
+							<MediaRefs>
+								<MediaRef Id="415398760"/>
+								<MediaRef Id="603966075"/>
+								<MediaRef Id="771789552"/>
+								<MediaRef Id="809109169"/>
+								<MediaRef Id="834049591"/>
+							</MediaRefs>
+						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 				<Event Id="1843531235" Name="PlayButton" DurationType="OneShot" DurationMin="1.1446644" DurationMax="2.1689167">
@@ -875,9 +928,12 @@
 			<StateGroups>
 				<StateGroup Id="1021618141" Name="MusicState">
 					<States>
+						<State Id="192579722" Name="IcePuzzle"/>
 						<State Id="733150682" Name="IceCombat"/>
 						<State Id="748895195" Name="None"/>
 						<State Id="1125500713" Name="Intro"/>
+						<State Id="3099519893" Name="IceOutOfCombat"/>
+						<State Id="4102602869" Name="IceOutOfPuzzle"/>
 					</States>
 				</StateGroup>
 				<StateGroup Id="2352559104" Name="CrowdSurfing">
@@ -890,5 +946,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{7665F1C4-909B-7EC1-2757-104DA1878F75}</FileHash>
+	<FileHash>{03C8D26E-0C93-EE19-9B6A-02262C29BAB6}</FileHash>
 </SoundBanksInfo>
