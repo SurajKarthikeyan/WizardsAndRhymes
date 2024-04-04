@@ -123,6 +123,8 @@ public class PlayerController : Singleton<PlayerController>
 
     [Tooltip("Dash Sound Effect")]
     [SerializeField] private AK.Wwise.Event dashSoundEffect;
+
+    [SerializeField] private AK.Wwise.Event dashFartSoundEffect;
     #endregion
 
     [Header("Camera")]
@@ -562,7 +564,17 @@ public class PlayerController : Singleton<PlayerController>
         abilityManager.ResetAbilityRecharge();
         if (IsValidDash())
         {
-            dashSoundEffect.Post(this.gameObject);
+            int randInt = Random.Range(0, 100);
+            if (randInt == 99)
+            {
+                dashFartSoundEffect.Post(this.gameObject);
+
+            }
+            else
+            {
+                dashSoundEffect.Post(this.gameObject);
+
+            }
             StartCoroutine(Dash());
         }
     }
