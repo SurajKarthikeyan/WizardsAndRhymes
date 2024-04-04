@@ -18327,11 +18327,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2113800785987245767, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1091166938}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1091166941 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 8492979641042242476, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-  m_PrefabInstance: {fileID: 1091166938}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1091166942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18345,7 +18340,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gateAnim: {fileID: 1091166940}
-  gateCollider: {fileID: 1091166941}
 --- !u!1001 &1092531252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25263,11 +25257,6 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2113800785987245767, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1565664286}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1565664289 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 8492979641042242476, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-  m_PrefabInstance: {fileID: 1565664286}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1565664290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25281,7 +25270,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gateAnim: {fileID: 1565664288}
-  gateCollider: {fileID: 1565664289}
 --- !u!1001 &1567745359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32043,11 +32031,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1924979231}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2032880846 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 8492979641042242476, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-  m_PrefabInstance: {fileID: 1924979231}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2032880847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32061,7 +32044,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gateAnim: {fileID: 1924979233}
-  gateCollider: {fileID: 2032880846}
 --- !u!1 &2033369103
 GameObject:
   m_ObjectHideFlags: 0
@@ -32405,11 +32387,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1862894639}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2079257621 stripped
-BoxCollider:
-  m_CorrespondingSourceObject: {fileID: 8492979641042242476, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-  m_PrefabInstance: {fileID: 1862894639}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2079257622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32423,7 +32400,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gateAnim: {fileID: 1862894641}
-  gateCollider: {fileID: 2079257621}
 --- !u!4 &2080354632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3247662601864608305, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
@@ -34010,7 +33986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: comboResetTime
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: timeBeforeReset
@@ -34038,7 +34014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: comboContinuationTime
-      value: 0.1
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 3052230676589956797, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -34218,7 +34194,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4681948003197784821, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: abilityRechargeThreshold
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4711825495692764976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_LocalPosition.x
@@ -34758,7 +34734,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.92319965
+      value: 0.9231997
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
@@ -34766,11 +34742,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.024297088
+      value: -0.02429709
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.010090947
+      value: -0.010090948
       objectReference: {fileID: 0}
     - target: {fileID: 357537751564058929, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -34806,19 +34782,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 854501814571185126, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.94026935
+      value: 0.9402693
       objectReference: {fileID: 0}
     - target: {fileID: 854501814571185126, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.34043163
+      value: 0.3404316
       objectReference: {fileID: 0}
     - target: {fileID: 854501814571185126, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000014901161
+      value: -0.00000017881392
       objectReference: {fileID: 0}
     - target: {fileID: 854501814571185126, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000022351742
+      value: -0.00000002235174
       objectReference: {fileID: 0}
     - target: {fileID: 1325081311818420395, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalPosition.x
