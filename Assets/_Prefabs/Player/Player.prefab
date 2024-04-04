@@ -2713,6 +2713,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 17.48
       objectReference: {fileID: 0}
+    - target: {fileID: 2727867206666317911, guid: c85dddb7bd0218e4892027d1789d85e5, type: 3}
+      propertyPath: meleeCollider
+      value: 
+      objectReference: {fileID: 4055126780013360541}
     - target: {fileID: 4828234086740506044, guid: c85dddb7bd0218e4892027d1789d85e5, type: 3}
       propertyPath: m_Layer
       value: 3
@@ -2813,6 +2817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeBoxCollider: {fileID: 8290592939585959049}
+  meleeSlashVFX: {fileID: 6545906923575467009}
 --- !u!4 &1048062647095988873 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8180674388425129695, guid: c85dddb7bd0218e4892027d1789d85e5, type: 3}
@@ -2867,3 +2872,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageType: 1
+--- !u!114 &6545906923575467009 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2727867206666317911, guid: c85dddb7bd0218e4892027d1789d85e5, type: 3}
+  m_PrefabInstance: {fileID: 9154955406176693334}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4327319592275646954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a814a379c79a93e4bacc1a8eb133cab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -71,13 +71,16 @@ public class FlagManager : Singleton<FlagManager>
         if (GetFlag("puzzle2Completed"))
         {
             PlayerController.instance.gameObject.transform.position = spawnPoint3.transform.position;
-            puzzle2Gate1.SetActive(true);
+            puzzle2Gate1.SetActive(false);
+            puzzle2Gate2.SetActive(true);
             dialogueTrigger3.SetActive(true);
+            dialogueTrigger2.SetActive(false);
         }
         else if (GetFlag("puzzle1Completed"))
         {
             PlayerController.instance.gameObject.transform.position = spawnPoint2.transform.position;
-            puzzle1Gate1.SetActive(true);
+            puzzle1Gate1.SetActive(false);
+            puzzle1Gate2.SetActive(true);
             dialogueTrigger2.SetActive(true);
         }
         else
