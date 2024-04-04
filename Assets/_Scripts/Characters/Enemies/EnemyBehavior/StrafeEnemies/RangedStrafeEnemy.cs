@@ -31,6 +31,7 @@ public class RangedStrafeEnemy : BaseStrafeEnemy
     /// </summary>
     public void ShootProjectile()
     {
+        skellyAnimator.SetTrigger("rangedShoot");
         StartCoroutine(Projectile());
     }
 

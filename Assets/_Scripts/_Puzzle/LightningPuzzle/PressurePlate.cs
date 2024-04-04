@@ -28,7 +28,7 @@ public class PressurePlate : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-        if (other.CompareTag("PushBox") || (other.CompareTag("Player")) && onPP <= 2 && onPP >= 0)
+        if (other.CompareTag("PushBox") && onPP <= 2 && onPP >= 0)
         {
             pressurePlateSoundEffect.Stop(this.GameObject());
             pressurePlateSoundEffect.Post(this.GameObject());
@@ -52,7 +52,7 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("PushBox") || (other.CompareTag("Player")))
+        if (other.CompareTag("PushBox"))
         {
             pressurePlateSoundEffect.Stop(this.GameObject());
             pressurePlateSoundEffect.Post(this.GameObject());
