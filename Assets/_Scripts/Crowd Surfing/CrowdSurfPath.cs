@@ -68,8 +68,8 @@ public class CrowdSurfPath : MonoBehaviour
         //Auto place
         if (autoPlaceTriggers)
         {
-            startTrigger.transform.position = splineComputer.EvaluatePosition(0);
-            endTrigger.transform.position = splineComputer.EvaluatePosition(1);
+            startTrigger.transform.position = splineComputer.EvaluatePosition(0.0);
+            endTrigger.transform.position = splineComputer.EvaluatePosition(1.0);
         }
 
         //Configure end trigger
@@ -103,9 +103,9 @@ public class CrowdSurfPath : MonoBehaviour
         PlayerController.instance.AddMovementLock(this); //Lock the player's movement
         Transform playerTransform = PlayerController.instance.transform;
         //Move player to start of path
-        Vector3 pathStartPosition = splineComputer.EvaluatePosition(0);
+        Vector3 pathStartPosition = splineComputer.EvaluatePosition(0.0);
         if (reverse)
-            pathStartPosition = splineComputer.EvaluatePosition(1);
+            pathStartPosition = splineComputer.EvaluatePosition(1.0);
         Vector3 playerStartPosition = playerTransform.position;
         pathStartPosition.y = playerStartPosition.y;
         float distance = Vector3.Distance(pathStartPosition, playerStartPosition);
