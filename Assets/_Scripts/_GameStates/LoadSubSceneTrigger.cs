@@ -69,7 +69,7 @@ public class LoadSubSceneTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isLoadingScene && !isUnloadingScene && other.gameObject.CompareTag("Player"))
+        if (!isLoadingScene && !isUnloadingScene && other.gameObject.CompareTag("SceneLoader"))
         {
             if (!isLoaded)
             {
