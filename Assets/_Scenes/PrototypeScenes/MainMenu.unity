@@ -3021,6 +3021,7 @@ GameObject:
   - component: {fileID: 101933348}
   - component: {fileID: 101933347}
   - component: {fileID: 101933351}
+  - component: {fileID: 101933352}
   m_Layer: 5
   m_Name: QuitButton
   m_TagString: LevelButton1
@@ -3064,7 +3065,19 @@ MonoBehaviour:
   - eventID: 0
     callback:
       m_PersistentCalls:
-        m_Calls: []
+        m_Calls:
+        - m_Target: {fileID: 101933352}
+          m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
+          m_MethodName: OnHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &101933348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3109,6 +3122,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 101933352}
+        m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 101933351}
         m_TargetAssemblyTypeName: ButtonGameQuit, Assembly-CSharp
         m_MethodName: KillGame
@@ -3171,6 +3196,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9583a57377433e744b83dfb1013f8f45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &101933352
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101933344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b35d5b58c6445a843a3a084711704e07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickButtonSoundEffect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 394437773d8f462438fde0176ac8e024, type: 2}
+  hoverButtonSoundEffect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: cf3fa79e408ee27429f1837931a707ff, type: 2}
 --- !u!1001 &102244219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33189,7 +33234,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DEMO 4/5/24
+  m_text: DEMO April 9th
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f726d5b3184a9bd48bae9974aa494e6c, type: 2}
   m_sharedMaterial: {fileID: 8665850284774363625, guid: f726d5b3184a9bd48bae9974aa494e6c, type: 2}
@@ -41400,6 +41445,8 @@ GameObject:
   - component: {fileID: 1158358828}
   - component: {fileID: 1158358827}
   - component: {fileID: 1158358826}
+  - component: {fileID: 1158358829}
+  - component: {fileID: 1158358830}
   m_Layer: 5
   m_Name: backbutton
   m_TagString: LevelButton1
@@ -41471,6 +41518,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1158358829}
+        m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1312658483}
         m_TargetAssemblyTypeName: UITransitionManager, Assembly-CSharp
         m_MethodName: SwitchCamerasAndObjects
@@ -41521,6 +41580,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158358824}
   m_CullTransparentMesh: 1
+--- !u!114 &1158358829
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158358824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b35d5b58c6445a843a3a084711704e07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickButtonSoundEffect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 057708dffe6a1a042a114ecfe4c79f09, type: 2}
+  hoverButtonSoundEffect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: cf3fa79e408ee27429f1837931a707ff, type: 2}
+--- !u!114 &1158358830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158358824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1158358829}
+          m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
+          m_MethodName: OnHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &1158554243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3443185160100371142, guid: 26d6b4036091f9a4a94db60a7f1e6db4, type: 3}
