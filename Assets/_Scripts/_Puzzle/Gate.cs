@@ -5,9 +5,10 @@ using UnityEngine;
 public class Gate : MonoBehaviour
 {
     [SerializeField] private Animator gateAnim;
-
+    [SerializeField] private AK.Wwise.Event gateSoundEffect;
     public virtual void SwitchGate()
     {
         gateAnim.SetTrigger("interaction");
+        gateSoundEffect.Post(this.gameObject);
     }
 }
