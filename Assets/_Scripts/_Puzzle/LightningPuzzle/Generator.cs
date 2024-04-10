@@ -23,6 +23,9 @@ public class Generator : MonoBehaviour
     [Tooltip("Sound Effect for generator sound")]
     [SerializeField] private AK.Wwise.Event generatorOnSoundEffect;
 
+    [Tooltip("If you want to change as spline emission on gate turn on")]
+    [SerializeField] private IndividualEmissionChange wireEmission;
+
     #endregion
 
     #region UnityMethods
@@ -41,6 +44,10 @@ public class Generator : MonoBehaviour
         gate.SwitchGate();
         generatorRenderer.material = onMat;
         generatorOnSoundEffect.Post(this.gameObject);
+        if (wireEmission != null)
+        {
+            StartCoroutine(wireEmission.AlterEmissionOverTime(true));
+        }
     }
 
     #endregion
