@@ -81,6 +81,7 @@ public class PauseMenu : MonoBehaviour
     public void LoadScene(string sceneName)
     {
         FlagManager.instance.ClearFlags();
+        AkSoundEngine.StopAll();
         SceneManager.LoadScene(sceneName);
     }
 
