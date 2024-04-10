@@ -18,7 +18,8 @@ public class LightningBlockManager : MonoBehaviour
     [SerializeField] private float lightningChainDelay;
     [Tooltip("Time to wait before destorying all lightning on incorrect puzzle completion")]
     [SerializeField] private float waitLightningDestroy;
-
+    [Tooltip("Lever manager incase the blocks are controlled via levers")]
+    [SerializeField] private LeverManager leverManager;
     [Tooltip("Y offset for lighting chain spawn")]
     [SerializeField] private float yOffSet;
 
@@ -125,6 +126,7 @@ public class LightningBlockManager : MonoBehaviour
             }
         }
         lightningGenerator.Hodor();
+        leverManager.completedLeverSystem = true;
     }
 
     #endregion
