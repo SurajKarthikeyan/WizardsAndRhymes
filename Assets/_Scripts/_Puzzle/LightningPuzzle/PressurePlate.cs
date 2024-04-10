@@ -24,15 +24,23 @@ public class PressurePlate : MonoBehaviour
     public int onPP = 0;
 
     private bool isElectroBlock;
+
+    private string gameObjectName;
     #endregion
 
     #region UnityMethods
 
+    private void Start()
+    {
+        gameObjectName = "Connor";
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         
-        if (other.CompareTag("PushBox") && onPP <= 2 && onPP >= 0)
+        if (other.CompareTag("PushBox") && onPP <= 2 && onPP >= 0 && gameObjectName == "Connor")
         {
+            gameObjectName = other.gameObject.name;
             pressurePlateSoundEffect.Stop(this.GameObject());
             pressurePlateSoundEffect.Post(this.GameObject());
             ActivateDefaultPressurePlate();
@@ -42,8 +50,9 @@ public class PressurePlate : MonoBehaviour
             onPP += 1;
             Debug.Log("Plus 1");
         }
-        else if (other.CompareTag("PushBoxEletric"))
+        else if (other.CompareTag("PushBoxEletric") && gameObjectName == "Connor")
         {
+            gameObjectName = other.gameObject.name;
             isElectroBlock = true;
             ActivateElectroBlockPressurePlate(other);
             hasBeenPushedDown = true;
@@ -55,8 +64,9 @@ public class PressurePlate : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("PushBox"))
+        if (other.CompareTag("PushBox") && gameObjectName == other.gameObject.name)
         {
+            gameObjectName = "Connor";
             pressurePlateSoundEffect.Stop(this.GameObject());
             pressurePlateSoundEffect.Post(this.GameObject());
             onPP -= 1;
