@@ -990,6 +990,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3247662601864608305, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
   m_PrefabInstance: {fileID: 581457631}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &57442449
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 57442450}
+  - component: {fileID: 57442452}
+  - component: {fileID: 57442451}
+  m_Layer: 0
+  m_Name: Puzzle2LoaderObjectSwitcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &57442450
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57442449}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 109, y: -3.5, z: -141}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1625698123}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &57442451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57442449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e29eb3c7720a44d995cc7f6ab7349b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1625698124}
+        m_TargetAssemblyTypeName: ToggleObjects, Assembly-CSharp
+        m_MethodName: ToggleAllColliders
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerTags:
+  - SceneLoader
+--- !u!65 &57442452
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57442449}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.3709116, y: 3.1524272, z: 14.244827}
+  m_Center: {x: 0, y: 0, z: 0.22586823}
 --- !u!1001 &59653751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1492,6 +1575,81 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b745adc1fe7e1834a9b7deb4d4fa8c6c, type: 3}
+--- !u!1 &124342078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 124342081}
+  - component: {fileID: 124342080}
+  - component: {fileID: 124342079}
+  m_Layer: 0
+  m_Name: Puzzle2Loader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &124342079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124342078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363d3d356f08a20478b461fd90673e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subscene: icepuzzle2
+  isLoaded: 0
+  isLoadingScene: 0
+  isUnloadingScene: 0
+  enterPuzzleState: {fileID: 255718406}
+  isLoader: 1
+  otherLoaders:
+  - {fileID: 2055054757}
+  - {fileID: 1525597274}
+--- !u!65 &124342080
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124342078}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 14.601936, y: 3.1524272, z: 18.301529}
+  m_Center: {x: 5.62331, y: 0, z: 2.254219}
+--- !u!4 &124342081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124342078}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 67.07487, y: -3.5, z: -170.22586}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1625698123}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &131107751
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8023,6 +8181,110 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b372228c1f8f1b5479ad7826341893ec, type: 3}
+--- !u!1 &535554923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 535554924}
+  - component: {fileID: 535554926}
+  - component: {fileID: 535554925}
+  - component: {fileID: 535554927}
+  m_Layer: 0
+  m_Name: Puzzle1Unloader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &535554924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535554923}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11, y: -4, z: -237}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 559739507}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &535554925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535554923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363d3d356f08a20478b461fd90673e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subscene: icepuzzle1
+  isLoaded: 0
+  isLoadingScene: 0
+  isUnloadingScene: 0
+  enterPuzzleState: {fileID: 255718406}
+  isLoader: 0
+  otherLoaders:
+  - {fileID: 1634265348}
+--- !u!65 &535554926
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535554923}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.3709116, y: 3.1524272, z: 14.244827}
+  m_Center: {x: 0, y: 0, z: 0.22586823}
+--- !u!114 &535554927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535554923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e29eb3c7720a44d995cc7f6ab7349b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 559739508}
+        m_TargetAssemblyTypeName: ToggleObjects, Assembly-CSharp
+        m_MethodName: ToggleAllColliders
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerTags:
+  - SceneLoader
 --- !u!4 &537975621 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3247662601864608305, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
@@ -8180,6 +8442,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3247662601864608305, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
   m_PrefabInstance: {fileID: 473195695}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &559739506
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 559739507}
+  - component: {fileID: 559739508}
+  m_Layer: 0
+  m_Name: Puzzle1LoaderParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &559739507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559739506}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1634265347}
+  - {fileID: 535554924}
+  - {fileID: 1505082015}
+  - {fileID: 1704865698}
+  m_Father: {fileID: 1721581539}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &559739508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 559739506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a05504744fc3845801ec38dff1cbdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 1634265345}
+  - {fileID: 535554923}
+  - {fileID: 1505082014}
+  - {fileID: 1704865697}
 --- !u!1001 &572744582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16590,77 +16905,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
---- !u!1 &918240550
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 918240551}
-  - component: {fileID: 918240553}
-  - component: {fileID: 918240552}
-  m_Layer: 0
-  m_Name: Puzzle3Loader
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &918240551
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918240550}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1721581539}
-  m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
---- !u!114 &918240552
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918240550}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363d3d356f08a20478b461fd90673e2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subscene: puzzle1test
-  isLoaded: 0
-  isLoadingScene: 0
-  isUnloadingScene: 0
-  enterPuzzleState: {fileID: 0}
---- !u!65 &918240553
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 918240550}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 8.055084, y: 3.1524272, z: 1.7918701}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &921425775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24194,77 +24438,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
---- !u!1 &1437669560
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1437669561}
-  - component: {fileID: 1437669563}
-  - component: {fileID: 1437669562}
-  m_Layer: 0
-  m_Name: Puzzle2Loader
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1437669561
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1437669560}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 73, y: -3.5, z: -164}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1721581539}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1437669562
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1437669560}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 363d3d356f08a20478b461fd90673e2b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  subscene: icepuzzle2
-  isLoaded: 0
-  isLoadingScene: 0
-  isUnloadingScene: 0
-  enterPuzzleState: {fileID: 255718406}
---- !u!65 &1437669563
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1437669560}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 14.616707, y: 3.1524272, z: 0.050628662}
-  m_Center: {x: -0.21505356, y: 0, z: 0.8706207}
 --- !u!1001 &1439865176
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25026,6 +25199,110 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1417210135444854531, guid: bd53c4c459fb0604fb8fb90ed713e90b, type: 3}
   m_PrefabInstance: {fileID: 361097472}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1505082014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1505082015}
+  - component: {fileID: 1505082018}
+  - component: {fileID: 1505082017}
+  - component: {fileID: 1505082016}
+  m_Layer: 0
+  m_Name: Puzzle1Unloader (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1505082015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505082014}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 29, y: -4, z: -237}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 559739507}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1505082016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505082014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e29eb3c7720a44d995cc7f6ab7349b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 559739508}
+        m_TargetAssemblyTypeName: ToggleObjects, Assembly-CSharp
+        m_MethodName: ToggleAllColliders
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerTags:
+  - SceneLoader
+--- !u!114 &1505082017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505082014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363d3d356f08a20478b461fd90673e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subscene: icepuzzle1
+  isLoaded: 0
+  isLoadingScene: 0
+  isUnloadingScene: 0
+  enterPuzzleState: {fileID: 255718406}
+  isLoader: 0
+  otherLoaders:
+  - {fileID: 1634265348}
+--- !u!65 &1505082018
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505082014}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.3709116, y: 3.1524272, z: 14.244827}
+  m_Center: {x: 0, y: 0, z: 0.22586823}
 --- !u!114 &1507415808 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8996010620304517789, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
@@ -25296,6 +25573,110 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
+--- !u!1 &1525597272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1525597276}
+  - component: {fileID: 1525597275}
+  - component: {fileID: 1525597274}
+  - component: {fileID: 1525597273}
+  m_Layer: 0
+  m_Name: Puzzle2Unloader (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1525597273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525597272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e29eb3c7720a44d995cc7f6ab7349b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1625698124}
+        m_TargetAssemblyTypeName: ToggleObjects, Assembly-CSharp
+        m_MethodName: ToggleAllColliders
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerTags:
+  - SceneLoader
+--- !u!114 &1525597274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525597272}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363d3d356f08a20478b461fd90673e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subscene: icepuzzle2
+  isLoaded: 0
+  isLoadingScene: 0
+  isUnloadingScene: 0
+  enterPuzzleState: {fileID: 255718406}
+  isLoader: 0
+  otherLoaders:
+  - {fileID: 124342079}
+--- !u!65 &1525597275
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525597272}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.3709116, y: 3.1524272, z: 14.244827}
+  m_Center: {x: 0, y: 0, z: 0.22586823}
+--- !u!4 &1525597276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525597272}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 73, y: -4, z: -193}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1625698123}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!1001 &1531818244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27452,6 +27833,59 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1417210135444854531, guid: bd53c4c459fb0604fb8fb90ed713e90b, type: 3}
   m_PrefabInstance: {fileID: 1622900280}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1625698122
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1625698123}
+  - component: {fileID: 1625698124}
+  m_Layer: 0
+  m_Name: Puzzle2LoaderParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1625698123
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625698122}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 124342081}
+  - {fileID: 2055054760}
+  - {fileID: 1525597276}
+  - {fileID: 57442450}
+  m_Father: {fileID: 1721581539}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1625698124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1625698122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07a05504744fc3845801ec38dff1cbdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objects:
+  - {fileID: 124342078}
+  - {fileID: 2055054756}
+  - {fileID: 1525597272}
+  - {fileID: 57442449}
 --- !u!1001 &1626466345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27771,8 +28205,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3709116, y: 3.1524272, z: 14.244827}
-  m_Center: {x: 0, y: 0, z: 0.22586823}
+  m_Size: {x: 17.910397, y: 3.1524272, z: 14.244827}
+  m_Center: {x: 5.925133, y: 0, z: 0.22586823}
 --- !u!4 &1634265347
 Transform:
   m_ObjectHideFlags: 0
@@ -27786,7 +28220,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1721581539}
+  m_Father: {fileID: 559739507}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1634265348
 MonoBehaviour:
@@ -27805,6 +28239,10 @@ MonoBehaviour:
   isLoadingScene: 0
   isUnloadingScene: 0
   enterPuzzleState: {fileID: 255718406}
+  isLoader: 1
+  otherLoaders:
+  - {fileID: 535554925}
+  - {fileID: 1505082017}
 --- !u!1 &1635428724
 GameObject:
   m_ObjectHideFlags: 0
@@ -28950,6 +29388,89 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5828573647993923807, guid: c0ed6c7093bbf0e4ba5539db5628768d, type: 3}
   m_PrefabInstance: {fileID: 656785623}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1704865697
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1704865698}
+  - component: {fileID: 1704865700}
+  - component: {fileID: 1704865699}
+  m_Layer: 0
+  m_Name: Puzzle1LoaderObjectSwitcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1704865698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704865697}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -48, y: -3.5, z: -237}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 559739507}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1704865699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704865697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e29eb3c7720a44d995cc7f6ab7349b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 559739508}
+        m_TargetAssemblyTypeName: ToggleObjects, Assembly-CSharp
+        m_MethodName: ToggleAllColliders
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerTags:
+  - SceneLoader
+--- !u!65 &1704865700
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704865697}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.3709116, y: 3.1524272, z: 14.244827}
+  m_Center: {x: 0, y: 0, z: 0.22586823}
 --- !u!1001 &1713702143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29041,9 +29562,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1634265347}
-  - {fileID: 1437669561}
-  - {fileID: 918240551}
+  - {fileID: 559739507}
+  - {fileID: 1625698123}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1722116283 stripped
@@ -32993,6 +33513,110 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 61c4df6368cee2649b610592124b49bc, type: 3}
+--- !u!1 &2055054756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2055054760}
+  - component: {fileID: 2055054759}
+  - component: {fileID: 2055054757}
+  - component: {fileID: 2055054758}
+  m_Layer: 0
+  m_Name: Puzzle2Unloader
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2055054757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055054756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 363d3d356f08a20478b461fd90673e2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  subscene: icepuzzle2
+  isLoaded: 0
+  isLoadingScene: 0
+  isUnloadingScene: 0
+  enterPuzzleState: {fileID: 255718406}
+  isLoader: 0
+  otherLoaders:
+  - {fileID: 124342079}
+--- !u!114 &2055054758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055054756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e29eb3c7720a44d995cc7f6ab7349b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1625698124}
+        m_TargetAssemblyTypeName: ToggleObjects, Assembly-CSharp
+        m_MethodName: ToggleAllColliders
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerTags:
+  - SceneLoader
+--- !u!65 &2055054759
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055054756}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1.3709116, y: 3.1524272, z: 14.244827}
+  m_Center: {x: 0, y: 0, z: 0.22586823}
+--- !u!4 &2055054760
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055054756}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 80, y: -4, z: -137}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1625698123}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2055482913
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35389,11 +36013,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.38341916
+      value: -0.3834191
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.024297059
+      value: -0.024297088
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
@@ -35727,15 +36351,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7120159554502453663, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.38140962
+      value: 0.38140965
       objectReference: {fileID: 0}
     - target: {fileID: 7120159554502453663, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.024318993
+      value: -0.024318963
       objectReference: {fileID: 0}
     - target: {fileID: 7120159554502453663, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.010038093
+      value: 0.010038048
       objectReference: {fileID: 0}
     - target: {fileID: 7271955309154457001, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_IsActive

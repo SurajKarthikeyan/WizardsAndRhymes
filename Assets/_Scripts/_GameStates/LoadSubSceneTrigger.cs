@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,10 @@ public class LoadSubSceneTrigger : MonoBehaviour
     public bool isUnloadingScene;
 
     public AKChangeState enterPuzzleState;
+
+    public bool isLoader;
+
+    public List<LoadSubSceneTrigger> otherLoaders;
 
     private void LoadSubscene()
     {
@@ -53,6 +58,12 @@ public class LoadSubSceneTrigger : MonoBehaviour
         isLoaded = true;
 
         isLoadingScene = false;
+
+        foreach (LoadSubSceneTrigger otherLoader in otherLoaders)
+        {
+            otherLoader.isLoaded = isLoaded;
+        }
+        
         
         Debug.Log("Scene loaded");
     }
@@ -63,6 +74,11 @@ public class LoadSubSceneTrigger : MonoBehaviour
         isUnloadingScene = false;
 
         isLoaded = false;
+        
+        foreach (LoadSubSceneTrigger otherLoader in otherLoaders)
+        {
+            otherLoader.isLoaded = isLoaded;
+        }
 
         Debug.Log("Scene unloaded");
     }
@@ -71,13 +87,13 @@ public class LoadSubSceneTrigger : MonoBehaviour
     {
         if (!isLoadingScene && !isUnloadingScene && other.gameObject.CompareTag("SceneLoader"))
         {
-            if (!isLoaded)
+            if (isLoader && !isLoaded)
             {
                 // Load the subscene asynchronously
                 LoadSubscene();
                 enterPuzzleState.ChangeState();
             }
-            else
+            else if (!isLoader && isLoaded)
             {
                 //Unload subscene asynchronously
                 UnloadSubscene();
