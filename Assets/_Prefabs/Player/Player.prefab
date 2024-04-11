@@ -588,7 +588,6 @@ GameObject:
   - component: {fileID: 1405765644802271100}
   - component: {fileID: 3041692611352027283}
   - component: {fileID: 1531503870578908028}
-  - component: {fileID: 4681948003197784821}
   - component: {fileID: 5530131915041016451}
   - component: {fileID: 6216464719562670839}
   - component: {fileID: 5981059314923844403}
@@ -779,6 +778,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 50a656c07534b544fb5b320c6204a451, type: 2}
+  canAttack: 0
   comboContinuationTime: 0.5
   comboResetTime: 1
   rangedPrefab: {fileID: 8332464805925598477, guid: 1c8ea5a92df42184d87ee0928e44598e, type: 3}
@@ -790,7 +790,7 @@ MonoBehaviour:
   meleeBox: {fileID: 4327319592275646954}
   pauseMenu: {fileID: 0}
   isPaused: 0
-  abilityManager: {fileID: 4681948003197784821}
+  abilityManager: {fileID: 0}
   mixtapeInventory: {fileID: 0}
   playerHealth: {fileID: 1531503870578908028}
   playerAnimator: {fileID: 2421815094289285570}
@@ -824,28 +824,6 @@ MonoBehaviour:
   - {fileID: 1709088209719031061}
   fullHeartImage: {fileID: 21300000, guid: 6a04442234675d340b1d41be4fbd481a, type: 3}
   emptyHeartImage: {fileID: 21300000, guid: 31f5a42283dc6384e9b0e70b9f0d2438, type: 3}
---- !u!114 &4681948003197784821
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979217756860975084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e86a9cb7a645d2040b54dfe5514f428e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilityRechargeThreshold: 0.6
-  abilityGaugeFillValue: 3
-  minimumAbilityValue: 0
-  maximumAbilityValue: 12
-  currentAbilityValue: 0
-  rangedAbilityCost: 0
-  meleeAbilityCost: 1.5
-  dashAbilityCost: 3
-  abilityCanvas: {fileID: 0}
-  successiveAttacks: 0
 --- !u!114 &5530131915041016451
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -141,6 +141,8 @@ public class PlayerController : Singleton<PlayerController>
     [Tooltip("Audio Event for melee attacks")]
     [SerializeField] private AK.Wwise.Event meleeEvent;
     
+    public int successiveAttacks;
+    
     [Tooltip("Bool defining if the player can attack")]
     public bool canAttack;
 
@@ -208,9 +210,9 @@ public class PlayerController : Singleton<PlayerController>
     #endregion
     
     [Header("Script References")]
-    [Tooltip("C# Class that handles all of the player abilities")]
-    [SerializeField]
-    private AbilityManager abilityManager;
+    // [Tooltip("C# Class that handles all of the player abilities")]
+    // [SerializeField]
+    // private AbilityManager abilityManager;
 
     [Tooltip("Inventory for the player's mixtapes")]
     [SerializeField]
@@ -523,7 +525,7 @@ public class PlayerController : Singleton<PlayerController>
             }
             comboActive = true;
             attackPerformed = true;
-            abilityManager.IncrementSuccessiveAttack();
+            successiveAttacks++;
             attackStatus = AttackStatus.Ranged;
             StartCoroutine(Projectile());
         }
@@ -541,7 +543,7 @@ public class PlayerController : Singleton<PlayerController>
             {
                 StopCoroutine(comboContinuationCoroutine);
             }
-            abilityManager.IncrementSuccessiveAttack();
+            successiveAttacks++;
             attackPerformed = true;
             comboActive = true;
             attackPerformed = true;
@@ -685,7 +687,7 @@ public class PlayerController : Singleton<PlayerController>
     #region Attack Combo Methods
     IEnumerator AttackDelay(float seconds)
     {
-        if (abilityManager.successiveAttacks >= 3)
+        if (successiveAttacks >= 3)
         {
             yield return new WaitForSeconds(seconds);
             ResetCombo();
@@ -712,7 +714,7 @@ public class PlayerController : Singleton<PlayerController>
 
     IEnumerator ComboCooldown(float seconds)
     {
-        abilityManager.successiveAttacks = 0;
+        successiveAttacks = 0;
         canAttack = false;
         yield return new WaitForSeconds(seconds);
         comboActive = false;
