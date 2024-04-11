@@ -31,7 +31,7 @@ public class PlayerController : Singleton<PlayerController>
         Up
     }
 
-    [Tooltip("MoveDireciton instance")]
+    [Tooltip("MoveDirection instance")]
     [SerializeField] public MoveDirection moveDirection;
 
     [Tooltip("MoveStatus instance")]
@@ -142,7 +142,7 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private AK.Wwise.Event meleeEvent;
     
     [Tooltip("Bool defining if the player can attack")]
-    private bool canAttack;
+    public bool canAttack;
 
     [Tooltip("Bool defining if an attack has been performed by the player")]
     private bool attackPerformed = false;
@@ -514,7 +514,7 @@ public class PlayerController : Singleton<PlayerController>
     /// <param name="obj">Input callback context for the ranged attack</param>
     private void DoRanged(InputAction.CallbackContext obj)
     {
-        if (canAttack && abilityManager.currentAbilityValue >= abilityManager.rangedAbilityCost)
+        if (canAttack)
         {
             SetCanAttack(false);
             if (comboContinuationCoroutine != null)
@@ -525,7 +525,6 @@ public class PlayerController : Singleton<PlayerController>
             attackPerformed = true;
             abilityManager.IncrementSuccessiveAttack();
             attackStatus = AttackStatus.Ranged;
-            abilityManager.ResetAbilityRecharge();
             StartCoroutine(Projectile());
         }
     }
@@ -535,7 +534,7 @@ public class PlayerController : Singleton<PlayerController>
     /// <param name="obj">Input callback context for the melee attack</param>
     private void DoMelee(InputAction.CallbackContext obj)
     {
-        if (canAttack && abilityManager.currentAbilityValue >= abilityManager.meleeAbilityCost)
+        if (canAttack)
         {
             SetCanAttack(false);
             if (comboContinuationCoroutine != null)
@@ -547,7 +546,6 @@ public class PlayerController : Singleton<PlayerController>
             comboActive = true;
             attackPerformed = true;
             attackStatus = AttackStatus.Melee;
-            abilityManager.ResetAbilityRecharge();
             StartCoroutine(Melee());
         }
     }
@@ -561,7 +559,6 @@ public class PlayerController : Singleton<PlayerController>
         if (IsMovementLocked()) //Cannot dash with a movement lock in place
             return;
         
-        abilityManager.ResetAbilityRecharge();
         if (IsValidDash())
         {
             int randInt = Random.Range(0, 100);
@@ -640,6 +637,12 @@ public class PlayerController : Singleton<PlayerController>
         playerInput.UI.Enable();
     }
 
+    public void EnablePlayerAttackControls()
+    {
+        playerInput.Player.MeleeAttack.Enable();
+        playerInput.Player.RangedAttack.Enable();
+    }
+
     /// <summary>
     /// Sets the boolean for if the player is able to attack
     /// </summary>
@@ -670,6 +673,12 @@ public class PlayerController : Singleton<PlayerController>
         playerInput.UI.Exit.canceled -= PauseAction;
         playerInput.UI.Interact.canceled -= UIInteract;
         playerInput.UI.Disable();
+    }
+
+    public void DisablePlayerAttackControls()
+    {
+        playerInput.Player.MeleeAttack.Disable();
+        playerInput.Player.RangedAttack.Disable();
     }
     #endregion
     
@@ -735,7 +744,7 @@ public class PlayerController : Singleton<PlayerController>
         Ray dashCheckRay = new (dashCheck, Vector3.down);
         if (Physics.Raycast(dashCheckRay, float.MaxValue, groundLayerMask))
         {
-            if (abilityManager.currentAbilityValue >= abilityManager.dashAbilityCost && dashCooldownTimer >= dashCooldownThreshold)
+            if (dashCooldownTimer >= dashCooldownThreshold)
             {
                 return true;
             }
@@ -773,7 +782,6 @@ public class PlayerController : Singleton<PlayerController>
         playerRenderer.material = dashMaterial;
         rigidBody.useGravity = false;
         playerHealth.vulnerable = false;
-        abilityManager.ReduceAbilityGuage(abilityManager.dashAbilityCost);
         dashCooldownTimer = 0;
         yield return new WaitForSeconds(dashTime);
         playerRenderer.material = defaultMaterial;
@@ -791,12 +799,10 @@ public class PlayerController : Singleton<PlayerController>
     {
         playerAnimator.SetTrigger("rangedAttack");
         rangedEvent.Post(this.gameObject);
-        abilityManager.ReduceAbilityGuage(abilityManager.rangedAbilityCost);
         //Instantiate projectile and give it the proper velocity
         GameObject projectile = Instantiate(rangedPrefab, rangedSpawnPoint.position, rangedSpawnPoint.rotation);
         projectile.GetComponent<Rigidbody>().velocity = rangedSpawnPoint.forward * rangedPrefabSpeed;
         projectile.GetComponent<Projectile>().DType = playerLevelDamageType;
-        abilityManager.ResetAbilityRecharge();
         StartCoroutine(AttackDelay(rangedAttackDuration));
         comboContinuationCoroutine = ComboContinueDelay(comboContinuationTime);
         StartCoroutine(comboContinuationCoroutine);
@@ -812,12 +818,10 @@ public class PlayerController : Singleton<PlayerController>
     IEnumerator Melee()
     {
         meleeEvent.Post(this.gameObject);
-        abilityManager.ReduceAbilityGuage(abilityManager.meleeAbilityCost); 
         meleeBox.GetComponent<MeleeCollider>().damageType = playerLevelDamageType;
         playerAnimator.SetTrigger("meleeAttack");
         rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
         DisablePlayerControls();
-        abilityManager.ResetAbilityRecharge();
         StartCoroutine(AttackDelay(meleeAttackDuration));
         comboContinuationCoroutine = ComboContinueDelay(comboContinuationTime);
         StartCoroutine(comboContinuationCoroutine);

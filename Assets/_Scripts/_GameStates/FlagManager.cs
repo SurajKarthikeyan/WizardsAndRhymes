@@ -137,7 +137,10 @@ public class FlagManager : Singleton<FlagManager>
     public void SetFlag(string key, bool value)
     {
         flags[key] = value;
-        Debug.Log("Just set flag " + key + " to be " + value);
+        foreach (var flagKey in flags.Keys)
+        {
+            Debug.Log("[" + flagKey + ", " + flags[flagKey] + "]");
+        }
     }
 
     /// <summary>
