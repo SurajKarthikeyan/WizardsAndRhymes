@@ -9,6 +9,7 @@ public class Word : MonoBehaviour
     #region Variables
     [SerializeField] private List<string> flagsToSet = new();
     [SerializeField] private AK.Wwise.Event wordPickUpSoundEffect;
+    [SerializeField] private GameObject decal;
     public AKChangeState iceOutOfPuzzleState;
     #endregion
 
@@ -18,6 +19,7 @@ public class Word : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            decal.SetActive(true);
             wordPickUpSoundEffect.Post(other.gameObject);
             foreach(string flag in flagsToSet)
             {
