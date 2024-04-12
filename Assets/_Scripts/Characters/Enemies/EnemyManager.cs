@@ -431,7 +431,8 @@ public class EnemyManager : MonoBehaviour, IFlagObject
     {
         if (state)
         {
-            AllWavesCleared();
-        }    
+            ClearAllWaves();
+        }  
     }
+    
 }
