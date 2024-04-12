@@ -425,8 +425,7 @@ public class EnemyManager : MonoBehaviour, IFlagObject
         Debug.Log("No augment assigned to " + enemyGO.name);
         return false;
     }
-    #endregion
-
+    
     public void ObjectFlagSetState(bool state)
     {
         if (state)
@@ -434,5 +433,7 @@ public class EnemyManager : MonoBehaviour, IFlagObject
             ClearAllWaves();
         }  
     }
+    #endregion
+
     
 }

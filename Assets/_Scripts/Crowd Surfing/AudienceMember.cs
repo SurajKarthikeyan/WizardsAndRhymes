@@ -45,10 +45,8 @@ public class AudienceMember : Floater
     #endregion
 
     #region Unity Methods
-    protected override void Start()
+    private void Awake()
     {
-        base.Start();
-
         render.material.color = RandomColor(false);
         
         if (fanMode == FanMode.ConvertToPlayer)
@@ -138,7 +136,9 @@ public class AudienceMember : Floater
     void CheckWavesCleared(EnemyManager clearedEnemyManager)
     {
         if (clearedEnemyManager == enemyManager)
+        {
             StartBecomePlayerFan(false);
+        }
     }
 
     /// <summary>
