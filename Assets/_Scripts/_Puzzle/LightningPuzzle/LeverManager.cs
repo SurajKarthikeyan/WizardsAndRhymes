@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ public class LeverManager : MonoBehaviour
     [SerializeField] private Generator leverGenerator;
     [SerializeField] private LightningBlockManager lbManager;
     [SerializeField] private bool useLBManager;
+    [SerializeField] private TeslaTower teslaTower;
     [SerializeField] private List<IndividualEmissionChange> emissionChangeList;
     #endregion
 
@@ -31,6 +33,10 @@ public class LeverManager : MonoBehaviour
         if (leverList.All(obj => obj.isOn) && leverGenerator.isLeverControlled)
         {
             completedLeverSystem = true;
+            if (teslaTower != null)
+            {
+                teslaTower.DisableElectricEffect();
+            }
             for (int i = 0; i < emissionChangeList.Count; i++)
             {
                 StartCoroutine(emissionChangeList[i].AlterEmissionOverTime(true));
