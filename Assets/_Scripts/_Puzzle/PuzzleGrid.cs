@@ -151,7 +151,7 @@ public class PuzzleGrid : MonoBehaviour
         {
             case PlayerController.MoveDirection.Up:
                 //Iterate through i in reverse
-                if(startCoord.Item1 == 0)
+                if(startCoord.Item1 == 1)
                 {
                     return (-1, -1, -1);
                 }
@@ -162,9 +162,9 @@ public class PuzzleGrid : MonoBehaviour
                         currentTile.occupationStatus == GridTile.OccupationStatus.None)
                     {
                         tileCount++;
-                        if (i == 0)
+                        if (i == 1)
                         {
-                            return (0, startCoord.Item2, tileCount);
+                            return (1, startCoord.Item2, tileCount);
                         }
                         continue;
                     }
@@ -186,6 +186,23 @@ public class PuzzleGrid : MonoBehaviour
                         numberCoord = startCoord.Item2;
                         return (i + 1, startCoord.Item2, tileCount);
                     }
+                    
+                    
+                    
+                    /// NEW CODE HERE ///
+                    else if (currentTile.floorStatus == GridTile.FloorStatus.Walker &&
+                             moveObject != PlayerController.instance.gameObject)
+                    {
+                        return (i + 1, startCoord.Item2, tileCount);
+                    }
+                    
+                    else if (currentTile.floorStatus == GridTile.FloorStatus.Walker &&
+                             moveObject == PlayerController.instance.gameObject)
+                    {
+                        tileCount++;
+                        return (i, startCoord.Item2, tileCount);
+                    }
+                    /// NEW CODE HERE ///
                     else
                     {
                         return (-1, -1, -1);
@@ -194,7 +211,7 @@ public class PuzzleGrid : MonoBehaviour
                 return (-1, -1, -1);
             case PlayerController.MoveDirection.Down:
                 //iterate through i 
-                if (startCoord.Item1 == 4)
+                if (startCoord.Item1 == 6)
                 {
                     return (-1, -1, -1);
                 }
@@ -206,7 +223,7 @@ public class PuzzleGrid : MonoBehaviour
                         currentTile.occupationStatus == GridTile.OccupationStatus.None)
                     {
                         tileCount++;
-                        if (i == gridArray.Count - 1)
+                        if (i == gridArray.Count - 2)
                         {
                             return (gridArray.Count - 1, startCoord.Item2, tileCount);
                         }
@@ -232,6 +249,21 @@ public class PuzzleGrid : MonoBehaviour
                         numberCoord = startCoord.Item2;
                         return (i - 1, startCoord.Item2, tileCount);
                     }
+                    
+                    /// NEW CODE HERE ///
+                    else if (currentTile.floorStatus == GridTile.FloorStatus.Walker &&
+                             moveObject != PlayerController.instance.gameObject)
+                    {
+                        return (i - 1, startCoord.Item2, tileCount);
+                    }
+                    
+                    else if (currentTile.floorStatus == GridTile.FloorStatus.Walker &&
+                             moveObject == PlayerController.instance.gameObject)
+                    {
+                        tileCount++;
+                        return (i, startCoord.Item2, tileCount);
+                    }
+                    /// NEW CODE HERE ///
 
                     else
                     {
@@ -280,6 +312,21 @@ public class PuzzleGrid : MonoBehaviour
                         numberCoord = j;
                         return (startCoord.Item1, j - 1, tileCount);
                     }
+                    
+                    /// NEW CODE HERE ///
+                    else if (currentTile.floorStatus == GridTile.FloorStatus.Walker &&
+                             moveObject != PlayerController.instance.gameObject)
+                    {
+                        return (startCoord.Item1, j - 1, tileCount);
+                    }
+                    
+                    else if (currentTile.floorStatus == GridTile.FloorStatus.Walker &&
+                             moveObject == PlayerController.instance.gameObject)
+                    {
+                        tileCount++;
+                        return (startCoord.Item1, j , tileCount);
+                    }
+                    /// NEW CODE HERE ///
 
                     else
                     {
@@ -328,6 +375,21 @@ public class PuzzleGrid : MonoBehaviour
                         numberCoord = j;
                         return (startCoord.Item1, j + 1, tileCount);
                     }
+                    
+                    /// NEW CODE HERE ///
+                    else if (currentTile.floorStatus == GridTile.FloorStatus.Walker &&
+                             moveObject != PlayerController.instance.gameObject)
+                    {
+                        return (startCoord.Item1, j + 1, tileCount);
+                    }
+                    
+                    else if (currentTile.floorStatus == GridTile.FloorStatus.Walker &&
+                             moveObject == PlayerController.instance.gameObject)
+                    {
+                        tileCount++;
+                        return (startCoord.Item1, j , tileCount);
+                    }
+                    /// NEW CODE HERE ///
 
                     else
                     {
