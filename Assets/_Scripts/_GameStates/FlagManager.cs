@@ -81,19 +81,23 @@ public class FlagManager : Singleton<FlagManager>
         {
             dialogueTrigger1.GetComponent<Collider>().enabled = false;
         }
+        if (GetFlag("enemyWave2Completed"))
+        {
+            dialogueTrigger2.GetComponent<Collider>().enabled = false;
+        }
     }
 
     #endregion
 
     private void Update()
     {
-        if (GetFlag("puzzle2Completed") && !dialogueTrigger3.activeInHierarchy && 
-            !dialogueTrigger3.GetComponent<DialogueTriggerer>().alreadyPlayed)
+        if (GetFlag("puzzle2Completed") && !dialogueTrigger3.GetComponent<DialogueTriggerer>().alreadyPlayed
+            && !GetFlag("enemyWave3Completed"))
         {
             dialogueTrigger3.GetComponent<Collider>().enabled = true;
         }
-        else if (GetFlag("puzzle1Completed") && !dialogueTrigger2.activeInHierarchy && 
-                 !dialogueTrigger2.GetComponent<DialogueTriggerer>().alreadyPlayed)
+        else if (GetFlag("puzzle1Completed") && !dialogueTrigger2.GetComponent<DialogueTriggerer>().alreadyPlayed
+                 && !GetFlag("enemyWave2Completed"))
         {
             dialogueTrigger2.GetComponent<Collider>().enabled = true;
         }
