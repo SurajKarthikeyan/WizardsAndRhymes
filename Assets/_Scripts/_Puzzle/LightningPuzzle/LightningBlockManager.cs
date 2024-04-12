@@ -25,6 +25,8 @@ public class LightningBlockManager : MonoBehaviour
 
     [Tooltip("If you got a Tesla Tower to be controlled, slap it in here")]
     [SerializeField] private TeslaTower teslaTower;
+    [Tooltip("The block ghost particles VFX prefab")]
+    [SerializeField] private GameObject vfxPrefab;
     
     [Tooltip("Holographic block list to spawn in location of deactivated block")]
     [SerializeField] private List<GameObject> holoBlockList;
@@ -58,11 +60,27 @@ public class LightningBlockManager : MonoBehaviour
             if (lightBlockList[i].activeInHierarchy == false)
             {
                 lightBlockList[i].SetActive(false);
-                curHoloBlock.SetActive(true);
+                if (curHoloBlock.activeSelf == false)
+                {
+                    if (vfxPrefab != null)
+                    {
+                        GameObject vfxGO = Instantiate(vfxPrefab);
+                        vfxGO.transform.position = curHoloBlock.transform.position;
+                    }
+                    curHoloBlock.SetActive(true);
+                }
             }
             else
             {
-                curHoloBlock.SetActive(false);
+                if (curHoloBlock.activeSelf == true)
+                {
+                    if (vfxPrefab != null)
+                    {
+                        GameObject vfxGO = Instantiate(vfxPrefab);
+                        vfxGO.transform.position = curHoloBlock.transform.position;
+                    }
+                    curHoloBlock.SetActive(false);
+                }
             }
         }
     }
