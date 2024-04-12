@@ -21,7 +21,14 @@ public class PuzzleGrid : MonoBehaviour
     [SerializeField] private List<GameObject> DGrid;
     [Tooltip("Grid List E")]
     [SerializeField] private List<GameObject> EGrid;
+    [Tooltip("Grid List F")]
+    [SerializeField] private List<GameObject> FGrid;
+    [Tooltip("Grid List Z")]
+    [SerializeField] private List<GameObject> ZGrid;
+    
 
+    
+    
     [Tooltip("MoveDireciton instance")]
     [SerializeField] private PlayerController.MoveDirection moveDirection;
 
@@ -52,12 +59,13 @@ public class PuzzleGrid : MonoBehaviour
     {
         touchedTile = false;
         gridArray = new List<List<GameObject>>();
+        gridArray.Add(ZGrid);
         gridArray.Add(AGrid);
         gridArray.Add(BGrid);
         gridArray.Add(CGrid);
         gridArray.Add(DGrid);
         gridArray.Add(EGrid);
-
+        gridArray.Add(FGrid);
 
         // temp code;
         moveObject = PlayerController.instance.gameObject;
@@ -108,20 +116,26 @@ public class PuzzleGrid : MonoBehaviour
 
         switch (x)
         {
-            case 'A':
+            case 'Z':
                 xCoord = 0;
                 break;
-            case 'B':
+            case 'A':
                 xCoord = 1;
                 break;
-            case 'C':
+            case 'B':
                 xCoord = 2;
                 break;
-            case 'D':
+            case 'C':
                 xCoord = 3;
                 break;
-            case 'E':
+            case 'D':
                 xCoord = 4;
+                break;
+            case 'E':
+                xCoord = 5;
+                break;
+            case 'F':
+                xCoord = 6;
                 break;
         }
 

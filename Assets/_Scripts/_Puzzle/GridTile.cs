@@ -16,6 +16,7 @@ public class GridTile : MonoBehaviour
     public enum FloorStatus
     {
         Normal,
+        Walker,
         Ice
     }
     [Tooltip("Floor status of this tile")]
