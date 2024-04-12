@@ -5474,6 +5474,18 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
+          - m_Target: {fileID: 81138555853967075}
+            m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+            m_MethodName: DisablePlayerAttackControls
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
       eventsWhenFinishingDialogueString:
         m_PersistentCalls:
           m_Calls: []
@@ -5534,10 +5546,10 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-          - m_Target: {fileID: 804802980}
-            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_MethodName: SetActive
-            m_Mode: 6
+          - m_Target: {fileID: 1565664291}
+            m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+            m_MethodName: SwitchGate
+            m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5546,10 +5558,10 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
-          - m_Target: {fileID: 1107111185}
-            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_MethodName: SetActive
-            m_Mode: 6
+          - m_Target: {fileID: 2079257623}
+            m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+            m_MethodName: SwitchGate
+            m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -5585,6 +5597,18 @@ MonoBehaviour:
           - m_Target: {fileID: 1336706523}
             m_TargetAssemblyTypeName: AKChangeState, Assembly-CSharp
             m_MethodName: ChangeState
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Kill All Enemies To Unlock The Roast Rock
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 81138555853967075}
+            m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+            m_MethodName: EnablePlayerAttackControls
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -7391,11 +7415,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3521096967233506011, guid: 1a244b4cb4787f24b9a555b26fff36f8, type: 3}
   m_PrefabInstance: {fileID: 418916684}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &437719565 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-  m_PrefabInstance: {fileID: 1091166938}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &448410506
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8690,7 +8709,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &533631203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14495,6 +14514,18 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
+          - m_Target: {fileID: 81138555853967075}
+            m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+            m_MethodName: DisablePlayerAttackControls
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
       eventsWhenFinishingDialogueString:
         m_PersistentCalls:
           m_Calls: []
@@ -14546,6 +14577,18 @@ MonoBehaviour:
           - m_Target: {fileID: 1336706523}
             m_TargetAssemblyTypeName: AKChangeState, Assembly-CSharp
             m_MethodName: ChangeState
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 81138555853967075}
+            m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+            m_MethodName: EnablePlayerAttackControls
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -15970,11 +16013,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 878880800}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &804802980 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5423018821347563126, guid: e9c84341d87ad7d4ebb98f6ca44cac39, type: 3}
-  m_PrefabInstance: {fileID: 1628922148}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &806025168
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19717,10 +19755,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1091166942}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
 --- !u!4 &1091166939 stripped
 Transform:
@@ -19732,23 +19767,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2113800785987245767, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1091166938}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1091166942
+--- !u!114 &1091166943 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3418001597329323139, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
+  m_PrefabInstance: {fileID: 1091166938}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 437719565}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8a50c00d6b903e479b4c30198a0d8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateAnim: {fileID: 1091166940}
-  gateSoundEffect:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 061c04dad1458454b86d95882ced126d, type: 2}
 --- !u!1001 &1092531252
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20022,11 +20051,6 @@ Transform:
   - {fileID: 1820153540}
   m_Father: {fileID: 1804293792}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1107111185 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5423018821347563126, guid: e9c84341d87ad7d4ebb98f6ca44cac39, type: 3}
-  m_PrefabInstance: {fileID: 698794936}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1108657154
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23850,30 +23874,6 @@ MonoBehaviour:
   wavesClearedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1091166942}
-        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
-        m_MethodName: SwitchGate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: interaction
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2032880847}
-        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
-        m_MethodName: SwitchGate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: interaction
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 248342640}
         m_TargetAssemblyTypeName: CrowdSurfPath, Assembly-CSharp
         m_MethodName: SetActive
@@ -23945,6 +23945,54 @@ MonoBehaviour:
           m_FloatArgument: 25
           m_StringArgument: Move Northwest to solve puzzle 1
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1091166943}
+        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+        m_MethodName: SwitchGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: Move Northwest to solve puzzle 1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2032880848}
+        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+        m_MethodName: SwitchGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: Move Northwest to solve puzzle 1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 81138555853967075}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: EnablePlayerAttackControls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: Move Northwest to solve puzzle 1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 81138555853967075}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: SetCanAttack
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: Move Northwest to solve puzzle 1
+          m_BoolArgument: 1
         m_CallState: 2
   wavesCleared: 0
   enemyManagerClearedEvent: enemyWave1Completed
@@ -26597,11 +26645,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 249867712}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
---- !u!1 &1502185801 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-  m_PrefabInstance: {fileID: 1565664286}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1502556340 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1417210135444854531, guid: bd53c4c459fb0604fb8fb90ed713e90b, type: 3}
@@ -27492,10 +27535,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1565664290}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
 --- !u!4 &1565664287 stripped
 Transform:
@@ -27507,23 +27547,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2113800785987245767, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1565664286}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1565664290
+--- !u!114 &1565664291 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3418001597329323139, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
+  m_PrefabInstance: {fileID: 1565664286}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1502185801}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8a50c00d6b903e479b4c30198a0d8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateAnim: {fileID: 1565664288}
-  gateSoundEffect:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 061c04dad1458454b86d95882ced126d, type: 2}
 --- !u!1001 &1567745359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27965,6 +27999,18 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
+          - m_Target: {fileID: 81138555853967075}
+            m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+            m_MethodName: DisablePlayerAttackControls
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
       eventsWhenFinishingDialogueString:
         m_PersistentCalls:
           m_Calls: []
@@ -28037,10 +28083,10 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-          - m_Target: {fileID: 1168660979}
-            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_MethodName: SetActive
-            m_Mode: 6
+          - m_Target: {fileID: 1091166943}
+            m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+            m_MethodName: SwitchGate
+            m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -28049,10 +28095,10 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
-          - m_Target: {fileID: 532547568}
-            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-            m_MethodName: SetActive
-            m_Mode: 6
+          - m_Target: {fileID: 2032880848}
+            m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+            m_MethodName: SwitchGate
+            m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -28076,6 +28122,18 @@ MonoBehaviour:
           - m_Target: {fileID: 1336706523}
             m_TargetAssemblyTypeName: AKChangeState, Assembly-CSharp
             m_MethodName: ChangeState
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Kill All Enemies To Unlock The Eastern Gate
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 81138555853967075}
+            m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+            m_MethodName: EnablePlayerAttackControls
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -30531,30 +30589,6 @@ MonoBehaviour:
   wavesClearedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1565664290}
-        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
-        m_MethodName: SwitchGate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2079257622}
-        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
-        m_MethodName: SwitchGate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1970810021}
         m_TargetAssemblyTypeName: CrowdSurfPath, Assembly-CSharp
         m_MethodName: SetActive
@@ -30607,6 +30641,54 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1565664291}
+        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+        m_MethodName: SwitchGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 2079257623}
+        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+        m_MethodName: SwitchGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 81138555853967075}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: SetCanAttack
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 81138555853967075}
+        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+        m_MethodName: EnablePlayerAttackControls
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -32822,10 +32904,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2079257622}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
 --- !u!4 &1862894640 stripped
 Transform:
@@ -33723,10 +33802,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2032880847}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
 --- !u!4 &1924979232 stripped
 Transform:
@@ -35362,28 +35438,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
---- !u!1 &2032880845 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
+--- !u!114 &2032880848 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3418001597329323139, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1924979231}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2032880847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2032880845}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8a50c00d6b903e479b4c30198a0d8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateAnim: {fileID: 1924979233}
-  gateSoundEffect:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 061c04dad1458454b86d95882ced126d, type: 2}
 --- !u!1 &2033369103
 GameObject:
   m_ObjectHideFlags: 0
@@ -35726,28 +35791,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
---- !u!1 &2079257620 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
+--- !u!114 &2079257623 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3418001597329323139, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1862894639}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2079257622
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2079257620}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8a50c00d6b903e479b4c30198a0d8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateAnim: {fileID: 1862894641}
-  gateSoundEffect:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 061c04dad1458454b86d95882ced126d, type: 2}
 --- !u!4 &2080354632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3247662601864608305, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
@@ -38313,15 +38367,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.38341916
+      value: -0.3834191
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.024297059
+      value: -0.024297088
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.010090947
+      objectReference: {fileID: 0}
+    - target: {fileID: 357537751564058929, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 357537751564058929, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
