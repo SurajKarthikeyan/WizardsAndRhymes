@@ -69,6 +69,7 @@ namespace AK
                 static const AkUniqueID LIGHTNINGOUTOFCOMBAT = 4114645792U;
                 static const AkUniqueID LIGHTNINGOUTOFPUZZLE = 2437783708U;
                 static const AkUniqueID LIGHTNINGPUZZLE = 3485352473U;
+                static const AkUniqueID MAINMENU = 3604647259U;
                 static const AkUniqueID NONE = 748895195U;
             } // namespace STATE
         } // namespace MUSICSTATE
