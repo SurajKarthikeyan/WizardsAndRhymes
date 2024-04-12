@@ -8513,6 +8513,13 @@
 									</ChildrenList>
 								</MusicPlaylistContainer>
 								<MusicPlaylistContainer Name="MainMenu" ID="{905449A2-D923-4266-BA22-0C1486BFC1F8}" ShortID="606560285">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
@@ -8522,7 +8529,23 @@
 										</Reference>
 										<Reference Name="PlaylistRoot">
 											<Custom>
-												<MusicPlaylistItem Name="" ID="{3FBCAC05-8112-4D59-85DF-A83054206F70}" ShortID="317425291"/>
+												<MusicPlaylistItem Name="" ID="{3FBCAC05-8112-4D59-85DF-A83054206F70}" ShortID="317425291">
+													<PropertyList>
+														<Property Name="LoopCount" Type="int16" Value="0"/>
+													</PropertyList>
+													<ChildrenList>
+														<MusicPlaylistItem Name="" ID="{7C441410-FE30-4B23-A844-578B6C7EFFE2}" ShortID="474780652">
+															<PropertyList>
+																<Property Name="PlaylistItemType" Type="int16" Value="1"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="Segment">
+																	<ObjectRef Name="MenuLoop" ID="{A4A13B1A-5178-4627-AA3D-ED9E5C25A017}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
+																</Reference>
+															</ReferenceList>
+														</MusicPlaylistItem>
+													</ChildrenList>
+												</MusicPlaylistItem>
 											</Custom>
 										</Reference>
 										<Reference Name="TransitionRoot">
@@ -8543,6 +8566,9 @@
 									</ReferenceList>
 									<ChildrenList>
 										<MusicSegment Name="MenuLoop" ID="{A4A13B1A-5178-4627-AA3D-ED9E5C25A017}" ShortID="60100194">
+											<PropertyList>
+												<Property Name="EndPosition" Type="Real64" Value="39600"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
@@ -8551,6 +8577,112 @@
 													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
 												</Reference>
 											</ReferenceList>
+											<ChildrenList>
+												<MusicTrack Name="MenuMusic_1-Kontakt_7" ID="{F6B4DA73-6704-4FB7-B3FC-F03B83D7355F}" ShortID="980272619">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+														</Reference>
+														<Reference Name="TransitionRoot">
+															<Custom>
+																<MusicTransition Name="Root" ID="{2BDAF862-08AF-44A2-9E4C-DA059A5759AE}">
+																	<PropertyList>
+																		<Property Name="IsFolder" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<TransitionInfo/>
+																</MusicTransition>
+															</Custom>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MenuMusic_1-Kontakt_7" ID="{4B6BB998-39DA-42D9-BC09-DBD4F5BE0A3C}">
+															<Language>SFX</Language>
+															<AudioFile>MenuMusic_1-Kontakt_7.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="637839352"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Sequences">
+															<Reference>
+																<Local>
+																	<MusicTrackSequence Name="" ID="{E32EFDED-3829-4022-B14A-B0649529FC23}">
+																		<ObjectLists>
+																			<ObjectList Name="Clips">
+																				<Reference>
+																					<Local>
+																						<MusicClip Name="MenuMusic_1-Kontakt_7" ID="{999E8563-537D-417D-923E-AA5C639AABA5}">
+																							<PropertyList>
+																								<Property Name="EndTrimOffset" Type="Real64" Value="36000"/>
+																								<Property Name="FadeInMode" Type="int16" Value="0"/>
+																								<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																							</PropertyList>
+																							<AudioSourceRef Name="MenuMusic_1-Kontakt_7" ID="{4B6BB998-39DA-42D9-BC09-DBD4F5BE0A3C}"/>
+																						</MusicClip>
+																					</Local>
+																				</Reference>
+																			</ObjectList>
+																		</ObjectLists>
+																	</MusicTrackSequence>
+																</Local>
+															</Reference>
+														</ObjectList>
+													</ObjectLists>
+												</MusicTrack>
+												<MusicTrack Name="MenuMusic_2-Kontakt_7" ID="{8B889A12-0DC3-49B4-BADE-E1844AC2AC87}" ShortID="176626343">
+													<ReferenceList>
+														<Reference Name="OutputBus">
+															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+														</Reference>
+														<Reference Name="TransitionRoot">
+															<Custom>
+																<MusicTransition Name="Root" ID="{83D46B6B-93C7-47A7-AB81-5AF32A6DB553}">
+																	<PropertyList>
+																		<Property Name="IsFolder" Type="bool" Value="True"/>
+																	</PropertyList>
+																	<TransitionInfo/>
+																</MusicTransition>
+															</Custom>
+														</Reference>
+													</ReferenceList>
+													<ChildrenList>
+														<AudioFileSource Name="MenuMusic_2-Kontakt_7" ID="{C4B63287-9539-481E-AB00-DCB51AC71651}">
+															<Language>SFX</Language>
+															<AudioFile>MenuMusic_2-Kontakt_7.wav</AudioFile>
+															<MediaIDList>
+																<MediaID ID="262532940"/>
+															</MediaIDList>
+														</AudioFileSource>
+													</ChildrenList>
+													<ObjectLists>
+														<ObjectList Name="Sequences">
+															<Reference>
+																<Local>
+																	<MusicTrackSequence Name="" ID="{E913B46C-E0EB-4580-B49B-8722D6C997AB}">
+																		<ObjectLists>
+																			<ObjectList Name="Clips">
+																				<Reference>
+																					<Local>
+																						<MusicClip Name="MenuMusic_2-Kontakt_7" ID="{2709DE61-A275-424D-B91D-AEE6D214E8F7}">
+																							<PropertyList>
+																								<Property Name="EndTrimOffset" Type="Real64" Value="36000"/>
+																								<Property Name="FadeInMode" Type="int16" Value="0"/>
+																								<Property Name="FadeOutMode" Type="int16" Value="0"/>
+																							</PropertyList>
+																							<AudioSourceRef Name="MenuMusic_2-Kontakt_7" ID="{C4B63287-9539-481E-AB00-DCB51AC71651}"/>
+																						</MusicClip>
+																					</Local>
+																				</Reference>
+																			</ObjectList>
+																		</ObjectLists>
+																	</MusicTrackSequence>
+																</Local>
+															</Reference>
+														</ObjectList>
+													</ObjectLists>
+												</MusicTrack>
+											</ChildrenList>
 											<ObjectLists>
 												<ObjectList Name="Cues">
 													<Reference>
@@ -8563,7 +8695,7 @@
 															<MusicCue Name="Exit Cue" ID="{35E9E505-B457-4C43-83FF-4066902804A7}">
 																<PropertyList>
 																	<Property Name="CueType" Type="int16" Value="1"/>
-																	<Property Name="TimeMs" Type="Real64" Value="1000"/>
+																	<Property Name="TimeMs" Type="Real64" Value="36000"/>
 																</PropertyList>
 															</MusicCue>
 														</Local>
