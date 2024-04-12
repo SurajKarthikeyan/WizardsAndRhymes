@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
 /**
@@ -15,15 +16,10 @@ public class FlagManager : Singleton<FlagManager>
 
     public List<string> wordFlags = new List<string>();
     
-    [Header("Gate Objects")]
-
-    public Animator puzzle1Gate1;
-
-    public Animator puzzle1Gate2;
+    public SerializedDictionary<string, List<GameObject>> flagObjects;
     
-    public Animator puzzle2Gate1;
-
-    public Animator puzzle2Gate2;
+    [Header("Gate Objects")]
+    
 
     public GameObject spawnPoint1;
     
@@ -38,8 +34,6 @@ public class FlagManager : Singleton<FlagManager>
     public GameObject dialogueTrigger3;
 
     public GameObject rapRockTrigger;
-
-    public GameObject pauseMenu;
     
     #endregion
     
@@ -48,46 +42,42 @@ public class FlagManager : Singleton<FlagManager>
     
     private void Start()
     {
-        dialogueTrigger1.SetActive(false);
-        if (GetFlag("enemyWave3Completed") && HasAllWordFlags())
-        {
-            puzzle1Gate1.SetTrigger("interaction");
-            puzzle1Gate2.SetTrigger("interaction");
-            puzzle2Gate1.SetTrigger("interaction");
-            puzzle2Gate2.SetTrigger("interaction");
-        }
-        else if (GetFlag("enemyWave2Completed"))
-        {
-            puzzle2Gate1.SetTrigger("interaction");
-            puzzle2Gate2.SetTrigger("interaction");
-        }
-        
-        else if (GetFlag("enemyWave1Completed"))
-        {
-            puzzle1Gate1.SetTrigger("interaction");
-            puzzle1Gate2.SetTrigger("interaction");
-        }
-
         if (GetFlag("puzzle2Completed"))
         {
             PlayerController.instance.gameObject.transform.position = spawnPoint3.transform.position;
-            puzzle2Gate1.SetTrigger("interaction");
-            puzzle2Gate2.SetTrigger("interaction");
-            dialogueTrigger3.SetActive(true);
-            dialogueTrigger2.SetActive(false);
         }
         else if (GetFlag("puzzle1Completed"))
         {
             PlayerController.instance.gameObject.transform.position = spawnPoint2.transform.position;
-            puzzle1Gate1.SetTrigger("interaction");
-            puzzle1Gate2.SetTrigger("interaction");
-            dialogueTrigger2.SetActive(true);
-            dialogueTrigger1.SetActive(false);
         }
         else
         {
-            dialogueTrigger1.SetActive(true);
             PlayerController.instance.gameObject.transform.position = spawnPoint1.transform.position;
+        }
+
+        foreach (string flag in flagObjects.Keys)
+        {
+            List<GameObject> flagObjectList = flagObjects[flag];
+            foreach (GameObject flagObject in flagObjectList)
+            {
+                if (flagObject.TryGetComponent(out IFlagObject flagSetter))
+                {
+                    if (GetFlag(flag))
+                    {
+                        flagSetter.ObjectFlagSetState(true);
+                    }
+
+                    else
+                    {
+                        flagSetter.ObjectFlagSetState(false);
+                    }
+                }
+            }
+        }
+
+        if (GetFlag("enemyWave1Completed"))
+        {
+            dialogueTrigger1.GetComponent<Collider>().enabled = false;
         }
     }
 
@@ -98,12 +88,12 @@ public class FlagManager : Singleton<FlagManager>
         if (GetFlag("puzzle2Completed") && !dialogueTrigger3.activeInHierarchy && 
             !dialogueTrigger3.GetComponent<DialogueTriggerer>().alreadyPlayed)
         {
-            dialogueTrigger3.SetActive(true);
+            dialogueTrigger3.GetComponent<Collider>().enabled = true;
         }
         else if (GetFlag("puzzle1Completed") && !dialogueTrigger2.activeInHierarchy && 
                  !dialogueTrigger2.GetComponent<DialogueTriggerer>().alreadyPlayed)
         {
-            dialogueTrigger2.SetActive(true);
+            dialogueTrigger2.GetComponent<Collider>().enabled = true;
         }
 
         if (!rapRockTrigger.activeInHierarchy && HasAllWordFlags() && GetFlag(("enemyWave3Completed")))

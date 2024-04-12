@@ -3229,6 +3229,7 @@ MonoBehaviour:
   playOnce: 1
   alreadyPlayed: 0
   setToInactiveAfterPlay: 1
+  dialogueCollider: {fileID: 214632280}
 --- !u!65 &214632280
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5125,6 +5126,30 @@ MonoBehaviour:
             m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_MethodName: SetActive
             m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1565664290}
+            m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+            m_MethodName: SwitchGate
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 2079257623}
+            m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+            m_MethodName: SwitchGate
+            m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -18283,7 +18308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1053229959
 Transform:
   m_ObjectHideFlags: 0
@@ -18315,6 +18340,7 @@ MonoBehaviour:
   playOnce: 1
   alreadyPlayed: 0
   setToInactiveAfterPlay: 1
+  dialogueCollider: {fileID: 1053229961}
 --- !u!65 &1053229961
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18332,7 +18358,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -18885,12 +18911,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2113800785987245767, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1091166938}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1091166942 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8511604327550261912, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
+--- !u!1 &1091166941 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1091166938}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &1091166942 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3418001597329323139, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
+  m_PrefabInstance: {fileID: 1091166938}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091166941}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8a50c00d6b903e479b4c30198a0d8a7, type: 3}
@@ -22365,30 +22396,6 @@ MonoBehaviour:
   wavesClearedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1091166942}
-        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
-        m_MethodName: SwitchGate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: interaction
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2032880847}
-        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
-        m_MethodName: SwitchGate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: interaction
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 248342640}
         m_TargetAssemblyTypeName: CrowdSurfPath, Assembly-CSharp
         m_MethodName: SetActive
@@ -22464,6 +22471,30 @@ MonoBehaviour:
       - m_Target: {fileID: 81138555853967075}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: DisablePlayerAttackControls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: Move Northwest to solve puzzle 1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1091166942}
+        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+        m_MethodName: SwitchGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: Move Northwest to solve puzzle 1
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2032880848}
+        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+        m_MethodName: SwitchGate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25197,7 +25228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1518573367
 Transform:
   m_ObjectHideFlags: 0
@@ -25229,6 +25260,7 @@ MonoBehaviour:
   playOnce: 1
   alreadyPlayed: 0
   setToInactiveAfterPlay: 1
+  dialogueCollider: {fileID: 1518573369}
 --- !u!65 &1518573369
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25246,7 +25278,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -26049,12 +26081,17 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 2113800785987245767, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1565664286}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1565664289 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
+  m_PrefabInstance: {fileID: 1565664286}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1565664290 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3418001597329323139, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1565664286}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1565664289}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d8a50c00d6b903e479b4c30198a0d8a7, type: 3}
@@ -26485,6 +26522,30 @@ MonoBehaviour:
             m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
             m_MethodName: SetActive
             m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 2032880848}
+            m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+            m_MethodName: SwitchGate
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1091166942}
+            m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+            m_MethodName: SwitchGate
+            m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -28647,30 +28708,6 @@ MonoBehaviour:
   wavesClearedEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1565664290}
-        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
-        m_MethodName: SwitchGate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2079257622}
-        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
-        m_MethodName: SwitchGate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1970810021}
         m_TargetAssemblyTypeName: CrowdSurfPath, Assembly-CSharp
         m_MethodName: SetActive
@@ -28746,6 +28783,30 @@ MonoBehaviour:
       - m_Target: {fileID: 81138555853967075}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: DisablePlayerAttackControls
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: Move northeast to solve the second puzzle
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1565664290}
+        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+        m_MethodName: SwitchGate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 25
+          m_StringArgument: Move northeast to solve the second puzzle
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2079257623}
+        m_TargetAssemblyTypeName: Gate, Assembly-CSharp
+        m_MethodName: SwitchGate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -31005,10 +31066,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2079257622}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
 --- !u!4 &1862894640 stripped
 Transform:
@@ -31814,10 +31872,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2032880847}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
 --- !u!4 &1924979232 stripped
 Transform:
@@ -33030,11 +33085,10 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1924979231}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2032880847
+--- !u!114 &2032880848 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3418001597329323139, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
+  m_PrefabInstance: {fileID: 1924979231}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2032880845}
   m_Enabled: 1
@@ -33042,11 +33096,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8a50c00d6b903e479b4c30198a0d8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateAnim: {fileID: 1924979233}
-  gateSoundEffect:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 061c04dad1458454b86d95882ced126d, type: 2}
 --- !u!1 &2033369103
 GameObject:
   m_ObjectHideFlags: 0
@@ -33494,11 +33543,10 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3478424962275583791, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
   m_PrefabInstance: {fileID: 1862894639}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2079257622
+--- !u!114 &2079257623 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3418001597329323139, guid: d2a8f1aa8e7d2574d8c1a0004c6f7691, type: 3}
+  m_PrefabInstance: {fileID: 1862894639}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2079257620}
   m_Enabled: 1
@@ -33506,11 +33554,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8a50c00d6b903e479b4c30198a0d8a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gateAnim: {fileID: 1862894641}
-  gateSoundEffect:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 061c04dad1458454b86d95882ced126d, type: 2}
 --- !u!4 &2080354632 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3247662601864608305, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
@@ -34283,6 +34326,186 @@ PrefabInstance:
       propertyPath: wordFlags.Array.data[2]
       value: word3
       objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[0].Key
+      value: enemyWave1Completed
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[1].Key
+      value: enemyWave2Completed
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[2].Key
+      value: word1
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[3].Key
+      value: word2
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[4].Key
+      value: word3
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[5].Key
+      value: word3
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[6].Key
+      value: word3
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[0].Key
+      value: enemyWave1Completed
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[1].Key
+      value: enemyWave2Completed
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[2].Key
+      value: word1
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[3].Key
+      value: word2
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[4].Key
+      value: word3
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[0].Value
+      value: 
+      objectReference: {fileID: 1091166941}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[1].Value
+      value: 
+      objectReference: {fileID: 2032880845}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[2].Value
+      value: 
+      objectReference: {fileID: 1565664289}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[3].Value
+      value: 
+      objectReference: {fileID: 2079257620}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[4].Value
+      value: 
+      objectReference: {fileID: 214632278}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[5].Value
+      value: 
+      objectReference: {fileID: 1053229958}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[6].Value
+      value: 
+      objectReference: {fileID: 1518573366}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[0].Value.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[1].Value.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[2].Value.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[3].Value.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[4].Value.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[0].Value.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[1].Value.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[2].Value.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[3].Value.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[4].Value.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[0].Value.Array.data[0]
+      value: 
+      objectReference: {fileID: 1306333072}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[0].Value.Array.data[1]
+      value: 
+      objectReference: {fileID: 2032880845}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[1].Value.Array.data[0]
+      value: 
+      objectReference: {fileID: 1670895486}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[1].Value.Array.data[1]
+      value: 
+      objectReference: {fileID: 2079257620}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[2].Value.Array.data[0]
+      value: 
+      objectReference: {fileID: 214632278}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[3].Value.Array.data[0]
+      value: 
+      objectReference: {fileID: 1053229958}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects._serializedList.Array.data[4].Value.Array.data[0]
+      value: 
+      objectReference: {fileID: 1518573366}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[0].Value.Array.data[0]
+      value: 
+      objectReference: {fileID: 1091166941}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[0].Value.Array.data[1]
+      value: 
+      objectReference: {fileID: 2032880845}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[1].Value.Array.data[0]
+      value: 
+      objectReference: {fileID: 1565664289}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[1].Value.Array.data[1]
+      value: 
+      objectReference: {fileID: 2079257620}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[2].Value.Array.data[0]
+      value: 
+      objectReference: {fileID: 214632278}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[3].Value.Array.data[0]
+      value: 
+      objectReference: {fileID: 1053229958}
+    - target: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+      propertyPath: flagObjects1._serializedList.Array.data[4].Value.Array.data[0]
+      value: 
+      objectReference: {fileID: 1518573366}
     - target: {fileID: 2013429950450518110, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
       propertyPath: m_Name
       value: FlagManager
@@ -35549,19 +35772,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9231997
+      value: 0.92319965
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.38341913
+      value: -0.38341916
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.024297118
+      value: -0.024297059
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.010090962
+      value: -0.010090947
       objectReference: {fileID: 0}
     - target: {fileID: 357537751564058929, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

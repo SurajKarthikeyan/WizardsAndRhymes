@@ -14,7 +14,7 @@ using UnityEngine.Events;
 /// <summary>
 /// Class that manages waves of enemies for the current room
 /// </summary>
-public class EnemyManager : MonoBehaviour
+public class EnemyManager : MonoBehaviour, IFlagObject
 {
     #region Variables
     /// <summary>
@@ -426,4 +426,12 @@ public class EnemyManager : MonoBehaviour
         return false;
     }
     #endregion
+
+    public void ObjectFlagSetState(bool state)
+    {
+        if (state)
+        {
+            AllWavesCleared();
+        }    
+    }
 }

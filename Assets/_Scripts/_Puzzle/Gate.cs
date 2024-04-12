@@ -11,4 +11,12 @@ public class Gate : MonoBehaviour
         gateAnim.SetTrigger("interaction");
         gateSoundEffect.Post(this.gameObject);
     }
+
+    // public void ObjectFlagSetState(bool state)
+    // {
+    //     if (state)
+    //     {
+    //         gateAnim.SetTrigger("interaction");
+    //     }
+    // }
 }
