@@ -6,7 +6,7 @@
 				<Effect Name="New_Compressor" ID="{C36A5C18-A74C-4F34-86F6-28B9D7EDC5D0}" PluginName="Wwise Compressor" CompanyID="0" PluginID="108" PluginType="3"/>
 				<Effect Name="New_RoomVerb" ID="{7720562C-1CB8-454B-A29A-9107A929BE35}" PluginName="Wwise RoomVerb" CompanyID="0" PluginID="118" PluginType="3">
 					<PropertyList>
-						<Property Name="DryLevel" Type="Real32" Value="-31.3"/>
+						<Property Name="DryLevel" Type="Real32" Value="-11.3"/>
 						<Property Name="ERFrontBackDelay" Type="Real32" Value="12"/>
 						<Property Name="ERLevel" Type="Real32" Value="-14"/>
 						<Property Name="ERPattern" Type="int32" Value="17"/>
@@ -23,6 +23,12 @@
 						<Property Name="DistortionTone" Type="Real32" Value="100"/>
 						<Property Name="DistortionType" Type="int32" Value="1"/>
 						<Property Name="OutputLevel" Type="Real32" Value="8"/>
+						<Property Name="WetDryMix" Type="Real32" Value="80"/>
+					</PropertyList>
+				</Effect>
+				<Effect Name="New_Gain" ID="{504C14EC-53C5-469F-A1FE-EE59806E2D29}" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+					<PropertyList>
+						<Property Name="FullBandGain" Type="Real32" Value="5"/>
 					</PropertyList>
 				</Effect>
 			</ChildrenList>

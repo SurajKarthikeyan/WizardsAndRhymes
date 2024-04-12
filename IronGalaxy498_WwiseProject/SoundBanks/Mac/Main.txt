@@ -3,6 +3,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	418751485	IceBlock			\Default Work Unit\Environment\Interaction\IceBlock	
 	427386941	RoomMus			\Default Work Unit\TestEvents\RoomMus	
 	605469711	LeveLCompleteSting			\Default Work Unit\Environment\LeveLCompleteSting	
+	1022374206	DashReady			\Default Work Unit\Environment\Interaction\DashReady	
 	1518733879	RockPlatformPuzzle			\Default Work Unit\Environment\Interaction\RockPlatformPuzzle	
 	1583612915	MeleeLightning			\Default Work Unit\Player\Combat\MeleeLightning	
 	1651067412	MeleeIce			\Default Work Unit\Player\Combat\MeleeIce	
@@ -44,6 +45,7 @@ State	ID	Name	State Group			Notes
 	2475500331	OutOfCrowdSurf	CrowdSurfing			
 
 Effect plug-ins	ID	Name	Type				Notes
+	544780433	New_Gain	Wwise Gain			
 	1008402193	Low_Pass_20KHz	Wwise Parametric EQ			
 	1259256166	New_RoomVerb	Wwise RoomVerb			
 	3160090811	New_Compressor	Wwise Compressor			
@@ -61,7 +63,8 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	55840581	MicTap2	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\MicTap2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\MicTap\MicTap2		44196
 	59239616	MicTap1	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\MicTap1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\MicTap\MicTap1		66248
 	64644625	RockPlatformPush1	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\RockPlatformPush1_5559772D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\RockPlatformPuzzle\RockPlatformPush1		296272
-	73496553	Communications, Phonograph, Vinyl, Record Scratch 08 SND13872	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Communications, Phonograph, Vinyl, Record Scratch 08 SND13872_A8356449.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ButtonPress\Communications, Phonograph, Vinyl, Record Scratch 08 SND13872		65100
+	72631210	Zap3	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Electricity, Zap, Shock, Impact, Short 02 SND13443_5954DEFD.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\Zap\Zap3		78140
+	73496553	Communications, Phonograph, Vinyl, Record Scratch 08 SND13872	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Communications, Phonograph, Vinyl, Record Scratch 08 SND13872_792DAEB8.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ButtonPress\Communications, Phonograph, Vinyl, Record Scratch 08 SND13872		53426
 	77993868	D54 Furious	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\NewStems D54 Furious_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\GameplayMus\ActiveMusic\LightningCombat\LightningCombat\D54 Furious		8467296
 	94231916	SI8	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\EnemyHitFull_E9170620.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\SkeletonImpact\SI8		220680
 	101762498	IBW4	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\IceBlockWooshes_F0C80020.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\IceBlockWoosh\IBW4		419888
@@ -78,6 +81,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	167927468	Objects, Misc, Paint, Spray Paint Can, Shake SND29085_03	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Objects, Misc, Paint, Spray Paint Can, Shake SND29085_52477903.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\WordPickup\CanShake\Objects, Misc, Paint, Spray Paint Can, Shake SND29085_03		155308
 	178823695	Fire3	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Fire3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\Fire\Fire3		110348
 	184873857	Woowoowoowoo_03	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Woowoowoowoo_8084B345.wem		\Actor-Mixer Hierarchy\Default Work Unit\LevelComplete\Cheer\Woowoowoowoo_03		31098
+	187260305	Zap4	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Electricity, Zap, Shock, Impact, Short 03 SND20300_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\Zap\Zap4		148020
 	188725556	Communications, Phonograph, Vinyl, Record Scratch 14 SND13866	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Communications, Phonograph, Vinyl, Record Scratch 14 SND13866_ADC10A19.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ButtonPress\Communications, Phonograph, Vinyl, Record Scratch 14 SND13866		40050
 	190951527	Mid Treble Swaps	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\NewStems 23-808 Aristocrat Kit_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\GameplayMus\ActiveMusic\LightningCombat\LightningCombat\Mid Treble Swaps		8467296
 	197135554	LevEndSting1	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\LevEndSting1_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\LevelComplete\Sting\LevEndSting1		1382496
@@ -85,6 +89,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	220814183	PlayerHitDowner_06	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\PlayerHitDowner_ACD55C21.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\PlayerHurt\AfterWoosh\PlayerHitDowner_06		106024
 	237657344	Synth Pads	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\NewStems 27-UVIWorkstation_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\GameplayMus\ActiveMusic\IceOutOfCombat\IceOutOfCombat\Synth Pads		8467296
 	242173308	Underground50S3	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Underground50S3_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\GameplayMus\UndergroundBasic\Underground\Underground50S3		8467296
+	244673809	Zap5	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Electricity, Zap, Shock, Impact, Heavy 03 SND13445_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\Zap\Zap5		90516
 	256974757	Objects, Misc, Spray Paint, Painting, Aerosol SND70613_04	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Objects, Misc, Spray Paint, Painting, Aerosol SND70613_A844FEFE.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\WordPickup\Spray\Objects, Misc, Spray Paint, Painting, Aerosol SND70613_04		62428
 	271985866	GateOpen_06	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\GateOpen_0FD4388A.wem		\Actor-Mixer Hierarchy\Default Work Unit\GateOpen\LevelEndGateOpen\GateOpen_06		277704
 	296816978	GateOpen_07	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\GateOpen_0479D825.wem		\Actor-Mixer Hierarchy\Default Work Unit\GateOpen\LevelEndGateOpen\GateOpen_07		643692
@@ -97,7 +102,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	403578445	PlayerHitDowner_05	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\PlayerHitDowner_1F047EF7.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\PlayerHurt\AfterWoosh\PlayerHitDowner_05		120060
 	404034492	SmolScratch	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\SmolScratch_DC99C211.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ButtonHover\SmolScratch		13874
 	415398760	Synths	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\NewStems 26-UVIWorkstation_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\GameplayMus\ActiveMusic\IcePuzzle\IcePuzzle\Synths		8467296
-	456996073	Dashing	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Dashing_D8DE3F02.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\Dash\Dashing		552612
+	456996073	Dashing	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Dashing_B219432F.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\Dash\Dashing		552612
 	469236046	Ice3	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Ice3_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\Ice\Ice3		88296
 	470829322	SI5	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\EnemyHitFull_73616B20.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\SkeletonImpact\SI5		224792
 	497414986	CrystalZap	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\CrystalZap_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\Crystal\CrystalZaps\CrystalZap		176496
@@ -117,6 +122,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	595452255	Woowoowoowoo	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Woowoowoowoo_27B527DD.wem		\Actor-Mixer Hierarchy\Default Work Unit\LevelComplete\Cheer\Woowoowoowoo		27684
 	596267822	SI4	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\EnemyHitFull_8DF2FD27.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\SkeletonImpact\SI4		191420
 	603966075	Synths	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\NewStems 25-Group_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\GameplayMus\ActiveMusic\IcePuzzle\IcePuzzle\Synths		8467296
+	612633811	DashReady_01	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\DashReady_71409AFF.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\DashReady\DashReady_01		139212
 	618127826	IBW1	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\IceBlockWooshes_40878711.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\IceBlockWoosh\IBW1		409080
 	620045000	GateOpen_04	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\GateOpen_333BCD73.wem		\Actor-Mixer Hierarchy\Default Work Unit\GateOpen\LevelEndGateOpen\GateOpen_04		267872
 	624941402	SmollScratch	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\SmollScratch_926E4C94.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ButtonHover\SmollScratch		34820
@@ -133,6 +139,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	672424488	Objects, Misc, Paint, Spray Can, Marble, Shake SND30684_03	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Objects, Misc, Paint, Spray Can, Marble, Shake SND30684_D7907CD1.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\WordPickup\CanShake\Objects, Misc, Paint, Spray Can, Marble, Shake SND30684_03		135600
 	680414174	Communications, Phonograph, Transition, Scratch, Rewind, Vinyl 01 SND61199	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Communications, Phonograph, Transition, Scratch, Rewind, Vinyl 01 SND61199_D8426847.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\PlayButton\Communications, Phonograph, Transition, Scratch, Rewind, Vinyl 01 SND61199		219872
 	682767542	Objects, Misc, Spray Paint, Painting, Aerosol SND70613_01	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Objects, Misc, Spray Paint, Painting, Aerosol SND70613_96A6D7B5.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\WordPickup\Spray\Objects, Misc, Spray Paint, Painting, Aerosol SND70613_01		78650
+	690577249	DashReady_02	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\DashReady_79DE9C4B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\DashReady\DashReady_02		121504
 	695187573	PlayerHitImpact_01	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\PlayerHitImpact_D05A1D10.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\PlayerHurt\Impact\PlayerHitImpact_01		350864
 	695289053	Woowoowoowoo_01	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Woowoowoowoo_A49B9D91.wem		\Actor-Mixer Hierarchy\Default Work Unit\LevelComplete\Cheer\Woowoowoowoo_01		32518
 	700571979	PlayerHitDowner_03	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\PlayerHitDowner_08DB20D2.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\PlayerHurt\AfterWoosh\PlayerHitDowner_03		149020
@@ -150,8 +157,8 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	824108392	Ice2	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Ice2_818F3B66.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\Ice\Ice2		66248
 	834049591	Ambient Static	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\NewStems AllInTheGame_FBC78EF0.wem		\Interactive Music Hierarchy\Default Work Unit\GameplayMus\ActiveMusic\LightningCombat\LightningCombat\Ambient Static		8467296
 	853954014	CS1	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\CrystalShimmers_9DF8CA20.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\Crystal\CrystalShimmers\CS1		427272
-	859013703	Communications, Phonograph, Vinyl, Record Scratch 09 SND13871	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Communications, Phonograph, Vinyl, Record Scratch 09 SND13871_BC92987B.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ButtonPress\Communications, Phonograph, Vinyl, Record Scratch 09 SND13871		85330
-	860878555	Dashing_02	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Dashing_446DB767.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\Dash\Dashing_02		552612
+	859013703	Communications, Phonograph, Vinyl, Record Scratch 09 SND13871	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Communications, Phonograph, Vinyl, Record Scratch 09 SND13871_605F523B.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ButtonPress\Communications, Phonograph, Vinyl, Record Scratch 09 SND13871		85330
+	860878555	Dashing_02	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Dashing_476F2B71.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\Dash\Dashing_02		552612
 	870905338	LotsOfSmallScratch_02	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\LotsOfSmallScratch_977BC18E.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ButtonHover\LotsOfSmallScratch_02		28612
 	891929607	LotsOfSmallScratch_01	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\LotsOfSmallScratch_01325435.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ButtonHover\LotsOfSmallScratch_01		41704
 	896693686	SI1	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\EnemyHitFull_3CE83CA9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\SkeletonImpact\SI1		208300
@@ -170,8 +177,9 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	968532410	Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_2512DC4C.wem		\Actor-Mixer Hierarchy\Default Work Unit\GateOpen\DoorRumble\Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309		646972
 	985564156	GateOpen_01	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\GateOpen_B92A965B.wem		\Actor-Mixer Hierarchy\Default Work Unit\GateOpen\LevelEndGateOpen\GateOpen_01		331156
 	989052792	SmallScratch	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\SmallScratch_91CA9725.wem		\Actor-Mixer Hierarchy\Default Work Unit\UI\ButtonHover\SmallScratch		24846
-	1025029307	Dashing_01	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Dashing_97361679.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\Dash\Dashing_01		499824
+	1025029307	Dashing_01	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\Dashing_A73FCF98.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\Dash\Dashing_01		499824
 	1027865135	PlayerHitImpact_04	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\PlayerHitImpact_2A452683.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\PlayerHurt\Impact\PlayerHitImpact_04		374552
 	1028609631	PlayerHitImpact_02	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\PlayerHitImpact_90667E1B.wem		\Actor-Mixer Hierarchy\Default Work Unit\Combat\PlayerHurt\Impact\PlayerHitImpact_02		355368
 	1032575052	IBW3	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\IceBlockWooshes_BA941C4D.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\IceBlockWoosh\IBW3		403948
+	1046511787	DashReady	C:\498\IronGalaxy498\IronGalaxy498_WwiseProject\.cache\Mac\SFX\DashReady_47F8D2A8.wem		\Actor-Mixer Hierarchy\Default Work Unit\Interaction\DashReady\DashReady		130096
 

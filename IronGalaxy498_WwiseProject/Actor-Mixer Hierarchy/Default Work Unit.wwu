@@ -8,6 +8,19 @@
 						<RandomSequenceContainer Name="Fire" ID="{F431221C-69F2-4A84-BE88-CBEFC621EC89}" ShortID="924834625">
 							<PropertyList>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{E47A8965-6B68-4CCC-BEFB-150DB297B57E}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="250"/>
+													<Property Name="Min" Type="Real64" Value="-250"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -332,6 +345,19 @@
 						<RandomSequenceContainer Name="Zap" ID="{C851573B-CBE4-4E2C-9BF2-F538C05C1301}" ShortID="341712043">
 							<PropertyList>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{BC6056C0-48A1-4BD9-B621-CF58AF5A5FF4}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Max" Type="Real64" Value="250"/>
+													<Property Name="Min" Type="Real64" Value="-250"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -365,6 +391,18 @@
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="Zap2" ID="{B98A6040-9EFC-48CF-AE63-6EB26C834836}" ShortID="600216479">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>12</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Weight" Type="Real64">
+											<ValueList>
+												<Value>10</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
@@ -386,7 +424,107 @@
 										<ActiveSource Name="Zap2" ID="{A419CF96-1ECA-4A71-8F66-3415305A2CF1}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
+								<Sound Name="Zap4" ID="{F1C9EBB1-9BAB-4C73-BF0F-B524CA9B1CFE}" ShortID="883745931">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Electricity, Zap, Shock, Impact, Short 03 SND20300" ID="{4A8257B4-C06B-4319-B61B-A6603BE8C74D}">
+											<Language>SFX</Language>
+											<AudioFile>Electricity, Zap, Shock, Impact, Short 03 SND20300.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="187260305"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Electricity, Zap, Shock, Impact, Short 03 SND20300" ID="{4A8257B4-C06B-4319-B61B-A6603BE8C74D}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Zap3" ID="{95976467-4433-4E46-85BD-5E4602E36DBC}" ShortID="789366328">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Electricity, Zap, Shock, Impact, Short 02 SND13443" ID="{0AC68819-E5C0-47C7-A561-128E8612FE8C}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.10932835949842"/>
+												<Property Name="LoopBegin" Type="Real64" Value="0"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Electricity, Zap, Shock, Impact, Short 02 SND13443.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="72631210"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Electricity, Zap, Shock, Impact, Short 02 SND13443" ID="{0AC68819-E5C0-47C7-A561-128E8612FE8C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="Zap5" ID="{A5CBB0F2-2631-41C5-BE92-A8087C45FAB0}" ShortID="35912395">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Electricity, Zap, Shock, Impact, Heavy 03 SND13445" ID="{57891D9B-98F4-4454-B9FF-9D08B573CE64}">
+											<Language>SFX</Language>
+											<AudioFile>Electricity, Zap, Shock, Impact, Heavy 03 SND13445.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="244673809"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Electricity, Zap, Shock, Impact, Heavy 03 SND13445" ID="{57891D9B-98F4-4454-B9FF-9D08B573CE64}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{19D88619-63E4-46C8-BC45-824C23AB010A}" ShortID="173821155">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Gain" CompanyID="0" PluginID="139" PluginType="3">
+														<ObjectRef Name="New_Gain" ID="{504C14EC-53C5-469F-A1FE-EE59806E2D29}" WorkUnitID="{A66D10A1-C26F-4E40-B419-653F3C1F30B8}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
 						</RandomSequenceContainer>
 						<RandomSequenceContainer Name="Shimmer" ID="{E2AA3146-63C4-4E0A-A6E2-C86599938B9D}" ShortID="864631313">
 							<PropertyList>
@@ -2435,6 +2573,18 @@
 						<RandomSequenceContainer Name="Dash" ID="{047E9793-4289-47C7-B8B5-05DFF1AFFA86}" ShortID="35934723">
 							<PropertyList>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{06228D29-7437-44FD-9148-342054B254F7}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-400"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -2464,6 +2614,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="Dashing" ID="{0BE30F4D-53B0-41DF-A5DC-78D97A7F1E72}">
 											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.09727488151659"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.183291770573566"/>
 												<Property Name="TrimEnd" Type="Real64" Value="3.06097256857855"/>
@@ -2498,6 +2649,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="Dashing" ID="{0BCE02A3-988D-4A2C-B4E0-1C5647F716A0}">
 											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.3585308056872"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 												<Property Name="TrimBegin" Type="Real64" Value="4.58229426433915"/>
 												<Property Name="TrimEnd" Type="Real64" Value="7.18503740648379"/>
@@ -2532,6 +2684,7 @@
 									<ChildrenList>
 										<AudioFileSource Name="Dashing" ID="{257F572E-1DE9-4653-9471-48C3814E592C}">
 											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.6372037914692"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 												<Property Name="TrimBegin" Type="Real64" Value="9.23790523690774"/>
 												<Property Name="TrimEnd" Type="Real64" Value="12.1155860349127"/>
@@ -2591,6 +2744,123 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="Farts, Designed, Human Fart 07 SND88353" ID="{A834228D-79D5-4F8E-B88F-05F79C80E83E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="DashReady" ID="{F387DB43-6D25-40E4-B64F-C31B75D135D9}" ShortID="779903941">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{3F723333-78EF-49E9-975C-4EF5C9FBA5BA}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-450"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="DashReady" ID="{6197A10B-3345-4189-AC11-E59368C89145}" ShortID="979861867">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DashReady" ID="{B1F94F5D-6130-427F-AEB6-8882468B5892}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.26003189178515"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.110677190173278"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.0955219194312796"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.772594950306901"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>DashReady.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1046511787"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DashReady" ID="{B1F94F5D-6130-427F-AEB6-8882468B5892}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="DashReady_01" ID="{6857987D-E8DC-4A4B-A77D-EAE1505EED9E}" ShortID="72090545">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DashReady" ID="{743909E0-5CF0-4243-8306-6ACAD0F1C8EC}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.232063443895641"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0742694673108191"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.947573122281"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.67215077462222"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>DashReady.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="612633811"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DashReady" ID="{743909E0-5CF0-4243-8306-6ACAD0F1C8EC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="DashReady_02" ID="{09CE7B04-DEE3-464D-8BA2-6B1731AD90B9}" ShortID="786559641">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="DashReady" ID="{61B93939-69F2-4BFA-BAAA-B3D80EFD1A2C}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.240863839107554"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.0689880529225912"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="3.84657969138165"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>DashReady.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="690577249"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="DashReady" ID="{61B93939-69F2-4BFA-BAAA-B3D80EFD1A2C}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
@@ -3303,7 +3573,7 @@
 										<AudioFileSource Name="Communications, Phonograph, Vinyl, Record Scratch 09 SND13871" ID="{11DC76AB-463E-4836-B99C-EAB5E714B937}">
 											<PropertyList>
 												<Property Name="FadeInDuration" Type="Real64" Value="0.0236370640713706"/>
-												<Property Name="FadeOutDuration" Type="Real64" Value="0.0472741281427413"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.277483448837844"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.0664792427007299"/>
 												<Property Name="TrimEnd" Type="Real64" Value="0.95434646188159"/>
@@ -3335,7 +3605,7 @@
 												<Property Name="FadeOutDuration" Type="Real64" Value="0.0956077656123276"/>
 												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 												<Property Name="TrimBegin" Type="Real64" Value="0.0134975669099757"/>
-												<Property Name="TrimEnd" Type="Real64" Value="0.690625506893755"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.569027461870058"/>
 											</PropertyList>
 											<Language>SFX</Language>
 											<AudioFile>Communications, Phonograph, Vinyl, Record Scratch 08 SND13872.wav</AudioFile>
@@ -3504,11 +3774,6 @@
 										</ModifierInfo>
 									</ModifierList>
 								</Property>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>6</Value>
-									</ValueList>
-								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -3579,7 +3844,7 @@
 									<PropertyList>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
-												<Value>710</Value>
+												<Value>360</Value>
 											</ValueList>
 											<ModifierList>
 												<ModifierInfo>
@@ -3654,7 +3919,7 @@
 									<PropertyList>
 										<Property Name="Pitch" Type="int32">
 											<ValueList>
-												<Value>880</Value>
+												<Value>170</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -3690,6 +3955,7 @@
 						<RandomSequenceContainer Name="Sting" ID="{8AD5260D-A867-4A89-B43B-36D549B81A6B}" ShortID="901165153">
 							<PropertyList>
 								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="OverrideEffect" Type="bool" Value="True"/>
 								<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
 							</PropertyList>
 							<ReferenceList>
