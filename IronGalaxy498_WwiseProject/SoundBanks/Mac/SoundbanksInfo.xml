@@ -118,7 +118,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{1A18EF7F-0E7D-6EBC-0202-D7D06787413C}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{DDA54055-2B51-5AE1-4176-80F745CBC84A}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -278,6 +278,10 @@
 					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
 					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_A844FEFE.wem</CachePath>
 				</File>
+				<File Id="262532940" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MenuMusic_2-Kontakt_7.wav</ShortName>
+					<CachePath>SFX/MenuMusic_2-Kontakt_7_FBC78EF0.wem</CachePath>
+				</File>
 				<File Id="271985866" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GateOpen.wav</ShortName>
 					<CachePath>SFX/GateOpen_0FD4388A.wem</CachePath>
@@ -421,6 +425,10 @@
 				<File Id="630432816" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Lever1.wav</ShortName>
 					<CachePath>SFX/Lever1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="637839352" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MenuMusic_1-Kontakt_7.wav</ShortName>
+					<CachePath>SFX/MenuMusic_1-Kontakt_7_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="639389320" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PlayerHitImpact.wav</ShortName>
@@ -895,6 +903,13 @@
 								<MediaRef Id="834049591"/>
 							</MediaRefs>
 						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="3604647259"/>
+							<MediaRefs>
+								<MediaRef Id="262532940"/>
+								<MediaRef Id="637839352"/>
+							</MediaRefs>
+						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 				<Event Id="1843531235" Name="PlayButton" DurationType="OneShot" DurationMin="1.1446644" DurationMax="2.1689167">
@@ -1042,5 +1057,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{9F3515D4-BE6E-8C47-7852-5625C131CAAE}</FileHash>
+	<FileHash>{F2FF9D99-B01E-1811-1F2E-1C813FC54714}</FileHash>
 </SoundBanksInfo>
