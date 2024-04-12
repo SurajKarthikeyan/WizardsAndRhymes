@@ -23,6 +23,9 @@ public class LightningBlockManager : MonoBehaviour
     [Tooltip("Y offset for lighting chain spawn")]
     [SerializeField] private float yOffSet;
 
+    [Tooltip("If you got a Tesla Tower to be controlled, slap it in here")]
+    [SerializeField] private TeslaTower teslaTower;
+    
     [Tooltip("Holographic block list to spawn in location of deactivated block")]
     [SerializeField] private List<GameObject> holoBlockList;
     #endregion
@@ -126,7 +129,14 @@ public class LightningBlockManager : MonoBehaviour
             }
         }
         lightningGenerator.Hodor();
-        leverManager.completedLeverSystem = true;
+        if (leverManager != null)
+        {
+            leverManager.completedLeverSystem = true;
+        }
+        if (teslaTower != null)
+        {
+            teslaTower.DisableElectricEffect();
+        }
     }
 
     #endregion
