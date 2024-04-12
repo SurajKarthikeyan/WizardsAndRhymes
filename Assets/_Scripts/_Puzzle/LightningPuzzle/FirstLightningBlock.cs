@@ -22,6 +22,7 @@ public class FirstLightningBlock : MonoBehaviour
 
         if (isActive)
         {
+            isActive = false;
             lbManager.CheckAllBlocks();
         }
     }
