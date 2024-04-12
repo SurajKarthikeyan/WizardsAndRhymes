@@ -32,6 +32,9 @@
 											</ReferenceList>
 										</Action>
 										<Action Name="" ID="{B8FC5E6C-08F0-4901-88F8-D4FD15C98EE0}" ShortID="785206663">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.1"/>
+											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Target">
 													<ObjectRef Name="Kick" ID="{3BB996E1-7975-40D9-A4E1-4715A05CDFA5}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
@@ -369,6 +372,17 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="DashReady" ID="{4E30C4C6-B70E-4270-8CD1-BA614F931AD5}">
+									<ChildrenList>
+										<Action Name="" ID="{A7CB3A40-5CD2-4862-AC04-1750B30A652C}" ShortID="842840823">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="DashReady" ID="{F387DB43-6D25-40E4-B64F-C31B75D135D9}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Music" ID="{9CEEF249-6CBE-4183-A578-17E6A24E7BCD}" ShortID="271145348">
@@ -421,6 +435,9 @@
 						<Event Name="LeveLCompleteSting" ID="{85D904FB-F937-4B25-9F89-4060A3C6B850}">
 							<ChildrenList>
 								<Action Name="" ID="{4C2CD871-C0C1-498E-9099-7BCB6FBED31E}" ShortID="162549484">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="0.3"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Cheer" ID="{38D7E995-FCC3-4C3A-A013-6AA60EB77A2A}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
