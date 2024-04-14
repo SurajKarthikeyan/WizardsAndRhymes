@@ -31,6 +31,8 @@ public class LightningBlockManager : MonoBehaviour
     [Tooltip("Holographic block list to spawn in location of deactivated block")]
     [SerializeField] private List<GameObject> holoBlockList;
 
+    [Tooltip("How long to wait to delete completed lightning chain")]
+    [SerializeField] private float timeToDestroyFullLightningChain;
    
     #endregion
 
@@ -158,6 +160,13 @@ public class LightningBlockManager : MonoBehaviour
             teslaTower.DisableElectricEffect();
         }
         lightBlockList[0].GetComponent<FirstLightningBlock>().DisableFurtherChaining();
+        StartCoroutine(DeleteLightningChain(chainList));
+    }
+
+    private IEnumerator DeleteLightningChain(List<GameObject> lightChain)
+    {
+        yield return new WaitForSeconds(timeToDestroyFullLightningChain);
+        lightChain.ForEach(obj => Destroy(obj));
     }
 
     #endregion
