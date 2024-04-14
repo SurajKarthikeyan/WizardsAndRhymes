@@ -22,9 +22,17 @@ public class FirstLightningBlock : MonoBehaviour
 
         if (isActive)
         {
-            isActive = false;
             lbManager.CheckAllBlocks();
         }
+    }
+
+    
+    /// <summary>
+    /// Disables the first electro block if and only if the chaining is finished
+    /// </summary>
+    public void DisableFurtherChaining()
+    {
+        isActive = false;
     }
 
     #endregion

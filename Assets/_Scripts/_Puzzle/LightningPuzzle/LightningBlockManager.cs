@@ -30,6 +30,8 @@ public class LightningBlockManager : MonoBehaviour
     
     [Tooltip("Holographic block list to spawn in location of deactivated block")]
     [SerializeField] private List<GameObject> holoBlockList;
+
+   
     #endregion
 
 
@@ -155,6 +157,7 @@ public class LightningBlockManager : MonoBehaviour
         {
             teslaTower.DisableElectricEffect();
         }
+        lightBlockList[0].GetComponent<FirstLightningBlock>().DisableFurtherChaining();
     }
 
     #endregion
