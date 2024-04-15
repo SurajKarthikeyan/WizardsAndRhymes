@@ -140,7 +140,10 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private AK.Wwise.Event rangedEvent;
     [Tooltip("Audio Event for melee attacks")]
     [SerializeField] private AK.Wwise.Event meleeEvent;
+
+    [SerializeField] private LayerMask knockbackLayerMask;
     
+    [Tooltip("Number of successive attacks in a combo")]
     public int successiveAttacks;
     
     [Tooltip("Bool defining if the player can attack")]
@@ -840,7 +843,21 @@ public class PlayerController : Singleton<PlayerController>
     /// <param name="magnitude">Magnitude the player is knocked back</param>
     public void Knockback(Vector3 direction, float magnitude)
     {
-        rigidBody.AddForce(direction.normalized * magnitude, ForceMode.Impulse);
+        RaycastHit hit;
+        rigidBody.velocity = Vector3.zero;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(transform.position, direction, out hit, 6, knockbackLayerMask))
+        {
+            float distance = Vector3.Distance(hit.transform.position, transform.position);
+            if (distance >= 1)
+            {
+                rigidBody.AddForce(direction.normalized * magnitude / (distance/2), ForceMode.Force);
+            }
+        }
+        else
+        {
+            rigidBody.AddForce(direction.normalized * magnitude, ForceMode.Impulse);
+        }
     }
     #endregion
     

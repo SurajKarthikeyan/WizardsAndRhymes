@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
 using UnityEngine;
@@ -23,6 +24,8 @@ public class PlayerHealth : Health
     public Sprite emptyHeartImage;
 
     private float currHealthPercentage;
+
+    public float gracePeriodTime = 2f;
  
     #endregion
 
@@ -73,10 +76,18 @@ public class PlayerHealth : Health
         pauseMenu.PlayerDeathUI();
     }
 
+    public IEnumerator Invulnerability(float invulnerableTime)
+    {
+        vulnerable = false;
+        yield return new WaitForSeconds(invulnerableTime);
+        vulnerable = true;
+    }
+
     public override void TakeDamage(float value, DamageType dType)
     {
         base.TakeDamage(value, dType);
         playerHurtSoundEffect.Post(gameObject);
+        StartCoroutine(Invulnerability(gracePeriodTime));
     }
     #endregion
 }
