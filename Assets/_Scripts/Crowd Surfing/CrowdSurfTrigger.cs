@@ -8,6 +8,9 @@ using UnityEngine;
 public class CrowdSurfTrigger : MonoBehaviour
 {
     #region Variables
+    [Tooltip("Canvas that contains the interact ui element")]
+    public GameObject interactCanvas;
+    
     [Tooltip("The crowd surf path triggered by this component")]
     [HideInInspector] public CrowdSurfPath crowdSurfPath;
     [Tooltip("Whether this trigger is at the end of the path instead of the start")]
@@ -24,16 +27,29 @@ public class CrowdSurfTrigger : MonoBehaviour
     /// <param name="other">The collider that entered the trigger</param>
     private void OnTriggerEnter(Collider other)
     {
-        
         if (crowdSurfPath.PlayerOnPath || ignorePlayerInCollider) //Don't try to start a crowd-surf if the player is already crowd surfing
         {
             ignorePlayerInCollider = true;
             return;
         }
 
-        if (other.CompareTag(PlayerController.PlayerTag))
+        if (other.CompareTag(PlayerController.PlayerTag) && PlayerController.instance.interactable == null)
         {
-            crowdSurfPath.StartCrowdSurf(end);
+            crowdSurfPath.isReversed = end;
+            PlayerController.instance.canInteract = true;
+            PlayerController.instance.interactable = crowdSurfPath;
+            interactCanvas.SetActive(true);
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag(PlayerController.PlayerTag) && PlayerController.instance.interactable == null)
+        {
+            crowdSurfPath.isReversed = end;
+            PlayerController.instance.canInteract = true;
+            PlayerController.instance.interactable = crowdSurfPath;
+            interactCanvas.SetActive(true);
         }
     }
 
@@ -43,7 +59,13 @@ public class CrowdSurfTrigger : MonoBehaviour
     /// <param name="other">The collider that exited this trigger</param>
     private void OnTriggerExit(Collider other)
     {
-        ignorePlayerInCollider = false;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            ignorePlayerInCollider = false;
+            PlayerController.instance.canInteract = false;
+            PlayerController.instance.interactable = null;
+            interactCanvas.SetActive(false);
+        }
     }
     #endregion
 }

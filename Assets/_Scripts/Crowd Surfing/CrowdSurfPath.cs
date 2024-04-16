@@ -8,7 +8,7 @@ using UnityEngine;
 /// <summary>
 /// Defines a path for the player to crowd surf along
 /// </summary>
-public class CrowdSurfPath : MonoBehaviour
+public class CrowdSurfPath : MonoBehaviour, IInteractable
 {
     #region Variables
     [Tooltip("The spline computer component that defines the path")]
@@ -31,6 +31,8 @@ public class CrowdSurfPath : MonoBehaviour
     [SerializeField] bool activateOnRoomCleared = true;
     [Tooltip("Whether to automatically place the start and and triggers at the start and end of the path")]
     [SerializeField] bool autoPlaceTriggers = true;
+    [Tooltip("Whether to automatically place the start and and triggers at the start and end of the path")]
+    public bool isReversed;
 
     [SerializeField]
     private AK.Wwise.Event crowdSurfSoundEffect;
@@ -152,4 +154,12 @@ public class CrowdSurfPath : MonoBehaviour
         active = value;
     }
     #endregion
+
+    /// <summary>
+    /// Interface function used for whenever the player interacts with the crowd surf
+    /// </summary>
+    public void Interact()
+    {
+        StartCrowdSurf(isReversed);
+    }
 }

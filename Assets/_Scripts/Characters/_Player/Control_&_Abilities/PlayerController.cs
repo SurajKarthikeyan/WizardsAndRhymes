@@ -72,13 +72,9 @@ public class PlayerController : Singleton<PlayerController>
     #endregion
 
     #region Aiming Variables
-    [Header("Aiming Variables")]
-    
-    [Tooltip("LayerMask that is assigned for help in player aiming")]
-    [SerializeField]
-    private LayerMask lookLayerMask;
 
-    
+    [Header("Aiming Variables")] [Tooltip("LayerMask that is assigned for help in player aiming")] [SerializeField]
+    private LayerMask lookLayerMask;
     #endregion
     
     #region Dashing Variables
@@ -140,14 +136,17 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField] private AK.Wwise.Event rangedEvent;
     [Tooltip("Audio Event for melee attacks")]
     [SerializeField] private AK.Wwise.Event meleeEvent;
+
+    [SerializeField] private LayerMask knockbackLayerMask;
     
+    [Tooltip("Number of successive attacks in a combo")]
     public int successiveAttacks;
     
     [Tooltip("Bool defining if the player can attack")]
     public bool canAttack;
 
     [Tooltip("Bool defining if an attack has been performed by the player")]
-    private bool attackPerformed = false;
+    private bool attackPerformed;
     
     [Tooltip("Bool defining if the player can attack")]
     private bool comboActive;
@@ -158,7 +157,15 @@ public class PlayerController : Singleton<PlayerController>
 
     [Tooltip("Time taken to reset the combo")]
     [SerializeField]
-    private float comboResetTime = .5f;
+    private float oneHitComboResetTime = .5f;
+    
+    [Tooltip("Time taken to reset the combo")]
+    [SerializeField]
+    private float twoHitComboResetTime = .5f;
+    
+    [Tooltip("Time taken to reset the combo")]
+    [SerializeField]
+    private float threeHitComboResetTime = .5f;
 
     [Tooltip("Coroutine that handles the timing of continuing the combo")]
     private IEnumerator comboContinuationCoroutine = null;
@@ -205,15 +212,9 @@ public class PlayerController : Singleton<PlayerController>
 
     [Tooltip("Pause menu active state")]
     [SerializeField] private bool isPaused;
-    
-   
     #endregion
     
     [Header("Script References")]
-    // [Tooltip("C# Class that handles all of the player abilities")]
-    // [SerializeField]
-    // private AbilityManager abilityManager;
-
     [Tooltip("Inventory for the player's mixtapes")]
     [SerializeField]
     private MixtapeInventory mixtapeInventory;
@@ -264,10 +265,12 @@ public class PlayerController : Singleton<PlayerController>
     [Tooltip("Player Animator")]
     [SerializeField] private Animator playerAnimator;
 
+    [Header("Interaction")] 
+    [Tooltip("Boolean stating if the player is able to interact with something")]
     public bool canInteract;
 
+    [Tooltip("Current interactable object that the player can interact with")]
     public IInteractable interactable;
-    
     #endregion
 
     #region Unity Methods
@@ -351,7 +354,6 @@ public class PlayerController : Singleton<PlayerController>
                     else
                     {
                         // We are moving right / left
-
                         moveDirection = movementDirection.x < 0 ? MoveDirection.Left : MoveDirection.Right;
                     }
                 }
@@ -359,13 +361,11 @@ public class PlayerController : Singleton<PlayerController>
 
                 if(moveDirection == MoveDirection.Up || moveDirection == MoveDirection.Down)
                 {
-
                     forceDirection += moveAction.ReadValue<Vector2>().y * appliedForce * Vector3.forward;
                 }
                 else if (moveDirection == MoveDirection.Right || moveDirection == MoveDirection.Left)
                 {
                     forceDirection += moveAction.ReadValue<Vector2>().x * appliedForce * Vector3.right;
-
                 }
                 else
                 {
@@ -631,7 +631,7 @@ public class PlayerController : Singleton<PlayerController>
     /// <summary>
     /// Function that enables the inputs for all UI and menus
     /// </summary>
-    public void EnableUIControls()
+    private void EnableUIControls()
     {
         playerInput.UI.MenuSelect.started += MenuSelect;
         playerInput.UI.Exit.started += PauseAction;
@@ -639,6 +639,9 @@ public class PlayerController : Singleton<PlayerController>
         playerInput.UI.Enable();
     }
 
+    /// <summary>
+    /// Function that enables all player attack controls
+    /// </summary>
     public void EnablePlayerAttackControls()
     {
         playerInput.Player.MeleeAttack.Enable();
@@ -669,7 +672,7 @@ public class PlayerController : Singleton<PlayerController>
     /// <summary>
     /// Disables all controls for UI and menus
     /// </summary>
-    public void DisableUIControls()
+    private void DisableUIControls()
     {
         playerInput.UI.MenuSelect.canceled -= MenuSelect;
         playerInput.UI.Exit.canceled -= PauseAction;
@@ -677,6 +680,9 @@ public class PlayerController : Singleton<PlayerController>
         playerInput.UI.Disable();
     }
 
+    /// <summary>
+    /// Function that disables all attack controls
+    /// </summary>
     public void DisablePlayerAttackControls()
     {
         playerInput.Player.MeleeAttack.Disable();
@@ -685,6 +691,11 @@ public class PlayerController : Singleton<PlayerController>
     #endregion
     
     #region Attack Combo Methods
+    /// <summary>
+    /// Coroutine that handles delay of attacks
+    /// </summary>
+    /// <param name="seconds"></param>
+    /// <returns></returns>
     IEnumerator AttackDelay(float seconds)
     {
         if (successiveAttacks >= 3)
@@ -700,6 +711,11 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
+    /// <summary>
+    /// Coroutine that handles listening for input 
+    /// </summary>
+    /// <param name="seconds">Seconds to listen to input</param>
+    /// <returns></returns>
     IEnumerator ComboContinueDelay(float seconds)
     {
         if (comboActive)
@@ -712,6 +728,11 @@ public class PlayerController : Singleton<PlayerController>
         }
     }
 
+    /// <summary>
+    /// Coroutine that handles the cooldown of the combo system
+    /// </summary>
+    /// <param name="seconds">Seconds that the cooldown would last</param>
+    /// <returns></returns>
     IEnumerator ComboCooldown(float seconds)
     {
         successiveAttacks = 0;
@@ -727,6 +748,13 @@ public class PlayerController : Singleton<PlayerController>
     /// </summary>
     private void ResetCombo()
     {
+        float comboResetTime = successiveAttacks switch
+        {
+            1 => oneHitComboResetTime,
+            2 => twoHitComboResetTime,
+            3 => threeHitComboResetTime,
+            _ => 0
+        };
         StartCoroutine(ComboCooldown(comboResetTime));
     }
     #endregion
@@ -840,7 +868,21 @@ public class PlayerController : Singleton<PlayerController>
     /// <param name="magnitude">Magnitude the player is knocked back</param>
     public void Knockback(Vector3 direction, float magnitude)
     {
-        rigidBody.AddForce(direction.normalized * magnitude, ForceMode.Impulse);
+        RaycastHit hit;
+        rigidBody.velocity = Vector3.zero;
+        // Does the ray intersect any objects excluding the player layer
+        if (Physics.Raycast(transform.position, direction, out hit, 6, knockbackLayerMask))
+        {
+            float distance = Vector3.Distance(hit.transform.position, transform.position);
+            if (distance >= 1)
+            {
+                rigidBody.AddForce(direction.normalized * magnitude / (distance/2), ForceMode.Force);
+            }
+        }
+        else
+        {
+            rigidBody.AddForce(direction.normalized * magnitude, ForceMode.Impulse);
+        }
     }
     #endregion
     

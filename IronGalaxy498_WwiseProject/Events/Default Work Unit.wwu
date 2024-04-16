@@ -227,9 +227,19 @@
 						<Event Name="PlayButton" ID="{1A712861-E6EA-4245-B32A-51A29C475347}">
 							<ChildrenList>
 								<Action Name="" ID="{6292D0A1-B9A9-4E9D-BA52-E083460567F5}" ShortID="798142044">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="0.3"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="PlayButton" ID="{2C47BC27-A9B9-482C-A4AE-F599F7A8F9DA}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{A010A71A-2AD7-4A9D-83E6-93FD1603DDE5}" ShortID="977445448">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Sting" ID="{8AD5260D-A867-4A89-B43B-36D549B81A6B}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -435,19 +445,9 @@
 						<Event Name="LeveLCompleteSting" ID="{85D904FB-F937-4B25-9F89-4060A3C6B850}">
 							<ChildrenList>
 								<Action Name="" ID="{4C2CD871-C0C1-498E-9099-7BCB6FBED31E}" ShortID="162549484">
-									<PropertyList>
-										<Property Name="Delay" Type="Real64" Value="0.3"/>
-									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Cheer" ID="{38D7E995-FCC3-4C3A-A013-6AA60EB77A2A}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{E04FC486-66EC-4B48-8C8D-EFD01484D178}" ShortID="922904621">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Sting" ID="{8AD5260D-A867-4A89-B43B-36D549B81A6B}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
