@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,11 +13,8 @@ public class Gate : MonoBehaviour
         gateSoundEffect.Post(this.gameObject);
     }
 
-    // public void ObjectFlagSetState(bool state)
-    // {
-    //     if (state)
-    //     {
-    //         gateAnim.SetTrigger("interaction");
-    //     }
-    // }
+    private void Start()
+    {
+        gateAnim.updateMode = AnimatorUpdateMode.UnscaledTime;
+    }
 }
