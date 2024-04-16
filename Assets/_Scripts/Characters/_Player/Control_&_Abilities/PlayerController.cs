@@ -157,7 +157,15 @@ public class PlayerController : Singleton<PlayerController>
 
     [Tooltip("Time taken to reset the combo")]
     [SerializeField]
-    private float comboResetTime = .5f;
+    private float oneHitComboResetTime = .5f;
+    
+    [Tooltip("Time taken to reset the combo")]
+    [SerializeField]
+    private float twoHitComboResetTime = .5f;
+    
+    [Tooltip("Time taken to reset the combo")]
+    [SerializeField]
+    private float threeHitComboResetTime = .5f;
 
     [Tooltip("Coroutine that handles the timing of continuing the combo")]
     private IEnumerator comboContinuationCoroutine = null;
@@ -740,6 +748,13 @@ public class PlayerController : Singleton<PlayerController>
     /// </summary>
     private void ResetCombo()
     {
+        float comboResetTime = successiveAttacks switch
+        {
+            1 => oneHitComboResetTime,
+            2 => twoHitComboResetTime,
+            3 => threeHitComboResetTime,
+            _ => 0
+        };
         StartCoroutine(ComboCooldown(comboResetTime));
     }
     #endregion

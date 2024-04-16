@@ -784,7 +784,9 @@ MonoBehaviour:
   successiveAttacks: 0
   canAttack: 0
   comboContinuationTime: 0.5
-  comboResetTime: 1
+  oneHitComboResetTime: 0.1
+  twoHitComboResetTime: 0.2
+  threeHitComboResetTime: 0.4
   rangedPrefab: {fileID: 8332464805925598477, guid: 1c8ea5a92df42184d87ee0928e44598e, type: 3}
   rangedSpawnPoint: {fileID: 5028973609557505707}
   rangedPrefabSpeed: 25
@@ -827,6 +829,7 @@ MonoBehaviour:
   - {fileID: 1709088209719031061}
   fullHeartImage: {fileID: 21300000, guid: 6a04442234675d340b1d41be4fbd481a, type: 3}
   emptyHeartImage: {fileID: 21300000, guid: 31f5a42283dc6384e9b0e70b9f0d2438, type: 3}
+  gracePeriodTime: 2
 --- !u!114 &5530131915041016451
 MonoBehaviour:
   m_ObjectHideFlags: 0
