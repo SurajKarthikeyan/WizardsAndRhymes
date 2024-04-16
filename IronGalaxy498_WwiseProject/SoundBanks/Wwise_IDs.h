@@ -94,6 +94,7 @@ namespace AK
     {
         static const AkUniqueID INIT = 1355168291U;
         static const AkUniqueID MAIN = 3161908922U;
+        static const AkUniqueID TESTSOUNDBANK = 1831431028U;
     } // namespace BANKS
 
     namespace BUSSES
