@@ -42,6 +42,10 @@ public class CrowdSurfTrigger : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Allows for interaction when this player is inside of this trigger
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag(PlayerController.PlayerTag) && PlayerController.instance.interactable == null)

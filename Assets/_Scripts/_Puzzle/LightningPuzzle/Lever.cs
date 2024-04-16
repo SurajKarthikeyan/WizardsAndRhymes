@@ -7,7 +7,7 @@ using UnityEngine;
 /// <summary>
 /// Script to describe individual lever, tasked with flipping itself and the light as well as notifying LeverManager
 /// </summary>
-public class Lever : MonoBehaviour
+public class Lever : MonoBehaviour, IInteractable
 {
     #region Vars
     [Tooltip("Reference to leverManager for this lever")]
@@ -34,23 +34,17 @@ public class Lever : MonoBehaviour
 
     [SerializeField] private IndividualEmissionChange emissionChanger;
     [SerializeField] private bool emission;
-    /*[SerializeField] private GameObject spline;
-    [Tooltip("Emission Material to copy")]
-    [SerializeField] private Material originalMaterial;
-    [Tooltip("Copy of emission material, do not set")]
-    [SerializeField] private Material newMaterial;
-    [Tooltip("Time to reach max or minimum emission")]
-    [SerializeField] private float timeToFullEmission;
-*/
+
+    [SerializeField] private GameObject interactCanvas;
     #endregion
-
-
+    
     #region UnityMethods
 
     private void Start()
     {
         ChangeColorLight(isOn);
         electricBlock.SetActive(isOn);
+        interactCanvas.GetComponent<Canvas>().worldCamera = Camera.main;
         /*newMaterial = new Material(originalMaterial);
         newMaterial.EnableKeyword("_EMISSION");*/
         if (!isOn)
@@ -67,12 +61,33 @@ public class Lever : MonoBehaviour
         }
 
     }
-
+    
+    
+    /// <summary>
+    /// Sets the player's interactable object to be this object
+    /// </summary>
+    /// <param name="other">The collider that entered the trigger</param>
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && !leverManager.isLeverCoolDown && !leverManager.completedLeverSystem)
+        if (other.CompareTag(PlayerController.PlayerTag) && PlayerController.instance.interactable == null)
         {
-            LeverSwitch(true, true, true);
+            PlayerController.instance.canInteract = true;
+            PlayerController.instance.interactable = this;
+            interactCanvas.SetActive(true);
+        }
+    }
+    
+    /// <summary>
+    /// Reset values when the player exits this trigger
+    /// </summary>
+    /// <param name="other">The collider that exited this trigger</param>
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            PlayerController.instance.canInteract = false;
+            PlayerController.instance.interactable = null;
+            interactCanvas.SetActive(false);
         }
     }
 
@@ -122,8 +137,13 @@ public class Lever : MonoBehaviour
             otherLevers[i].LeverSwitch(false, false, true);
         }
     }
-    
-
     #endregion
 
+    public void Interact()
+    {
+        if (!leverManager.isLeverCoolDown && !leverManager.completedLeverSystem)
+        {
+            LeverSwitch(true, true, true);
+        }
+    }
 }
