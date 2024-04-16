@@ -118,7 +118,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{65FCC4B2-7613-FC8E-6857-33A8AB7830B1}">
+		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{50E3819A-F41E-7732-E1FE-6A79235FE1F2}">
 			<ShortName>Main</ShortName>
 			<Path>Main.bnk</Path>
 			<Media>
@@ -252,7 +252,7 @@
 				</File>
 				<File Id="197135554" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevEndSting1.wav</ShortName>
-					<CachePath>SFX/LevEndSting1_818F3B66.wem</CachePath>
+					<CachePath>SFX/LevEndSting1_1B5833CF.wem</CachePath>
 				</File>
 				<File Id="200077581" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Objects, Misc, Paint, Spray Can, Marble, Shake SND30684.wav</ShortName>
@@ -496,7 +496,7 @@
 				</File>
 				<File Id="703904446" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LevEndSting2.wav</ShortName>
-					<CachePath>SFX/LevEndSting2_818F3B66.wem</CachePath>
+					<CachePath>SFX/LevEndSting2_2FB25974.wem</CachePath>
 				</File>
 				<File Id="706702062" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CrystalShimmers.wav</ShortName>
@@ -738,14 +738,12 @@
 						<MediaRef Id="1032575052"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="605469711" Name="LeveLCompleteSting" DurationType="OneShot" DurationMin="7.2" DurationMax="7.2">
+				<Event Id="605469711" Name="LeveLCompleteSting" DurationType="OneShot" DurationMin="0.21453871" DurationMax="0.43607208">
 					<MediaRefs>
 						<MediaRef Id="103387700"/>
 						<MediaRef Id="184873857"/>
-						<MediaRef Id="197135554"/>
 						<MediaRef Id="595452255"/>
 						<MediaRef Id="695289053"/>
-						<MediaRef Id="703904446"/>
 						<MediaRef Id="927171492"/>
 					</MediaRefs>
 					<PluginRefs>
@@ -912,9 +910,11 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1843531235" Name="PlayButton" DurationType="OneShot" DurationMin="1.1446644" DurationMax="2.1689167">
+				<Event Id="1843531235" Name="PlayButton" DurationType="OneShot" DurationMin="6.9204707" DurationMax="6.937412">
 					<MediaRefs>
+						<MediaRef Id="197135554"/>
 						<MediaRef Id="680414174"/>
+						<MediaRef Id="703904446"/>
 						<MediaRef Id="766739187"/>
 					</MediaRefs>
 				</Event>
@@ -1057,5 +1057,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{BEA1861F-B8AB-045F-B23B-13CF4F1AD5B9}</FileHash>
+	<FileHash>{A24A5B3F-FD96-726B-5B7D-F3CAAD498651}</FileHash>
 </SoundBanksInfo>
