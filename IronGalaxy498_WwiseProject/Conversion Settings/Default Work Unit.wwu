@@ -71,6 +71,11 @@
 								<Value Platform="Mac">0</Value>
 							</ValueList>
 						</Property>
+						<Property Name="SRConversionQuality" Type="int32">
+							<ValueList>
+								<Value>1</Value>
+							</ValueList>
+						</Property>
 						<Property Name="SampleRate" Type="int32">
 							<ValueList>
 								<Value Platform="Windows">0</Value>
@@ -82,14 +87,14 @@
 						<ConversionPluginInfo Platform="Windows">
 							<ConversionPlugin Name="" ID="{46EC8EDF-5B2D-4C40-A1C5-51926429AD2F}" PluginName="Vorbis" CompanyID="0" PluginID="4">
 								<PropertyList>
-									<Property Name="QualityFactor" Type="Real32" Value="6"/>
+									<Property Name="QualityFactor" Type="Real32" Value="10"/>
 								</PropertyList>
 							</ConversionPlugin>
 						</ConversionPluginInfo>
 						<ConversionPluginInfo Platform="Mac">
 							<ConversionPlugin Name="" ID="{E367E745-8222-4E6D-8569-B224B700765A}" PluginName="Vorbis" CompanyID="0" PluginID="4">
 								<PropertyList>
-									<Property Name="QualityFactor" Type="Real32" Value="6"/>
+									<Property Name="QualityFactor" Type="Real32" Value="10"/>
 								</PropertyList>
 							</ConversionPlugin>
 						</ConversionPluginInfo>

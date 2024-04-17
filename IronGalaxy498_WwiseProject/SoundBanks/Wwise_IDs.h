@@ -93,7 +93,6 @@ namespace AK
     {
         static const AkUniqueID INIT = 1355168291U;
         static const AkUniqueID COMBATANDENVIORMENT = 2519533265U;
-        static const AkUniqueID DONTWANTTODELETE = 2892162784U;
         static const AkUniqueID INTERACTIVEMUSICBANK = 1702439946U;
         static const AkUniqueID UIANDFARTSOUNDBANK = 784481870U;
     } // namespace BANKS
