@@ -27,15 +27,6 @@ public class PlayerStatusUI : MonoBehaviour
 
     #region Unity Methods
     /// <summary>
-    /// Function called on scene load
-    /// </summary>
-    private void Start()
-    {
-        //Temporarily gives the player the first word
-        FlagManager.instance.SetFlag("word1", true);
-    }
-
-    /// <summary>
     /// Function called once per frame
     /// </summary>
     void Update()
