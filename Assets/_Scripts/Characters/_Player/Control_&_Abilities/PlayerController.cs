@@ -411,18 +411,6 @@ public class PlayerController : Singleton<PlayerController>
         //Function that has the player look in the direction the player is inputting
         Look();
     }
-    
-    /// <summary>
-    /// Unity method called when this collider enters another collider
-    /// </summary>
-    /// <param name="collision">Collision between the two colliders</param>
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.TryGetComponent(out IInteractable interactable))
-        {
-            interactable.Interact();
-        }
-    }
     #endregion
 
     #region Custom Methods
