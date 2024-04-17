@@ -9,6 +9,112 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
+		<SoundBank Id="784481870" Type="User" Language="SFX" Hash="{FAE93316-A70B-3B9D-959C-2ABCC2C4D79A}">
+			<ShortName>UIAndFartSoundBank</ShortName>
+			<Path>UIAndFartSoundBank.bnk</Path>
+			<Media>
+				<File Id="8926796" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Farts, Designed, Human Fart 07 SND88353.wav</ShortName>
+					<CachePath>SFX/Farts, Designed, Human Fart 07 SND88353_818F3B66.wem</CachePath>
+				</File>
+				<File Id="20835932" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>LotsOfSmallScratch.wav</ShortName>
+					<CachePath>SFX/LotsOfSmallScratch_4A78A5E8.wem</CachePath>
+				</File>
+				<File Id="73496553" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Communications, Phonograph, Vinyl, Record Scratch 08 SND13872.wav</ShortName>
+					<CachePath>SFX/Communications, Phonograph, Vinyl, Record Scratch 08 SND13872_D93EDE8B.wem</CachePath>
+				</File>
+				<File Id="188725556" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Communications, Phonograph, Vinyl, Record Scratch 14 SND13866.wav</ShortName>
+					<CachePath>SFX/Communications, Phonograph, Vinyl, Record Scratch 14 SND13866_ADC10A19.wem</CachePath>
+				</File>
+				<File Id="197135554" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>LevEndSting1.wav</ShortName>
+					<CachePath>SFX/LevEndSting1_E808CAB1.wem</CachePath>
+				</File>
+				<File Id="404034492" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SmolScratch.wav</ShortName>
+					<CachePath>SFX/SmolScratch_DC99C211.wem</CachePath>
+				</File>
+				<File Id="624941402" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SmollScratch.wav</ShortName>
+					<CachePath>SFX/SmollScratch_926E4C94.wem</CachePath>
+				</File>
+				<File Id="647426739" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Communications, Phonograph, Vinyl, Record Scratch 04 SND13876 1.wav</ShortName>
+					<CachePath>SFX/Communications, Phonograph, Vinyl, Record Scratch 04 SND13876 1_06D5701A.wem</CachePath>
+				</File>
+				<File Id="680414174" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Communications, Phonograph, Transition, Scratch, Rewind, Vinyl 01 SND61199.wav</ShortName>
+					<CachePath>SFX/Communications, Phonograph, Transition, Scratch, Rewind, Vinyl 01 SND61199_D8426847.wem</CachePath>
+				</File>
+				<File Id="703904446" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>LevEndSting2.wav</ShortName>
+					<CachePath>SFX/LevEndSting2_86F7B6EA.wem</CachePath>
+				</File>
+				<File Id="766739187" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayRecordScratch.wav</ShortName>
+					<CachePath>SFX/PlayRecordScratch_B6E802AC.wem</CachePath>
+				</File>
+				<File Id="859013703" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Communications, Phonograph, Vinyl, Record Scratch 09 SND13871.wav</ShortName>
+					<CachePath>SFX/Communications, Phonograph, Vinyl, Record Scratch 09 SND13871_605F523B.wem</CachePath>
+				</File>
+				<File Id="870905338" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>LotsOfSmallScratch.wav</ShortName>
+					<CachePath>SFX/LotsOfSmallScratch_977BC18E.wem</CachePath>
+				</File>
+				<File Id="891929607" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>LotsOfSmallScratch.wav</ShortName>
+					<CachePath>SFX/LotsOfSmallScratch_01325435.wem</CachePath>
+				</File>
+				<File Id="989052792" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>SmallScratch.wav</ShortName>
+					<CachePath>SFX/SmallScratch_91CA9725.wem</CachePath>
+				</File>
+			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="1259256166" Name="New_RoomVerb" LibName="Wwise RoomVerb" LibId="7733251"/>
+					<Plugin Id="3160090811" Name="New_Compressor" LibName="Wwise Compressor" LibId="7077891"/>
+					<Plugin Id="3435419520" Name="New_Guitar_Distortion" LibName="Wwise Guitar Distortion" LibId="8257539"/>
+				</ShareSets>
+			</Plugins>
+			<Events>
+				<Event Id="3035572085" Name="ButtonHover" DurationType="OneShot" DurationMin="0.14352083" DurationMax="0.36171988">
+					<MediaRefs>
+						<MediaRef Id="20835932"/>
+						<MediaRef Id="404034492"/>
+						<MediaRef Id="624941402"/>
+						<MediaRef Id="870905338"/>
+						<MediaRef Id="891929607"/>
+						<MediaRef Id="989052792"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="317641954" Name="ButtonPress" DurationType="OneShot" DurationMin="0.41620064" DurationMax="0.8878672">
+					<MediaRefs>
+						<MediaRef Id="73496553"/>
+						<MediaRef Id="188725556"/>
+						<MediaRef Id="647426739"/>
+						<MediaRef Id="859013703"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2948602592" Name="fart" DurationType="OneShot" DurationMin="0.2684375" DurationMax="0.2684375">
+					<MediaRefs>
+						<MediaRef Id="8926796"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1843531235" Name="PlayButton" DurationType="OneShot" DurationMin="6.9204707" DurationMax="6.937412">
+					<MediaRefs>
+						<MediaRef Id="197135554"/>
+						<MediaRef Id="680414174"/>
+						<MediaRef Id="703904446"/>
+						<MediaRef Id="766739187"/>
+					</MediaRefs>
+				</Event>
+			</Events>
+		</SoundBank>
 		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{AA346B22-8F1A-4E33-59B0-C7EC9D3865C2}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
@@ -118,705 +224,76 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3161908922" Type="User" Language="SFX" Hash="{50E3819A-F41E-7732-E1FE-6A79235FE1F2}">
-			<ShortName>Main</ShortName>
-			<Path>Main.bnk</Path>
+		<SoundBank Id="1702439946" Type="User" Language="SFX" Hash="{BD7F2DFC-D24B-E8D0-2A59-79A847EEB7A4}">
+			<ShortName>InteractiveMusicBank</ShortName>
+			<Path>InteractiveMusicBank.bnk</Path>
 			<Media>
-				<File Id="3886522" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Objects, Misc, Paint, Spray Can, Marble, Shake SND30684.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Paint, Spray Can, Marble, Shake SND30684_94083B4A.wem</CachePath>
-				</File>
-				<File Id="5318352" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Zap2.wav</ShortName>
-					<CachePath>SFX/Zap2_818F3B66.wem</CachePath>
-				</File>
-				<File Id="8926796" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Farts, Designed, Human Fart 07 SND88353.wav</ShortName>
-					<CachePath>SFX/Farts, Designed, Human Fart 07 SND88353_818F3B66.wem</CachePath>
-				</File>
-				<File Id="20835932" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>LotsOfSmallScratch.wav</ShortName>
-					<CachePath>SFX/LotsOfSmallScratch_4A78A5E8.wem</CachePath>
-				</File>
-				<File Id="21833884" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_C5716EAD.wem</CachePath>
-				</File>
-				<File Id="28928322" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Kick3.wav</ShortName>
-					<CachePath>SFX/Kick3_818F3B66.wem</CachePath>
-				</File>
-				<File Id="42034528" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_D6DC0D05.wem</CachePath>
-				</File>
-				<File Id="43950693" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Swoosh2.wav</ShortName>
-					<CachePath>SFX/Swoosh2_818F3B66.wem</CachePath>
-				</File>
-				<File Id="55840581" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>MicTap2.wav</ShortName>
-					<CachePath>SFX/MicTap2_818F3B66.wem</CachePath>
-				</File>
-				<File Id="59239616" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>MicTap1.wav</ShortName>
-					<CachePath>SFX/MicTap1_818F3B66.wem</CachePath>
-				</File>
-				<File Id="64644625" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>RockPlatformPush1.wav</ShortName>
-					<CachePath>SFX/RockPlatformPush1_5559772D.wem</CachePath>
-				</File>
-				<File Id="72631210" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Electricity, Zap, Shock, Impact, Short 02 SND13443.wav</ShortName>
-					<CachePath>SFX/Electricity, Zap, Shock, Impact, Short 02 SND13443_7E235683.wem</CachePath>
-				</File>
-				<File Id="73496553" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Communications, Phonograph, Vinyl, Record Scratch 08 SND13872.wav</ShortName>
-					<CachePath>SFX/Communications, Phonograph, Vinyl, Record Scratch 08 SND13872_D93EDE8B.wem</CachePath>
-				</File>
 				<File Id="77993868" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems D54 Furious.wav</ShortName>
-					<CachePath>SFX/NewStems D54 Furious_FBC78EF0.wem</CachePath>
-				</File>
-				<File Id="94231916" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>EnemyHitFull.wav</ShortName>
-					<CachePath>SFX/EnemyHitFull_E9170620.wem</CachePath>
-				</File>
-				<File Id="101762498" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>IceBlockWooshes.wav</ShortName>
-					<CachePath>SFX/IceBlockWooshes_F0C80020.wem</CachePath>
-				</File>
-				<File Id="103387700" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Woowoowoowoo.wav</ShortName>
-					<CachePath>SFX/Woowoowoowoo_8B8B3884.wem</CachePath>
-				</File>
-				<File Id="108359842" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>CrystalTones.wav</ShortName>
-					<CachePath>SFX/CrystalTones_CD8180DC.wem</CachePath>
-				</File>
-				<File Id="119298661" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Objects, Misc, Paint, Spray Paint Can, Shake SND29085.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Paint, Spray Paint Can, Shake SND29085_2B6C36E6.wem</CachePath>
-				</File>
-				<File Id="123022695" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PlayerHitImpact.wav</ShortName>
-					<CachePath>SFX/PlayerHitImpact_0E4A869D.wem</CachePath>
-				</File>
-				<File Id="128351763" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Kick1.wav</ShortName>
-					<CachePath>SFX/Kick1_818F3B66.wem</CachePath>
-				</File>
-				<File Id="135118416" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_548B16BC.wem</CachePath>
-				</File>
-				<File Id="144065966" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>CrystalTones.wav</ShortName>
-					<CachePath>SFX/CrystalTones_10B9C241.wem</CachePath>
-				</File>
-				<File Id="152936960" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Objects, Misc, Paint, Spray Paint Can, Shake SND29085.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Paint, Spray Paint Can, Shake SND29085_EAF5D6F7.wem</CachePath>
-				</File>
-				<File Id="162829338" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>CrystalTones.wav</ShortName>
-					<CachePath>SFX/CrystalTones_DA56C6CA.wem</CachePath>
-				</File>
-				<File Id="167300729" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</ShortName>
-					<CachePath>SFX/Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_899D2710.wem</CachePath>
-				</File>
-				<File Id="167927468" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Objects, Misc, Paint, Spray Paint Can, Shake SND29085.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Paint, Spray Paint Can, Shake SND29085_52477903.wem</CachePath>
-				</File>
-				<File Id="178823695" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Fire3.wav</ShortName>
-					<CachePath>SFX/Fire3_818F3B66.wem</CachePath>
-				</File>
-				<File Id="184873857" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Woowoowoowoo.wav</ShortName>
-					<CachePath>SFX/Woowoowoowoo_8084B345.wem</CachePath>
-				</File>
-				<File Id="187260305" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Electricity, Zap, Shock, Impact, Short 03 SND20300.wav</ShortName>
-					<CachePath>SFX/Electricity, Zap, Shock, Impact, Short 03 SND20300_818F3B66.wem</CachePath>
-				</File>
-				<File Id="188725556" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Communications, Phonograph, Vinyl, Record Scratch 14 SND13866.wav</ShortName>
-					<CachePath>SFX/Communications, Phonograph, Vinyl, Record Scratch 14 SND13866_ADC10A19.wem</CachePath>
+					<CachePath>SFX/NewStems D54 Furious_D9B786A0.wem</CachePath>
 				</File>
 				<File Id="190951527" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems 23-808 Aristocrat Kit.wav</ShortName>
-					<CachePath>SFX/NewStems 23-808 Aristocrat Kit_FBC78EF0.wem</CachePath>
-				</File>
-				<File Id="197135554" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>LevEndSting1.wav</ShortName>
-					<CachePath>SFX/LevEndSting1_1B5833CF.wem</CachePath>
-				</File>
-				<File Id="200077581" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Objects, Misc, Paint, Spray Can, Marble, Shake SND30684.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Paint, Spray Can, Marble, Shake SND30684_9588A38E.wem</CachePath>
-				</File>
-				<File Id="220814183" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PlayerHitDowner.wav</ShortName>
-					<CachePath>SFX/PlayerHitDowner_ACD55C21.wem</CachePath>
+					<CachePath>SFX/NewStems 23-808 Aristocrat Kit_D9B786A0.wem</CachePath>
 				</File>
 				<File Id="237657344" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems 27-UVIWorkstation.wav</ShortName>
-					<CachePath>SFX/NewStems 27-UVIWorkstation_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/NewStems 27-UVIWorkstation_D9B786A0.wem</CachePath>
 				</File>
 				<File Id="242173308" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Underground50S3.wav</ShortName>
 					<CachePath>SFX/Underground50S3_FBC78EF0.wem</CachePath>
 				</File>
-				<File Id="244673809" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Electricity, Zap, Shock, Impact, Heavy 03 SND13445.wav</ShortName>
-					<CachePath>SFX/Electricity, Zap, Shock, Impact, Heavy 03 SND13445_818F3B66.wem</CachePath>
-				</File>
-				<File Id="256974757" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_A844FEFE.wem</CachePath>
-				</File>
 				<File Id="262532940" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MenuMusic_2-Kontakt_7.wav</ShortName>
-					<CachePath>SFX/MenuMusic_2-Kontakt_7_FBC78EF0.wem</CachePath>
-				</File>
-				<File Id="271985866" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>GateOpen.wav</ShortName>
-					<CachePath>SFX/GateOpen_0FD4388A.wem</CachePath>
-				</File>
-				<File Id="296816978" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>GateOpen.wav</ShortName>
-					<CachePath>SFX/GateOpen_0479D825.wem</CachePath>
-				</File>
-				<File Id="320125018" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>IceBlockWooshes.wav</ShortName>
-					<CachePath>SFX/IceBlockWooshes_907CAAA9.wem</CachePath>
-				</File>
-				<File Id="327120337" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>GateOpen.wav</ShortName>
-					<CachePath>SFX/GateOpen_B8D40784.wem</CachePath>
-				</File>
-				<File Id="355475302" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_08A40089.wem</CachePath>
-				</File>
-				<File Id="361976253" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>EnemyHitFull.wav</ShortName>
-					<CachePath>SFX/EnemyHitFull_BA5A28CF.wem</CachePath>
-				</File>
-				<File Id="362380582" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Swoosh1.wav</ShortName>
-					<CachePath>SFX/Swoosh1_818F3B66.wem</CachePath>
-				</File>
-				<File Id="397062548" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Shimmer1.wav</ShortName>
-					<CachePath>SFX/Shimmer1_818F3B66.wem</CachePath>
-				</File>
-				<File Id="403578445" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PlayerHitDowner.wav</ShortName>
-					<CachePath>SFX/PlayerHitDowner_1F047EF7.wem</CachePath>
-				</File>
-				<File Id="404034492" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>SmolScratch.wav</ShortName>
-					<CachePath>SFX/SmolScratch_DC99C211.wem</CachePath>
+					<CachePath>SFX/MenuMusic_2-Kontakt_7_D9B786A0.wem</CachePath>
 				</File>
 				<File Id="415398760" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems 26-UVIWorkstation.wav</ShortName>
-					<CachePath>SFX/NewStems 26-UVIWorkstation_FBC78EF0.wem</CachePath>
-				</File>
-				<File Id="456996073" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Dashing.wav</ShortName>
-					<CachePath>SFX/Dashing_34CC5678.wem</CachePath>
-				</File>
-				<File Id="469236046" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Ice3.wav</ShortName>
-					<CachePath>SFX/Ice3_818F3B66.wem</CachePath>
-				</File>
-				<File Id="470829322" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>EnemyHitFull.wav</ShortName>
-					<CachePath>SFX/EnemyHitFull_73616B20.wem</CachePath>
-				</File>
-				<File Id="497414986" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>CrystalZap.wav</ShortName>
-					<CachePath>SFX/CrystalZap_818F3B66.wem</CachePath>
-				</File>
-				<File Id="510362844" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Objects, Misc, Paint, Spray Paint Can, Shake SND29085.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Paint, Spray Paint Can, Shake SND29085_3835B1E5.wem</CachePath>
+					<CachePath>SFX/NewStems 26-UVIWorkstation_D9B786A0.wem</CachePath>
 				</File>
 				<File Id="522681793" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems Taiko.wav</ShortName>
-					<CachePath>SFX/NewStems Taiko_FBC78EF0.wem</CachePath>
-				</File>
-				<File Id="524500419" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PlayerHitDowner.wav</ShortName>
-					<CachePath>SFX/PlayerHitDowner_094C70E3.wem</CachePath>
+					<CachePath>SFX/NewStems Taiko_D9B786A0.wem</CachePath>
 				</File>
 				<File Id="533533018" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems 24-Agile Shot Kit.wav</ShortName>
-					<CachePath>SFX/NewStems 24-Agile Shot Kit_FBC78EF0.wem</CachePath>
-				</File>
-				<File Id="535223205" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>MicTap3.wav</ShortName>
-					<CachePath>SFX/MicTap3_818F3B66.wem</CachePath>
-				</File>
-				<File Id="546120684" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>CrowdSurfLoop.wav</ShortName>
-					<CachePath>SFX/CrowdSurfLoop_11A93380.wem</CachePath>
-				</File>
-				<File Id="555433054" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</ShortName>
-					<CachePath>SFX/Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_923C70A6.wem</CachePath>
-				</File>
-				<File Id="560172071" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>EnemyHitFull.wav</ShortName>
-					<CachePath>SFX/EnemyHitFull_651E6C52.wem</CachePath>
-				</File>
-				<File Id="567844658" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Lever2.wav</ShortName>
-					<CachePath>SFX/Lever2_818F3B66.wem</CachePath>
-				</File>
-				<File Id="568257500" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>GateOpen.wav</ShortName>
-					<CachePath>SFX/GateOpen_081E0CF6.wem</CachePath>
-				</File>
-				<File Id="577030918" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</ShortName>
-					<CachePath>SFX/Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_E30C70A0.wem</CachePath>
-				</File>
-				<File Id="583637567" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>EnemyHitFull.wav</ShortName>
-					<CachePath>SFX/EnemyHitFull_2D5FA1F8.wem</CachePath>
-				</File>
-				<File Id="595136245" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>RockPlatformPush2.wav</ShortName>
-					<CachePath>SFX/RockPlatformPush2_DA4B44F3.wem</CachePath>
-				</File>
-				<File Id="595452255" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Woowoowoowoo.wav</ShortName>
-					<CachePath>SFX/Woowoowoowoo_27B527DD.wem</CachePath>
-				</File>
-				<File Id="596267822" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>EnemyHitFull.wav</ShortName>
-					<CachePath>SFX/EnemyHitFull_8DF2FD27.wem</CachePath>
+					<CachePath>SFX/NewStems 24-Agile Shot Kit_D9B786A0.wem</CachePath>
 				</File>
 				<File Id="603966075" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems 25-Group.wav</ShortName>
-					<CachePath>SFX/NewStems 25-Group_FBC78EF0.wem</CachePath>
-				</File>
-				<File Id="612633811" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>DashReady.wav</ShortName>
-					<CachePath>SFX/DashReady_5DE14E10.wem</CachePath>
-				</File>
-				<File Id="618127826" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>IceBlockWooshes.wav</ShortName>
-					<CachePath>SFX/IceBlockWooshes_40878711.wem</CachePath>
-				</File>
-				<File Id="620045000" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>GateOpen.wav</ShortName>
-					<CachePath>SFX/GateOpen_333BCD73.wem</CachePath>
-				</File>
-				<File Id="624941402" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>SmollScratch.wav</ShortName>
-					<CachePath>SFX/SmollScratch_926E4C94.wem</CachePath>
-				</File>
-				<File Id="630432816" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Lever1.wav</ShortName>
-					<CachePath>SFX/Lever1_818F3B66.wem</CachePath>
+					<CachePath>SFX/NewStems 25-Group_D9B786A0.wem</CachePath>
 				</File>
 				<File Id="637839352" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MenuMusic_1-Kontakt_7.wav</ShortName>
-					<CachePath>SFX/MenuMusic_1-Kontakt_7_FBC78EF0.wem</CachePath>
-				</File>
-				<File Id="639389320" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PlayerHitImpact.wav</ShortName>
-					<CachePath>SFX/PlayerHitImpact_E134E976.wem</CachePath>
-				</File>
-				<File Id="647426739" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Communications, Phonograph, Vinyl, Record Scratch 04 SND13876 1.wav</ShortName>
-					<CachePath>SFX/Communications, Phonograph, Vinyl, Record Scratch 04 SND13876 1_06D5701A.wem</CachePath>
+					<CachePath>SFX/MenuMusic_1-Kontakt_7_D9B786A0.wem</CachePath>
 				</File>
 				<File Id="648565713" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems OrchestralBell.wav</ShortName>
-					<CachePath>SFX/NewStems OrchestralBell_FBC78EF0.wem</CachePath>
-				</File>
-				<File Id="651268478" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>GateOpen.wav</ShortName>
-					<CachePath>SFX/GateOpen_4984368E.wem</CachePath>
-				</File>
-				<File Id="654079656" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Fire1.wav</ShortName>
-					<CachePath>SFX/Fire1_818F3B66.wem</CachePath>
-				</File>
-				<File Id="654308591" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PlayerHitDowner.wav</ShortName>
-					<CachePath>SFX/PlayerHitDowner_87535765.wem</CachePath>
-				</File>
-				<File Id="660611193" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>CrystalTones.wav</ShortName>
-					<CachePath>SFX/CrystalTones_DBA94521.wem</CachePath>
-				</File>
-				<File Id="664797136" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Shimmer2.wav</ShortName>
-					<CachePath>SFX/Shimmer2_818F3B66.wem</CachePath>
-				</File>
-				<File Id="669664009" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Kick2.wav</ShortName>
-					<CachePath>SFX/Kick2_818F3B66.wem</CachePath>
-				</File>
-				<File Id="672424488" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Objects, Misc, Paint, Spray Can, Marble, Shake SND30684.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Paint, Spray Can, Marble, Shake SND30684_D7907CD1.wem</CachePath>
-				</File>
-				<File Id="680414174" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Communications, Phonograph, Transition, Scratch, Rewind, Vinyl 01 SND61199.wav</ShortName>
-					<CachePath>SFX/Communications, Phonograph, Transition, Scratch, Rewind, Vinyl 01 SND61199_D8426847.wem</CachePath>
-				</File>
-				<File Id="682767542" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_96A6D7B5.wem</CachePath>
-				</File>
-				<File Id="690577249" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>DashReady.wav</ShortName>
-					<CachePath>SFX/DashReady_80E605BD.wem</CachePath>
-				</File>
-				<File Id="695187573" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PlayerHitImpact.wav</ShortName>
-					<CachePath>SFX/PlayerHitImpact_D05A1D10.wem</CachePath>
-				</File>
-				<File Id="695289053" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Woowoowoowoo.wav</ShortName>
-					<CachePath>SFX/Woowoowoowoo_A49B9D91.wem</CachePath>
-				</File>
-				<File Id="700571979" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PlayerHitDowner.wav</ShortName>
-					<CachePath>SFX/PlayerHitDowner_08DB20D2.wem</CachePath>
-				</File>
-				<File Id="703904446" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>LevEndSting2.wav</ShortName>
-					<CachePath>SFX/LevEndSting2_2FB25974.wem</CachePath>
-				</File>
-				<File Id="706702062" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>CrystalShimmers.wav</ShortName>
-					<CachePath>SFX/CrystalShimmers_C3225900.wem</CachePath>
-				</File>
-				<File Id="718078501" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>GateOpen.wav</ShortName>
-					<CachePath>SFX/GateOpen_9B020547.wem</CachePath>
-				</File>
-				<File Id="733335054" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>IceBlockWooshes.wav</ShortName>
-					<CachePath>SFX/IceBlockWooshes_861873C6.wem</CachePath>
-				</File>
-				<File Id="742707364" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PlayerHitDowner.wav</ShortName>
-					<CachePath>SFX/PlayerHitDowner_018C8FF8.wem</CachePath>
-				</File>
-				<File Id="766739187" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PlayRecordScratch.wav</ShortName>
-					<CachePath>SFX/PlayRecordScratch_B6E802AC.wem</CachePath>
-				</File>
-				<File Id="771010357" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>IceBlockWooshes.wav</ShortName>
-					<CachePath>SFX/IceBlockWooshes_A9FE4798.wem</CachePath>
+					<CachePath>SFX/NewStems OrchestralBell_D9B786A0.wem</CachePath>
 				</File>
 				<File Id="771789552" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems 7-Kontakt 7.wav</ShortName>
-					<CachePath>SFX/NewStems 7-Kontakt 7_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/NewStems 7-Kontakt 7_D9B786A0.wem</CachePath>
 				</File>
 				<File Id="799885752" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems 10-Chants &amp; Stabs Kit.wav</ShortName>
-					<CachePath>SFX/NewStems 10-Chants &amp; Stabs Kit_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/NewStems 10-Chants &amp; Stabs Kit_D9B786A0.wem</CachePath>
 				</File>
 				<File Id="809109169" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems 14-BBC Symphony Orchestra.wav</ShortName>
-					<CachePath>SFX/NewStems 14-BBC Symphony Orchestra_FBC78EF0.wem</CachePath>
+					<CachePath>SFX/NewStems 14-BBC Symphony Orchestra_D9B786A0.wem</CachePath>
 				</File>
 				<File Id="820207910" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems 4-Kontakt 7.wav</ShortName>
-					<CachePath>SFX/NewStems 4-Kontakt 7_FBC78EF0.wem</CachePath>
-				</File>
-				<File Id="824108392" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Ice2.wav</ShortName>
-					<CachePath>SFX/Ice2_818F3B66.wem</CachePath>
+					<CachePath>SFX/NewStems 4-Kontakt 7_D9B786A0.wem</CachePath>
 				</File>
 				<File Id="834049591" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems AllInTheGame.wav</ShortName>
-					<CachePath>SFX/NewStems AllInTheGame_FBC78EF0.wem</CachePath>
-				</File>
-				<File Id="853954014" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>CrystalShimmers.wav</ShortName>
-					<CachePath>SFX/CrystalShimmers_9DF8CA20.wem</CachePath>
-				</File>
-				<File Id="859013703" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Communications, Phonograph, Vinyl, Record Scratch 09 SND13871.wav</ShortName>
-					<CachePath>SFX/Communications, Phonograph, Vinyl, Record Scratch 09 SND13871_605F523B.wem</CachePath>
-				</File>
-				<File Id="860878555" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Dashing.wav</ShortName>
-					<CachePath>SFX/Dashing_4A348835.wem</CachePath>
-				</File>
-				<File Id="870905338" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>LotsOfSmallScratch.wav</ShortName>
-					<CachePath>SFX/LotsOfSmallScratch_977BC18E.wem</CachePath>
-				</File>
-				<File Id="891929607" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>LotsOfSmallScratch.wav</ShortName>
-					<CachePath>SFX/LotsOfSmallScratch_01325435.wem</CachePath>
-				</File>
-				<File Id="896693686" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>EnemyHitFull.wav</ShortName>
-					<CachePath>SFX/EnemyHitFull_3CE83CA9.wem</CachePath>
-				</File>
-				<File Id="896701260" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_35360599.wem</CachePath>
-				</File>
-				<File Id="904304785" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_B02E92DE.wem</CachePath>
-				</File>
-				<File Id="908953981" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PlayerHitImpact.wav</ShortName>
-					<CachePath>SFX/PlayerHitImpact_1BB0DF92.wem</CachePath>
-				</File>
-				<File Id="909458974" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Zap1.wav</ShortName>
-					<CachePath>SFX/Zap1_818F3B66.wem</CachePath>
-				</File>
-				<File Id="914480457" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</ShortName>
-					<CachePath>SFX/Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_76C6313E.wem</CachePath>
-				</File>
-				<File Id="927171492" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Woowoowoowoo.wav</ShortName>
-					<CachePath>SFX/Woowoowoowoo_B55E3CA8.wem</CachePath>
-				</File>
-				<File Id="929853616" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Fire2.wav</ShortName>
-					<CachePath>SFX/Fire2_818F3B66.wem</CachePath>
-				</File>
-				<File Id="930362323" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PlayerHitImpact.wav</ShortName>
-					<CachePath>SFX/PlayerHitImpact_3BD96E54.wem</CachePath>
-				</File>
-				<File Id="930947941" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Ice1.wav</ShortName>
-					<CachePath>SFX/Ice1_818F3B66.wem</CachePath>
-				</File>
-				<File Id="935653253" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>EnemyHitFull.wav</ShortName>
-					<CachePath>SFX/EnemyHitFull_4396A49F.wem</CachePath>
-				</File>
-				<File Id="953151695" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PlayerHitDowner.wav</ShortName>
-					<CachePath>SFX/PlayerHitDowner_45B24C9B.wem</CachePath>
-				</File>
-				<File Id="956823132" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>IceBlockWooshes.wav</ShortName>
-					<CachePath>SFX/IceBlockWooshes_1AE3F1DC.wem</CachePath>
-				</File>
-				<File Id="968532410" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</ShortName>
-					<CachePath>SFX/Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_2512DC4C.wem</CachePath>
-				</File>
-				<File Id="985564156" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>GateOpen.wav</ShortName>
-					<CachePath>SFX/GateOpen_B92A965B.wem</CachePath>
-				</File>
-				<File Id="989052792" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>SmallScratch.wav</ShortName>
-					<CachePath>SFX/SmallScratch_91CA9725.wem</CachePath>
-				</File>
-				<File Id="1025029307" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Dashing.wav</ShortName>
-					<CachePath>SFX/Dashing_DE1041E2.wem</CachePath>
-				</File>
-				<File Id="1027865135" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PlayerHitImpact.wav</ShortName>
-					<CachePath>SFX/PlayerHitImpact_2A452683.wem</CachePath>
-				</File>
-				<File Id="1028609631" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>PlayerHitImpact.wav</ShortName>
-					<CachePath>SFX/PlayerHitImpact_90667E1B.wem</CachePath>
-				</File>
-				<File Id="1032575052" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>IceBlockWooshes.wav</ShortName>
-					<CachePath>SFX/IceBlockWooshes_BA941C4D.wem</CachePath>
-				</File>
-				<File Id="1046511787" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>DashReady.wav</ShortName>
-					<CachePath>SFX/DashReady_B7A52A72.wem</CachePath>
+					<CachePath>SFX/NewStems AllInTheGame_D9B786A0.wem</CachePath>
 				</File>
 			</Media>
-			<Plugins>
-				<ShareSets>
-					<Plugin Id="544780433" Name="New_Gain" LibName="Wwise Gain" LibId="9109507"/>
-					<Plugin Id="1008402193" Name="Low_Pass_20KHz" LibName="Wwise Parametric EQ" LibId="6881283"/>
-					<Plugin Id="1259256166" Name="New_RoomVerb" LibName="Wwise RoomVerb" LibId="7733251"/>
-					<Plugin Id="3160090811" Name="New_Compressor" LibName="Wwise Compressor" LibId="7077891"/>
-					<Plugin Id="3435419520" Name="New_Guitar_Distortion" LibName="Wwise Guitar Distortion" LibId="8257539"/>
-				</ShareSets>
-			</Plugins>
 			<Events>
-				<Event Id="3035572085" Name="ButtonHover" DurationType="OneShot" DurationMin="0.14352083" DurationMax="0.36171988">
-					<MediaRefs>
-						<MediaRef Id="20835932"/>
-						<MediaRef Id="404034492"/>
-						<MediaRef Id="624941402"/>
-						<MediaRef Id="870905338"/>
-						<MediaRef Id="891929607"/>
-						<MediaRef Id="989052792"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="317641954" Name="ButtonPress" DurationType="OneShot" DurationMin="0.41620064" DurationMax="0.8878672">
-					<MediaRefs>
-						<MediaRef Id="73496553"/>
-						<MediaRef Id="188725556"/>
-						<MediaRef Id="647426739"/>
-						<MediaRef Id="859013703"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1739654744" Name="CrowdSurf" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="546120684"/>
-					</MediaRefs>
-					<ActionSetState>
-						<ActionSetStateEntry GroupId="2352559104" Id="2260458779" Name="InCrowdSurf"/>
-					</ActionSetState>
-				</Event>
-				<Event Id="3444057113" Name="Crystal" DurationType="OneShot" DurationMin="3.4768662" DurationMax="4.176854">
-					<MediaRefs>
-						<MediaRef Id="108359842"/>
-						<MediaRef Id="144065966"/>
-						<MediaRef Id="162829338"/>
-						<MediaRef Id="497414986"/>
-						<MediaRef Id="660611193"/>
-						<MediaRef Id="706702062"/>
-						<MediaRef Id="853954014"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1022374206" Name="DashReady" DurationType="OneShot" DurationMin="0.632337" DurationMax="0.939661">
-					<MediaRefs>
-						<MediaRef Id="612633811"/>
-						<MediaRef Id="690577249"/>
-						<MediaRef Id="1046511787"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2948602592" Name="fart" DurationType="OneShot" DurationMin="0.2684375" DurationMax="0.2684375">
-					<MediaRefs>
-						<MediaRef Id="8926796"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1960186623" Name="GateLift" DurationType="OneShot" DurationMin="3.3691592" DurationMax="4.6123695">
-					<MediaRefs>
-						<MediaRef Id="167300729"/>
-						<MediaRef Id="271985866"/>
-						<MediaRef Id="296816978"/>
-						<MediaRef Id="327120337"/>
-						<MediaRef Id="555433054"/>
-						<MediaRef Id="568257500"/>
-						<MediaRef Id="577030918"/>
-						<MediaRef Id="620045000"/>
-						<MediaRef Id="651268478"/>
-						<MediaRef Id="718078501"/>
-						<MediaRef Id="914480457"/>
-						<MediaRef Id="968532410"/>
-						<MediaRef Id="985564156"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="418751485" Name="IceBlock" DurationType="OneShot" DurationMin="1.7034016" DurationMax="2.37977">
-					<MediaRefs>
-						<MediaRef Id="101762498"/>
-						<MediaRef Id="320125018"/>
-						<MediaRef Id="618127826"/>
-						<MediaRef Id="733335054"/>
-						<MediaRef Id="771010357"/>
-						<MediaRef Id="956823132"/>
-						<MediaRef Id="1032575052"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="605469711" Name="LeveLCompleteSting" DurationType="OneShot" DurationMin="0.21453871" DurationMax="0.43607208">
-					<MediaRefs>
-						<MediaRef Id="103387700"/>
-						<MediaRef Id="184873857"/>
-						<MediaRef Id="595452255"/>
-						<MediaRef Id="695289053"/>
-						<MediaRef Id="927171492"/>
-					</MediaRefs>
-					<PluginRefs>
-						<ShareSets>
-							<PluginRef Id="1259256166"/>
-							<PluginRef Id="3160090811"/>
-							<PluginRef Id="3435419520"/>
-						</ShareSets>
-					</PluginRefs>
-				</Event>
-				<Event Id="2782712987" Name="Lever" DurationType="OneShot" DurationMin="2.4" DurationMax="2.4">
-					<MediaRefs>
-						<MediaRef Id="567844658"/>
-						<MediaRef Id="630432816"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2689877988" Name="LightningMusicLoop" DurationType="OneShot" DurationMin="38.4" DurationMax="38.4">
-					<MediaRefs>
-						<MediaRef Id="77993868"/>
-						<MediaRef Id="190951527"/>
-						<MediaRef Id="522681793"/>
-						<MediaRef Id="648565713"/>
-						<MediaRef Id="771789552"/>
-						<MediaRef Id="799885752"/>
-						<MediaRef Id="834049591"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="2248677623" Name="MeleeFire" DurationType="OneShot" DurationMin="0.6" DurationMax="0.72210854">
-					<MediaRefs>
-						<MediaRef Id="28928322"/>
-						<MediaRef Id="55840581"/>
-						<MediaRef Id="59239616"/>
-						<MediaRef Id="128351763"/>
-						<MediaRef Id="178823695"/>
-						<MediaRef Id="535223205"/>
-						<MediaRef Id="654079656"/>
-						<MediaRef Id="669664009"/>
-						<MediaRef Id="929853616"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1651067412" Name="MeleeIce" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
-					<MediaRefs>
-						<MediaRef Id="28928322"/>
-						<MediaRef Id="55840581"/>
-						<MediaRef Id="59239616"/>
-						<MediaRef Id="128351763"/>
-						<MediaRef Id="469236046"/>
-						<MediaRef Id="535223205"/>
-						<MediaRef Id="669664009"/>
-						<MediaRef Id="824108392"/>
-						<MediaRef Id="930947941"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="1583612915" Name="MeleeLightning" DurationType="OneShot" DurationMin="0.5" DurationMax="0.8901391">
-					<MediaRefs>
-						<MediaRef Id="5318352"/>
-						<MediaRef Id="28928322"/>
-						<MediaRef Id="55840581"/>
-						<MediaRef Id="59239616"/>
-						<MediaRef Id="72631210"/>
-						<MediaRef Id="128351763"/>
-						<MediaRef Id="187260305"/>
-						<MediaRef Id="244673809"/>
-						<MediaRef Id="535223205"/>
-						<MediaRef Id="669664009"/>
-						<MediaRef Id="909458974"/>
-					</MediaRefs>
-					<PluginRefs>
-						<ShareSets>
-							<PluginRef Id="544780433"/>
-						</ShareSets>
-					</PluginRefs>
-				</Event>
 				<Event Id="3991942870" Name="Music" DurationType="Infinite">
 					<SwitchContainers>
 						<SwitchContainer>
@@ -910,13 +387,576 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="1843531235" Name="PlayButton" DurationType="OneShot" DurationMin="6.9204707" DurationMax="6.937412">
+				<Event Id="427386941" Name="RoomMus" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="197135554"/>
-						<MediaRef Id="680414174"/>
-						<MediaRef Id="703904446"/>
-						<MediaRef Id="766739187"/>
+						<MediaRef Id="242173308"/>
 					</MediaRefs>
+				</Event>
+			</Events>
+			<StateGroups>
+				<StateGroup Id="1021618141" Name="MusicState">
+					<States>
+						<State Id="192579722" Name="IcePuzzle"/>
+						<State Id="733150682" Name="IceCombat"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="1125500713" Name="Intro"/>
+						<State Id="2437783708" Name="LightningOutOfPuzzle"/>
+						<State Id="2990546425" Name="LightningCombat"/>
+						<State Id="3099519893" Name="IceOutOfCombat"/>
+						<State Id="3485352473" Name="LightningPuzzle"/>
+						<State Id="3604647259" Name="MainMenu"/>
+						<State Id="4102602869" Name="IceOutOfPuzzle"/>
+						<State Id="4114645792" Name="LightningOutOfCombat"/>
+					</States>
+				</StateGroup>
+			</StateGroups>
+		</SoundBank>
+		<SoundBank Id="2519533265" Type="User" Language="SFX" Hash="{4015F641-6651-BE00-3A8A-8333D653091F}">
+			<ShortName>CombatAndEnviorment</ShortName>
+			<Path>CombatAndEnviorment.bnk</Path>
+			<Media>
+				<File Id="3886522" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objects, Misc, Paint, Spray Can, Marble, Shake SND30684.wav</ShortName>
+					<CachePath>SFX/Objects, Misc, Paint, Spray Can, Marble, Shake SND30684_94083B4A.wem</CachePath>
+				</File>
+				<File Id="5318352" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Zap2.wav</ShortName>
+					<CachePath>SFX/Zap2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="21833884" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
+					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_C5716EAD.wem</CachePath>
+				</File>
+				<File Id="28928322" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Kick3.wav</ShortName>
+					<CachePath>SFX/Kick3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="42034528" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
+					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_D6DC0D05.wem</CachePath>
+				</File>
+				<File Id="43950693" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Swoosh2.wav</ShortName>
+					<CachePath>SFX/Swoosh2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="55840581" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MicTap2.wav</ShortName>
+					<CachePath>SFX/MicTap2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="59239616" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MicTap1.wav</ShortName>
+					<CachePath>SFX/MicTap1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="64644625" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RockPlatformPush1.wav</ShortName>
+					<CachePath>SFX/RockPlatformPush1_5559772D.wem</CachePath>
+				</File>
+				<File Id="72631210" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Electricity, Zap, Shock, Impact, Short 02 SND13443.wav</ShortName>
+					<CachePath>SFX/Electricity, Zap, Shock, Impact, Short 02 SND13443_7E235683.wem</CachePath>
+				</File>
+				<File Id="94231916" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_E9170620.wem</CachePath>
+				</File>
+				<File Id="101762498" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceBlockWooshes.wav</ShortName>
+					<CachePath>SFX/IceBlockWooshes_F0C80020.wem</CachePath>
+				</File>
+				<File Id="103387700" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Woowoowoowoo.wav</ShortName>
+					<CachePath>SFX/Woowoowoowoo_8B8B3884.wem</CachePath>
+				</File>
+				<File Id="108359842" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CrystalTones.wav</ShortName>
+					<CachePath>SFX/CrystalTones_CD8180DC.wem</CachePath>
+				</File>
+				<File Id="119298661" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objects, Misc, Paint, Spray Paint Can, Shake SND29085.wav</ShortName>
+					<CachePath>SFX/Objects, Misc, Paint, Spray Paint Can, Shake SND29085_2B6C36E6.wem</CachePath>
+				</File>
+				<File Id="123022695" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerHitImpact.wav</ShortName>
+					<CachePath>SFX/PlayerHitImpact_0E4A869D.wem</CachePath>
+				</File>
+				<File Id="128351763" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Kick1.wav</ShortName>
+					<CachePath>SFX/Kick1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="135118416" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
+					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_548B16BC.wem</CachePath>
+				</File>
+				<File Id="144065966" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CrystalTones.wav</ShortName>
+					<CachePath>SFX/CrystalTones_10B9C241.wem</CachePath>
+				</File>
+				<File Id="152936960" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objects, Misc, Paint, Spray Paint Can, Shake SND29085.wav</ShortName>
+					<CachePath>SFX/Objects, Misc, Paint, Spray Paint Can, Shake SND29085_EAF5D6F7.wem</CachePath>
+				</File>
+				<File Id="162829338" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CrystalTones.wav</ShortName>
+					<CachePath>SFX/CrystalTones_DA56C6CA.wem</CachePath>
+				</File>
+				<File Id="167300729" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</ShortName>
+					<CachePath>SFX/Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_899D2710.wem</CachePath>
+				</File>
+				<File Id="167927468" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objects, Misc, Paint, Spray Paint Can, Shake SND29085.wav</ShortName>
+					<CachePath>SFX/Objects, Misc, Paint, Spray Paint Can, Shake SND29085_52477903.wem</CachePath>
+				</File>
+				<File Id="178823695" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Fire3.wav</ShortName>
+					<CachePath>SFX/Fire3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="184873857" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Woowoowoowoo.wav</ShortName>
+					<CachePath>SFX/Woowoowoowoo_8084B345.wem</CachePath>
+				</File>
+				<File Id="187260305" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Electricity, Zap, Shock, Impact, Short 03 SND20300.wav</ShortName>
+					<CachePath>SFX/Electricity, Zap, Shock, Impact, Short 03 SND20300_818F3B66.wem</CachePath>
+				</File>
+				<File Id="200077581" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objects, Misc, Paint, Spray Can, Marble, Shake SND30684.wav</ShortName>
+					<CachePath>SFX/Objects, Misc, Paint, Spray Can, Marble, Shake SND30684_9588A38E.wem</CachePath>
+				</File>
+				<File Id="220814183" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerHitDowner.wav</ShortName>
+					<CachePath>SFX/PlayerHitDowner_ACD55C21.wem</CachePath>
+				</File>
+				<File Id="244673809" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Electricity, Zap, Shock, Impact, Heavy 03 SND13445.wav</ShortName>
+					<CachePath>SFX/Electricity, Zap, Shock, Impact, Heavy 03 SND13445_818F3B66.wem</CachePath>
+				</File>
+				<File Id="256974757" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
+					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_A844FEFE.wem</CachePath>
+				</File>
+				<File Id="271985866" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GateOpen.wav</ShortName>
+					<CachePath>SFX/GateOpen_0FD4388A.wem</CachePath>
+				</File>
+				<File Id="296816978" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GateOpen.wav</ShortName>
+					<CachePath>SFX/GateOpen_0479D825.wem</CachePath>
+				</File>
+				<File Id="320125018" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceBlockWooshes.wav</ShortName>
+					<CachePath>SFX/IceBlockWooshes_907CAAA9.wem</CachePath>
+				</File>
+				<File Id="327120337" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GateOpen.wav</ShortName>
+					<CachePath>SFX/GateOpen_B8D40784.wem</CachePath>
+				</File>
+				<File Id="355475302" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
+					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_08A40089.wem</CachePath>
+				</File>
+				<File Id="361976253" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_BA5A28CF.wem</CachePath>
+				</File>
+				<File Id="362380582" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Swoosh1.wav</ShortName>
+					<CachePath>SFX/Swoosh1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="397062548" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shimmer1.wav</ShortName>
+					<CachePath>SFX/Shimmer1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="403578445" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerHitDowner.wav</ShortName>
+					<CachePath>SFX/PlayerHitDowner_1F047EF7.wem</CachePath>
+				</File>
+				<File Id="456996073" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dashing.wav</ShortName>
+					<CachePath>SFX/Dashing_34CC5678.wem</CachePath>
+				</File>
+				<File Id="469236046" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ice3.wav</ShortName>
+					<CachePath>SFX/Ice3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="470829322" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_73616B20.wem</CachePath>
+				</File>
+				<File Id="497414986" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CrystalZap.wav</ShortName>
+					<CachePath>SFX/CrystalZap_818F3B66.wem</CachePath>
+				</File>
+				<File Id="510362844" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objects, Misc, Paint, Spray Paint Can, Shake SND29085.wav</ShortName>
+					<CachePath>SFX/Objects, Misc, Paint, Spray Paint Can, Shake SND29085_3835B1E5.wem</CachePath>
+				</File>
+				<File Id="524500419" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerHitDowner.wav</ShortName>
+					<CachePath>SFX/PlayerHitDowner_094C70E3.wem</CachePath>
+				</File>
+				<File Id="535223205" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>MicTap3.wav</ShortName>
+					<CachePath>SFX/MicTap3_818F3B66.wem</CachePath>
+				</File>
+				<File Id="546120684" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CrowdSurfLoop.wav</ShortName>
+					<CachePath>SFX/CrowdSurfLoop_11A93380.wem</CachePath>
+				</File>
+				<File Id="555433054" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</ShortName>
+					<CachePath>SFX/Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_923C70A6.wem</CachePath>
+				</File>
+				<File Id="560172071" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_651E6C52.wem</CachePath>
+				</File>
+				<File Id="567844658" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Lever2.wav</ShortName>
+					<CachePath>SFX/Lever2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="568257500" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GateOpen.wav</ShortName>
+					<CachePath>SFX/GateOpen_081E0CF6.wem</CachePath>
+				</File>
+				<File Id="577030918" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</ShortName>
+					<CachePath>SFX/Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_E30C70A0.wem</CachePath>
+				</File>
+				<File Id="583637567" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_2D5FA1F8.wem</CachePath>
+				</File>
+				<File Id="595136245" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>RockPlatformPush2.wav</ShortName>
+					<CachePath>SFX/RockPlatformPush2_DA4B44F3.wem</CachePath>
+				</File>
+				<File Id="595452255" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Woowoowoowoo.wav</ShortName>
+					<CachePath>SFX/Woowoowoowoo_27B527DD.wem</CachePath>
+				</File>
+				<File Id="596267822" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_8DF2FD27.wem</CachePath>
+				</File>
+				<File Id="612633811" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DashReady.wav</ShortName>
+					<CachePath>SFX/DashReady_5DE14E10.wem</CachePath>
+				</File>
+				<File Id="618127826" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceBlockWooshes.wav</ShortName>
+					<CachePath>SFX/IceBlockWooshes_40878711.wem</CachePath>
+				</File>
+				<File Id="620045000" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GateOpen.wav</ShortName>
+					<CachePath>SFX/GateOpen_333BCD73.wem</CachePath>
+				</File>
+				<File Id="630432816" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Lever1.wav</ShortName>
+					<CachePath>SFX/Lever1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="639389320" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerHitImpact.wav</ShortName>
+					<CachePath>SFX/PlayerHitImpact_E134E976.wem</CachePath>
+				</File>
+				<File Id="651268478" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GateOpen.wav</ShortName>
+					<CachePath>SFX/GateOpen_4984368E.wem</CachePath>
+				</File>
+				<File Id="654079656" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Fire1.wav</ShortName>
+					<CachePath>SFX/Fire1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="654308591" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerHitDowner.wav</ShortName>
+					<CachePath>SFX/PlayerHitDowner_87535765.wem</CachePath>
+				</File>
+				<File Id="660611193" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CrystalTones.wav</ShortName>
+					<CachePath>SFX/CrystalTones_DBA94521.wem</CachePath>
+				</File>
+				<File Id="664797136" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Shimmer2.wav</ShortName>
+					<CachePath>SFX/Shimmer2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="669664009" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Kick2.wav</ShortName>
+					<CachePath>SFX/Kick2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="672424488" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objects, Misc, Paint, Spray Can, Marble, Shake SND30684.wav</ShortName>
+					<CachePath>SFX/Objects, Misc, Paint, Spray Can, Marble, Shake SND30684_D7907CD1.wem</CachePath>
+				</File>
+				<File Id="682767542" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
+					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_96A6D7B5.wem</CachePath>
+				</File>
+				<File Id="690577249" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DashReady.wav</ShortName>
+					<CachePath>SFX/DashReady_80E605BD.wem</CachePath>
+				</File>
+				<File Id="695187573" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerHitImpact.wav</ShortName>
+					<CachePath>SFX/PlayerHitImpact_D05A1D10.wem</CachePath>
+				</File>
+				<File Id="695289053" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Woowoowoowoo.wav</ShortName>
+					<CachePath>SFX/Woowoowoowoo_A49B9D91.wem</CachePath>
+				</File>
+				<File Id="700571979" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerHitDowner.wav</ShortName>
+					<CachePath>SFX/PlayerHitDowner_08DB20D2.wem</CachePath>
+				</File>
+				<File Id="706702062" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CrystalShimmers.wav</ShortName>
+					<CachePath>SFX/CrystalShimmers_C3225900.wem</CachePath>
+				</File>
+				<File Id="718078501" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GateOpen.wav</ShortName>
+					<CachePath>SFX/GateOpen_9B020547.wem</CachePath>
+				</File>
+				<File Id="733335054" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceBlockWooshes.wav</ShortName>
+					<CachePath>SFX/IceBlockWooshes_861873C6.wem</CachePath>
+				</File>
+				<File Id="742707364" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerHitDowner.wav</ShortName>
+					<CachePath>SFX/PlayerHitDowner_018C8FF8.wem</CachePath>
+				</File>
+				<File Id="771010357" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceBlockWooshes.wav</ShortName>
+					<CachePath>SFX/IceBlockWooshes_A9FE4798.wem</CachePath>
+				</File>
+				<File Id="824108392" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ice2.wav</ShortName>
+					<CachePath>SFX/Ice2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="853954014" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>CrystalShimmers.wav</ShortName>
+					<CachePath>SFX/CrystalShimmers_9DF8CA20.wem</CachePath>
+				</File>
+				<File Id="860878555" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dashing.wav</ShortName>
+					<CachePath>SFX/Dashing_4A348835.wem</CachePath>
+				</File>
+				<File Id="896693686" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_3CE83CA9.wem</CachePath>
+				</File>
+				<File Id="896701260" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
+					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_35360599.wem</CachePath>
+				</File>
+				<File Id="904304785" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
+					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_B02E92DE.wem</CachePath>
+				</File>
+				<File Id="908953981" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerHitImpact.wav</ShortName>
+					<CachePath>SFX/PlayerHitImpact_1BB0DF92.wem</CachePath>
+				</File>
+				<File Id="909458974" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Zap1.wav</ShortName>
+					<CachePath>SFX/Zap1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="914480457" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</ShortName>
+					<CachePath>SFX/Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_76C6313E.wem</CachePath>
+				</File>
+				<File Id="927171492" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Woowoowoowoo.wav</ShortName>
+					<CachePath>SFX/Woowoowoowoo_B55E3CA8.wem</CachePath>
+				</File>
+				<File Id="929853616" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Fire2.wav</ShortName>
+					<CachePath>SFX/Fire2_818F3B66.wem</CachePath>
+				</File>
+				<File Id="930362323" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerHitImpact.wav</ShortName>
+					<CachePath>SFX/PlayerHitImpact_3BD96E54.wem</CachePath>
+				</File>
+				<File Id="930947941" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ice1.wav</ShortName>
+					<CachePath>SFX/Ice1_818F3B66.wem</CachePath>
+				</File>
+				<File Id="935653253" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyHitFull.wav</ShortName>
+					<CachePath>SFX/EnemyHitFull_4396A49F.wem</CachePath>
+				</File>
+				<File Id="953151695" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerHitDowner.wav</ShortName>
+					<CachePath>SFX/PlayerHitDowner_45B24C9B.wem</CachePath>
+				</File>
+				<File Id="956823132" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceBlockWooshes.wav</ShortName>
+					<CachePath>SFX/IceBlockWooshes_1AE3F1DC.wem</CachePath>
+				</File>
+				<File Id="968532410" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</ShortName>
+					<CachePath>SFX/Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_2512DC4C.wem</CachePath>
+				</File>
+				<File Id="985564156" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>GateOpen.wav</ShortName>
+					<CachePath>SFX/GateOpen_B92A965B.wem</CachePath>
+				</File>
+				<File Id="1025029307" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Dashing.wav</ShortName>
+					<CachePath>SFX/Dashing_DE1041E2.wem</CachePath>
+				</File>
+				<File Id="1027865135" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerHitImpact.wav</ShortName>
+					<CachePath>SFX/PlayerHitImpact_2A452683.wem</CachePath>
+				</File>
+				<File Id="1028609631" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>PlayerHitImpact.wav</ShortName>
+					<CachePath>SFX/PlayerHitImpact_90667E1B.wem</CachePath>
+				</File>
+				<File Id="1032575052" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceBlockWooshes.wav</ShortName>
+					<CachePath>SFX/IceBlockWooshes_BA941C4D.wem</CachePath>
+				</File>
+				<File Id="1046511787" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DashReady.wav</ShortName>
+					<CachePath>SFX/DashReady_B7A52A72.wem</CachePath>
+				</File>
+			</Media>
+			<Plugins>
+				<ShareSets>
+					<Plugin Id="544780433" Name="New_Gain" LibName="Wwise Gain" LibId="9109507"/>
+					<Plugin Id="1008402193" Name="Low_Pass_20KHz" LibName="Wwise Parametric EQ" LibId="6881283"/>
+					<Plugin Id="1259256166" Name="New_RoomVerb" LibName="Wwise RoomVerb" LibId="7733251"/>
+					<Plugin Id="3160090811" Name="New_Compressor" LibName="Wwise Compressor" LibId="7077891"/>
+					<Plugin Id="3435419520" Name="New_Guitar_Distortion" LibName="Wwise Guitar Distortion" LibId="8257539"/>
+				</ShareSets>
+			</Plugins>
+			<Events>
+				<Event Id="1739654744" Name="CrowdSurf" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="546120684"/>
+					</MediaRefs>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="2352559104" Id="2260458779" Name="InCrowdSurf"/>
+					</ActionSetState>
+				</Event>
+				<Event Id="3444057113" Name="Crystal" DurationType="OneShot" DurationMin="3.4768662" DurationMax="4.176854">
+					<MediaRefs>
+						<MediaRef Id="108359842"/>
+						<MediaRef Id="144065966"/>
+						<MediaRef Id="162829338"/>
+						<MediaRef Id="497414986"/>
+						<MediaRef Id="660611193"/>
+						<MediaRef Id="706702062"/>
+						<MediaRef Id="853954014"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1022374206" Name="DashReady" DurationType="OneShot" DurationMin="0.632337" DurationMax="0.939661">
+					<MediaRefs>
+						<MediaRef Id="612633811"/>
+						<MediaRef Id="690577249"/>
+						<MediaRef Id="1046511787"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1960186623" Name="GateLift" DurationType="OneShot" DurationMin="3.3691592" DurationMax="4.6123695">
+					<MediaRefs>
+						<MediaRef Id="167300729"/>
+						<MediaRef Id="271985866"/>
+						<MediaRef Id="296816978"/>
+						<MediaRef Id="327120337"/>
+						<MediaRef Id="555433054"/>
+						<MediaRef Id="568257500"/>
+						<MediaRef Id="577030918"/>
+						<MediaRef Id="620045000"/>
+						<MediaRef Id="651268478"/>
+						<MediaRef Id="718078501"/>
+						<MediaRef Id="914480457"/>
+						<MediaRef Id="968532410"/>
+						<MediaRef Id="985564156"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="418751485" Name="IceBlock" DurationType="OneShot" DurationMin="1.7034016" DurationMax="2.37977">
+					<MediaRefs>
+						<MediaRef Id="101762498"/>
+						<MediaRef Id="320125018"/>
+						<MediaRef Id="618127826"/>
+						<MediaRef Id="733335054"/>
+						<MediaRef Id="771010357"/>
+						<MediaRef Id="956823132"/>
+						<MediaRef Id="1032575052"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2494836859" Name="IForgotWhatAPressurePlateWasCalled" DurationType="OneShot" DurationMin="1.5425884" DurationMax="1.9724116">
+					<MediaRefs>
+						<MediaRef Id="64644625"/>
+						<MediaRef Id="595136245"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="605469711" Name="LeveLCompleteSting" DurationType="OneShot" DurationMin="0.21453871" DurationMax="0.43607208">
+					<MediaRefs>
+						<MediaRef Id="103387700"/>
+						<MediaRef Id="184873857"/>
+						<MediaRef Id="595452255"/>
+						<MediaRef Id="695289053"/>
+						<MediaRef Id="927171492"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="1259256166"/>
+							<PluginRef Id="3160090811"/>
+							<PluginRef Id="3435419520"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
+				<Event Id="2782712987" Name="Lever" DurationType="OneShot" DurationMin="2.4" DurationMax="2.4">
+					<MediaRefs>
+						<MediaRef Id="567844658"/>
+						<MediaRef Id="630432816"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2248677623" Name="MeleeFire" DurationType="OneShot" DurationMin="0.6" DurationMax="0.72210854">
+					<MediaRefs>
+						<MediaRef Id="28928322"/>
+						<MediaRef Id="55840581"/>
+						<MediaRef Id="59239616"/>
+						<MediaRef Id="128351763"/>
+						<MediaRef Id="178823695"/>
+						<MediaRef Id="535223205"/>
+						<MediaRef Id="654079656"/>
+						<MediaRef Id="669664009"/>
+						<MediaRef Id="929853616"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1651067412" Name="MeleeIce" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
+					<MediaRefs>
+						<MediaRef Id="28928322"/>
+						<MediaRef Id="55840581"/>
+						<MediaRef Id="59239616"/>
+						<MediaRef Id="128351763"/>
+						<MediaRef Id="469236046"/>
+						<MediaRef Id="535223205"/>
+						<MediaRef Id="669664009"/>
+						<MediaRef Id="824108392"/>
+						<MediaRef Id="930947941"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="1583612915" Name="MeleeLightning" DurationType="OneShot" DurationMin="0.5" DurationMax="0.8901391">
+					<MediaRefs>
+						<MediaRef Id="5318352"/>
+						<MediaRef Id="28928322"/>
+						<MediaRef Id="55840581"/>
+						<MediaRef Id="59239616"/>
+						<MediaRef Id="72631210"/>
+						<MediaRef Id="128351763"/>
+						<MediaRef Id="187260305"/>
+						<MediaRef Id="244673809"/>
+						<MediaRef Id="535223205"/>
+						<MediaRef Id="669664009"/>
+						<MediaRef Id="909458974"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="544780433"/>
+						</ShareSets>
+					</PluginRefs>
 				</Event>
 				<Event Id="2525052962" Name="PlayerDash" DurationType="OneShot" DurationMin="2.6027431" DurationMax="3.6256506">
 					<MediaRefs>
@@ -988,17 +1028,6 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="1518733879" Name="RockPlatformPuzzle" DurationType="OneShot" DurationMin="1.5425884" DurationMax="1.9724116">
-					<MediaRefs>
-						<MediaRef Id="64644625"/>
-						<MediaRef Id="595136245"/>
-					</MediaRefs>
-				</Event>
-				<Event Id="427386941" Name="RoomMus" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="242173308"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="2460311919" Name="SkeletonHit" DurationType="OneShot" DurationMin="0.86824834" DurationMax="1.3890802">
 					<MediaRefs>
 						<MediaRef Id="94231916"/>
@@ -1032,21 +1061,6 @@
 				</Event>
 			</Events>
 			<StateGroups>
-				<StateGroup Id="1021618141" Name="MusicState">
-					<States>
-						<State Id="192579722" Name="IcePuzzle"/>
-						<State Id="733150682" Name="IceCombat"/>
-						<State Id="748895195" Name="None"/>
-						<State Id="1125500713" Name="Intro"/>
-						<State Id="2437783708" Name="LightningOutOfPuzzle"/>
-						<State Id="2990546425" Name="LightningCombat"/>
-						<State Id="3099519893" Name="IceOutOfCombat"/>
-						<State Id="3485352473" Name="LightningPuzzle"/>
-						<State Id="3604647259" Name="MainMenu"/>
-						<State Id="4102602869" Name="IceOutOfPuzzle"/>
-						<State Id="4114645792" Name="LightningOutOfCombat"/>
-					</States>
-				</StateGroup>
 				<StateGroup Id="2352559104" Name="CrowdSurfing">
 					<States>
 						<State Id="748895195" Name="None"/>
@@ -1056,6 +1070,10 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
+		<SoundBank Id="2892162784" Type="User" Language="SFX" Hash="{05F129CE-9AAB-6B72-7AF2-FE75CBCD88E7}">
+			<ShortName>DontWantToDelete</ShortName>
+			<Path>DontWantToDelete.bnk</Path>
+		</SoundBank>
 	</SoundBanks>
-	<FileHash>{FB9741D9-FC14-4826-FBFF-21066460CF9D}</FileHash>
+	<FileHash>{07E4DFFB-51EF-D609-26B1-B3AF518D07BB}</FileHash>
 </SoundBanksInfo>

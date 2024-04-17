@@ -21,9 +21,9 @@ namespace AK
         static const AkUniqueID FART = 2948602592U;
         static const AkUniqueID GATELIFT = 1960186623U;
         static const AkUniqueID ICEBLOCK = 418751485U;
+        static const AkUniqueID IFORGOTWHATAPRESSUREPLATEWASCALLED = 2494836859U;
         static const AkUniqueID LEVELCOMPLETESTING = 605469711U;
         static const AkUniqueID LEVER = 2782712987U;
-        static const AkUniqueID LIGHTNINGMUSICLOOP = 2689877988U;
         static const AkUniqueID MELEEFIRE = 2248677623U;
         static const AkUniqueID MELEEICE = 1651067412U;
         static const AkUniqueID MELEELIGHTNING = 1583612915U;
@@ -34,7 +34,6 @@ namespace AK
         static const AkUniqueID RANGEDFIRE = 1744863420U;
         static const AkUniqueID RANGEDICE = 2982846157U;
         static const AkUniqueID RANGEDLIGHTNING = 1899629126U;
-        static const AkUniqueID ROCKPLATFORMPUZZLE = 1518733879U;
         static const AkUniqueID ROOMMUS = 427386941U;
         static const AkUniqueID SKELETONHIT = 2460311919U;
         static const AkUniqueID WORDPICKUP = 3290622745U;
@@ -93,8 +92,10 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID MAIN = 3161908922U;
-        static const AkUniqueID TESTSOUNDBANK = 1831431028U;
+        static const AkUniqueID COMBATANDENVIORMENT = 2519533265U;
+        static const AkUniqueID DONTWANTTODELETE = 2892162784U;
+        static const AkUniqueID INTERACTIVEMUSICBANK = 1702439946U;
+        static const AkUniqueID UIANDFARTSOUNDBANK = 784481870U;
     } // namespace BANKS
 
     namespace BUSSES
