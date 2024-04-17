@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="784481870" Type="User" Language="SFX" Hash="{FAE93316-A70B-3B9D-959C-2ABCC2C4D79A}">
+		<SoundBank Id="784481870" Type="User" Language="SFX" Hash="{28256CA7-E71A-D49A-8AD4-7B60833ADDF5}">
 			<ShortName>UIAndFartSoundBank</ShortName>
 			<Path>UIAndFartSoundBank.bnk</Path>
 			<Media>
@@ -224,7 +224,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1702439946" Type="User" Language="SFX" Hash="{BD7F2DFC-D24B-E8D0-2A59-79A847EEB7A4}">
+		<SoundBank Id="1702439946" Type="User" Language="SFX" Hash="{27FBC73E-26B6-9823-67F4-DE26ACFF7B8E}">
 			<ShortName>InteractiveMusicBank</ShortName>
 			<Path>InteractiveMusicBank.bnk</Path>
 			<Media>
@@ -239,10 +239,6 @@
 				<File Id="237657344" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems 27-UVIWorkstation.wav</ShortName>
 					<CachePath>SFX/NewStems 27-UVIWorkstation_D9B786A0.wem</CachePath>
-				</File>
-				<File Id="242173308" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Underground50S3.wav</ShortName>
-					<CachePath>SFX/Underground50S3_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="262532940" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MenuMusic_2-Kontakt_7.wav</ShortName>
@@ -267,6 +263,10 @@
 				<File Id="637839352" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MenuMusic_1-Kontakt_7.wav</ShortName>
 					<CachePath>SFX/MenuMusic_1-Kontakt_7_D9B786A0.wem</CachePath>
+				</File>
+				<File Id="639193959" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NEWIntro.wav</ShortName>
+					<CachePath>SFX/NEWIntro_D9B786A0.wem</CachePath>
 				</File>
 				<File Id="648565713" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems OrchestralBell.wav</ShortName>
@@ -311,7 +311,7 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="State" GroupId="1021618141" Id="1125500713"/>
 							<MediaRefs>
-								<MediaRef Id="771789552"/>
+								<MediaRef Id="639193959"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -387,11 +387,6 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="427386941" Name="RoomMus" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="242173308"/>
-					</MediaRefs>
-				</Event>
 			</Events>
 			<StateGroups>
 				<StateGroup Id="1021618141" Name="MusicState">
@@ -411,7 +406,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="2519533265" Type="User" Language="SFX" Hash="{4015F641-6651-BE00-3A8A-8333D653091F}">
+		<SoundBank Id="2519533265" Type="User" Language="SFX" Hash="{C96E2EDF-E81E-1FE8-B946-929A1E21D137}">
 			<ShortName>CombatAndEnviorment</ShortName>
 			<Path>CombatAndEnviorment.bnk</Path>
 			<Media>
@@ -1070,10 +1065,23 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="2892162784" Type="User" Language="SFX" Hash="{05F129CE-9AAB-6B72-7AF2-FE75CBCD88E7}">
+		<SoundBank Id="2892162784" Type="User" Language="SFX" Hash="{DF192FBD-ADB6-C3D5-E9FF-B81E1A3C90F7}">
 			<ShortName>DontWantToDelete</ShortName>
 			<Path>DontWantToDelete.bnk</Path>
+			<Media>
+				<File Id="242173308" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Underground50S3.wav</ShortName>
+					<CachePath>SFX/Underground50S3_FBC78EF0.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="427386941" Name="RoomMus" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="242173308"/>
+					</MediaRefs>
+				</Event>
+			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{07E4DFFB-51EF-D609-26B1-B3AF518D07BB}</FileHash>
+	<FileHash>{F7E13D9E-BB4A-1CED-564C-F0553BE987CF}</FileHash>
 </SoundBanksInfo>
