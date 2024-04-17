@@ -12,6 +12,8 @@ public class Generator : MonoBehaviour
     [SerializeField] private bool turnOn;
     [Tooltip("Generator material to turn on")]
     [SerializeField] private Material onMat;
+    [Tooltip("Generator Animator")]
+    [SerializeField] private Animator genAnimator;
     /*[Tooltip("Gate to open when generator is on")]
     [SerializeField] private GameObject gate;*/
 
@@ -48,6 +50,7 @@ public class Generator : MonoBehaviour
         {
             StartCoroutine(wireEmission.AlterEmissionOverTime(true));
         }
+        genAnimator.SetBool("Active", true);
     }
 
     #endregion
