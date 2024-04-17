@@ -1428,6 +1428,60 @@
 								</ObjectList>
 							</ObjectLists>
 						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="EnemyRattle" ID="{C0AF2634-79F5-4AB8-AC59-B20FED61A577}" ShortID="83155119">
+							<PropertyList>
+								<Property Name="Pitch" Type="int32">
+									<ModifierList>
+										<ModifierInfo>
+											<Modifier Name="" ID="{A9ED70BE-04DE-4EAA-9441-0B54138BA7F3}">
+												<PropertyList>
+													<Property Name="Enabled" Type="bool" Value="True"/>
+													<Property Name="Min" Type="Real64" Value="-850"/>
+												</PropertyList>
+											</Modifier>
+										</ModifierInfo>
+									</ModifierList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="EnemyStartEncounter" ID="{8377C466-EA6D-4571-822C-150E2B24D55C}" ShortID="461712988">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="EnemyStartEncounter" ID="{EFCCC80F-34F4-4BEA-98F2-7ABD7D6D579F}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.131764705882353"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.33647058823529"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.22117647058824"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>EnemyStartEncounter.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="780015833"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="EnemyStartEncounter" ID="{EFCCC80F-34F4-4BEA-98F2-7ABD7D6D579F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>
 				<Folder Name="Interaction" ID="{85C831FA-85F4-4F5A-B48E-50F2D6F12C4A}" ShortID="221045545">
@@ -2864,6 +2918,951 @@
 									</ActiveSourceList>
 								</Sound>
 							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="NewDashCloth" ID="{AB8C892E-AF3B-4ED4-A479-B7545A8F618F}" ShortID="1043913143">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>4</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="PartOfDash_ClothesHit2" ID="{800671C8-1DD2-4647-BD98-31D7890AEA92}" ShortID="65287077">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHit2" ID="{90A791EF-9215-4176-83D2-6D32F01D3A5E}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.141176470588235"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.338823529411765"/>
+												<Property Name="TrimEnd" Type="Real64" Value="0.889411764705881"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHit2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="983114566"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHit2" ID="{90A791EF-9215-4176-83D2-6D32F01D3A5E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHit3" ID="{A302D3B9-3D6D-416C-AEF7-B3765EF5D6AB}" ShortID="364497428">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHit3" ID="{BE25EECD-6E3D-4DE9-BCBB-DA3D30FFED04}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.112941176470588"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.324705882352941"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.508235294117647"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.48235294117647"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHit3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="441394799"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHit3" ID="{BE25EECD-6E3D-4DE9-BCBB-DA3D30FFED04}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHitLarge" ID="{054C4AD9-EB0D-4495-82AF-109FF379BB9F}" ShortID="762580142">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHitLarge" ID="{24A8CB2F-D84A-4A56-9CA0-E7CECEF0D36A}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.254117647058824"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.381176470588235"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.36941176470588"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHitLarge.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="19964142"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHitLarge" ID="{24A8CB2F-D84A-4A56-9CA0-E7CECEF0D36A}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHitSuperHit" ID="{6D0BF914-026B-4F90-9C3B-0EF4CA21DAE6}" ShortID="371516814">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHitSuperHit" ID="{9E5A3216-09F6-4C69-A830-39CD1C36B9BC}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.254117647058824"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.423529411764706"/>
+												<Property Name="TrimEnd" Type="Real64" Value="1.36941176470588"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHitSuperHit.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="889512591"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHitSuperHit" ID="{9E5A3216-09F6-4C69-A830-39CD1C36B9BC}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHit2_01" ID="{B109BA3A-5B37-4320-A37D-6A663BEE5784}" ShortID="566572059">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHit2" ID="{0D0E67B1-AE7B-4E43-A29B-78BE782929E0}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.183529411764706"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.13176470588236"/>
+												<Property Name="TrimEnd" Type="Real64" Value="2.79529411764706"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHit2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="147474914"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHit2" ID="{0D0E67B1-AE7B-4E43-A29B-78BE782929E0}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHit2_02" ID="{EA994624-3B72-4691-9B53-D23B33C835B6}" ShortID="946501326">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHit2" ID="{E32B5ECA-2B6A-4F7A-9B98-5B57DC27B25E}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.141176470588236"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.10823529411764"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.84235294117648"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHit2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1031647091"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHit2" ID="{E32B5ECA-2B6A-4F7A-9B98-5B57DC27B25E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHit2_03" ID="{E4B4A5DB-1328-4D89-AFBB-53B3210FA6A3}" ShortID="499646719">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHit2" ID="{2A9D836F-B153-41B9-9083-CF4009692A67}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.112941176470589"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="6.28235294117647"/>
+												<Property Name="TrimEnd" Type="Real64" Value="6.96"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHit2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="825127858"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHit2" ID="{2A9D836F-B153-41B9-9083-CF4009692A67}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHit2_04" ID="{90EDE08B-257C-4775-A46F-4CB05111B814}" ShortID="436209082">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHit2" ID="{C7C8D2B6-08E3-40EA-9FA4-1E42F9F61F7F}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.352941176470589"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="7.99058823529412"/>
+												<Property Name="TrimEnd" Type="Real64" Value="8.92235294117647"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHit2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="275029706"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHit2" ID="{C7C8D2B6-08E3-40EA-9FA4-1E42F9F61F7F}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHit2_05" ID="{0867216C-2B89-42B0-BF27-DC0F99124F6C}" ShortID="1072928303">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHit2" ID="{E5A07295-EDA8-4EEC-96C4-D60A8EA55B2B}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.211764705882352"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="9.78352941176471"/>
+												<Property Name="TrimEnd" Type="Real64" Value="10.5317647058824"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHit2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1057964410"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHit2" ID="{E5A07295-EDA8-4EEC-96C4-D60A8EA55B2B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHit3_01" ID="{D7A773B8-2D53-44FB-AF9C-BE3AF1D8A1C4}" ShortID="948044133">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHit3" ID="{76471C14-80A6-4A4E-97B8-949FDC1D36A1}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.127058823529412"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.183529411764706"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.30117647058824"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.30352941176471"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHit3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="368842346"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHit3" ID="{76471C14-80A6-4A4E-97B8-949FDC1D36A1}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHit3_02" ID="{F928A64D-FD99-4B41-A6AB-05BA20DBC21F}" ShortID="128943180">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHit3" ID="{E976C921-71E8-4155-A626-2F9BF8D42F42}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.098823529411765"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.183529411764706"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.40470588235294"/>
+												<Property Name="TrimEnd" Type="Real64" Value="5.37882352941177"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHit3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1013092545"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHit3" ID="{E976C921-71E8-4155-A626-2F9BF8D42F42}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHit3_03" ID="{8892F9B1-F098-4CEC-89FE-402618C64FB1}" ShortID="60545629">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHit3" ID="{7C67D295-62F7-48A5-90BB-3A2FC9F297BE}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.127058823529412"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.310588235294118"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="6.42352941176471"/>
+												<Property Name="TrimEnd" Type="Real64" Value="7.52470588235294"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHit3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="460497756"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHit3" ID="{7C67D295-62F7-48A5-90BB-3A2FC9F297BE}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHit3_04" ID="{53A26C1B-6DF9-4DA5-B7E7-D0B052837A6A}" ShortID="18032049">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHit3" ID="{957E21AA-D364-41F4-B796-D2C1DAA4F44B}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.169411764705882"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.254117647058822"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="8.17411764705882"/>
+												<Property Name="TrimEnd" Type="Real64" Value="9.10588235294118"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHit3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="674027757"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHit3" ID="{957E21AA-D364-41F4-B796-D2C1DAA4F44B}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHit3_05" ID="{9E096D03-A510-4DF9-9BBC-FAEC24234F69}" ShortID="822063969">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHit3" ID="{BFABCF7B-E125-4825-9C4B-967ECC7B7749}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.0705882352941174"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.367058823529412"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="10.08"/>
+												<Property Name="TrimEnd" Type="Real64" Value="11.1105882352941"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHit3.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="539064704"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHit3" ID="{BFABCF7B-E125-4825-9C4B-967ECC7B7749}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHitLarge_01" ID="{0D3DE627-09F1-4FA7-88BF-A49F1D248FDF}" ShortID="262709918">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHitLarge" ID="{2774F1A3-E781-45C6-910F-73ACDC9880CB}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.282352941176471"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.16"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.27529411764706"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHitLarge.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="648459634"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHitLarge" ID="{2774F1A3-E781-45C6-910F-73ACDC9880CB}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHitLarge_02" ID="{B6AA8D8B-893E-4765-B104-A49501EC4468}" ShortID="515113604">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHitLarge" ID="{9E1AABC9-5F03-4CF8-9620-15D3C9D9AE1C}">
+											<PropertyList>
+												<Property Name="FadeInDuration" Type="Real64" Value="0.098823529411765"/>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.24"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.17882352941176"/>
+												<Property Name="TrimEnd" Type="Real64" Value="5.50588235294118"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHitLarge.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="474020601"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHitLarge" ID="{9E1AABC9-5F03-4CF8-9620-15D3C9D9AE1C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHitLarge_03" ID="{8E9A5335-D2BD-43D8-AD62-C67B97E186FD}" ShortID="647079782">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHitLarge" ID="{8E978904-6E2E-44FA-B6F1-191BEE8F6549}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.211764705882353"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="6.36705882352941"/>
+												<Property Name="TrimEnd" Type="Real64" Value="7.41176470588236"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHitLarge.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="957755271"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHitLarge" ID="{8E978904-6E2E-44FA-B6F1-191BEE8F6549}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHitLarge_04" ID="{9B2EA096-3C60-46B4-9EC9-CED220AF2CE4}" ShortID="1006624186">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHitLarge" ID="{5366EBD3-0CDC-4616-90C3-7A2E2996CCC4}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.225882352941176"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="8.04705882352941"/>
+												<Property Name="TrimEnd" Type="Real64" Value="9.24705882352941"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHitLarge.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="146491788"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHitLarge" ID="{5366EBD3-0CDC-4616-90C3-7A2E2996CCC4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHitLarge_05" ID="{A55C5D17-99BF-4C29-B09F-83AD3DAAF03E}" ShortID="189564278">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHitLarge" ID="{BB700721-C12E-477A-83BB-2E3F4D600367}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.268235294117646"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="9.89647058823529"/>
+												<Property Name="TrimEnd" Type="Real64" Value="10.8847058823529"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHitLarge.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="421823431"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHitLarge" ID="{BB700721-C12E-477A-83BB-2E3F4D600367}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHitSuperHit_01" ID="{BE58E79A-3A27-4B7A-BDD4-7063B85AC0FE}" ShortID="305583819">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHitSuperHit" ID="{724DA157-1288-457D-9A97-5B0C55841436}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.282352941176471"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.25882352941177"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.19058823529412"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHitSuperHit.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="336097329"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHitSuperHit" ID="{724DA157-1288-457D-9A97-5B0C55841436}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHitSuperHit_02" ID="{AEE61490-B35D-4C97-ACFF-04A5DE5B71F7}" ShortID="924702676">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHitSuperHit" ID="{C71F7303-1092-438E-8201-9515383DBC32}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.296470588235294"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="4.27764705882352"/>
+												<Property Name="TrimEnd" Type="Real64" Value="5.32235294117647"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHitSuperHit.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="466475986"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHitSuperHit" ID="{C71F7303-1092-438E-8201-9515383DBC32}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHitSuperHit_03" ID="{F5C25EF8-CF00-4F7F-BFCF-166EEEAB5EE7}" ShortID="426102549">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHitSuperHit" ID="{28171D7E-BB42-4E0B-82A8-A94F2F7904AD}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.409411764705882"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="6.42352941176471"/>
+												<Property Name="TrimEnd" Type="Real64" Value="7.56705882352941"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHitSuperHit.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="346357101"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHitSuperHit" ID="{28171D7E-BB42-4E0B-82A8-A94F2F7904AD}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHitSuperHit_04" ID="{F93EB8F4-4445-44E4-9B0F-42C5510DF51D}" ShortID="266365553">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHitSuperHit" ID="{8EC1454B-0981-4836-92D6-FE0E32323025}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.352941176470588"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="8.14588235294118"/>
+												<Property Name="TrimEnd" Type="Real64" Value="9.21882352941176"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHitSuperHit.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="107507937"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHitSuperHit" ID="{8EC1454B-0981-4836-92D6-FE0E32323025}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_ClothesHitSuperHit_05" ID="{B5CB103A-FD80-490A-9BB3-2BED87CEB24C}" ShortID="519315474">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_ClothesHitSuperHit" ID="{0F7B8CB4-FF6C-46E2-BF6A-FA16B7D7483E}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.28235294117647"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="9.99529411764706"/>
+												<Property Name="TrimEnd" Type="Real64" Value="11.1529411764706"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_ClothesHitSuperHit.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="204940147"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_ClothesHitSuperHit" ID="{0F7B8CB4-FF6C-46E2-BF6A-FA16B7D7483E}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="NewDashGust" ID="{B75002B6-8C55-403A-8D5B-E8BF4EC110DB}" ShortID="1013601730">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>2</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="PartOfDash_WindGust1" ID="{EF53F5AA-11C9-4E72-B0D9-94C672D9B2CE}" ShortID="112794003">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>12</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_WindGust1" ID="{8E900D5F-8F6D-45CE-AB50-BA66F7462F1C}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.1807486631016"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="1.5144385026738"/>
+												<Property Name="TrimEnd" Type="Real64" Value="4.0427807486631"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_WindGust1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="266983698"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_WindGust1" ID="{8E900D5F-8F6D-45CE-AB50-BA66F7462F1C}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_WindGust2" ID="{BB866638-76DC-47C4-9CB6-50CFC6F5C04F}" ShortID="889411883">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_WindGust2" ID="{BA533111-5300-48F0-8F05-1FF807406C11}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.705882352941177"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="0.72"/>
+												<Property Name="TrimEnd" Type="Real64" Value="3.03529411764706"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_WindGust2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="247097687"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_WindGust2" ID="{BA533111-5300-48F0-8F05-1FF807406C11}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_WindGust1_01" ID="{5E5ADC7D-8510-46AF-BE7A-BDD6FA2E9BA6}" ShortID="1056372881">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>12</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_WindGust1" ID="{5E2CDB1F-6DFE-49BF-9206-A39AD8C0E638}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.1807486631016"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="6.93561497326204"/>
+												<Property Name="TrimEnd" Type="Real64" Value="9.42032085561497"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_WindGust1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="418162203"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_WindGust1" ID="{5E2CDB1F-6DFE-49BF-9206-A39AD8C0E638}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="PartOfDash_WindGust2_01" ID="{3DECA381-474B-4C7E-BAE9-CEE7210A54C6}" ShortID="268149170">
+									<PropertyList>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>2</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="PartOfDash_WindGust2" ID="{B4EA0949-7A17-4B3D-BAB1-5B4453FB8F23}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="0.776470588235294"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="6.19764705882353"/>
+												<Property Name="TrimEnd" Type="Real64" Value="8.66823529411764"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>PartOfDash_WindGust2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="424253595"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="PartOfDash_WindGust2" ID="{B4EA0949-7A17-4B3D-BAB1-5B4453FB8F23}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+						</RandomSequenceContainer>
+						<RandomSequenceContainer Name="Rumble" ID="{E2D2DF1D-963F-4B58-AADC-357F4DFAD850}" ShortID="577098619">
+							<PropertyList>
+								<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+								<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>7</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="EnvironmentBus" ID="{273EC341-FB06-4452-A2D4-E8B9F4DE3817}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<Sound Name="RockPlatformPush1" ID="{997821B7-C773-4BA2-8766-BF1A00CCD952}" ShortID="792436493">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="RockPlatformPush1" ID="{8938FBAA-BE66-4064-A5EB-E689CF2B1E42}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.43602793817935"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>RockPlatformPush1.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="1068515893"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="RockPlatformPush1" ID="{8938FBAA-BE66-4064-A5EB-E689CF2B1E42}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="RockPlatformPush2" ID="{694C58A6-738F-4896-B503-842F72FAB05A}" ShortID="843662166">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="RockPlatformPush2" ID="{094D7F10-4076-477E-932C-6AB377363D36}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.27036684782609"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>RockPlatformPush2.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="936539869"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="RockPlatformPush2" ID="{094D7F10-4076-477E-932C-6AB377363D36}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+							</ChildrenList>
+							<ObjectLists>
+								<ObjectList Name="Effects">
+									<Reference>
+										<Local>
+											<EffectSlot Name="" ID="{9054B288-324E-4489-A308-FB8D91250B05}" ShortID="541301909">
+												<ReferenceList>
+													<Reference Name="Effect" PluginName="Wwise Parametric EQ" CompanyID="0" PluginID="105" PluginType="3">
+														<ObjectRef Name="Low_Pass_20KHz" ID="{830124FB-B9D5-4AE8-846E-E94A74652666}" WorkUnitID="{E8613F7D-BAD3-45CD-A3ED-505576F31277}"/>
+													</Reference>
+												</ReferenceList>
+											</EffectSlot>
+										</Local>
+									</Reference>
+								</ObjectList>
+							</ObjectLists>
 						</RandomSequenceContainer>
 					</ChildrenList>
 				</Folder>

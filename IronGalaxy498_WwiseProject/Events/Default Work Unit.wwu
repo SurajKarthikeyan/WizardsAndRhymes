@@ -362,10 +362,17 @@
 								</Event>
 								<Event Name="PlayerDash" ID="{9F6809DB-078F-46A1-A6B1-627EA54E7371}">
 									<ChildrenList>
-										<Action Name="" ID="{1912F6E1-B465-44C2-89C3-6058541C78AF}" ShortID="355516049">
+										<Action Name="" ID="{F6D6AFB1-67B4-4B10-A1C1-B54D2B09204E}" ShortID="153480087">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Dash" ID="{047E9793-4289-47C7-B8B5-05DFF1AFFA86}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+													<ObjectRef Name="NewDashCloth" ID="{AB8C892E-AF3B-4ED4-A479-B7545A8F618F}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{CAD41F17-0C8D-49FD-AB5D-1F8717056AA1}" ShortID="958186689">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="NewDashGust" ID="{B75002B6-8C55-403A-8D5B-E8BF4EC110DB}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -455,6 +462,54 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="Cheer" ID="{38D7E995-FCC3-4C3A-A013-6AA60EB77A2A}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="EncounterStart" ID="{73CC69A2-FEA7-4B1B-ABE0-5AF0BE6273E5}">
+							<ChildrenList>
+								<Action Name="" ID="{DFBA394F-F985-47C2-9FA7-BD42BD1F011C}" ShortID="716069440">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="EnemyRattle" ID="{C0AF2634-79F5-4AB8-AC59-B20FED61A577}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{AF4B338B-9352-49A4-BD73-F0CC86FAD6EB}" ShortID="765499895">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Rumble" ID="{E2D2DF1D-963F-4B58-AADC-357F4DFAD850}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{9F06A8EA-7B43-4D25-85B9-3B5A110D184F}" ShortID="556818296">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="0.3"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="EnemyRattle" ID="{C0AF2634-79F5-4AB8-AC59-B20FED61A577}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{322AB677-BFF1-4229-9E00-0EAC2CC2C2BD}" ShortID="517974680">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="0.7"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="EnemyRattle" ID="{C0AF2634-79F5-4AB8-AC59-B20FED61A577}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{276B3520-FC28-466A-909C-A7EE1C68DA01}" ShortID="938041516">
+									<PropertyList>
+										<Property Name="Delay" Type="Real64" Value="1.2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="EnemyRattle" ID="{C0AF2634-79F5-4AB8-AC59-B20FED61A577}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
