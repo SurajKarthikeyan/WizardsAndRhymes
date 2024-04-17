@@ -170,6 +170,8 @@ public class PlayerController : Singleton<PlayerController>
     [Tooltip("Coroutine that handles the timing of continuing the combo")]
     private IEnumerator comboContinuationCoroutine = null;
     
+    
+    private IEnumerator comboCoolDown;
     #region Ranged Attack Variables
     [Header("Ranged Attack Variables")]
 
@@ -689,6 +691,7 @@ public class PlayerController : Singleton<PlayerController>
         if (successiveAttacks >= 3)
         {
             yield return new WaitForSeconds(seconds);
+            playerAnimator.SetBool("FuckOutaShooting", true);
             ResetCombo();
         }
         
@@ -711,6 +714,7 @@ public class PlayerController : Singleton<PlayerController>
             yield return new WaitForSeconds(seconds);
             if (!attackPerformed)
             {
+                playerAnimator.SetBool("FuckOutaShooting", true);
                 ResetCombo();
             }
         }
@@ -721,7 +725,7 @@ public class PlayerController : Singleton<PlayerController>
     /// </summary>
     /// <param name="seconds">Seconds that the cooldown would last</param>
     /// <returns></returns>
-    IEnumerator ComboCooldown(float seconds)
+    private IEnumerator ComboCooldown(float seconds)
     {
         successiveAttacks = 0;
         canAttack = false;
@@ -744,8 +748,17 @@ public class PlayerController : Singleton<PlayerController>
             3 => threeHitComboResetTime,
             _ => 0
         };
-        playerAnimator.SetBool("FuckOutaShooting", true);
-        StartCoroutine(ComboCooldown(comboResetTime));
+        if (comboCoolDown == null)
+        {
+            comboCoolDown = ComboCooldown(comboResetTime);
+        }
+        else
+        {
+            StopCoroutine(comboCoolDown);
+            comboCoolDown = ComboCooldown(comboResetTime);
+        }
+        StartCoroutine(comboCoolDown);
+
     }
     #endregion
     
@@ -837,9 +850,9 @@ public class PlayerController : Singleton<PlayerController>
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Melee()
     {
+        playerAnimator.SetTrigger("meleeAttack");
         meleeEvent.Post(this.gameObject);
         meleeBox.GetComponent<MeleeCollider>().damageType = playerLevelDamageType;
-        playerAnimator.SetTrigger("meleeAttack");
         rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
         DisablePlayerControls();
         StartCoroutine(AttackDelay(meleeAttackDuration));
