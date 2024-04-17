@@ -159,7 +159,6 @@ public abstract class BaseEnemyHealth : Health
     /// </summary>
     public void LightningDamage()
     {
-        Debug.Log("Lightning");
         Collider[] enemyLightiningCollider = Physics.OverlapSphere(this.gameObject.transform.position,
             lightningChainDistance, enemyLayerMask);
         Collider[] eletricBlockCollider = Physics.OverlapSphere(this.gameObject.transform.position,
@@ -211,48 +210,7 @@ public abstract class BaseEnemyHealth : Health
             }
         }
 
-       /* for (int i = 0; i < eletricBlockCollider.Length; i++)
-        {
-            if(eletricBlockCollider[i].gameObject.TryGetComponent(out FirstLightningBlock firstLightningBlock))
-            {
-                    Vector3 deltaPos = eletricBlockCollider[i].gameObject.transform.position -
-                                       this.gameObject.transform.position;
-                    
-                    //Draw lightning arc
-                    GameObject curLightningEffect = Instantiate(lightningEffectPrefab);
-                    curLightningEffect.transform.position = PlayerController.instance.transform.position;
-                    
-                    //set start to this object
-                    curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position =
-                        this.gameObject.transform.position;
-                    curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.parent =
-                        this.gameObject.transform;  // Set start as child to this object
-                    
-                    //set end to enemy object chained
-                    curLightningEffect.GetComponent<LightningVFXPosition>().pos4.transform.position =
-                        eletricBlockCollider[i].gameObject.transform.position;
-
-                    curLightningEffect.GetComponent<LightningVFXPosition>().pos4.transform.parent =
-                        eletricBlockCollider[i].gameObject.transform;    // set end point to child of parent
-
-                    Vector3 pos2 = new Vector3(
-                        curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.x + deltaPos.x * 0.33f,
-                        curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.y + deltaPos.y * 0.33f,
-                        curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.z + deltaPos.z * 0.33f);
-                    
-                    Vector3 pos3 = new Vector3(
-                        curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.x + deltaPos.x * 0.66f,
-                        curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.y + deltaPos.y * 0.66f,
-                        curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.z + deltaPos.z * 0.66f);
-
-                    curLightningEffect.GetComponent<LightningVFXPosition>().pos2.transform.position = pos2;
-                    curLightningEffect.GetComponent<LightningVFXPosition>().pos3.transform.position = pos3;
-                    
-                    eletricBlockCollider[i].gameObject.GetComponent<FirstLightningBlock>().StartLightingChain();
-                    lightiningEffectStorage.Add(curLightningEffect);
-            }
-        }*/
-
+   
         StartCoroutine(LightingArc());
         
         if (vulnerable)
@@ -281,6 +239,8 @@ public abstract class BaseEnemyHealth : Health
         {
             Destroy(go);
         }
+
+
     }
 
     /// <summary>
@@ -358,6 +318,7 @@ public abstract class BaseEnemyHealth : Health
         StopAllCoroutines();
         ClearLightningObjects();
         EnemyDied?.Invoke(gameObject);
+
     }
     #endregion
 }
