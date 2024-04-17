@@ -726,6 +726,7 @@ public class PlayerController : Singleton<PlayerController>
         successiveAttacks = 0;
         canAttack = false;
         yield return new WaitForSeconds(seconds);
+        playerAnimator.SetBool("FuckOutaShooting", false);
         comboActive = false;
         attackPerformed = false;
         canAttack = true;
@@ -743,6 +744,7 @@ public class PlayerController : Singleton<PlayerController>
             3 => threeHitComboResetTime,
             _ => 0
         };
+        playerAnimator.SetBool("FuckOutaShooting", true);
         StartCoroutine(ComboCooldown(comboResetTime));
     }
     #endregion
