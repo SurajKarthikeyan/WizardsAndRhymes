@@ -10,6 +10,11 @@ public class RangedStrafeHealth : BaseEnemyHealth
     {
         base.EnemyDeath();
         StopAllCoroutines();
+        LightningVFXPosition[] lVFXArray = GetComponentsInChildren<LightningVFXPosition>();
+        for (int i = 0; i < lVFXArray.Length; i++)
+        {
+            Destroy(lVFXArray[i].gameObject);
+        }
         Destroy(gameObject);
     }
     #endregion
