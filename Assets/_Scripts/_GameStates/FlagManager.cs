@@ -43,7 +43,6 @@ public class FlagManager : Singleton<FlagManager>
     private void Start()
     {
         
-        SetFlag("word1", true);
         if (GetFlag("puzzle2Completed"))
         {
             PlayerController.instance.gameObject.transform.position = spawnPoint3.transform.position;
