@@ -267,7 +267,7 @@
 														<Property Name="DestinationContextType" Type="int16" Value="2"/>
 														<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
 														<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
-														<Property Name="ExitSourceAt" Type="int16" Value="0"/>
+														<Property Name="ExitSourceAt" Type="int16" Value="3"/>
 														<Property Name="PlayDestinationPreEntry" Type="bool" Value="False"/>
 														<Property Name="SourceContextType" Type="int16" Value="2"/>
 													</PropertyList>
@@ -2387,6 +2387,24 @@
 													</PropertyList>
 													<ChildrenList>
 														<MusicTransition Name="Transition" ID="{0C7C86F3-8ADC-4539-8029-889F0B95341E}">
+															<TransitionInfo/>
+														</MusicTransition>
+														<MusicTransition Name="Transition" ID="{ECADCB64-CC16-4550-AB9A-F480BD68F645}">
+															<PropertyList>
+																<Property Name="DestinationContextType" Type="int16" Value="2"/>
+																<Property Name="PlayDestinationPreEntry" Type="bool" Value="False"/>
+																<Property Name="PlaySourcePostExit" Type="bool" Value="False"/>
+																<Property Name="SourceContextType" Type="int16" Value="2"/>
+																<Property Name="UseTransitionObject" Type="bool" Value="True"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="DestinationContextObject">
+																	<ObjectRef Name="IceCombat" ID="{5ACE23D5-DBA8-43A0-9939-16650569F038}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
+																</Reference>
+																<Reference Name="SourceContextObject">
+																	<ObjectRef Name="IceCombat" ID="{5ACE23D5-DBA8-43A0-9939-16650569F038}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
+																</Reference>
+															</ReferenceList>
 															<TransitionInfo/>
 														</MusicTransition>
 													</ChildrenList>
@@ -4712,6 +4730,23 @@
 													</PropertyList>
 													<ChildrenList>
 														<MusicTransition Name="Transition" ID="{43BF261D-BE8D-4C1C-8E66-CD8CA518FF0F}">
+															<TransitionInfo/>
+														</MusicTransition>
+														<MusicTransition Name="Transition" ID="{AAC64659-3B90-4716-B426-6610EDBD7DD3}">
+															<PropertyList>
+																<Property Name="DestinationContextType" Type="int16" Value="2"/>
+																<Property Name="PlayDestinationPreEntry" Type="bool" Value="False"/>
+																<Property Name="PlaySourcePostExit" Type="bool" Value="False"/>
+																<Property Name="SourceContextType" Type="int16" Value="2"/>
+															</PropertyList>
+															<ReferenceList>
+																<Reference Name="DestinationContextObject">
+																	<ObjectRef Name="LightningCombat" ID="{93F55A21-F3CC-4EBA-92C7-6C890868E752}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
+																</Reference>
+																<Reference Name="SourceContextObject">
+																	<ObjectRef Name="LightningCombat" ID="{93F55A21-F3CC-4EBA-92C7-6C890868E752}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
+																</Reference>
+															</ReferenceList>
 															<TransitionInfo/>
 														</MusicTransition>
 													</ChildrenList>
