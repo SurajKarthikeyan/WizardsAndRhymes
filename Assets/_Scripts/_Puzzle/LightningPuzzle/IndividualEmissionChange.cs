@@ -41,6 +41,9 @@ public class IndividualEmissionChange : MonoBehaviour
     
     #region CustomMethods
 
+    /// <summary>
+    /// One direction emission cycle
+    /// </summary>
     public void AlterEmissionCycle()
     {
         StartCoroutine(AlterEmissionFullCycle());
@@ -68,6 +71,11 @@ public class IndividualEmissionChange : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Up and down emission cycle
+    /// </summary>
+    /// <param name="up"></param>
+    /// <returns></returns>
     public IEnumerator AlterEmissionOverTime(bool up)
     {
         float timer = 0;

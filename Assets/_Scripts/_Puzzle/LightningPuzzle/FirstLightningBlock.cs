@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class representing the first lightning block in the series
+/// </summary>
 public class FirstLightningBlock : MonoBehaviour
 {
     #region Vars

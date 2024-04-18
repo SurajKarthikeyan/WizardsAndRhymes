@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Class representing the generator in the electorblock line up
+/// </summary>
 public class Generator : MonoBehaviour
 {
     #region Vars
