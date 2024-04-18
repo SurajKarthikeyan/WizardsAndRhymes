@@ -390,7 +390,15 @@
 															<ObjectRef Name="MainMenu" ID="{905449A2-D923-4266-BA22-0C1486BFC1F8}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
 														</Reference>
 													</ReferenceList>
-													<TransitionInfo/>
+													<TransitionInfo>
+														<SourceFadeOut>
+															<MusicFade Name="Source Fade-out" ID="{14C5FCE1-F0FA-448C-9472-49BDB16A091D}">
+																<PropertyList>
+																	<Property Name="FadeType" Type="int16" Value="1"/>
+																</PropertyList>
+															</MusicFade>
+														</SourceFadeOut>
+													</TransitionInfo>
 												</MusicTransition>
 												<MusicTransition Name="Transition" ID="{CEEED207-C645-48D3-B062-6DA3D36A9329}">
 													<PropertyList>
