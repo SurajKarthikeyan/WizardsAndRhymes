@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -15,7 +17,10 @@ public class CameraSwitch : MonoBehaviour
     public GameObject angledCam;
 
     public Transform angledCamTransform;
-    
+
+    public bool isTransitioning;
+
+
     /// <summary>
     /// Function that is called whenever a collider enters this trigger
     /// </summary>
@@ -28,7 +33,11 @@ public class CameraSwitch : MonoBehaviour
             is2D = true;
             angledCam.transform.position = angledCamTransform.position;
             angledCam.transform.rotation = angledCamTransform.rotation;
-            camAnimator.SetBool("SwitchCam", is2D);
+            if (!isTransitioning)
+            {
+                StartCoroutine(StopPlayerControl(0.8f));
+                camAnimator.SetBool("SwitchCam", is2D);
+            }
             PlayerController.instance.gridBasedControl = is2D;
         }
     }
@@ -42,8 +51,21 @@ public class CameraSwitch : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             is2D = false;
-            camAnimator.SetBool("SwitchCam", is2D);
+            if (!isTransitioning)
+            {
+                camAnimator.SetBool("SwitchCam", is2D);
+                StartCoroutine(StopPlayerControl(0.8f));
+            }
             PlayerController.instance.gridBasedControl = is2D;
         }
+    }
+
+    IEnumerator StopPlayerControl(float seconds)
+    {
+        isTransitioning = true;
+        PlayerController.instance.DisablePlayerControls();
+        yield return new WaitForSeconds(seconds);
+        isTransitioning = false;
+        PlayerController.instance.EnablePlayerControls();
     }
 }
