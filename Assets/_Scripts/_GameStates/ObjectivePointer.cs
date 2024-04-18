@@ -42,7 +42,10 @@ public class ObjectivePointer : MonoBehaviour
 
     #region CustomMethods
 
-
+    public void SetTargetGameObject(GameObject target)
+    {
+        targetGO = target;
+    }
 
     #endregion
 }

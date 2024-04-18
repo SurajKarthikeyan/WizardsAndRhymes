@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AYellowpaper.SerializedCollections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /**
  * Class that is responsible for all game logic and state flags
@@ -158,6 +159,6 @@ public class FlagManager : Singleton<FlagManager>
 
         return true;
     }
-    
+
     #endregion
 }
