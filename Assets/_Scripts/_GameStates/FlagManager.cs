@@ -18,9 +18,11 @@ public class FlagManager : Singleton<FlagManager>
     public List<string> wordFlags = new List<string>();
     
     public SerializedDictionary<string, List<GameObject>> flagObjects;
-    
+
     [Header("Gate Objects")]
-    
+    public Animator puzzle1Gate;
+
+    public Animator puzzle2Gate;
 
     public GameObject spawnPoint1;
     
@@ -84,10 +86,13 @@ public class FlagManager : Singleton<FlagManager>
         if (GetFlag("enemyWave2Completed"))
         {
             dialogueTrigger2.GetComponent<Collider>().enabled = false;
+            puzzle1Gate.SetTrigger("interaction");
+        }
+        if (GetFlag("enemyWave3Completed"))
+        {
+            puzzle2Gate.SetTrigger("interaction");
         }
     }
-
-    #endregion
 
     private void Update()
     {
@@ -107,9 +112,12 @@ public class FlagManager : Singleton<FlagManager>
             rapRockTrigger.SetActive(true);
         }
     }
+    #endregion
+
+
 
     #region Custom Methods
-    
+
     /// <summary>
     /// Function that returns a flag based on a provided key if it exists, otherwise returns false;
     /// </summary>

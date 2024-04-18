@@ -224,10 +224,14 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1702439946" Type="User" Language="SFX" Hash="{0509D985-863F-A27A-C58F-D48DB773A984}">
+		<SoundBank Id="1702439946" Type="User" Language="SFX" Hash="{795432B9-DE9F-4014-7AF3-FC6E1B553C1C}">
 			<ShortName>InteractiveMusicBank</ShortName>
 			<Path>InteractiveMusicBank.bnk</Path>
 			<Media>
+				<File Id="48044830" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewSynthIntro1.wav</ShortName>
+					<CachePath>SFX/NewSynthIntro1_5C91F944.wem</CachePath>
+				</File>
 				<File Id="77993868" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems D54 Furious.wav</ShortName>
 					<CachePath>SFX/NewStems D54 Furious_5C91F944.wem</CachePath>
@@ -264,6 +268,10 @@
 					<ShortName>NewStems 25-Group.wav</ShortName>
 					<CachePath>SFX/NewStems 25-Group_5C91F944.wem</CachePath>
 				</File>
+				<File Id="604583181" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewSynthIntro2.wav</ShortName>
+					<CachePath>SFX/NewSynthIntro2_5C91F944.wem</CachePath>
+				</File>
 				<File Id="637839352" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MenuMusic_1-Kontakt_7.wav</ShortName>
 					<CachePath>SFX/MenuMusic_1-Kontakt_7_5C91F944.wem</CachePath>
@@ -296,6 +304,10 @@
 					<ShortName>NewStems AllInTheGame.wav</ShortName>
 					<CachePath>SFX/NewStems AllInTheGame_5C91F944.wem</CachePath>
 				</File>
+				<File Id="841365503" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewHiHatsMoreEnv.wav</ShortName>
+					<CachePath>SFX/NewHiHatsMoreEnv_5C91F944.wem</CachePath>
+				</File>
 			</Media>
 			<Events>
 				<Event Id="3991942870" Name="Music" DurationType="Infinite">
@@ -321,7 +333,8 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="State" GroupId="1021618141" Id="3099519893"/>
 							<MediaRefs>
-								<MediaRef Id="237657344"/>
+								<MediaRef Id="48044830"/>
+								<MediaRef Id="604583181"/>
 								<MediaRef Id="820207910"/>
 								<MediaRef Id="834049591"/>
 							</MediaRefs>
@@ -332,6 +345,7 @@
 								<MediaRef Id="237657344"/>
 								<MediaRef Id="533533018"/>
 								<MediaRef Id="834049591"/>
+								<MediaRef Id="841365503"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -359,7 +373,8 @@
 						<SwitchContainer>
 							<SwitchValue GroupType="State" GroupId="1021618141" Id="4114645792"/>
 							<MediaRefs>
-								<MediaRef Id="237657344"/>
+								<MediaRef Id="48044830"/>
+								<MediaRef Id="604583181"/>
 								<MediaRef Id="820207910"/>
 								<MediaRef Id="834049591"/>
 							</MediaRefs>
@@ -370,6 +385,7 @@
 								<MediaRef Id="237657344"/>
 								<MediaRef Id="533533018"/>
 								<MediaRef Id="834049591"/>
+								<MediaRef Id="841365503"/>
 							</MediaRefs>
 						</SwitchContainer>
 						<SwitchContainer>
@@ -415,7 +431,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="2519533265" Type="User" Language="SFX" Hash="{97A0C549-8405-DE71-CA2D-E377B072C5B9}">
+		<SoundBank Id="2519533265" Type="User" Language="SFX" Hash="{0A58535E-4BC4-6214-9FED-D611E15739F4}">
 			<ShortName>CombatAndEnviorment</ShortName>
 			<Path>CombatAndEnviorment.bnk</Path>
 			<Media>
@@ -1200,5 +1216,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{542116D4-4AEF-31E9-ED69-B9DB5D023E88}</FileHash>
+	<FileHash>{A6230417-20B3-900A-2607-D4E57B43C7CF}</FileHash>
 </SoundBanksInfo>
