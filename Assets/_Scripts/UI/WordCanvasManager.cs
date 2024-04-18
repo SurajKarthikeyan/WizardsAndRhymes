@@ -18,6 +18,10 @@ public class WordCanvasManager : MonoBehaviour, IInteractable
     [SerializeField]
     private List<DragDropItemSlot> wordSlots;
 
+    [Tooltip("List of all word slots")]
+    [SerializeField]
+    private List<DragDropItem> words;
+
     public PauseMenu pauseMenu;
     
     public GameObject wordParent;
@@ -68,6 +72,11 @@ public class WordCanvasManager : MonoBehaviour, IInteractable
         }
         else
         {
+            foreach (var word in words)
+            {
+                word.transform.position = word.startPosition;
+                word.canMove = true;
+            }
             PlayerController.instance.EnablePlayerControls();
         }
     }

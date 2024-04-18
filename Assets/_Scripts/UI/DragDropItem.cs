@@ -19,12 +19,16 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
     [Tooltip("Item's transform")]
     private RectTransform rectTransform;
 
+    public Vector3 startPosition;
+
     /// <summary>
     /// Function called on scene start
     /// </summary>
     private void Awake()
     {
         rectTransform = GetComponent <RectTransform>();
+        startPosition = rectTransform.position;
+        Debug.Log(startPosition);
         canvasGroup = GetComponent<CanvasGroup>();
     }
 
