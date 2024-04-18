@@ -7,8 +7,11 @@ using UnityEngine.UI;
 public class Word : MonoBehaviour
 {
     #region Variables
+    [Tooltip("Flags to set in the flag manager")]
     [SerializeField] private List<string> flagsToSet = new();
+    [Tooltip("Wwise Sound Effect")]
     [SerializeField] private AK.Wwise.Event wordPickUpSoundEffect;
+    [Tooltip("Decal to spawn when word is picked up")]
     [SerializeField] private GameObject decal;
     [Tooltip("If not set, aims target to MainAreaInstance singleton gameobject")]
     [SerializeField] private GameObject postWordTarget;

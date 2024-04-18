@@ -14,8 +14,6 @@ public class Generator : MonoBehaviour
     [SerializeField] private Material onMat;
     [Tooltip("Generator Animator")]
     [SerializeField] private Animator genAnimator;
-    /*[Tooltip("Gate to open when generator is on")]
-    [SerializeField] private GameObject gate;*/
 
 
     public Gate gate;

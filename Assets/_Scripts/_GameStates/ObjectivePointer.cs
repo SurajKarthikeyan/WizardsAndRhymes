@@ -10,6 +10,7 @@ public class ObjectivePointer : MonoBehaviour
 {
     #region Vars
 
+    [Tooltip("Singleton Instance")]
     public static ObjectivePointer instance;
 
     [Tooltip("Current target position; update as needed via script and the singleton")] 
