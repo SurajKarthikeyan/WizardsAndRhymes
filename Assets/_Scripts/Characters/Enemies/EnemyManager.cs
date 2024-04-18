@@ -153,6 +153,9 @@ public class EnemyManager : MonoBehaviour, IFlagObject
         if (!wavesCleared)
             remainingEnemyManagers -= 1;
 
+        DestroyAllEnemies();
+
+
         //Unregister enemy died callback
         BaseEnemyHealth.EnemyDied -= EnemyDied;
     }
