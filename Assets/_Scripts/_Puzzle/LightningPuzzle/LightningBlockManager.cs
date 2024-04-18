@@ -88,6 +88,9 @@ public class LightningBlockManager : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// Function to check 
+    /// </summary>
     public void CheckAllBlocks()
     {
         StartCoroutine(ChainLightingWithDelayCoroutine());

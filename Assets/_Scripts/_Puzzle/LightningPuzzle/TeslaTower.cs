@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Tesla tower script, disables when pressure plate says so
+/// </summary>
 public class TeslaTower : MonoBehaviour
 {
 
@@ -12,6 +15,9 @@ public class TeslaTower : MonoBehaviour
 
     #region CustomMethods
 
+    /// <summary>
+    /// Disables electric effects
+    /// </summary>
     public void DisableElectricEffect()
     {
         for (int i = 0; i < electricEffectList.Count; i++)
