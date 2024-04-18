@@ -871,15 +871,14 @@ public class PlayerController : Singleton<PlayerController>
     /// <param name="magnitude">Magnitude the player is knocked back</param>
     public void Knockback(Vector3 direction, float magnitude)
     {
-        RaycastHit hit;
         rigidBody.velocity = Vector3.zero;
         // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, direction, out hit, 6, knockbackLayerMask))
+        if (Physics.Raycast(transform.position, direction, out RaycastHit hit, 7, knockbackLayerMask))
         {
             float distance = Vector3.Distance(hit.transform.position, transform.position);
             if (distance >= 1)
             {
-                rigidBody.AddForce(direction.normalized * magnitude / (distance/2), ForceMode.Force);
+                rigidBody.AddForce(direction.normalized * magnitude / (distance/2), ForceMode.Acceleration);
             }
         }
         else
