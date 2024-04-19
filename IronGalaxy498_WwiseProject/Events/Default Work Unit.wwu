@@ -490,7 +490,7 @@
 								<Action Name="" ID="{AF4B338B-9352-49A4-BD73-F0CC86FAD6EB}" ShortID="765499895">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name="Rumble" ID="{E2D2DF1D-963F-4B58-AADC-357F4DFAD850}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+											<ObjectRef Name="DoorRumble" ID="{77F8FFFD-15C7-442B-906D-73F574B553DD}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
@@ -521,6 +521,31 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="EnemyRattle" ID="{C0AF2634-79F5-4AB8-AC59-B20FED61A577}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="HauntedStinger" ID="{5CC12DFF-0659-4983-B629-A666906E993C}">
+							<ChildrenList>
+								<Action Name="" ID="{ED75ABFF-C4F1-42E7-BF95-69CC85389D2F}" ShortID="961793765">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="HauntedDropStinger" ID="{6FB07221-3F3C-44C3-96E8-914A5F1EB05C}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{E1ADBCE6-F191-4877-A428-F6C1C70EE136}" ShortID="838387512">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ForAddingToTheStinger" ID="{40FA3599-A9F2-4740-A9EE-F8222509738E}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+								<Action Name="" ID="{11C512E3-3B5E-46F4-8675-0E1826B5DC52}" ShortID="90171341">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="ForAddingToTheStingerBoneRattle" ID="{56B46D44-C19F-4AE9-AFDD-81EDCB0761F0}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>
