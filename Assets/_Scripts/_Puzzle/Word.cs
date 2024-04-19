@@ -16,6 +16,8 @@ public class Word : MonoBehaviour
     [Tooltip("If not set, aims target to MainAreaInstance singleton gameobject")]
     [SerializeField] private GameObject postWordTarget;
     public AKChangeState iceOutOfPuzzleState;
+    [Tooltip("VFX Object to instantiate when cassette is picked up")]
+    [SerializeField] private GameObject cassettePickUpEffect;
     #endregion
 
     #region UnityMethods
@@ -24,6 +26,9 @@ public class Word : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
+            
+            GameObject vfxInstance =  Instantiate(cassettePickUpEffect);
+            vfxInstance.transform.position = this.transform.position;
             if (postWordTarget != null)
             {
                 SetPointerTarget(postWordTarget);
