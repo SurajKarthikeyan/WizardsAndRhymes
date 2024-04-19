@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.072357945, g: 0.06937053, b: 0.13878897, a: 1}
+  m_IndirectSpecularColor: {r: 0.07237365, g: 0.069383636, b: 0.13879418, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5814,6 +5814,10 @@ MonoBehaviour:
   orbTargetTransform: {fileID: 1487270882}
   splashScreen: {fileID: 1405148505}
   transitionFlash: {fileID: 1191781378}
+  chargeSoundEffect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: ece58d948e9c76147bd7c0e127be5c30, type: 2}
   playerAnimatorStates:
   - melee
   - melee 2
@@ -6720,6 +6724,27 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8532419344218272653, guid: c85dddb7bd0218e4892027d1789d85e5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2273715303852637459}
+    - targetCorrespondingSourceObject: {fileID: 8532419344218272653, guid: c85dddb7bd0218e4892027d1789d85e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2273715303852637461}
+    - targetCorrespondingSourceObject: {fileID: 8532419344218272653, guid: c85dddb7bd0218e4892027d1789d85e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2273715303852637460}
+    - targetCorrespondingSourceObject: {fileID: 8532419344218272653, guid: c85dddb7bd0218e4892027d1789d85e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2273715303852637462}
+    - targetCorrespondingSourceObject: {fileID: 8532419344218272653, guid: c85dddb7bd0218e4892027d1789d85e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2273715303852637463}
+    - targetCorrespondingSourceObject: {fileID: 8532419344218272653, guid: c85dddb7bd0218e4892027d1789d85e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2273715303852637464}
+    - targetCorrespondingSourceObject: {fileID: 8532419344218272653, guid: c85dddb7bd0218e4892027d1789d85e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2273715303852637466}
+    - targetCorrespondingSourceObject: {fileID: 8532419344218272653, guid: c85dddb7bd0218e4892027d1789d85e5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2273715303852637465}
     - targetCorrespondingSourceObject: {fileID: 4828234086740506044, guid: c85dddb7bd0218e4892027d1789d85e5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1409390495000733138}
@@ -6756,6 +6781,175 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meleeBoxCollider: {fileID: 1409390495000733138}
   meleeSlashVFX: {fileID: 6397230471111763144}
+--- !u!114 &2273715303852637460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183884761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9063ac418c09c6e47b925d30adb1d0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  actionOnEventType: 0
+  curveInterpolation: 4
+  enableActionOnEvent: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 466c27e44ac79e04ab13d418a1957d19, type: 2}
+  useCallbacks: 0
+  Callbacks: []
+  playingId: 0
+  soundEmitterObject: {fileID: 0}
+  transitionDuration: 0
+  eventIdInternal: 0
+  valueGuidInternal: 
+  m_callbackDataInternal: {fileID: 0}
+  MultiPositionType: 1
+  multiPositionTypeLabel: 0
+  attenuationSphereColor: {r: 1, g: 0, b: 0, a: 0.1}
+  LargeModePositions: []
+  multiPositionArray: []
+--- !u!114 &2273715303852637461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183884761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b68e08ae77aee234687dae2109f86d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_listeners:
+    initialListenerList: []
+    useDefaultListeners: 1
+  isEnvironmentAware: 1
+  isStaticObject: 0
+  m_positionOffsetData:
+    KeepMe: 0
+    positionOffset: {x: 0, y: 0, z: 0}
+  m_posOffsetData: {fileID: 0}
+  listenerMask: 1
+--- !u!114 &2273715303852637462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183884761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87684e408bb233742ac9650e2adc19de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isDefaultListener: 1
+  listenerId: 0
+--- !u!114 &2273715303852637463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183884761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc503afba7f84274dabe9a6a2d897f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 7f56bbcbcf29c854f8f31a225c3961f0, type: 2}
+  decodeBank: 0
+  overrideLoadSetting: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
+--- !u!114 &2273715303852637464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183884761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac315b5b91857b40a9b7ae1a11e5ea9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: a5a6a9d3ceff5194e86ac7ba37f49cb1, type: 2}
+  valueIdInternal: 0
+  groupIdInternal: 0
+  valueGuidInternal: 
+  groupGuidInternal: 
+--- !u!114 &2273715303852637465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183884761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc503afba7f84274dabe9a6a2d897f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: b9b44fe12676c49409b8d5bad4e8b40a, type: 2}
+  decodeBank: 0
+  overrideLoadSetting: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
+--- !u!114 &2273715303852637466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1183884761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc503afba7f84274dabe9a6a2d897f6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerList: f7e1664c
+  useOtherObject: 0
+  data:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 9daeaf94f0d2f5f46a77b36b1ea7a4fe, type: 2}
+  decodeBank: 0
+  overrideLoadSetting: 0
+  loadAsynchronous: 0
+  saveDecodedBank: 0
+  unloadTriggerList: 958ca0ea
+  bankNameInternal: 
+  valueGuidInternal: 
 --- !u!114 &6397230471111763142
 MonoBehaviour:
   m_ObjectHideFlags: 0

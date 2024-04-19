@@ -26,6 +26,8 @@ public class WizzoBlastController : MonoBehaviour
     [SerializeField] GameObject splashScreen;
     [Tooltip("The transition flash image")]
     [SerializeField] Image transitionFlash;
+    [Tooltip("Sound effect for when the player presses the 'e' button")]
+    [SerializeField] private AK.Wwise.Event chargeSoundEffect;
 
     [Header("Value Settings")]
     [Tooltip("The state on the player animator to play sequencially once the orb is charged")]
@@ -87,9 +89,9 @@ public class WizzoBlastController : MonoBehaviour
     private void DoInteract(InputAction.CallbackContext obj)
     {
         Debug.Log("Interacted");
-
         if (!orbCharged)
         {
+            chargeSoundEffect.Post(this.gameObject);
             orbGrowFeedbacks.PlayFeedbacks();
         }
         else if (!orbStruck)
@@ -98,6 +100,7 @@ public class WizzoBlastController : MonoBehaviour
             {
                 if (playerAnimatorStateIndex == 0 || playerAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1)
                 {
+                    chargeSoundEffect.Post(this.gameObject);
                     orbStrikeFeedbacks.PlayFeedbacks();
                     playerAnimator.Play(playerAnimatorStates[playerAnimatorStateIndex]);
                     playerAnimatorStateIndex++;
