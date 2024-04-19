@@ -417,7 +417,16 @@
 															<ObjectRef Name="MainMenu" ID="{905449A2-D923-4266-BA22-0C1486BFC1F8}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
 														</Reference>
 													</ReferenceList>
-													<TransitionInfo/>
+													<TransitionInfo>
+														<SourceFadeOut>
+															<MusicFade Name="Source Fade-out" ID="{251935F0-4F0B-4A08-A16C-00543A29EACD}">
+																<PropertyList>
+																	<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+																	<Property Name="FadeType" Type="int16" Value="1"/>
+																</PropertyList>
+															</MusicFade>
+														</SourceFadeOut>
+													</TransitionInfo>
 												</MusicTransition>
 											</ChildrenList>
 											<TransitionInfo/>
