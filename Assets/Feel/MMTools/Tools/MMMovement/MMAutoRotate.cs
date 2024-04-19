@@ -57,6 +57,10 @@ namespace MoreMountains.Tools
 		[MMCondition("DrawGizmos", true)]
 		/// the color of the orbit line
 		public Color OrbitLineColor = new Color(225f, 225f, 225f, 0.1f);
+
+		[Header("W&R Added Settings")]
+		[Tooltip("Whether or not to use unscaled time")]
+		[SerializeField] bool useUnscaledTime = true;
         
 		[HideInInspector]
 		public Vector3 _orbitCenter;
@@ -137,9 +141,14 @@ namespace MoreMountains.Tools
 		/// </summary>
 		protected virtual void Rotate()
 		{
+			//Modified by Walker to allow for the use of unscaled time
+			float deltaTime = Time.deltaTime;
+			if (useUnscaledTime)
+				deltaTime = Time.unscaledDeltaTime;
+
 			if (Rotating)
 			{
-				transform.Rotate(RotationSpeed * Time.deltaTime, RotationSpace);
+				transform.Rotate(RotationSpeed * deltaTime, RotationSpace);
 			}
 
 			if (Orbiting)
@@ -156,9 +165,9 @@ namespace MoreMountains.Tools
 				_rotationPlane.SetNormalAndPosition(_worldRotationAxis.normalized, _orbitCenter);
 				_snappedPosition = _rotationPlane.ClosestPointOnPlane(this.transform.position);
 				_radius = OrbitRadius * Vector3.Normalize(_snappedPosition - _orbitCenter);
-				_newRotation = Quaternion.AngleAxis(OrbitRotationSpeed * Time.deltaTime, _worldRotationAxis);
+				_newRotation = Quaternion.AngleAxis(OrbitRotationSpeed * deltaTime, _worldRotationAxis);
 				_desiredOrbitPosition = _orbitCenter + _newRotation * _radius;
-				this.transform.position = Vector3.Lerp(this.transform.position, _desiredOrbitPosition, OrbitCorrectionSpeed * Time.deltaTime);
+				this.transform.position = Vector3.Lerp(this.transform.position, _desiredOrbitPosition, OrbitCorrectionSpeed * deltaTime);
 				_previousPosition = _desiredOrbitPosition;
 			}
 		}

@@ -18,6 +18,8 @@ public class Floater : MonoBehaviour
     [SerializeField] bool randomizeStartingHeight;
     [Tooltip("Whether or not to start at a random rotation")]
     [SerializeField] bool randomizeStartingRotation;
+    [Tooltip("Whether or not to use unscaled time")]
+    [SerializeField] bool useUnscaledTime = true;
 
     [Tooltip("The starting position of this object")]
     Vector3 posOffset = new Vector3();
@@ -46,13 +48,21 @@ public class Floater : MonoBehaviour
     /// </summary>
     virtual protected void Update()
     {
+        float time = Time.time;
+        float deltaTime = Time.deltaTime;
+        if (useUnscaledTime)
+        {
+            time = Time.unscaledTime;
+            deltaTime = Time.unscaledDeltaTime;
+        }
+
         // Spin object around Y-Axis
-        transform.Rotate(new Vector3(0f, Time.deltaTime * degreesPerSecond, 0f), Space.World);
+        transform.Rotate(new Vector3(0f, deltaTime * degreesPerSecond, 0f), Space.World);
 
         // Float up/down with a Sin()
         Vector3 tempPos = transform.localPosition;
         tempPos.y = posOffset.y;
-        tempPos.y += Mathf.Sin((Time.time + sineOffset) * Mathf.PI * frequency) * amplitude;
+        tempPos.y += Mathf.Sin((time + sineOffset) * Mathf.PI * frequency) * amplitude;
 
         transform.localPosition = tempPos;
     }
