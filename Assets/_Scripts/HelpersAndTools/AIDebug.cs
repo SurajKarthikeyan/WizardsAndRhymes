@@ -40,8 +40,9 @@ public class AIDebug : MonoBehaviour
         }
         else
         {
-            debugText.text = enemyBehavior.behaviorState.ToString();
+            //debugText.text = enemyBehavior.behaviorState.ToString();
             debugCanvas.transform.forward = -debugCanvas.worldCamera.transform.forward;
+            ClearDebugText();
         }
     }
     #endregion
