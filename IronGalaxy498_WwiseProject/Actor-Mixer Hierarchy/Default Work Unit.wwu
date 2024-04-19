@@ -5114,6 +5114,50 @@
 						</ObjectList>
 					</ObjectLists>
 				</RandomSequenceContainer>
+				<Sound Name="ForAddingToTheStinger" ID="{40FA3599-A9F2-4740-A9EE-F8222509738E}" ShortID="763453852">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ForAddingToTheStinger" ID="{C2197508-7ED7-4D6A-9A48-F85815821576}">
+							<Language>SFX</Language>
+							<AudioFile>ForAddingToTheStinger.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="194713178"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="ForAddingToTheStinger" ID="{C2197508-7ED7-4D6A-9A48-F85815821576}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
+				<Sound Name="ForAddingToTheStingerBoneRattle" ID="{56B46D44-C19F-4AE9-AFDD-81EDCB0761F0}" ShortID="568863799">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<AudioFileSource Name="ForAddingToTheStingerBoneRattle" ID="{46E0ACE6-5ED1-4AD2-BA1E-B99D85F9625B}">
+							<Language>SFX</Language>
+							<AudioFile>ForAddingToTheStingerBoneRattle.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="80407628"/>
+							</MediaIDList>
+						</AudioFileSource>
+					</ChildrenList>
+					<ActiveSourceList>
+						<ActiveSource Name="ForAddingToTheStingerBoneRattle" ID="{46E0ACE6-5ED1-4AD2-BA1E-B99D85F9625B}" Platform="Linked"/>
+					</ActiveSourceList>
+				</Sound>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
