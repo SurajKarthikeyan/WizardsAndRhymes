@@ -2828,6 +2828,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaf074d75012c87468e814047de7b693, type: 3}
+--- !u!1 &177456961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7620546745100082532, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+  m_PrefabInstance: {fileID: 582561382}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &178240676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3927,6 +3932,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1577433711}
     m_Modifications:
+    - target: {fileID: 2760145686563191849, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: interactCanvas
+      value: 
+      objectReference: {fileID: 1215389840}
     - target: {fileID: 2976512263861208820, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -13.818905
@@ -3967,6 +3976,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4334692588873043996, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8418672dbeeb26644b554a60dc3aee79, type: 3}
     - target: {fileID: 8247698451179667203, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
       propertyPath: m_Camera
       value: 
@@ -7587,6 +7600,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 6206187789854124377}
+    - target: {fileID: 4334692588873043996, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8418672dbeeb26644b554a60dc3aee79, type: 3}
     - target: {fileID: 4891351688078977235, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
       propertyPath: pathCooldown
       value: 0.25
@@ -12393,6 +12410,10 @@ PrefabInstance:
       propertyPath: _spline.points.Array.data[7].tangent2.z
       value: 18.231995
       objectReference: {fileID: 0}
+    - target: {fileID: 2760145686563191849, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: interactCanvas
+      value: 
+      objectReference: {fileID: 177456961}
     - target: {fileID: 2976512263861208820, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.079575
@@ -12437,6 +12458,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 6206187789854124377}
+    - target: {fileID: 4334692588873043996, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8418672dbeeb26644b554a60dc3aee79, type: 3}
     - target: {fileID: 8247698451179667203, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
       propertyPath: m_Camera
       value: 
@@ -16431,23 +16456,17 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 192200826420971586, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_text
-      value: 'Melted your ice, with flames that never tire,
+      value: 'Got me _________ out your rhymes like I''m an ________-stronaut,
 
-        Thought you
-        were cold, but I''m the eternal ______.
-
-
-        Your frosty lines crack,
-        I''m a scorching inferno,
-
-        Your rhymes turn to _______, while mine''s
-        the eternal flow.
+        Fake
+        it ''til you make it, yeah you got no shot
 
 
-        Watch me thaw, leaving you in a _______,
+        Icing out your rhymes
+        I see you''ve lost the plot,
 
-        Wizzo''s
-        throne melts, leaving a chaotic muddle.'
+        Sometimes you gotta know when to give
+        up the ______'
       objectReference: {fileID: 0}
     - target: {fileID: 192200826420971586, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_fontAsset
@@ -16458,8 +16477,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8665850284774363625, guid: f726d5b3184a9bd48bae9974aa494e6c, type: 2}
     - target: {fileID: 192200826420971586, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: m_VerticalAlignment
+      value: 512
+      objectReference: {fileID: 0}
+    - target: {fileID: 192200826420971586, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 192200826420971586, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 328063420453952809, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: correctWord
+      value: One
       objectReference: {fileID: 0}
     - target: {fileID: 765526685794740703, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_fontAsset
@@ -16475,7 +16506,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 853450774715143721, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_text
-      value: water
+      value: fight
       objectReference: {fileID: 0}
     - target: {fileID: 853450774715143721, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_fontAsset
@@ -16490,20 +16521,40 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1406625563919156629, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 98.5573
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406625563919156629, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 68.5905
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406625563919156629, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 22.222244
+      value: -66.70317
       objectReference: {fileID: 0}
     - target: {fileID: 1406625563919156629, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 88.33333
+      value: 151.69101
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094862603692449400, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: correctWord
+      value: Three
+      objectReference: {fileID: 0}
+    - target: {fileID: 4105427232212621477, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 112.6286
+      objectReference: {fileID: 0}
+    - target: {fileID: 4105427232212621477, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 92.7331
       objectReference: {fileID: 0}
     - target: {fileID: 4105427232212621477, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 265.00003
+      value: -130.11461
       objectReference: {fileID: 0}
     - target: {fileID: 4105427232212621477, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 185.55556
+      value: 190.1052
       objectReference: {fileID: 0}
     - target: {fileID: 4203910337534281682, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: pauseMenu
@@ -16529,9 +16580,13 @@ PrefabInstance:
       propertyPath: words.Array.data[2]
       value: 
       objectReference: {fileID: 856676558}
+    - target: {fileID: 5164873704605772966, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
+      propertyPath: correctWord
+      value: Two
+      objectReference: {fileID: 0}
     - target: {fileID: 5785139685911423424, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_text
-      value: fire
+      value: Ice
       objectReference: {fileID: 0}
     - target: {fileID: 5785139685911423424, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_fontAsset
@@ -16547,7 +16602,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6245559176825110319, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6365483049184134891, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_SizeDelta.x
@@ -16615,15 +16670,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9020662439662617195, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 198.33334
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 9020662439662617195, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -6.666672
+      value: -5.1
       objectReference: {fileID: 0}
     - target: {fileID: 9035180544810620268, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_text
-      value: puddle
+      value: chillin'
       objectReference: {fileID: 0}
     - target: {fileID: 9035180544810620268, guid: e81e46e23efbb4c43b46b453afd8ca96, type: 3}
       propertyPath: m_fontAsset
@@ -16804,7 +16859,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Chillin'
+  m_text: 'Ice
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f726d5b3184a9bd48bae9974aa494e6c, type: 2}
   m_sharedMaterial: {fileID: 8665850284774363625, guid: f726d5b3184a9bd48bae9974aa494e6c, type: 2}
@@ -17224,6 +17281,11 @@ MonoBehaviour:
   wavesCleared: 0
   enemyManagerClearedEvent: enemyWave3Completed
   enemyToggle: {fileID: 0}
+--- !u!1 &883953208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7620546745100082532, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+  m_PrefabInstance: {fileID: 1839414505}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &885306244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1417210135444854531, guid: bd53c4c459fb0604fb8fb90ed713e90b, type: 3}
@@ -21977,6 +22039,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 726594df7b4c9a74797b6549eee9299a, type: 3}
+--- !u!1 &1215389840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7620546745100082532, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+  m_PrefabInstance: {fileID: 248342638}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1218850802
 GameObject:
   m_ObjectHideFlags: 0
@@ -26476,6 +26543,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1513988316 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7620546745100082532, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+  m_PrefabInstance: {fileID: 1606980499}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1515872449 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6398087126486879238, guid: c839fec5338938d4c8f67a5c61ebbf6f, type: 3}
@@ -29014,6 +29086,10 @@ PrefabInstance:
       propertyPath: _spline.points.Array.data[2].tangent2.z
       value: 13.947754
       objectReference: {fileID: 0}
+    - target: {fileID: 2760145686563191849, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: interactCanvas
+      value: 
+      objectReference: {fileID: 1513988316}
     - target: {fileID: 2976512263861208820, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 22.181095
@@ -29058,6 +29134,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 6206187789854124377}
+    - target: {fileID: 4334692588873043996, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8418672dbeeb26644b554a60dc3aee79, type: 3}
     - target: {fileID: 4891351688078977235, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
       propertyPath: pathCooldown
       value: 0.25
@@ -32527,6 +32607,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 2760145686563191849, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: interactCanvas
+      value: 
+      objectReference: {fileID: 883953208}
     - target: {fileID: 2906281022859775959, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -32575,6 +32659,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 6206187789854124377}
+    - target: {fileID: 4334692588873043996, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 8418672dbeeb26644b554a60dc3aee79, type: 3}
     - target: {fileID: 4891351688078977235, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
       propertyPath: active
       value: 0
@@ -36770,7 +36858,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 762046938041194728, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_Name
-      value: Chillin
+      value: Ice
       objectReference: {fileID: 0}
     - target: {fileID: 826027195956945820, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -37014,7 +37102,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 935bb60520ed77945a7f46662c045b92, type: 2}
     - target: {fileID: 2378667808405922676, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_text
-      value: Chillin'
+      value: Ice
       objectReference: {fileID: 0}
     - target: {fileID: 2531287181576128160, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -37042,7 +37130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2950160608220503976, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_Name
-      value: Fight
+      value: Chillin'
       objectReference: {fileID: 0}
     - target: {fileID: 3041692611352027283, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: iceSpeed
@@ -37322,7 +37410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4862165341277540149, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_Name
-      value: Ice
+      value: Fight
       objectReference: {fileID: 0}
     - target: {fileID: 4977175675468242688, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -37390,7 +37478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6591032878527471735, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_text
-      value: Fight
+      value: Chillin'
       objectReference: {fileID: 0}
     - target: {fileID: 7615472884001184487, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_LocalPosition.z
@@ -37410,7 +37498,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8052087149723375579, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_text
-      value: Ice
+      value: Fight
       objectReference: {fileID: 0}
     - target: {fileID: 8175095573836658433, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
