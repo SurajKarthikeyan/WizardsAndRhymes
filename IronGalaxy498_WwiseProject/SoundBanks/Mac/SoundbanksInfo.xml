@@ -577,7 +577,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="2519533265" Type="User" Language="SFX" Hash="{053D6805-8972-BEDB-BC66-1C36C5C0FA3B}">
+		<SoundBank Id="2519533265" Type="User" Language="SFX" Hash="{216691E3-9BDE-C242-48E5-E466EEFED797}">
 			<ShortName>CombatAndEnviorment</ShortName>
 			<Path>CombatAndEnviorment.bnk</Path>
 			<Media>
@@ -1112,6 +1112,33 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
+				<Event Id="3442485957" Name="BlastAttack" DurationType="OneShot" DurationMin="0.6250113" DurationMax="0.8901391">
+					<MediaRefs>
+						<MediaRef Id="5318352"/>
+						<MediaRef Id="28928322"/>
+						<MediaRef Id="43950693"/>
+						<MediaRef Id="55840581"/>
+						<MediaRef Id="59239616"/>
+						<MediaRef Id="72631210"/>
+						<MediaRef Id="128351763"/>
+						<MediaRef Id="178823695"/>
+						<MediaRef Id="187260305"/>
+						<MediaRef Id="244673809"/>
+						<MediaRef Id="362380582"/>
+						<MediaRef Id="397062548"/>
+						<MediaRef Id="535223205"/>
+						<MediaRef Id="654079656"/>
+						<MediaRef Id="664797136"/>
+						<MediaRef Id="669664009"/>
+						<MediaRef Id="909458974"/>
+						<MediaRef Id="929853616"/>
+					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="544780433"/>
+						</ShareSets>
+					</PluginRefs>
+				</Event>
 				<Event Id="1739654744" Name="CrowdSurf" DurationType="Infinite">
 					<MediaRefs>
 						<MediaRef Id="546120684"/>
@@ -1201,30 +1228,6 @@
 						<MediaRef Id="567844658"/>
 						<MediaRef Id="630432816"/>
 					</MediaRefs>
-				</Event>
-				<Event Id="1407602334" Name="LightningMixed" DurationType="OneShot" DurationMin="0.6250113" DurationMax="0.8901391">
-					<MediaRefs>
-						<MediaRef Id="5318352"/>
-						<MediaRef Id="28928322"/>
-						<MediaRef Id="43950693"/>
-						<MediaRef Id="55840581"/>
-						<MediaRef Id="59239616"/>
-						<MediaRef Id="72631210"/>
-						<MediaRef Id="128351763"/>
-						<MediaRef Id="187260305"/>
-						<MediaRef Id="244673809"/>
-						<MediaRef Id="362380582"/>
-						<MediaRef Id="397062548"/>
-						<MediaRef Id="535223205"/>
-						<MediaRef Id="664797136"/>
-						<MediaRef Id="669664009"/>
-						<MediaRef Id="909458974"/>
-					</MediaRefs>
-					<PluginRefs>
-						<ShareSets>
-							<PluginRef Id="544780433"/>
-						</ShareSets>
-					</PluginRefs>
 				</Event>
 				<Event Id="2248677623" Name="MeleeFire" DurationType="OneShot" DurationMin="0.6" DurationMax="0.72210854">
 					<MediaRefs>
@@ -1410,5 +1413,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{6D4E22D4-BBEA-D445-7B28-9C5C71152672}</FileHash>
+	<FileHash>{206EBA46-D8B8-6987-EA22-D963865819A6}</FileHash>
 </SoundBanksInfo>

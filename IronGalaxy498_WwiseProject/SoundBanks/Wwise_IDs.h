@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID BLASTATTACK = 3442485957U;
         static const AkUniqueID BUTTONHOVER = 3035572085U;
         static const AkUniqueID BUTTONPRESS = 317641954U;
         static const AkUniqueID CROWDSURF = 1739654744U;
@@ -26,7 +27,6 @@ namespace AK
         static const AkUniqueID IFORGOTWHATAPRESSUREPLATEWASCALLED = 2494836859U;
         static const AkUniqueID LEVELCOMPLETESTING = 605469711U;
         static const AkUniqueID LEVER = 2782712987U;
-        static const AkUniqueID LIGHTNINGMIXED = 1407602334U;
         static const AkUniqueID MELEEFIRE = 2248677623U;
         static const AkUniqueID MELEEICE = 1651067412U;
         static const AkUniqueID MELEELIGHTNING = 1583612915U;
