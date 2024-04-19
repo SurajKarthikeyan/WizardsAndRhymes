@@ -28,7 +28,9 @@ public class WizzoBlastController : MonoBehaviour
     [SerializeField] Image transitionFlash;
     [Tooltip("Sound effect for when the player presses the 'e' button")]
     [SerializeField] private AK.Wwise.Event chargeSoundEffect;
-
+    [Tooltip("Wwise State")]
+    [SerializeField] private AK.Wwise.State akState;
+    
     [Header("Value Settings")]
     [Tooltip("The state on the player animator to play sequencially once the orb is charged")]
     [SerializeField] string[] playerAnimatorStates;
@@ -121,7 +123,7 @@ public class WizzoBlastController : MonoBehaviour
 
         float startTime = Time.time;
         Vector3 startPosition = orbScaleRoot.transform.position;
-
+        chargeSoundEffect.Post(this.gameObject);
         while (Time.time - startTime < orbTravelDuration)
         {
             float t = (Time.time - startTime) / orbTravelDuration;
@@ -129,9 +131,10 @@ public class WizzoBlastController : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
-
+        chargeSoundEffect.Post(this.gameObject);
+        
         splashScreen.SetActive(true);
-
+        akState.SetValue();
         float transitionStartTime = Time.time;
 
         while (Time.time - transitionStartTime < transitionFlashFadeDuration)
