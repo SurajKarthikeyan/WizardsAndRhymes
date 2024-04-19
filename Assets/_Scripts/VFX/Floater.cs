@@ -9,7 +9,7 @@ public class Floater : MonoBehaviour
 {
     #region Variables
     [Tooltip("The degrees per second for this object to rotate")]
-    [SerializeField] float degreesPerSecond = 15.0f;
+    [SerializeField] public float degreesPerSecond = 15.0f;
     [Tooltip("The amplitude of the sine wave used to make this object float up and down")]
     [SerializeField] float amplitude = 0.5f;
     [Tooltip("The frequency  of the sine wave used to make this object float up and down")]
