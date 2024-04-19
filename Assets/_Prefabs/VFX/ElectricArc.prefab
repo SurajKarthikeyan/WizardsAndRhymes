@@ -135,6 +135,9 @@ VisualEffect:
       - m_Value: {x: 0.9565364, y: 0.9622642, z: 0.72169816, w: 0}
         m_Name: HitEffectColor
         m_Overridden: 1
+      - m_Value: {x: 1.7709936, y: 0.82092285, z: 4.224167, w: 1}
+        m_Name: Color
+        m_Overridden: 1
     m_Uint:
       m_Array:
       - m_Value: 64
@@ -449,6 +452,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   beatInterval: 3
+  beatDelay: 0
+  initialBeatDelay: 0
   eventsToTrigger:
     m_PersistentCalls:
       m_Calls:
