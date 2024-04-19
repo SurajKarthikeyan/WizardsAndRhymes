@@ -10,32 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 36baaa8bdcb9d8b49b9199833965d2c3, type: 3}
-  m_Name: IceBlend
+  m_Name: WizzoBlend
   m_EditorClassIdentifier: 
   m_CustomBlends:
-  - m_From: FreeLook Camera
-    m_To: TopDownCamera
-    m_Blend:
-      m_Style: 1
-      m_Time: 0.7
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
-  - m_From: TopDownCamera
-    m_To: FreeLook Camera
-    m_Blend:
-      m_Style: 1
-      m_Time: 0.7
-      m_CustomCurve:
-        serializedVersion: 2
-        m_Curve: []
-        m_PreInfinity: 0
-        m_PostInfinity: 0
-        m_RotationOrder: 0
-  - m_From: FreeLook Camera
+  - m_From: CameraStateMachine
     m_To: WizzoCamera
     m_Blend:
       m_Style: 1
@@ -47,7 +25,7 @@ MonoBehaviour:
         m_PostInfinity: 0
         m_RotationOrder: 0
   - m_From: WizzoCamera
-    m_To: FreeLook Camera
+    m_To: CameraStateMachine
     m_Blend:
       m_Style: 1
       m_Time: 2
