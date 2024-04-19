@@ -167,11 +167,22 @@ public class PlayerController : Singleton<PlayerController>
     [SerializeField]
     private float threeHitComboResetTime = .5f;
 
+    [Tooltip("Coroutine that handles the timing of the current attack")]
+    private IEnumerator attackDelayCoroutine = null;
+
+
     [Tooltip("Coroutine that handles the timing of continuing the combo")]
     private IEnumerator comboContinuationCoroutine = null;
-    
-    
-    private IEnumerator comboCoolDown;
+
+    [Tooltip("Coroutine that handles the timing of the combo cooldown")]
+    private IEnumerator comboCoolDownCoroutine = null;
+
+
+    public int numberOfAttackDelayCoroutines;
+
+    public int numberOfComboContinuationCoroutines;
+
+    public int numberOfComboCoolDownCoroutines;
     #region Ranged Attack Variables
     [Header("Ranged Attack Variables")]
 
@@ -509,10 +520,6 @@ public class PlayerController : Singleton<PlayerController>
         if (canAttack)
         {
             SetCanAttack(false);
-            if (comboContinuationCoroutine != null)
-            {
-                StopCoroutine(comboContinuationCoroutine);
-            }
             comboActive = true;
             attackPerformed = true;
             successiveAttacks++;
@@ -529,10 +536,6 @@ public class PlayerController : Singleton<PlayerController>
         if (canAttack)
         {
             SetCanAttack(false);
-            if (comboContinuationCoroutine != null)
-            {
-                StopCoroutine(comboContinuationCoroutine);
-            }
             successiveAttacks++;
             attackPerformed = true;
             comboActive = true;
@@ -688,18 +691,35 @@ public class PlayerController : Singleton<PlayerController>
     /// <returns></returns>
     IEnumerator AttackDelay(float seconds)
     {
+        numberOfAttackDelayCoroutines++;
+        Debug.Log("Number of attack delay coroutines: " + numberOfAttackDelayCoroutines);
         if (successiveAttacks >= 3)
         {
             yield return new WaitForSeconds(seconds);
             playerAnimator.SetBool("FuckOutaShooting", true);
+            attackDelayCoroutine = null;
             ResetCombo();
         }
         
         else
         {
+            Debug.Log("Waiting for attack time");
             yield return new WaitForSeconds(seconds);
+            Debug.Log("after attack time");
+            attackStatus = AttackStatus.None;
+            attackPerformed = false;
+            Debug.Log("Set can attack to true");
             SetCanAttack(true);
+            if (comboContinuationCoroutine == null)
+            {
+                comboContinuationCoroutine = ComboContinueDelay(comboContinuationTime);
+                StartCoroutine(comboContinuationCoroutine);
+                Debug.Log("Started combo continuation coroutine");
+                
+            }
         }
+        attackDelayCoroutine = null;
+        numberOfAttackDelayCoroutines--;
     }
 
     /// <summary>
@@ -709,15 +729,21 @@ public class PlayerController : Singleton<PlayerController>
     /// <returns></returns>
     IEnumerator ComboContinueDelay(float seconds)
     {
+        numberOfComboContinuationCoroutines++;
+        Debug.Log("Number of combo continuation coroutines: " + numberOfComboContinuationCoroutines);
         if (comboActive)
         {
             yield return new WaitForSeconds(seconds);
             if (!attackPerformed)
             {
                 playerAnimator.SetBool("FuckOutaShooting", true);
+                comboContinuationCoroutine = null;
                 ResetCombo();
             }
         }
+
+        comboContinuationCoroutine = null;
+        numberOfComboContinuationCoroutines--;
     }
 
     /// <summary>
@@ -727,13 +753,16 @@ public class PlayerController : Singleton<PlayerController>
     /// <returns></returns>
     private IEnumerator ComboCooldown(float seconds)
     {
+        numberOfComboCoolDownCoroutines++;
+        Debug.Log("Number of Cooldown coroutines: " + numberOfComboCoolDownCoroutines);
         successiveAttacks = 0;
-        canAttack = false;
+        SetCanAttack(false);
         yield return new WaitForSeconds(seconds);
-        playerAnimator.SetBool("FuckOutaShooting", false);
         comboActive = false;
         attackPerformed = false;
-        canAttack = true;
+        SetCanAttack(true);
+        playerAnimator.SetBool("FuckOutaShooting", false);
+        numberOfComboCoolDownCoroutines--;
     }
     
     /// <summary>
@@ -748,18 +777,15 @@ public class PlayerController : Singleton<PlayerController>
             3 => threeHitComboResetTime,
             _ => 0
         };
-        if (comboCoolDown == null)
-        {
-            comboCoolDown = ComboCooldown(comboResetTime);
-        }
-        else
-        {
-            StopCoroutine(comboCoolDown);
-            comboCoolDown = ComboCooldown(comboResetTime);
-        }
-        StartCoroutine(comboCoolDown);
-
+        
+        comboCoolDownCoroutine = ComboCooldown(comboResetTime);
+        StartCoroutine(comboCoolDownCoroutine);
     }
+
+    //private void NullifyCoroutine(IEnumerator coroutine)
+    //{
+    //    coroutine = null;
+    //}
     #endregion
     
     #region Player Action Methods
@@ -830,18 +856,18 @@ public class PlayerController : Singleton<PlayerController>
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Projectile()
     {
-        playerAnimator.SetTrigger("rangedAttack");
-        rangedEvent.Post(this.gameObject);
-        //Instantiate projectile and give it the proper velocity
-        GameObject projectile = Instantiate(rangedPrefab, rangedSpawnPoint.position, rangedSpawnPoint.rotation);
-        projectile.GetComponent<Rigidbody>().velocity = rangedSpawnPoint.forward * rangedPrefabSpeed;
-        projectile.GetComponent<Projectile>().DType = playerLevelDamageType;
-        StartCoroutine(AttackDelay(rangedAttackDuration));
-        comboContinuationCoroutine = ComboContinueDelay(comboContinuationTime);
-        StartCoroutine(comboContinuationCoroutine);
-        attackStatus = AttackStatus.None;
-        attackPerformed = false;
-        yield return null;
+        if (attackDelayCoroutine == null)
+        {
+            playerAnimator.SetTrigger("rangedAttack");
+            rangedEvent.Post(this.gameObject);
+            //Instantiate projectile and give it the proper velocity
+            GameObject projectile = Instantiate(rangedPrefab, rangedSpawnPoint.position, rangedSpawnPoint.rotation);
+            projectile.GetComponent<Rigidbody>().velocity = rangedSpawnPoint.forward * rangedPrefabSpeed;
+            projectile.GetComponent<Projectile>().DType = playerLevelDamageType;
+            attackDelayCoroutine = AttackDelay(rangedAttackDuration);
+            StartCoroutine(attackDelayCoroutine);
+            yield return null;
+        }
     }
 
     /// <summary>
@@ -850,18 +876,18 @@ public class PlayerController : Singleton<PlayerController>
     /// <returns>Various wait for seconds in between cooldowns</returns>
     IEnumerator Melee()
     {
-        playerAnimator.SetTrigger("meleeAttack");
-        meleeEvent.Post(this.gameObject);
-        meleeBox.GetComponent<MeleeCollider>().damageType = playerLevelDamageType;
-        rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
-        DisablePlayerControls();
-        StartCoroutine(AttackDelay(meleeAttackDuration));
-        comboContinuationCoroutine = ComboContinueDelay(comboContinuationTime);
-        StartCoroutine(comboContinuationCoroutine);
-        attackStatus = AttackStatus.None;
-        EnablePlayerControls();
-        attackPerformed = false;
-        yield return null;
+        if (attackDelayCoroutine == null)
+        {
+            playerAnimator.SetTrigger("meleeAttack");
+            meleeEvent.Post(this.gameObject);
+            meleeBox.GetComponent<MeleeCollider>().damageType = playerLevelDamageType;
+            rigidBody.AddForce(attackDirection.normalized * 12, ForceMode.Impulse);
+            DisablePlayerControls();
+            attackDelayCoroutine = AttackDelay(meleeAttackDuration);
+            StartCoroutine(attackDelayCoroutine);
+            EnablePlayerControls();
+            yield return null;
+        }
     }
     
     /// <summary>
