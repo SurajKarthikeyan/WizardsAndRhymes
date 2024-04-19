@@ -47,7 +47,11 @@ public class Word : MonoBehaviour
                 //set rap rock to interactable
                 Debug.Log("Rap rock interactable");
             }
-            iceOutOfPuzzleState.ChangeState();
+
+            if (iceOutOfPuzzleState != null)
+            {
+                iceOutOfPuzzleState.ChangeState();
+            }
 
             Destroy(gameObject);
         }
