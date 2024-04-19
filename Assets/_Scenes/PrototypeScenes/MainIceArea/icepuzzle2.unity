@@ -2378,6 +2378,7 @@ GameObject:
   - component: {fileID: 463799423}
   - component: {fileID: 463799428}
   - component: {fileID: 463799429}
+  - component: {fileID: 463799430}
   m_Layer: 0
   m_Name: Word
   m_TagString: Untagged
@@ -2471,7 +2472,7 @@ Transform:
   m_GameObject: {fileID: 463799422}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 130.98, y: -2.309, z: -97.08}
+  m_LocalPosition: {x: 130.98, y: -2.309, z: -102.87}
   m_LocalScale: {x: 165.7, y: 209.04663, z: -348.2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -2521,8 +2522,25 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.024105579, y: 0.014902338, z: 0.012455896}
-  m_Center: {x: -0.0009716975, y: 0.00016242435, z: 0.006227948}
+  m_Size: {x: 0.02644845, y: 0.014902338, z: 0.006028142}
+  m_Center: {x: -0.0008105484, y: 0.00016242435, z: 0.0014326039}
+--- !u!114 &463799430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463799422}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88a30decb6a4324c84d47977f329ee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  degreesPerSecond: 30
+  amplitude: 0.2
+  frequency: 1.67
+  randomizeStartingHeight: 0
+  randomizeStartingRotation: 0
 --- !u!1001 &465181758
 PrefabInstance:
   m_ObjectHideFlags: 0
