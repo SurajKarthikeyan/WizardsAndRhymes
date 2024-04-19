@@ -5586,7 +5586,7 @@ MonoBehaviour:
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
-              m_BoolArgument: 1
+              m_BoolArgument: 0
             m_CallState: 2
           - m_Target: {fileID: 81138555853967075}
             m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
@@ -5748,6 +5748,18 @@ MonoBehaviour:
             m_TargetAssemblyTypeName: WizzoCamTransitionTrigger, Assembly-CSharp
             m_MethodName: ChangeOutWizzoCam
             m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Kill All Enemies To Unlock The Roast Rock
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1282274231}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12381,7 +12393,7 @@ MonoBehaviour:
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
-              m_BoolArgument: 1
+              m_BoolArgument: 0
             m_CallState: 2
           - m_Target: {fileID: 81138555853967075}
             m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
@@ -12483,6 +12495,18 @@ MonoBehaviour:
             m_TargetAssemblyTypeName: WizzoCamTransitionTrigger, Assembly-CSharp
             m_MethodName: ChangeOutWizzoCam
             m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1282274231}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
               m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -24076,6 +24100,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3521096967233506011, guid: 1a244b4cb4787f24b9a555b26fff36f8, type: 3}
   m_PrefabInstance: {fileID: 1576020213}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1349916355 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 564241633522536666, guid: 617b75004068a4240829bd40a39a7b23, type: 3}
+  m_PrefabInstance: {fileID: 2101690025}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b99a35ff4aa63a54bbd48017d37087b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1350709967
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27711,7 +27746,7 @@ MonoBehaviour:
               m_IntArgument: 0
               m_FloatArgument: 0
               m_StringArgument: 
-              m_BoolArgument: 1
+              m_BoolArgument: 0
             m_CallState: 2
           - m_Target: {fileID: 81138555853967075}
             m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
@@ -27880,6 +27915,18 @@ MonoBehaviour:
               m_FloatArgument: 0
               m_StringArgument: Kill All Enemies To Unlock The Eastern Gate
               m_BoolArgument: 1
+            m_CallState: 2
+          - m_Target: {fileID: 1282274231}
+            m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+            m_MethodName: SetActive
+            m_Mode: 6
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Kill All Enemies To Unlock The Eastern Gate
+              m_BoolArgument: 0
             m_CallState: 2
   pauseOnTrigger: 0
   playOnStart: 0
@@ -39124,7 +39171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.38341916
+      value: -0.3834191
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -39133,6 +39180,14 @@ PrefabInstance:
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0.010090947
+      objectReference: {fileID: 0}
+    - target: {fileID: 357537751564058929, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1349916355}
+    - target: {fileID: 357537751564058929, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ClearFlags
       objectReference: {fileID: 0}
     - target: {fileID: 357537751564058929, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -39300,15 +39355,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7120159554502453663, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.38140965
+      value: 0.38140962
       objectReference: {fileID: 0}
     - target: {fileID: 7120159554502453663, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.024318963
+      value: -0.024318993
       objectReference: {fileID: 0}
     - target: {fileID: 7120159554502453663, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.010038048
+      value: 0.010038093
       objectReference: {fileID: 0}
     - target: {fileID: 7324286372960558193, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_IsActive
