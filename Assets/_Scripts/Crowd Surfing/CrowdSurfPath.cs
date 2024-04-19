@@ -102,6 +102,7 @@ public class CrowdSurfPath : MonoBehaviour, IInteractable
         AkSoundEngine.SetState("CrowdSurfing", "InCrowdSurf");
         PlayerOnPath = true;
 
+        PlayerController.instance.DisablePlayerControls();
         PlayerController.instance.AddMovementLock(this); //Lock the player's movement
         Transform playerTransform = PlayerController.instance.transform;
         //Move player to start of path
@@ -138,6 +139,7 @@ public class CrowdSurfPath : MonoBehaviour, IInteractable
 
         //Restore normal movement
         PlayerController.instance.RemoveMovementLock(this);
+        PlayerController.instance.EnablePlayerControls();
 
         yield return new WaitForSeconds(pathCooldown); //Prevent triggers from firing twice
 
