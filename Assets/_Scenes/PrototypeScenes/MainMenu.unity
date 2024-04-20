@@ -1444,7 +1444,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54269913}
   m_LocalRotation: {x: -0.008296344, y: -0.034437586, z: 0.234062, w: 0.97157615}
-  m_LocalPosition: {x: 0, y: 0, z: -1.25}
+  m_LocalPosition: {x: 0, y: 0, z: -1.32}
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -1454,7 +1454,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: -4.06, z: 27.09}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 10.1, y: 3.4}
+  m_AnchoredPosition: {x: 9.52, y: 3.23}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &54269915
@@ -3283,6 +3283,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 101933352}
+          m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
+          m_MethodName: OnExitHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &101933348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3363,7 +3379,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: -876546973899608171, guid: 7c213e268a897b14080480b79951dccd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -3421,6 +3437,9 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: cf3fa79e408ee27429f1837931a707ff, type: 2}
+  originalMaterial: {fileID: -876546973899608171, guid: 7c213e268a897b14080480b79951dccd, type: 3}
+  emissionMaterial: {fileID: 2100000, guid: ee213496ce308c14a8b6c071016bda06, type: 2}
+  buttonImage: {fileID: 101933349}
 --- !u!1001 &102244219
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10548,8 +10567,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4282777429
-  m_fontColor: {r: 0.33282247, g: 1, b: 0.26981127, a: 1}
+    rgba: 4281889275
+  m_fontColor: {r: 0.98490566, g: 0.44446447, b: 0.22113909, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -42635,6 +42654,9 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: cf3fa79e408ee27429f1837931a707ff, type: 2}
+  originalMaterial: {fileID: -876546973899608171, guid: 7c213e268a897b14080480b79951dccd, type: 3}
+  emissionMaterial: {fileID: 2100000, guid: 219f0bc1398d7de40ac645ee76d56a4f, type: 2}
+  buttonImage: {fileID: 1158358827}
 --- !u!114 &1158358830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42655,6 +42677,22 @@ MonoBehaviour:
         - m_Target: {fileID: 1158358829}
           m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
           m_MethodName: OnHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1158358829}
+          m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
+          m_MethodName: OnExitHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -56272,6 +56310,9 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: cf3fa79e408ee27429f1837931a707ff, type: 2}
+  originalMaterial: {fileID: -876546973899608171, guid: 7c213e268a897b14080480b79951dccd, type: 3}
+  emissionMaterial: {fileID: 2100000, guid: a9940bd024c43894c9f27dd2c56408ed, type: 2}
+  buttonImage: {fileID: 1460427051}
 --- !u!114 &1460427054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56292,6 +56333,22 @@ MonoBehaviour:
         - m_Target: {fileID: 1460427053}
           m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
           m_MethodName: OnHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1460427053}
+          m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
+          m_MethodName: OnExitHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -58072,6 +58129,9 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: cf3fa79e408ee27429f1837931a707ff, type: 2}
+  originalMaterial: {fileID: -876546973899608171, guid: 7c213e268a897b14080480b79951dccd, type: 3}
+  emissionMaterial: {fileID: 2100000, guid: 22686e67c1a96bb4b8c0ab9503a01fa5, type: 2}
+  buttonImage: {fileID: 1518971163}
 --- !u!114 &1518971161
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58092,6 +58152,22 @@ MonoBehaviour:
         - m_Target: {fileID: 1518971160}
           m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
           m_MethodName: OnHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1518971160}
+          m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
+          m_MethodName: OnExitHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -58181,7 +58257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: -876546973899608171, guid: 7c213e268a897b14080480b79951dccd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -67449,6 +67525,22 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1770915964}
+          m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
+          m_MethodName: OnExitHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!114 &1770915964
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67469,6 +67561,9 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: cf3fa79e408ee27429f1837931a707ff, type: 2}
+  originalMaterial: {fileID: -876546973899608171, guid: 7c213e268a897b14080480b79951dccd, type: 3}
+  emissionMaterial: {fileID: 2100000, guid: 219f0bc1398d7de40ac645ee76d56a4f, type: 2}
+  buttonImage: {fileID: 1770915966}
 --- !u!114 &1770915965
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75285,7 +75380,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: -876546973899608171, guid: 7c213e268a897b14080480b79951dccd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -75331,6 +75426,9 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: cf3fa79e408ee27429f1837931a707ff, type: 2}
+  originalMaterial: {fileID: -876546973899608171, guid: 7c213e268a897b14080480b79951dccd, type: 3}
+  emissionMaterial: {fileID: 2100000, guid: f6ba6da5d1d9f894fb7f90a8d1de91d9, type: 2}
+  buttonImage: {fileID: 1945235499}
 --- !u!114 &1945235502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75351,6 +75449,22 @@ MonoBehaviour:
         - m_Target: {fileID: 1945235501}
           m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
           m_MethodName: OnHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1945235501}
+          m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
+          m_MethodName: OnExitHover
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

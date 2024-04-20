@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 /// <summary>
@@ -11,6 +12,10 @@ public class ButtonClickHover : MonoBehaviour
     #region Vars
     [SerializeField] private AK.Wwise.Event clickButtonSoundEffect;
     [SerializeField] private AK.Wwise.Event hoverButtonSoundEffect;
+
+    [SerializeField] private Material originalMaterial;
+    [SerializeField] private Material emissionMaterial;
+    [SerializeField] private Image buttonImage;
 
     #endregion
 
@@ -30,6 +35,12 @@ public class ButtonClickHover : MonoBehaviour
     public void OnHover()
     {
         hoverButtonSoundEffect.Post(this.gameObject);
+        buttonImage.material = emissionMaterial;
+    }
+
+    public void OnExitHover()
+    {
+        buttonImage.material = originalMaterial;
     }
 
     #endregion
