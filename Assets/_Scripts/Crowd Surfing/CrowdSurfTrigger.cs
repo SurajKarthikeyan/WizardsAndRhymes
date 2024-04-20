@@ -33,29 +33,9 @@ public class CrowdSurfTrigger : MonoBehaviour
             return;
         }
 
-        if (other.CompareTag(PlayerController.PlayerTag) && PlayerController.instance.interactable == null)
-        {
-            crowdSurfPath.isReversed = end;
-            PlayerController.instance.canInteract = true;
-            PlayerController.instance.interactable = crowdSurfPath;
-            interactCanvas.SetActive(true);
-        }
+        crowdSurfPath.StartCrowdSurf(end);
     }
-
-    /// <summary>
-    /// Allows for interaction when this player is inside of this trigger
-    /// </summary>
-    /// <param name="other"></param>
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag(PlayerController.PlayerTag) && PlayerController.instance.interactable == null)
-        {
-            crowdSurfPath.isReversed = end;
-            PlayerController.instance.canInteract = true;
-            PlayerController.instance.interactable = crowdSurfPath;
-            interactCanvas.SetActive(true);
-        }
-    }
+    
 
     /// <summary>
     /// Reset values when the player exits this trigger
@@ -63,13 +43,7 @@ public class CrowdSurfTrigger : MonoBehaviour
     /// <param name="other">The collider that exited this trigger</param>
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            ignorePlayerInCollider = false;
-            PlayerController.instance.canInteract = false;
-            PlayerController.instance.interactable = null;
-            interactCanvas.SetActive(false);
-        }
+        ignorePlayerInCollider = false;
     }
     #endregion
 }

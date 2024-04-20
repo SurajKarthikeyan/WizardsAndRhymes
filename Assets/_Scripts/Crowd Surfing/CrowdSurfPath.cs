@@ -8,7 +8,7 @@ using UnityEngine;
 /// <summary>
 /// Defines a path for the player to crowd surf along
 /// </summary>
-public class CrowdSurfPath : MonoBehaviour, IInteractable
+public class CrowdSurfPath : MonoBehaviour
 {
     #region Variables
     [Tooltip("The spline computer component that defines the path")]
@@ -156,12 +156,4 @@ public class CrowdSurfPath : MonoBehaviour, IInteractable
         active = value;
     }
     #endregion
-
-    /// <summary>
-    /// Interface function used for whenever the player interacts with the crowd surf
-    /// </summary>
-    public void Interact()
-    {
-        StartCrowdSurf(isReversed);
-    }
 }
