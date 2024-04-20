@@ -904,7 +904,7 @@ public class PlayerController : Singleton<PlayerController>
             float distance = Vector3.Distance(hit.transform.position, transform.position);
             if (distance >= 1)
             {
-                rigidBody.AddForce(direction.normalized * magnitude / (distance/2), ForceMode.Acceleration);
+                rigidBody.AddForce(direction.normalized * magnitude / (distance), ForceMode.Acceleration);
             }
         }
         else
