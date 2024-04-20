@@ -34,11 +34,11 @@ public class Word : MonoBehaviour
                 SetPointerTarget(postWordTarget);
 
             }
-            else
+            /*else
             {
                 ObjectivePointer.instance.gameObject.SetActive(true);
                 SetPointerTarget(MainAreaInstance.instance.gameObject);
-            }
+            }*/
             decal.SetActive(true);
             wordPickUpSoundEffect.Post(other.gameObject);
             foreach(string flag in flagsToSet)
