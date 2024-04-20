@@ -1428,7 +1428,6 @@ GameObject:
   - component: {fileID: 54269919}
   - component: {fileID: 54269918}
   - component: {fileID: 54269917}
-  - component: {fileID: 54269916}
   - component: {fileID: 54269915}
   m_Layer: 5
   m_Name: DiscButtonRight
@@ -1449,6 +1448,7 @@ RectTransform:
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 978602522}
   - {fileID: 369617760}
   m_Father: {fileID: 1312658482}
   m_LocalEulerAnglesHint: {x: 0, y: -4.06, z: 27.09}
@@ -1470,28 +1470,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   discFloater: {fileID: 978602523}
-  maxDegreesPerSecond: 60
-  timeToSpinAtMaxSpeed: 0.5
---- !u!114 &54269916
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54269913}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b35d5b58c6445a843a3a084711704e07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickButtonSoundEffect:
+  maxDegreesPerSecond: 90
+  timeToSpinAtMaxSpeed: 1
+  timeToReachMaxSpeed: 5
+  recordScratch:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: cf3fa79e408ee27429f1837931a707ff, type: 2}
-  hoverButtonSoundEffect:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: cf3fa79e408ee27429f1837931a707ff, type: 2}
+    WwiseObjectReference: {fileID: 11400000, guid: 76705a3135226444bac7eaebc217c673, type: 2}
+  pressedMat: {fileID: 2100000, guid: 76ef719c07f0d52499cd0919d0e316e9, type: 2}
+  normalMat: {fileID: 2100000, guid: 336aec05d85db504c9c675342ad50fb6, type: 2}
+  discRenderer: {fileID: 978602520}
 --- !u!114 &54269917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1509,7 +1497,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 54269916}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
           m_MethodName: OnHover
           m_Mode: 1
@@ -1565,9 +1553,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 54269916}
-        m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
-        m_MethodName: OnClick
+      - m_Target: {fileID: 54269915}
+        m_TargetAssemblyTypeName: VinylSpin, Assembly-CSharp
+        m_MethodName: SpinDisc
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1579,11 +1567,11 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 54269915}
         m_TargetAssemblyTypeName: VinylSpin, Assembly-CSharp
-        m_MethodName: SpinDisc
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -21919,7 +21907,6 @@ GameObject:
   - component: {fileID: 620717017}
   - component: {fileID: 620717016}
   - component: {fileID: 620717015}
-  - component: {fileID: 620717014}
   - component: {fileID: 620717019}
   m_Layer: 5
   m_Name: DiscButtonLeft
@@ -21940,6 +21927,7 @@ RectTransform:
   m_LocalScale: {x: 0.07, y: 0.07, z: 0.07}
   m_ConstrainProportionsScale: 1
   m_Children:
+  - {fileID: 2035746518}
   - {fileID: 490640635}
   m_Father: {fileID: 1312658482}
   m_LocalEulerAnglesHint: {x: 0, y: -4.06, z: 0}
@@ -21948,26 +21936,6 @@ RectTransform:
   m_AnchoredPosition: {x: -10.59, y: 2.48}
   m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &620717014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 620717012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b35d5b58c6445a843a3a084711704e07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  clickButtonSoundEffect:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: cf3fa79e408ee27429f1837931a707ff, type: 2}
-  hoverButtonSoundEffect:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: cf3fa79e408ee27429f1837931a707ff, type: 2}
 --- !u!114 &620717015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21985,7 +21953,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 620717014}
+        - m_Target: {fileID: 0}
           m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
           m_MethodName: OnHover
           m_Mode: 1
@@ -22041,9 +22009,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 620717014}
-        m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
-        m_MethodName: OnClick
+      - m_Target: {fileID: 620717019}
+        m_TargetAssemblyTypeName: VinylSpin, Assembly-CSharp
+        m_MethodName: SpinDisc
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22053,13 +22021,13 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 620717019}
+      - m_Target: {fileID: 54269915}
         m_TargetAssemblyTypeName: VinylSpin, Assembly-CSharp
-        m_MethodName: SpinDisc
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -22116,8 +22084,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   discFloater: {fileID: 2035746519}
-  maxDegreesPerSecond: 60
-  timeToSpinAtMaxSpeed: 0.5
+  maxDegreesPerSecond: 90
+  timeToSpinAtMaxSpeed: 1
+  timeToReachMaxSpeed: 5
+  recordScratch:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 76705a3135226444bac7eaebc217c673, type: 2}
+  pressedMat: {fileID: 2100000, guid: 76ef719c07f0d52499cd0919d0e316e9, type: 2}
+  normalMat: {fileID: 2100000, guid: 336aec05d85db504c9c675342ad50fb6, type: 2}
+  discRenderer: {fileID: 2035746516}
 --- !u!4 &624213013 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1491810633651320910, guid: 605543c9bfd78ae4185d2254acb6d76a, type: 3}
@@ -31377,8 +31353,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 978602522}
-  - {fileID: 2035746518}
   - {fileID: 737922261}
   - {fileID: 1882091711}
   - {fileID: 937630071}
@@ -36112,12 +36086,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 978602519}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5707126, y: -0.41747716, z: -0.41747716, w: -0.5707126}
-  m_LocalPosition: {x: -6.8721037, y: 31.552948, z: -2.9077816}
-  m_LocalScale: {x: 100.59998, y: 100.600006, z: 100.600006}
+  m_LocalRotation: {x: -0.9979257, y: 0.05375453, z: 0.032358706, w: 0.014411503}
+  m_LocalPosition: {x: 1.8067597, y: -1.4766736, z: 2.263571}
+  m_LocalScale: {x: 4635.944, y: 4635.9453, z: 4635.945}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 854885107}
+  m_Father: {fileID: 54269914}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &978602523
 MonoBehaviour:
@@ -72954,8 +72928,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294928128
-  m_fontColor: {r: 0, g: 0.40248108, b: 1, a: 1}
+    rgba: 4294933504
+  m_fontColor: {r: 0, g: 0.48760605, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -77910,12 +77884,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2035746515}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5707126, y: -0.41747716, z: -0.41747716, w: -0.5707126}
-  m_LocalPosition: {x: -6.7473674, y: 31.417946, z: 3.5083094}
-  m_LocalScale: {x: 100.59998, y: 100.600006, z: 100.600006}
+  m_LocalRotation: {x: -0.9827595, y: -0.18146376, z: 0.034833997, w: 0.006431966}
+  m_LocalPosition: {x: 2.3234894, y: 1.3984544, z: 2.0527623}
+  m_LocalScale: {x: 4635.944, y: 4635.9443, z: 4635.945}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 854885107}
+  m_Father: {fileID: 620717013}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!114 &2035746519
 MonoBehaviour:
