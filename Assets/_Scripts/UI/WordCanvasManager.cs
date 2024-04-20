@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -35,6 +36,12 @@ public class WordCanvasManager : MonoBehaviour, IInteractable
         {
             wordSlot.manager = this;
         }
+        foreach (var word in words)
+        {
+            word.startPosition = word.transform.position;
+            word.gameObject.SetActive(false);
+        }
+        wordCanvas.gameObject.SetActive(false);
     }
 
     /// <summary>
@@ -66,17 +73,30 @@ public class WordCanvasManager : MonoBehaviour, IInteractable
         canvasActivated = canvasOn;
         wordCanvas.gameObject.SetActive(canvasActivated);
         
-        if (canvasActivated)
+        if (FlagManager.instance.GetFlag("word1") && !words[0].gameObject.activeInHierarchy)
         {
-            PlayerController.instance.DisablePlayerControls();
+            words[0].gameObject.SetActive(true);
         }
-        else
+        if (FlagManager.instance.GetFlag("word2") && !words[1].gameObject.activeInHierarchy)
+        {
+            words[1].gameObject.SetActive(true);
+        }
+        if (FlagManager.instance.GetFlag("word3") && !words[2].gameObject.activeInHierarchy)
+        {
+            words[2].gameObject.SetActive(true);
+        }
+        
+        if (canvasActivated)
         {
             foreach (var word in words)
             {
                 word.transform.position = word.startPosition;
                 word.canMove = true;
             }
+            PlayerController.instance.DisablePlayerControls();
+        }
+        else
+        {
             PlayerController.instance.EnablePlayerControls();
         }
     }
