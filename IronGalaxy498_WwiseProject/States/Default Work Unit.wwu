@@ -30,6 +30,60 @@
 						</Transition>
 					</TransitionList>
 				</StateGroup>
+				<StateGroup Name="MetalBlockPush" ID="{16BD1E08-2CE8-49D6-BBA7-7BBBD258A248}">
+					<ChildrenList>
+						<State Name="None" ID="{477214B9-91B9-401E-8A94-1B981C6621CA}"/>
+						<State Name="IsPushing" ID="{18966800-E103-4A92-A4D6-C64EE2809EB7}"/>
+						<State Name="NotPushing" ID="{A392B3F4-1137-469E-B323-003DEDA14FE4}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="None" ID="{477214B9-91B9-401E-8A94-1B981C6621CA}"/>
+							<EndState Name="IsPushing" ID="{18966800-E103-4A92-A4D6-C64EE2809EB7}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="IsPushing" ID="{18966800-E103-4A92-A4D6-C64EE2809EB7}"/>
+							<EndState Name="NotPushing" ID="{A392B3F4-1137-469E-B323-003DEDA14FE4}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="NotPushing" ID="{A392B3F4-1137-469E-B323-003DEDA14FE4}"/>
+							<EndState Name="IsPushing" ID="{18966800-E103-4A92-A4D6-C64EE2809EB7}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
+				<StateGroup Name="PlayerOnIce" ID="{9B35BFD7-FE8A-443D-B836-0CE06AA3E4AF}">
+					<ChildrenList>
+						<State Name="None" ID="{AE499277-40A0-412E-978F-438E2AE68E72}"/>
+						<State Name="IsSliding" ID="{2706E707-FB6C-4A4D-B75D-5DEF67890496}"/>
+						<State Name="NotSliding" ID="{350F83A0-9114-4ADE-B253-5D278E9DA10E}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="None" ID="{AE499277-40A0-412E-978F-438E2AE68E72}"/>
+							<EndState Name="IsSliding" ID="{2706E707-FB6C-4A4D-B75D-5DEF67890496}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="IsSliding" ID="{2706E707-FB6C-4A4D-B75D-5DEF67890496}"/>
+							<EndState Name="NotSliding" ID="{350F83A0-9114-4ADE-B253-5D278E9DA10E}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="NotSliding" ID="{350F83A0-9114-4ADE-B253-5D278E9DA10E}"/>
+							<EndState Name="IsSliding" ID="{2706E707-FB6C-4A4D-B75D-5DEF67890496}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>

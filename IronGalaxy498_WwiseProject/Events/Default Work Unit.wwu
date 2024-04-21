@@ -351,6 +351,16 @@
 												</Reference>
 											</ReferenceList>
 										</Action>
+										<Action Name="" ID="{0051A7FD-9040-476D-BAB3-A4C40AE6D67E}" ShortID="841015952">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="0.2"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="IceBlockFriction" ID="{AB24A5E9-D28A-4382-BA53-D343C8FEC20F}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
 									</ChildrenList>
 								</Event>
 								<Event Name="Lever" ID="{893269FF-16A8-4A30-8EC3-99BFBED9C982}">
@@ -478,6 +488,76 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="TeslaCoilOff" ID="{6AFBD6FD-72DC-4BE9-A1EC-F48ED2594219}">
+									<ChildrenList>
+										<Action Name="" ID="{95DA24DD-734C-4BD8-B4EF-960B2951E537}" ShortID="626975992">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Coils" ID="{9D9AB786-760F-458A-81FC-540BA6AFD42F}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="MetalBlockPush" ID="{D8286C70-5380-4DA6-A020-38C7220EF521}">
+									<ChildrenList>
+										<Action Name="" ID="{EBF34C14-7382-46DB-A180-4CE625702E1B}" ShortID="118736810">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="IsPushing" ID="{18966800-E103-4A92-A4D6-C64EE2809EB7}" WorkUnitID="{BF59D2A2-7D14-4BA5-BC8C-398EC0CC8741}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{8416361C-DD16-4715-87A4-43DA580ABCDE}" ShortID="631576584">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MetalBoom" ID="{05729A6A-46BE-4253-92EB-22473746B8B6}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{63247408-CB56-4A87-8AAF-252504969B87}" ShortID="202650039">
+											<PropertyList>
+												<Property Name="Delay" Type="Real64" Value="3"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MetalImpact" ID="{A1CFD9F2-0BF5-452A-9CB2-6A91F6014B9B}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{C4B91E13-AC0E-4293-92C8-E73E00EEC085}" ShortID="256968693">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MetalRumble" ID="{007FAB44-F378-4C72-92DA-B8A4591B068D}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="PlayerIceSlide" ID="{C27CE197-5916-46A8-A0B8-270D39D1AC72}">
+									<ChildrenList>
+										<Action Name="" ID="{38843146-33A8-44E1-865C-A2B24AB97B92}" ShortID="565161087">
+											<PropertyList>
+												<Property Name="ActionType" Type="int16" Value="22"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="IsSliding" ID="{2706E707-FB6C-4A4D-B75D-5DEF67890496}" WorkUnitID="{BF59D2A2-7D14-4BA5-BC8C-398EC0CC8741}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{D0C14A41-B656-4BE8-893F-9F58A4102D4B}" ShortID="977936125">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="PlayerIceSlide" ID="{152636B6-F2F7-4040-B52B-898744E98002}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Music" ID="{9CEEF249-6CBE-4183-A578-17E6A24E7BCD}" ShortID="271145348">
@@ -522,17 +602,6 @@
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="LightningCombat" ID="{93F55A21-F3CC-4EBA-92C7-6C890868E752}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-							</ChildrenList>
-						</Event>
-						<Event Name="LeveLCompleteSting" ID="{85D904FB-F937-4B25-9F89-4060A3C6B850}">
-							<ChildrenList>
-								<Action Name="" ID="{4C2CD871-C0C1-498E-9099-7BCB6FBED31E}" ShortID="162549484">
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="Cheer" ID="{38D7E995-FCC3-4C3A-A013-6AA60EB77A2A}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

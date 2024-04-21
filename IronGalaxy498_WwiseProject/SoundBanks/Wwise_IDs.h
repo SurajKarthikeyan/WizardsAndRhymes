@@ -25,20 +25,21 @@ namespace AK
         static const AkUniqueID HAUNTEDSTINGER = 1950078070U;
         static const AkUniqueID ICEBLOCK = 418751485U;
         static const AkUniqueID IFORGOTWHATAPRESSUREPLATEWASCALLED = 2494836859U;
-        static const AkUniqueID LEVELCOMPLETESTING = 605469711U;
         static const AkUniqueID LEVER = 2782712987U;
         static const AkUniqueID MELEEFIRE = 2248677623U;
         static const AkUniqueID MELEEICE = 1651067412U;
         static const AkUniqueID MELEELIGHTNING = 1583612915U;
+        static const AkUniqueID METALBLOCKPUSH = 3570861977U;
         static const AkUniqueID MUSIC = 3991942870U;
         static const AkUniqueID PLAYBUTTON = 1843531235U;
         static const AkUniqueID PLAYERDASH = 2525052962U;
         static const AkUniqueID PLAYERHURT = 3537581393U;
+        static const AkUniqueID PLAYERICESLIDE = 816354274U;
         static const AkUniqueID RANGEDFIRE = 1744863420U;
         static const AkUniqueID RANGEDICE = 2982846157U;
         static const AkUniqueID RANGEDLIGHTNING = 1899629126U;
-        static const AkUniqueID ROOMMUS = 427386941U;
         static const AkUniqueID SKELETONHIT = 2460311919U;
+        static const AkUniqueID TESLACOILOFF = 2261469182U;
         static const AkUniqueID WORDPICKUP = 3290622745U;
     } // namespace EVENTS
 
@@ -55,6 +56,18 @@ namespace AK
                 static const AkUniqueID OUTOFCROWDSURF = 2475500331U;
             } // namespace STATE
         } // namespace CROWDSURFING
+
+        namespace METALBLOCKPUSH
+        {
+            static const AkUniqueID GROUP = 3570861977U;
+
+            namespace STATE
+            {
+                static const AkUniqueID ISPUSHING = 2597476059U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID NOTPUSHING = 91517132U;
+            } // namespace STATE
+        } // namespace METALBLOCKPUSH
 
         namespace MUSICSTATE
         {
@@ -76,6 +89,18 @@ namespace AK
             } // namespace STATE
         } // namespace MUSICSTATE
 
+        namespace PLAYERONICE
+        {
+            static const AkUniqueID GROUP = 3506000894U;
+
+            namespace STATE
+            {
+                static const AkUniqueID ISSLIDING = 437705085U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID NOTSLIDING = 3078077546U;
+            } // namespace STATE
+        } // namespace PLAYERONICE
+
     } // namespace STATES
 
     namespace GAME_PARAMETERS
@@ -95,7 +120,7 @@ namespace AK
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
-        static const AkUniqueID COMBATANDENVIORMENT = 2519533265U;
+        static const AkUniqueID COMBATANDENVIRONMENT = 3361862619U;
         static const AkUniqueID INTERACTIVEMUSICBANK = 1702439946U;
         static const AkUniqueID UIANDFARTSOUNDBANK = 784481870U;
     } // namespace BANKS
