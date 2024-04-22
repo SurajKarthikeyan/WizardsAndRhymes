@@ -84,6 +84,33 @@
 						</Transition>
 					</TransitionList>
 				</StateGroup>
+				<StateGroup Name="PauseMenu" ID="{65BD8F1D-ED20-4265-B6D9-A4E39CD66548}">
+					<ChildrenList>
+						<State Name="None" ID="{99B57ADC-ACF7-48D2-BA4A-0FCBDFE5A25F}"/>
+						<State Name="InPauseMenu" ID="{66132958-C6BD-450C-AB5E-155CCE94E341}"/>
+						<State Name="NotInPauseMenu" ID="{18A2314E-345D-41D5-A148-F7505097CADD}"/>
+					</ChildrenList>
+					<TransitionList>
+						<Transition>
+							<StartState Name="None" ID="{99B57ADC-ACF7-48D2-BA4A-0FCBDFE5A25F}"/>
+							<EndState Name="InPauseMenu" ID="{66132958-C6BD-450C-AB5E-155CCE94E341}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="InPauseMenu" ID="{66132958-C6BD-450C-AB5E-155CCE94E341}"/>
+							<EndState Name="NotInPauseMenu" ID="{18A2314E-345D-41D5-A148-F7505097CADD}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="NotInPauseMenu" ID="{18A2314E-345D-41D5-A148-F7505097CADD}"/>
+							<EndState Name="InPauseMenu" ID="{66132958-C6BD-450C-AB5E-155CCE94E341}"/>
+							<Time>1</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+					</TransitionList>
+				</StateGroup>
 			</ChildrenList>
 		</WorkUnit>
 	</States>

@@ -89,6 +89,18 @@ namespace AK
             } // namespace STATE
         } // namespace MUSICSTATE
 
+        namespace PAUSEMENU
+        {
+            static const AkUniqueID GROUP = 3494343696U;
+
+            namespace STATE
+            {
+                static const AkUniqueID INPAUSEMENU = 2876317275U;
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID NOTINPAUSEMENU = 3479602272U;
+            } // namespace STATE
+        } // namespace PAUSEMENU
+
         namespace PLAYERONICE
         {
             static const AkUniqueID GROUP = 3506000894U;

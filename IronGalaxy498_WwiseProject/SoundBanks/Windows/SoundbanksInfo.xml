@@ -115,7 +115,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{CB4B3725-E1E7-D305-1B45-076DF67298FD}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{60347FC3-F6A6-F257-B00F-9D9760B46358}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -160,6 +160,13 @@
 						<State Id="748895195" Name="None"/>
 						<State Id="2260458779" Name="InCrowdSurf"/>
 						<State Id="2475500331" Name="OutOfCrowdSurf"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="3494343696" Name="PauseMenu">
+					<States>
+						<State Id="748895195" Name="None"/>
+						<State Id="2876317275" Name="InPauseMenu"/>
+						<State Id="3479602272" Name="NotInPauseMenu"/>
 					</States>
 				</StateGroup>
 				<StateGroup Id="3506000894" Name="PlayerOnIce">
@@ -1287,5 +1294,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{D6E72E8C-B987-6E61-11ED-71CA54095FEF}</FileHash>
+	<FileHash>{EDF2374D-700A-A25C-6F96-C3E626941CBC}</FileHash>
 </SoundBanksInfo>

@@ -10,7 +10,30 @@
 						</Reference>
 					</ReferenceList>
 					<ChildrenList>
-						<Bus Name="MusicBus" ID="{A507ED83-12EF-47A8-B2BD-9A041AA2F637}"/>
+						<Bus Name="MusicBus" ID="{A507ED83-12EF-47A8-B2BD-9A041AA2F637}">
+							<StateInfo>
+								<StateGroupList>
+									<StateGroupInfo>
+										<StateGroupRef Name="PauseMenu" ID="{65BD8F1D-ED20-4265-B6D9-A4E39CD66548}"/>
+									</StateGroupInfo>
+								</StateGroupList>
+								<CustomStateList>
+									<CustomState>
+										<StateRef Name="NotInPauseMenu" ID="{18A2314E-345D-41D5-A148-F7505097CADD}"/>
+										<CustomState Name="" ID="{924021E9-2320-46C4-AF44-16D6D94AFC5A}" ShortID="1044652042"/>
+									</CustomState>
+									<CustomState>
+										<StateRef Name="InPauseMenu" ID="{66132958-C6BD-450C-AB5E-155CCE94E341}"/>
+										<CustomState Name="" ID="{C8325C0D-49E4-4911-AE05-1E2CE5BBEDA6}" ShortID="195096669">
+											<PropertyList>
+												<Property Name="Highpass" Type="int16" Value="36"/>
+												<Property Name="Lowpass" Type="int16" Value="57"/>
+											</PropertyList>
+										</CustomState>
+									</CustomState>
+								</CustomStateList>
+							</StateInfo>
+						</Bus>
 						<Bus Name="SoundFXBus" ID="{F7F9656F-CA2B-4B31-BD03-7FD346D001DB}"/>
 						<Bus Name="DialogueBus" ID="{EC30F662-E684-467C-B428-B2E2BEF7AC70}"/>
 						<Bus Name="EnvironmentBus" ID="{273EC341-FB06-4452-A2D4-E8B9F4DE3817}"/>
