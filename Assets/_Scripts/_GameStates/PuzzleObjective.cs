@@ -9,13 +9,14 @@ using UnityEngine;
 public class PuzzleObjective : MonoBehaviour
 {
 
+    [SerializeField] private GameObject target;
     #region UnityMethods
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            ObjectivePointer.instance.gameObject.SetActive(false);
+            ObjectivePointer.instance.targetGO = target;
             Destroy(this.gameObject);
         }
     }
