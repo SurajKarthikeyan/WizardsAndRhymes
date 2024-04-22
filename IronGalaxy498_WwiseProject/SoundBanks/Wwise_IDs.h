@@ -16,6 +16,7 @@ namespace AK
         static const AkUniqueID BLASTATTACK = 3442485957U;
         static const AkUniqueID BUTTONHOVER = 3035572085U;
         static const AkUniqueID BUTTONPRESS = 317641954U;
+        static const AkUniqueID CAMERAWHIR = 3895479848U;
         static const AkUniqueID CROWDSURF = 1739654744U;
         static const AkUniqueID CRYSTAL = 3444057113U;
         static const AkUniqueID FART = 2948602592U;
@@ -107,11 +108,6 @@ namespace AK
         static const AkUniqueID MASTERVOLUME = 2918011349U;
         static const AkUniqueID MID = 1182670505U;
     } // namespace GAME_PARAMETERS
-
-    namespace TRIGGERS
-    {
-        static const AkUniqueID HAUNTEDDROPSTINGER = 4275975763U;
-    } // namespace TRIGGERS
 
     namespace BANKS
     {

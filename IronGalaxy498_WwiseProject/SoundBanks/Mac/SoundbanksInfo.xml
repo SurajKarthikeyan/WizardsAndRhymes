@@ -515,7 +515,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3361862619" Type="User" Language="SFX" Hash="{A7C842FE-3BA7-0D40-3C8A-7E61F2D528FA}">
+		<SoundBank Id="3361862619" Type="User" Language="SFX" Hash="{FCC3ECEB-1421-2714-903A-2F26CFA82939}">
 			<ShortName>CombatAndEnvironment</ShortName>
 			<Path>CombatAndEnvironment.bnk</Path>
 			<Media>
@@ -883,6 +883,10 @@
 					<ShortName>IceBlockWooshes.wav</ShortName>
 					<CachePath>SFX/IceBlockWooshes_AAFEEE2A.wem</CachePath>
 				</File>
+				<File Id="737083099" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>FanWhir.wav</ShortName>
+					<CachePath>SFX/FanWhir_458555E5.wem</CachePath>
+				</File>
 				<File Id="742707364" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PlayerHitDowner.wav</ShortName>
 					<CachePath>SFX/PlayerHitDowner_A6913DC4.wem</CachePath>
@@ -1022,6 +1026,11 @@
 							<PluginRef Id="544780433"/>
 						</ShareSets>
 					</PluginRefs>
+				</Event>
+				<Event Id="3895479848" Name="CameraWhir" DurationType="OneShot" DurationMin="2.526526" DurationMax="2.526526">
+					<MediaRefs>
+						<MediaRef Id="737083099"/>
+					</MediaRefs>
 				</Event>
 				<Event Id="1739654744" Name="CrowdSurf" DurationType="Infinite">
 					<MediaRefs>
@@ -1274,5 +1283,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{395803AB-833E-8B73-40E0-6C333B06AAE7}</FileHash>
+	<FileHash>{A082F5E1-7750-3634-F773-329BBE254866}</FileHash>
 </SoundBanksInfo>
