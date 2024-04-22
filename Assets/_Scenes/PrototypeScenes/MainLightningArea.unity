@@ -22291,7 +22291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4520ff861e339d42bae57b95686b14b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TargetObject: {fileID: 1237441243}
+  TargetObject: {fileID: 1237441245}
   ControlMode: 2
   AddToInitialValue: 1
   UseUnscaledTime: 1
@@ -22335,8 +22335,8 @@ MonoBehaviour:
   RemapNoiseValues: 0
   RemapNoiseZero: 0
   RemapNoiseOne: 1
-  OneTimeDuration: 1
-  OneTimeAmplitude: 1
+  OneTimeDuration: 0.1
+  OneTimeAmplitude: 5
   OneTimeRemapMin: 0
   OneTimeRemapMax: 1
   OneTimeCurve:
@@ -22423,9 +22423,33 @@ MonoBehaviour:
   PingPong: 0
   AttributeNames:
   - <Undefined Attribute>
-  - Value
-  PropertyName: Value
-  ChoiceIndex: 1
+  - MinValue
+  - MaxValue
+  - Duration
+  - PingPongPauseDuration
+  - LoopStartValue
+  - LoopEndValue
+  - LoopDuration
+  - LoopPauseDuration
+  - DrivenLevel
+  - RemapNoiseZero
+  - RemapNoiseOne
+  - OneTimeDuration
+  - OneTimeAmplitude
+  - OneTimeRemapMin
+  - OneTimeRemapMax
+  - AudioAnalyzerMultiplier
+  - AudioAnalyzerOffset
+  - AudioAnalyzerLerp
+  - ToDestinationValue
+  - ToDestinationDuration
+  - InitialValue
+  - CurrentValue
+  - CurrentValueNormalized
+  - PingPong
+  - LoopTime
+  PropertyName: OneTimeAmplitude
+  ChoiceIndex: 13
 --- !u!114 &1237441239
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22467,7 +22491,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1237441243
+--- !u!114 &1237441244
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -22476,18 +22500,212 @@ MonoBehaviour:
   m_GameObject: {fileID: 1237441233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6d3fcaf71c36f5469498fe52839c37d, type: 3}
+  m_Script: {fileID: 11500000, guid: 0a5869bb56804354cb1342b402506afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  applyGlobal: 0
-  targetType: 3
-  render: {fileID: 0}
-  materialIndex: 0
-  decal: {fileID: 0}
-  image: {fileID: 1237441241}
-  globalMaterial: {fileID: 0}
-  _value: 3
-  floatProperty: _EmissonStrength
+  targetType: 0
+  floatController: {fileID: 1237441238}
+  shaderController: {fileID: 0}
+  controlField: 1
+  frequencyResponse: 0
+  amplitudeRange: {x: 0, y: 1}
+  smooth: 0
+  maxAmplitudeChange: 1
+  onlyUpdateOnBeat: 0
+  beatInterval: 0
+--- !u!114 &1237441245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1237441233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ad986206bb726846a202cfdedd282dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TargetType: 1
+  TargetRenderer: {fileID: 0}
+  TargetMaterialID: 0
+  TargetImage: {fileID: 1237441241}
+  UseMaterialForRendering: 1
+  TargetRawImage: {fileID: 0}
+  TargetText: {fileID: 0}
+  CacheMaterial: 1
+  CreateMaterialInstance: 1
+  TargetPropertyName: _EmissionStrength
+  PropertyType: 4
+  X: 0
+  Y: 0
+  Z: 0
+  W: 0
+  ColorMode: 0
+  ColorRamp:
+    serializedVersion: 2
+    key0: {r: 1, g: 1, b: 1, a: 1}
+    key1: {r: 1, g: 1, b: 1, a: 1}
+    key2: {r: 0, g: 0, b: 0, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 0
+    ctime1: 65535
+    ctime2: 0
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 2
+    m_NumAlphaKeys: 2
+  FromColor: {r: 0, g: 0, b: 0, a: 0}
+  ToColor: {r: 2.1946137, g: 0, b: 0, a: 0}
+  ControlMode: 2
+  AddToInitialValue: 1
+  UseUnscaledTime: 1
+  RevertToInitialValueAfterEnd: 1
+  UseMaterialPropertyBlocks: 0
+  SpriteRendererTextureProperty: _MainTex
+  SafeMode: 0
+  Curve:
+    MMTweenDefinitionType: 0
+    MMTweenCurve: 0
+    Curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    Initialized: 0
+  MinValue: 0
+  MaxValue: 5
+  Duration: 1
+  PingPongPauseDuration: 1
+  LoopCurve:
+    MMTweenDefinitionType: 0
+    MMTweenCurve: 0
+    Curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    Initialized: 0
+  LoopStartValue: 0
+  LoopEndValue: 5
+  LoopDuration: 1
+  LoopPauseDuration: 1
+  DrivenLevel: 0
+  Amplitude: {x: 0, y: 5}
+  Frequency: {x: 1, y: 1}
+  Shift: {x: 0, y: 1}
+  RemapNoiseValues: 0
+  RemapNoiseZero: 0
+  RemapNoiseOne: 1
+  OneTimeDuration: 1
+  OneTimeAmplitude: 1
+  OneTimeRemapMin: 0
+  OneTimeRemapMax: 1
+  OneTimeCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  OneTimeButton: 0
+  DisableAfterOneTime: 0
+  DisableGameObjectAfterOneTime: 0
+  AudioAnalyzer: {fileID: 0}
+  BeatID: 0
+  AudioAnalyzerMultiplier: 1
+  AudioAnalyzerOffset: 0
+  AudioAnalyzerLerp: 60
+  ToDestinationValue: 1
+  ToDestinationDuration: 1
+  ToDestinationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.5
+      value: 0.6
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ToDestinationButton: 0
+  DisableAfterToDestination: 0
+  InitialValue: 0
+  CurrentValue: 0
+  CurrentValueNormalized: 0
+  InitialColor: {r: 0, g: 0, b: 0, a: 0}
+  PropertyID: 0
+  PropertyFound: 0
+  TargetMaterial: {fileID: 0}
+  PingPong: 0
+  LoopTime: 0
 --- !u!4 &1239190872 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3247662601864608305, guid: 2841e47fdc821e742b84fe56a306a6e6, type: 3}
@@ -39437,10 +39655,13 @@ PrefabInstance:
       addedObject: {fileID: 1237441239}
     - targetCorrespondingSourceObject: {fileID: 9218566453973603496, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 1237441244}
+    - targetCorrespondingSourceObject: {fileID: 9218566453973603496, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 1237441238}
     - targetCorrespondingSourceObject: {fileID: 9218566453973603496, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1237441243}
+      addedObject: {fileID: 1237441245}
   m_SourcePrefab: {fileID: 100100000, guid: 39bb35f02eafd93489282364f1024c65, type: 3}
 --- !u!114 &81138555853967075 stripped
 MonoBehaviour:
@@ -39538,19 +39759,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9231997
+      value: 0.92319965
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.38341913
+      value: -0.38341916
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.024297148
+      value: -0.024297059
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.010090992
+      value: -0.010090947
       objectReference: {fileID: 0}
     - target: {fileID: 357537751564058929, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -39570,19 +39791,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 854501814571185126, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9402693
+      value: 0.94026935
       objectReference: {fileID: 0}
     - target: {fileID: 854501814571185126, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.3404316
+      value: 0.34043163
       objectReference: {fileID: 0}
     - target: {fileID: 854501814571185126, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000017881392
+      value: -0.00000014901161
       objectReference: {fileID: 0}
     - target: {fileID: 854501814571185126, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000002235174
+      value: -0.000000022351742
       objectReference: {fileID: 0}
     - target: {fileID: 1256457383624874618, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_Sprite
