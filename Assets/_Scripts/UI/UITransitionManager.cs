@@ -75,6 +75,7 @@ public class UITransitionManager : MonoBehaviour
         camera2.Priority = 2; // Medium priority for camera2
         camera3.Priority = 1; // Lowest priority for camera3
         button2.gameObject.SetActive(false);
+        button4.gameObject.GetComponent<ButtonClickHover>().OnExitHover();
         button4.gameObject.SetActive(false);
     }
 
