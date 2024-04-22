@@ -24,8 +24,13 @@ public class PlayerHealth : Health
     public Sprite emptyHeartImage;
 
     private float currHealthPercentage;
+    
+    public Material hurtMat;
+
+    public Material normalMat;
 
     public float gracePeriodTime = 2f;
+
  
     #endregion
 
@@ -46,10 +51,12 @@ public class PlayerHealth : Health
                     if (i < heartIndex)
                     {
                         heartImage.sprite = fullHeartImage;
+                        heartImage.material = normalMat;
                     }
                     else
                     {
                         heartImage.sprite = emptyHeartImage;
+                        heartImage.material = hurtMat;
                     }
                 }
             

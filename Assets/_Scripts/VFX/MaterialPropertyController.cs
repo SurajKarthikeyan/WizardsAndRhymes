@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 /// <summary>
 /// Base class for controlling properties on materials
@@ -11,7 +12,7 @@ public class MaterialPropertyController : MonoBehaviour
 {
     #region Variables
     [Tooltip("Possible component types to control the materials of")]
-    enum TargetType { None, Renderer, Decal}
+    enum TargetType { None, Renderer, Decal, Image}
 
 
     [Header("Base Material Property Controller Settings")]
@@ -33,8 +34,10 @@ public class MaterialPropertyController : MonoBehaviour
     [MMEnumCondition("targetType", (int)TargetType.Decal, Hidden = true)]
     [Tooltip("The decal whose material to control")]
     [SerializeField] DecalProjector decal;
-    
 
+    [MMEnumCondition("targetType", (int)TargetType.Image, Hidden = true)] 
+    [SerializeField] private Image image;
+    
     [MMCondition("applyGlobal", true, false)]
     [Tooltip("The material to control all instances of")]
     [SerializeField] Material globalMaterial;
@@ -61,6 +64,10 @@ public class MaterialPropertyController : MonoBehaviour
                 material = render.materials[materialIndex];
             else if (targetType == TargetType.Decal)
                 material = decal.material;
+            else if (targetType == TargetType.Image)
+            {
+                material = image.material;
+            }
             else
                 Debug.LogError("No valid target to edit material set");
         }
