@@ -27,6 +27,8 @@ public class WordCanvasManager : MonoBehaviour, IInteractable
     
     public GameObject wordParent;
 
+    [SerializeField] private AK.Wwise.Event rapRockESoundEffect;
+
     /// <summary>
     /// Function that is called on scene start
     /// </summary>
@@ -106,6 +108,7 @@ public class WordCanvasManager : MonoBehaviour, IInteractable
         if (!canvasActivated)
         {
             ToggleCanvas(true);
+            rapRockESoundEffect.Post(this.gameObject);
         }
         else
         {

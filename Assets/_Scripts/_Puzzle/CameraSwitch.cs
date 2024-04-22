@@ -20,6 +20,8 @@ public class CameraSwitch : MonoBehaviour
 
     public bool isTransitioning;
 
+    [SerializeField] private AK.Wwise.Event cameraSwitchSoundEffect;
+
 
     /// <summary>
     /// Function that is called whenever a collider enters this trigger
@@ -37,6 +39,7 @@ public class CameraSwitch : MonoBehaviour
             {
                 StartCoroutine(StopPlayerControl(0.8f));
                 camAnimator.SetBool("SwitchCam", is2D);
+                cameraSwitchSoundEffect.Post(this.gameObject);
             }
             PlayerController.instance.gridBasedControl = is2D;
         }
@@ -55,6 +58,7 @@ public class CameraSwitch : MonoBehaviour
             {
                 camAnimator.SetBool("SwitchCam", is2D);
                 StartCoroutine(StopPlayerControl(0.8f));
+                cameraSwitchSoundEffect.Post(this.gameObject);
             }
             PlayerController.instance.gridBasedControl = is2D;
         }
