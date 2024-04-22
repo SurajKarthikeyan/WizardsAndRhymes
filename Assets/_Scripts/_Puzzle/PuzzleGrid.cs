@@ -47,6 +47,8 @@ public class PuzzleGrid : MonoBehaviour
 
     [SerializeField] private AK.Wwise.Event icePushSoundEffect;
 
+    [SerializeField] private AK.Wwise.Event playerIceSlideEffect;
+
     public bool touchedTile;
 
 
@@ -473,11 +475,18 @@ public class PuzzleGrid : MonoBehaviour
 
         float elapsedTime = 0;
         go.transform.position = startingPos;
+        
         if(go.TryGetComponent(out IndividualEmissionChange var))
         {
             icePushSoundEffect.Post(this.gameObject);
             hasEmission = true;
             StartCoroutine(var.AlterEmissionOverTime(true));
+        }
+        
+        else if (go.TryGetComponent(out PlayerController instance))
+        {
+            playerIceSlideEffect.Post(this.gameObject);
+            AkSoundEngine.SetState("PlayerOnIce", "IsSliding");
         }
         while(elapsedTime < time)
         {
@@ -487,6 +496,8 @@ public class PuzzleGrid : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
+        
+        AkSoundEngine.SetState("PlayerOnIce", "NotSliding");
 
         if (hasEmission)
         {
