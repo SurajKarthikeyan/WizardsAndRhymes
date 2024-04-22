@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="784481870" Type="User" Language="SFX" Hash="{5B15E8B2-39B9-48C6-687B-8F452CDDC3BC}">
+		<SoundBank Id="784481870" Type="User" Language="SFX" Hash="{02FE4E8E-CEE8-CBA4-95D5-1E6332E56840}">
 			<ShortName>UIAndFartSoundBank</ShortName>
 			<Path>UIAndFartSoundBank.bnk</Path>
 			<Media>
@@ -115,23 +115,10 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{ECA20EA9-03ED-800E-FE3D-0D9A66A2E60E}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{CB4B3725-E1E7-D305-1B45-076DF67298FD}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
-				<Custom>
-					<Plugin Id="134123109" Name="Gain (Custom)" LibName="Wwise Gain" LibId="9109507"/>
-					<Plugin Id="322348316" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
-					<Plugin Id="470699092" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
-					<Plugin Id="498184372" Name="Gain (Custom)" LibName="Wwise Gain" LibId="9109507"/>
-					<Plugin Id="562758421" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
-					<Plugin Id="610181853" Name="Meter (Custom)" LibName="Wwise Meter" LibId="8454147"/>
-					<Plugin Id="777683974" Name="Gain (Custom)" LibName="Wwise Gain" LibId="9109507"/>
-				</Custom>
-				<ShareSets>
-					<Plugin Id="1008402193" Name="Low_Pass_20KHz" LibName="Wwise Parametric EQ" LibId="6881283"/>
-					<Plugin Id="3604890626" Name="High_Pass_60Hz" LibName="Wwise Parametric EQ" LibId="6881283"/>
-				</ShareSets>
 				<AudioDevices>
 					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
 					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
@@ -140,58 +127,10 @@
 			<Busses>
 				<Bus Id="221867874" Name="EnvironmentBus"/>
 				<Bus Id="309504875" Name="DialogueBus"/>
-				<Bus Id="1966988073" Name="testBus">
-					<PluginRefs>
-						<Custom>
-							<PluginRef Id="470699092"/>
-						</Custom>
-					</PluginRefs>
-					<AuxBusRefs>
-						<AuxBusRef Id="221139265" Name="auxHigh"/>
-						<AuxBusRef Id="411780261" Name="auxLow"/>
-						<AuxBusRef Id="1049182825" Name="auxMid"/>
-					</AuxBusRefs>
-				</Bus>
 				<Bus Id="2886307548" Name="MusicBus"/>
 				<Bus Id="3427258114" Name="SoundFXBus"/>
 				<Bus Id="3803692087" Name="Master Audio Bus"/>
 			</Busses>
-			<AuxBusses>
-				<AuxBus Id="221139265" Name="auxHigh">
-					<PluginRefs>
-						<Custom>
-							<PluginRef Id="322348316"/>
-							<PluginRef Id="498184372"/>
-						</Custom>
-						<ShareSets>
-							<PluginRef Id="3604890626"/>
-						</ShareSets>
-					</PluginRefs>
-				</AuxBus>
-				<AuxBus Id="411780261" Name="auxLow">
-					<PluginRefs>
-						<Custom>
-							<PluginRef Id="562758421"/>
-							<PluginRef Id="777683974"/>
-						</Custom>
-						<ShareSets>
-							<PluginRef Id="1008402193"/>
-						</ShareSets>
-					</PluginRefs>
-				</AuxBus>
-				<AuxBus Id="1049182825" Name="auxMid">
-					<PluginRefs>
-						<Custom>
-							<PluginRef Id="134123109"/>
-							<PluginRef Id="610181853"/>
-						</Custom>
-						<ShareSets>
-							<PluginRef Id="1008402193"/>
-							<PluginRef Id="3604890626"/>
-						</ShareSets>
-					</PluginRefs>
-				</AuxBus>
-			</AuxBusses>
 			<GameParameters>
 				<GameParameter Id="545371365" Name="Low"/>
 				<GameParameter Id="1117531621" Name="Amp"/>
@@ -222,9 +161,23 @@
 						<State Id="2475500331" Name="OutOfCrowdSurf"/>
 					</States>
 				</StateGroup>
+				<StateGroup Id="3506000894" Name="PlayerOnIce">
+					<States>
+						<State Id="437705085" Name="IsSliding"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="3078077546" Name="NotSliding"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="3570861977" Name="MetalBlockPush">
+					<States>
+						<State Id="91517132" Name="NotPushing"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="2597476059" Name="IsPushing"/>
+					</States>
+				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1702439946" Type="User" Language="SFX" Hash="{F16744CA-65B4-F336-3A7B-D19DF74DEEE5}">
+		<SoundBank Id="1702439946" Type="User" Language="SFX" Hash="{563B0426-9D39-58C0-9F89-E9DEDC2A0B09}">
 			<ShortName>InteractiveMusicBank</ShortName>
 			<Path>InteractiveMusicBank.bnk</Path>
 			<Media>
@@ -271,10 +224,6 @@
 				<File Id="237657344" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems 27-UVIWorkstation.wav</ShortName>
 					<CachePath>SFX/NewStems 27-UVIWorkstation_5C91F944.wem</CachePath>
-				</File>
-				<File Id="242173308" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Underground50S3.wav</ShortName>
-					<CachePath>SFX/Underground50S3_FBC78EF0.wem</CachePath>
 				</File>
 				<File Id="307697709" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PianoArp.wav</ShortName>
@@ -547,11 +496,6 @@
 						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
-				<Event Id="427386941" Name="RoomMus" DurationType="Infinite">
-					<MediaRefs>
-						<MediaRef Id="242173308"/>
-					</MediaRefs>
-				</Event>
 			</Events>
 			<StateGroups>
 				<StateGroup Id="1021618141" Name="MusicState">
@@ -571,17 +515,13 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="2519533265" Type="User" Language="SFX" Hash="{FE8C8B68-53C8-300A-E20B-E2E84081CC2C}">
-			<ShortName>CombatAndEnviorment</ShortName>
-			<Path>CombatAndEnviorment.bnk</Path>
+		<SoundBank Id="3361862619" Type="User" Language="SFX" Hash="{A79EB670-F128-C7F1-0933-1D92961DE010}">
+			<ShortName>CombatAndEnvironment</ShortName>
+			<Path>CombatAndEnvironment.bnk</Path>
 			<Media>
 				<File Id="3886522" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Objects, Misc, Paint, Spray Can, Marble, Shake SND30684.wav</ShortName>
 					<CachePath>SFX/Objects, Misc, Paint, Spray Can, Marble, Shake SND30684_D653D3AE.wem</CachePath>
-				</File>
-				<File Id="5318352" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Zap2.wav</ShortName>
-					<CachePath>SFX/Zap2_2EDD47BA.wem</CachePath>
 				</File>
 				<File Id="19964142" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PartOfDash_ClothesHitLarge.wav</ShortName>
@@ -603,6 +543,10 @@
 					<ShortName>Swoosh2.wav</ShortName>
 					<CachePath>SFX/Swoosh2_2EDD47BA.wem</CachePath>
 				</File>
+				<File Id="54835555" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Impact Sharp.wav</ShortName>
+					<CachePath>SFX/Metal Impact Sharp_82E439FB.wem</CachePath>
+				</File>
 				<File Id="55840581" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MicTap2.wav</ShortName>
 					<CachePath>SFX/MicTap2_2EDD47BA.wem</CachePath>
@@ -615,6 +559,10 @@
 					<ShortName>RockPlatformPush1.wav</ShortName>
 					<CachePath>SFX/RockPlatformPush1_479055C9.wem</CachePath>
 				</File>
+				<File Id="71341172" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceFriction2.wav</ShortName>
+					<CachePath>SFX/IceFriction2_BFCBE66D.wem</CachePath>
+				</File>
 				<File Id="72631210" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Electricity, Zap, Shock, Impact, Short 02 SND13443.wav</ShortName>
 					<CachePath>SFX/Electricity, Zap, Shock, Impact, Short 02 SND13443_6FE3C6A7.wem</CachePath>
@@ -623,6 +571,10 @@
 					<ShortName>Communications, Phonograph, Vinyl, Record Scratch 08 SND13872.wav</ShortName>
 					<CachePath>SFX/Communications, Phonograph, Vinyl, Record Scratch 08 SND13872_A507569F.wem</CachePath>
 				</File>
+				<File Id="90803293" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceFriction.wav</ShortName>
+					<CachePath>SFX/IceFriction_B5390F69.wem</CachePath>
+				</File>
 				<File Id="94231916" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>EnemyHitFull.wav</ShortName>
 					<CachePath>SFX/EnemyHitFull_1268DADC.wem</CachePath>
@@ -630,10 +582,6 @@
 				<File Id="101762498" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>IceBlockWooshes.wav</ShortName>
 					<CachePath>SFX/IceBlockWooshes_78AA9B0C.wem</CachePath>
-				</File>
-				<File Id="103387700" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Woowoowoowoo.wav</ShortName>
-					<CachePath>SFX/Woowoowoowoo_829D1230.wem</CachePath>
 				</File>
 				<File Id="107507937" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PartOfDash_ClothesHitSuperHit.wav</ShortName>
@@ -654,6 +602,14 @@
 				<File Id="128351763" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Kick1.wav</ShortName>
 					<CachePath>SFX/Kick1_2EDD47BA.wem</CachePath>
+				</File>
+				<File Id="132413351" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Impact Sharp.wav</ShortName>
+					<CachePath>SFX/Metal Impact Sharp_172AB470.wem</CachePath>
+				</File>
+				<File Id="132699668" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Impact Sharp.wav</ShortName>
+					<CachePath>SFX/Metal Impact Sharp_857494A1.wem</CachePath>
 				</File>
 				<File Id="135118416" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
@@ -691,10 +647,6 @@
 					<ShortName>Fire3.wav</ShortName>
 					<CachePath>SFX/Fire3_2EDD47BA.wem</CachePath>
 				</File>
-				<File Id="184873857" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Woowoowoowoo.wav</ShortName>
-					<CachePath>SFX/Woowoowoowoo_158A0279.wem</CachePath>
-				</File>
 				<File Id="187260305" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Electricity, Zap, Shock, Impact, Short 03 SND20300.wav</ShortName>
 					<CachePath>SFX/Electricity, Zap, Shock, Impact, Short 03 SND20300_2EDD47BA.wem</CachePath>
@@ -727,6 +679,10 @@
 					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
 					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_174DF8C2.wem</CachePath>
 				</File>
+				<File Id="259572801" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Rumble.wav</ShortName>
+					<CachePath>SFX/Metal Rumble_3CCF778F.wem</CachePath>
+				</File>
 				<File Id="266983698" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PartOfDash_WindGust1.wav</ShortName>
 					<CachePath>SFX/PartOfDash_WindGust1_5E931616.wem</CachePath>
@@ -738,6 +694,10 @@
 				<File Id="275029706" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PartOfDash_ClothesHit2.wav</ShortName>
 					<CachePath>SFX/PartOfDash_ClothesHit2_881CD836.wem</CachePath>
+				</File>
+				<File Id="289879532" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceFriction2.wav</ShortName>
+					<CachePath>SFX/IceFriction2_C711D73E.wem</CachePath>
 				</File>
 				<File Id="296816978" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GateOpen.wav</ShortName>
@@ -775,6 +735,10 @@
 					<ShortName>PartOfDash_ClothesHit3.wav</ShortName>
 					<CachePath>SFX/PartOfDash_ClothesHit3_73BBA339.wem</CachePath>
 				</File>
+				<File Id="396942759" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Ice, Friction, Crispy, Creaking, Breaking, Stress 03 SND40986.wav</ShortName>
+					<CachePath>SFX/Ice, Friction, Crispy, Creaking, Breaking, Stress 03 SND40986_8CA42F3C.wem</CachePath>
+				</File>
 				<File Id="397062548" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Shimmer1.wav</ShortName>
 					<CachePath>SFX/Shimmer1_2EDD47BA.wem</CachePath>
@@ -782,6 +746,10 @@
 				<File Id="403578445" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PlayerHitDowner.wav</ShortName>
 					<CachePath>SFX/PlayerHitDowner_C2F67CFB.wem</CachePath>
+				</File>
+				<File Id="409656807" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Electricity, Zap, Shock, Impact, Heavy 03 SND13445.wav</ShortName>
+					<CachePath>SFX/Electricity, Zap, Shock, Impact, Heavy 03 SND13445_66F6C7B2.wem</CachePath>
 				</File>
 				<File Id="418162203" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PartOfDash_WindGust1.wav</ShortName>
@@ -803,13 +771,13 @@
 					<ShortName>PartOfDash_ClothesHit3.wav</ShortName>
 					<CachePath>SFX/PartOfDash_ClothesHit3_881DE3AE.wem</CachePath>
 				</File>
+				<File Id="461959986" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Impact Sharp.wav</ShortName>
+					<CachePath>SFX/Metal Impact Sharp_7064565F.wem</CachePath>
+				</File>
 				<File Id="466475986" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PartOfDash_ClothesHitSuperHit.wav</ShortName>
 					<CachePath>SFX/PartOfDash_ClothesHitSuperHit_7A585888.wem</CachePath>
-				</File>
-				<File Id="469236046" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Ice3.wav</ShortName>
-					<CachePath>SFX/Ice3_2EDD47BA.wem</CachePath>
 				</File>
 				<File Id="470829322" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>EnemyHitFull.wav</ShortName>
@@ -818,6 +786,14 @@
 				<File Id="474020601" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PartOfDash_ClothesHitLarge.wav</ShortName>
 					<CachePath>SFX/PartOfDash_ClothesHitLarge_AF5814B1.wem</CachePath>
+				</File>
+				<File Id="491323455" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Impact.wav</ShortName>
+					<CachePath>SFX/Metal Impact_081BCC67.wem</CachePath>
+				</File>
+				<File Id="492072361" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceFriction.wav</ShortName>
+					<CachePath>SFX/IceFriction_78327771.wem</CachePath>
 				</File>
 				<File Id="497414986" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CrystalZap.wav</ShortName>
@@ -830,6 +806,10 @@
 				<File Id="524500419" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PlayerHitDowner.wav</ShortName>
 					<CachePath>SFX/PlayerHitDowner_1DBEA18F.wem</CachePath>
+				</File>
+				<File Id="530099965" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Electricity, Zap, Shock, Impact, Short 02 SND13443.wav</ShortName>
+					<CachePath>SFX/Electricity, Zap, Shock, Impact, Short 02 SND13443_415C397F.wem</CachePath>
 				</File>
 				<File Id="535223205" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MicTap3.wav</ShortName>
@@ -851,6 +831,10 @@
 					<ShortName>EnemyHitFull.wav</ShortName>
 					<CachePath>SFX/EnemyHitFull_57DF507E.wem</CachePath>
 				</File>
+				<File Id="566927662" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Impact Sharp.wav</ShortName>
+					<CachePath>SFX/Metal Impact Sharp_478D200B.wem</CachePath>
+				</File>
 				<File Id="567844658" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Lever2.wav</ShortName>
 					<CachePath>SFX/Lever2_2EDD47BA.wem</CachePath>
@@ -870,10 +854,6 @@
 				<File Id="595136245" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>RockPlatformPush2.wav</ShortName>
 					<CachePath>SFX/RockPlatformPush2_BD9731DF.wem</CachePath>
-				</File>
-				<File Id="595452255" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Woowoowoowoo.wav</ShortName>
-					<CachePath>SFX/Woowoowoowoo_AABCF801.wem</CachePath>
 				</File>
 				<File Id="596267822" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>EnemyHitFull.wav</ShortName>
@@ -910,6 +890,14 @@
 				<File Id="651268478" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GateOpen.wav</ShortName>
 					<CachePath>SFX/GateOpen_0F91307A.wem</CachePath>
+				</File>
+				<File Id="653303503" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Impact Sharp.wav</ShortName>
+					<CachePath>SFX/Metal Impact Sharp_382F6972.wem</CachePath>
+				</File>
+				<File Id="653791290" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Zap1.wav</ShortName>
+					<CachePath>SFX/Zap1_4EFDD526.wem</CachePath>
 				</File>
 				<File Id="654079656" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fire1.wav</ShortName>
@@ -951,10 +939,6 @@
 					<ShortName>PlayerHitImpact.wav</ShortName>
 					<CachePath>SFX/PlayerHitImpact_14FF8004.wem</CachePath>
 				</File>
-				<File Id="695289053" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Woowoowoowoo.wav</ShortName>
-					<CachePath>SFX/Woowoowoowoo_F200D12D.wem</CachePath>
-				</File>
 				<File Id="700571979" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PlayerHitDowner.wav</ShortName>
 					<CachePath>SFX/PlayerHitDowner_674C8786.wem</CachePath>
@@ -975,17 +959,33 @@
 					<ShortName>PlayerHitDowner.wav</ShortName>
 					<CachePath>SFX/PlayerHitDowner_A6913DC4.wem</CachePath>
 				</File>
+				<File Id="745975886" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceFriction.wav</ShortName>
+					<CachePath>SFX/IceFriction_08162FCF.wem</CachePath>
+				</File>
 				<File Id="771010357" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>IceBlockWooshes.wav</ShortName>
 					<CachePath>SFX/IceBlockWooshes_CF875CEC.wem</CachePath>
 				</File>
-				<File Id="824108392" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Ice2.wav</ShortName>
-					<CachePath>SFX/Ice2_2EDD47BA.wem</CachePath>
+				<File Id="774735159" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Impact.wav</ShortName>
+					<CachePath>SFX/Metal Impact_99F28F9E.wem</CachePath>
 				</File>
 				<File Id="825127858" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PartOfDash_ClothesHit2.wav</ShortName>
 					<CachePath>SFX/PartOfDash_ClothesHit2_1AC99082.wem</CachePath>
+				</File>
+				<File Id="829601859" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceFriction2.wav</ShortName>
+					<CachePath>SFX/IceFriction2_25599EDB.wem</CachePath>
+				</File>
+				<File Id="830382966" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Electricity, Zap, Shock, Impact, Short 03 SND20300.wav</ShortName>
+					<CachePath>SFX/Electricity, Zap, Shock, Impact, Short 03 SND20300_1BA8E6EF.wem</CachePath>
+				</File>
+				<File Id="834269914" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>IceFriction2.wav</ShortName>
+					<CachePath>SFX/IceFriction2_405AA6EA.wem</CachePath>
 				</File>
 				<File Id="853954014" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CrystalShimmers.wav</ShortName>
@@ -1023,10 +1023,6 @@
 					<ShortName>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</ShortName>
 					<CachePath>SFX/Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_E972C9F2.wem</CachePath>
 				</File>
-				<File Id="927171492" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Woowoowoowoo.wav</ShortName>
-					<CachePath>SFX/Woowoowoowoo_C6F1DDBC.wem</CachePath>
-				</File>
 				<File Id="929853616" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fire2.wav</ShortName>
 					<CachePath>SFX/Fire2_2EDD47BA.wem</CachePath>
@@ -1034,10 +1030,6 @@
 				<File Id="930362323" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PlayerHitImpact.wav</ShortName>
 					<CachePath>SFX/PlayerHitImpact_B5E6F350.wem</CachePath>
-				</File>
-				<File Id="930947941" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Ice1.wav</ShortName>
-					<CachePath>SFX/Ice1_2EDD47BA.wem</CachePath>
 				</File>
 				<File Id="935653253" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>EnemyHitFull.wav</ShortName>
@@ -1067,6 +1059,10 @@
 					<ShortName>GateOpen.wav</ShortName>
 					<CachePath>SFX/GateOpen_2BE80117.wem</CachePath>
 				</File>
+				<File Id="997188878" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Impact.wav</ShortName>
+					<CachePath>SFX/Metal Impact_0BC532E0.wem</CachePath>
+				</File>
 				<File Id="1013092545" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PartOfDash_ClothesHit3.wav</ShortName>
 					<CachePath>SFX/PartOfDash_ClothesHit3_46BCBB25.wem</CachePath>
@@ -1095,20 +1091,20 @@
 					<ShortName>PartOfDash_ClothesHit2.wav</ShortName>
 					<CachePath>SFX/PartOfDash_ClothesHit2_ECE894F5.wem</CachePath>
 				</File>
+				<File Id="1070103033" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Metal Impact Sharp.wav</ShortName>
+					<CachePath>SFX/Metal Impact Sharp_51ECA98F.wem</CachePath>
+				</File>
 			</Media>
 			<Plugins>
 				<ShareSets>
 					<Plugin Id="544780433" Name="New_Gain" LibName="Wwise Gain" LibId="9109507"/>
 					<Plugin Id="1008402193" Name="Low_Pass_20KHz" LibName="Wwise Parametric EQ" LibId="6881283"/>
-					<Plugin Id="1259256166" Name="New_RoomVerb" LibName="Wwise RoomVerb" LibId="7733251"/>
-					<Plugin Id="3160090811" Name="New_Compressor" LibName="Wwise Compressor" LibId="7077891"/>
-					<Plugin Id="3435419520" Name="New_Guitar_Distortion" LibName="Wwise Guitar Distortion" LibId="8257539"/>
 				</ShareSets>
 			</Plugins>
 			<Events>
 				<Event Id="3442485957" Name="BlastAttack" DurationType="OneShot" DurationMin="0.6250113" DurationMax="0.8901391">
 					<MediaRefs>
-						<MediaRef Id="5318352"/>
 						<MediaRef Id="28928322"/>
 						<MediaRef Id="43950693"/>
 						<MediaRef Id="55840581"/>
@@ -1184,13 +1180,20 @@
 						<MediaRef Id="985564156"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="418751485" Name="IceBlock" DurationType="OneShot" DurationMin="1.7034016" DurationMax="2.37977">
+				<Event Id="418751485" Name="IceBlock" DurationType="OneShot" DurationMin="1.7034016" DurationMax="4.2737226">
 					<MediaRefs>
+						<MediaRef Id="71341172"/>
+						<MediaRef Id="90803293"/>
 						<MediaRef Id="101762498"/>
+						<MediaRef Id="289879532"/>
 						<MediaRef Id="320125018"/>
+						<MediaRef Id="492072361"/>
 						<MediaRef Id="618127826"/>
 						<MediaRef Id="733335054"/>
+						<MediaRef Id="745975886"/>
 						<MediaRef Id="771010357"/>
+						<MediaRef Id="829601859"/>
+						<MediaRef Id="834269914"/>
 						<MediaRef Id="956823132"/>
 						<MediaRef Id="1032575052"/>
 					</MediaRefs>
@@ -1200,22 +1203,6 @@
 						<MediaRef Id="64644625"/>
 						<MediaRef Id="595136245"/>
 					</MediaRefs>
-				</Event>
-				<Event Id="605469711" Name="LeveLCompleteSting" DurationType="OneShot" DurationMin="0.21453871" DurationMax="0.43607208">
-					<MediaRefs>
-						<MediaRef Id="103387700"/>
-						<MediaRef Id="184873857"/>
-						<MediaRef Id="595452255"/>
-						<MediaRef Id="695289053"/>
-						<MediaRef Id="927171492"/>
-					</MediaRefs>
-					<PluginRefs>
-						<ShareSets>
-							<PluginRef Id="1259256166"/>
-							<PluginRef Id="3160090811"/>
-							<PluginRef Id="3435419520"/>
-						</ShareSets>
-					</PluginRefs>
 				</Event>
 				<Event Id="2782712987" Name="Lever" DurationType="OneShot" DurationMin="2.4" DurationMax="2.4">
 					<MediaRefs>
@@ -1236,22 +1223,8 @@
 						<MediaRef Id="929853616"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="1651067412" Name="MeleeIce" DurationType="OneShot" DurationMin="0.5" DurationMax="0.5">
-					<MediaRefs>
-						<MediaRef Id="28928322"/>
-						<MediaRef Id="55840581"/>
-						<MediaRef Id="59239616"/>
-						<MediaRef Id="128351763"/>
-						<MediaRef Id="469236046"/>
-						<MediaRef Id="535223205"/>
-						<MediaRef Id="669664009"/>
-						<MediaRef Id="824108392"/>
-						<MediaRef Id="930947941"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="1583612915" Name="MeleeLightning" DurationType="OneShot" DurationMin="0.5" DurationMax="0.8901391">
 					<MediaRefs>
-						<MediaRef Id="5318352"/>
 						<MediaRef Id="28928322"/>
 						<MediaRef Id="55840581"/>
 						<MediaRef Id="59239616"/>
@@ -1268,6 +1241,24 @@
 							<PluginRef Id="544780433"/>
 						</ShareSets>
 					</PluginRefs>
+				</Event>
+				<Event Id="3570861977" Name="MetalBlockPush" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="54835555"/>
+						<MediaRef Id="132413351"/>
+						<MediaRef Id="132699668"/>
+						<MediaRef Id="259572801"/>
+						<MediaRef Id="461959986"/>
+						<MediaRef Id="491323455"/>
+						<MediaRef Id="566927662"/>
+						<MediaRef Id="653303503"/>
+						<MediaRef Id="774735159"/>
+						<MediaRef Id="997188878"/>
+						<MediaRef Id="1070103033"/>
+					</MediaRefs>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="3570861977" Id="2597476059" Name="IsPushing"/>
+					</ActionSetState>
 				</Event>
 				<Event Id="2525052962" Name="PlayerDash" DurationType="OneShot" DurationMin="2.315294" DurationMax="2.5283422">
 					<MediaRefs>
@@ -1324,6 +1315,14 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
+				<Event Id="816354274" Name="PlayerIceSlide" DurationType="Infinite">
+					<MediaRefs>
+						<MediaRef Id="396942759"/>
+					</MediaRefs>
+					<ActionSetState>
+						<ActionSetStateEntry GroupId="3506000894" Id="437705085" Name="IsSliding"/>
+					</ActionSetState>
+				</Event>
 				<Event Id="1744863420" Name="RangedFire" DurationType="OneShot" DurationMin="0.6250113" DurationMax="0.72210854">
 					<MediaRefs>
 						<MediaRef Id="43950693"/>
@@ -1335,20 +1334,8 @@
 						<MediaRef Id="929853616"/>
 					</MediaRefs>
 				</Event>
-				<Event Id="2982846157" Name="RangedIce" DurationType="OneShot" DurationMin="0.6250113" DurationMax="0.6250113">
-					<MediaRefs>
-						<MediaRef Id="43950693"/>
-						<MediaRef Id="362380582"/>
-						<MediaRef Id="397062548"/>
-						<MediaRef Id="469236046"/>
-						<MediaRef Id="664797136"/>
-						<MediaRef Id="824108392"/>
-						<MediaRef Id="930947941"/>
-					</MediaRefs>
-				</Event>
 				<Event Id="1899629126" Name="RangedLightning" DurationType="OneShot" DurationMin="0.6250113" DurationMax="0.8901391">
 					<MediaRefs>
-						<MediaRef Id="5318352"/>
 						<MediaRef Id="43950693"/>
 						<MediaRef Id="72631210"/>
 						<MediaRef Id="187260305"/>
@@ -1374,6 +1361,14 @@
 						<MediaRef Id="596267822"/>
 						<MediaRef Id="896693686"/>
 						<MediaRef Id="935653253"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="2261469182" Name="TeslaCoilOff" DurationType="OneShot" DurationMin="0.69961035" DurationMax="1.3417329">
+					<MediaRefs>
+						<MediaRef Id="409656807"/>
+						<MediaRef Id="530099965"/>
+						<MediaRef Id="653791290"/>
+						<MediaRef Id="830382966"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3290622745" Name="WordPickup" DurationType="OneShot" DurationMin="0.799734" DurationMax="1.018271">
@@ -1404,8 +1399,22 @@
 						<State Id="2475500331" Name="OutOfCrowdSurf"/>
 					</States>
 				</StateGroup>
+				<StateGroup Id="3506000894" Name="PlayerOnIce">
+					<States>
+						<State Id="437705085" Name="IsSliding"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="3078077546" Name="NotSliding"/>
+					</States>
+				</StateGroup>
+				<StateGroup Id="3570861977" Name="MetalBlockPush">
+					<States>
+						<State Id="91517132" Name="NotPushing"/>
+						<State Id="748895195" Name="None"/>
+						<State Id="2597476059" Name="IsPushing"/>
+					</States>
+				</StateGroup>
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{3123DDB5-383A-3639-7041-0EB152166D05}</FileHash>
+	<FileHash>{67449AFB-CBF2-8266-C160-31D61C969AE3}</FileHash>
 </SoundBanksInfo>

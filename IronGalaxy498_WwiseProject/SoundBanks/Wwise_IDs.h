@@ -27,7 +27,6 @@ namespace AK
         static const AkUniqueID IFORGOTWHATAPRESSUREPLATEWASCALLED = 2494836859U;
         static const AkUniqueID LEVER = 2782712987U;
         static const AkUniqueID MELEEFIRE = 2248677623U;
-        static const AkUniqueID MELEEICE = 1651067412U;
         static const AkUniqueID MELEELIGHTNING = 1583612915U;
         static const AkUniqueID METALBLOCKPUSH = 3570861977U;
         static const AkUniqueID MUSIC = 3991942870U;
@@ -36,7 +35,6 @@ namespace AK
         static const AkUniqueID PLAYERHURT = 3537581393U;
         static const AkUniqueID PLAYERICESLIDE = 816354274U;
         static const AkUniqueID RANGEDFIRE = 1744863420U;
-        static const AkUniqueID RANGEDICE = 2982846157U;
         static const AkUniqueID RANGEDLIGHTNING = 1899629126U;
         static const AkUniqueID SKELETONHIT = 2460311919U;
         static const AkUniqueID TESLACOILOFF = 2261469182U;
@@ -132,15 +130,7 @@ namespace AK
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MUSICBUS = 2886307548U;
         static const AkUniqueID SOUNDFXBUS = 3427258114U;
-        static const AkUniqueID TESTBUS = 1966988073U;
     } // namespace BUSSES
-
-    namespace AUX_BUSSES
-    {
-        static const AkUniqueID AUXHIGH = 221139265U;
-        static const AkUniqueID AUXLOW = 411780261U;
-        static const AkUniqueID AUXMID = 1049182825U;
-    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {
