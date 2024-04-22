@@ -11,6 +11,7 @@ public class TeslaTower : MonoBehaviour
 
     #region Vars
     [SerializeField] private List<GameObject> electricEffectList;
+    [SerializeField] private AK.Wwise.Event teslaTowerDisabled;
     #endregion
 
     #region CustomMethods
@@ -20,6 +21,7 @@ public class TeslaTower : MonoBehaviour
     /// </summary>
     public void DisableElectricEffect()
     {
+        teslaTowerDisabled.Post(this.gameObject);
         for (int i = 0; i < electricEffectList.Count; i++)
         {
             electricEffectList[i].SetActive(false);
