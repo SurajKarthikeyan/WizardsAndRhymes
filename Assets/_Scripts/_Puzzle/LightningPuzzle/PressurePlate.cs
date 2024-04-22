@@ -99,6 +99,10 @@ public class PressurePlate : MonoBehaviour
     /// </summary>
     public void ActivateDefaultPressurePlate()
     {
+        if (activatableGameObject.TryGetComponent(out OnTeslaTowerDisable var))
+        {
+            var.DisableTeslaTower();
+        }
         activatableGameObject.SetActive(!activatableGameObject.activeSelf);
         if (lbManager != null)
         {
