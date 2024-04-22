@@ -19971,6 +19971,7 @@ GameObject:
   - component: {fileID: 1053229959}
   - component: {fileID: 1053229961}
   - component: {fileID: 1053229960}
+  - component: {fileID: 1053229962}
   m_Layer: 0
   m_Name: WizzoTriggerWave2
   m_TagString: Untagged
@@ -20032,6 +20033,35 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1053229962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1053229958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e29eb3c7720a44d995cc7f6ab7349b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 535554925}
+        m_TargetAssemblyTypeName: LoadSubSceneTrigger, Assembly-CSharp
+        m_MethodName: UnloadSubscene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: icepuzzle1
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerTags:
+  - Player
 --- !u!4 &1055228532 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3521096967233506011, guid: 1a244b4cb4787f24b9a555b26fff36f8, type: 3}
@@ -28548,6 +28578,7 @@ GameObject:
   - component: {fileID: 1518573367}
   - component: {fileID: 1518573369}
   - component: {fileID: 1518573368}
+  - component: {fileID: 1518573370}
   m_Layer: 0
   m_Name: WizzoTriggerWave3
   m_TagString: Untagged
@@ -28609,6 +28640,35 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1518573370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1518573366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11e29eb3c7720a44d995cc7f6ab7349b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onTrigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2055054757}
+        m_TargetAssemblyTypeName: LoadSubSceneTrigger, Assembly-CSharp
+        m_MethodName: UnloadSubscene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: icepuzzle2
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerTags:
+  - Player
 --- !u!1001 &1524535887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40828,7 +40888,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.38341916
+      value: -0.3834191
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
@@ -40938,21 +40998,25 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6359849035757450754, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 13.660004
+      objectReference: {fileID: 0}
     - target: {fileID: 6842627350565801079, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7120159554502453663, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.38140965
+      value: 0.38140962
       objectReference: {fileID: 0}
     - target: {fileID: 7120159554502453663, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.024318963
+      value: -0.024318993
       objectReference: {fileID: 0}
     - target: {fileID: 7120159554502453663, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.010038048
+      value: 0.010038093
       objectReference: {fileID: 0}
     - target: {fileID: 7324286372960558193, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_IsActive

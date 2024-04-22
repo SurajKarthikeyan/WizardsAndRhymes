@@ -53,6 +53,22 @@ public class LoadSubSceneTrigger : MonoBehaviour
         }
     }
 
+    public void UnloadSubscene(string name)
+    {
+        isUnloadingScene = true;
+
+    
+        if (SceneManager.GetSceneByName(name).isLoaded)
+        {
+            SceneManager.UnloadSceneAsync(name).completed += SubsceneUnloadOperation_completed;
+        }
+        
+        else
+        {
+            Debug.LogError("Subscene string not provided");
+        }
+    }
+
     private void SubsceneLoadOperation_completed(AsyncOperation obj)
     {
         isLoaded = true;
