@@ -17,26 +17,38 @@ public class DialogueTriggerer : MonoBehaviour, IFlagObject
     [Tooltip("Whether or not to set this gameobject to inactive after playing the dialogue")]
     public bool setToInactiveAfterPlay = false;
 
+    [SerializeField] private Animator cinemachineAnimator;
     public Collider dialogueCollider;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
-            if (playOnce == true && alreadyPlayed == true)
-            {
-                return;
-            }
-            else
-            {
-                alreadyPlayed = true;
-                dialogueHolder.TriggerDialogue();
-            }
+            PlayerController.instance.DisablePlayerControls();
+            cinemachineAnimator.SetBool("WizzoCam", true);
+            StartCoroutine(OnWizzoTriggerWave());
+        }
+    }
 
-            if(setToInactiveAfterPlay)
-            {
-                gameObject.SetActive(false);
-            }
+    /// <summary>
+    /// Shifted the above code into here, triggering via animation rather than collision 
+    /// </summary>
+    private IEnumerator OnWizzoTriggerWave()
+    {
+        yield return new WaitForSeconds(2);
+        if (playOnce == true && alreadyPlayed == true)
+        {
+            yield break;
+        }
+        else
+        {
+            alreadyPlayed = true;
+            dialogueHolder.TriggerDialogue();
+        }
+
+        if(setToInactiveAfterPlay)
+        {
+            gameObject.SetActive(false);
         }
     }
     
