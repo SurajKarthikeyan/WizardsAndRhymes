@@ -19,6 +19,7 @@ namespace AK
         static const AkUniqueID CAMERAWHIR = 3895479848U;
         static const AkUniqueID CROWDSURF = 1739654744U;
         static const AkUniqueID CRYSTAL = 3444057113U;
+        static const AkUniqueID ENERGYROCKACTIVATION = 388053590U;
         static const AkUniqueID FART = 2948602592U;
         static const AkUniqueID GATELIFT = 1960186623U;
         static const AkUniqueID HAUNTEDSTINGER = 1950078070U;
@@ -35,6 +36,7 @@ namespace AK
         static const AkUniqueID PLAYERICESLIDE = 816354274U;
         static const AkUniqueID RANGEDFIRE = 1744863420U;
         static const AkUniqueID RANGEDLIGHTNING = 1899629126U;
+        static const AkUniqueID RAPROCKINSERT = 1124520274U;
         static const AkUniqueID SKELETONHIT = 2460311919U;
         static const AkUniqueID TESLACOILOFF = 2261469182U;
         static const AkUniqueID WORDPICKUP = 3290622745U;
@@ -72,6 +74,7 @@ namespace AK
 
             namespace STATE
             {
+                static const AkUniqueID FINALMUSIC = 3822410396U;
                 static const AkUniqueID ICECOMBAT = 733150682U;
                 static const AkUniqueID ICEOUTOFCOMBAT = 3099519893U;
                 static const AkUniqueID ICEOUTOFPUZZLE = 4102602869U;
