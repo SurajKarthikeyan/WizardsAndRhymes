@@ -16,6 +16,9 @@ public class DragDropItemSlot : MonoBehaviour, IDropHandler
     [Tooltip("Reference to the WordCanvasManager")]
     public WordCanvasManager manager;
 
+    [Tooltip("Slot Sound event")] 
+    [SerializeField] private AK.Wwise.Event slotSoundEffect;
+
     
     /// <summary>
     /// Event handler for dropping an item into an item slot
@@ -34,6 +37,7 @@ public class DragDropItemSlot : MonoBehaviour, IDropHandler
             {
                 eventData.pointerDrag.GetComponent<DragDropItem>().canMove = false;
                 manager.ValidateCanvas();
+                slotSoundEffect.Post(this.gameObject);
             }
         }
         else

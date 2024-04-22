@@ -150,6 +150,7 @@
 						<State Id="3099519893" Name="IceOutOfCombat"/>
 						<State Id="3485352473" Name="LightningPuzzle"/>
 						<State Id="3604647259" Name="MainMenu"/>
+						<State Id="3822410396" Name="FinalMusic"/>
 						<State Id="4102602869" Name="IceOutOfPuzzle"/>
 						<State Id="4114645792" Name="LightningOutOfCombat"/>
 					</States>
@@ -177,7 +178,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1702439946" Type="User" Language="SFX" Hash="{563B0426-9D39-58C0-9F89-E9DEDC2A0B09}">
+		<SoundBank Id="1702439946" Type="User" Language="SFX" Hash="{7BD0E63F-B6EF-C384-D8F7-0252CB76D0E3}">
 			<ShortName>InteractiveMusicBank</ShortName>
 			<Path>InteractiveMusicBank.bnk</Path>
 			<Media>
@@ -509,13 +510,14 @@
 						<State Id="3099519893" Name="IceOutOfCombat"/>
 						<State Id="3485352473" Name="LightningPuzzle"/>
 						<State Id="3604647259" Name="MainMenu"/>
+						<State Id="3822410396" Name="FinalMusic"/>
 						<State Id="4102602869" Name="IceOutOfPuzzle"/>
 						<State Id="4114645792" Name="LightningOutOfCombat"/>
 					</States>
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3361862619" Type="User" Language="SFX" Hash="{FCC3ECEB-1421-2714-903A-2F26CFA82939}">
+		<SoundBank Id="3361862619" Type="User" Language="SFX" Hash="{B764068A-DFFD-96FA-F749-EBB67F26C85C}">
 			<ShortName>CombatAndEnvironment</ShortName>
 			<Path>CombatAndEnvironment.bnk</Path>
 			<Media>
@@ -585,7 +587,7 @@
 				</File>
 				<File Id="119298661" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Objects, Misc, Paint, Spray Paint Can, Shake SND29085.wav</ShortName>
-					<CachePath>SFX/Objects, Misc, Paint, Spray Paint Can, Shake SND29085_4B4376FB.wem</CachePath>
+					<CachePath>SFX/Objects, Misc, Paint, Spray Paint Can, Shake SND29085_E6AF65C9.wem</CachePath>
 				</File>
 				<File Id="123022695" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PlayerHitImpact.wav</ShortName>
@@ -761,7 +763,7 @@
 				</File>
 				<File Id="492072361" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>IceFriction.wav</ShortName>
-					<CachePath>SFX/IceFriction_32BE3E4C.wem</CachePath>
+					<CachePath>SFX/IceFriction_4D5CD6D9.wem</CachePath>
 				</File>
 				<File Id="497414986" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CrystalZap.wav</ShortName>
@@ -813,7 +815,7 @@
 				</File>
 				<File Id="595136245" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>RockPlatformPush2.wav</ShortName>
-					<CachePath>SFX/RockPlatformPush2_5F917627.wem</CachePath>
+					<CachePath>SFX/RockPlatformPush2_DB2ACBD5.wem</CachePath>
 				</File>
 				<File Id="596267822" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>EnemyHitFull.wav</ShortName>
@@ -885,7 +887,7 @@
 				</File>
 				<File Id="737083099" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>FanWhir.wav</ShortName>
-					<CachePath>SFX/FanWhir_458555E5.wem</CachePath>
+					<CachePath>SFX/FanWhir_FE1CD02A.wem</CachePath>
 				</File>
 				<File Id="742707364" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PlayerHitDowner.wav</ShortName>
@@ -1051,6 +1053,7 @@
 						<MediaRef Id="853954014"/>
 					</MediaRefs>
 				</Event>
+				<Event Id="388053590" Name="EnergyRockActivation" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="1960186623" Name="GateLift" DurationType="OneShot" DurationMin="3.3691592" DurationMax="4.6123695">
 					<MediaRefs>
 						<MediaRef Id="167300729"/>
@@ -1221,6 +1224,7 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
+				<Event Id="1124520274" Name="RapRockInsert" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
 				<Event Id="2460311919" Name="SkeletonHit" DurationType="OneShot" DurationMin="0.86824834" DurationMax="1.3890802">
 					<MediaRefs>
 						<MediaRef Id="94231916"/>
@@ -1283,5 +1287,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{4C0C0CBD-C056-D0D4-929B-A123D2081010}</FileHash>
+	<FileHash>{D6E72E8C-B987-6E61-11ED-71CA54095FEF}</FileHash>
 </SoundBanksInfo>
