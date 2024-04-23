@@ -1339,6 +1339,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   useHauntedStinger: 0
+  destroyOnCollision: 0
 --- !u!4 &100638818
 Transform:
   m_ObjectHideFlags: 0
@@ -1765,7 +1766,6 @@ MonoBehaviour:
   isLoaded: 0
   isLoadingScene: 0
   isUnloadingScene: 0
-  enterPuzzleState: {fileID: 255718406}
   isLoader: 1
   otherLoaders:
   - {fileID: 2055054757}
@@ -4391,6 +4391,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   useHauntedStinger: 0
+  destroyOnCollision: 0
 --- !u!1001 &257087511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5447,18 +5448,6 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 0
             m_CallState: 2
-          - m_Target: {fileID: 1970810021}
-            m_TargetAssemblyTypeName: CrowdSurfPath, Assembly-CSharp
-            m_MethodName: 
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
           - m_Target: {fileID: 1606980501}
             m_TargetAssemblyTypeName: CrowdSurfPath, Assembly-CSharp
             m_MethodName: SetActive
@@ -5473,7 +5462,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 81138555853967075}
             m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-            m_MethodName: 
+            m_MethodName: EnablePlayerControls
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -8764,7 +8753,6 @@ MonoBehaviour:
   isLoaded: 0
   isLoadingScene: 0
   isUnloadingScene: 0
-  enterPuzzleState: {fileID: 255718406}
   isLoader: 0
   otherLoaders:
   - {fileID: 1634265348}
@@ -14542,6 +14530,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   useHauntedStinger: 0
+  destroyOnCollision: 0
 --- !u!4 &666878771 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5828573647993923807, guid: c0ed6c7093bbf0e4ba5539db5628768d, type: 3}
@@ -15660,6 +15649,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 1eae360ec2b69a8499fe8d680530ad57, type: 2}
   useHauntedStinger: 1
+  destroyOnCollision: 0
 --- !u!1001 &751254581
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27474,6 +27464,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   useHauntedStinger: 0
+  destroyOnCollision: 0
 --- !u!1 &1418063118
 GameObject:
   m_ObjectHideFlags: 0
@@ -27529,6 +27520,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   useHauntedStinger: 0
+  destroyOnCollision: 0
 --- !u!1001 &1423600065
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28854,7 +28846,6 @@ MonoBehaviour:
   isLoaded: 0
   isLoadingScene: 0
   isUnloadingScene: 0
-  enterPuzzleState: {fileID: 255718406}
   isLoader: 0
   otherLoaders:
   - {fileID: 1634265348}
@@ -29193,7 +29184,6 @@ MonoBehaviour:
   isLoaded: 0
   isLoadingScene: 0
   isUnloadingScene: 0
-  enterPuzzleState: {fileID: 255718406}
   isLoader: 0
   otherLoaders:
   - {fileID: 124342079}
@@ -30645,7 +30635,7 @@ MonoBehaviour:
             m_CallState: 2
           - m_Target: {fileID: 81138555853967075}
             m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-            m_MethodName: 
+            m_MethodName: EnablePlayerControls
             m_Mode: 1
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -30658,18 +30648,6 @@ MonoBehaviour:
           - m_Target: {fileID: 248342640}
             m_TargetAssemblyTypeName: CrowdSurfPath, Assembly-CSharp
             m_MethodName: SetActive
-            m_Mode: 6
-            m_Arguments:
-              m_ObjectArgument: {fileID: 0}
-              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-              m_IntArgument: 0
-              m_FloatArgument: 0
-              m_StringArgument: 
-              m_BoolArgument: 0
-            m_CallState: 2
-          - m_Target: {fileID: 1839414507}
-            m_TargetAssemblyTypeName: CrowdSurfPath, Assembly-CSharp
-            m_MethodName: 
             m_Mode: 6
             m_Arguments:
               m_ObjectArgument: {fileID: 0}
@@ -32264,7 +32242,6 @@ MonoBehaviour:
   isLoaded: 0
   isLoadingScene: 0
   isUnloadingScene: 0
-  enterPuzzleState: {fileID: 255718406}
   isLoader: 1
   otherLoaders:
   - {fileID: 535554925}
@@ -38450,7 +38427,6 @@ MonoBehaviour:
   isLoaded: 0
   isLoadingScene: 0
   isUnloadingScene: 0
-  enterPuzzleState: {fileID: 255718406}
   isLoader: 0
   otherLoaders:
   - {fileID: 124342079}
@@ -41187,6 +41163,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   useHauntedStinger: 0
+  destroyOnCollision: 0
 --- !u!114 &522614002026916890 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5277050906424848010, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
@@ -41261,19 +41238,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9231997
+      value: 0.92319965
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.38341913
+      value: -0.3834191
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.024297148
+      value: -0.024297059
       objectReference: {fileID: 0}
     - target: {fileID: 354412161148185539, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.010090992
+      value: -0.010090947
       objectReference: {fileID: 0}
     - target: {fileID: 357537751564058929, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -41281,19 +41258,19 @@ PrefabInstance:
       objectReference: {fileID: 165602700}
     - target: {fileID: 854501814571185126, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9402693
+      value: 0.94026935
       objectReference: {fileID: 0}
     - target: {fileID: 854501814571185126, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.3404316
+      value: 0.34043163
       objectReference: {fileID: 0}
     - target: {fileID: 854501814571185126, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00000017881392
+      value: -0.00000014901161
       objectReference: {fileID: 0}
     - target: {fileID: 854501814571185126, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00000002235174
+      value: -0.000000022351742
       objectReference: {fileID: 0}
     - target: {fileID: 1139779030278692038, guid: e26bfe189f1dbff4cba94e535513ed6b, type: 3}
       propertyPath: m_Lens.NearClipPlane

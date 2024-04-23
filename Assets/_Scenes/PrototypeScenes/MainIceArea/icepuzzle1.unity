@@ -6553,6 +6553,7 @@ MonoBehaviour:
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 0}
   useHauntedStinger: 0
+  destroyOnCollision: 0
 --- !u!4 &963437597
 Transform:
   m_ObjectHideFlags: 0
@@ -10387,6 +10388,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1898312839}
   - {fileID: 623132359}
   - {fileID: 1881200045}
   - {fileID: 397847720}
@@ -11378,6 +11380,84 @@ MonoBehaviour:
   isOn: 0
   minEmissionValue: {r: 3.9999998, g: 3.9999998, b: 3.9999998, a: 1}
   maxEmissionValue: {r: 9.734285, g: 9.734285, b: 9.734285, a: 1}
+--- !u!1 &1898312838
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1898312839}
+  - component: {fileID: 1898312841}
+  - component: {fileID: 1898312840}
+  m_Layer: 0
+  m_Name: AKChangeStateInPuzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1898312839
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898312838}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.96, y: 0.45, z: -10.88}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1706267730}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1898312840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898312838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e88d3ec50308d444db1a6477295b1830, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  akState:
+    idInternal: 0
+    valueGuidInternal: 
+    groupIdInternal: 0
+    groupGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: d430fdc893e197446b7dde77cc9ef132, type: 2}
+  hauntedStinger:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
+  useHauntedStinger: 0
+  destroyOnCollision: 1
+--- !u!65 &1898312841
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898312838}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 3.3948035, z: 15.955704}
+  m_Center: {x: 0, y: -1.1974018, z: -0.40096283}
 --- !u!4 &1908908161 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8455060215892195056, guid: f4c0973155f461d4895742d7e836ecb5, type: 3}
