@@ -176,9 +176,7 @@ public class PuzzleGrid : MonoBehaviour
                         tileCount++;
                         return (i, startCoord.Item2, tileCount);
                     }
-                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox || 
-                             (currentTile.occupationStatus == GridTile.OccupationStatus.WalkerTile 
-                              && moveObject.CompareTag("IceBox")))
+                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox )
                     {
                         return (i + 1, startCoord.Item2, tileCount);
                     }
@@ -226,8 +224,9 @@ public class PuzzleGrid : MonoBehaviour
                     if (currentTile.floorStatus == GridTile.FloorStatus.Ice &&
                         currentTile.occupationStatus == GridTile.OccupationStatus.None)
                     {
+                        Debug.Log("Yo mama 1");
                         tileCount++;
-                        if (i == gridArray.Count - 2)
+                        if (i == gridArray.Count - 1)
                         {
                             return (gridArray.Count - 1, startCoord.Item2, tileCount);
                         }
@@ -240,15 +239,14 @@ public class PuzzleGrid : MonoBehaviour
                         return (i, startCoord.Item2, tileCount);
                     }
 
-                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox || 
-                             (currentTile.occupationStatus == GridTile.OccupationStatus.WalkerTile 
-                              && moveObject.CompareTag("IceBox")))
+                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox)
                     {
                         return (i - 1, startCoord.Item2, tileCount);
                     }
 
                     else if (currentTile.occupationStatus == GridTile.OccupationStatus.IceBox)
                     {
+                        Debug.Log("Yo mama 4");
                         //Move the box that you are collding with 
                         hasTouchedIceBox = true;
                         letterCoord = i;
@@ -305,9 +303,7 @@ public class PuzzleGrid : MonoBehaviour
                         return (startCoord.Item1, j, tileCount);
                     }
 
-                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox || 
-                             (currentTile.occupationStatus == GridTile.OccupationStatus.WalkerTile 
-                              && moveObject.CompareTag("IceBox")))
+                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox)
                     {
                         return (startCoord.Item1, j - 1, tileCount);
                     }
@@ -370,9 +366,7 @@ public class PuzzleGrid : MonoBehaviour
                         return (startCoord.Item1, j, tileCount);
                     }
 
-                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox || 
-                             (currentTile.occupationStatus == GridTile.OccupationStatus.WalkerTile 
-                              && moveObject.CompareTag("IceBox")))
+                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox)
                     {
                         return (startCoord.Item1, j + 1, tileCount);
                     }
