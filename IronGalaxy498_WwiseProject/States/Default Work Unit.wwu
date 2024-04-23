@@ -43,19 +43,19 @@
 						<Transition>
 							<StartState Name="None" ID="{477214B9-91B9-401E-8A94-1B981C6621CA}"/>
 							<EndState Name="IsPushing" ID="{18966800-E103-4A92-A4D6-C64EE2809EB7}"/>
-							<Time>1</Time>
-							<IsShared>false</IsShared>
-						</Transition>
-						<Transition>
-							<StartState Name="IsPushing" ID="{18966800-E103-4A92-A4D6-C64EE2809EB7}"/>
-							<EndState Name="NotPushing" ID="{A392B3F4-1137-469E-B323-003DEDA14FE4}"/>
-							<Time>1</Time>
+							<Time>0.5</Time>
 							<IsShared>false</IsShared>
 						</Transition>
 						<Transition>
 							<StartState Name="NotPushing" ID="{A392B3F4-1137-469E-B323-003DEDA14FE4}"/>
 							<EndState Name="IsPushing" ID="{18966800-E103-4A92-A4D6-C64EE2809EB7}"/>
-							<Time>1</Time>
+							<Time>0.5</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
+							<StartState Name="IsPushing" ID="{18966800-E103-4A92-A4D6-C64EE2809EB7}"/>
+							<EndState Name="NotPushing" ID="{A392B3F4-1137-469E-B323-003DEDA14FE4}"/>
+							<Time>0.5</Time>
 							<IsShared>false</IsShared>
 						</Transition>
 					</TransitionList>
@@ -73,26 +73,26 @@
 						<Transition>
 							<StartState Name="None" ID="{AE499277-40A0-412E-978F-438E2AE68E72}"/>
 							<EndState Name="IsSliding" ID="{2706E707-FB6C-4A4D-B75D-5DEF67890496}"/>
-							<Time>1</Time>
+							<Time>0.5</Time>
 							<IsShared>false</IsShared>
 						</Transition>
 						<Transition>
 							<StartState Name="IsSliding" ID="{2706E707-FB6C-4A4D-B75D-5DEF67890496}"/>
 							<EndState Name="NotSliding" ID="{350F83A0-9114-4ADE-B253-5D278E9DA10E}"/>
-							<Time>1</Time>
+							<Time>0.5</Time>
 							<IsShared>false</IsShared>
 						</Transition>
 						<Transition>
 							<StartState Name="NotSliding" ID="{350F83A0-9114-4ADE-B253-5D278E9DA10E}"/>
 							<EndState Name="IsSliding" ID="{2706E707-FB6C-4A4D-B75D-5DEF67890496}"/>
-							<Time>1</Time>
+							<Time>0.5</Time>
 							<IsShared>false</IsShared>
 						</Transition>
 					</TransitionList>
 				</StateGroup>
 				<StateGroup Name="PauseMenu" ID="{65BD8F1D-ED20-4265-B6D9-A4E39CD66548}">
 					<PropertyList>
-						<Property Name="DefaultTransitionTime" Type="Real64" Value="0"/>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0.5"/>
 					</PropertyList>
 					<ChildrenList>
 						<State Name="None" ID="{99B57ADC-ACF7-48D2-BA4A-0FCBDFE5A25F}"/>
@@ -101,21 +101,21 @@
 					</ChildrenList>
 					<TransitionList>
 						<Transition>
-							<StartState Name="None" ID="{99B57ADC-ACF7-48D2-BA4A-0FCBDFE5A25F}"/>
-							<EndState Name="InPauseMenu" ID="{66132958-C6BD-450C-AB5E-155CCE94E341}"/>
-							<Time>1</Time>
-							<IsShared>false</IsShared>
-						</Transition>
-						<Transition>
 							<StartState Name="InPauseMenu" ID="{66132958-C6BD-450C-AB5E-155CCE94E341}"/>
 							<EndState Name="NotInPauseMenu" ID="{18A2314E-345D-41D5-A148-F7505097CADD}"/>
 							<Time>1</Time>
 							<IsShared>false</IsShared>
 						</Transition>
 						<Transition>
+							<StartState Name="None" ID="{99B57ADC-ACF7-48D2-BA4A-0FCBDFE5A25F}"/>
+							<EndState Name="InPauseMenu" ID="{66132958-C6BD-450C-AB5E-155CCE94E341}"/>
+							<Time>0.5</Time>
+							<IsShared>false</IsShared>
+						</Transition>
+						<Transition>
 							<StartState Name="NotInPauseMenu" ID="{18A2314E-345D-41D5-A148-F7505097CADD}"/>
 							<EndState Name="InPauseMenu" ID="{66132958-C6BD-450C-AB5E-155CCE94E341}"/>
-							<Time>1</Time>
+							<Time>0.5</Time>
 							<IsShared>false</IsShared>
 						</Transition>
 					</TransitionList>
