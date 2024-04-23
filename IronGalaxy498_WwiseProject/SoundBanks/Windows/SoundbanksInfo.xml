@@ -524,7 +524,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3361862619" Type="User" Language="SFX" Hash="{B764068A-DFFD-96FA-F749-EBB67F26C85C}">
+		<SoundBank Id="3361862619" Type="User" Language="SFX" Hash="{9E2BD7F9-699B-5BD1-5F09-8FAF669DAFE4}">
 			<ShortName>CombatAndEnvironment</ShortName>
 			<Path>CombatAndEnvironment.bnk</Path>
 			<Media>
@@ -908,6 +908,10 @@
 					<ShortName>Metal Impact.wav</ShortName>
 					<CachePath>SFX/Metal Impact_99F28F9E.wem</CachePath>
 				</File>
+				<File Id="780015833" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>EnemyStartEncounter.wav</ShortName>
+					<CachePath>SFX/EnemyStartEncounter_AD17AB88.wem</CachePath>
+				</File>
 				<File Id="829601859" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>IceFriction2.wav</ShortName>
 					<CachePath>SFX/IceFriction2_25599EDB.wem</CachePath>
@@ -1058,6 +1062,16 @@
 						<MediaRef Id="660611193"/>
 						<MediaRef Id="706702062"/>
 						<MediaRef Id="853954014"/>
+					</MediaRefs>
+				</Event>
+				<Event Id="3296753656" Name="EncounterStart" DurationType="OneShot" DurationMin="3.3691592" DurationMax="4.6123695">
+					<MediaRefs>
+						<MediaRef Id="167300729"/>
+						<MediaRef Id="555433054"/>
+						<MediaRef Id="577030918"/>
+						<MediaRef Id="780015833"/>
+						<MediaRef Id="914480457"/>
+						<MediaRef Id="968532410"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="388053590" Name="EnergyRockActivation" MaxAttenuation="0" DurationType="OneShot" DurationMin="0" DurationMax="0"/>
@@ -1294,5 +1308,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{EDF2374D-700A-A25C-6F96-C3E626941CBC}</FileHash>
+	<FileHash>{ACE936FC-CE17-620A-9E85-9EDEE68337AF}</FileHash>
 </SoundBanksInfo>

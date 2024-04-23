@@ -19,6 +19,7 @@ namespace AK
         static const AkUniqueID CAMERAWHIR = 3895479848U;
         static const AkUniqueID CROWDSURF = 1739654744U;
         static const AkUniqueID CRYSTAL = 3444057113U;
+        static const AkUniqueID ENCOUNTERSTART = 3296753656U;
         static const AkUniqueID ENERGYROCKACTIVATION = 388053590U;
         static const AkUniqueID FART = 2948602592U;
         static const AkUniqueID GATELIFT = 1960186623U;

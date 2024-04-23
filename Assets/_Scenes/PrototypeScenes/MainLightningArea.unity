@@ -5847,6 +5847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 312395744}
   - component: {fileID: 312395745}
+  - component: {fileID: 312395746}
   m_Layer: 0
   m_Name: WizzoWave3Rap
   m_TagString: Untagged
@@ -6082,8 +6083,36 @@ MonoBehaviour:
               m_StringArgument: Kill All Enemies To Unlock The Roast Rock
               m_BoolArgument: 1
             m_CallState: 2
+          - m_Target: {fileID: 312395746}
+            m_TargetAssemblyTypeName: EnemySpawn, Assembly-CSharp
+            m_MethodName: SoundOnEnemySpawn
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Kill All Enemies To Unlock The Roast Rock
+              m_BoolArgument: 1
+            m_CallState: 2
   pauseOnTrigger: 1
   playOnStart: 0
+--- !u!114 &312395746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312395743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 979050f0ee8374646959798a58990a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawnSoundEffect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 85e0d682e132b2e49823ef85b1a00cc4, type: 2}
 --- !u!4 &313899433 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3056814859386007060, guid: 02242455c6b758c4eac0ecdbc00797fa, type: 3}
@@ -13338,6 +13367,7 @@ GameObject:
   m_Component:
   - component: {fileID: 711062443}
   - component: {fileID: 711062442}
+  - component: {fileID: 711062444}
   m_Layer: 0
   m_Name: WizzoWave1Rap
   m_TagString: Untagged
@@ -13498,6 +13528,18 @@ MonoBehaviour:
               m_StringArgument: 
               m_BoolArgument: 1
             m_CallState: 2
+          - m_Target: {fileID: 711062444}
+            m_TargetAssemblyTypeName: EnemySpawn, Assembly-CSharp
+            m_MethodName: SoundOnEnemySpawn
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: 
+              m_BoolArgument: 1
+            m_CallState: 2
   pauseOnTrigger: 1
   playOnStart: 0
 --- !u!4 &711062443
@@ -13515,6 +13557,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 582391995}
   m_LocalEulerAnglesHint: {x: 0, y: -45.062, z: 0}
+--- !u!114 &711062444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 711062441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 979050f0ee8374646959798a58990a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawnSoundEffect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 85e0d682e132b2e49823ef85b1a00cc4, type: 2}
 --- !u!4 &711909739 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4938600505673516024, guid: c81ebbd2500c3fb488b16abfd4ed97b1, type: 3}
@@ -29963,6 +30021,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1576245395}
   - component: {fileID: 1576245396}
+  - component: {fileID: 1576245397}
   m_Layer: 0
   m_Name: WizzoWave2Rap
   m_TagString: Untagged
@@ -30198,8 +30257,36 @@ MonoBehaviour:
               m_StringArgument: Kill All Enemies To Unlock The Eastern Gate
               m_BoolArgument: 1
             m_CallState: 2
+          - m_Target: {fileID: 1576245397}
+            m_TargetAssemblyTypeName: EnemySpawn, Assembly-CSharp
+            m_MethodName: SoundOnEnemySpawn
+            m_Mode: 1
+            m_Arguments:
+              m_ObjectArgument: {fileID: 0}
+              m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+              m_IntArgument: 0
+              m_FloatArgument: 0
+              m_StringArgument: Kill All Enemies To Unlock The Eastern Gate
+              m_BoolArgument: 1
+            m_CallState: 2
   pauseOnTrigger: 0
   playOnStart: 0
+--- !u!114 &1576245397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576245394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 979050f0ee8374646959798a58990a59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemySpawnSoundEffect:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 85e0d682e132b2e49823ef85b1a00cc4, type: 2}
 --- !u!1 &1577433710
 GameObject:
   m_ObjectHideFlags: 0
