@@ -794,10 +794,14 @@ public class PlayerController : Singleton<PlayerController>
         if (isPaused)
         {
             Time.timeScale = 0;
+            AkSoundEngine.SetState("PauseMenu", "InPauseMenu");
+
         }
         else
         {
             Time.timeScale = 1;
+            AkSoundEngine.SetState("PauseMenu", "NotInPauseMenu");
+
         }
         pauseMenu.SetActive(isPaused);
     }
