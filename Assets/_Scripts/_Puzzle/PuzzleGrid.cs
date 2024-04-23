@@ -176,7 +176,9 @@ public class PuzzleGrid : MonoBehaviour
                         tileCount++;
                         return (i, startCoord.Item2, tileCount);
                     }
-                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox)
+                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox || 
+                             (currentTile.occupationStatus == GridTile.OccupationStatus.WalkerTile 
+                              && moveObject.CompareTag("IceBox")))
                     {
                         return (i + 1, startCoord.Item2, tileCount);
                     }
@@ -238,7 +240,9 @@ public class PuzzleGrid : MonoBehaviour
                         return (i, startCoord.Item2, tileCount);
                     }
 
-                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox)
+                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox || 
+                             (currentTile.occupationStatus == GridTile.OccupationStatus.WalkerTile 
+                              && moveObject.CompareTag("IceBox")))
                     {
                         return (i - 1, startCoord.Item2, tileCount);
                     }
@@ -301,7 +305,9 @@ public class PuzzleGrid : MonoBehaviour
                         return (startCoord.Item1, j, tileCount);
                     }
 
-                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox)
+                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox || 
+                             (currentTile.occupationStatus == GridTile.OccupationStatus.WalkerTile 
+                              && moveObject.CompareTag("IceBox")))
                     {
                         return (startCoord.Item1, j - 1, tileCount);
                     }
@@ -364,7 +370,9 @@ public class PuzzleGrid : MonoBehaviour
                         return (startCoord.Item1, j, tileCount);
                     }
 
-                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox)
+                    else if (currentTile.occupationStatus == GridTile.OccupationStatus.NormalBox || 
+                             (currentTile.occupationStatus == GridTile.OccupationStatus.WalkerTile 
+                              && moveObject.CompareTag("IceBox")))
                     {
                         return (startCoord.Item1, j + 1, tileCount);
                     }
