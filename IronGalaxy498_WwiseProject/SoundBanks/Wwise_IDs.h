@@ -39,6 +39,7 @@ namespace AK
         static const AkUniqueID RANGEDLIGHTNING = 1899629126U;
         static const AkUniqueID RAPROCKINSERT = 1124520274U;
         static const AkUniqueID SKELETONHIT = 2460311919U;
+        static const AkUniqueID TELEPORT = 530129416U;
         static const AkUniqueID TESLACOILOFF = 2261469182U;
         static const AkUniqueID WORDPICKUP = 3290622745U;
     } // namespace EVENTS
