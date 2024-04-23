@@ -9,6 +9,8 @@ using UnityEngine;
 public class AudienceMemberOverride : MonoBehaviour
 {
     #region Variables
+    [Header("Can call ConvertAllToPlayer() to convert all child audience members to the player's side")]
+
     [Tooltip("Whether to override the fan setting on child AudienceMembers")]
     [SerializeField] bool overrideAllegiance;
     [Tooltip("The fan setting to apply to child AudienceMembers")]
@@ -28,19 +30,27 @@ public class AudienceMemberOverride : MonoBehaviour
     /// </summary>
     private void Awake()
     {
-        //Override allegiance
-        if (overrideAllegiance)
+        foreach (AudienceMember member in GetComponentsInChildren<AudienceMember>())
         {
-            foreach (AudienceMember member in GetComponentsInChildren<AudienceMember>())
+            //Override allegiance
+            if (overrideAllegiance)
                 member.fanMode = allegiance;
-        }
 
-        //Override enemy manager
-        if (overrideEnemyManager)
-        {
-            foreach (AudienceMember member in GetComponentsInChildren<AudienceMember>())
+            //Override enemy manager
+            if (overrideEnemyManager)
                 member.enemyManager = enemyManager;
         }
+
+        
+    }
+
+    /// <summary>
+    /// Can be called to convert all child audience members to the player's side
+    /// </summary>
+    public void ConvertAllToPlayer()
+    {
+        foreach (AudienceMember member in GetComponentsInChildren<AudienceMember>())
+            member.StartBecomePlayerFan();
     }
     #endregion
 }

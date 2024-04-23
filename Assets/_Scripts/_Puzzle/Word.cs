@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Word : MonoBehaviour
@@ -18,6 +19,8 @@ public class Word : MonoBehaviour
     public AKChangeState iceOutOfPuzzleState;
     [Tooltip("VFX Object to instantiate when cassette is picked up")]
     [SerializeField] private GameObject cassettePickUpEffect;
+    [Tooltip("The events to fire when the cassette is picked up")]
+    [SerializeField] private UnityEvent eventToTrigger;
     #endregion
 
     #region UnityMethods
@@ -57,6 +60,8 @@ public class Word : MonoBehaviour
             {
                 iceOutOfPuzzleState.ChangeState();
             }
+
+            eventToTrigger?.Invoke();
 
             Destroy(gameObject);
         }
