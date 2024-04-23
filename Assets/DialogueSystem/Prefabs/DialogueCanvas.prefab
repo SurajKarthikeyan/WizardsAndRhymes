@@ -140,15 +140,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 2100000, guid: fc79def98fa72134786f7653a9bd0026, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0.09, y: 0, z: 0, w: 0}
+  m_RaycastPadding: {x: 55, y: 10, z: 55, w: 10}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 200292fa73fa6b94f9dc269a7e48b111, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 357dda6dec172b1489375352f59a0e2c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -246,9 +246,9 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: cf3fa79e408ee27429f1837931a707ff, type: 2}
-  originalMaterial: {fileID: 0}
-  emissionMaterial: {fileID: 0}
-  buttonImage: {fileID: 0}
+  originalMaterial: {fileID: 2100000, guid: fc79def98fa72134786f7653a9bd0026, type: 2}
+  emissionMaterial: {fileID: 2100000, guid: d9f3a2912352aff45a4f8e04bd0dad48, type: 2}
+  buttonImage: {fileID: 1006555647364936270}
 --- !u!114 &4675412588052921860
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -273,6 +273,46 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1006555647364936270}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_MethodName: set_sprite
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 21300000, guid: 200292fa73fa6b94f9dc269a7e48b111, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 481774363585160060}
+          m_TargetAssemblyTypeName: ButtonClickHover, Assembly-CSharp
+          m_MethodName: OnExitHover
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1006555647364936270}
+          m_TargetAssemblyTypeName: UnityEngine.UI.Image, UnityEngine.UI
+          m_MethodName: set_sprite
+          m_Mode: 2
+          m_Arguments:
+            m_ObjectArgument: {fileID: 21300000, guid: 357dda6dec172b1489375352f59a0e2c, type: 3}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Sprite, UnityEngine
             m_IntArgument: 0
             m_FloatArgument: 0
             m_StringArgument: 
@@ -513,10 +553,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1006555647364936268}
   - {fileID: 1006555646552785126}
   - {fileID: 1006555648163574967}
   - {fileID: 5649084387508473232}
+  - {fileID: 1006555647364936268}
   m_Father: {fileID: 1006555648197023707}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
