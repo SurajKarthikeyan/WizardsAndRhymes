@@ -10,7 +10,8 @@ public class GridTile : MonoBehaviour
         None,
         Player,
         NormalBox,
-        IceBox
+        IceBox,
+        WalkerTile
     }
 
     public enum FloorStatus
