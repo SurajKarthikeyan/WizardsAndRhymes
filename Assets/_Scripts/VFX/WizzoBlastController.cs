@@ -26,6 +26,8 @@ public class WizzoBlastController : MonoBehaviour
     [SerializeField] GameObject splashScreen;
     [Tooltip("The transition flash image")]
     [SerializeField] Image transitionFlash;
+    [Tooltip("The MMShaker on the splash screen")]
+    [SerializeField] MMShaker splashScreenShaker;
     [Tooltip("Sound effect for when the player presses the 'e' button")]
     [SerializeField] private AK.Wwise.Event chargeSoundEffect;
     
@@ -133,6 +135,7 @@ public class WizzoBlastController : MonoBehaviour
         chargeSoundEffect.Post(this.gameObject);
         
         splashScreen.SetActive(true);
+        splashScreenShaker.Play();
         float transitionStartTime = Time.time;
 
         while (Time.time - transitionStartTime < transitionFlashFadeDuration)
