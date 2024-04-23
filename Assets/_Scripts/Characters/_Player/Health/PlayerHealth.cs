@@ -27,7 +27,7 @@ public class PlayerHealth : Health
     
     public Material hurtMat;
 
-    public Material normalMat;
+    public Material[] normalMats;
 
     public float gracePeriodTime = 2f;
 
@@ -51,7 +51,7 @@ public class PlayerHealth : Health
                     if (i < heartIndex)
                     {
                         heartImage.sprite = fullHeartImage;
-                        heartImage.material = normalMat;
+                        heartImage.material = normalMats[i];
                     }
                     else
                     {
