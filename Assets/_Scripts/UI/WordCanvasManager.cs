@@ -40,7 +40,7 @@ public class WordCanvasManager : MonoBehaviour, IInteractable
         }
         foreach (var word in words)
         {
-            word.startPosition = word.transform.position;
+            /*word.startPosition = word.transform.position;*/
             word.gameObject.SetActive(false);
         }
         wordCanvas.gameObject.SetActive(false);
@@ -92,7 +92,7 @@ public class WordCanvasManager : MonoBehaviour, IInteractable
         {
             foreach (var word in words)
             {
-                word.transform.position = word.startPosition;
+                /*word.transform.position = word.startPosition;*/
                 word.canMove = true;
             }
             PlayerController.instance.DisablePlayerControls();

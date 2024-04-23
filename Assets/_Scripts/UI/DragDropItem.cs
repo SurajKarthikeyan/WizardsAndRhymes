@@ -30,9 +30,12 @@ public class DragDropItem : MonoBehaviour, IPointerDownHandler, IBeginDragHandle
     private void Awake()
     {
         rectTransform = GetComponent <RectTransform>();
-        startPosition = rectTransform.position;
-        Debug.Log(startPosition);
         canvasGroup = GetComponent<CanvasGroup>();
+    }
+
+    private void OnEnable()
+    {
+        rectTransform.localPosition = startPosition;
     }
 
     /// <summary>
