@@ -10,6 +10,7 @@ public class FirstLightningBlock : MonoBehaviour
     #region Vars
 
     [SerializeField] private LightningBlockManager lbManager;
+    [SerializeField] private AK.Wwise.Event firstElectroBlockSoundEffect;
     [SerializeField] public bool isActive;
     #endregion
 
@@ -26,6 +27,7 @@ public class FirstLightningBlock : MonoBehaviour
         if (isActive)
         {
             lbManager.CheckAllBlocks();
+            firstElectroBlockSoundEffect.Post(this.gameObject);
         }
     }
 
