@@ -83,7 +83,17 @@
 															<ObjectRef Name="IceOutOfCombat" ID="{55FB5A8C-B672-4DA8-BC24-07CE81AD7039}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
 														</Reference>
 													</ReferenceList>
-													<TransitionInfo/>
+													<TransitionInfo>
+														<SourceFadeOut>
+															<MusicFade Name="Source Fade-out" ID="{030EA432-2620-4ECB-BB07-637A1F7E8F6C}">
+																<PropertyList>
+																	<Property Name="FadeOffset" Type="Real64" Value="0.5"/>
+																	<Property Name="FadeTime" Type="Real64" Value="1"/>
+																	<Property Name="FadeType" Type="int16" Value="1"/>
+																</PropertyList>
+															</MusicFade>
+														</SourceFadeOut>
+													</TransitionInfo>
 												</MusicTransition>
 												<MusicTransition Name="Transition" ID="{25DC1E5A-7B9F-40EA-9E8C-8C53730167FE}">
 													<PropertyList>
@@ -91,7 +101,6 @@
 														<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
 														<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
 														<Property Name="ExitSourceAt" Type="int16" Value="3"/>
-														<Property Name="PlayDestinationPreEntry" Type="bool" Value="False"/>
 														<Property Name="SourceContextType" Type="int16" Value="2"/>
 													</PropertyList>
 													<ReferenceList>
@@ -102,7 +111,25 @@
 															<ObjectRef Name="IcePuzzle" ID="{15DE027A-23D5-456D-B75B-B4D58EBACE26}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
 														</Reference>
 													</ReferenceList>
-													<TransitionInfo/>
+													<TransitionInfo>
+														<SourceFadeOut>
+															<MusicFade Name="Source Fade-out" ID="{2093F7FB-1E91-42DA-BD4A-9AD330C95C9D}">
+																<PropertyList>
+																	<Property Name="FadeOffset" Type="Real64" Value="0.25"/>
+																	<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+																	<Property Name="FadeType" Type="int16" Value="1"/>
+																</PropertyList>
+															</MusicFade>
+														</SourceFadeOut>
+														<DestinationFadeIn>
+															<MusicFade Name="Destination Fade-in" ID="{22AAC761-7F2F-45E4-8C87-79313C7338F6}">
+																<PropertyList>
+																	<Property Name="FadeOffset" Type="Real64" Value="-0.5"/>
+																	<Property Name="FadeTime" Type="Real64" Value="1"/>
+																</PropertyList>
+															</MusicFade>
+														</DestinationFadeIn>
+													</TransitionInfo>
 												</MusicTransition>
 												<MusicTransition Name="Transition" ID="{A4F1DDCF-19D7-4271-8E1A-3991C7D9222B}">
 													<PropertyList>
@@ -208,7 +235,17 @@
 															<ObjectRef Name="LightningOutOfCombat" ID="{38580AB6-37D5-4955-93EB-0C423A2493B2}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
 														</Reference>
 													</ReferenceList>
-													<TransitionInfo/>
+													<TransitionInfo>
+														<SourceFadeOut>
+															<MusicFade Name="Source Fade-out" ID="{B678AED6-1737-4A48-A8DE-6A92E9756B55}">
+																<PropertyList>
+																	<Property Name="FadeOffset" Type="Real64" Value="0.5"/>
+																	<Property Name="FadeTime" Type="Real64" Value="1"/>
+																	<Property Name="FadeType" Type="int16" Value="1"/>
+																</PropertyList>
+															</MusicFade>
+														</SourceFadeOut>
+													</TransitionInfo>
 												</MusicTransition>
 												<MusicTransition Name="Transition" ID="{9FE5D8D6-AE5D-4800-96E0-A970A96C5102}">
 													<PropertyList>
@@ -227,14 +264,32 @@
 															<ObjectRef Name="LightningPuzzle" ID="{CF3D2EC2-3CCF-4917-B6FD-7ECB36FBEA85}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
 														</Reference>
 													</ReferenceList>
-													<TransitionInfo/>
+													<TransitionInfo>
+														<SourceFadeOut>
+															<MusicFade Name="Source Fade-out" ID="{516A60C2-4693-48F0-9625-CC3F3EC406B4}">
+																<PropertyList>
+																	<Property Name="FadeOffset" Type="Real64" Value="0.25"/>
+																	<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+																	<Property Name="FadeType" Type="int16" Value="1"/>
+																</PropertyList>
+															</MusicFade>
+														</SourceFadeOut>
+														<DestinationFadeIn>
+															<MusicFade Name="Destination Fade-in" ID="{C2D93EAD-C049-402D-82B6-5856C3A9647B}">
+																<PropertyList>
+																	<Property Name="FadeOffset" Type="Real64" Value="-0.5"/>
+																	<Property Name="FadeTime" Type="Real64" Value="1"/>
+																</PropertyList>
+															</MusicFade>
+														</DestinationFadeIn>
+													</TransitionInfo>
 												</MusicTransition>
 												<MusicTransition Name="Transition" ID="{B21AC1CE-10FC-4EEB-B632-766359A37701}">
 													<PropertyList>
 														<Property Name="DestinationContextType" Type="int16" Value="2"/>
 														<Property Name="EnableDestinationFadeIn" Type="bool" Value="True"/>
 														<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
-														<Property Name="ExitSourceAt" Type="int16" Value="2"/>
+														<Property Name="ExitSourceAt" Type="int16" Value="3"/>
 														<Property Name="PlayDestinationPreEntry" Type="bool" Value="False"/>
 														<Property Name="SourceContextType" Type="int16" Value="2"/>
 													</PropertyList>
@@ -322,6 +377,8 @@
 												<MusicTransition Name="Transition" ID="{831B1767-739F-4C86-8A12-9E2343FE5703}">
 													<PropertyList>
 														<Property Name="DestinationContextType" Type="int16" Value="2"/>
+														<Property Name="EnableSourceFadeOut" Type="bool" Value="True"/>
+														<Property Name="ExitSourceAt" Type="int16" Value="3"/>
 														<Property Name="SourceContextType" Type="int16" Value="2"/>
 													</PropertyList>
 													<ReferenceList>
@@ -332,7 +389,20 @@
 															<ObjectRef Name="LightningOutOfCombat" ID="{38580AB6-37D5-4955-93EB-0C423A2493B2}" WorkUnitID="{47A90B0E-C3AD-4F02-9E6A-E5BC5C8C341B}"/>
 														</Reference>
 													</ReferenceList>
-													<TransitionInfo/>
+													<TransitionInfo>
+														<SourceFadeOut>
+															<MusicFade Name="Source Fade-out" ID="{882E6B0E-25F4-49C8-A4C3-B818A87A7B3D}">
+																<PropertyList>
+																	<Property Name="FadeOffset" Type="Real64" Value="1"/>
+																	<Property Name="FadeTime" Type="Real64" Value="2"/>
+																	<Property Name="FadeType" Type="int16" Value="1"/>
+																</PropertyList>
+															</MusicFade>
+														</SourceFadeOut>
+														<DestinationFadeIn>
+															<MusicFade Name="Destination Fade-in" ID="{18123C8C-DA78-409A-BF20-F07826C2A47B}"/>
+														</DestinationFadeIn>
+													</TransitionInfo>
 												</MusicTransition>
 											</ChildrenList>
 											<TransitionInfo/>
@@ -4100,12 +4170,12 @@
 																										<PointList>
 																											<Point>
 																												<XPos>12</XPos>
-																												<YPos>0</YPos>
+																												<YPos>-4.73676</YPos>
 																												<Flags>5</Flags>
 																											</Point>
 																											<Point>
 																												<XPos>28.8</XPos>
-																												<YPos>0</YPos>
+																												<YPos>-4.65838</YPos>
 																												<Flags>37</Flags>
 																											</Point>
 																										</PointList>
