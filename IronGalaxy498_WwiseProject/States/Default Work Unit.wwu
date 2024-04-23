@@ -31,6 +31,9 @@
 					</TransitionList>
 				</StateGroup>
 				<StateGroup Name="MetalBlockPush" ID="{16BD1E08-2CE8-49D6-BBA7-7BBBD258A248}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0.5"/>
+					</PropertyList>
 					<ChildrenList>
 						<State Name="None" ID="{477214B9-91B9-401E-8A94-1B981C6621CA}"/>
 						<State Name="IsPushing" ID="{18966800-E103-4A92-A4D6-C64EE2809EB7}"/>
@@ -58,6 +61,9 @@
 					</TransitionList>
 				</StateGroup>
 				<StateGroup Name="PlayerOnIce" ID="{9B35BFD7-FE8A-443D-B836-0CE06AA3E4AF}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0.5"/>
+					</PropertyList>
 					<ChildrenList>
 						<State Name="None" ID="{AE499277-40A0-412E-978F-438E2AE68E72}"/>
 						<State Name="IsSliding" ID="{2706E707-FB6C-4A4D-B75D-5DEF67890496}"/>
@@ -85,6 +91,9 @@
 					</TransitionList>
 				</StateGroup>
 				<StateGroup Name="PauseMenu" ID="{65BD8F1D-ED20-4265-B6D9-A4E39CD66548}">
+					<PropertyList>
+						<Property Name="DefaultTransitionTime" Type="Real64" Value="0"/>
+					</PropertyList>
 					<ChildrenList>
 						<State Name="None" ID="{99B57ADC-ACF7-48D2-BA4A-0FCBDFE5A25F}"/>
 						<State Name="InPauseMenu" ID="{66132958-C6BD-450C-AB5E-155CCE94E341}"/>
