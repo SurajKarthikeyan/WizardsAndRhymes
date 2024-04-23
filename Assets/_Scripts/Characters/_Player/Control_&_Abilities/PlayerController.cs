@@ -505,6 +505,7 @@ public class PlayerController : Singleton<PlayerController>
     /// <param name="obj">Input callback context for the ranged attack</param>
     private void DoRanged(InputAction.CallbackContext obj)
     {
+        meleeBox.GetComponent<MeleeCollider>().enabled = false;
         if (canAttack && attackStatus == AttackStatus.None)
         {
             SetCanAttack(false);
@@ -837,9 +838,9 @@ public class PlayerController : Singleton<PlayerController>
             StopCoroutine(attackDelayCoroutine);
             attackDelayCoroutine = null;
         }
-        meleeBox.GetComponent<MeleeCollider>().enabled = false;
         playerAnimator.SetTrigger("rangedAttack");
         rangedEvent.Post(this.gameObject);
+        yield return new WaitForSeconds(0.05f);
         //Instantiate projectile and give it the proper velocity
         GameObject projectile = Instantiate(rangedPrefab, rangedSpawnPoint.position, rangedSpawnPoint.rotation);
         projectile.GetComponent<Rigidbody>().velocity = rangedSpawnPoint.forward * rangedPrefabSpeed;
