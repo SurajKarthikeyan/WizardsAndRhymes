@@ -144,7 +144,7 @@ public class AudienceMember : Floater
     /// <summary>
     /// Become a player fan and start the fade coroutine
     /// </summary>
-    void StartBecomePlayerFan(bool fade = true)
+    public void StartBecomePlayerFan(bool fade = true)
     {
         if (!playerFan)
         {
