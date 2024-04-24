@@ -4343,6 +4343,27 @@
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="MetalBlockPush" ID="{16BD1E08-2CE8-49D6-BBA7-7BBBD258A248}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="NotPushing" ID="{A392B3F4-1137-469E-B323-003DEDA14FE4}"/>
+												<CustomState Name="" ID="{E2977D1B-0F00-4BFC-98C2-BBB43B0D1B5F}" ShortID="1050428635">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="IsPushing" ID="{18966800-E103-4A92-A4D6-C64EE2809EB7}"/>
+												<CustomState Name="" ID="{DB19D871-956E-4EA9-A492-211431F10E78}" ShortID="390517077"/>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="MetalBoom" ID="{05729A6A-46BE-4253-92EB-22473746B8B6}" ShortID="205843780">
 									<PropertyList>
