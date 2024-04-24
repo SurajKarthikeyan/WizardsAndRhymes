@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="784481870" Type="User" Language="SFX" Hash="{75E27F2A-376D-91B8-B8D3-F84E03ACC1A0}">
+		<SoundBank Id="784481870" Type="User" Language="SFX" Hash="{2C6D404C-6F7E-5E25-F170-77E0C662DCF7}">
 			<ShortName>UIAndFartSoundBank</ShortName>
 			<Path>UIAndFartSoundBank.bnk</Path>
 			<Media>
@@ -524,7 +524,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3361862619" Type="User" Language="SFX" Hash="{DE9E7EB2-022F-DEDF-0F92-D3F09663426A}">
+		<SoundBank Id="3361862619" Type="User" Language="SFX" Hash="{6C12ABD4-E40D-248A-8525-3953C19D0EBD}">
 			<ShortName>CombatAndEnvironment</ShortName>
 			<Path>CombatAndEnvironment.bnk</Path>
 			<Media>
@@ -711,6 +711,10 @@
 				<File Id="296816978" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GateOpen.wav</ShortName>
 					<CachePath>SFX/GateOpen_E0390519.wem</CachePath>
+				</File>
+				<File Id="307815032" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewStems 10-Chants &amp; Stabs Kit.wav</ShortName>
+					<CachePath>SFX/NewStems 10-Chants &amp; Stabs Kit_AF41DD80.wem</CachePath>
 				</File>
 				<File Id="320125018" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>IceBlockWooshes.wav</ShortName>
@@ -1077,6 +1081,7 @@
 				<ShareSets>
 					<Plugin Id="544780433" Name="New_Gain" LibName="Wwise Gain" LibId="9109507"/>
 					<Plugin Id="1008402193" Name="Low_Pass_20KHz" LibName="Wwise Parametric EQ" LibId="6881283"/>
+					<Plugin Id="1259256166" Name="New_RoomVerb" LibName="Wwise RoomVerb" LibId="7733251"/>
 					<Plugin Id="3160090811" Name="New_Compressor" LibName="Wwise Compressor" LibId="7077891"/>
 					<Plugin Id="3435419520" Name="New_Guitar_Distortion" LibName="Wwise Guitar Distortion" LibId="8257539"/>
 				</ShareSets>
@@ -1127,6 +1132,11 @@
 						<MediaRef Id="914480457"/>
 						<MediaRef Id="968532410"/>
 					</MediaRefs>
+					<PluginRefs>
+						<ShareSets>
+							<PluginRef Id="1259256166"/>
+						</ShareSets>
+					</PluginRefs>
 				</Event>
 				<Event Id="388053590" Name="EnergyRockActivation" DurationType="OneShot" DurationMin="2.6354697" DurationMax="3.3538573">
 					<MediaRefs>
@@ -1304,9 +1314,10 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="1124520274" Name="RapRockInsert" DurationType="OneShot" DurationMin="1.3686444" DurationMax="1.7930925">
+				<Event Id="1124520274" Name="RapRockInsert" DurationType="OneShot" DurationMin="2.1421807" DurationMax="2.1421807">
 					<MediaRefs>
 						<MediaRef Id="18308841"/>
+						<MediaRef Id="307815032"/>
 						<MediaRef Id="352709731"/>
 						<MediaRef Id="478461255"/>
 					</MediaRefs>
@@ -1391,5 +1402,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{303C6AD7-21CE-A226-DEE9-49ED74226ADB}</FileHash>
+	<FileHash>{03A47C73-464D-F1C0-208A-6F1C0BF02A48}</FileHash>
 </SoundBanksInfo>
