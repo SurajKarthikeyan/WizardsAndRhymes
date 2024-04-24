@@ -27,5 +27,4 @@ public class AKChangeState : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
 }

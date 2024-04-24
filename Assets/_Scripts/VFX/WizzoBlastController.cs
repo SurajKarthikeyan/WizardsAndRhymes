@@ -60,8 +60,6 @@ public class WizzoBlastController : MonoBehaviour
     [Tooltip("Canvas holding the interact E button")]
     [SerializeField] private GameObject interactCanvas;
 
-    [SerializeField] private AKChangeState akChangeState;
-
     /// <summary>
     /// Initialization
     /// </summary>
@@ -71,7 +69,6 @@ public class WizzoBlastController : MonoBehaviour
         playerInput = new PlayerInput();
         playerInput.Player.Enable();
         playerInput.Player.Interact.started += DoInteract;
-        akChangeState.ChangeState();
     }
 
     private void Update()
