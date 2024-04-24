@@ -133,59 +133,10 @@
 								</Event>
 								<Event Name="BlastAttack" ID="{7002E33C-5109-4491-866B-132F53D80A33}">
 									<ChildrenList>
-										<Action Name="" ID="{902887EE-8C7F-4C2D-B7AD-F9370FF1FD98}" ShortID="1061147631">
+										<Action Name="" ID="{0B675377-38B1-4EBB-8919-632F2C8BC85F}" ShortID="951315690">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Woosh" ID="{1427E046-122E-4606-AB24-9168139956FD}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{D2B66F48-A83C-421D-805E-EDB54BC27BC1}" ShortID="434468194">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Zap" ID="{C851573B-CBE4-4E2C-9BF2-F538C05C1301}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{67967283-23FE-4D1C-A70F-00247CE741C8}" ShortID="359126658">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Shimmer" ID="{E2AA3146-63C4-4E0A-A6E2-C86599938B9D}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{022A8055-70B5-4753-BC25-8FF2632E7877}" ShortID="788119157">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="MicTap" ID="{39EA1919-40C3-4C2D-8295-1CD48D698615}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{96A4234A-6EFF-49EF-B70A-0EECA242B076}" ShortID="729942220">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Kick" ID="{3BB996E1-7975-40D9-A4E1-4715A05CDFA5}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{D751B66E-5B97-4B58-B046-7CDCA158F7DD}" ShortID="989249234">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Zap" ID="{C851573B-CBE4-4E2C-9BF2-F538C05C1301}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{D7DF7048-9499-441D-81D5-9380E2C8518D}" ShortID="731765506">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Fire" ID="{F431221C-69F2-4A84-BE88-CBEFC621EC89}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
-												</Reference>
-											</ReferenceList>
-										</Action>
-										<Action Name="" ID="{95F21F57-EA7F-49D7-BC3A-99DFB421CE9A}" ShortID="190163415">
-											<ReferenceList>
-												<Reference Name="Target">
-													<ObjectRef Name="Fire" ID="{F431221C-69F2-4A84-BE88-CBEFC621EC89}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+													<ObjectRef Name="FinalEImpact" ID="{5D029015-40AB-433E-B7A9-8EB2CC320FF2}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -403,10 +354,20 @@
 								</Event>
 								<Event Name="TeslaCoilOff" ID="{6AFBD6FD-72DC-4BE9-A1EC-F48ED2594219}">
 									<ChildrenList>
-										<Action Name="" ID="{95DA24DD-734C-4BD8-B4EF-960B2951E537}" ShortID="626975992">
+										<Action Name="" ID="{7064EAEA-3253-4793-A65E-6D6935491FA4}" ShortID="650397184">
 											<ReferenceList>
 												<Reference Name="Target">
-													<ObjectRef Name="Coils" ID="{9D9AB786-760F-458A-81FC-540BA6AFD42F}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+													<ObjectRef Name="TeslaCoil" ID="{1089FCDD-F658-47DB-8CBC-C9FB01B8C2CF}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{4E178222-701E-4151-A09F-21319999EE6C}" ShortID="675152829">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="0.5"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Zap" ID="{C851573B-CBE4-4E2C-9BF2-F538C05C1301}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
 												</Reference>
 											</ReferenceList>
 										</Action>
@@ -471,9 +432,39 @@
 										</Action>
 									</ChildrenList>
 								</Event>
-								<Event Name="EnergyRockActivation" ID="{B2B91FAE-5F34-46C3-A119-BBA79CCFEFFC}"/>
-								<Event Name="RapRockInsert" ID="{A0E03E3A-8A62-476F-AC21-8975C6349479}"/>
-								<Event Name="Teleport" ID="{1074CA29-B0C8-42C6-B744-54EAFA3D36D7}"/>
+								<Event Name="EnergyRockActivation" ID="{B2B91FAE-5F34-46C3-A119-BBA79CCFEFFC}">
+									<ChildrenList>
+										<Action Name="" ID="{F34734D9-853B-4809-B5CA-3316AB88225E}" ShortID="223160309">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="EnergyRockHit" ID="{022076AB-BCE4-481E-B35C-B8CF1B496F08}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="RapRockInsert" ID="{A0E03E3A-8A62-476F-AC21-8975C6349479}">
+									<ChildrenList>
+										<Action Name="" ID="{FCE12B8F-C049-48EB-8CA1-454B344BA5B3}" ShortID="765606691">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="WordInsertImpact" ID="{67CB2720-AF42-4190-84A1-472108E6FA2B}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
+								<Event Name="Teleport" ID="{1074CA29-B0C8-42C6-B744-54EAFA3D36D7}">
+									<ChildrenList>
+										<Action Name="" ID="{C7198E64-D3F7-41F1-8747-2885DB85329D}" ShortID="804448056">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="Teleport" ID="{05ECA56D-9682-4151-9F9D-2A3D35AE6797}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 						<Folder Name="Music" ID="{9CEEF249-6CBE-4183-A578-17E6A24E7BCD}" ShortID="271145348">
