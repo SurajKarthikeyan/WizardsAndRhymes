@@ -57,6 +57,9 @@ public class WizzoBlastController : MonoBehaviour
     [Tooltip("The index of the player animator states we are on")]
     int playerAnimatorStateIndex = 0;
 
+    [Tooltip("Canvas holding the interact E button")]
+    [SerializeField] private GameObject interactCanvas;
+
     /// <summary>
     /// Initialization
     /// </summary>
@@ -138,6 +141,7 @@ public class WizzoBlastController : MonoBehaviour
         splashScreenShaker.Play();
         float transitionStartTime = Time.time;
 
+        interactCanvas.SetActive(false);
         while (Time.time - transitionStartTime < transitionFlashFadeDuration)
         {
             float t = (Time.time - transitionStartTime) / transitionFlashFadeDuration;
