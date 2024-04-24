@@ -2344,15 +2344,82 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4891351688078977235, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: active
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4891351688078977235, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: autoPlaceTriggers
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127326702020121502, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -15.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127326702020121502, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -7.469517
+      objectReference: {fileID: 0}
+    - target: {fileID: 7127326702020121502, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.9
+      objectReference: {fileID: 0}
     - target: {fileID: 8800199294856516389, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
       propertyPath: m_Name
       value: CrowdSurfPath
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8800199294856516389, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982182259714062890, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -9.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 8982182259714062890, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 26.19
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 5069186976769406225, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2674698573073921710, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7179685}
   m_SourcePrefab: {fileID: 100100000, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+--- !u!1 &7179684 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2674698573073921710, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+  m_PrefabInstance: {fileID: 7179683}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7179685
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7179684}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 8.609242, y: 3.2118995, z: 1.2074018}
+  m_Center: {x: 0.45349598, y: 1.1059498, z: -0.103700876}
+--- !u!1 &7179686 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8800199294856516389, guid: e098f1ab9bf0aa24fb7a7c3b928a9d2e, type: 3}
+  m_PrefabInstance: {fileID: 7179683}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &12634251
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10037,6 +10104,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 7179686}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!65 &463799429
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10518,8 +10597,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.7303587, y: 2.3768506, z: 0.17176817}
-  m_Center: {x: -0.13378198, y: 0.029433966, z: 0.23077701}
+  m_Size: {x: 1.7733022, y: 3.1746702, z: 0.17176817}
+  m_Center: {x: -0.11231026, y: 0.42834377, z: 0.23077701}
 --- !u!23 &480768265
 MeshRenderer:
   m_ObjectHideFlags: 0
