@@ -16,7 +16,14 @@ public class PuzzleObjective : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            ObjectivePointer.instance.targetGO = target;
+            if (target != null)
+            {
+                ObjectivePointer.instance.targetGO = target;
+            }
+            else
+            {
+                ObjectivePointer.instance.gameObject.SetActive(false);
+            }
             Destroy(this.gameObject);
         }
     }
