@@ -8,6 +8,8 @@ public class PushBlockState : MonoBehaviour
     #region Vars
 
     [SerializeField] private AK.Wwise.Event metalPushBlockEffect;
+    [SerializeField] private AK.Wwise.State setPushBlock;
+    [SerializeField] private AK.Wwise.State setNotPushBlock;
 
     #endregion
 
@@ -18,7 +20,7 @@ public class PushBlockState : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             metalPushBlockEffect.Post(this.gameObject);
-            AkSoundEngine.SetState("MetalBlockPush", "IsPushing");
+            setPushBlock.SetValue();
         }
     }
 
@@ -26,7 +28,7 @@ public class PushBlockState : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            AkSoundEngine.SetState("MetalBlockPush", "NotPushing");
+            setNotPushBlock.SetValue();
         }
     }
 
