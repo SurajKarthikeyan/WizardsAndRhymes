@@ -872,28 +872,28 @@ public class PlayerController : Singleton<PlayerController>
         yield return null;
     }
     
-    /// <summary>
-    /// Function that knocks the player back in a certain direction
-    /// </summary>
-    /// <param name="direction">Direction the player is knocked back</param>
-    /// <param name="magnitude">Magnitude the player is knocked back</param>
-    public void Knockback(Vector3 direction, float magnitude)
-    {
-        rigidBody.velocity = Vector3.zero;
-        // Does the ray intersect any objects excluding the player layer
-        if (Physics.Raycast(transform.position, direction, out RaycastHit hit, 7, knockbackLayerMask))
-        {
-            float distance = Vector3.Distance(hit.transform.position, transform.position);
-            if (distance >= 1)
-            {
-                rigidBody.AddForce(direction.normalized * magnitude / (distance), ForceMode.Acceleration);
-            }
-        }
-        else
-        {
-            rigidBody.AddForce(direction.normalized * magnitude, ForceMode.Impulse);
-        }
-    }
+    ///// <summary>
+    ///// Function that knocks the player back in a certain direction
+    ///// </summary>
+    ///// <param name="direction">Direction the player is knocked back</param>
+    ///// <param name="magnitude">Magnitude the player is knocked back</param>
+    //public void Knockback(Vector3 direction, float magnitude)
+    //{
+    //    rigidBody.velocity = Vector3.zero;
+    //    // Does the ray intersect any objects excluding the player layer
+    //    if (Physics.Raycast(transform.position, direction, out RaycastHit hit, 7, knockbackLayerMask))
+    //    {
+    //        float distance = Vector3.Distance(hit.transform.position, transform.position);
+    //        if (distance >= 1)
+    //        {
+    //            rigidBody.AddForce(direction.normalized * magnitude / (distance), ForceMode.Acceleration);
+    //        }
+    //    }
+    //    else
+    //    {
+    //        rigidBody.AddForce(direction.normalized * magnitude, ForceMode.Impulse);
+    //    }
+    //}
     #endregion
     
     #region MovementLocks
