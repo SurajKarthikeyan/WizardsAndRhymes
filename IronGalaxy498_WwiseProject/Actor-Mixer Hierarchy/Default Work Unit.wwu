@@ -4439,6 +4439,27 @@
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="MetalBlockPush" ID="{16BD1E08-2CE8-49D6-BBA7-7BBBD258A248}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="NotPushing" ID="{A392B3F4-1137-469E-B323-003DEDA14FE4}"/>
+												<CustomState Name="" ID="{FF56A66B-6095-462D-A59B-C1937268665D}" ShortID="166856758">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="IsPushing" ID="{18966800-E103-4A92-A4D6-C64EE2809EB7}"/>
+												<CustomState Name="" ID="{2F4295E3-E27F-4051-A369-C775875166D9}" ShortID="469434511"/>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
 								</RandomSequenceContainer>
 								<Sound Name="MetalRumble" ID="{007FAB44-F378-4C72-92DA-B8A4591B068D}" ShortID="59563297">
 									<PropertyList>
@@ -4483,6 +4504,27 @@
 											</MediaIDList>
 										</AudioFileSource>
 									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="MetalBlockPush" ID="{16BD1E08-2CE8-49D6-BBA7-7BBBD258A248}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="NotPushing" ID="{A392B3F4-1137-469E-B323-003DEDA14FE4}"/>
+												<CustomState Name="" ID="{A995AE99-DD90-4A1F-8779-603DB7CFA568}" ShortID="72416968">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="IsPushing" ID="{18966800-E103-4A92-A4D6-C64EE2809EB7}"/>
+												<CustomState Name="" ID="{644F752A-5FE7-4864-BF8A-5C0BF0E66868}" ShortID="477093722"/>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
 									<ActiveSourceList>
 										<ActiveSource Name="Metal Rumble" ID="{1B7CB7DF-1AAE-4CE9-A82D-984FAE291598}" Platform="Linked"/>
 									</ActiveSourceList>
