@@ -23,12 +23,20 @@ public class PressurePlate : MonoBehaviour
     [SerializeField] private LightningBlockManager lbManager;
     public int onPP = 0;
 
+    private bool canPlayMusic;
+    
     private bool isElectroBlock;
 
     private string gameObjectName;
     #endregion
 
     #region UnityMethods
+
+    private void OnEnable()
+    {
+        canPlayMusic = false;
+        StartCoroutine(DontPlayMusicUntilWereDone());
+    }
 
     private void Start()
     {
@@ -42,7 +50,10 @@ public class PressurePlate : MonoBehaviour
         {
             gameObjectName = other.gameObject.name;
             pressurePlateSoundEffect.Stop(this.GameObject());
-            pressurePlateSoundEffect.Post(this.GameObject());
+            if (canPlayMusic)
+            {
+                pressurePlateSoundEffect.Post(this.GameObject());
+            }
             ActivateDefaultPressurePlate();
             hasBeenPushedDown = true;
             pressurePlateAnimator.SetTrigger("interaction");
@@ -68,7 +79,10 @@ public class PressurePlate : MonoBehaviour
         {
             gameObjectName = "Connor";
             pressurePlateSoundEffect.Stop(this.GameObject());
-            pressurePlateSoundEffect.Post(this.GameObject());
+            if (canPlayMusic)
+            {
+                pressurePlateSoundEffect.Post(this.GameObject());
+            }
             onPP -= 1;
             Debug.Log("Minus 1");
             if (hasBeenPushedDown && onPP == 0)
@@ -117,6 +131,12 @@ public class PressurePlate : MonoBehaviour
 
     {
         electroBlock.GameObject().GetComponent<FirstLightningBlock>().isActive = true;
+    }
+
+    public IEnumerator DontPlayMusicUntilWereDone()
+    {
+        yield return new WaitForSeconds(2);
+        canPlayMusic = true;
     }
 
     #endregion
