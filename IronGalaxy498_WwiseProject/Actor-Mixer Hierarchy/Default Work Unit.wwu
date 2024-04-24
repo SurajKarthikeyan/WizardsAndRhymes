@@ -3045,7 +3045,7 @@
 										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
 										<Property Name="Volume" Type="Real64">
 											<ValueList>
-												<Value>-9</Value>
+												<Value>-11</Value>
 											</ValueList>
 										</Property>
 									</PropertyList>
@@ -3519,12 +3519,16 @@
 												<ModifierInfo>
 													<Modifier Name="" ID="{2FEB14FE-5F79-44E8-929D-B657A40F8BB8}">
 														<PropertyList>
-															<Property Name="Enabled" Type="bool" Value="True"/>
 															<Property Name="Min" Type="Real64" Value="-350"/>
 														</PropertyList>
 													</Modifier>
 												</ModifierInfo>
 											</ModifierList>
+										</Property>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-3</Value>
+											</ValueList>
 										</Property>
 									</PropertyList>
 									<ReferenceList>
@@ -3548,9 +3552,10 @@
 											<ChildrenList>
 												<AudioFileSource Name="EnergyRock" ID="{3569DDB9-8F0D-4716-887E-E43D543C47BC}">
 													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0311886004347301"/>
 														<Property Name="FadeOutDuration" Type="Real64" Value="1.45124976596143"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="0.534059913873806"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.970700319960027"/>
 														<Property Name="TrimEnd" Type="Real64" Value="3.16952948885976"/>
 													</PropertyList>
 													<Language>SFX</Language>
@@ -3576,9 +3581,10 @@
 											<ChildrenList>
 												<AudioFileSource Name="EnergyRock" ID="{417565A4-2A7E-46C4-B9D6-E57D62308808}">
 													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.0311886004347297"/>
 														<Property Name="FadeOutDuration" Type="Real64" Value="1.16099981276914"/>
 														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="4.22603931847969"/>
+														<Property Name="TrimBegin" Type="Real64" Value="4.56911392326172"/>
 														<Property Name="TrimEnd" Type="Real64" Value="6.96599887661487"/>
 													</PropertyList>
 													<Language>SFX</Language>
@@ -4336,6 +4342,27 @@
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
+									<StateInfo>
+										<StateGroupList>
+											<StateGroupInfo>
+												<StateGroupRef Name="MetalBlockPush" ID="{16BD1E08-2CE8-49D6-BBA7-7BBBD258A248}"/>
+											</StateGroupInfo>
+										</StateGroupList>
+										<CustomStateList>
+											<CustomState>
+												<StateRef Name="NotPushing" ID="{A392B3F4-1137-469E-B323-003DEDA14FE4}"/>
+												<CustomState Name="" ID="{E2977D1B-0F00-4BFC-98C2-BBB43B0D1B5F}" ShortID="1050428635">
+													<PropertyList>
+														<Property Name="Volume" Type="Real64" Value="-108"/>
+													</PropertyList>
+												</CustomState>
+											</CustomState>
+											<CustomState>
+												<StateRef Name="IsPushing" ID="{18966800-E103-4A92-A4D6-C64EE2809EB7}"/>
+												<CustomState Name="" ID="{DB19D871-956E-4EA9-A492-211431F10E78}" ShortID="390517077"/>
+											</CustomState>
+										</CustomStateList>
+									</StateInfo>
 								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="MetalBoom" ID="{05729A6A-46BE-4253-92EB-22473746B8B6}" ShortID="205843780">
 									<PropertyList>
