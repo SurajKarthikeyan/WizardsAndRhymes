@@ -9,7 +9,7 @@
 	</RootPaths>
 	<DialogueEvents/>
 	<SoundBanks>
-		<SoundBank Id="784481870" Type="User" Language="SFX" Hash="{2C6D404C-6F7E-5E25-F170-77E0C662DCF7}">
+		<SoundBank Id="784481870" Type="User" Language="SFX" Hash="{F48591B9-3B98-0120-BA09-A2CB5B695576}">
 			<ShortName>UIAndFartSoundBank</ShortName>
 			<Path>UIAndFartSoundBank.bnk</Path>
 			<Media>
@@ -115,7 +115,7 @@
 				</Event>
 			</Events>
 		</SoundBank>
-		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{1BC738D6-A491-ED5E-9F7A-427D35FF4C32}">
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{454206CA-29C3-1064-052C-06F6B232310D}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 			<Plugins>
@@ -185,7 +185,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1702439946" Type="User" Language="SFX" Hash="{A02D95CE-4068-775F-60C0-61D5EB8850BF}">
+		<SoundBank Id="1702439946" Type="User" Language="SFX" Hash="{287837C3-DD18-5567-B3BC-B3F737EE5D54}">
 			<ShortName>InteractiveMusicBank</ShortName>
 			<Path>InteractiveMusicBank.bnk</Path>
 			<Media>
@@ -524,10 +524,14 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3361862619" Type="User" Language="SFX" Hash="{0218695C-FFC2-2931-B27D-A1C478E22CB4}">
+		<SoundBank Id="3361862619" Type="User" Language="SFX" Hash="{1A6D418F-699E-97E1-D2AE-A2ED3368A429}">
 			<ShortName>CombatAndEnvironment</ShortName>
 			<Path>CombatAndEnvironment.bnk</Path>
 			<Media>
+				<File Id="17859926" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_B8D87363.wem</CachePath>
+				</File>
 				<File Id="18308841" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>WordInsertImpact.wav</ShortName>
 					<CachePath>SFX/WordInsertImpact_E05C02BA.wem</CachePath>
@@ -543,10 +547,6 @@
 				<File Id="28928322" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Kick3.wav</ShortName>
 					<CachePath>SFX/Kick3_2EDD47BA.wem</CachePath>
-				</File>
-				<File Id="37982402" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>FinalEImpact.wav</ShortName>
-					<CachePath>SFX/FinalEImpact_857ABC7C.wem</CachePath>
 				</File>
 				<File Id="42034528" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
@@ -584,10 +584,6 @@
 					<ShortName>Electricity, Zap, Shock, Impact, Short 02 SND13443.wav</ShortName>
 					<CachePath>SFX/Electricity, Zap, Shock, Impact, Short 02 SND13443_6FE3C6A7.wem</CachePath>
 				</File>
-				<File Id="75327322" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>FinalEImpact.wav</ShortName>
-					<CachePath>SFX/FinalEImpact_BC082BAF.wem</CachePath>
-				</File>
 				<File Id="90803293" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>IceFriction.wav</ShortName>
 					<CachePath>SFX/IceFriction_B5390F69.wem</CachePath>
@@ -599,6 +595,10 @@
 				<File Id="101762498" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>IceBlockWooshes.wav</ShortName>
 					<CachePath>SFX/IceBlockWooshes_78AA9B0C.wem</CachePath>
+				</File>
+				<File Id="105252451" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_73C8C9AE.wem</CachePath>
 				</File>
 				<File Id="107507937" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PartOfDash_ClothesHitSuperHit.wav</ShortName>
@@ -614,7 +614,7 @@
 				</File>
 				<File Id="120316387" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>EnergyRock.wav</ShortName>
-					<CachePath>SFX/EnergyRock_6D51686E.wem</CachePath>
+					<CachePath>SFX/EnergyRock_14230659.wem</CachePath>
 				</File>
 				<File Id="123022695" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PlayerHitImpact.wav</ShortName>
@@ -680,6 +680,14 @@
 					<ShortName>PartOfDash_ClothesHitSuperHit.wav</ShortName>
 					<CachePath>SFX/PartOfDash_ClothesHitSuperHit_68858D01.wem</CachePath>
 				</File>
+				<File Id="224227100" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_2D66F265.wem</CachePath>
+				</File>
+				<File Id="240203111" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_A4C6393D.wem</CachePath>
+				</File>
 				<File Id="244673809" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Electricity, Zap, Shock, Impact, Heavy 03 SND13445.wav</ShortName>
 					<CachePath>SFX/Electricity, Zap, Shock, Impact, Heavy 03 SND13445_2EDD47BA.wem</CachePath>
@@ -704,9 +712,21 @@
 					<ShortName>GateOpen.wav</ShortName>
 					<CachePath>SFX/GateOpen_901BBF96.wem</CachePath>
 				</File>
+				<File Id="272666271" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_B4B57720.wem</CachePath>
+				</File>
+				<File Id="274852875" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_FD3A0337.wem</CachePath>
+				</File>
 				<File Id="275029706" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PartOfDash_ClothesHit2.wav</ShortName>
 					<CachePath>SFX/PartOfDash_ClothesHit2_881CD836.wem</CachePath>
+				</File>
+				<File Id="282385325" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_74FCFE0D.wem</CachePath>
 				</File>
 				<File Id="296816978" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GateOpen.wav</ShortName>
@@ -730,7 +750,11 @@
 				</File>
 				<File Id="346790426" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>EnergyRock.wav</ShortName>
-					<CachePath>SFX/EnergyRock_666C9993.wem</CachePath>
+					<CachePath>SFX/EnergyRock_EE156233.wem</CachePath>
+				</File>
+				<File Id="349043834" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_4B548B29.wem</CachePath>
 				</File>
 				<File Id="352709731" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>WordInsertImpact.wav</ShortName>
@@ -812,13 +836,13 @@
 					<ShortName>CrystalZap.wav</ShortName>
 					<CachePath>SFX/CrystalZap_2EDD47BA.wem</CachePath>
 				</File>
+				<File Id="510302753" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_EBA2B91E.wem</CachePath>
+				</File>
 				<File Id="510362844" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Objects, Misc, Paint, Spray Paint Can, Shake SND29085.wav</ShortName>
 					<CachePath>SFX/Objects, Misc, Paint, Spray Paint Can, Shake SND29085_F3F5D2A9.wem</CachePath>
-				</File>
-				<File Id="534020986" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>FinalEImpact.wav</ShortName>
-					<CachePath>SFX/FinalEImpact_170E5225.wem</CachePath>
 				</File>
 				<File Id="539064704" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PartOfDash_ClothesHit3.wav</ShortName>
@@ -847,10 +871,6 @@
 				<File Id="568257500" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GateOpen.wav</ShortName>
 					<CachePath>SFX/GateOpen_F4493612.wem</CachePath>
-				</File>
-				<File Id="572027070" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>FinalEImpact.wav</ShortName>
-					<CachePath>SFX/FinalEImpact_68769993.wem</CachePath>
 				</File>
 				<File Id="577030918" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</ShortName>
@@ -884,9 +904,9 @@
 					<ShortName>GateOpen.wav</ShortName>
 					<CachePath>SFX/GateOpen_EBC39E57.wem</CachePath>
 				</File>
-				<File Id="629992025" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>FinalEImpact.wav</ShortName>
-					<CachePath>SFX/FinalEImpact_11BD9E71.wem</CachePath>
+				<File Id="620540100" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_45B8A11B.wem</CachePath>
 				</File>
 				<File Id="630432816" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Lever1.wav</ShortName>
@@ -924,10 +944,6 @@
 					<ShortName>Objects, Misc, Spray Paint, Painting, Aerosol SND70613.wav</ShortName>
 					<CachePath>SFX/Objects, Misc, Spray Paint, Painting, Aerosol SND70613_67023649.wem</CachePath>
 				</File>
-				<File Id="683424347" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>FinalEImpact.wav</ShortName>
-					<CachePath>SFX/FinalEImpact_768CFADD.wem</CachePath>
-				</File>
 				<File Id="691015498" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>TeslaCoil.wav</ShortName>
 					<CachePath>SFX/TeslaCoil_CAA01E37.wem</CachePath>
@@ -936,17 +952,21 @@
 					<ShortName>PlayerHitImpact.wav</ShortName>
 					<CachePath>SFX/PlayerHitImpact_14FF8004.wem</CachePath>
 				</File>
+				<File Id="704553921" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_FFB32230.wem</CachePath>
+				</File>
 				<File Id="706702062" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CrystalShimmers.wav</ShortName>
 					<CachePath>SFX/CrystalShimmers_E624F824.wem</CachePath>
 				</File>
+				<File Id="711959874" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_2A2E45A6.wem</CachePath>
+				</File>
 				<File Id="718078501" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GateOpen.wav</ShortName>
 					<CachePath>SFX/GateOpen_4067D2B3.wem</CachePath>
-				</File>
-				<File Id="727214218" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>FinalEImpact.wav</ShortName>
-					<CachePath>SFX/FinalEImpact_ECCEB43E.wem</CachePath>
 				</File>
 				<File Id="733335054" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>IceBlockWooshes.wav</ShortName>
@@ -976,6 +996,10 @@
 					<ShortName>TeslaCoil.wav</ShortName>
 					<CachePath>SFX/TeslaCoil_659A1508.wem</CachePath>
 				</File>
+				<File Id="824565188" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_19E56FD7.wem</CachePath>
+				</File>
 				<File Id="829601859" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>IceFriction2.wav</ShortName>
 					<CachePath>SFX/IceFriction2_25599EDB.wem</CachePath>
@@ -987,10 +1011,6 @@
 				<File Id="853954014" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>CrystalShimmers.wav</ShortName>
 					<CachePath>SFX/CrystalShimmers_08412CFC.wem</CachePath>
-				</File>
-				<File Id="869999627" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>FinalEImpact.wav</ShortName>
-					<CachePath>SFX/FinalEImpact_B3A37ECC.wem</CachePath>
 				</File>
 				<File Id="889512591" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>PartOfDash_ClothesHitSuperHit.wav</ShortName>
@@ -1019,6 +1039,10 @@
 				<File Id="914480457" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309.wav</ShortName>
 					<CachePath>SFX/Wind, Designed, Clocktower Echoes, Deep Winds, Creaks SND60309_E972C9F2.wem</CachePath>
+				</File>
+				<File Id="916576428" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_F265A359.wem</CachePath>
 				</File>
 				<File Id="929853616" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Fire2.wav</ShortName>
@@ -1056,6 +1080,10 @@
 					<ShortName>GateOpen.wav</ShortName>
 					<CachePath>SFX/GateOpen_2BE80117.wem</CachePath>
 				</File>
+				<File Id="987775144" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_624BC6B9.wem</CachePath>
+				</File>
 				<File Id="997188878" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Metal Impact.wav</ShortName>
 					<CachePath>SFX/Metal Impact_0BC532E0.wem</CachePath>
@@ -1072,9 +1100,17 @@
 					<ShortName>PartOfDash_ClothesHit2.wav</ShortName>
 					<CachePath>SFX/PartOfDash_ClothesHit2_0DEA00EC.wem</CachePath>
 				</File>
+				<File Id="1058291522" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_B134DEEC.wem</CachePath>
+				</File>
 				<File Id="1070103033" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Metal Impact Sharp.wav</ShortName>
 					<CachePath>SFX/Metal Impact Sharp_51ECA98F.wem</CachePath>
+				</File>
+				<File Id="1073667881" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewLengthFinalImpact.wav</ShortName>
+					<CachePath>SFX/NewLengthFinalImpact_D7FA50D9.wem</CachePath>
 				</File>
 			</Media>
 			<Plugins>
@@ -1087,16 +1123,33 @@
 				</ShareSets>
 			</Plugins>
 			<Events>
-				<Event Id="3442485957" Name="BlastAttack" DurationType="OneShot" DurationMin="2.4563649" DurationMax="4.55">
+				<Event Id="3442485957" Name="BlastAttack" DurationType="OneShot" DurationMin="2.4218976" DurationMax="3.2002285">
 					<MediaRefs>
-						<MediaRef Id="37982402"/>
-						<MediaRef Id="75327322"/>
-						<MediaRef Id="534020986"/>
-						<MediaRef Id="572027070"/>
-						<MediaRef Id="629992025"/>
-						<MediaRef Id="683424347"/>
-						<MediaRef Id="727214218"/>
-						<MediaRef Id="869999627"/>
+						<MediaRef Id="17859926"/>
+						<MediaRef Id="94231916"/>
+						<MediaRef Id="105252451"/>
+						<MediaRef Id="224227100"/>
+						<MediaRef Id="240203111"/>
+						<MediaRef Id="272666271"/>
+						<MediaRef Id="274852875"/>
+						<MediaRef Id="282385325"/>
+						<MediaRef Id="349043834"/>
+						<MediaRef Id="361976253"/>
+						<MediaRef Id="470829322"/>
+						<MediaRef Id="510302753"/>
+						<MediaRef Id="560172071"/>
+						<MediaRef Id="583637567"/>
+						<MediaRef Id="596267822"/>
+						<MediaRef Id="620540100"/>
+						<MediaRef Id="704553921"/>
+						<MediaRef Id="711959874"/>
+						<MediaRef Id="824565188"/>
+						<MediaRef Id="896693686"/>
+						<MediaRef Id="916576428"/>
+						<MediaRef Id="935653253"/>
+						<MediaRef Id="987775144"/>
+						<MediaRef Id="1058291522"/>
+						<MediaRef Id="1073667881"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="3895479848" Name="CameraWhir" DurationType="OneShot" DurationMin="2.526526" DurationMax="2.526526">
@@ -1138,7 +1191,7 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="388053590" Name="EnergyRockActivation" DurationType="OneShot" DurationMin="2.6354697" DurationMax="3.3538573">
+				<Event Id="388053590" Name="EnergyRockActivation" DurationType="OneShot" DurationMin="2.1988292" DurationMax="2.396885">
 					<MediaRefs>
 						<MediaRef Id="120316387"/>
 						<MediaRef Id="346790426"/>
@@ -1402,5 +1455,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{54AEDCA9-7482-0F45-ED21-AE47D60C7DA6}</FileHash>
+	<FileHash>{B3F9E3D4-C81A-964D-7A76-D61C8C375E9B}</FileHash>
 </SoundBanksInfo>
