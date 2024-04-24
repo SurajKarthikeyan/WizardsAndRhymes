@@ -517,6 +517,9 @@
 						<Event Name="EncounterStart" ID="{73CC69A2-FEA7-4B1B-ABE0-5AF0BE6273E5}">
 							<ChildrenList>
 								<Action Name="" ID="{DFBA394F-F985-47C2-9FA7-BD42BD1F011C}" ShortID="716069440">
+									<PropertyList>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
 											<ObjectRef Name="EnemyRattle" ID="{C0AF2634-79F5-4AB8-AC59-B20FED61A577}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
@@ -532,7 +535,9 @@
 								</Action>
 								<Action Name="" ID="{9F06A8EA-7B43-4D25-85B9-3B5A110D184F}" ShortID="556818296">
 									<PropertyList>
-										<Property Name="Delay" Type="Real64" Value="0.3"/>
+										<Property Name="Delay" Type="Real64" Value="0.8"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="1"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
@@ -542,17 +547,9 @@
 								</Action>
 								<Action Name="" ID="{322AB677-BFF1-4229-9E00-0EAC2CC2C2BD}" ShortID="517974680">
 									<PropertyList>
-										<Property Name="Delay" Type="Real64" Value="0.7"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Target">
-											<ObjectRef Name="EnemyRattle" ID="{C0AF2634-79F5-4AB8-AC59-B20FED61A577}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
-										</Reference>
-									</ReferenceList>
-								</Action>
-								<Action Name="" ID="{276B3520-FC28-466A-909C-A7EE1C68DA01}" ShortID="938041516">
-									<PropertyList>
-										<Property Name="Delay" Type="Real64" Value="1.2"/>
+										<Property Name="Delay" Type="Real64" Value="0.5"/>
+										<Property Name="FadeInCurve" Type="int16" Value="5"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.5"/>
 									</PropertyList>
 									<ReferenceList>
 										<Reference Name="Target">
