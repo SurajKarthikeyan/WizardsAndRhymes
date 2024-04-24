@@ -1198,266 +1198,6 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
-								<RandomSequenceContainer Name="Crystal" ID="{544B078B-0797-40B1-BC64-43A55BDB53B1}" ShortID="428215408">
-									<PropertyList>
-										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
-										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="10"/>
-										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-										<Property Name="RandomOrSequence" Type="int16" Value="0"/>
-									</PropertyList>
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="EnvironmentBus" ID="{273EC341-FB06-4452-A2D4-E8B9F4DE3817}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<RandomSequenceContainer Name="CrystalShimmers" ID="{30E3930D-A6D6-41D3-8FB7-D6E14C8A15EC}" ShortID="269629844">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="CS1" ID="{501C58B3-D48A-4DFF-B795-1662377E241C}" ShortID="120268270">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="CrystalShimmers" ID="{68C476FE-B852-4CAE-B7B2-16CE80C67444}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.588108108108108"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.0518918918918919"/>
-																<Property Name="TrimEnd" Type="Real64" Value="2.47351351351351"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>CrystalShimmers.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="853954014"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="CrystalShimmers" ID="{68C476FE-B852-4CAE-B7B2-16CE80C67444}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="CS2" ID="{F15961D0-41E8-488B-8BD6-81B691BD5E27}" ShortID="293274944">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="CrystalShimmers" ID="{07B0FC1B-260B-4F87-B296-38C68B937E42}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.441081081081081"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="4.00432432432432"/>
-																<Property Name="TrimEnd" Type="Real64" Value="6.4"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>CrystalShimmers.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="706702062"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="CrystalShimmers" ID="{07B0FC1B-260B-4F87-B296-38C68B937E42}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="CrystalTones" ID="{D2F89178-067C-468F-964A-B0ACE991A192}" ShortID="663802225">
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="CT1" ID="{D1B75349-AABD-4CEA-B3BD-B66C41015CD7}" ShortID="224489867">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="CrystalTones" ID="{95EE4F6C-32F2-44D0-B63B-B3CFA4A737CC}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.825626279340565"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimEnd" Type="Real64" Value="3.20922047102479"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>CrystalTones.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="144065966"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="CrystalTones" ID="{95EE4F6C-32F2-44D0-B63B-B3CFA4A737CC}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="CT2" ID="{0A7071A6-34A3-45B1-BD33-14B368819592}" ShortID="176987791">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="CrystalTones" ID="{8CF7D03E-00FF-4F6F-B5B9-15FFE68E3062}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.951265060979346"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="4.03604682695377"/>
-																<Property Name="TrimEnd" Type="Real64" Value="7.82550125635838"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>CrystalTones.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="660611193"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="CrystalTones" ID="{8CF7D03E-00FF-4F6F-B5B9-15FFE68E3062}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="CT3" ID="{1975DB51-163F-4766-84D1-D53AF5FA8195}" ShortID="472809933">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="CrystalTones" ID="{C7933EBD-282F-4F8A-A6F1-BFFEB09799E7}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="1.25638781638782"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="8.07677881963596"/>
-																<Property Name="TrimEnd" Type="Real64" Value="11.2536451553594"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>CrystalTones.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="162829338"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="CrystalTones" ID="{C7933EBD-282F-4F8A-A6F1-BFFEB09799E7}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="CT4" ID="{1B1281D9-17F3-4DA7-A5A8-ACBDA846EFDF}" ShortID="152740289">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="CrystalTones" ID="{B29670A1-361C-49A4-9238-5C1E45F27B3D}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="1.68714935343507"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="12.0074778451921"/>
-																<Property Name="TrimEnd" Type="Real64" Value="15.8843316786174"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>CrystalTones.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="108359842"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="CrystalTones" ID="{B29670A1-361C-49A4-9238-5C1E45F27B3D}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="CrystalZaps" ID="{50CA0200-B346-4190-97B2-634F780E4735}" ShortID="384291343">
-											<PropertyList>
-												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-												<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="CrystalZap" ID="{4F9729BA-B93A-4172-9F08-086A83184818}" ShortID="60224063">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="CrystalZap" ID="{1E272264-7CC1-4A2E-923A-51BC7BAB9520}">
-															<Language>SFX</Language>
-															<AudioFile>CrystalZap.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="497414986"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="CrystalZap" ID="{1E272264-7CC1-4A2E-923A-51BC7BAB9520}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-									</ChildrenList>
-									<ObjectLists>
-										<ObjectList Name="Playlist">
-											<Reference>
-												<ObjectRef Name="CrystalZaps" ID="{50CA0200-B346-4190-97B2-634F780E4735}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
-											</Reference>
-											<Reference>
-												<ObjectRef Name="CrystalTones" ID="{D2F89178-067C-468F-964A-B0ACE991A192}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
-											</Reference>
-											<Reference>
-												<ObjectRef Name="CrystalShimmers" ID="{30E3930D-A6D6-41D3-8FB7-D6E14C8A15EC}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
-											</Reference>
-										</ObjectList>
-									</ObjectLists>
-								</RandomSequenceContainer>
 								<RandomSequenceContainer Name="IceBlockWoosh" ID="{A87015F1-01D5-49D6-AE81-52915DE17040}" ShortID="335840724">
 									<PropertyList>
 										<Property Name="Volume" Type="Real64">
@@ -3075,428 +2815,6 @@
 										</ObjectList>
 									</ObjectLists>
 								</RandomSequenceContainer>
-								<BlendContainer Name="MetalPushBlock" ID="{EA4B0203-0577-467E-B0FB-C5DAA9D5E48A}" ShortID="312083923">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<Sound Name="MetalRumble" ID="{007FAB44-F378-4C72-92DA-B8A4591B068D}" ShortID="59563297">
-											<PropertyList>
-												<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-												<Property Name="Lowpass" Type="int16">
-													<ValueList>
-														<Value>49</Value>
-													</ValueList>
-												</Property>
-												<Property Name="Pitch" Type="int32">
-													<ModifierList>
-														<ModifierInfo>
-															<Modifier Name="" ID="{82689B25-29CF-4196-B6E2-9FB91141C2F2}">
-																<PropertyList>
-																	<Property Name="Enabled" Type="bool" Value="True"/>
-																	<Property Name="Min" Type="Real64" Value="-250"/>
-																</PropertyList>
-															</Modifier>
-														</ModifierInfo>
-													</ModifierList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Metal Rumble" ID="{1B7CB7DF-1AAE-4CE9-A82D-984FAE291598}">
-													<PropertyList>
-														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-														<Property Name="TrimBegin" Type="Real64" Value="2.57235450899844"/>
-														<Property Name="TrimEnd" Type="Real64" Value="10.3852821791862"/>
-													</PropertyList>
-													<Language>SFX</Language>
-													<AudioFile>Metal Rumble.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="259572801"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Metal Rumble" ID="{1B7CB7DF-1AAE-4CE9-A82D-984FAE291598}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<RandomSequenceContainer Name="MetalBoom" ID="{05729A6A-46BE-4253-92EB-22473746B8B6}" ShortID="205843780">
-											<PropertyList>
-												<Property Name="Lowpass" Type="int16">
-													<ValueList>
-														<Value>72</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="Metal Impact" ID="{91A97BEA-CDA1-4E73-8D76-3C395A7BC7D4}" ShortID="437442762">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Metal Impact" ID="{9886F756-9A7E-40F7-8265-622E63C96A49}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.820856073943662"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.0483504313869576"/>
-																<Property Name="TrimEnd" Type="Real64" Value="3.30622585338419"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>Metal Impact.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="491323455"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Metal Impact" ID="{9886F756-9A7E-40F7-8265-622E63C96A49}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Metal Impact_01" ID="{2C694CC2-3BED-4D05-BF8F-2FA0F06EDEDB}" ShortID="488018890">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Metal Impact" ID="{E21ED073-21A8-4298-BB26-B9CAEEBFB132}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="1.04887165003912"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="5.98006308520837"/>
-																<Property Name="TrimEnd" Type="Real64" Value="9.39424173513302"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>Metal Impact.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="997188878"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Metal Impact" ID="{E21ED073-21A8-4298-BB26-B9CAEEBFB132}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Metal Impact_02" ID="{8468533F-5ED7-4A6A-A6B2-B0F3A727BC79}" ShortID="449901526">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Metal Impact" ID="{2751F5CF-452C-4051-8502-968626F0F4FE}">
-															<PropertyList>
-																<Property Name="FadeOutDuration" Type="Real64" Value="1.75512065934656"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="11.5201870534565"/>
-																<Property Name="TrimEnd" Type="Real64" Value="15.5962654049295"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>Metal Impact.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="774735159"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Metal Impact" ID="{2751F5CF-452C-4051-8502-968626F0F4FE}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-										<RandomSequenceContainer Name="MetalImpact" ID="{A1CFD9F2-0BF5-452A-9CB2-6A91F6014B9B}" ShortID="567923284">
-											<PropertyList>
-												<Property Name="Lowpass" Type="int16">
-													<ValueList>
-														<Value>33</Value>
-													</ValueList>
-												</Property>
-												<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
-												<Property Name="Pitch" Type="int32">
-													<ValueList>
-														<Value>-1110</Value>
-													</ValueList>
-												</Property>
-												<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
-												<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
-												<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
-												<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="3"/>
-												<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>-6</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<Sound Name="Metal Impact Sharp" ID="{27E476AB-E11B-4FB2-9C11-88FAF716193A}" ShortID="615219804">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Metal Impact Sharp" ID="{DBF04BD8-8740-4586-9DF5-2520AACDC797}">
-															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.252749172756462"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.69287781634764"/>
-																<Property Name="FadeOutShape" Type="int16" Value="3"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="0.981390718312213"/>
-																<Property Name="TrimEnd" Type="Real64" Value="1.80191259031914"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>Metal Impact Sharp.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="1070103033"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Metal Impact Sharp" ID="{DBF04BD8-8740-4586-9DF5-2520AACDC797}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Metal Impact Sharp_01" ID="{22136706-83C3-4E2B-833B-9AFB1B4AC107}" ShortID="150888966">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Metal Impact Sharp" ID="{A7FEED7B-9CDE-43DB-BC97-1642711E56D2}">
-															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.261301475186998"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="1.09831959279493"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="4.63866040883914"/>
-																<Property Name="TrimEnd" Type="Real64" Value="5.73698000163407"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>Metal Impact Sharp.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="461959986"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Metal Impact Sharp" ID="{A7FEED7B-9CDE-43DB-BC97-1642711E56D2}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Metal Impact Sharp_02" ID="{72AA952C-34E1-44D2-B181-CBDC5A275929}" ShortID="111338860">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Metal Impact Sharp" ID="{D7F26EBD-39AA-42FC-BB62-4AABC59231B1}">
-															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.193485861200366"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="1.16138280973751"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="9.07084397238354"/>
-																<Property Name="TrimEnd" Type="Real64" Value="10.232226782121"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>Metal Impact Sharp.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="653303503"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Metal Impact Sharp" ID="{D7F26EBD-39AA-42FC-BB62-4AABC59231B1}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Metal Impact Sharp_03" ID="{521E2ED1-8A94-4697-B6B9-346AF3F1A721}" ShortID="777033360">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Metal Impact Sharp" ID="{B31728CA-1652-41DF-97F8-9899A2D3A7EB}">
-															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.193485861200366"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.878703988959822"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="13.2950979319577"/>
-																<Property Name="TrimEnd" Type="Real64" Value="14.2152447961316"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>Metal Impact Sharp.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="566927662"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Metal Impact Sharp" ID="{B31728CA-1652-41DF-97F8-9899A2D3A7EB}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Metal Impact Sharp_04" ID="{C9B06201-A878-44C0-9D97-CF3FD12180CB}" ShortID="102697200">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Metal Impact Sharp" ID="{BDDEF7DB-A30A-48F1-AE2A-DBDF0CEBD093}">
-															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.193485861200366"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.971639179586681"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="17.8617613741566"/>
-																<Property Name="TrimEnd" Type="Real64" Value="18.8334005537433"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>Metal Impact Sharp.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="54835555"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Metal Impact Sharp" ID="{BDDEF7DB-A30A-48F1-AE2A-DBDF0CEBD093}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Metal Impact Sharp_05" ID="{964DA669-58AD-4D73-8F65-46261E817C0A}" ShortID="652575968">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Metal Impact Sharp" ID="{C8E6B8AC-B55A-49C8-875B-F1B733977F58}">
-															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.193485861200366"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="1.05936217897608"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="22.0736391841285"/>
-																<Property Name="TrimEnd" Type="Real64" Value="23.1330013631046"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>Metal Impact Sharp.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="132413351"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Metal Impact Sharp" ID="{C8E6B8AC-B55A-49C8-875B-F1B733977F58}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-												<Sound Name="Metal Impact Sharp_06" ID="{E8924EAF-5197-468B-916D-74E0FAEFC760}" ShortID="725817315">
-													<ReferenceList>
-														<Reference Name="Conversion">
-															<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
-														</Reference>
-														<Reference Name="OutputBus">
-															<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
-														</Reference>
-													</ReferenceList>
-													<ChildrenList>
-														<AudioFileSource Name="Metal Impact Sharp" ID="{A6A11AB6-0A5B-4ED8-B442-1DD7D2178334}">
-															<PropertyList>
-																<Property Name="FadeInDuration" Type="Real64" Value="0.193485861200366"/>
-																<Property Name="FadeOutDuration" Type="Real64" Value="0.924753930666135"/>
-																<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-																<Property Name="TrimBegin" Type="Real64" Value="26.2910454792056"/>
-																<Property Name="TrimEnd" Type="Real64" Value="27.2157994098717"/>
-															</PropertyList>
-															<Language>SFX</Language>
-															<AudioFile>Metal Impact Sharp.wav</AudioFile>
-															<MediaIDList>
-																<MediaID ID="132699668"/>
-															</MediaIDList>
-														</AudioFileSource>
-													</ChildrenList>
-													<ActiveSourceList>
-														<ActiveSource Name="Metal Impact Sharp" ID="{A6A11AB6-0A5B-4ED8-B442-1DD7D2178334}" Platform="Linked"/>
-													</ActiveSourceList>
-												</Sound>
-											</ChildrenList>
-										</RandomSequenceContainer>
-									</ChildrenList>
-									<StateInfo>
-										<StateGroupList>
-											<StateGroupInfo>
-												<StateGroupRef Name="MetalBlockPush" ID="{16BD1E08-2CE8-49D6-BBA7-7BBBD258A248}"/>
-											</StateGroupInfo>
-										</StateGroupList>
-										<CustomStateList>
-											<CustomState>
-												<StateRef Name="NotPushing" ID="{A392B3F4-1137-469E-B323-003DEDA14FE4}"/>
-												<CustomState Name="" ID="{C78612D8-AD61-49A1-B5BE-2C11B3FEF675}" ShortID="893557317">
-													<PropertyList>
-														<Property Name="Volume" Type="Real64" Value="-108"/>
-													</PropertyList>
-												</CustomState>
-											</CustomState>
-											<CustomState>
-												<StateRef Name="IsPushing" ID="{18966800-E103-4A92-A4D6-C64EE2809EB7}"/>
-												<CustomState Name="" ID="{1481DF3D-2666-45A2-B998-287DF741F3C4}" ShortID="190302903"/>
-											</CustomState>
-										</CustomStateList>
-									</StateInfo>
-								</BlendContainer>
 								<RandomSequenceContainer Name="IceBlockFriction" ID="{AB24A5E9-D28A-4382-BA53-D343C8FEC20F}" ShortID="843494670">
 									<PropertyList>
 										<Property Name="Pitch" Type="int32">
@@ -4536,6 +3854,659 @@
 										</Sound>
 									</ChildrenList>
 								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="CrystalZaps" ID="{50CA0200-B346-4190-97B2-634F780E4735}" ShortID="384291343">
+									<PropertyList>
+										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+										<Property Name="RandomAvoidRepeating" Type="bool" Value="False"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SoundFXBus" ID="{F7F9656F-CA2B-4B31-BD03-7FD346D001DB}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="CrystalZap" ID="{4F9729BA-B93A-4172-9F08-086A83184818}" ShortID="60224063">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CrystalZap" ID="{1E272264-7CC1-4A2E-923A-51BC7BAB9520}">
+													<Language>SFX</Language>
+													<AudioFile>CrystalZap.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="497414986"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CrystalZap" ID="{1E272264-7CC1-4A2E-923A-51BC7BAB9520}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="CrystalShimmers" ID="{30E3930D-A6D6-41D3-8FB7-D6E14C8A15EC}" ShortID="269629844">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SoundFXBus" ID="{F7F9656F-CA2B-4B31-BD03-7FD346D001DB}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="CS1" ID="{501C58B3-D48A-4DFF-B795-1662377E241C}" ShortID="120268270">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CrystalShimmers" ID="{68C476FE-B852-4CAE-B7B2-16CE80C67444}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.588108108108108"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.0518918918918919"/>
+														<Property Name="TrimEnd" Type="Real64" Value="2.47351351351351"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>CrystalShimmers.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="853954014"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CrystalShimmers" ID="{68C476FE-B852-4CAE-B7B2-16CE80C67444}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CS2" ID="{F15961D0-41E8-488B-8BD6-81B691BD5E27}" ShortID="293274944">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CrystalShimmers" ID="{07B0FC1B-260B-4F87-B296-38C68B937E42}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.441081081081081"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="4.00432432432432"/>
+														<Property Name="TrimEnd" Type="Real64" Value="6.4"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>CrystalShimmers.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="706702062"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CrystalShimmers" ID="{07B0FC1B-260B-4F87-B296-38C68B937E42}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="CrystalTones" ID="{D2F89178-067C-468F-964A-B0ACE991A192}" ShortID="663802225">
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SoundFXBus" ID="{F7F9656F-CA2B-4B31-BD03-7FD346D001DB}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="CT1" ID="{D1B75349-AABD-4CEA-B3BD-B66C41015CD7}" ShortID="224489867">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CrystalTones" ID="{95EE4F6C-32F2-44D0-B63B-B3CFA4A737CC}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.825626279340565"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.20922047102479"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>CrystalTones.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="144065966"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CrystalTones" ID="{95EE4F6C-32F2-44D0-B63B-B3CFA4A737CC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CT2" ID="{0A7071A6-34A3-45B1-BD33-14B368819592}" ShortID="176987791">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CrystalTones" ID="{8CF7D03E-00FF-4F6F-B5B9-15FFE68E3062}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.951265060979346"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="4.03604682695377"/>
+														<Property Name="TrimEnd" Type="Real64" Value="7.82550125635838"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>CrystalTones.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="660611193"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CrystalTones" ID="{8CF7D03E-00FF-4F6F-B5B9-15FFE68E3062}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CT3" ID="{1975DB51-163F-4766-84D1-D53AF5FA8195}" ShortID="472809933">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CrystalTones" ID="{C7933EBD-282F-4F8A-A6F1-BFFEB09799E7}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="1.25638781638782"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="8.07677881963596"/>
+														<Property Name="TrimEnd" Type="Real64" Value="11.2536451553594"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>CrystalTones.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="162829338"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CrystalTones" ID="{C7933EBD-282F-4F8A-A6F1-BFFEB09799E7}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="CT4" ID="{1B1281D9-17F3-4DA7-A5A8-ACBDA846EFDF}" ShortID="152740289">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="CrystalTones" ID="{B29670A1-361C-49A4-9238-5C1E45F27B3D}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="1.68714935343507"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="12.0074778451921"/>
+														<Property Name="TrimEnd" Type="Real64" Value="15.8843316786174"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>CrystalTones.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="108359842"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="CrystalTones" ID="{B29670A1-361C-49A4-9238-5C1E45F27B3D}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="MetalImpact" ID="{A1CFD9F2-0BF5-452A-9CB2-6A91F6014B9B}" ShortID="567923284">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>33</Value>
+											</ValueList>
+										</Property>
+										<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+										<Property Name="Pitch" Type="int32">
+											<ValueList>
+												<Value>-1110</Value>
+											</ValueList>
+										</Property>
+										<Property Name="PlayMechanismLoop" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitions" Type="bool" Value="True"/>
+										<Property Name="PlayMechanismSpecialTransitionsType" Type="int16" Value="1"/>
+										<Property Name="PlayMechanismSpecialTransitionsValue" Type="Real64" Value="3"/>
+										<Property Name="PlayMechanismStepOrContinuous" Type="int16" Value="0"/>
+										<Property Name="Volume" Type="Real64">
+											<ValueList>
+												<Value>-6</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SoundFXBus" ID="{F7F9656F-CA2B-4B31-BD03-7FD346D001DB}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Metal Impact Sharp" ID="{27E476AB-E11B-4FB2-9C11-88FAF716193A}" ShortID="615219804">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Metal Impact Sharp" ID="{DBF04BD8-8740-4586-9DF5-2520AACDC797}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.252749172756462"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.69287781634764"/>
+														<Property Name="FadeOutShape" Type="int16" Value="3"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.981390718312213"/>
+														<Property Name="TrimEnd" Type="Real64" Value="1.80191259031914"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Metal Impact Sharp.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="1070103033"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Metal Impact Sharp" ID="{DBF04BD8-8740-4586-9DF5-2520AACDC797}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Metal Impact Sharp_01" ID="{22136706-83C3-4E2B-833B-9AFB1B4AC107}" ShortID="150888966">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Metal Impact Sharp" ID="{A7FEED7B-9CDE-43DB-BC97-1642711E56D2}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.261301475186998"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="1.09831959279493"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="4.63866040883914"/>
+														<Property Name="TrimEnd" Type="Real64" Value="5.73698000163407"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Metal Impact Sharp.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="461959986"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Metal Impact Sharp" ID="{A7FEED7B-9CDE-43DB-BC97-1642711E56D2}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Metal Impact Sharp_02" ID="{72AA952C-34E1-44D2-B181-CBDC5A275929}" ShortID="111338860">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Metal Impact Sharp" ID="{D7F26EBD-39AA-42FC-BB62-4AABC59231B1}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.193485861200366"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="1.16138280973751"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="9.07084397238354"/>
+														<Property Name="TrimEnd" Type="Real64" Value="10.232226782121"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Metal Impact Sharp.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="653303503"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Metal Impact Sharp" ID="{D7F26EBD-39AA-42FC-BB62-4AABC59231B1}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Metal Impact Sharp_03" ID="{521E2ED1-8A94-4697-B6B9-346AF3F1A721}" ShortID="777033360">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Metal Impact Sharp" ID="{B31728CA-1652-41DF-97F8-9899A2D3A7EB}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.193485861200366"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.878703988959822"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="13.2950979319577"/>
+														<Property Name="TrimEnd" Type="Real64" Value="14.2152447961316"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Metal Impact Sharp.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="566927662"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Metal Impact Sharp" ID="{B31728CA-1652-41DF-97F8-9899A2D3A7EB}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Metal Impact Sharp_04" ID="{C9B06201-A878-44C0-9D97-CF3FD12180CB}" ShortID="102697200">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Metal Impact Sharp" ID="{BDDEF7DB-A30A-48F1-AE2A-DBDF0CEBD093}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.193485861200366"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.971639179586681"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="17.8617613741566"/>
+														<Property Name="TrimEnd" Type="Real64" Value="18.8334005537433"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Metal Impact Sharp.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="54835555"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Metal Impact Sharp" ID="{BDDEF7DB-A30A-48F1-AE2A-DBDF0CEBD093}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Metal Impact Sharp_05" ID="{964DA669-58AD-4D73-8F65-46261E817C0A}" ShortID="652575968">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Metal Impact Sharp" ID="{C8E6B8AC-B55A-49C8-875B-F1B733977F58}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.193485861200366"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="1.05936217897608"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="22.0736391841285"/>
+														<Property Name="TrimEnd" Type="Real64" Value="23.1330013631046"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Metal Impact Sharp.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="132413351"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Metal Impact Sharp" ID="{C8E6B8AC-B55A-49C8-875B-F1B733977F58}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Metal Impact Sharp_06" ID="{E8924EAF-5197-468B-916D-74E0FAEFC760}" ShortID="725817315">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Metal Impact Sharp" ID="{A6A11AB6-0A5B-4ED8-B442-1DD7D2178334}">
+													<PropertyList>
+														<Property Name="FadeInDuration" Type="Real64" Value="0.193485861200366"/>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.924753930666135"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="26.2910454792056"/>
+														<Property Name="TrimEnd" Type="Real64" Value="27.2157994098717"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Metal Impact Sharp.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="132699668"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Metal Impact Sharp" ID="{A6A11AB6-0A5B-4ED8-B442-1DD7D2178334}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<RandomSequenceContainer Name="MetalBoom" ID="{05729A6A-46BE-4253-92EB-22473746B8B6}" ShortID="205843780">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>72</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SoundFXBus" ID="{F7F9656F-CA2B-4B31-BD03-7FD346D001DB}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<Sound Name="Metal Impact" ID="{91A97BEA-CDA1-4E73-8D76-3C395A7BC7D4}" ShortID="437442762">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Metal Impact" ID="{9886F756-9A7E-40F7-8265-622E63C96A49}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="0.820856073943662"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="0.0483504313869576"/>
+														<Property Name="TrimEnd" Type="Real64" Value="3.30622585338419"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Metal Impact.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="491323455"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Metal Impact" ID="{9886F756-9A7E-40F7-8265-622E63C96A49}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Metal Impact_01" ID="{2C694CC2-3BED-4D05-BF8F-2FA0F06EDEDB}" ShortID="488018890">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Metal Impact" ID="{E21ED073-21A8-4298-BB26-B9CAEEBFB132}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="1.04887165003912"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="5.98006308520837"/>
+														<Property Name="TrimEnd" Type="Real64" Value="9.39424173513302"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Metal Impact.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="997188878"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Metal Impact" ID="{E21ED073-21A8-4298-BB26-B9CAEEBFB132}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Metal Impact_02" ID="{8468533F-5ED7-4A6A-A6B2-B0F3A727BC79}" ShortID="449901526">
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Metal Impact" ID="{2751F5CF-452C-4051-8502-968626F0F4FE}">
+													<PropertyList>
+														<Property Name="FadeOutDuration" Type="Real64" Value="1.75512065934656"/>
+														<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+														<Property Name="TrimBegin" Type="Real64" Value="11.5201870534565"/>
+														<Property Name="TrimEnd" Type="Real64" Value="15.5962654049295"/>
+													</PropertyList>
+													<Language>SFX</Language>
+													<AudioFile>Metal Impact.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="774735159"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Metal Impact" ID="{2751F5CF-452C-4051-8502-968626F0F4FE}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+									</ChildrenList>
+								</RandomSequenceContainer>
+								<Sound Name="MetalRumble" ID="{007FAB44-F378-4C72-92DA-B8A4591B068D}" ShortID="59563297">
+									<PropertyList>
+										<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>49</Value>
+											</ValueList>
+										</Property>
+										<Property Name="Pitch" Type="int32">
+											<ModifierList>
+												<ModifierInfo>
+													<Modifier Name="" ID="{82689B25-29CF-4196-B6E2-9FB91141C2F2}">
+														<PropertyList>
+															<Property Name="Enabled" Type="bool" Value="True"/>
+															<Property Name="Min" Type="Real64" Value="-250"/>
+														</PropertyList>
+													</Modifier>
+												</ModifierInfo>
+											</ModifierList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="InteractiveMusicConversionSettings" ID="{D43CA58E-56D8-462A-812B-D2E53032F57A}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="SoundFXBus" ID="{F7F9656F-CA2B-4B31-BD03-7FD346D001DB}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="Metal Rumble" ID="{1B7CB7DF-1AAE-4CE9-A82D-984FAE291598}">
+											<PropertyList>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="2.57235450899844"/>
+												<Property Name="TrimEnd" Type="Real64" Value="10.3852821791862"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>Metal Rumble.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="259572801"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="Metal Rumble" ID="{1B7CB7DF-1AAE-4CE9-A82D-984FAE291598}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
+								<Sound Name="WordInsertWoosh" ID="{A269D40E-9FDD-4FAD-BF97-9C16519A7611}" ShortID="216451352">
+									<PropertyList>
+										<Property Name="Lowpass" Type="int16">
+											<ValueList>
+												<Value>45</Value>
+											</ValueList>
+										</Property>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Conversion">
+											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{A39CEEF0-8A0C-42AC-9B24-BC372AEB1F6D}"/>
+										</Reference>
+										<Reference Name="OutputBus">
+											<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3338B2AB-2095-435D-9D32-E5D31447086E}"/>
+										</Reference>
+									</ReferenceList>
+									<ChildrenList>
+										<AudioFileSource Name="NewStems 10-Chants &amp; Stabs Kit" ID="{622EF235-C5A1-4440-8C61-F42675FD2FC4}">
+											<PropertyList>
+												<Property Name="FadeOutDuration" Type="Real64" Value="1.02800404599426"/>
+												<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+												<Property Name="TrimBegin" Type="Real64" Value="23.6689864677189"/>
+												<Property Name="TrimEnd" Type="Real64" Value="25.8111672390303"/>
+											</PropertyList>
+											<Language>SFX</Language>
+											<AudioFile>NewStems 10-Chants &amp; Stabs Kit.wav</AudioFile>
+											<MediaIDList>
+												<MediaID ID="307815032"/>
+											</MediaIDList>
+										</AudioFileSource>
+									</ChildrenList>
+									<ActiveSourceList>
+										<ActiveSource Name="NewStems 10-Chants &amp; Stabs Kit" ID="{622EF235-C5A1-4440-8C61-F42675FD2FC4}" Platform="Linked"/>
+									</ActiveSourceList>
+								</Sound>
 							</ChildrenList>
 						</RandomSequenceContainer>
 					</ChildrenList>

@@ -524,7 +524,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3361862619" Type="User" Language="SFX" Hash="{DE9E7EB2-022F-DEDF-0F92-D3F09663426A}">
+		<SoundBank Id="3361862619" Type="User" Language="SFX" Hash="{1ADB7C0C-EAF2-91FF-0FA1-6A8D4A80566E}">
 			<ShortName>CombatAndEnvironment</ShortName>
 			<Path>CombatAndEnvironment.bnk</Path>
 			<Media>
@@ -711,6 +711,10 @@
 				<File Id="296816978" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>GateOpen.wav</ShortName>
 					<CachePath>SFX/GateOpen_E0390519.wem</CachePath>
+				</File>
+				<File Id="307815032" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>NewStems 10-Chants &amp; Stabs Kit.wav</ShortName>
+					<CachePath>SFX/NewStems 10-Chants &amp; Stabs Kit_AF41DD80.wem</CachePath>
 				</File>
 				<File Id="320125018" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>IceBlockWooshes.wav</ShortName>
@@ -1304,9 +1308,10 @@
 						</ShareSets>
 					</PluginRefs>
 				</Event>
-				<Event Id="1124520274" Name="RapRockInsert" DurationType="OneShot" DurationMin="1.3686444" DurationMax="1.7930925">
+				<Event Id="1124520274" Name="RapRockInsert" DurationType="OneShot" DurationMin="2.1421807" DurationMax="2.1421807">
 					<MediaRefs>
 						<MediaRef Id="18308841"/>
+						<MediaRef Id="307815032"/>
 						<MediaRef Id="352709731"/>
 						<MediaRef Id="478461255"/>
 					</MediaRefs>
@@ -1391,5 +1396,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{12EC6121-032F-B3F2-85E5-459EDA09F35D}</FileHash>
+	<FileHash>{E0DBCB27-5D31-CD41-6B6A-51D667BE3766}</FileHash>
 </SoundBanksInfo>
