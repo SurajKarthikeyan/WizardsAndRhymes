@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Class that is responsible for controlling the player health and managing its abilities
@@ -284,6 +285,14 @@ public class PlayerController : Singleton<PlayerController>
         rigidBody = GetComponent<Rigidbody>();
         playerInput = new PlayerInput();
         SetCanAttack(false);
+    }
+
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name == "MainIceArea")
+        {
+            DisablePlayerControls();
+        }
     }
 
     /// <summary>
