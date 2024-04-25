@@ -39,6 +39,7 @@ public class LevelSwitcher : MonoBehaviour
 
     public void LoadLevelWithFade(string levelName)
     {
+        AkSoundEngine.StopAll();
         if (!string.IsNullOrEmpty(levelName) && fadeImage != null)
         {
             StartCoroutine(FadeToBlack(levelName));
