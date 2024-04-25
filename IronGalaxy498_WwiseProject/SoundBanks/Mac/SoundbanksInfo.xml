@@ -185,7 +185,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="1702439946" Type="User" Language="SFX" Hash="{CEA016EB-9F7F-5F77-051F-5D1741B68FCD}">
+		<SoundBank Id="1702439946" Type="User" Language="SFX" Hash="{0561C74C-53AC-5485-786A-CB9BFE2425B2}">
 			<ShortName>InteractiveMusicBank</ShortName>
 			<Path>InteractiveMusicBank.bnk</Path>
 			<Media>
@@ -205,9 +205,17 @@
 					<ShortName>ReverseSleigh.wav</ShortName>
 					<CachePath>SFX/ReverseSleigh_5C91F944.wem</CachePath>
 				</File>
+				<File Id="104074591" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ExtendedFinal_5-Kontakt_7.wav</ShortName>
+					<CachePath>SFX/ExtendedFinal_5-Kontakt_7_5C91F944.wem</CachePath>
+				</File>
 				<File Id="106687536" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LightningMelodyClean.wav</ShortName>
 					<CachePath>SFX/LightningMelodyClean_5C91F944.wem</CachePath>
+				</File>
+				<File Id="112883015" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ExtendedFinal_2-Kontakt_7.wav</ShortName>
+					<CachePath>SFX/ExtendedFinal_2-Kontakt_7_5C91F944.wem</CachePath>
 				</File>
 				<File Id="132955210" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>ChoppyDrum.wav</ShortName>
@@ -253,6 +261,10 @@
 					<ShortName>FasterIceArp.wav</ShortName>
 					<CachePath>SFX/FasterIceArp_5C91F944.wem</CachePath>
 				</File>
+				<File Id="494512451" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ExtendedFinal_3-Kontakt_7.wav</ShortName>
+					<CachePath>SFX/ExtendedFinal_3-Kontakt_7_5C91F944.wem</CachePath>
+				</File>
 				<File Id="497445220" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LongTrippySynth.wav</ShortName>
 					<CachePath>SFX/LongTrippySynth_5C91F944.wem</CachePath>
@@ -268,6 +280,10 @@
 				<File Id="533533018" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems 24-Agile Shot Kit.wav</ShortName>
 					<CachePath>SFX/NewStems 24-Agile Shot Kit_5C91F944.wem</CachePath>
+				</File>
+				<File Id="580404228" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ExtendedFinal_7-Space_Arp.wav</ShortName>
+					<CachePath>SFX/ExtendedFinal_7-Space_Arp_5C91F944.wem</CachePath>
 				</File>
 				<File Id="600380917" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewMenuM_2-Kontakt_7.wav</ShortName>
@@ -301,6 +317,10 @@
 					<ShortName>IceChime.wav</ShortName>
 					<CachePath>SFX/IceChime_5C91F944.wem</CachePath>
 				</File>
+				<File Id="685873985" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ExtendedFinal_1-PotentialWizzoBeat.wav</ShortName>
+					<CachePath>SFX/ExtendedFinal_1-PotentialWizzoBeat_5C91F944.wem</CachePath>
+				</File>
 				<File Id="714054839" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewMenuM_1-Kontakt_7.wav</ShortName>
 					<CachePath>SFX/NewMenuM_1-Kontakt_7_5C91F944.wem</CachePath>
@@ -312,6 +332,10 @@
 				<File Id="723017881" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>LowCLightningPulseZap.wav</ShortName>
 					<CachePath>SFX/LowCLightningPulseZap_5C91F944.wem</CachePath>
+				</File>
+				<File Id="770205367" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ExtendedFinal_4-Kontakt_7.wav</ShortName>
+					<CachePath>SFX/ExtendedFinal_4-Kontakt_7_5C91F944.wem</CachePath>
 				</File>
 				<File Id="771789552" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>NewStems 7-Kontakt 7.wav</ShortName>
@@ -360,6 +384,10 @@
 				<File Id="980585793" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>MoreDrumWithMid.wav</ShortName>
 					<CachePath>SFX/MoreDrumWithMid_5C91F944.wem</CachePath>
+				</File>
+				<File Id="1020231047" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>ExtendedFinal_6-Kontakt_7.wav</ShortName>
+					<CachePath>SFX/ExtendedFinal_6-Kontakt_7_5C91F944.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -502,6 +530,19 @@
 								<MediaRef Id="714054839"/>
 							</MediaRefs>
 						</SwitchContainer>
+						<SwitchContainer>
+							<SwitchValue GroupType="State" GroupId="1021618141" Id="3822410396"/>
+							<MediaRefs>
+								<MediaRef Id="104074591"/>
+								<MediaRef Id="112883015"/>
+								<MediaRef Id="494512451"/>
+								<MediaRef Id="580404228"/>
+								<MediaRef Id="621496916"/>
+								<MediaRef Id="685873985"/>
+								<MediaRef Id="770205367"/>
+								<MediaRef Id="1020231047"/>
+							</MediaRefs>
+						</SwitchContainer>
 					</SwitchContainers>
 				</Event>
 			</Events>
@@ -524,7 +565,7 @@
 				</StateGroup>
 			</StateGroups>
 		</SoundBank>
-		<SoundBank Id="3361862619" Type="User" Language="SFX" Hash="{C56056F2-9350-CBD6-C527-AF34172D83B5}">
+		<SoundBank Id="3361862619" Type="User" Language="SFX" Hash="{3FC71B1B-E451-F71E-A4B9-3C59F0215727}">
 			<ShortName>CombatAndEnvironment</ShortName>
 			<Path>CombatAndEnvironment.bnk</Path>
 			<Media>
@@ -1483,5 +1524,5 @@
 			</StateGroups>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{32C37F9D-F6A8-9B2E-775A-1ED3B18E6D28}</FileHash>
+	<FileHash>{4E95D44B-A54E-EF73-64C2-27C42BD26FBE}</FileHash>
 </SoundBanksInfo>
