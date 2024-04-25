@@ -60,6 +60,8 @@ public class WizzoBlastController : MonoBehaviour
     [Tooltip("Canvas holding the interact E button")]
     [SerializeField] private GameObject interactCanvas;
 
+    public AK.Wwise.Event finalWizzoBlastSoundEffect;
+
     /// <summary>
     /// Initialization
     /// </summary>
@@ -135,7 +137,7 @@ public class WizzoBlastController : MonoBehaviour
 
             yield return new WaitForEndOfFrame();
         }
-        chargeSoundEffect.Post(this.gameObject);
+        finalWizzoBlastSoundEffect.Post(this.gameObject); // final blast sfx
         
         splashScreen.SetActive(true);
         splashScreenShaker.Play();
