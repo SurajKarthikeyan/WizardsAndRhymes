@@ -22,6 +22,7 @@ namespace AK
         static const AkUniqueID ENCOUNTERSTART = 3296753656U;
         static const AkUniqueID ENERGYROCKACTIVATION = 388053590U;
         static const AkUniqueID FART = 2948602592U;
+        static const AkUniqueID FINALBOOM = 2214463278U;
         static const AkUniqueID GATELIFT = 1960186623U;
         static const AkUniqueID HAUNTEDSTINGER = 1950078070U;
         static const AkUniqueID ICEBLOCK = 418751485U;

@@ -149,6 +149,41 @@
 										</Action>
 									</ChildrenList>
 								</Event>
+								<Event Name="FinalBoom" ID="{40BDA4BB-8EBA-4FD4-A5F5-4253FD5AE1A1}">
+									<ChildrenList>
+										<Action Name="" ID="{057DD588-30F8-479B-892C-3360F70E2685}" ShortID="1039861324">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="FinalBoom" ID="{326D64FD-79A9-4676-8CBD-50D8E2E1AE79}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{8D4AF7C7-E44C-488C-A47C-79C4C8ACE0DD}" ShortID="981205745">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="MicTap" ID="{39EA1919-40C3-4C2D-8295-1CD48D698615}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{B63A444B-3BCA-4480-9A96-F2CB97CEA951}" ShortID="208368087">
+											<PropertyList>
+												<Property Name="FadeTime" Type="Real64" Value="1"/>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="NewLengthFinalImpact" ID="{4028EF3D-516B-4192-94E1-E07A09E99E03}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+										<Action Name="" ID="{B42197FB-5673-4B32-88C3-EA373DE7C2C4}" ShortID="109118205">
+											<ReferenceList>
+												<Reference Name="Target">
+													<ObjectRef Name="EndRumble" ID="{CA961F76-00C1-475F-8024-E8A568710C39}" WorkUnitID="{030832A5-6B31-417E-8898-C198A938C9CD}"/>
+												</Reference>
+											</ReferenceList>
+										</Action>
+									</ChildrenList>
+								</Event>
 							</ChildrenList>
 						</Folder>
 					</ChildrenList>
