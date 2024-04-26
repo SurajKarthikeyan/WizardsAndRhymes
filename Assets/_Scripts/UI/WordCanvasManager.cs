@@ -108,11 +108,13 @@ public class WordCanvasManager : MonoBehaviour, IInteractable
         if (!canvasActivated)
         {
             ToggleCanvas(true);
+            wordParent.SetActive(false);
             rapRockESoundEffect.Post(this.gameObject);
         }
         else
         {
             ToggleCanvas(false);
+            wordParent.SetActive(true);
         }
     }
 }
