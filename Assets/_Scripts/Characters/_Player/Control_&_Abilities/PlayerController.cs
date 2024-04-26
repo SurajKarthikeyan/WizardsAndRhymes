@@ -289,7 +289,7 @@ public class PlayerController : Singleton<PlayerController>
 
     private void Start()
     {
-        if (SceneManager.GetActiveScene().name == "MainIceArea")
+        if (SceneManager.GetActiveScene().name == "MainIceArea" && !FlagManager.instance.GetFlag("enemyWave1Completed"))
         {
             DisablePlayerControls();
         }

@@ -74,6 +74,9 @@ public class PauseMenu : MonoBehaviour
     /// </summary>
     public void ReloadScene()
     {
+        FlagManager.hasReloaded = true;
+        Debug.Log("Set reloaded to true");
+        Debug.Log(FlagManager.hasReloaded);
         AkSoundEngine.StopAll();
         AkSoundEngine.SetState("PauseMenu", "NotInPauseMenu");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);

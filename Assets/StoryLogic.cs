@@ -11,11 +11,34 @@ public class StoryLogic : MonoBehaviour
 
     public Canvas dialogueCanvas;
 
+    public Collider dialougeCollider;
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(FadeOut(fadeImage));
-        dialouge.TriggerDialogue();
+        Debug.Log("in story logic start");
+        Debug.Log(FlagManager.hasReloaded);
+        if (!FlagManager.hasReloaded)
+        {
+            StartCoroutine(FadeOut(fadeImage));
+            dialouge.TriggerDialogue();
+        }
+        else 
+        { 
+            GetComponent<Canvas>().enabled = false;
+            ResetPlaneDistance();
+            if (!FlagManager.instance.GetFlag("enemyWave1Completed"))
+            {
+                dialougeCollider.enabled = true;
+            }
+            //else if (FlagManager.instance.GetFlag("enemyWave1Completed"))
+            //{
+            //    Debug.Log("enabling player controls");
+            //    PlayerController.instance.EnablePlayerControls();
+            //    PlayerController.instance.EnablePlayerControls();
+            //    PlayerController.instance.EnablePlayerAttackControls();
+            //}
+        }
     }
 
     public void ImageFadeOut(Image image)

@@ -37,6 +37,8 @@ public class FlagManager : Singleton<FlagManager>
     public GameObject dialogueTrigger3;
 
     public GameObject rapRockTrigger;
+
+    public static bool hasReloaded;
     
     #endregion
     
@@ -113,8 +115,6 @@ public class FlagManager : Singleton<FlagManager>
         }
     }
     #endregion
-
-
 
     #region Custom Methods
 
