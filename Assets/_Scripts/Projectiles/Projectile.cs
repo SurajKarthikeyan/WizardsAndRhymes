@@ -51,7 +51,7 @@ public class Projectile : MonoBehaviour
     /// <param name="other">Other collider that is contacted by this trigger</param>
     private void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player"))
+        if (!other.CompareTag("MeleeBoxCollider"))
         {
             if (other.TryGetComponent<Health>(out var character))
             {
