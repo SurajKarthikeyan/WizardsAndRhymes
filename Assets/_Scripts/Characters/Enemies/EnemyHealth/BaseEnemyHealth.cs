@@ -167,8 +167,6 @@ public abstract class BaseEnemyHealth : Health
     {
         Collider[] enemyLightiningCollider = Physics.OverlapSphere(this.gameObject.transform.position,
             lightningChainDistance, enemyLayerMask);
-        Collider[] eletricBlockCollider = Physics.OverlapSphere(this.gameObject.transform.position,
-            lightningChainDistance);
         for (int i = 0; i < enemyLightiningCollider.Length; i++)
         {
             if (enemyLightiningCollider[i].gameObject.TryGetComponent(out BaseEnemyHealth curEnemyHealth))
@@ -179,39 +177,42 @@ public abstract class BaseEnemyHealth : Health
                                      this.gameObject.transform.position;
                     // Take Damage
                     curEnemyHealth.TakeDamage(lightningBaseDamage, DamageType.None);
+
+                    if (currentHP > 0)
+                    {
+                        //Draw lightning arc
+                        GameObject curLightningEffect = Instantiate(lightningEffectPrefab);
+                        curLightningEffect.transform.position = PlayerController.instance.transform.position;
                     
-                    //Draw lightning arc
-                    GameObject curLightningEffect = Instantiate(lightningEffectPrefab);
-                    curLightningEffect.transform.position = PlayerController.instance.transform.position;
-                    
-                    //set start to this object
-                    curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position =
+                        //set start to this object
+                        curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position =
                         this.gameObject.transform.position;
-                    curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.parent =
+                        curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.parent =
                         this.gameObject.transform;  // Set start as child to this object
                     
-                    //set end to enemy object chained
-                    curLightningEffect.GetComponent<LightningVFXPosition>().pos4.transform.position =
+                        //set end to enemy object chained
+                        curLightningEffect.GetComponent<LightningVFXPosition>().pos4.transform.position =
                         enemyLightiningCollider[i].gameObject.transform.position;
 
-                    curLightningEffect.GetComponent<LightningVFXPosition>().pos4.transform.parent =
+                        curLightningEffect.GetComponent<LightningVFXPosition>().pos4.transform.parent =
                         enemyLightiningCollider[i].gameObject.transform;    // set end point to child of parent
 
-                    Vector3 pos2 = new Vector3(
+                        Vector3 pos2 = new Vector3(
                         curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.x + deltaPos.x * 0.33f,
                         curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.y + deltaPos.y * 0.33f,
                         curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.z + deltaPos.z * 0.33f);
                     
-                    Vector3 pos3 = new Vector3(
+                        Vector3 pos3 = new Vector3(
                         curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.x + deltaPos.x * 0.66f,
                         curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.y + deltaPos.y * 0.66f,
                         curLightningEffect.GetComponent<LightningVFXPosition>().pos1.transform.position.z + deltaPos.z * 0.66f);
 
-                    curLightningEffect.GetComponent<LightningVFXPosition>().pos2.transform.position = pos2;
-                    curLightningEffect.GetComponent<LightningVFXPosition>().pos3.transform.position = pos3;
+                        curLightningEffect.GetComponent<LightningVFXPosition>().pos2.transform.position = pos2;
+                        curLightningEffect.GetComponent<LightningVFXPosition>().pos3.transform.position = pos3;
                     
                     
-                    lightiningEffectStorage.Add(curLightningEffect);
+                        lightiningEffectStorage.Add(curLightningEffect);
+                    }
                 }
             }
         }
@@ -321,7 +322,6 @@ public abstract class BaseEnemyHealth : Health
    
     protected virtual void EnemyDeath()
     {
-        Debug.Log("I'm dyiiiiiiiiiiiiiiiiiiing!");
         StopAllCoroutines();
         ClearLightningObjects();
         Instantiate(deathVFXPrefab, transform.position, transform.rotation);
