@@ -89,6 +89,9 @@ public abstract class BaseEnemyHealth : Health
 
     [Tooltip("Boolean stating if this enemy is dead")]
     private bool isDead;
+
+    [Tooltip("The death VFX prefab to spawn when this enemy dies")]
+    [SerializeField] GameObject deathVFXPrefab;
     #endregion
 
 
@@ -116,8 +119,11 @@ public abstract class BaseEnemyHealth : Health
     /// </summary>
     public override void Death()
     {
-        isDead = true;
-        EnemyDeath();
+        if (!isDead)
+        {
+            isDead = true;
+            EnemyDeath();
+        }
     }
 
     #region DamageMethods
@@ -315,10 +321,11 @@ public abstract class BaseEnemyHealth : Health
    
     protected virtual void EnemyDeath()
     {
+        Debug.Log("I'm dyiiiiiiiiiiiiiiiiiiing!");
         StopAllCoroutines();
         ClearLightningObjects();
+        Instantiate(deathVFXPrefab, transform.position, transform.rotation);
         EnemyDied?.Invoke(gameObject);
-
     }
     #endregion
 }
