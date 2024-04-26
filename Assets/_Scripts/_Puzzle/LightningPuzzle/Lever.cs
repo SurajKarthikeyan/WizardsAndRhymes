@@ -126,7 +126,7 @@ public class Lever : MonoBehaviour, IInteractable
         {
             OtherLeverSwitch();
         }
-        leverManager.CheckLevers();
+        
 
     }
 
@@ -136,6 +136,7 @@ public class Lever : MonoBehaviour, IInteractable
         {
             otherLevers[i].LeverSwitch(false, false, true);
         }
+        leverManager.CheckLevers();
     }
     #endregion
 
