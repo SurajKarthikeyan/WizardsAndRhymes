@@ -51,23 +51,26 @@ public class Projectile : MonoBehaviour
     /// <param name="other">Other collider that is contacted by this trigger</param>
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<Health>(out var character))
+        if (!other.CompareTag("Player"))
         {
-            if (character.vulnerable)
+            if (other.TryGetComponent<Health>(out var character))
             {
-                character.TakeDamage(damage, DType);
-                if (character.gameObject.TryGetComponent(out BaseEnemyBehavior enemy))
+                if (character.vulnerable)
                 {
-                    enemy.Knockback(transform.forward);
+                    character.TakeDamage(damage, DType);
+                    if (character.gameObject.TryGetComponent(out BaseEnemyBehavior enemy))
+                    {
+                        enemy.Knockback(transform.forward);
+                    }
                 }
             }
-        }
 
-        else if (other.TryGetComponent<FirstLightningBlock>(out var lightningBlock))
-        {
-            lightningBlock.StartLightingChain();
+            else if (other.TryGetComponent<FirstLightningBlock>(out var lightningBlock))
+            {
+                lightningBlock.StartLightingChain();
+            }
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
     }
     #endregion
 
